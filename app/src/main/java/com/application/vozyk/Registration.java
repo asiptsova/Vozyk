@@ -54,14 +54,11 @@ public class Registration extends AppCompatActivity {
         });*/
 
         final ImageView ShowHidePWDConfirm = findViewById(R.id.show_hide_pwd_confirm);
-        ShowHidePWDConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (etConfirm.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
-                    etConfirm.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                else
-                    etConfirm.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            }
+        ShowHidePWDConfirm.setOnClickListener(view -> {
+            if (etConfirm.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
+                etConfirm.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            else
+                etConfirm.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         });
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -100,7 +97,7 @@ public class Registration extends AppCompatActivity {
             }
             indicator.show();
             indicator.setVisibility(View.VISIBLE);
-            Boolean insert = DB.insertData(fullName, password, email);
+            DB.insertData(fullName, password, email);
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()

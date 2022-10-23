@@ -1,7 +1,6 @@
 package com.application.vozyk;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -45,34 +44,28 @@ public class UpdateMedication extends AppCompatActivity {
 
 
         Button update = findViewById(R.id.update);
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        update.setOnClickListener(view -> {
 
-                int userDate1 = medicationDate.getMonth()+1;
-                String monthConverted = ""+userDate1;
-                if(userDate1 <10){
-                    monthConverted = "0"+monthConverted;
-                }
-
-                String updatedMedName = medicationName.getText().toString();
-                String updatedMedDosage = medicationDosage.getText().toString();
-                String updatedMedDate = medicationDate.getDayOfMonth() + "/" + monthConverted + "/" + medicationDate.getYear();
-                String updatedMedTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
-
-                db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
+            int userDate1 = medicationDate.getMonth()+1;
+            String monthConverted = ""+userDate1;
+            if(userDate1 <10){
+                monthConverted = "0"+monthConverted;
             }
+
+            String updatedMedName = medicationName.getText().toString();
+            String updatedMedDosage = medicationDosage.getText().toString();
+            String updatedMedDate = medicationDate.getDayOfMonth() + "/" + monthConverted + "/" + medicationDate.getYear();
+            String updatedMedTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
+
+            db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
         });
 
         Button delete = findViewById(R.id.delete_button);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Boolean deleted = db.deleteMedication(medID);
-                if (deleted == true){
-                    Toast added = Toast.makeText(getApplicationContext(), "Medication Deleted! Please press the back arrow, to view!", Toast.LENGTH_LONG);
-                    added.show();
-                }
+        delete.setOnClickListener(view -> {
+            Boolean deleted = db.deleteMedication(medID);
+            if (deleted){
+                Toast added = Toast.makeText(getApplicationContext(), "Medication Deleted! Please press the back arrow, to view!", Toast.LENGTH_LONG);
+                added.show();
             }
         });
     }

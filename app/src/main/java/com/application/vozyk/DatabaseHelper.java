@@ -1,25 +1,16 @@
 package com.application.vozyk;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    SimpleDateFormat dateFormat;
-    String date1, happyMood, midMood, sadMood;
+    String  happyMood, midMood, sadMood;
     Integer happyMoodNum, midMoodNum, sadMoodNum;
-    Calendar calendar;
     private static final String CREATE_TABLE_LOGIN = " create table LOGIN (" +
             " _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "full_name TEXT NOT NULL , " +
@@ -34,21 +25,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "medication_time TEXT NOT NULL, " +
             "userID INTEGER, FOREIGN KEY(userID) REFERENCES LOGIN(_id));";
 
-    private static final String CREATE_TABLE_TASKS = " create table TASKS ( " +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "task TEXT NOT NULL , " +
-            "taskDesc TEXT NOT NULL , " +
-            "taskDate TEXT NOT NULL, " +
-            "taskTime TEXT NOT NULL, " +
-            "userID INTEGER, FOREIGN KEY(userID) REFERENCES LOGIN(_id));";
-
-    private static final String CREATE_TABLE_FF = " create table FF ( " +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "full_name TEXT NOT NULL , " +
-            "email TEXT NOT NULL , " +
-            "phoneNumber TEXT NOT NULL, " +
-            "relationship TEXT NOT NULL, " +
-            "userID INTEGER, FOREIGN KEY(userID) REFERENCES LOGIN(_id));";
 
     private static final String CREATE_TABLE_MOODS = " create table MOOD ( " +
             "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -57,18 +33,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "sadCount TEXT NOT NULL, " +
             "userID INTEGER, FOREIGN KEY(userID) REFERENCES LOGIN(_id));";
 
-    private static final String DB_NAME = "MentalHealthSupport1";
+    private static final String DB_NAME = "Vozyk";
     public static final String FULL_NAME = "full_name";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
-    public static final String EVENT_NAME= "task";
-    public static final String EVENT_DESCRIPTION= "taskDesc";
-    public static final String EVENT_DATE= "taskDate";
-    public static final String EVENT_TIME= "taskTime";
     public static final String TABLE_NAME_LOGIN = "LOGIN";
     public static final String TABLE_NAME_MEDICATION = "MEDICATION";
-    public static final String TABLE_NAME_TASKS = "TASKS";
-    public static final String _CID = "_id";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -78,8 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL(CREATE_TABLE_LOGIN);
         MyDB.execSQL(CREATE_TABLE_MEDICATION);
-        MyDB.execSQL(CREATE_TABLE_TASKS);
-        MyDB.execSQL(CREATE_TABLE_FF);
         MyDB.execSQL(CREATE_TABLE_MOODS);
     }
 
@@ -87,8 +55,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase MyDB, int oldTable, int newTable) {
         MyDB.execSQL("DROP TABLE IF EXISTS LOGIN");
         MyDB.execSQL("DROP TABLE IF EXISTS MEDICATION");
-        MyDB.execSQL("DROP TABLE IF EXISTS TASKS");
-        MyDB.execSQL("DROP TABLE IF EXISTS FF");
         MyDB.execSQL("DROP TABLE IF EXISTS MOOD");
     }
 
@@ -189,70 +155,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         cursor.close();
         return currentMoods.toString();
-    }
-
-
-
-    @SuppressLint("SimpleDateFormat")
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public ArrayList<String> getTasksForToday(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<String> specific = new ArrayList<>();
-        String[] columns = {DatabaseHelper._CID ,DatabaseHelper.EVENT_NAME,DatabaseHelper.EVENT_DESCRIPTION, DatabaseHelper.EVENT_DATE, DatabaseHelper.EVENT_TIME};
-        Cursor cursor
-                =db.query(DatabaseHelper.TABLE_NAME_TASKS,columns,null,null,null,null,null);
-        calendar = Calendar.getInstance();
-        dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        date1 = dateFormat.format(calendar.getTime());
-        while (cursor.moveToNext())
-        {
-            String taskName
-                    =cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.EVENT_NAME));
-            String  taskDesc
-                    =cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.EVENT_DESCRIPTION));
-            String  taskDate
-                    =cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.EVENT_DATE));
-            String  taskTime
-                    =cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.EVENT_TIME));
-
-            if(taskDate.equals(date1)){
-                specific.add(taskName+" \n");
-                specific.add(taskDesc+" \n");
-                specific.add(taskTime+" \n");
-            }
-        }
-        cursor.close();
-        return specific;
-    }
-
-    // Login and Create Account Functions
-
-    public Boolean checkEmail(String email) {
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select * from LOGIN where email = ?", new String[]{email});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            cursor.close();
-            return false;
-    }
-
-    public Boolean checkFFEntered(Integer userID){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        String newUserID = String.valueOf(userID);
-        Cursor cursor = MyDB.rawQuery("Select * from FF where userID = ?", new String[]{newUserID});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            cursor.close();
-        return false;
-    }
-    public Boolean deleteFF(Integer userID){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String newUserID = String.valueOf(userID);
-
-        long deleted = db.delete("FF", "userID=?", new String[]{newUserID});
-        return deleted != -1;
     }
 
     public Boolean checkDetails(String emailAd, String password){
@@ -374,50 +276,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long deleted = db.delete(TABLE_NAME_MEDICATION, "_uid=?", new String[]{ID});
         return deleted != -1;
     }
-
-    //Calendar Functions
-
-    public Boolean insertEvent(String eventName, String eventDesc, String eventDate, String eventTime, Integer userID){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
-        ContentValues contentValues= new ContentValues();
-        String newUserID = String.valueOf(userID);
-        contentValues.put("task", eventName);
-        contentValues.put("taskDesc", eventDesc);
-        contentValues.put("taskDate", eventDate);
-        contentValues.put("taskTime", eventTime);
-        contentValues.put("userID", newUserID);
-        long result = MyDB.insert(DatabaseHelper.TABLE_NAME_TASKS, null, contentValues);
-        return result != -1;
-    }
-
-    public Cursor readAllTasks (Integer myIntValue){
-        SQLiteDatabase db1 = this.getWritableDatabase();
-        String userID = String.valueOf(myIntValue);
-        Cursor phoneNumberCursor = db1.rawQuery("Select * from TASKS where userID = ?", new String[]{userID});
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = null;
-        if(db != null){
-            cursor = phoneNumberCursor;
-        }
-        return cursor;
-    }
-
-    public void updateTask(String taskID, String newTaskName, String newTaskDesc, String chosenDate, String chosenTime) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("task", newTaskName);
-        cv.put("taskDesc", newTaskDesc);
-        cv.put("taskDate", chosenDate);
-        cv.put("taskTime", chosenTime);
-        db.update(TABLE_NAME_TASKS, cv, "_id=?", new String[]{taskID});
-    }
-
-    public Boolean deleteTask(String ID){
-        SQLiteDatabase db = this.getWritableDatabase();
-        long deleted = db.delete(TABLE_NAME_TASKS, "_id=?", new String[]{ID});
-        return deleted != -1;
-    }
-
-
-
 }

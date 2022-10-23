@@ -4,16 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
-
-import java.util.ArrayList;
 
 public class Add_new_pills extends AppCompatActivity {
 
@@ -22,7 +18,6 @@ public class Add_new_pills extends AppCompatActivity {
     DatePicker medicationDate;
     Button submit, cancel;
     DatabaseHelper DB;
-    ArrayList<String> months;
     AlertDialog.Builder builder1;
     int myIntValue;
 
@@ -65,7 +60,7 @@ public class Add_new_pills extends AppCompatActivity {
         String userDate = medicationDate.getDayOfMonth() + "/" + monthConverted + "/" + medicationDate.getYear();
         String userTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
 
-        if (userMedicationName.equals("")||userMedicationDosage.equals("")||userDate.equals("")||userTime.equals("")) {
+        if (userMedicationName.equals("") || userMedicationDosage.equals("")) {
             builder1.setMessage("Please fill in all fields!");
             builder1.setCancelable(true);
             builder1.setPositiveButton(

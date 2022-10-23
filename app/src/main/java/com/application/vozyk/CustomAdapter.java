@@ -19,10 +19,13 @@ import java.util.ArrayList;
 
 class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private Context context;
-    private ArrayList medicationID, medicationName, medicationDosage, medicationTime, medicationDate;
-    String currentDate;
-    private Activity activity;
+    private final Context context;
+    private final ArrayList medicationID;
+    private final ArrayList medicationName;
+    private final ArrayList medicationDosage;
+    private final ArrayList medicationTime;
+    private final ArrayList medicationDate;
+    private final Activity activity;
 
     public CustomAdapter(Activity activity, Context context, ArrayList medicationID, ArrayList medName, ArrayList medDosage, ArrayList medTime, ArrayList medDate) {
         this.activity = activity;
@@ -37,14 +40,9 @@ class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.medName.setText(String.valueOf(medicationName.get(position)));
-        holder.medDosage.setText("Dosage: " +String.valueOf(medicationDosage.get(position)));
+        holder.medDosage.setText("Dosage: " + medicationDosage.get(position));
         holder.medTime.setText(String.valueOf(medicationTime.get(position)));
-        holder.medicationLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updateNewMedicaiton(position);
-            }
-        });
+        holder.medicationLayout.setOnClickListener(view -> updateNewMedicaiton(position));
 
     }
 
@@ -68,7 +66,7 @@ class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
         View view = inflater.inflate(R.layout.medicationlayout, parent, false);
         return new MyViewHolder(view);
     }
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView medName, medDosage, medTime;
         CardView card;
         LinearLayout medicationLayout;
