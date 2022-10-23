@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "798606474013",
+    "project_id": "vozyk-bcebf",
+    "storage_bucket": "vozyk-bcebf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798606474013:android:010b55a4bb801fc64ffff4",
+        "android_client_info": {
+          "package_name": "com.application.vozyk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798606474013-v78ui73i7mr0h04vo0q8fr421avn889r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.vozyk",
+            "certificate_hash": "8f09a1c75f0f3a63a64b68019cb68e07f47f8075"
+          }
+        },
+        {
+          "client_id": "798606474013-i6rbgkcaetqghsq16j6d2fk2e2sio2dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhtBl9zQbeAZRribWeRJhkyyuiyXYtgM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798606474013-i6rbgkcaetqghsq16j6d2fk2e2sio2dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
