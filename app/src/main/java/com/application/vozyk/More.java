@@ -23,6 +23,8 @@ public class More extends AppCompatActivity {
         final Button pills=findViewById(R.id.pills);
         final Button about=findViewById(R.id.about_us);
         final Button logout=findViewById(R.id.logout);
+        final Button settings=findViewById(R.id.settings);
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,14 @@ public class More extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(More.this, About_us.class);
+                startActivity(intent);
+
+            }
+        });
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(More.this, Settings.class);
                 startActivity(intent);
 
             }
