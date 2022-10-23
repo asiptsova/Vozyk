@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -44,6 +45,11 @@ public class Add_new_pills extends AppCompatActivity {
         DB = new DatabaseHelper(this);
 
         submit.setOnClickListener(view -> submitDetails());
+        cancel.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Pills.class);
+            startActivity(intent);
+
+        });
 
     }
 
@@ -71,6 +77,8 @@ public class Add_new_pills extends AppCompatActivity {
 
         }else {
             DB.insertMedication(userMedicationName, userMedicationDosage, userDate, userTime, myIntValue);
+            Intent intent = new Intent(this, Pills.class);
+            startActivity(intent);;
         }
     }
     }

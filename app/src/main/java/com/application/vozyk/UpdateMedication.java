@@ -1,5 +1,6 @@
 package com.application.vozyk;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -58,14 +59,17 @@ public class UpdateMedication extends AppCompatActivity {
             String updatedMedTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
 
             db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
+            Intent intent = new Intent(UpdateMedication.this, Pills.class);
+            startActivity(intent);
         });
 
         Button delete = findViewById(R.id.delete_button);
         delete.setOnClickListener(view -> {
             Boolean deleted = db.deleteMedication(medID);
             if (deleted){
-                Toast added = Toast.makeText(getApplicationContext(), "Medication Deleted! Please press the back arrow, to view!", Toast.LENGTH_LONG);
-                added.show();
+                Toast.makeText(getApplicationContext(), "Medication Deleted! Please press the back arrow, to view!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(UpdateMedication.this, Pills.class);
+                startActivity(intent);
             }
         });
     }

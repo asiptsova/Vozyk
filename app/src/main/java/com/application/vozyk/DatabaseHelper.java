@@ -225,14 +225,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnedItems;
     }
 
-    public Boolean insertData(String username, String password, String email){
+    public void insertData(String username, String password, String email){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put(DatabaseHelper.FULL_NAME, username);
         contentValues.put(DatabaseHelper.PASSWORD, password);
         contentValues.put(DatabaseHelper.EMAIL, email);
         long result = MyDB.insert(DatabaseHelper.TABLE_NAME_LOGIN, null, contentValues);
-        return result != -1;
     }
 
     // Medication Functions

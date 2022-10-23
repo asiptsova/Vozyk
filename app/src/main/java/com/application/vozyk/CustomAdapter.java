@@ -67,9 +67,11 @@ class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
         return new MyViewHolder(view);
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView medName, medDosage, medTime;
-        CardView card;
-        LinearLayout medicationLayout;
+        final TextView medName;
+        final TextView medDosage;
+        final TextView medTime;
+        final CardView card;
+        final LinearLayout medicationLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
