@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
+    DatabaseHelper DB;
 
     private DatabaseReference getUsersRef(String ref) {
         return FirebaseDatabase.getInstance().getReference("Users")
@@ -40,6 +41,7 @@ public class Registration extends AppCompatActivity {
         final Button mRegisterBtn = findViewById(R.id.register);
         final TextView mLoginBtn = findViewById(R.id.createText);
         final CircularProgressIndicator indicator =findViewById(R.id.progress_barCircle);
+        DB = new DatabaseHelper(this);
       //  final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
        /* ShowHidePWD.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +100,7 @@ public class Registration extends AppCompatActivity {
             }
             indicator.show();
             indicator.setVisibility(View.VISIBLE);
+            Boolean insert = DB.insertData(fullName, password, email);
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()

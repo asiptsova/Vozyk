@@ -2,8 +2,10 @@ package com.application.vozyk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,14 +21,20 @@ public class Add_new_pills extends AppCompatActivity {
     TimePicker medicationTime;
     DatePicker medicationDate;
     Button submit, cancel;
+    DatabaseHelper DB;
     ArrayList<String> months;
     AlertDialog.Builder builder1;
     int myIntValue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_pills);
+        SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+        myIntValue = sp.getInt("userID", -1);
+
+
         medicationName = (EditText) findViewById(R.id.medicationName);
         medicationDosage = (EditText) findViewById(R.id.medicationDosage);
         medicationDate = (DatePicker) findViewById(R.id.datePicker);
@@ -38,14 +46,9 @@ public class Add_new_pills extends AppCompatActivity {
         submit = (Button) findViewById(R.id.submit);
         cancel = (Button) findViewById(R.id.cancel);
 
-       // DB = new DatabaseHelper(this);
+        DB = new DatabaseHelper(this);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                submitDetails();
-            }
-        });
+        submit.setOnClickListener(view -> submitDetails());
 
     }
 
@@ -67,16 +70,12 @@ public class Add_new_pills extends AppCompatActivity {
             builder1.setCancelable(true);
             builder1.setPositiveButton(
                     "Yes",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+                    (dialog, id) -> dialog.cancel());
             AlertDialog alert11 = builder1.create();
             alert11.show();
 
         }else {
-          //  DB.insertMedication(userMedicationName, userMedicationDosage, userDate, userTime, myIntValue);
+            DB.insertMedication(userMedicationName, userMedicationDosage, userDate, userTime, myIntValue);
         }
     }
     }

@@ -19,8 +19,7 @@ public class UpdateMedication extends AppCompatActivity {
 
     String medID, medName, medDos, medDate, medTime;
 
- //   DatabaseHelper db;
-
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class UpdateMedication extends AppCompatActivity {
         medDate = getIntent().getStringExtra("medicationDate");
         medTime = getIntent().getStringExtra("medicationTime");
 
-     //   db = new DatabaseHelper(this);
+        db = new DatabaseHelper(this);
 
 
         medicationName.setText(medName);
@@ -61,12 +60,12 @@ public class UpdateMedication extends AppCompatActivity {
                 String updatedMedDate = medicationDate.getDayOfMonth() + "/" + monthConverted + "/" + medicationDate.getYear();
                 String updatedMedTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
 
-            //    db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
+                db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
             }
         });
 
         Button delete = findViewById(R.id.delete_button);
-   /*     delete.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Boolean deleted = db.deleteMedication(medID);
@@ -75,6 +74,6 @@ public class UpdateMedication extends AppCompatActivity {
                     added.show();
                 }
             }
-        });*/
+        });
     }
 }

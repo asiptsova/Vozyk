@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class Pills extends AppCompatActivity {
     FloatingActionButton addButton;
 
-  //  DatabaseHelper db;
+    DatabaseHelper db;
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
     ArrayList<String> medicationID, medicationName, medicationDosage, medicationTime, medicationDate;
@@ -52,7 +52,7 @@ public class Pills extends AppCompatActivity {
         builder1 = new AlertDialog.Builder(this);
 
         addButton = (FloatingActionButton) findViewById(R.id.add_button);
-       // db = new DatabaseHelper(this);
+        db = new DatabaseHelper(this);
         recyclerView = findViewById(R.id.recyclerView);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -77,18 +77,14 @@ public class Pills extends AppCompatActivity {
         }
     }
 
-    public void storeDataInArrays() {
-      /*  Cursor cursor = db.readAllData(myIntValue);
+    public void storeDataInArrays(){
+        Cursor cursor = db.readAllData(myIntValue);
         if(cursor.getCount() == 0){
             builder1.setMessage("Currently you have no medication! Please add some :)");
             builder1.setCancelable(true);
             builder1.setPositiveButton(
                     "Yes",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+                    (dialog, id) -> dialog.cancel());
             AlertDialog alert11 = builder1.create();
             alert11.show();
         }else{
@@ -100,6 +96,5 @@ public class Pills extends AppCompatActivity {
                 medicationTime.add(cursor.getString(4));
             }
         }
-    */
     }
 }
