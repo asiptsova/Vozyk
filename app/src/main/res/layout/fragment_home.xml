@@ -1,16 +1,2211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.home.HomeFragment">
 
-  <Button
-      android:id="@+id/more"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="More"/>
+  <ScrollView
+      android:id="@+id/scroll_view_to_take_screen_show_in_good_habtis"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="false"
+      android:visibility="invisible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layou_to_show_screen_shot_in_good_habits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <View
+          android:id="@+id/view_all_gray_inside_screen_shot_inside_good_habits"
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:background="#dfdfe5"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
+
+
+  <ScrollView
+      android:id="@+id/scroll_view_in_bad_habits_view_home"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_inside_scroll_in_the_bad_habits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <TextView
+          android:id="@+id/did_you_do_the_habit_in_the_good_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="50dp"
+          android:text="How was your mood today?"
+          android:textColor="@color/black"
+          android:textSize="19sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <Button
+          android:id="@+id/very_bad_mood_button_in_habits_in_the_top_today"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+
+      <Button
+          android:id="@+id/bad_mood_button_in_habits_in_the_top_today"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+
+      <Button
+          android:id="@+id/ok_mood_button_in_habits_in_the_top_today"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+
+      <Button
+          android:id="@+id/good_mood_button_in_habits_in_the_top_today"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+
+      <Button
+          android:id="@+id/very_good_mood_button_in_habits_in_the_top_today"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="42dp"
+          android:layout_height="42dp"
+          app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_bad_mood_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/round_sentiment_very_dissatisfied_24"
+          app:layout_constraintEnd_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/did_you_do_the_habit_in_the_good_view" />
+
+      <View
+          android:id="@+id/bad_mood_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_mood_bad_24"
+          app:layout_constraintEnd_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/ok_mood_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_face_24"
+          app:layout_constraintEnd_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/good_mood_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_mood_24"
+          app:layout_constraintEnd_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_good_mood_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginEnd="10dp"
+          android:background="@drawable/round_sentiment_very_satisfied_24"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_bad_mood_shade_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/shade_for_mood_in_mood"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/bad_mood_shade_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/shade_for_mood_in_mood"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/ok_mood_shade_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/shade_for_mood_in_mood"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/good_mood_shade_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/shade_for_mood_in_mood"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_good_mood_shade_in_habits_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_bad_mood_check_mark_in_mood_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/bad_mood_check_mark_in_mood_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/ok_mood_check_mark_in_mood_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/good_mood_check_mark_in_mood_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+
+      <View
+          android:id="@+id/very_good_mood_check_mark_in_mood_in_the_top_today"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/round_check_24"
+          android:visibility="invisible"
+          app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
+          app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_to_show_calender"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_containting_the_calender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/calender_in_stats"
+              android:layout_width="304dp"
+              android:layout_height="320dp"
+              android:layout_marginTop="20dp"
+              android:background="@color/white"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/month_and_year_in_calender_for_good_habits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Month year"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_back_for_good_habits" />
+
+            <Button
+                android:id="@+id/button_shadow_for_the_back_for_good_habits"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ripple_for_all_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_shadow_for_the_front_for_good_habits"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ripple_for_all_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/forward_button_over_for_good_habits"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_arrow_forward_ios_24"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_front_for_good_habits"
+                app:layout_constraintLeft_toLeftOf="@+id/button_shadow_for_the_front_for_good_habits"
+                app:layout_constraintRight_toRightOf="@+id/button_shadow_for_the_front_for_good_habits"
+                app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_front_for_good_habits" />
+
+            <View
+                android:id="@+id/backward_button_over_for_good_habits"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_arrow_back_ios_24"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits"
+                app:layout_constraintLeft_toLeftOf="@+id/button_shadow_for_the_back_for_good_habits"
+                app:layout_constraintRight_toRightOf="@+id/button_shadow_for_the_back_for_good_habits"
+                app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_back_for_good_habits" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/child_of_calender_showing_days"
+                android:layout_width="304dp"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits">
+
+              <TextView
+                  android:id="@+id/first_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/second_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/first_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/third_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/second_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/fourth_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/third_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/fifth_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/fourth_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/sixth_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/fifth_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:id="@+id/seventh_day_in_the_week_calender"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  android:gravity="center"
+                  android:text=""
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/sixth_day_in_the_week_calender"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/child_showing_days_number_for_calender"
+                android:layout_width="304dp"
+                android:layout_height="240dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/child_of_calender_showing_days">
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_1"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="45dp"
+                  android:layout_height="45dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_2"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_3"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_4"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_5"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_6"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_7"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_8"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_9"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_10"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_11"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_12"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_13"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_14"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_15"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_16"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_17"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_18"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_19"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_20"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_21"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_22"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_23"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="45dp"
+                  android:layout_height="45dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_24"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_25"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_26"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_27"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_28"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_29"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_30"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_31"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_32"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_33"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_34"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_35"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_36"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
+
+              <Button
+                  android:id="@+id/calender_button_showing_shadow_37"
+                  style="?android:attr/borderlessButtonStyle"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                  android:layout_marginStart="4dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_1"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_2"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_3"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_4"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_5"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_6"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_7"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_8"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_9"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_10"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_11"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_12"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_13"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_14"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_15"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_16"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_17"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_18"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_19"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_20"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_21"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_14" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_22"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_23"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_24"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_25"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_26"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_27"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_28"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_29"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_30"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_31"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_32"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_33"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_34"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_35"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_28" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_36"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_35" />
+
+              <View
+                  android:id="@+id/calender_under_number_state_37"
+                  android:layout_width="40dp"
+                  android:layout_height="6dp"
+                  android:layout_marginStart="4dp"
+                  android:layout_marginTop="33dp"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_35" />
+
+              <View
+                  android:id="@+id/middle_calender_1"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_2"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_3"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_4"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_5"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_6"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <View
+                  android:id="@+id/middle_calender_7"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_8"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_9"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_10"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_11"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_12"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+
+              <View
+                  android:id="@+id/middle_calender_13"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_14"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_15"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_16"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_17"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_18"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+
+              <View
+                  android:id="@+id/middle_calender_19"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_20"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_21"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_22"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_23"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_24"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+
+              <View
+                  android:id="@+id/middle_calender_25"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_26"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_27"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_28"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_29"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_30"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+
+              <View
+                  android:id="@+id/middle_calender_31"
+                  android:layout_width="0dp"
+                  android:layout_height="6dp"
+                  android:layout_marginTop="33dp"
+                  android:background="@drawable/middle_part_for_mood"
+                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
+                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
+                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <TextView
+              android:id="@+id/text_asking_did_you_relapse_in_share"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="335dp"
+              android:text="How was your mood?"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              android:visibility="gone"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/calender_in_stats" />
+
+          <Button
+              android:id="@+id/very_bad_mood_button_in_habits"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="42dp"
+              android:layout_height="42dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+
+          <Button
+              android:id="@+id/bad_mood_button_in_habits"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="42dp"
+              android:layout_height="42dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+
+          <Button
+              android:id="@+id/ok_mood_button_in_habits"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="42dp"
+              android:layout_height="42dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+
+          <Button
+              android:id="@+id/good_mood_button_in_habits"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="42dp"
+              android:layout_height="42dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+
+          <Button
+              android:id="@+id/very_good_mood_button_in_habits"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="42dp"
+              android:layout_height="42dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_bad_mood_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:layout_marginStart="15dp"
+              android:layout_marginTop="10dp"
+              android:background="@drawable/round_sentiment_very_dissatisfied_24"
+              android:visibility="gone"
+              app:layout_constraintEnd_toStartOf="@+id/bad_mood_in_habits"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/text_asking_did_you_relapse_in_share" />
+
+          <View
+              android:id="@+id/bad_mood_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_mood_bad_24"
+              android:visibility="gone"
+              app:layout_constraintEnd_toStartOf="@+id/ok_mood_in_habits"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/ok_mood_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_face_24"
+              android:visibility="gone"
+              app:layout_constraintEnd_toStartOf="@+id/good_mood_in_habits"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/good_mood_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_mood_24"
+              android:visibility="gone"
+              app:layout_constraintEnd_toStartOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/ok_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_good_mood_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:layout_marginEnd="10dp"
+              android:background="@drawable/round_sentiment_very_satisfied_24"
+              android:visibility="gone"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_bad_mood_shade_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/shade_for_mood_in_mood"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/bad_mood_shade_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/shade_for_mood_in_mood"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/ok_mood_shade_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/shade_for_mood_in_mood"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+
+          <View
+              android:id="@+id/good_mood_shade_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/shade_for_mood_in_mood"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_good_mood_shade_in_habits"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/shade_for_mood_in_mood"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_bad_mood_check_mark_in_mood"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_check_24"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/bad_mood_check_mark_in_mood"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_check_24"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+
+          <View
+              android:id="@+id/ok_mood_check_mark_in_mood"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_check_24"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+
+          <View
+              android:id="@+id/good_mood_check_mark_in_mood"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_check_24"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+
+          <View
+              android:id="@+id/very_good_mood_check_mark_in_mood"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/round_check_24"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
+              app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_to_show_current_average_and_best_streak"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/card_to_show_calender">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_inside_card_to_show_the_best_and_current_and_average_streak"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+              android:id="@+id/title_for_the_card_saying_this_is_the_average_mood_bar"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:text="Average mood"
+              android:textColor="@color/black"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/text_showing_average_mood_number"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="12.5dp"
+              android:text="24.2"
+              android:textSize="25sp"
+              app:layout_constraintEnd_toEndOf="@+id/location_above_bmi_weight"
+              app:layout_constraintStart_toStartOf="@+id/location_above_bmi_weight"
+              app:layout_constraintTop_toBottomOf="@+id/title_for_the_card_saying_this_is_the_average_mood_bar" />
+
+          <View
+              android:id="@+id/very_bad_mood_in_habits_in_the_average_mood"
+              android:layout_width="32dp"
+              android:layout_height="32dp"
+              android:layout_marginTop="8dp"
+              android:background="@drawable/round_sentiment_very_dissatisfied_24"
+              app:layout_constraintEnd_toEndOf="@+id/first_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
+              app:layout_constraintTop_toBottomOf="@+id/progress_bar_number_one_mood" />
+
+          <View
+              android:id="@+id/bad_mood_in_habits_in_the_average_mood"
+              android:layout_width="32dp"
+              android:layout_height="32dp"
+              android:background="@drawable/round_mood_bad_24"
+              app:layout_constraintEnd_toEndOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+
+          <View
+              android:id="@+id/ok_mood_in_habits_in_the_average_mood"
+              android:layout_width="32dp"
+              android:layout_height="32dp"
+              android:background="@drawable/round_face_24"
+              app:layout_constraintEnd_toEndOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+
+          <View
+              android:id="@+id/good_mood_in_habits_in_the_average_mood"
+              android:layout_width="32dp"
+              android:layout_height="32dp"
+              android:background="@drawable/round_mood_24"
+              app:layout_constraintEnd_toEndOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+
+          <View
+              android:id="@+id/very_good_mood_in_habits_in_the_average_mood"
+              android:layout_width="32dp"
+              android:layout_height="32dp"
+              android:background="@drawable/round_sentiment_very_satisfied_24"
+              app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/five_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood"/>
+
+          <View
+              android:id="@+id/invisible_box_at_start_of_average_mood"
+              android:layout_width="0.1dp"
+              android:layout_height="0.1dp"
+              android:layout_marginStart="35dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/invisible_box_at_end_of_average_mood"
+              android:layout_width="0.1dp"
+              android:layout_height="0.1dp"
+              android:layout_marginEnd="35dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/first_part_of_invisible_chain"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toStartOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintHorizontal_chainStyle="spread_inside"
+              app:layout_constraintStart_toStartOf="@+id/invisible_box_at_start_of_average_mood"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/second_part_of_invisible_chain"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toStartOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintStart_toEndOf="@+id/first_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/third_part_of_invisible_chain"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toStartOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/four_part_of_invisible_chain"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toStartOf="@+id/five_part_of_invisible_chain"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/five_part_of_invisible_chain"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toEndOf="@+id/invisible_box_at_end_of_average_mood"
+              app:layout_constraintHorizontal_bias="0.5"
+              app:layout_constraintStart_toEndOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/first_part_invisble_half_middle"
+              android:layout_width="1px"
+              android:layout_height="1px"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toEndOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/second_part_invisble_half_middle"
+              android:layout_width="1px"
+              android:layout_height="1px"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toEndOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/second_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/third_part_invisble_half_middle"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toEndOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/third_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/four_part_invisble_half_middle"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
+              app:layout_constraintStart_toStartOf="@+id/four_part_of_invisible_chain"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <View
+              android:id="@+id/location_above_bmi_weight"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/location_drawable_green"
+              app:layout_constraintBottom_toTopOf="@+id/progress_bar_number_one_mood"
+              app:layout_constraintEnd_toEndOf="@+id/last_item_after_the_half_invicible_for_location"
+              app:layout_constraintStart_toStartOf="@+id/first_item_before_the_half_invicible_for_location" />
+
+          <ProgressBar
+              android:id="@+id/progress_bar_number_one_mood"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="0dp"
+              android:layout_height="6dp"
+              android:layout_marginTop="45dp"
+              android:progress="100"
+              android:progressDrawable="@drawable/first_part_mood_location_mood_tracker"
+              app:layout_constraintEnd_toEndOf="@+id/first_part_invisble_half_middle"
+              app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
+              app:layout_constraintTop_toBottomOf="@+id/text_showing_average_mood_number" />
+
+          <ProgressBar
+              android:id="@+id/progress_bar_number_two_mood"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="0dp"
+              android:layout_height="6dp"
+              android:progress="100"
+              android:progressDrawable="@drawable/second_part_mood_location_mood_tracker"
+              app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
+              app:layout_constraintEnd_toEndOf="@+id/second_part_invisble_half_middle"
+              app:layout_constraintStart_toEndOf="@+id/first_part_invisble_half_middle"
+              app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+
+          <ProgressBar
+              android:id="@+id/progress_bar_number_three_mood"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="0dp"
+              android:layout_height="6dp"
+              android:progress="100"
+              android:progressDrawable="@drawable/third_part_mood_location_mood_tracker"
+              app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
+              app:layout_constraintEnd_toEndOf="@+id/third_part_invisble_half_middle"
+              app:layout_constraintStart_toEndOf="@+id/second_part_invisble_half_middle"
+              app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+
+          <ProgressBar
+              android:id="@+id/progress_bar_number_four_mood"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="0dp"
+              android:layout_height="6dp"
+              android:progress="100"
+              android:progressDrawable="@drawable/four_part_mood_location_mood_tracker"
+              app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
+              app:layout_constraintEnd_toEndOf="@+id/four_part_invisble_half_middle"
+              app:layout_constraintStart_toEndOf="@+id/third_part_invisble_half_middle"
+              app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+
+          <ProgressBar
+              android:id="@+id/progress_bar_number_five_mood"
+              style="?android:attr/progressBarStyleHorizontal"
+              android:layout_width="0dp"
+              android:layout_height="6dp"
+              android:progressDrawable="@drawable/five_part_mood_location_mood_tracker"
+              app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
+              app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
+              app:layout_constraintStart_toEndOf="@+id/four_part_invisble_half_middle"
+              app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+
+          <View
+              android:id="@+id/first_item_before_the_half_invicible_for_location"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              android:layout_marginEnd="20dp"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintEnd_toEndOf="@+id/first_part_of_invisible_chain"/>
+
+          <View
+              android:id="@+id/last_item_after_the_half_invicible_for_location"
+              android:layout_width="1px"
+              android:layout_height="0.1dp"
+              android:background="@android:color/transparent"
+              android:layout_marginStart="20dp"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/five_part_of_invisible_chain"/>
+
+          <TextView
+              android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:text="Not enough data to draw this chart.\nCome back later!!"
+              android:textAlignment="center"
+              android:textColor="@color/black"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_to_show_line_graph_for_mood_tracker"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/card_to_show_pie_chart_for_yes_or_no_over_the_days">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_inside_graph_to_show_mood_in_mood_tracekr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+          <TextView
+              android:id="@+id/title_of_the_card_saying_this_is_the_graph_card"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:text="Mood Chart"
+              android:textColor="@color/black"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+
+          <TextView
+              android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:text="No data this month to draw this chart.\nCome back later!!"
+              android:textAlignment="center"
+              android:textColor="@color/black"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <Button
+              android:id="@+id/button_to_show_back_above_mood_tracker_graph"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:layout_marginTop="20dp"
+              android:layout_marginStart="30dp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/title_of_the_card_saying_this_is_the_graph_card" />
+
+          <Button
+              android:id="@+id/button_to_show_forward_above_mood_tracker_graph"
+              style="?android:attr/borderlessButtonStyle"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:background="@drawable/ripple_for_all_circle"
+              android:layout_marginTop="20dp"
+              android:layout_marginEnd="30dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/title_of_the_card_saying_this_is_the_graph_card" />
+
+          <View
+              android:id="@+id/view_to_show_back_above_mood_tracker_graph"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_margin="10dp"
+              android:background="@drawable/round_arrow_forward_ios_24"
+              app:layout_constraintBottom_toBottomOf="@+id/button_to_show_forward_above_mood_tracker_graph"
+              app:layout_constraintLeft_toLeftOf="@+id/button_to_show_forward_above_mood_tracker_graph"
+              app:layout_constraintRight_toRightOf="@+id/button_to_show_forward_above_mood_tracker_graph"
+              app:layout_constraintTop_toTopOf="@+id/button_to_show_forward_above_mood_tracker_graph" />
+
+          <View
+              android:id="@+id/view_button_over_for_good_habits"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_margin="10dp"
+              android:background="@drawable/round_arrow_back_ios_24"
+              app:layout_constraintBottom_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph"
+              app:layout_constraintLeft_toLeftOf="@+id/button_to_show_back_above_mood_tracker_graph"
+              app:layout_constraintRight_toRightOf="@+id/button_to_show_back_above_mood_tracker_graph"
+              app:layout_constraintTop_toTopOf="@+id/button_to_show_back_above_mood_tracker_graph" />
+
+          <TextView
+              android:id="@+id/text_saying_month_year_in_the_chart_mood_tracker"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Month year"
+              android:textColor="@color/black"
+              android:textSize="20sp"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/button_to_show_back_above_mood_tracker_graph"
+              app:layout_constraintBottom_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph"/>
+
+          <com.github.mikephil.charting.charts.LineChart
+              android:id="@+id/cahrt_showing_mood_in_mood_tracker"
+              android:layout_width="0dp"
+              android:layout_height="200dp"
+              android:layout_marginStart="10dp"
+              android:layout_marginEnd="10dp"
+              android:layout_marginTop="20dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_to_show_daily_input_by_week_of_days"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/card_to_show_line_graph_for_mood_tracker">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_inside_card_to_show_days_of_week_habits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+          <TextView
+              android:id="@+id/text_title_of_weekly_daily_habit_in_card"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="10dp"
+              android:gravity="center"
+              android:text="Weekly Mood Average"
+              android:textAlignment="center"
+              android:textColor="@color/black"
+              android:textSize="18sp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <com.github.mikephil.charting.charts.BarChart
+              android:id="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
+              android:layout_width="0dp"
+              android:layout_height="200dp"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="15dp"
+              android:layout_marginEnd="10dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/text_title_of_weekly_daily_habit_in_card" />
+
+          <com.github.mikephil.charting.charts.BarChart
+              android:id="@+id/cahrt_in_mood_about_the_average_for_each_month"
+              android:layout_width="0dp"
+              android:layout_height="200dp"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="15dp"
+              android:layout_marginEnd="10dp"
+              android:visibility="invisible"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/text_title_of_weekly_daily_habit_in_card" />
+
+          <TextView
+              android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:text="Not enough data to draw this chart.\nCome back later!!"
+              android:textAlignment="center"
+              android:textColor="@color/black"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:visibility="invisible"
+              app:layout_constraintBottom_toBottomOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
+              app:layout_constraintEnd_toEndOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
+              app:layout_constraintStart_toStartOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
+              app:layout_constraintTop_toTopOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_to_show_pie_chart_for_yes_or_no_over_the_days"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/card_to_show_current_average_and_best_streak">
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_showing_the_habit_in_year_in_good_habits_in_mood"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="15dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="15dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/card_to_show_daily_input_by_week_of_days">
+      </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
