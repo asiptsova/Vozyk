@@ -30,7 +30,6 @@ import androidx.fragment.app.Fragment;
 import com.application.vozyk.CustomBarChartRenderer;
 import com.application.vozyk.R;
 import com.application.vozyk.Simplify_the_time;
-import com.application.vozyk.Universal_date_picker;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
@@ -51,7 +50,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HomeFragment extends Fragment  {
+public class Mood extends Fragment  {
     private Button calender_button_showing_shadow_1;
     private Button calender_button_showing_shadow_2;
     private Button calender_button_showing_shadow_3;
@@ -101,7 +100,7 @@ public class HomeFragment extends Fragment  {
     private LineChart line_chart_for_streak;
 
 
-    public HomeFragment() {
+    public Mood() {
         // Required empty public constructor
     }
 
@@ -109,7 +108,7 @@ public class HomeFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_mood, container, false);
     }
 
     @Override
@@ -11549,34 +11548,6 @@ public class HomeFragment extends Fragment  {
         }
     }
 
-    private String return_info_about_pie() {
-        if (getView() != null) {
-            int very_bad = 0;
-            int bad = 0;
-            int ok = 0;
-            int good = 0;
-            int very_good = 0;
-            String return_me;
-            for (Map.Entry<Long, Integer> map : history_of_mood.entrySet()) {
-                if (map.getValue() == 1) {
-                    very_bad++;
-                } else if (map.getValue() == 2) {
-                    bad++;
-                } else if (map.getValue() == 3) {
-                    ok++;
-                } else if (map.getValue() == 4) {
-                    good++;
-                } else if (map.getValue() == 5) {
-                    very_good++;
-                }
-            }
-            return_me = String.valueOf(very_bad).concat("split").concat(String.valueOf(bad)).concat("split").concat(String.valueOf(ok)).concat("split").concat(String.valueOf(good)).concat("split").concat(String.valueOf(very_good));
-            return return_me;
-        } else {
-            return "";
-        }
-    }
-
 
     private Drawable return_mood_logo_white(int which) {
         if (which == 0) {
@@ -11623,12 +11594,6 @@ public class HomeFragment extends Fragment  {
         } else {
             return Simplify_the_time.return_time_in_midnight(System.currentTimeMillis());
         }
-    }
-
-    private void call_date_picker() {
-        Universal_date_picker universal_date_picker = new Universal_date_picker();
-        universal_date_picker.setTargetFragment(HomeFragment.this, 22);
-        universal_date_picker.show(getActivity().getSupportFragmentManager(), "date_picker");
     }
 
     @Override
