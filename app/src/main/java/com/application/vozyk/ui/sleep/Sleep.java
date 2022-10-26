@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.dashboard;
+package com.application.vozyk.ui.sleep;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

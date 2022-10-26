@@ -1,8 +1,4 @@
-package com.application.vozyk;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.application.vozyk.ui.notifications;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,11 +6,25 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.application.vozyk.Add_new_pills;
+import com.application.vozyk.CustomAdapter;
+import com.application.vozyk.DatabaseHelper;
+import com.application.vozyk.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class Pills extends AppCompatActivity {
+public class NotificationsPills extends Fragment {
+
     FloatingActionButton addButton;
 
     DatabaseHelper db;
@@ -24,13 +34,11 @@ public class Pills extends AppCompatActivity {
     int myIntValue;
     AlertDialog.Builder builder1;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pills);
-        getSupportActionBar().setTitle("Vozyk");
 
-        SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        SharedPreferences sp = getContext().getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
         myIntValue = sp.getInt("userID", -1);
 
         medicationID = new ArrayList<>();
@@ -39,30 +47,32 @@ public class Pills extends AppCompatActivity {
         medicationTime = new ArrayList<>();
         medicationDate = new ArrayList<>();
 
-        builder1 = new AlertDialog.Builder(this);
+        builder1 = new AlertDialog.Builder(getContext());
 
-        addButton = (FloatingActionButton) findViewById(R.id.add_button);
-        db = new DatabaseHelper(this);
-        recyclerView = findViewById(R.id.recyclerView);
+        addButton = (FloatingActionButton) root.findViewById(R.id.add_button);
+        db = new DatabaseHelper(getActivity());
+        recyclerView = root.findViewById(R.id.recyclerView);
 
         addButton.setOnClickListener(view -> {
-            Intent addMed = new Intent(Pills.this, Add_new_pills.class);
+            Intent addMed = new Intent(getActivity(), Add_new_pills.class);
             startActivityForResult(addMed, 2);
         });
 
         storeDataInArrays();
-        customAdapter = new CustomAdapter(Pills.this, this, medicationID, medicationName, medicationDosage, medicationTime, medicationDate);
+        customAdapter = new CustomAdapter(getActivity(), getActivity(), medicationID, medicationName, medicationDosage, medicationTime, medicationDate);
         recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager((this)));
+        recyclerView.setLayoutManager(new LinearLayoutManager((getContext())));
+
+        return root;
     }
 
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 || requestCode == 2) {
             recreate();
         }
-    }
+    }*/
 
     public void storeDataInArrays(){
         Cursor cursor = db.readAllData(myIntValue);

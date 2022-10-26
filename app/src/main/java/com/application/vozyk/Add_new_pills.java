@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.application.vozyk.ui.notifications.NotificationsPills;
+
 public class Add_new_pills extends AppCompatActivity {
 
     EditText medicationName, medicationDosage;
@@ -46,7 +48,7 @@ public class Add_new_pills extends AppCompatActivity {
 
         submit.setOnClickListener(view -> submitDetails());
         cancel.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Pills.class);
+            Intent intent = new Intent(this, NotificationsPills.class);
             startActivity(intent);
 
         });
@@ -77,7 +79,7 @@ public class Add_new_pills extends AppCompatActivity {
 
         }else {
             DB.insertMedication(userMedicationName, userMedicationDosage, userDate, userTime, myIntValue);
-            Intent intent = new Intent(this, Pills.class);
+            Intent intent = new Intent(this, NotificationsPills.class);
             startActivity(intent);;
         }
     }

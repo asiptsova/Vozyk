@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.vozyk.ui.notifications.NotificationsPills;
+
 public class UpdateMedication extends AppCompatActivity {
 
 
@@ -59,7 +61,7 @@ public class UpdateMedication extends AppCompatActivity {
             String updatedMedTime = medicationTime.getCurrentHour() + " : " + medicationTime.getCurrentMinute();
 
             db.updateMedication(medID, updatedMedName, updatedMedDosage, updatedMedDate, updatedMedTime);
-            Intent intent = new Intent(UpdateMedication.this, Pills.class);
+            Intent intent = new Intent(UpdateMedication.this, NotificationsPills.class);
             startActivity(intent);
         });
 
@@ -68,7 +70,7 @@ public class UpdateMedication extends AppCompatActivity {
             Boolean deleted = db.deleteMedication(medID);
             if (deleted){
                 Toast.makeText(getApplicationContext(), "Medication Deleted! Please press the back arrow, to view!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(UpdateMedication.this, Pills.class);
+                Intent intent = new Intent(UpdateMedication.this, NotificationsPills.class);
                 startActivity(intent);
             }
         });

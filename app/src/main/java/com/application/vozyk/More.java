@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.application.vozyk.ui.notifications.NotificationsPills;
 import com.firebase.ui.auth.AuthUI;
 
 
@@ -32,7 +33,7 @@ public class More extends AppCompatActivity {
 
         });
         pills.setOnClickListener(v -> {
-            Intent intent = new Intent(More.this, Pills.class);
+            Intent intent = new Intent(More.this, NotificationsPills.class);
             startActivity(intent);
 
         });

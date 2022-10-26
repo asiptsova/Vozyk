@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_sleep"
-        android:name="com.application.vozyk.ui.dashboard.Sleep"
+        android:name="com.application.vozyk.ui.sleep.Sleep"
         android:label="Sleep"
         tools:layout="@layout/fragment_sleep" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.application.vozyk.ui.notifications.NotificationsFragment"
+        android:name="com.application.vozyk.ui.notifications.NotificationsPills"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
