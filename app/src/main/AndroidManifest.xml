@@ -81,6 +81,49 @@
         <activity
             android:name=".ui.habits.Habits"
             android:exported="true" />
+        <activity
+            android:name=".ui.quiz.QuizActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.adhd.adhdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.adhd.adhdResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.anxiety.anxietyResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.anxiety.anxietyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.bipolar.bipolarActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.bipolar.bipolarResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.depression.depressionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.depression.depressionResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.ocd.ocdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.ocd.ocdResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.ptsd.ptsdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.ptsd.ptsd"
+            android:exported="true" />
+        <activity
+            android:name=".ui.ptsd.ptsdResultActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>

@@ -10,17 +10,58 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.application.vozyk.About_us;
+import com.application.vozyk.Account;
+import com.application.vozyk.Login;
+import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.application.vozyk.Registration;
 import com.application.vozyk.ui.habits.Habit;
 import com.application.vozyk.ui.habits.Habits;
+import com.application.vozyk.ui.quiz.QuizActivity;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class Other extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_other, container, false);
-        Button habit_link=root.findViewById(R.id.habit_link);
+        final Button habit_link=root.findViewById(R.id.habit_link);
+        final Button account=root.findViewById(R.id.account);
+        final Button settings=root.findViewById(R.id.settings);
+        final Button about=root.findViewById(R.id.about);
+        final Button logout=root.findViewById(R.id.logout);
+        final Button quiz=root.findViewById(R.id.test);
+
+
         habit_link.setOnClickListener(v -> startActivity(new Intent(getContext(), Habits.class)));
+        logout.setOnClickListener(v -> AuthUI.getInstance()
+                .signOut(getContext())
+                .addOnCompleteListener(task -> startActivity(new Intent(getContext(), Login.class))));
+        account.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), Account.class);
+            startActivity(intent);
+
+        });
+        about.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), About_us.class);
+            startActivity(intent);
+
+        });
+
+        about.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), About_us.class);
+            startActivity(intent);
+
+        });
+        quiz.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), QuizActivity.class);
+            startActivity(intent);
+
+        });
+
+
 
         return root;
     }
