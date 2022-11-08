@@ -23,8 +23,8 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
-        android:id="@+id/navigation_habits"
-        android:name="com.application.vozyk.ui.habits.Habits"
-        android:label="Habit"
-        tools:layout="@layout/fragment_habits" />
+        android:id="@+id/navigation_other"
+        android:name="com.application.vozyk.ui.other.Other"
+        android:label="Other"
+        tools:layout="@layout/fragment_other" />
 </navigation>

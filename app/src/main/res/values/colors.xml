@@ -11,5 +11,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#607D8B</color>
     <color name="fav">#607D8B</color>
-
+    <color name="colorDayT">#ffff7a</color>
+    <color name="colorDayB">#a0e6ff</color>
+    <color name="upArrow">#ddffca</color>
+    <color name="downArrow">#ffbdff</color>
 </resources>

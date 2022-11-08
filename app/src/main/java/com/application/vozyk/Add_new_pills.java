@@ -80,7 +80,7 @@ public class Add_new_pills extends AppCompatActivity {
         }else {
             DB.insertMedication(userMedicationName, userMedicationDosage, userDate, userTime, myIntValue);
             Intent intent = new Intent(this, NotificationsPills.class);
-            startActivity(intent);;
+            startActivity(intent);
         }
     }
     }

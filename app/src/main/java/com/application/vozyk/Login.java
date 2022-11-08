@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
         final Button mLoginBtn = findViewById(R.id.loginBtn);
         final TextView  mCreateBtn = findViewById(R.id.createText);
         final TextView  forgotTextLink = findViewById(R.id.forgotPassword);
-        //   signInButton = findViewById(R.id.btn_googleLogin);
+        Button  signInButton = findViewById(R.id.btn_googleLogin);
       //  final ImageView ShowHidePWD=findViewById(R.id.show_hide_pwd);
        /* ShowHidePWD.setOnClickListener(new View.OnClickListener() {
             @Override

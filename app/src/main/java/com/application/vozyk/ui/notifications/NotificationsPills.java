@@ -49,7 +49,7 @@ public class NotificationsPills extends Fragment {
 
         builder1 = new AlertDialog.Builder(getContext());
 
-        addButton = (FloatingActionButton) root.findViewById(R.id.add_button);
+        addButton = root.findViewById(R.id.add_button);
         db = new DatabaseHelper(getActivity());
         recyclerView = root.findViewById(R.id.recyclerView);
 
@@ -65,14 +65,6 @@ public class NotificationsPills extends Fragment {
 
         return root;
     }
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 || requestCode == 2) {
-            recreate();
-        }
-    }*/
 
     public void storeDataInArrays(){
         Cursor cursor = db.readAllData(myIntValue);
