@@ -126,6 +126,12 @@
         <activity
             android:name=".ui.ToDoList.ToDoListActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.notes.NoteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.notes.NotesListActivity"
+            android:exported="true" />
 
     </application>
 

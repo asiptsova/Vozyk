@@ -15,4 +15,6 @@
     <color name="colorDayB">#a0e6ff</color>
     <color name="upArrow">#ddffca</color>
     <color name="downArrow">#ffbdff</color>
+    <color name="colorDelete">#F44336</color>
+    <color name="launcherBackground">#EEAF28</color>
 </resources>
