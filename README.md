@@ -8,7 +8,7 @@ It contains the following main features:
    - notifications about meds and doctor visits,
    - self-assessment quiz,
    - to-do tracker.
-   
+   - notepad to record feelings and thoughts
    
 Group members: Yanina Asiptsova, Anastasiya Maksimenka
 
