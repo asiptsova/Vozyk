@@ -8,6 +8,8 @@ It contains the following main features:
    - notifications about meds and doctor visits,
    - self-assessment quiz,
    - to-do tracker.
+   
+   
 Group members: Yanina Asiptsova, Anastasiya Maksimenka
 
 Type of application: mobile (Android) 
