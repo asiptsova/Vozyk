@@ -123,6 +123,9 @@
         <activity
             android:name=".ui.ptsd.ptsdResultActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.ToDoList.ToDoListActivity"
+            android:exported="true" />
 
     </application>
 
