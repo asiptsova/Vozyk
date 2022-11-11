@@ -100,9 +100,7 @@ public class Mood extends Fragment  {
     private LineChart line_chart_for_streak;
 
 
-    public Mood() {
-        // Required empty public constructor
-    }
+    public Mood() {}
 
 
     @Override
@@ -318,7 +316,6 @@ public class Mood extends Fragment  {
                 return 11;
         }
     }
-
     private void set_the_days_on_the_real_text() {
         if (getView() != null) {
             TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
@@ -343,7 +340,6 @@ public class Mood extends Fragment  {
             }
         }
     }
-
     private void day_is_sunday() {
         int day = 1;
         if (return_first_day_of_month() == Calendar.SUNDAY) {
@@ -9977,7 +9973,7 @@ public class Mood extends Fragment  {
             }
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
             myEdit.putString("mood_stats", save_me);
-            myEdit.commit();
+            myEdit.apply();
         }
     }
 
@@ -10124,11 +10120,6 @@ public class Mood extends Fragment  {
         if (getView() != null) {
             ConstraintLayout layout_inside_scroll_in_the_bad_habits = getView().findViewById(R.id.layout_inside_scroll_in_the_bad_habits);
             TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.text_asking_did_you_relapse_in_share);
-            Button very_bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.very_bad_mood_button_in_habits_in_the_top_today);
-            Button bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.bad_mood_button_in_habits_in_the_top_today);
-            Button ok_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.ok_mood_button_in_habits_in_the_top_today);
-            Button good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.good_mood_button_in_habits_in_the_top_today);
-            Button very_good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.very_good_mood_button_in_habits_in_the_top_today);
             ProgressBar progress_bar_number_one_mood = getView().findViewById(R.id.progress_bar_number_one_mood);
             ProgressBar progress_bar_number_two_mood = getView().findViewById(R.id.progress_bar_number_two_mood);
             ProgressBar progress_bar_number_three_mood = getView().findViewById(R.id.progress_bar_number_three_mood);
@@ -11503,7 +11494,6 @@ public class Mood extends Fragment  {
             chart_in_mood_about_the_average_for_each_month.getAxisLeft().setDrawLabels(false);
             chart_in_mood_about_the_average_for_each_month.getAxisRight().setDrawLabels(false);
             chart_in_mood_about_the_average_for_each_month.setDrawValueAboveBar(false);
-
             chart_in_mood_about_the_average_for_each_month.setVisibleXRangeMaximum(7);
             chart_in_mood_about_the_average_for_each_month.moveViewToX(entries.size());
         }
@@ -11518,38 +11508,6 @@ public class Mood extends Fragment  {
             draw_the_bar_for_average_mood();
         }
     }
-
-
-    private Drawable return_mood_logo_white(int which) {
-        if (which == 0) {
-            Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_sentiment_very_dissatisfied_24).mutate();
-            Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-            return wrappedDrawable;
-        } else if (which == 1) {
-            Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_mood_bad_24).mutate();
-            Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-            return wrappedDrawable;
-        } else if (which == 2) {
-            Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_face_24).mutate();
-            Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-            return wrappedDrawable;
-        } else if (which == 3) {
-            Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_mood_24).mutate();
-            Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-            return wrappedDrawable;
-        } else {
-            Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_sentiment_very_satisfied_24).mutate();
-            Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-            DrawableCompat.setTint(wrappedDrawable, Color.WHITE);
-            return wrappedDrawable;
-        }
-    }
-
-
     private long return_start_date() {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
@@ -11557,7 +11515,7 @@ public class Mood extends Fragment  {
             if (first_time == -1) {
                 SharedPreferences.Editor myEdit = sharedPreferences.edit();
                 myEdit.putLong("first_date", Simplify_the_time.return_time_in_midnight(System.currentTimeMillis()));
-                myEdit.commit();
+                myEdit.apply();
                 return Simplify_the_time.return_time_in_midnight(System.currentTimeMillis());
             } else {
                 return first_time;
@@ -11580,11 +11538,10 @@ public class Mood extends Fragment  {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
             myEdit.putLong("first_date", Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis()));
-            myEdit.commit();
+            myEdit.apply();
             call_me_at_start();
         }
     }
-
     private void fade_the_views() {
         if (getView() != null && getContext() != null) {
             TextView title_of_the_card_saying_this_is_the_graph_card = getView().findViewById(R.id.title_of_the_card_saying_this_is_the_graph_card);
@@ -11614,8 +11571,6 @@ public class Mood extends Fragment  {
             chart_in_good_habits_about_how_many_times_for_each_days_of_week.setAlpha(1f);
             chart_in_mood_about_the_average_for_each_month.setAlpha(1f);
             text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setAlpha(1f);
-
         }
     }
-
 }

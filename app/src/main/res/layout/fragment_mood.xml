@@ -368,7 +368,6 @@
                   android:layout_width="48dp"
                   android:layout_height="42dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -379,7 +378,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/first_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -390,7 +388,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/second_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -401,7 +398,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/third_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -412,7 +408,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/fourth_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -423,7 +418,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/fifth_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -434,7 +428,6 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
-                  android:text=""
                   android:textStyle="bold"
                   app:layout_constraintStart_toEndOf="@+id/sixth_day_in_the_week_calender"
                   app:layout_constraintTop_toTopOf="parent" />
