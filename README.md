@@ -4,7 +4,7 @@ An app that helps you keep track of your mental state.
 It contains the following main features: 
    - registration/login option,
    - mood calendar with statistic about it,
-   - sleep monitoring,
+   - breathing exercises,
    - notifications about meds and doctor visits,
    - self-assessment quiz,
    - to-do tracker.
