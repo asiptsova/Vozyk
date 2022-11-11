@@ -3,20 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E7E8D1">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vožyk"
-        android:textSize="15sp"
+        android:text="Log in to Vožyk"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
-
+        app:layout_constraintVertical_bias="0.133" />
 
     <EditText
         android:id="@+id/Email"
@@ -24,16 +28,17 @@
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginBottom="456dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textSize="14sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -41,7 +46,7 @@
         android:layout_width="324dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:ems="10"
@@ -50,22 +55,24 @@
         android:padding="10dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email" />
 
-    <ImageView
-        android:id="@+id/show_hide_pwd"
-        android:layout_width="36dp"
-        android:layout_height="29dp"
-        android:layout_below="@id/Email"
-        android:layout_marginBottom="372dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
-        app:layout_constraintLeft_toRightOf="@+id/password"
-        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/show_hide_pwd"-->
+<!--        android:layout_width="282dp"-->
+<!--        android:layout_height="233dp"-->
+<!--        android:layout_below="@id/Email"-->
+<!--        android:layout_marginBottom="440dp"-->
+<!--        android:contentDescription="TODO"-->
+<!--        android:src="@drawable/vozyk_log"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.496"-->
+<!--        app:layout_constraintLeft_toRightOf="@+id/password"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <Button
         android:id="@+id/loginBtn"
@@ -74,22 +81,22 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="#A7BEAE"
         android:text="login"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
-
     <Button
         android:id="@+id/btn_googleLogin"
-        android:layout_width="115dp"
-        android:layout_height="40dp"
+        android:layout_width="119dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="144dp"
+        android:backgroundTint="#B85042"
         android:text="Google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
@@ -98,9 +105,12 @@
         android:id="@+id/createText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="create new account"
+        android:textSize="18dp"
+        android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
@@ -108,12 +118,12 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="forgot password"
+        android:layout_marginTop="36dp"
+        android:text="forgot password?"
+        android:textSize="15dp"
+        android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createText"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintTop_toBottomOf="@+id/createText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
