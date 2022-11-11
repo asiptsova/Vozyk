@@ -132,6 +132,9 @@
         <activity
             android:name=".ui.notes.NotesListActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.breathe.BreathingExerciseActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

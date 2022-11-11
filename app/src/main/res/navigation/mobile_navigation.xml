@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_mood" />
 
     <fragment
-        android:id="@+id/navigation_sleep"
-        android:name="com.application.vozyk.ui.sleep.Sleep"
-        android:label="Sleep"
+        android:id="@+id/navigation_breathe"
+        android:name="com.application.vozyk.ui.breathe.Breathe"
+        android:label="Breathe"
         tools:layout="@layout/fragment_sleep" />
 
     <fragment
