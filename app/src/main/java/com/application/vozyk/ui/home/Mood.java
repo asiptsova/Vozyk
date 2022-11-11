@@ -10142,36 +10142,7 @@ public class Mood extends Fragment  {
             DrawableCompat.setTint(drawable_for_buttons_three, color);
             layout_inside_scroll_in_the_bad_habits.setBackgroundColor(ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
             text_asking_did_you_relapse_in_share.setTextColor(color);
-            {
-                Drawable drawable_for_buttons_four = ContextCompat.getDrawable(getContext(), R.drawable.ripple_for_all_circle).mutate();
-                drawable_for_buttons_four = DrawableCompat.wrap(drawable_for_buttons_four);
-                DrawableCompat.setTint(drawable_for_buttons_four, ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
-                very_bad_mood_button_in_habits_in_the_top_today.setBackground(drawable_for_buttons_four);
-            }
-            {
-                Drawable drawable_for_buttons_four = ContextCompat.getDrawable(getContext(), R.drawable.ripple_for_all_circle).mutate();
-                drawable_for_buttons_four = DrawableCompat.wrap(drawable_for_buttons_four);
-                DrawableCompat.setTint(drawable_for_buttons_four, ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
-                bad_mood_button_in_habits_in_the_top_today.setBackground(drawable_for_buttons_four);
-            }
-            {
-                Drawable drawable_for_buttons_four = ContextCompat.getDrawable(getContext(), R.drawable.ripple_for_all_circle).mutate();
-                drawable_for_buttons_four = DrawableCompat.wrap(drawable_for_buttons_four);
-                DrawableCompat.setTint(drawable_for_buttons_four, ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
-                ok_mood_button_in_habits_in_the_top_today.setBackground(drawable_for_buttons_four);
-            }
-            {
-                Drawable drawable_for_buttons_four = ContextCompat.getDrawable(getContext(), R.drawable.ripple_for_all_circle).mutate();
-                drawable_for_buttons_four = DrawableCompat.wrap(drawable_for_buttons_four);
-                DrawableCompat.setTint(drawable_for_buttons_four, ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
-                good_mood_button_in_habits_in_the_top_today.setBackground(drawable_for_buttons_four);
-            }
-            {
-                Drawable drawable_for_buttons_four = ContextCompat.getDrawable(getContext(), R.drawable.ripple_for_all_circle).mutate();
-                drawable_for_buttons_four = DrawableCompat.wrap(drawable_for_buttons_four);
-                DrawableCompat.setTint(drawable_for_buttons_four, ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
-                very_good_mood_button_in_habits_in_the_top_today.setBackground(drawable_for_buttons_four);
-            }
+
             String very_bad_color = return_the_color_of_mood(1);
             String bad_color = return_the_color_of_mood(2);
             String ok_color = return_the_color_of_mood(3);
@@ -10827,41 +10798,41 @@ public class Mood extends Fragment  {
             Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_forward_above_mood_tracker_graph);
             View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_to_show_back_above_mood_tracker_graph);
 
-                Calendar calendar = Calendar.getInstance();
-                int real_month = calendar.get(Calendar.MONTH);
-                int real_year = calendar.get(Calendar.YEAR);
-                if (month_for_mood_chart == -1) {
-                    month_for_mood_chart = real_month;
-                    year_for_mood_chart = real_year;
-                    button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
-                    view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
-                } else if (month_for_mood_chart == real_month && year_for_mood_chart == real_year) {
-                    button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
-                    view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
-                } else {
-                    button_to_show_forward_above_mood_tracker_graph.setVisibility(View.VISIBLE);
-                    view_to_show_back_above_mood_tracker_graph.setVisibility(View.VISIBLE);
-                }
-                text_saying_month_year_in_the_chart_mood_tracker.setText(return_month(month_for_mood_chart).concat(" ").concat(String.valueOf(year_for_mood_chart)));
+            Calendar calendar = Calendar.getInstance();
+            int real_month = calendar.get(Calendar.MONTH);
+            int real_year = calendar.get(Calendar.YEAR);
+            if (month_for_mood_chart == -1) {
+                month_for_mood_chart = real_month;
+                year_for_mood_chart = real_year;
+                button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
+                view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
+            } else if (month_for_mood_chart == real_month && year_for_mood_chart == real_year) {
+                button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
+                view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
+            } else {
+                button_to_show_forward_above_mood_tracker_graph.setVisibility(View.VISIBLE);
+                view_to_show_back_above_mood_tracker_graph.setVisibility(View.VISIBLE);
+            }
+            text_saying_month_year_in_the_chart_mood_tracker.setText(return_month(month_for_mood_chart).concat(" ").concat(String.valueOf(year_for_mood_chart)));
 
 
-                int color_card = color;
-                line_chart_for_streak = getView().findViewById(R.id.cahrt_showing_mood_in_mood_tracker);
-                TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart);
-                line_chart_for_streak.invalidate();
-                line_chart_for_streak.clear();
-                ArrayList<Entry> y_values = new ArrayList<>();
-                String string_to_split = return_data_mood_for_mood_line_chart();
-                if (string_to_split.equals("")) {
-                    text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.VISIBLE);
-                    line_chart_for_streak.setVisibility(View.INVISIBLE);
-                    return;
-                }
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.INVISIBLE);
-                line_chart_for_streak.setVisibility(View.VISIBLE);
-                String[] split_data = string_to_split.split("big_split");
-                String[] small_split_for_last_value = split_data[split_data.length - 1].split("small_split");
-                int last_value = Integer.parseInt(small_split_for_last_value[0]);
+            int color_card = color;
+            line_chart_for_streak = getView().findViewById(R.id.cahrt_showing_mood_in_mood_tracker);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart);
+            line_chart_for_streak.invalidate();
+            line_chart_for_streak.clear();
+            ArrayList<Entry> y_values = new ArrayList<>();
+            String string_to_split = return_data_mood_for_mood_line_chart();
+            if (string_to_split.equals("")) {
+                text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.VISIBLE);
+                line_chart_for_streak.setVisibility(View.INVISIBLE);
+                return;
+            }
+            text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.INVISIBLE);
+            line_chart_for_streak.setVisibility(View.VISIBLE);
+            String[] split_data = string_to_split.split("big_split");
+            String[] small_split_for_last_value = split_data[split_data.length - 1].split("small_split");
+            int last_value = Integer.parseInt(small_split_for_last_value[0]);
 
             for (String split_datum : split_data) {
                 String[] small_split = split_datum.split("small_split");
@@ -10883,45 +10854,45 @@ public class Mood extends Fragment  {
                         break;
                 }
             }
-                line_chart_for_streak.fitScreen();
-                line_chart_for_streak.setPadding(0, 0, 0, 0);
-                line_chart_for_streak.getXAxis().setDrawGridLines(false);
-                line_chart_for_streak.getAxisLeft().setDrawGridLines(true);
-                line_chart_for_streak.getAxisRight().setDrawGridLines(false);
+            line_chart_for_streak.fitScreen();
+            line_chart_for_streak.setPadding(0, 0, 0, 0);
+            line_chart_for_streak.getXAxis().setDrawGridLines(false);
+            line_chart_for_streak.getAxisLeft().setDrawGridLines(true);
+            line_chart_for_streak.getAxisRight().setDrawGridLines(false);
 
-                XAxis xAxis = line_chart_for_streak.getXAxis();
-                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-                xAxis.setLabelCount(y_values.size(), false);
-                xAxis.setGranularity(1.0f);
-                xAxis.setGranularityEnabled(true); // Required to enable granularity
-                xAxis.setAvoidFirstLastClipping(true);
-                xAxis.setAxisMaximum(last_value + 0.1f);
-                line_chart_for_streak.getDescription().setText("");
-                line_chart_for_streak.setScaleEnabled(false);
-                line_chart_for_streak.getLegend().setEnabled(false);
+            XAxis xAxis = line_chart_for_streak.getXAxis();
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+            xAxis.setLabelCount(y_values.size(), false);
+            xAxis.setGranularity(1.0f);
+            xAxis.setGranularityEnabled(true); // Required to enable granularity
+            xAxis.setAvoidFirstLastClipping(true);
+            xAxis.setAxisMaximum(last_value + 0.1f);
+            line_chart_for_streak.getDescription().setText("");
+            line_chart_for_streak.setScaleEnabled(false);
+            line_chart_for_streak.getLegend().setEnabled(false);
 
-                line_chart_for_streak.getAxisRight().setEnabled(false);
-                line_chart_for_streak.getAxisLeft().setAxisMinimum(1);
-                line_chart_for_streak.getAxisLeft().setDrawAxisLine(false);
-                line_chart_for_streak.getAxisLeft().setGranularity(1.0f);
-                line_chart_for_streak.getAxisLeft().setGranularityEnabled(true); // Required to enable granularity
-                line_chart_for_streak.getAxisLeft().setAxisMaximum(5);
+            line_chart_for_streak.getAxisRight().setEnabled(false);
+            line_chart_for_streak.getAxisLeft().setAxisMinimum(1);
+            line_chart_for_streak.getAxisLeft().setDrawAxisLine(false);
+            line_chart_for_streak.getAxisLeft().setGranularity(1.0f);
+            line_chart_for_streak.getAxisLeft().setGranularityEnabled(true); // Required to enable granularity
+            line_chart_for_streak.getAxisLeft().setAxisMaximum(5);
 
-                LineDataSet lineDataSet = new LineDataSet(y_values, "data");
-                lineDataSet.setColor(color_card);
-                ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-                dataSets.add(lineDataSet);
-                LineData data = new LineData(dataSets);
-                line_chart_for_streak.setData(data);
-                line_chart_for_streak.getData().setHighlightEnabled(false);
-                lineDataSet.setLineWidth(3f);
-                lineDataSet.setCircleRadius(10f);
-                lineDataSet.setCircleHoleColor(Color.WHITE);
-                lineDataSet.setCircleColor(Color.WHITE);
-                lineDataSet.setDrawValues(false);
-                line_chart_for_streak.invalidate();
-                line_chart_for_streak.setVisibleXRangeMaximum(9);
-                line_chart_for_streak.moveViewToX(y_values.size());
+            LineDataSet lineDataSet = new LineDataSet(y_values, "data");
+            lineDataSet.setColor(color_card);
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(lineDataSet);
+            LineData data = new LineData(dataSets);
+            line_chart_for_streak.setData(data);
+            line_chart_for_streak.getData().setHighlightEnabled(false);
+            lineDataSet.setLineWidth(3f);
+            lineDataSet.setCircleRadius(10f);
+            lineDataSet.setCircleHoleColor(Color.WHITE);
+            lineDataSet.setCircleColor(Color.WHITE);
+            lineDataSet.setDrawValues(false);
+            line_chart_for_streak.invalidate();
+            line_chart_for_streak.setVisibleXRangeMaximum(9);
+            line_chart_for_streak.moveViewToX(y_values.size());
         }
     }
 
@@ -11134,170 +11105,170 @@ public class Mood extends Fragment  {
             BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
             BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.cahrt_in_good_habits_about_how_many_times_for_each_days_of_week);
 
-                float max_days = 0;
-                String days_of_week = return_the_days_of_the_good_habit();
-                String[] split_days_of_week = days_of_week.split("split");
+            float max_days = 0;
+            String days_of_week = return_the_days_of_the_good_habit();
+            String[] split_days_of_week = days_of_week.split("split");
             for (String s : split_days_of_week) {
                 if (max_days < Float.parseFloat(s)) {
                     max_days = Float.parseFloat(s);
                 }
             }
-                if (max_days == 0) {
-                    text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.VISIBLE);
-                    chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
-                    chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.INVISIBLE);
-                    return;
-                } else {
-                    text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.INVISIBLE);
-                }
-                final float max_days_final = max_days;
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.VISIBLE);
+            if (max_days == 0) {
+                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.VISIBLE);
                 chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
+                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.INVISIBLE);
+                return;
+            } else {
+                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.INVISIBLE);
+            }
+            final float max_days_final = max_days;
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.VISIBLE);
+            chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
 
-                CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chart_in_good_habits_about_how_many_times_for_each_days_of_week, chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAnimator(), chart_in_good_habits_about_how_many_times_for_each_days_of_week.getViewPortHandler());
-                barChartRender.setRadius(8);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setRenderer(barChartRender);
-                List<BarEntry> entries = new ArrayList<>();
-                String[] xAxisLabels;
-                int start_value;
-                if (return_first_day_of_week().equals("monday")) {
-                    xAxisLabels = new String[]{"M", "T", "W", "T", "F", "S", "S"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[6])));
-                    start_value = 0;
-                } else if (return_first_day_of_week().equals("tuesday")) {
-                    xAxisLabels = new String[]{"T", "W", "T", "F", "S", "S", "M"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[0])));
-                    start_value = 1;
-                } else if (return_first_day_of_week().equals("wednesday")) {
-                    xAxisLabels = new String[]{"W", "T", "F", "S", "S", "M", "T"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[1])));
-                    start_value = 2;
-                } else if (return_first_day_of_week().equals("thursday")) {
-                    xAxisLabels = new String[]{"T", "F", "S", "S", "M", "T", "W"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[2])));
-                    start_value = 3;
-                } else if (return_first_day_of_week().equals("friday")) {
-                    xAxisLabels = new String[]{"F", "S", "S", "M", "T", "W", "T"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[3])));
-                    start_value = 4;
-                } else if (return_first_day_of_week().equals("saturday")) {
-                    xAxisLabels = new String[]{"S", "S", "M", "T", "W", "T", "F"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[5])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[4])));
-                    start_value = 5;
-                } else {
-                    xAxisLabels = new String[]{"S", "M", "T", "W", "T", "F", "S"};
-                    entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[6])));
-                    entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[0])));
-                    entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[1])));
-                    entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[2])));
-                    entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[3])));
-                    entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[4])));
-                    entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[5])));
-                    start_value = 6;
-                }
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
-                ValueFormatter valueFormatter = new ValueFormatter() { //value format here, here is the overridden method
-                    @Override
-                    public String getFormattedValue(float value) {
-                        if (value == 0 || (value / max_days_final < 0.1)) {
-                            return "";
+            CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chart_in_good_habits_about_how_many_times_for_each_days_of_week, chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAnimator(), chart_in_good_habits_about_how_many_times_for_each_days_of_week.getViewPortHandler());
+            barChartRender.setRadius(8);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setRenderer(barChartRender);
+            List<BarEntry> entries = new ArrayList<>();
+            String[] xAxisLabels;
+            int start_value;
+            if (return_first_day_of_week().equals("monday")) {
+                xAxisLabels = new String[]{"M", "T", "W", "T", "F", "S", "S"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[6])));
+                start_value = 0;
+            } else if (return_first_day_of_week().equals("tuesday")) {
+                xAxisLabels = new String[]{"T", "W", "T", "F", "S", "S", "M"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[0])));
+                start_value = 1;
+            } else if (return_first_day_of_week().equals("wednesday")) {
+                xAxisLabels = new String[]{"W", "T", "F", "S", "S", "M", "T"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[1])));
+                start_value = 2;
+            } else if (return_first_day_of_week().equals("thursday")) {
+                xAxisLabels = new String[]{"T", "F", "S", "S", "M", "T", "W"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[2])));
+                start_value = 3;
+            } else if (return_first_day_of_week().equals("friday")) {
+                xAxisLabels = new String[]{"F", "S", "S", "M", "T", "W", "T"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[3])));
+                start_value = 4;
+            } else if (return_first_day_of_week().equals("saturday")) {
+                xAxisLabels = new String[]{"S", "S", "M", "T", "W", "T", "F"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[5])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[4])));
+                start_value = 5;
+            } else {
+                xAxisLabels = new String[]{"S", "M", "T", "W", "T", "F", "S"};
+                entries.add(new BarEntry(0, Float.parseFloat(split_days_of_week[6])));
+                entries.add(new BarEntry(1, Float.parseFloat(split_days_of_week[0])));
+                entries.add(new BarEntry(2, Float.parseFloat(split_days_of_week[1])));
+                entries.add(new BarEntry(3, Float.parseFloat(split_days_of_week[2])));
+                entries.add(new BarEntry(4, Float.parseFloat(split_days_of_week[3])));
+                entries.add(new BarEntry(5, Float.parseFloat(split_days_of_week[4])));
+                entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[5])));
+                start_value = 6;
+            }
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
+            ValueFormatter valueFormatter = new ValueFormatter() { //value format here, here is the overridden method
+                @Override
+                public String getFormattedValue(float value) {
+                    if (value == 0 || (value / max_days_final < 0.1)) {
+                        return "";
+                    } else {
+                        if ((int) value == value) {
+                            return "" + (int) value;
                         } else {
-                            if ((int) value == value) {
-                                return "" + (int) value;
-                            } else {
-                                return String.format("%.1f", value);
-                            }
+                            return String.format("%.1f", value);
                         }
                     }
-                };
-                String very_bad_color = return_the_color_of_mood(1);
-                String bad_color = return_the_color_of_mood(2);
-                String ok_color = return_the_color_of_mood(3);
-                String good_color = return_the_color_of_mood(4);
-                String very_good_color = return_the_color_of_mood(5);
-                int[] colors_for_bars = new int[7];
-                int counter = 0;
-                for (int i = start_value; i < start_value + 7; i++) {
-                    float average_value = Float.parseFloat(split_days_of_week[i % 7]);
-                    if (average_value <= 1.5) {
-                        colors_for_bars[counter] = Color.parseColor(very_bad_color);
-                    } else if (average_value <= 2.5) {
-                        colors_for_bars[counter] = Color.parseColor(bad_color);
-                    } else if (average_value <= 3.5) {
-                        colors_for_bars[counter] = Color.parseColor(ok_color);
-                    } else if (average_value <= 4.5) {
-                        colors_for_bars[counter] = Color.parseColor(good_color);
-                    } else {
-                        colors_for_bars[counter] = Color.parseColor(very_good_color);
-                    }
-                    counter++;
                 }
-                BarDataSet set = new BarDataSet(entries, "BarDataSet");
-                set.setColors(colors_for_bars);
-                set.setValueTextColor(Color.WHITE);
-                set.setValueTextSize(15);
-                set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-                BarData data = new BarData(set);
-                data.setValueFormatter(valueFormatter);
-                data.setBarWidth(0.9f); // set custom bar width
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setData(data);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.invalidate(); // refresh
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setScaleEnabled(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getLegend().setEnabled(false);   // Hide the legend
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setExtraOffsets(0, 0, 0, 0);
-                Description description = new Description();
-                description.setText("");
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDescription(description);
-                XAxis xAxis = chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis();
-                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-                data.setHighlightEnabled(false);
-                data.setBarWidth(0.7f);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setAxisMinimum(0f);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setAxisMinimum(0f);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setDrawGridLines(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawAxisLine(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawAxisLine(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawLabels(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawLabels(false);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDrawValueAboveBar(false);
+            };
+            String very_bad_color = return_the_color_of_mood(1);
+            String bad_color = return_the_color_of_mood(2);
+            String ok_color = return_the_color_of_mood(3);
+            String good_color = return_the_color_of_mood(4);
+            String very_good_color = return_the_color_of_mood(5);
+            int[] colors_for_bars = new int[7];
+            int counter = 0;
+            for (int i = start_value; i < start_value + 7; i++) {
+                float average_value = Float.parseFloat(split_days_of_week[i % 7]);
+                if (average_value <= 1.5) {
+                    colors_for_bars[counter] = Color.parseColor(very_bad_color);
+                } else if (average_value <= 2.5) {
+                    colors_for_bars[counter] = Color.parseColor(bad_color);
+                } else if (average_value <= 3.5) {
+                    colors_for_bars[counter] = Color.parseColor(ok_color);
+                } else if (average_value <= 4.5) {
+                    colors_for_bars[counter] = Color.parseColor(good_color);
+                } else {
+                    colors_for_bars[counter] = Color.parseColor(very_good_color);
+                }
+                counter++;
             }
+            BarDataSet set = new BarDataSet(entries, "BarDataSet");
+            set.setColors(colors_for_bars);
+            set.setValueTextColor(Color.WHITE);
+            set.setValueTextSize(15);
+            set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            BarData data = new BarData(set);
+            data.setValueFormatter(valueFormatter);
+            data.setBarWidth(0.9f); // set custom bar width
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setData(data);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.invalidate(); // refresh
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setScaleEnabled(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getLegend().setEnabled(false);   // Hide the legend
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setExtraOffsets(0, 0, 0, 0);
+            Description description = new Description();
+            description.setText("");
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDescription(description);
+            XAxis xAxis = chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis();
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+            data.setHighlightEnabled(false);
+            data.setBarWidth(0.7f);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setAxisMinimum(0f);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setAxisMinimum(0f);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setDrawGridLines(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawAxisLine(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawAxisLine(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawLabels(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawLabels(false);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDrawValueAboveBar(false);
         }
+    }
 
 
     private String return_first_day_of_week() {
@@ -11630,19 +11601,19 @@ public class Mood extends Fragment  {
             BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
             TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse);
 
-                title_of_the_card_saying_this_is_the_graph_card.setAlpha(1f);
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setAlpha(1f);
-                button_to_show_back_above_mood_tracker_graph.setAlpha(1f);
-                button_to_show_forward_above_mood_tracker_graph.setAlpha(1f);
-                view_to_show_back_above_mood_tracker_graph.setAlpha(1f);
-                view_button_over_for_good_habits.setAlpha(1f);
-                text_saying_month_year_in_the_chart_mood_tracker.setAlpha(1f);
-                chart_showing_mood_in_mood_tracker.setAlpha(1f);
+            title_of_the_card_saying_this_is_the_graph_card.setAlpha(1f);
+            text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setAlpha(1f);
+            button_to_show_back_above_mood_tracker_graph.setAlpha(1f);
+            button_to_show_forward_above_mood_tracker_graph.setAlpha(1f);
+            view_to_show_back_above_mood_tracker_graph.setAlpha(1f);
+            view_button_over_for_good_habits.setAlpha(1f);
+            text_saying_month_year_in_the_chart_mood_tracker.setAlpha(1f);
+            chart_showing_mood_in_mood_tracker.setAlpha(1f);
 
-                text_title_of_weekly_daily_habit_in_card.setAlpha(1f);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setAlpha(1f);
-                chart_in_mood_about_the_average_for_each_month.setAlpha(1f);
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setAlpha(1f);
+            text_title_of_weekly_daily_habit_in_card.setAlpha(1f);
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setAlpha(1f);
+            chart_in_mood_about_the_average_for_each_month.setAlpha(1f);
+            text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setAlpha(1f);
 
         }
     }

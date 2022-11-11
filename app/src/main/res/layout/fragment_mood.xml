@@ -296,10 +296,9 @@
 
           <androidx.constraintlayout.widget.ConstraintLayout
               android:id="@+id/calender_in_stats"
-              android:layout_width="304dp"
-              android:layout_height="320dp"
+              android:layout_width="400dp"
+              android:layout_height="350dp"
               android:layout_marginTop="20dp"
-              android:background="@color/white"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent">
@@ -322,7 +321,6 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/ripple_for_all_circle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -331,7 +329,6 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/ripple_for_all_circle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -359,8 +356,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/child_of_calender_showing_days"
-                android:layout_width="304dp"
-                android:layout_height="40dp"
+                android:layout_width="380dp"
+                android:layout_height="50dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -368,8 +365,8 @@
 
               <TextView
                   android:id="@+id/first_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:gravity="center"
                   android:text=""
                   android:textStyle="bold"
@@ -378,8 +375,8 @@
 
               <TextView
                   android:id="@+id/second_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -389,8 +386,8 @@
 
               <TextView
                   android:id="@+id/third_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -400,8 +397,8 @@
 
               <TextView
                   android:id="@+id/fourth_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -411,8 +408,8 @@
 
               <TextView
                   android:id="@+id/fifth_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -422,8 +419,8 @@
 
               <TextView
                   android:id="@+id/sixth_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -433,8 +430,8 @@
 
               <TextView
                   android:id="@+id/seventh_day_in_the_week_calender"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:gravity="center"
                   android:text=""
@@ -448,8 +445,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/child_showing_days_number_for_calender"
-                android:layout_width="304dp"
-                android:layout_height="240dp"
+                android:layout_width="370dp"
+                android:layout_height="280dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -458,16 +455,18 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_1"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="45dp"
-                  android:layout_height="45dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toTopOf="parent" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_2"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -475,17 +474,19 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_3"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
                   app:layout_constraintTop_toTopOf="parent" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_4"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -493,8 +494,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_5"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -502,8 +504,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_6"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -511,8 +514,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_7"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -520,16 +524,18 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_8"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_9"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
@@ -537,17 +543,18 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_10"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
-                  android:layout_marginStart="4dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"                  android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_11"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
@@ -555,8 +562,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_12"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
@@ -564,17 +572,19 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_13"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_14"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
@@ -582,16 +592,18 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_15"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_16"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
@@ -599,8 +611,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_17"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
@@ -608,8 +621,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_18"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
@@ -617,17 +631,20 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_19"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
+                  android:text=""
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_20"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
@@ -635,8 +652,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_21"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
@@ -644,16 +662,19 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_22"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_23"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="45dp"
-                  android:layout_height="45dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:alpha="100"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -661,8 +682,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_24"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -670,8 +692,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_25"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -679,8 +702,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_26"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -688,8 +712,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_27"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -697,8 +722,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_28"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
@@ -706,16 +732,18 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_29"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_30"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
@@ -723,8 +751,9 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_31"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
@@ -732,17 +761,19 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_32"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_33"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
@@ -750,41 +781,46 @@
               <Button
                   android:id="@+id/calender_button_showing_shadow_34"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_35"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_36"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:background="@drawable/round_button"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
+                  android:layout_marginStart="2dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_37"
                   style="?android:attr/borderlessButtonStyle"
-                  android:layout_width="40dp"
-                  android:layout_height="40dp"
+                  android:layout_width="48dp"
+                  android:layout_height="42dp"
                   android:layout_marginStart="4dp"
+                  android:background="@drawable/round_button"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
 
               <View
                   android:id="@+id/calender_under_number_state_1"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -792,7 +828,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_2"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -801,16 +837,15 @@
 
               <View
                   android:id="@+id/calender_under_number_state_3"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
-                  android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
                   app:layout_constraintTop_toTopOf="parent" />
 
               <View
                   android:id="@+id/calender_under_number_state_4"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -819,7 +854,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_5"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -828,7 +863,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_6"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -837,7 +872,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_7"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -846,7 +881,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_8"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -854,7 +889,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_9"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -863,7 +898,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_10"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -872,7 +907,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_11"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -881,7 +916,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_12"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -890,7 +925,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_13"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -899,7 +934,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_14"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -908,7 +943,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_15"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -916,7 +951,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_16"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -925,7 +960,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_17"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -934,7 +969,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_18"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -943,7 +978,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_19"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -952,7 +987,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_20"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -961,7 +996,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_21"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -970,7 +1005,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_22"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -978,7 +1013,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_23"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -987,7 +1022,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_24"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -996,7 +1031,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_25"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1005,7 +1040,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_26"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1014,7 +1049,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_27"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1023,7 +1058,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_28"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1032,7 +1067,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_29"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -1040,7 +1075,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_30"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1049,7 +1084,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_31"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1058,7 +1093,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_32"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1067,7 +1102,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_33"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1076,7 +1111,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_34"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1085,7 +1120,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_35"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1094,7 +1129,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_36"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -1102,7 +1137,7 @@
 
               <View
                   android:id="@+id/calender_under_number_state_37"
-                  android:layout_width="40dp"
+                  android:layout_width="48dp"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1440,7 +1475,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="42dp"
               android:layout_height="42dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:visibility="gone"
               app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
               app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
@@ -1452,7 +1486,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="42dp"
               android:layout_height="42dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:visibility="gone"
               app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
               app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
@@ -1464,7 +1497,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="42dp"
               android:layout_height="42dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:visibility="gone"
               app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
               app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
@@ -1476,7 +1508,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="42dp"
               android:layout_height="42dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:visibility="gone"
               app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
               app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
@@ -1488,7 +1519,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="42dp"
               android:layout_height="42dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:visibility="gone"
               app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
               app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
@@ -2028,7 +2058,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="40dp"
               android:layout_height="40dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:layout_marginTop="20dp"
               android:layout_marginStart="30dp"
               app:layout_constraintStart_toStartOf="parent"
@@ -2039,7 +2068,6 @@
               style="?android:attr/borderlessButtonStyle"
               android:layout_width="40dp"
               android:layout_height="40dp"
-              android:background="@drawable/ripple_for_all_circle"
               android:layout_marginTop="20dp"
               android:layout_marginEnd="30dp"
               app:layout_constraintEnd_toEndOf="parent"

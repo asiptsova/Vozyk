@@ -3,13 +3,13 @@
     <item>
         <shape android:shape="oval">
             <solid android:color="@android:color/transparent"/>
-            <size android:height="40dp" android:width="40dp"/>
+            <size android:height="48dp" android:width="42dp"/>
         </shape>
     </item>
     <item android:top="8dp" android:bottom="8dp" android:left="8dp" android:right="8dp">
         <shape android:shape="oval">
-            <solid android:color="@color/white"/>
-            <size android:width="40dp" android:height="40dp"/>
+            <solid android:color="@android:color/transparent"/>
+            <size android:width="48dp" android:height="42dp"/>
         </shape>
     </item>
 </layer-list>
