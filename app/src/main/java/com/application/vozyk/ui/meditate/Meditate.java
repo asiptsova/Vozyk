@@ -17,7 +17,7 @@ import com.application.vozyk.R;
 import java.util.Locale;
 
 public class Meditate extends AppCompatActivity {
-    MediaPlayer mysong;
+    MediaPlayer mySong;
     private EditText mEditTextInput;
     private TextView mTextViewCountDown;
     private Button mButtonSet;
@@ -37,7 +37,7 @@ public class Meditate extends AppCompatActivity {
         mButtonSet = findViewById(R.id.button_set);
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
-        mysong=MediaPlayer.create(Meditate.this, R.raw.meditationmusic);
+        mySong =MediaPlayer.create(Meditate.this, R.raw.meditationmusic);
         mButtonSet.setOnClickListener(v -> {
             String input = mEditTextInput.getText().toString();
             if (input.length() == 0) {
@@ -58,10 +58,10 @@ public class Meditate extends AppCompatActivity {
         });
         mButtonStartPause.setOnClickListener(v -> {
             if (mTimerRunning) {
-                mysong.pause();
+                mySong.pause();
                 pauseTimer();
             } else {
-                mysong.start();
+                mySong.start();
                 startTimer();
             }
         });
@@ -69,7 +69,7 @@ public class Meditate extends AppCompatActivity {
     }
     protected void onPause(){
         super.onPause();
-        mysong.pause();
+        mySong.pause();
         pauseTimer();
     }
     private void setTime(long milliseconds) {
