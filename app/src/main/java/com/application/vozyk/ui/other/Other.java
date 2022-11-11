@@ -1,5 +1,6 @@
 package com.application.vozyk.ui.other;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +14,12 @@ import androidx.fragment.app.Fragment;
 import com.application.vozyk.About_us;
 import com.application.vozyk.Account;
 import com.application.vozyk.Login;
-import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.Registration;
 import com.application.vozyk.ui.ToDoList.ToDoListActivity;
-import com.application.vozyk.ui.habits.Habit;
 import com.application.vozyk.ui.habits.Habits;
 import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 
 public class Other extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,9 +36,26 @@ public class Other extends Fragment {
 
 
         habit_link.setOnClickListener(v -> startActivity(new Intent(getContext(), Habits.class)));
-        logout.setOnClickListener(v -> AuthUI.getInstance()
+        /*logout.setOnClickListener(v -> AuthUI.getInstance()
                 .signOut(getContext())
-                .addOnCompleteListener(task -> startActivity(new Intent(getContext(), Login.class))));
+                .addOnCompleteListener(task -> startActivity(new Intent(getContext(), Login.class))));*/
+
+        logout.setOnClickListener(v -> {
+            final AlertDialog.Builder b = new AlertDialog.Builder(getContext());
+            b.setMessage("Are you sure you want to sign out?");
+            b.setCancelable(true);
+            b.setNegativeButton("Yes", (dialog, which) -> {
+                dialog.cancel();
+                AuthUI.getInstance()
+               .signOut(getContext())
+                        .addOnCompleteListener(task -> startActivity(new Intent(getContext(), Login.class)));
+            });
+            b.setPositiveButton("No", (dialog, which) -> {
+            });
+            AlertDialog a = b.create();
+            a.show();
+        });
+
         account.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Account.class);
             startActivity(intent);
