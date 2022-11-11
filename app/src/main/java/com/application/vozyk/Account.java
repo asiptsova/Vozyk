@@ -26,7 +26,7 @@ public class Account extends AppCompatActivity {
 
     private TextView first_name_txt;
     private FirebaseUser user;
-    private ImageView profilepic;
+    private ImageView profilePic;
     Uri imageUri;
 
     public FirebaseFirestore myDatabase;
@@ -38,7 +38,7 @@ public class Account extends AppCompatActivity {
         setContentView(R.layout.activity_account);
         first_name_txt = findViewById(R.id.firstname_textview);
         first_name_txt.getBackground().setAlpha(75);
-        profilepic= findViewById(R.id.imagetoupload);
+        profilePic = findViewById(R.id.imagetoupload);
 
         myDatabase = FirebaseFirestore.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -47,9 +47,9 @@ public class Account extends AppCompatActivity {
         if (user.getPhotoUrl() != null) {
             Glide.with(this)
                     .load(user.getPhotoUrl())
-                    .into(profilepic);
+                    .into(profilePic);
         }
-        profilepic.setOnClickListener(v -> {
+        profilePic.setOnClickListener(v -> {
             Intent gallery = new Intent();
             gallery.setType("image/*");
             gallery.setAction(Intent.ACTION_GET_CONTENT);
@@ -64,8 +64,8 @@ public class Account extends AppCompatActivity {
             String uid = user.getUid();
             myDatabase.collection("users").document(uid).get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    DocumentSnapshot docsnap = task.getResult();
-                    String name = docsnap.getString("Name");
+                    DocumentSnapshot documentSnapshot = task.getResult();
+                    String name = documentSnapshot.getString("Name");
                     first_name_txt.setText(name);
 
                 }
@@ -83,7 +83,7 @@ public class Account extends AppCompatActivity {
 
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                profilepic.setImageBitmap(bitmap);
+                profilePic.setImageBitmap(bitmap);
                 uploadFile(bitmap);
 
             } catch (IOException e) {
@@ -93,15 +93,15 @@ public class Account extends AppCompatActivity {
     }
 
     private void uploadFile(Bitmap b) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        b.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        b.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         final StorageReference reference = FirebaseStorage.getInstance().getReference()
                 .child("profileImages")
                 .child(uid + ".jpeg");
 
-        reference.putBytes(baos.toByteArray())
+        reference.putBytes(byteArrayOutputStream.toByteArray())
                 .addOnSuccessListener(taskSnapshot -> {
                     getDownloadUrl(reference);
                     Toast.makeText(Account.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();

@@ -135,6 +135,9 @@
         <activity
             android:name=".ui.breathe.BreathingExerciseActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.meditate.Meditate"
+            android:exported="true" />
     </application>
 
 </manifest>
