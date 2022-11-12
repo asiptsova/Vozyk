@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsPills">
+    tools:context=".ui.notifications.NotificationsPills"
+    android:background="#E7E8D1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,6 +70,7 @@
             android:layout_alignParentBottom="true"
             app:itemBackground="@color/purple_200"
             app:itemTextColor="@color/white"
+            android:background="#E7E8D1"
             />
 
     </RelativeLayout>

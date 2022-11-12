@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#E7E8D1">
 
   <ScrollView
       android:id="@+id/scroll_view_to_take_screen_show_in_good_habtis"
@@ -41,12 +42,14 @@
       android:id="@+id/scroll_view_in_bad_habits_view_home"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      app:layout_constraintBottom_toBottomOf="parent">
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:background="#E7E8D1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_inside_scroll_in_the_bad_habits"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#E7E8D1">
 
       <TextView
           android:id="@+id/did_you_do_the_habit_in_the_good_view"
@@ -54,7 +57,7 @@
           android:layout_height="wrap_content"
           android:layout_marginTop="50dp"
           android:text="How was your mood today?"
-          android:textColor="@color/black"
+          android:textColor="#234E70"
           android:textSize="19sp"
           android:textStyle="bold"
           app:layout_constraintEnd_toEndOf="parent"
@@ -308,7 +311,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Month year"
-                android:textColor="@color/black"
+                android:textColor="#234E70"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits"
@@ -1718,7 +1721,7 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
               android:text="Average mood"
-              android:textColor="@color/black"
+              android:textColor="#234E70"
               android:textSize="18sp"
               android:textStyle="bold"
               app:layout_constraintEnd_toEndOf="parent"
@@ -2022,7 +2025,7 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
               android:text="Mood Chart"
-              android:textColor="@color/black"
+              android:textColor="#234E70"
               android:textSize="18sp"
               android:textStyle="bold"
               app:layout_constraintEnd_toEndOf="parent"
@@ -2093,7 +2096,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Month year"
-              android:textColor="@color/black"
+              android:textColor="#234E70"
               android:textSize="20sp"
               android:textStyle="bold"
               app:layout_constraintStart_toStartOf="parent"
@@ -2148,7 +2151,7 @@
               android:gravity="center"
               android:text="Weekly Mood Average"
               android:textAlignment="center"
-              android:textColor="@color/black"
+              android:textColor="#234E70"
               android:textSize="18sp"
               android:textStyle="bold"
               app:layout_constraintEnd_toEndOf="parent"

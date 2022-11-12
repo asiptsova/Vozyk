@@ -15,20 +15,12 @@
         android:background="#cff7d3 "
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="false"
-            app:srcCompat="@drawable/voz"/>
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_extrabold"
-            android:text="breathing_exercise"
+            android:text="Breathing Exercise"
             android:textAlignment="center"
             android:textColor="#1A237E"
             android:textSize="30sp"
@@ -43,7 +35,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-40dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/breathing_background">
+        android:background="#cff7d3 ">
+<!--        android:background="@drawable/breathing_background">-->
 
         <ScrollView
             android:layout_width="match_parent"
@@ -238,10 +231,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/rounded_button"
-                    android:backgroundTint="#C0B2E7"
+                    android:backgroundTint="#B85042"
                     android:text="start"
-                    android:textColor="#664564"
+                    android:textColor="@color/white"
                     android:textColorHint="#664564"
                     android:textColorLink="#664564"
                     android:textSize="24dp"
@@ -250,7 +242,7 @@
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintVertical_bias="0.25" />
-
+<!--                android:background="@drawable/rounded_button"-->
             </LinearLayout>
 
         </ScrollView>
