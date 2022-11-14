@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5B3ED"
-    tools:context=".ui.meditate.Meditate">
+    tools:context=".ui.relax.Meditate">
 
     <EditText
         android:id="@+id/edit_text_input"

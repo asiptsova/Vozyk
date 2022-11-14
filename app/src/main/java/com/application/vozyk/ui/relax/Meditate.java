@@ -1,22 +1,29 @@
-package com.application.vozyk.ui.meditate;
+package com.application.vozyk.ui.relax;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
+import static android.content.Context.MODE_PRIVATE;
 
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.application.vozyk.R;
 
 import java.util.Locale;
 
-public class Meditate extends AppCompatActivity {
+public class Meditate extends Fragment {
     MediaPlayer mySong;
     private EditText mEditTextInput;
     private TextView mTextViewCountDown;
@@ -29,28 +36,29 @@ public class Meditate extends AppCompatActivity {
     private long mTimeLeftInMillis;
     private long mEndTime;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meditate);
-        mEditTextInput = findViewById(R.id.edit_text_input);
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
-        mButtonSet = findViewById(R.id.button_set);
-        mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonReset = findViewById(R.id.button_reset);
-        mySong =MediaPlayer.create(Meditate.this, R.raw.meditationmusic);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+        View root = inflater.inflate(R.layout.activity_meditate, container, false);
+        mEditTextInput = root.findViewById(R.id.edit_text_input);
+        mTextViewCountDown = root.findViewById(R.id.text_view_countdown);
+        mButtonSet = root.findViewById(R.id.button_set);
+        mButtonStartPause = root.findViewById(R.id.button_start_pause);
+        mButtonReset = root.findViewById(R.id.button_reset);
+        mySong =MediaPlayer.create(getContext(), R.raw.meditationmusic);
         mButtonSet.setOnClickListener(v -> {
             String input = mEditTextInput.getText().toString();
             if (input.length() == 0) {
-                Toast.makeText(Meditate.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Field can't be empty", Toast.LENGTH_SHORT).show();
                 return;
             }
             if(Long.parseLong(input)<5||Long.parseLong(input)>30){
-                Toast.makeText(Meditate.this, "Please enter in range", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Please enter in range", Toast.LENGTH_SHORT).show();
                 return;
             }
             long millisInput = Long.parseLong(input) * 60000;
             if (millisInput == 0) {
-                Toast.makeText(Meditate.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Please enter a positive number", Toast.LENGTH_SHORT).show();
                 return;
             }
             setTime(millisInput);
@@ -66,8 +74,10 @@ public class Meditate extends AppCompatActivity {
             }
         });
         mButtonReset.setOnClickListener(v -> resetTimer());
+        return root;
     }
-    protected void onPause(){
+
+    public void onPause(){
         super.onPause();
         mySong.pause();
         pauseTimer();
@@ -140,17 +150,17 @@ public class Meditate extends AppCompatActivity {
             }
         }
     }
-    private void closeKeyboard() {
-        View view = this.getCurrentFocus();
+    public void closeKeyboard() {
+        View view = getActivity().getCurrentFocus();
         if (view != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putLong("startTimeInMillis", mStartTimeInMillis);
         editor.putLong("millisLeft", mTimeLeftInMillis);
@@ -162,9 +172,9 @@ public class Meditate extends AppCompatActivity {
         }
     }
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
         mStartTimeInMillis = prefs.getLong("startTimeInMillis", 600000);
         mTimeLeftInMillis = prefs.getLong("millisLeft", mStartTimeInMillis);
         mTimerRunning = prefs.getBoolean("timerRunning", false);

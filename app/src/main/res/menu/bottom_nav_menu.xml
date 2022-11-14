@@ -7,9 +7,9 @@
         android:title="Mood" />
 
     <item
-        android:id="@+id/navigation_breathe"
+        android:id="@+id/navigation_relax"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Breathe" />
+        android:title="Relax" />
 
     <item
         android:id="@+id/navigation_notifications"

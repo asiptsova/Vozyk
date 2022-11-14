@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.breathe;
+package com.application.vozyk.ui.relax;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

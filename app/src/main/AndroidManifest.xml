@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vožyk"
         tools:targetApi="31">
+
         <activity
             android:name=".Add_new_pills"
             android:exported="false">
@@ -133,11 +134,9 @@
             android:name=".ui.notes.NotesListActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.breathe.BreathingExerciseActivity"
+            android:name=".ui.relax.BreathingExerciseActivity"
             android:exported="true" />
-        <activity
-            android:name=".ui.meditate.Meditate"
-            android:exported="true" />
+
     </application>
 
 </manifest>

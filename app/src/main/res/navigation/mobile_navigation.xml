@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
+    android:label="Relax"
     app:startDestination="@+id/navigation_mood">
 
     <fragment
@@ -12,10 +13,10 @@
         tools:layout="@layout/fragment_mood" />
 
     <fragment
-        android:id="@+id/navigation_breathe"
-        android:name="com.application.vozyk.ui.breathe.Breathe"
+        android:id="@+id/navigation_relax"
+        android:name="com.application.vozyk.ui.relax.Relax"
         android:label="Breathe"
-        tools:layout="@layout/fragment_sleep" />
+        tools:layout="@layout/activity_relax" />
 
     <fragment
         android:id="@+id/navigation_notifications"

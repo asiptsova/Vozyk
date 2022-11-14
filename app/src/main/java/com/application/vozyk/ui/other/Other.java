@@ -17,7 +17,6 @@ import com.application.vozyk.Login;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.ToDoList.ToDoListActivity;
 import com.application.vozyk.ui.habits.Habits;
-import com.application.vozyk.ui.meditate.Meditate;
 import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
 import com.firebase.ui.auth.AuthUI;
@@ -34,7 +33,6 @@ public class Other extends Fragment {
         final Button quiz=root.findViewById(R.id.test);
         final Button toDo=root.findViewById(R.id.toDo);
         final Button notes=root.findViewById(R.id.notes);
-        final Button meditate=root.findViewById(R.id.meditate);
 
         habit_link.setOnClickListener(v -> startActivity(new Intent(getContext(), Habits.class)));
 
@@ -77,10 +75,6 @@ public class Other extends Fragment {
         });
         notes.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), NotesListActivity.class);
-            startActivity(intent);
-        });
-        meditate.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), Meditate.class);
             startActivity(intent);
         });
 
