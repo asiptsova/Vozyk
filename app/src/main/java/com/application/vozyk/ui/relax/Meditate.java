@@ -79,8 +79,11 @@ public class Meditate extends Fragment {
 
     public void onPause(){
         super.onPause();
-        mySong.pause();
-        pauseTimer();
+        try {
+            mySong.pause();
+            pauseTimer();
+        }
+        catch(Exception error) {}
     }
     private void setTime(long milliseconds) {
         mStartTimeInMillis = milliseconds;
@@ -105,9 +108,12 @@ public class Meditate extends Fragment {
         updateWatchInterface();
     }
     private void pauseTimer() {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-        updateWatchInterface();
+        try {
+            mCountDownTimer.cancel();
+            mTimerRunning = false;
+            updateWatchInterface();
+        }
+        catch(Exception error) {}
     }
     private void resetTimer() {
         mTimeLeftInMillis = mStartTimeInMillis;
