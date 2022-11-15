@@ -15,10 +15,10 @@ import com.application.vozyk.About_us;
 import com.application.vozyk.Account;
 import com.application.vozyk.Login;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.ToDoList.ToDoListActivity;
 import com.application.vozyk.ui.habits.Habits;
 import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
+import com.application.vozyk.ui.ToDoList.ToDoListActivity;
 import com.firebase.ui.auth.AuthUI;
 
 public class Other extends Fragment {
