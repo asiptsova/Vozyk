@@ -18,4 +18,8 @@
     <color name="colorDelete">#F44336</color>
     <color name="launcherBackground">#EEAF28</color>
     <color name="mint">#1BEDD9</color>
+    <color name="lemonGreen">#41E32F</color>
+    <color name="OrangeAeroSpace">#fd5200</color>
+    <color name="YellowAeroSpace">#FFE162</color>
+
 </resources>
