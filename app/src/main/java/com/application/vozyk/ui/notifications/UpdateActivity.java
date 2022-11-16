@@ -2,16 +2,12 @@ package com.application.vozyk.ui.notifications;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.home.Mood;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.timepicker.MaterialTimePicker;
@@ -36,7 +32,6 @@ public class UpdateActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private MaterialButtonToggleGroup materialButtonToggleGroup;
     private MaterialButtonToggleGroup materialButtonToggleGroup1;
-    private boolean before_food;
     private Button up_custom_time;
     private String custom_time_value = "0000";
 
@@ -88,7 +83,7 @@ public class UpdateActivity extends AppCompatActivity {
             if (InputValidationHandler.inputValidation(getData().getName(), getData().getReminder())) {
                 myRef.child(KEY).setValue(getData());
                 startActivity(
-                        new Intent(UpdateActivity.this, Mood.class)
+                        new Intent(UpdateActivity.this, MainActivity.class)
                                 .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
                 );
             } else {
@@ -127,7 +122,7 @@ public class UpdateActivity extends AppCompatActivity {
 
 
         cancelBtn.setOnClickListener(view -> startActivity(
-                new Intent(UpdateActivity.this, Mood.class)
+                new Intent(UpdateActivity.this, MainActivity.class)
                         .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
         ));
 
