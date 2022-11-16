@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/YellowAeroSpace"
+    android:background="#cff7d3"
     tools:context=".lab.labActivity">
 
     <RelativeLayout
@@ -62,7 +62,7 @@
             android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/lab_listview"
             app:layout_constraintStart_toStartOf="@+id/lab_listview"
-            app:layout_constraintTop_toBottomOf="@+id/lab_account_user_name_view" />
+            />
     </RelativeLayout>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

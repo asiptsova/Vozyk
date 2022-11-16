@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.application.vozyk.R;
+import com.application.vozyk.lab.labActivity;
 import com.application.vozyk.ui.notifications.NotificationsPills;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -93,28 +94,23 @@ public class DoctorActivity extends AppCompatActivity {
 
         listview.setAdapter(c);
 
-        findViewById(R.id.doctor_add_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DoctorActivity.this, DoctorAddActivity.class));
-            }
-        });
+        findViewById(R.id.doctor_add_btn).setOnClickListener(view -> startActivity(new Intent(DoctorActivity.this, DoctorAddActivity.class)));
 
-        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_medicine:
+        bottomAppBar.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_medicine:
+                    try {
                         startActivity(new Intent(DoctorActivity.this, NotificationsPills.class));
-                        break;
-                    case R.id.nav_lab:
-                        // startActivity(new Intent(DoctorActivity.this, labActivity.class));
-                        break;
-                    default:
-                        return false;
-                }
-                return true;
+                    }
+                    catch (Exception ignored){}
+                    break;
+                case R.id.nav_lab:
+                     startActivity(new Intent(DoctorActivity.this, labActivity.class));
+                    break;
+                default:
+                    return false;
             }
+            return true;
         });
 
 
