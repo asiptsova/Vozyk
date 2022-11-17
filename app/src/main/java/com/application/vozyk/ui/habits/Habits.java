@@ -30,23 +30,21 @@ import java.util.Observer;
 public class Habits extends AppCompatActivity implements Observer, OnCompleteListener<QuerySnapshot> {
 
     private static final String TAG = "HabitTrackerActivity";
-    private Button newHabit;
-    private ArrayList<Habit> habitList = new ArrayList<>();
+    private final ArrayList<Habit> habitList = new ArrayList<>();
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_habits);
 
-        recyclerView = findViewById(R.id.habitlist);
+        RecyclerView recyclerView = findViewById(R.id.habitlist);
 
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
-        newHabit = findViewById(R.id.new_habit);
+        Button newHabit = findViewById(R.id.new_habit);
         newHabit.setOnClickListener(v -> {
             Intent i = new Intent(getApplicationContext(), NewHabitActivity.class);
             startActivity(i);

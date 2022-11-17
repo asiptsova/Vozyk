@@ -15,16 +15,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="13dp"
-        android:text="Create A New Account"
+        android:text="@string/create_a_new_account"
         android:textColor="#234E70"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fullName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintVertical_bias="0.34" />
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="106dp"
+        android:layout_height="91dp"
+        android:layout_below="@id/Email"
+        android:layout_marginBottom="548dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/voz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintLeft_toRightOf="@+id/password"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/fullName"
@@ -32,16 +45,16 @@
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="476dp"
+        android:layout_marginBottom="480dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
 
         />
@@ -55,7 +68,7 @@
         android:layout_marginEnd="51dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textSize="14sp"
@@ -73,7 +86,7 @@
         android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textSize="14sp"
@@ -89,11 +102,13 @@
         android:layout_below="@id/Email"
         android:layout_marginStart="322dp"
         android:layout_marginEnd="7dp"
+        android:background="@drawable/hide_show"
         android:layout_marginBottom="348dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="TODO" />
 
     <EditText
         android:id="@+id/etConfirmPassword"
@@ -103,7 +118,7 @@
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textSize="14sp"
@@ -118,7 +133,7 @@
         android:layout_marginBottom="180dp"
         android:backgroundTint="#A7BEAE"
         android:enabled="true"
-        android:text="Register"
+        android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -129,11 +144,13 @@
         android:layout_height="29dp"
         android:layout_below="@id/Email"
         android:layout_marginBottom="276dp"
+        android:background="@drawable/hide_show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintLeft_toRightOf="@+id/etConfirmPassword"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/createText"
@@ -142,9 +159,9 @@
         android:layout_marginStart="101dp"
         android:layout_marginEnd="94dp"
         android:layout_marginBottom="112dp"
-        android:text="Already registered? Login here"
+        android:text="@string/already_registered_login_here"
         android:textColor="#234E70"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

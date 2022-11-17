@@ -1,7 +1,6 @@
 package com.application.vozyk.ui.notes;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -40,7 +39,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NotesListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-    public static String PREFERENCE_SORT_ALPHABETICAL = "sortAlphabetical";
+    public static final String PREFERENCE_SORT_ALPHABETICAL = "sortAlphabetical";
 
     private boolean colourNavbar, sortAlphabetical;
     private TextView emptyText;
@@ -257,23 +256,12 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
                 dialog = new AlertDialog.Builder(NotesListActivity.this, R.style.AlertDialogTheme)
                         .setTitle(getString(R.string.confirm_delete))
                         .setMessage(getString(R.string.confirm_delete_text))
-                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                notesListAdapter.deleteFile(viewHolder.getAdapterPosition());
-                                showEmptyListMessage();
-                            }
+                        .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
+                            notesListAdapter.deleteFile(viewHolder.getAdapterPosition());
+                            showEmptyListMessage();
                         })
-                        .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                notesListAdapter.cancelDelete(viewHolder.getAdapterPosition());
-                            }
-                        })
-                        .setOnCancelListener(new DialogInterface.OnCancelListener() {
-                            @Override
-                            public void onCancel(DialogInterface dialog) {
-                                notesListAdapter.cancelDelete(viewHolder.getAdapterPosition());
-                            }
-                        })
+                        .setNegativeButton(getString(R.string.no), (dialog, which) -> notesListAdapter.cancelDelete(viewHolder.getAdapterPosition()))
+                        .setOnCancelListener(dialog -> notesListAdapter.cancelDelete(viewHolder.getAdapterPosition()))
                         .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_delete_white_24dp))
                         .show();
                 if (dialog.getWindow() != null) {

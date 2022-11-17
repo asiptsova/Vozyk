@@ -64,4 +64,47 @@
     <string name="append">Append</string>
     <string name="append_text">Append text instead of overwriting</string>
     <string name="note_not_found">Note %1$s not found</string>
+    <string name="email">Email</string>
+    <string name="log_in_to_vo_yk">Log in to Vožyk</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    <string name="create_new_account">create new account</string>
+    <string name="forgot_password">forgot password?</string>
+    <string name="create_a_new_account">Create A New Account</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="already_registered_login_here">Already registered? Login here</string>
+    <string name="email_is_required">Email is Required!</string>
+    <string name="email_is_not_real">Email is not real!</string>
+    <string name="password_is_required">Password is Required</string>
+    <string name="password_accepted">Password accepted</string>
+    <string name="reset_link">Enter Your Email To Received Reset Link.</string>
+    <string name="reset_password">Reset Password?</string>
+    <string name="error">Error!</string>
+    <string name="logged_in_successfully">Logged in Successfully</string>
+    <string name="password_contain_characters">Password Must be >= 6 Characters</string>
+    <string name="link_sent">Reset Link Sent To Your Email.</string>
+    <string name="error_link">Error ! Reset Link is Not Sent</string>
+    <string name="password_contain">Password contains 8 characters,upper and lower letters,number and special character</string>
+    <string name="confirm_password_required">Confirm Password is Required.</string>
+    <string name="same_pass_conf">Password and Confirm Password must be the same</string>
+    <string name="verification_email_sent">Verification Email Has been Sent</string>
+    <string name="how_was_your_mood_today">How was your mood today?</string>
+    <string name="month_year">Month year</string>
+    <string name="average_mood">Average mood</string>
+    <string name="mood_chart">Mood Chart</string>
+    <string name="weekly_mood_average">Weekly Mood Average</string>
+    <string name="not_enough_data_to_draw_this_chart_ncome_back_later">Not enough data to draw this chart.\nCome back later!!</string>
+    <string name="_0">0</string>
+    <string name="how_was_your_mood">How was your mood?</string>
+    <string name="starting_date">Starting Date</string>
+    <string name="estimated_finishing_date">Estimated Finishing Date</string>
+    <string name="name">Name</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="add_lab_test">Add Lab Test</string>
+    <string name="update_times">Update Times</string>
+    <string name="update_medicine">Update Medicine</string>
+    <string name="profile">Profile</string>
+
 </resources>

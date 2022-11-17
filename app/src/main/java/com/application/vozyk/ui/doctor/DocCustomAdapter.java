@@ -23,8 +23,8 @@ import java.util.ArrayList;
 public class DocCustomAdapter extends ArrayAdapter<DoctorDataModel> {
 
     private final FirebaseUser user;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference myRef = database.getReference();
     private final ArrayList<DoctorDataModel> arrayList;
 
 

@@ -2,17 +2,15 @@ package com.application.vozyk.ui.doctor;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.application.vozyk.R;
-import com.application.vozyk.lab.labActivity;
+import com.application.vozyk.ui.lab.labActivity;
 import com.application.vozyk.ui.notifications.NotificationsPills;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -72,6 +70,7 @@ public class DoctorActivity extends AppCompatActivity {
                 doctorDataModel.key = snapshot.getKey();
 
                 for (int i = 0; i < arrayList.size(); i++) {
+                    assert doctorDataModel.key != null;
                     if (doctorDataModel.key.equals(arrayList.get(i).key)) {
                         arrayList.remove(i);
                     }

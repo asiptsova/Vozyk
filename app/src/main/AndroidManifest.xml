@@ -128,10 +128,10 @@
             android:name=".ui.doctor.DoctorAddActivity"
             android:exported="true" />
         <activity
-            android:name=".lab.labActivity"
+            android:name=".ui.lab.labActivity"
             android:exported="true" />
         <activity
-            android:name=".lab.labAddActivity"
+            android:name=".ui.lab.labAddActivity"
             android:exported="true" />
         <activity
             android:name=".ui.ptsd.ptsdActivity"
@@ -154,8 +154,8 @@
         <activity
             android:name=".ui.relax.BreathingExerciseActivity"
             android:exported="true" />
-        <receiver android:name=".ui.notifications.MyBroadcastReceiver" />
-        <receiver android:name=".CommonBroadCastReceiver" />
+        <receiver android:name=".ui.notifications.MyBroadcastReceiver" android:enabled="true" />
+        <receiver android:name=".ui.notifications.CommonBroadCastReceiver"  android:enabled="true"/>
     </application>
 
 </manifest>

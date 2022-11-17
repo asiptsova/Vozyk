@@ -22,7 +22,8 @@
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:clickable="false"
-            app:srcCompat="@drawable/voz"/>
+            app:srcCompat="@drawable/voz"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="match_parent"

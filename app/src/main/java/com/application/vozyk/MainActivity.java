@@ -1,13 +1,9 @@
 package com.application.vozyk;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 
+import com.application.vozyk.ui.notifications.CommonAlarmRefreshService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +13,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.application.vozyk.databinding.ActivityMainBinding;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 

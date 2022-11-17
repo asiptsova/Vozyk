@@ -20,7 +20,8 @@
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:clickable="false"
-            app:srcCompat="@drawable/voz" />
+            app:srcCompat="@drawable/voz"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,7 +38,6 @@
         android:id="@+id/quiz_layout"
         android:layout_width="380dp"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-40dp"
         android:layout_marginBottom="40dp"

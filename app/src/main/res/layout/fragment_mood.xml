@@ -56,7 +56,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="50dp"
-          android:text="How was your mood today?"
+          android:text="@string/how_was_your_mood_today"
           android:textColor="#234E70"
           android:textSize="19sp"
           android:textStyle="bold"
@@ -310,7 +310,7 @@
                 android:id="@+id/month_and_year_in_calender_for_good_habits"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Month year"
+                android:text="@string/month_year"
                 android:textColor="#234E70"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -1458,7 +1458,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="335dp"
-              android:text="How was your mood?"
+              android:text="@string/how_was_your_mood"
               android:textSize="18sp"
               android:textStyle="bold"
               android:visibility="gone"
@@ -1720,7 +1720,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
-              android:text="Average mood"
+              android:text="@string/average_mood"
               android:textColor="#234E70"
               android:textSize="18sp"
               android:textStyle="bold"
@@ -1733,7 +1733,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="12.5dp"
-              android:text="24.2"
+              android:text="@string/_0"
               android:textSize="25sp"
               app:layout_constraintEnd_toEndOf="@+id/location_above_bmi_weight"
               app:layout_constraintStart_toStartOf="@+id/location_above_bmi_weight"
@@ -1855,7 +1855,7 @@
               app:layout_constraintTop_toTopOf="parent" />
 
           <View
-              android:id="@+id/first_part_invisble_half_middle"
+              android:id="@+id/first_part_invisible_half_middle"
               android:layout_width="1px"
               android:layout_height="1px"
               android:background="@android:color/transparent"
@@ -1907,7 +1907,7 @@
               android:layout_marginTop="45dp"
               android:progress="100"
               android:progressDrawable="@drawable/first_part_mood_location_mood_tracker"
-              app:layout_constraintEnd_toEndOf="@+id/first_part_invisble_half_middle"
+              app:layout_constraintEnd_toEndOf="@+id/first_part_invisible_half_middle"
               app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
               app:layout_constraintTop_toBottomOf="@+id/text_showing_average_mood_number" />
 
@@ -1920,7 +1920,7 @@
               android:progressDrawable="@drawable/second_part_mood_location_mood_tracker"
               app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
               app:layout_constraintEnd_toEndOf="@+id/second_part_invisble_half_middle"
-              app:layout_constraintStart_toEndOf="@+id/first_part_invisble_half_middle"
+              app:layout_constraintStart_toEndOf="@+id/first_part_invisible_half_middle"
               app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
 
           <ProgressBar
@@ -1981,7 +1981,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="Not enough data to draw this chart.\nCome back later!!"
+              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"
@@ -2024,7 +2024,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
-              android:text="Mood Chart"
+              android:text="@string/mood_chart"
               android:textColor="#234E70"
               android:textSize="18sp"
               android:textStyle="bold"
@@ -2038,7 +2038,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="No data this month to draw this chart.\nCome back later!!"
+              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"
@@ -2095,7 +2095,7 @@
               android:id="@+id/text_saying_month_year_in_the_chart_mood_tracker"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Month year"
+              android:text="@string/month_year"
               android:textColor="#234E70"
               android:textSize="20sp"
               android:textStyle="bold"
@@ -2141,15 +2141,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
-
           <TextView
               android:id="@+id/text_title_of_weekly_daily_habit_in_card"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
               android:gravity="center"
-              android:text="Weekly Mood Average"
+              android:text="@string/weekly_mood_average"
               android:textAlignment="center"
               android:textColor="#234E70"
               android:textSize="18sp"
@@ -2186,7 +2184,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="Not enough data to draw this chart.\nCome back later!!"
+              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"

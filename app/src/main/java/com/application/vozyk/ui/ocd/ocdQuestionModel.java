@@ -2,7 +2,7 @@ package com.application.vozyk.ui.ocd;
 
 public class ocdQuestionModel {
 
-    public String[] mQues = {
+    public final String[] mQues = {
             "1. I have saved up so many things that they get in the way.",
             "2. I check things more often than necessary.",
             "3. I get upset if objects are not arranged properly.",

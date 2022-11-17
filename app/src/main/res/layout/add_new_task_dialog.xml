@@ -19,29 +19,30 @@
         android:id="@+id/task_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:hint="Task Name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/start_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:layout_margin="5dp"
-        android:layout_marginLeft="5dp"
-        android:hint="Starting Date"
-        android:inputType="date" />
+        android:layout_marginStart="5dp"
+        android:hint="@string/starting_date"
+        />
 
     <TextView
         android:id="@+id/end_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:layout_margin="5dp"
-        android:layout_marginLeft="5dp"
-        android:hint="Estimated Finishing Date"
-        android:inputType="date" />
+        android:layout_marginStart="5dp"
+        android:hint="@string/estimated_finishing_date"
+        />
     
 
 </LinearLayout>

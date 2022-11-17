@@ -1,4 +1,4 @@
-package com.application.vozyk.lab;
+package com.application.vozyk.ui.lab;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 
 public class LabCustomAdapter extends ArrayAdapter<LabTestDataModel> {
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference myRef = database.getReference();
     GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
-    FirebaseUser user;
+    final FirebaseUser user;
     private final ArrayList<LabTestDataModel> arrayList;
 
     public LabCustomAdapter(@NonNull Context context, ArrayList<LabTestDataModel> arrayList) {

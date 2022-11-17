@@ -2,7 +2,7 @@ package com.application.vozyk.ui.anxiety;
 
 public class anxietyQuestionModel {
 
-    public String[] mQues = {
+    public final String[] mQues = {
             "1. Feeling nervous, anxious, or on edge",
             "2. Not being able to stop or control worrying",
             "3. Worrying too much about different things",

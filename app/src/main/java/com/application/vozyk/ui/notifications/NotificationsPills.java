@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.lab.labActivity;
+import com.application.vozyk.ui.lab.labActivity;
 import com.application.vozyk.ui.doctor.DoctorActivity;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;

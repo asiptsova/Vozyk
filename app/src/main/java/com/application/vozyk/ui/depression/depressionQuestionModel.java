@@ -2,7 +2,7 @@ package com.application.vozyk.ui.depression;
 
 public class depressionQuestionModel {
 
-    public String[] mQues = {
+    public final String[] mQues = {
             "1. Little interest or pleasure in doing things",
             "2. Feeling down, depressed, or hopeless",
             "3. Trouble falling or staying asleep, or sleeping too much",

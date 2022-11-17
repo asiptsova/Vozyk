@@ -36,8 +36,8 @@ public class AlarmManagerHandler extends AppCompatActivity {
             .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
 
 
-    PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, intent, PendingIntent.FLAG_MUTABLE);
-    AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context.getApplicationContext(), 0, intent, PendingIntent.FLAG_MUTABLE);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
         try {
         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pendingIntent);
     } catch (Exception e) {
@@ -89,12 +89,10 @@ public class AlarmManagerHandler extends AppCompatActivity {
             int minutes = Integer.parseInt(i.getTime().substring(2, 4));
             String Food;
 
-            if (mrh.getBeforeFood()) {
+            if (mrh.getBeforeFood())
                 Food = "before food";
-            } else {
+            else
                 Food = "after food";
-            }
-
             AlarmManagerHandler.addAlert(context, hour, minutes, mrh.getName(), i.getNotificationID(), Food);
         }
     }

@@ -14,7 +14,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
             long time = intent.getLongExtra("time", 0);
             int notificationId = intent.getIntExtra("notificationId", 0);
 
-            context.startService(new Intent(context, MyAlarmService.class)
+            context.startForegroundService(new Intent(context, MyAlarmService.class)
                     .putExtra("MedicineName", MedicineName)
                     .putExtra("Food", Food)
                     .putExtra("time", time)
@@ -22,6 +22,5 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
                     .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
 
             );
-
         }
     }

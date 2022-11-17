@@ -1,4 +1,4 @@
-package com.application.vozyk;
+package com.application.vozyk.ui.notifications;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -10,9 +10,8 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.application.vozyk.lab.LabTestDataModel;
+import com.application.vozyk.ui.lab.LabTestDataModel;
 import com.application.vozyk.ui.doctor.DoctorDataModel;
-import com.application.vozyk.ui.notifications.AlarmRefreshService;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;

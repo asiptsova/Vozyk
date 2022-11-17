@@ -1,4 +1,4 @@
-package com.application.vozyk;
+package com.application.vozyk.ui.notifications;
 
 
 import static com.application.vozyk.ui.notifications.AlarmManagerHandler.CHANNEL_ID;
@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.application.vozyk.R;
 import com.application.vozyk.ui.notifications.AlarmManagerHandler;
 
 

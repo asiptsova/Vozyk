@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
-    private EditText dateString;
+    private final EditText dateString;
 
     public DatePickerFragment(EditText date) {
         super();

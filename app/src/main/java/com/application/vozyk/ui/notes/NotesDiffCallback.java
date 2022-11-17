@@ -8,8 +8,8 @@ import java.util.List;
 
 public class NotesDiffCallback extends DiffUtil.Callback {
 
-    private List<File> oldList;
-    private List<File> newList;
+    private final List<File> oldList;
+    private final List<File> newList;
 
     public NotesDiffCallback(List<File> oldList, List<File> newList) {
         this.oldList = oldList;

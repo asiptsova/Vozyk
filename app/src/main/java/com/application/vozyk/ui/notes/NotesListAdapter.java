@@ -15,14 +15,13 @@ import com.application.vozyk.R;
 import java.io.File;
 import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder> {
 
     private List<File> fullList, filesList;
-    private int colourText, colourBackground;
+    private final int colourText;
+    private final int colourBackground;
 
     NotesListAdapter(int colourText, int colourBackground) {
         filesList = new ArrayList<>();
@@ -86,19 +85,11 @@ class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder>
     }
 
     private void sortAlphabetical(List<File> files) {
-        Collections.sort(files, new Comparator<File>() {
-            public int compare(File f1, File f2) {
-                return (f1.getName().compareTo(f2.getName()));
-            }
-        });
+        files.sort((f1, f2) -> (f1.getName().compareTo(f2.getName())));
     }
 
     private void sortDate(List<File> files) {
-        Collections.sort(files, new Comparator<File>() {
-            public int compare(File f1, File f2) {
-                return Long.compare(f2.lastModified(), f1.lastModified());
-            }
-        });
+        files.sort((f1, f2) -> Long.compare(f2.lastModified(), f1.lastModified()));
     }
 
     void deleteFile(int position) {
@@ -117,7 +108,7 @@ class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder>
 
         private final TextView noteTitle, noteDate, noteTime;
         private String stringTitle;
-        ConstraintLayout constraintLayout;
+        final ConstraintLayout constraintLayout;
 
         ViewHolder(View view, int colourText, int colourBackground) {
             super(view);

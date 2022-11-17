@@ -221,7 +221,7 @@ public class ToDoListActivity extends AppCompatActivity {
     }
 
     class MyListAdapter extends BaseAdapter {
-        List<Task> taskList = new ArrayList<>();
+        final List<Task> taskList = new ArrayList<>();
 
         public void setData(List<Task> mList) {
             taskList.clear();

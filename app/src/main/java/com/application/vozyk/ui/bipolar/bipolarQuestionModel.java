@@ -2,7 +2,7 @@ package com.application.vozyk.ui.bipolar;
 
 public class bipolarQuestionModel {
 
-    public String[] mQues = {
+    public final String[] mQues = {
             "1. At times I am much more talkative or speak much faster than usual.",
             "2. There have been times when I was much more active or did many more things than usual.",
             "3. I get into moods where I feel very speeded up or irritable.",

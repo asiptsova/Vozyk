@@ -1,17 +1,13 @@
-package com.application.vozyk.lab;
+package com.application.vozyk.ui.lab;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.application.vozyk.R;
 import com.application.vozyk.ui.doctor.DoctorActivity;
@@ -107,12 +103,7 @@ public class labActivity extends AppCompatActivity {
             }
             return true;
         });
-        findViewById(R.id.lab_add_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(labActivity.this, labAddActivity.class));
-            }
-        });
+        findViewById(R.id.lab_add_btn).setOnClickListener(view -> startActivity(new Intent(labActivity.this, labAddActivity.class)));
 
     }
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cff7d3"
-    tools:context=".lab.labActivity">
+    tools:context=".ui.lab.labActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,19 +27,18 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="false"
             android:layout_alignParentBottom="false"
             android:foregroundGravity="center"
             android:layout_marginTop="300dp"
             android:clickable="false"
-            app:srcCompat="@drawable/ic_lab_svgrepo_com" />
+            app:srcCompat="@drawable/ic_lab_svgrepo_com"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/lab_emptyText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="false"
             android:layout_alignParentBottom="false"
             android:layout_marginTop="600dp"
             android:fontFamily="@font/robotobold"
@@ -95,7 +94,7 @@
             android:backgroundTint="#FFA000"
             app:srcCompat="@drawable/ic_baseline_add_24"
             app:layout_anchor="@id/lab_bottomAppBar"
-            />
+            android:contentDescription="TODO" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -36,7 +36,8 @@
                     android:foregroundGravity="center"
                     android:layout_marginTop="300dp"
                     android:clickable="false"
-                    app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_" />
+                    app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_"
+                    android:contentDescription="TODO" />
 
                 <TextView
                     android:id="@+id/doctor_emptyText"
@@ -98,7 +99,7 @@
                     android:backgroundTint="#FFA000"
                     app:srcCompat="@drawable/ic_baseline_add_24"
                     app:layout_anchor="@id/doctor_bottomAppBar"
-                    />
+                    android:contentDescription="TODO" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

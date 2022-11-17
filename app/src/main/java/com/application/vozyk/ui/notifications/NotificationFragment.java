@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.application.vozyk.R;
-import com.application.vozyk.lab.labActivity;
+import com.application.vozyk.ui.lab.labActivity;
 import com.application.vozyk.ui.doctor.DoctorActivity;
 
 public class NotificationFragment extends Fragment {

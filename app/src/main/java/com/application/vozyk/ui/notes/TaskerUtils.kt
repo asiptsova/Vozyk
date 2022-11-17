@@ -1,4 +1,4 @@
-package com.rafapps.simplenotes
+package com.application.vozyk.ui.notes
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,7 +14,6 @@ import androidx.core.graphics.ColorUtils
 import androidx.core.view.isVisible
 import androidx.core.widget.CompoundButtonCompat
 import com.application.vozyk.R
-import com.application.vozyk.ui.notes.HelperUtils
 import com.joaomgcd.taskerpluginlibrary.action.TaskerPluginRunnerAction
 import com.joaomgcd.taskerpluginlibrary.condition.TaskerPluginRunnerConditionEvent
 import com.joaomgcd.taskerpluginlibrary.config.TaskerPluginConfig

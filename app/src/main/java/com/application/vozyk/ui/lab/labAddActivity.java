@@ -1,4 +1,4 @@
-package com.application.vozyk.lab;
+package com.application.vozyk.ui.lab;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -52,7 +52,7 @@ public class labAddActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("LabTestRecord").child(Objects.requireNonNull(user.getUid()));
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, TESTNAME);
         AutoCompleteTextView textView = findViewById(R.id.lab_name_edit);
         textView.setAdapter(adapter);

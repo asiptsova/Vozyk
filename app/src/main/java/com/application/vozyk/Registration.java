@@ -1,9 +1,6 @@
 package com.application.vozyk;
 
-import static androidx.browser.customtabs.CustomTabsIntent.NO_TITLE;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,7 +8,6 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,7 +31,7 @@ public class Registration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
+              setContentView(R.layout.registration);
         final EditText mFullName = findViewById(R.id.fullName);
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);
@@ -43,16 +39,13 @@ public class Registration extends AppCompatActivity {
         final Button mRegisterBtn = findViewById(R.id.register);
         final TextView mLoginBtn = findViewById(R.id.createText);
         final CircularProgressIndicator indicator =findViewById(R.id.progress_barCircle);
-      //  final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
-       /* ShowHidePWD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
-                    mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                else
-                    mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            }
-        });*/
+        final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
+        ShowHidePWD.setOnClickListener(view -> {
+            if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
+                mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            else
+                mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        });
 
         final ImageView ShowHidePWDConfirm = findViewById(R.id.show_hide_pwd_confirm);
         ShowHidePWDConfirm.setOnClickListener(view -> {
@@ -71,29 +64,30 @@ public class Registration extends AppCompatActivity {
             final String fullName = mFullName.getText().toString();
             String Confirm = etConfirm.getText().toString();
             if (TextUtils.isEmpty(email)) {
-                mEmail.setError("Email is Required.");
+                mEmail.setError(String.valueOf(R.string.email_is_required));
                 return;
             }
             if (!isValid(email)) {
-                mEmail.setError("Email isn't real.");
+                mEmail.setError(String.valueOf(R.string.email_is_not_real));
                 return;
             }
             if (TextUtils.isEmpty(password)) {
-                mPassword.setError("Password is Required.");
+                mPassword.setError(String.valueOf(R.string.password_is_required));
                 return;
             }
-            if (password.length() >= 8 && upperCase(password) && lowerCase(password) && numberCase(password) && specialCase(password)) {
-                System.out.println("Password accepted");
+            if (password.length() >= 8 && upperCase(password) && lowerCase(password)
+                    && numberCase(password) && specialCase(password)) {
+                System.out.println(R.string.password_accepted);
             } else {
-                mPassword.setError("Password contains 8 characters,upper & lower letters,number and special character");
+                mPassword.setError(String.valueOf(R.string.password_contain));
                 return;
             }
             if (TextUtils.isEmpty(Confirm)) {
-                etConfirm.setError("Confirm Password is Required.");
+                etConfirm.setError(String.valueOf(R.string.confirm_password_required));
                 return;
             }
             if (!mPassword.getText().toString().equals(etConfirm.getText().toString())) {
-                etConfirm.setError("Password & Confirm Password must be same");
+                etConfirm.setError(String.valueOf(R.string.same_pass_conf));
                 return;
             }
             indicator.show();
@@ -102,7 +96,9 @@ public class Registration extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()
                             .addOnSuccessListener(aVoid ->
-                                    Toast.makeText(this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
+                                    Toast.makeText(this, String.valueOf(R.string.verification_email_sent),
+                                            Toast.LENGTH_SHORT).show()).addOnFailureListener(e ->
+                                    Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
                     getUsersRef("name").setValue(fullName);
                     getUsersRef("email").setValue(email);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -115,9 +111,8 @@ public class Registration extends AppCompatActivity {
         char ch;
         for (int i = 0; i < str.length(); i++) {
             ch = str.charAt(i);
-            if (Character.isUpperCase(ch)) {
+            if (Character.isUpperCase(ch))
                 return true;
-            }
         }
         return false;
     }
@@ -126,9 +121,8 @@ public class Registration extends AppCompatActivity {
         char ch;
         for (int i = 0; i < str.length(); i++) {
             ch = str.charAt(i);
-            if (Character.isLowerCase(ch)) {
+            if (Character.isLowerCase(ch))
                 return true;
-            }
         }
         return false;
     }
@@ -151,14 +145,12 @@ public class Registration extends AppCompatActivity {
             ch = str.charAt(i);
             for (int j = 0; j < specialChars.length(); j++) {
                 ph = specialChars.charAt(j);
-                if (ch == ph) {
+                if (ch == ph)
                     return true;
-                }
             }
         }
         return false;
     }
-
     public boolean isValid(String email) {
         String emailRegex =  "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
         Pattern pat = Pattern.compile(emailRegex);

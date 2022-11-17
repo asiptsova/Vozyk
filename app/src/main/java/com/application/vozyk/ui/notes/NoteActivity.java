@@ -22,8 +22,6 @@ import androidx.core.graphics.ColorUtils;
 
 import com.application.vozyk.R;
 import com.joaomgcd.taskerpluginlibrary.condition.TaskerPluginRunnerCondition;
-import com.rafapps.simplenotes.NoteOutput;
-import com.rafapps.simplenotes.TaskerEventNoteUpdateActivity;
 
 public class NoteActivity extends AppCompatActivity {
 
@@ -141,22 +139,18 @@ public class NoteActivity extends AppCompatActivity {
             dialog = new AlertDialog.Builder(NoteActivity.this, R.style.AlertDialogTheme)
                     .setTitle(getString(R.string.confirm_delete))
                     .setMessage(getString(R.string.confirm_delete_text))
-                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (HelperUtils.fileExists(NoteActivity.this, title)) {
-                                deleteFile(title + HelperUtils.TEXT_FILE_EXTENSION);
-                            }
-                            title = "";
-                            note = "";
-                            titleText.setText(title);
-                            noteText.setText(note);
-                            finish();
+                    .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
+                        if (HelperUtils.fileExists(NoteActivity.this, title)) {
+                            deleteFile(title + HelperUtils.TEXT_FILE_EXTENSION);
                         }
+                        title = "";
+                        note = "";
+                        titleText.setText(title);
+                        noteText.setText(note);
+                        finish();
                     })
-                    .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
+                    .setNegativeButton(getString(R.string.no), (dialog, which) -> {
 
-                        }
                     })
                     .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_delete_white_24dp))
                     .show();

@@ -22,7 +22,7 @@ public class TimeChangeActivity extends AppCompatActivity {
 
 
     public static String timeTextView(int hour, int minute) {
-        String result = "";
+        String result;
         if (hour < 10) {
             result = "0" + hour;
         } else {
@@ -39,7 +39,7 @@ public class TimeChangeActivity extends AppCompatActivity {
     }
 
     public static String timeToString(int hour, int minute) {
-        String result = "";
+        String result;
         if (hour < 10) {
             result = "0" + hour;
         } else {
@@ -74,77 +74,59 @@ public class TimeChangeActivity extends AppCompatActivity {
         night_edit_time.startAnimation(animation);
 
 
-        morning_edit_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        morning_edit_time.setOnClickListener(view -> {
 
-                MaterialTimePicker picker =
-                        new MaterialTimePicker.Builder()
-                                .setTimeFormat(TimeFormat.CLOCK_24H)
-                                .setHour(TIMEClassToHour(TIME.MORNING))
-                                .setMinute(TIMEClassToMinutes(TIME.MORNING))
-                                .build();
+            MaterialTimePicker picker =
+                    new MaterialTimePicker.Builder()
+                            .setTimeFormat(TimeFormat.CLOCK_24H)
+                            .setHour(TIMEClassToHour(TIME.MORNING))
+                            .setMinute(TIMEClassToMinutes(TIME.MORNING))
+                            .build();
 
-                picker.show(getSupportFragmentManager(), "tag");
+            picker.show(getSupportFragmentManager(), "tag");
 
-                picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        morning_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                        String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                        setTime(time_to_string, 0);
-                    }
-                });
+            picker.addOnPositiveButtonClickListener(view13 -> {
+                morning_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
+                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
+                setTime(time_to_string, 0);
+            });
 
-            }
         });
-        lunch_edit_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        lunch_edit_time.setOnClickListener(view -> {
 
-                MaterialTimePicker picker =
-                        new MaterialTimePicker.Builder()
-                                .setTimeFormat(TimeFormat.CLOCK_24H)
-                                .setHour(TIMEClassToHour(TIME.AFTERNOON))
-                                .setMinute(TIMEClassToMinutes(TIME.AFTERNOON))
-                                .build();
+            MaterialTimePicker picker =
+                    new MaterialTimePicker.Builder()
+                            .setTimeFormat(TimeFormat.CLOCK_24H)
+                            .setHour(TIMEClassToHour(TIME.AFTERNOON))
+                            .setMinute(TIMEClassToMinutes(TIME.AFTERNOON))
+                            .build();
 
-                picker.show(getSupportFragmentManager(), "tag");
+            picker.show(getSupportFragmentManager(), "tag");
 
-                picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        lunch_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                        String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                        setTime(time_to_string, 1);
-                    }
-                });
+            picker.addOnPositiveButtonClickListener(view12 -> {
+                lunch_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
+                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
+                setTime(time_to_string, 1);
+            });
 
-            }
         });
-        night_edit_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        night_edit_time.setOnClickListener(view -> {
 
-                MaterialTimePicker picker =
-                        new MaterialTimePicker.Builder()
-                                .setTimeFormat(TimeFormat.CLOCK_24H)
-                                .setHour(TIMEClassToHour(TIME.NIGHT))
-                                .setMinute(TIMEClassToMinutes(TIME.NIGHT))
-                                .build();
+            MaterialTimePicker picker =
+                    new MaterialTimePicker.Builder()
+                            .setTimeFormat(TimeFormat.CLOCK_24H)
+                            .setHour(TIMEClassToHour(TIME.NIGHT))
+                            .setMinute(TIMEClassToMinutes(TIME.NIGHT))
+                            .build();
 
-                picker.show(getSupportFragmentManager(), "tag");
+            picker.show(getSupportFragmentManager(), "tag");
 
-                picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        night_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                        String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                        setTime(time_to_string, 2);
-                    }
-                });
+            picker.addOnPositiveButtonClickListener(view1 -> {
+                night_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
+                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
+                setTime(time_to_string, 2);
+            });
 
-            }
         });
     }
 

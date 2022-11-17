@@ -41,6 +41,7 @@
         android:onClick="newNote"
         android:scaleType="center"
         android:src="@drawable/ic_note"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        android:contentDescription="TODO" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

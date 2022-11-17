@@ -1,4 +1,4 @@
-package com.application.vozyk.lab;
+package com.application.vozyk.ui.lab;
 
 public class LabTestDataModel {
     int day;

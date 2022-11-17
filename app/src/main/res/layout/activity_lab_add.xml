@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lab.labAddActivity">
+    tools:context=".ui.lab.labAddActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@color/YellowAeroSpace"
         android:fontFamily="@font/robotobold"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
         android:paddingTop="60dp"
         android:paddingBottom="10dp"
-        android:text="Add Lab Test"
+        android:text="@string/add_lab_test"
         android:textColor="@color/teal_700"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_date_view"
         app:layout_constraintEnd_toStartOf="@+id/lab_date_view"
         app:layout_constraintTop_toTopOf="@+id/lab_date_view"
-        app:srcCompat="@drawable/ic_calendar_svgrepo_com" />
+        app:srcCompat="@drawable/ic_calendar_svgrepo_com"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/lab_date_view"
@@ -97,7 +98,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_name"
         app:layout_constraintEnd_toStartOf="@+id/lab_name"
         app:layout_constraintTop_toTopOf="@+id/lab_name"
-        app:srcCompat="@drawable/ic_lab_svgrepo_com" />
+        app:srcCompat="@drawable/ic_lab_svgrepo_com"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -107,7 +109,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_doctor"
         app:layout_constraintEnd_toStartOf="@+id/lab_doctor"
         app:layout_constraintTop_toTopOf="@+id/lab_doctor"
-        app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_" />
+        app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_"
+        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/lab_add_btn"

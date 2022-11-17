@@ -7,13 +7,13 @@
         android:id="@+id/btn_search"
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/btn_sort"
         android:icon="@drawable/numeric_to_alphabetical"
         android:title="@string/sort"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
 
 </menu>

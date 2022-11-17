@@ -22,11 +22,11 @@ import java.util.Arrays;
 
 public class HelperUtils {
 
-    public static String TEXT_FILE_EXTENSION = ".txt";
-    public static String PREFERENCE_COLOUR_PRIMARY = "colourPrimary";
-    public static String PREFERENCE_COLOUR_FONT = "colourFont";
-    public static String PREFERENCE_COLOUR_BACKGROUND = "colourBackground";
-    public static String PREFERENCE_COLOUR_NAVBAR = "colourNavbar";
+    public static final String TEXT_FILE_EXTENSION = ".txt";
+    public static final String PREFERENCE_COLOUR_PRIMARY = "colourPrimary";
+    public static final String PREFERENCE_COLOUR_FONT = "colourFont";
+    public static final String PREFERENCE_COLOUR_BACKGROUND = "colourBackground";
+    public static final String PREFERENCE_COLOUR_NAVBAR = "colourNavbar";
 
     public static int darkenColor(int color, double fraction) {
         int red = Color.red(color);
@@ -61,12 +61,7 @@ public class HelperUtils {
     }
 
     public static ArrayList<File> getFiles(Context context) {
-        File[] files = context.getFilesDir().listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.toLowerCase().endsWith(HelperUtils.TEXT_FILE_EXTENSION);
-            }
-        });
+        File[] files = context.getFilesDir().listFiles((dir, name) -> name.toLowerCase().endsWith(HelperUtils.TEXT_FILE_EXTENSION));
         if(files == null) return new ArrayList<>();
         return new ArrayList<>(Arrays.asList(files));
     }
@@ -82,7 +77,7 @@ public class HelperUtils {
             out.write(fileContent);
             out.close();
         } catch (Throwable t) {
-            Toast.makeText(context, context.getString(R.string.exception) + t.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getString(R.string.exception) + t, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -103,7 +98,7 @@ public class HelperUtils {
                     content = buf.toString();
                 }
             } catch (Exception e) {
-                Toast.makeText(context, context.getString(R.string.exception) + e.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, context.getString(R.string.exception) + e, Toast.LENGTH_LONG).show();
             }
         }
         return content.trim();

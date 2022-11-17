@@ -56,7 +56,8 @@
         android:background="@drawable/ic_baseline_delete_24"
         android:backgroundTint="@color/OrangeAeroSpace"
         tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="56dp" />
+        tools:layout_editor_absoluteY="56dp"
+        android:contentDescription="TODO" />
 
 
 </RelativeLayout>
