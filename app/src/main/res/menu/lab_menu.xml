@@ -6,10 +6,10 @@
     <item android:id="@+id/nav_lab_medicine"
         android:icon="@drawable/ic_medicine_svgrepo_com__1_"
         app:showAsAction="ifRoom"
-        android:title="medicine" />
+        android:title="@string/medicine" />
 
     <item android:id="@+id/nav_lab_doc"
         android:icon="@drawable/ic_doctor_svgrepo_com"
         app:showAsAction="ifRoom"
-        android:title="lab_doc" />
+        android:title="@string/lab_doc" />
 </menu>

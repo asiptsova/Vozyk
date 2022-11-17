@@ -171,5 +171,10 @@
     <string name="i_want_to_exhale_for">I want to exhale for:</string>
     <string name="for_for">For:</string>
     <string name="cycles">cycles</string>
+    <string name="medicine">medicine</string>
+    <string name="lab_doc">lab_doc</string>
+    <string name="mood">Mood</string>
+    <string name="relax">Relax</string>
+    <string name="other">Other</string>
 
 </resources>

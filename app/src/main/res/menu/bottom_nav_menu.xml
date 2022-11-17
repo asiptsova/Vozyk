@@ -4,12 +4,12 @@
     <item
         android:id="@+id/navigation_mood"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Mood" />
+        android:title="@string/mood" />
 
     <item
         android:id="@+id/navigation_relax"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Relax" />
+        android:title="@string/relax" />
 
     <item
         android:id="@+id/navigation_notifications"
@@ -18,6 +18,6 @@
     <item
         android:id="@+id/navigation_other"
         android:icon="@drawable/ic_baseline_other_houses_24"
-        android:title="Other" />
+        android:title="@string/other" />
 
 </menu>
