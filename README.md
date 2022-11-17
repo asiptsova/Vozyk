@@ -5,7 +5,7 @@ It contains the following main features:
    - registration/login option,
    - mood calendar with statistic about it,
    - breathing exercises & meditate,
-   - meds,doctors visit and tests  
+   - meds,doctors visit and labs  
    - self-assessment quiz,
    - to-do tracker.
    - notepad to record feelings and thoughts
