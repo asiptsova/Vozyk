@@ -148,33 +148,16 @@ public class TimeChangeActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * It is used on the fetched time information from the TIMEClass to make that information textview display ready
-     *
-     * @param time It receives time as a string like "0830"
-     * @return It returns like "08:30"
-     */
     public String TIMEClassToTextView(String time) {
         return time.substring(0, 2) + ":" + time.substring(2, 4);
     }
 
-    /**
-     * It is used to extract the hour from the time information.
-     *
-     * @param time It receives the time as a string like "0830"
-     * @return It returns the hour in Integer like 8
-     */
+
     public int TIMEClassToHour(String time) {
         return Integer.parseInt(time.substring(0, 2));
 
     }
 
-    /**
-     * It is used to extract the minute from the time information
-     *
-     * @param time It receives the time as string like "0830"
-     * @return It returns the hour in Integer like 30
-     */
     public int TIMEClassToMinutes(String time) {
         return Integer.parseInt(time.substring(2, 4));
     }
@@ -189,12 +172,6 @@ public class TimeChangeActivity extends AppCompatActivity {
         TIME.NIGHT = sharedPref.getString("NIGHT", "");
     }
 
-    /**
-     * It is used to update the times in the shared preferences after receiving them from the picker
-     *
-     * @param time It receives the time as a string (Ex- "0830")
-     * @param flag This is used to know which information (MORNING/AFTERNOON/NIGHT) is needed to be updated
-     */
     public void setTime(String time, int flag) {
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -207,7 +184,7 @@ public class TimeChangeActivity extends AppCompatActivity {
             editor.putString("NIGHT", time);
         }
         editor.apply();
-        getTime(); //After updating the sharedPreferences , this call make the TIME class values also updated.
+        getTime();
     }
 
 }
