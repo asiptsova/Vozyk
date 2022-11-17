@@ -26,7 +26,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vožyk"
         tools:targetApi="31">
-
+        <activity
+            android:name=".NotificationFragment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".About_us"
             android:exported="false">
@@ -154,7 +160,6 @@
         <activity
             android:name=".ui.relax.BreathingExerciseActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
