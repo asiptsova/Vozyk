@@ -58,7 +58,7 @@
                 android:layout_width="150dp"
                 android:layout_height="28dp"
                 android:background="#A7BEAE"
-                android:text="Press to edit/delete"
+                android:text="@string/press_to_edit_delete"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1981,7 +1981,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
+              android:text="@string/not_enough_data_to_draw_this_chart_come_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"
@@ -2011,7 +2011,7 @@
           app:layout_constraintTop_toBottomOf="@+id/card_to_show_pie_chart_for_yes_or_no_over_the_days">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_inside_graph_to_show_mood_in_mood_tracekr"
+            android:id="@+id/layout_inside_graph_to_show_mood_in_mood_tracker"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -2038,7 +2038,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
+              android:text="@string/not_enough_data_to_draw_this_chart_come_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"
@@ -2184,7 +2184,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="@string/not_enough_data_to_draw_this_chart_ncome_back_later"
+              android:text="@string/not_enough_data_to_draw_this_chart_come_back_later"
               android:textAlignment="center"
               android:textColor="@color/black"
               android:textSize="16sp"

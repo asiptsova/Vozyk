@@ -24,7 +24,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_extrabold"
+            android:fontFamily="@font/arima_madurai_extra_bold"
             android:gravity="center_horizontal"
             android:text="@string/profile"
             android:textColor="#1A237E"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="touch profile picture to change"
+            android:text="@string/touch_profile_picture_to_change"
             android:layout_gravity="center_horizontal"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +65,6 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:background="#BCFFFFFF"
-                    android:paddingStart="15dp"
                     android:text="@string/name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 

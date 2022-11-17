@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Add a New Task"
+        android:text="@string/add_a_new_task"
         android:textColor="#2196F3"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:hint="Task Name"
+        android:hint="@string/task_name"
         android:inputType="text"
         android:importantForAutofill="no" />
 

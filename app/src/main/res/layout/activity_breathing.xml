@@ -20,7 +20,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Breathing Exercise"
+            android:text="@string/breathing_exercise"
             android:textAlignment="center"
             android:textColor="#1A237E"
             android:textSize="30sp"
@@ -33,10 +33,9 @@
         android:layout_width="380dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-70dp"
         android:layout_marginBottom="40dp"
         android:background="#cff7d3 ">
-<!--        android:background="@drawable/breathing_background">-->
 
         <ScrollView
             android:layout_width="match_parent"
@@ -60,9 +59,9 @@
                     android:id="@+id/inhaleLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="I want to inhale for:"
+                    android:text="@string/i_want_to_inhale_for"
                     android:textSize="24sp" />
 
                 <LinearLayout
@@ -93,7 +92,7 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="24dp"
                         android:ems="10"
-                        android:text="seconds"
+                        android:text="@string/seconds"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -102,9 +101,9 @@
                     android:id="@+id/holdLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="I want to hold for:"
+                    android:text="@string/i_want_to_hold_for"
                     android:textSize="24sp" />
 
                 <LinearLayout
@@ -135,7 +134,7 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="24dp"
                         android:ems="10"
-                        android:text="seconds"
+                        android:text="@string/seconds"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -144,9 +143,9 @@
                     android:id="@+id/exhaleLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="I want to exhale for:"
+                    android:text="@string/i_want_to_exhale_for"
                     android:textSize="24sp" />
 
                 <LinearLayout
@@ -177,7 +176,7 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="24dp"
                         android:ems="10"
-                        android:text="seconds"
+                        android:text="@string/seconds"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -186,9 +185,9 @@
                     android:id="@+id/breathsLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="For:"
+                    android:text="@string/for_for"
                     android:textSize="24sp" />
 
                 <LinearLayout
@@ -219,7 +218,7 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="24dp"
                         android:ems="10"
-                        android:text="cycles"
+                        android:text="@string/cycles"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -230,9 +229,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:backgroundTint="#B85042"
-                    android:text="start"
+                    android:text="@string/start"
                     android:textColor="@color/white"
                     android:textColorHint="#664564"
                     android:textColorLink="#664564"
@@ -242,7 +241,6 @@
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintVertical_bias="0.25" />
-<!--                android:background="@drawable/rounded_button"-->
             </LinearLayout>
 
         </ScrollView>

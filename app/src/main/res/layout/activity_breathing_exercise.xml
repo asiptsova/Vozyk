@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="65dp"
-            android:fontFamily="@font/arima_madurai_extrabold"
+            android:fontFamily="@font/arima_madurai_extra_bold"
             android:gravity="center_horizontal"
             android:textSize="40sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
         android:layout_width="380dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-100dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/breathing_background">
 

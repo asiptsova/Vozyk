@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Info"
+        android:text="@string/info"
         android:textColor="#234E70"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Task:"
+            android:text="@string/task"
             android:textSize="20sp"
             android:textColor="#234E70"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Info"
+            android:text="@string/info"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Starting Date:"
+            android:text="@string/starting_date"
             android:textSize="20sp"
             android:textColor="#234E70"
             android:textStyle="bold" />
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Info"
+            android:text="@string/info"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Finishing Date:"
+            android:text="@string/finishing_date"
             android:textSize="20sp"
             android:textColor="#234E70"
             android:textStyle="bold" />
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Info"
+            android:text="@string/info"
             android:textSize="20sp" />
     </LinearLayout>
 

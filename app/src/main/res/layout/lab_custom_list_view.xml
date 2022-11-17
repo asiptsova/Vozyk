@@ -13,8 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/robotobold"
-        android:text="Lab Test Name"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/lab_test_name"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="18dp" />
@@ -28,7 +28,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="99dp"
         android:layout_marginBottom="5dp"
-        android:text="Time : 12/12/2022"
+        android:text="@string/time_12_12_2022"
         tools:layout_editor_absoluteX="120dp"
         tools:layout_editor_absoluteY="63dp" />
 
@@ -40,7 +40,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
-        android:text="Doctor Name"
+        android:text="@string/doctor_name"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="63dp" />
 
