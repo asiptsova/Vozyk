@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.application.vozyk.R;
 import com.application.vozyk.lab.labActivity;
 import com.application.vozyk.ui.doctor.DoctorActivity;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +25,6 @@ import java.util.Objects;
 
 
 public class NotificationsPills extends AppCompatActivity {
-    protected GoogleSignInAccount account;
     private ArrayList<MedicineRecordHandler> arrayList;
     private CustomAdapterNew c;
 
@@ -35,14 +32,13 @@ public class NotificationsPills extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_notifications);
-
-        account = GoogleSignIn.getLastSignedInAccount(this);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("MedicineRecord").child(Objects.requireNonNull(user.getUid())); //Takes the relative path of the user to get the instance of only that user not others.
         ListView listview = findViewById(R.id.listview);
         BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+
         arrayList = new ArrayList<>();
         c = new CustomAdapterNew(getApplicationContext(), arrayList);
 
@@ -89,7 +85,7 @@ public class NotificationsPills extends AppCompatActivity {
 
         listview.setAdapter(c);
 
-        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(NotificationsPills.this, HomeActivity.class).putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
+        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(NotificationsPills.this, HomeActivity.class).putExtra("Id", user.getUid())
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
         ));
         bottomAppBar.setOnMenuItemClickListener(item -> {

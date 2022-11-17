@@ -6,7 +6,6 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.textfield.TextInputLayout;
@@ -83,7 +82,7 @@ public class UpdateActivity extends AppCompatActivity {
             if (InputValidationHandler.inputValidation(getData().getName(), getData().getReminder())) {
                 myRef.child(KEY).setValue(getData());
                 startActivity(
-                        new Intent(UpdateActivity.this, MainActivity.class)
+                        new Intent(UpdateActivity.this, NotificationsPills.class)
                                 .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
                 );
             } else {
@@ -122,7 +121,7 @@ public class UpdateActivity extends AppCompatActivity {
 
 
         cancelBtn.setOnClickListener(view -> startActivity(
-                new Intent(UpdateActivity.this, MainActivity.class)
+                new Intent(UpdateActivity.this, NotificationsPills.class)
                         .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
         ));
 
@@ -153,7 +152,7 @@ public class UpdateActivity extends AppCompatActivity {
                 materialButtonToggleGroup1.check(R.id.up_night);
             } else {
                 Button button = findViewById(R.id.up_custom_time);
-                button.setText(new StringBuilder().append(i.time.substring(0, 2)).append(":").append(i.time.substring(2, 4)).toString());
+                button.setText(i.time.substring(0, 2) + ":" + i.time.substring(2, 4));
                 materialButtonToggleGroup1.check(R.id.up_custom_time);
             }
         }
@@ -164,10 +163,7 @@ public class UpdateActivity extends AppCompatActivity {
 
         String nameValue = name.getEditText().getText().toString();
         String noteValue = note.getEditText().getText().toString();
-        Boolean beforeFoodValue = false;
-        if (radioGroup.getCheckedRadioButtonId() == R.id.up_radio_button_1) {
-            beforeFoodValue = true;
-        }
+        boolean beforeFoodValue = radioGroup.getCheckedRadioButtonId() == R.id.up_radio_button_1;
 
         List<Integer> arr = materialButtonToggleGroup.getCheckedButtonIds();
         arr.addAll(materialButtonToggleGroup1.getCheckedButtonIds());
@@ -186,14 +182,12 @@ public class UpdateActivity extends AppCompatActivity {
 
         }
 
-        MedicineRecordHandler mrh = new MedicineRecordHandler(
+        return new MedicineRecordHandler(
                 nameValue,
                 noteValue,
                 beforeFoodValue,
                 time
         );
-
-        return mrh;
     }
 
 }

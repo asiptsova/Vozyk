@@ -106,6 +106,7 @@ public class CommonAlarmRefreshService extends Service {
 
     public void LabrefreshData(DataSnapshot snapshot) {
         LabTestDataModel labTestDataModel = snapshot.getValue(LabTestDataModel.class);
+        assert labTestDataModel != null;
         int date = labTestDataModel.getDay();
         int month = labTestDataModel.getMonth();
         int year = labTestDataModel.getYear();
@@ -124,7 +125,8 @@ public class CommonAlarmRefreshService extends Service {
         Intent intent = new Intent(this, CommonBroadCastReceiver.class)
                 .putExtra("TestName", labTestDataModel.getTestName()).putExtra("flag", false);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, labTestDataModel.getNotificationId(), intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, labTestDataModel.getNotificationId(), intent, PendingIntent.FLAG_MUTABLE
+        );
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pendingIntent);
 
@@ -155,7 +157,7 @@ public class CommonAlarmRefreshService extends Service {
                 .putExtra("reason", doctorDataModel.getReason());
 
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, doctorDataModel.getNotificationId(), intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, doctorDataModel.getNotificationId(), intent, PendingIntent.FLAG_MUTABLE);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pendingIntent);
 
@@ -168,7 +170,8 @@ public class CommonAlarmRefreshService extends Service {
         Intent intent = new Intent(this, CommonAlarmRefreshService.class);
 
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, doctorDataModel.getNotificationId(), intent, 0);
+        assert doctorDataModel != null;
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, doctorDataModel.getNotificationId(), intent, PendingIntent.FLAG_MUTABLE);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
 
@@ -179,10 +182,12 @@ public class CommonAlarmRefreshService extends Service {
 
         Intent intent = new Intent(this, CommonAlarmRefreshService.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, labTestDataModel.getNotificationId(), intent, 0);
+        assert labTestDataModel != null;
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, labTestDataModel.getNotificationId(), intent, PendingIntent.FLAG_MUTABLE);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
 
     }
 
 }
+

@@ -24,7 +24,6 @@ import java.util.ArrayList;
 public class CustomAdapterNew extends ArrayAdapter<MedicineRecordHandler> {
 
     private final ArrayList<MedicineRecordHandler> arrayList;
-
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     FirebaseUser user;

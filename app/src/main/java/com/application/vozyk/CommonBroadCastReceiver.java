@@ -19,7 +19,7 @@ public class CommonBroadCastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.d("CommonBroadCastReceiver", "Receiver Started");
 
-        boolean flag = intent.getBooleanExtra("flag", true); //true mean doc , false lab
+        boolean flag = intent.getBooleanExtra("flag", true);
         if (flag) {
             String DoctorName = intent.getStringExtra("DoctorName");
             String reason = intent.getStringExtra("reason");
@@ -34,7 +34,7 @@ public class CommonBroadCastReceiver extends BroadcastReceiver {
     public void showNotificationDoc(Context context, String DoctorName, String reason) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.voz)
-                .setContentTitle("MediClock Alert")
+                .setContentTitle("Voz Alert")
                 .setContentText("You have an Appointment")
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("Please go to " + DoctorName + " on time for " + reason))
@@ -48,7 +48,7 @@ public class CommonBroadCastReceiver extends BroadcastReceiver {
     public void showNotificationLab(Context context, String TestName) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.voz)
-                .setContentTitle("MediClock Alert")
+                .setContentTitle("Voz Alert")
                 .setContentText("You have a Lab Test")
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("Please go for " + TestName + " test"))
