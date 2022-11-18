@@ -14,4 +14,4 @@ Group members: Yanina Asiptsova, Anastasiya Maksimenka
 
 Type of application: mobile (Android) 
 
-Programming languages and technologies used: Java, Firebase/SQLite
+Programming languages and technologies used: Java, Firebase
