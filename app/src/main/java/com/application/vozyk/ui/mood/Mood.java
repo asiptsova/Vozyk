@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.home;
+package com.application.vozyk.ui.mood;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,10 +26,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
-
-import com.application.vozyk.CustomBarChartRenderer;
 import com.application.vozyk.R;
-import com.application.vozyk.Simplify_the_time;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;

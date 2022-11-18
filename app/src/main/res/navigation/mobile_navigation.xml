@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_mood"
-        android:name="com.application.vozyk.ui.home.Mood"
+        android:name="com.application.vozyk.ui.mood.Mood"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_mood" />
 

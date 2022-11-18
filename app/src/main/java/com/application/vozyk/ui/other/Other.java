@@ -11,9 +11,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.application.vozyk.About_us;
-import com.application.vozyk.Account;
-import com.application.vozyk.Login;
+import com.application.vozyk.ui.about.About_us;
+import com.application.vozyk.ui.account.Account;
+import com.application.vozyk.ui.login.Login;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.habits.Habits;
 import com.application.vozyk.ui.notes.NotesListActivity;

@@ -8,7 +8,7 @@
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
     android:background="@drawable/triangle_bg"
-    tools:context=".Account">
+    tools:context=".ui.account.Account">
 
 
         <ImageView

@@ -1,4 +1,4 @@
-package com.application.vozyk;
+package com.application.vozyk.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.application.vozyk.MainActivity;
+import com.application.vozyk.R;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;

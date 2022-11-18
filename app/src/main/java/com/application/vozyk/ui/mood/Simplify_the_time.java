@@ -1,4 +1,4 @@
-package com.application.vozyk;
+package com.application.vozyk.ui.mood;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,4 +1,4 @@
-package com.application.vozyk;
+package com.application.vozyk.ui.mood;
 
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;

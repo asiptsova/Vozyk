@@ -222,7 +222,7 @@ public class NoteActivity extends AppCompatActivity {
             deleteFile(title + HelperUtils.TEXT_FILE_EXTENSION);
         }
 
-        // Set the title to be the new saved title for when the home button is pressed
+        // Set the title to be the new saved title for when the mood button is pressed
         title = newTitle;
 
         // Send Tasker event
