@@ -21,6 +21,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
 
+    <Button
+        android:id="@+id/byLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="628dp"
+        android:backgroundTint="@color/fui_transparent"
+        android:enabled="true"
+        android:text="By"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/engLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="680dp"
+        android:backgroundTint="@color/fui_transparent"
+        android:enabled="true"
+        android:text="eng"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/Email"
         android:layout_width="322dp"

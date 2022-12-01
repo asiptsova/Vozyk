@@ -2,6 +2,7 @@ package com.application.vozyk.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
@@ -42,6 +44,17 @@ public class Registration extends AppCompatActivity {
         final TextView mLoginBtn = findViewById(R.id.createText);
         final CircularProgressIndicator indicator =findViewById(R.id.progress_barCircle);
         final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
+        Button by_btn =findViewById(R.id.by);
+        by_btn.setOnClickListener(v -> {
+            Locale locale = new Locale("be");
+            changeLocale(locale);
+        });
+        Button en_btn =findViewById(R.id.eng);
+        en_btn.setOnClickListener(v -> {
+            Locale locale = new Locale("en");
+            changeLocale(locale);
+        });
+
         ShowHidePWD.setOnClickListener(view -> {
             if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
                 mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -159,5 +172,33 @@ public class Registration extends AppCompatActivity {
         if (email == null)
             return false;
         return pat.matcher(email).matches();
+    }
+    @SuppressWarnings("deprecation")
+    private void changeLocale(Locale locale)
+    {
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources()
+                .updateConfiguration(configuration,
+                        getBaseContext()
+                                .getResources()
+                                .getDisplayMetrics());
+        setTitle(R.string.app_name);
+        final EditText mFullName = findViewById(R.id.fullName);
+        mFullName.setHint(R.string.username);
+        final EditText mEmail = findViewById(R.id.Email);
+        mEmail.setHint(R.string.email);
+        final EditText mPassword = findViewById(R.id.password);
+        mPassword.setHint(R.string.password);
+        final EditText etConfirm = findViewById(R.id.etConfirmPassword);
+        etConfirm.setHint(R.string.confirm_password);
+        final Button mRegisterBtn = findViewById(R.id.register);
+        mRegisterBtn.setHint(R.string.register);
+        final TextView alreadyRegister = findViewById(R.id.createText);
+        alreadyRegister.setText(R.string.already_registered_login_here);
+        final TextView createRegister = findViewById(R.id.textView);
+        createRegister.setText(R.string.create_a_new_account);
+
     }
 }

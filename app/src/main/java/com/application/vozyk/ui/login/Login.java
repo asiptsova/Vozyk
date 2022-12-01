@@ -1,6 +1,7 @@
 package com.application.vozyk.ui.login;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -21,6 +22,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
@@ -42,6 +44,16 @@ public class Login extends AppCompatActivity {
         final TextView  mCreateBtn = findViewById(R.id.createText);
         final TextView  forgotTextLink = findViewById(R.id.forgotPassword);
         final ImageView ShowHidePWD=findViewById(R.id.show_hide_pwd);
+        Button by_btn =findViewById(R.id.byLogin);
+        by_btn.setOnClickListener(v -> {
+            Locale locale = new Locale("be");
+            changeLocale(locale);
+        });
+        Button en_btn =findViewById(R.id.engLogin);
+        en_btn.setOnClickListener(v -> {
+            Locale locale = new Locale("en");
+            changeLocale(locale);
+        });
         ShowHidePWD.setOnClickListener(view -> {
             if(mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
                 mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -124,6 +136,32 @@ public class Login extends AppCompatActivity {
         if (firebaseAuthListener != null) {
             FirebaseAuth.getInstance().removeAuthStateListener(firebaseAuthListener);
         }
+
+    }
+    @SuppressWarnings("deprecation")
+    private void changeLocale(Locale locale)
+    {
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources()
+                .updateConfiguration(configuration,
+                        getBaseContext()
+                                .getResources()
+                                .getDisplayMetrics());
+        setTitle(R.string.app_name);
+        final EditText mEmail = findViewById(R.id.Email);
+        mEmail.setHint(R.string.email);
+        final EditText mPassword = findViewById(R.id.password);
+        mPassword.setHint(R.string.password);
+        final Button mRegisterBtn = findViewById(R.id.loginBtn);
+        mRegisterBtn.setText(R.string.login);
+        final TextView newAccount = findViewById(R.id.createText);
+        newAccount.setText(R.string.create_a_new_account);
+        final TextView login = findViewById(R.id.textView);
+        login.setText(R.string.log_in_to_vo_yk);
+        final TextView forgotPassword = findViewById(R.id.forgotPassword);
+        forgotPassword.setText(R.string.forgot_password);
 
     }
 }

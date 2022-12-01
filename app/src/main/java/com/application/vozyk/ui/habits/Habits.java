@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import com.application.vozyk.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +28,6 @@ import java.util.Observer;
 
 public class Habits extends AppCompatActivity implements Observer, OnCompleteListener<QuerySnapshot> {
 
-    private static final String TAG = "HabitTrackerActivity";
     private final ArrayList<Habit> habitList = new ArrayList<>();
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
@@ -38,9 +36,6 @@ public class Habits extends AppCompatActivity implements Observer, OnCompleteLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_habits);
-
-        RecyclerView recyclerView = findViewById(R.id.habitlist);
-
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
@@ -56,7 +51,6 @@ public class Habits extends AppCompatActivity implements Observer, OnCompleteLis
     public void onComplete(@NonNull Task<QuerySnapshot> task) {
         if (task.isSuccessful()) {
             for (QueryDocumentSnapshot document : task.getResult()) {
-                Log.d(TAG, document.getId() + "=>" + document.getData());
                 Calendar endDate = Calendar.getInstance();
                 Calendar startDate = Calendar.getInstance();
                 Date date1 = null;
@@ -68,22 +62,17 @@ public class Habits extends AppCompatActivity implements Observer, OnCompleteLis
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                assert date1 != null;
                 startDate.setTime(date1);
-                assert date2 != null;
                 endDate.setTime(date2);
                 Habit habit = new Habit(document.getId(), document.getString("Habit Name"), startDate, endDate, document.getString("Frequency"), Integer.parseInt(document.getString("Progress")));
                 habit.addObserver(this);
                 habitList.add(habit);
             }
             initRecyclerView();
-        } else {
-            Log.d(TAG, "Error getting documents: ", task.getException());
         }
     }
 
     private void initRecyclerView() {
-        Log.d(TAG, "Initialize recycler view");
         RecyclerView habitListView = findViewById(R.id.habitlist);
         HabitAdapter adapter = new HabitAdapter(this, habitList);
         habitListView.setAdapter(adapter);

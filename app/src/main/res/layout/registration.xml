@@ -9,6 +9,34 @@
     tools:context=".ui.login.Registration">
 
 
+    <Button
+        android:id="@+id/by"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="628dp"
+        android:backgroundTint="@color/fui_transparent"
+        android:enabled="true"
+        android:text="By"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/eng"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="680dp"
+        android:backgroundTint="@color/fui_transparent"
+        android:enabled="true"
+        android:text="eng"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -23,12 +51,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="106dp"
-        android:layout_height="91dp"
+        android:layout_width="82dp"
+        android:layout_height="72dp"
         android:layout_below="@id/Email"
         android:layout_marginBottom="548dp"
         android:contentDescription="TODO"

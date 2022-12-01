@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent_layout"
-    android:background="#E7E8D1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageButton
-        android:id="@+id/habityes"
-        android:layout_width="52dp"
-        android:layout_height="68dp"
-        android:backgroundTint="@color/upArrow"
-        android:contentDescription="TODO"
-        android:src="@android:drawable/arrow_up_float"
+        android:id="@+id/habitno"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:contentDescription="no"
+        android:src="@android:drawable/arrow_down_float"
+        android:background="@color/downArrow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/habitno"
-        android:layout_width="52dp"
-        android:layout_height="68dp"
-        android:backgroundTint="@color/downArrow"
-        android:contentDescription="TODO"
-        android:src="@android:drawable/arrow_down_float"
+        android:id="@+id/habityes"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:contentDescription="yes"
+        android:src="@android:drawable/arrow_up_float"
+        android:background="@color/upArrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
