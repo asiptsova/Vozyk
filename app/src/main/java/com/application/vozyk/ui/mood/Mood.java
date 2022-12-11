@@ -10128,7 +10128,7 @@ public class Mood extends Fragment  {
             Drawable drawable_for_buttons_three = ContextCompat.getDrawable(getContext(), R.drawable.ripple_button_fav_any_circle).mutate();
             drawable_for_buttons_three = DrawableCompat.wrap(drawable_for_buttons_three);
             DrawableCompat.setTint(drawable_for_buttons_three, color);
-            layout_inside_scroll_in_the_bad_habits.setBackgroundColor(ColorUtils.blendARGB(color, Color.WHITE, 0.9F));
+            layout_inside_scroll_in_the_bad_habits.setBackgroundColor(ColorUtils.blendARGB(color , R.color.Hex, 10.0F));
             text_asking_did_you_relapse_in_share.setTextColor(color);
 
             String very_bad_color = return_the_color_of_mood(1);
