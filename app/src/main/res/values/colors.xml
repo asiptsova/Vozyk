@@ -22,6 +22,11 @@
     <color name="OrangeAeroSpace">#fd5200</color>
     <color name="YellowAeroSpace">#FFE162</color>
     <color name="Snow">#FF3700B3</color>
-    <color name="WhiteSmoke">#F5F5F5</color>
 
+    <color name="Sage">#A1BE95</color>
+    <color name="Bluebell">#92AAC7</color>
+    <color name="Hex">#E7E8D1</color>
+    <color name="Raspberry">#ED5752</color>
+    <color name="RobbinsEggBlue">#A4CABC</color>
+    <color name="TuscanRed">#B2473E</color>
 </resources>
