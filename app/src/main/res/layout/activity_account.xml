@@ -7,27 +7,27 @@
     android:layout_height="fill_parent"
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
-    android:background="@drawable/triangle_bg"
+    android:background="@color/Hex"
     tools:context=".ui.account.Account">
 
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="132dp"
-            android:layout_height="69dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:clickable="false"
-            app:srcCompat="@drawable/voz"
+            android:src="@drawable/vozyk_log"
             android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_extra_bold"
+            android:textStyle="bold"
+            android:textColor="#234E70"
             android:gravity="center_horizontal"
             android:text="@string/profile"
-            android:textColor="#1A237E"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <de.hdodenhof.circleimageview.CircleImageView

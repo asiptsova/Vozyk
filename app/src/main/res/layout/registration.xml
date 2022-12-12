@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7E8D1"
+    android:background="@color/Hex"
     tools:context=".ui.login.Registration">
 
 
@@ -55,15 +55,15 @@
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="82dp"
-        android:layout_height="72dp"
+        android:layout_width="138dp"
+        android:layout_height="142dp"
         android:layout_below="@id/Email"
-        android:layout_marginBottom="548dp"
+        android:layout_marginBottom="536dp"
         android:contentDescription="TODO"
-        android:src="@drawable/voz"
+        android:src="@drawable/vozyk_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintLeft_toRightOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -159,7 +159,7 @@
         android:layout_height="55dp"
         android:layout_gravity="start"
         android:layout_marginBottom="180dp"
-        android:backgroundTint="#A7BEAE"
+        android:backgroundTint="@color/Bluebell"
         android:enabled="true"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
