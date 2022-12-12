@@ -144,9 +144,6 @@ public class TimeChangeActivity extends AppCompatActivity {
         return Integer.parseInt(time.substring(2, 4));
     }
 
-    /**
-     * It is used to change the values in the TIME class after fetching the information from the sharedPreferences
-     */
     public void getTime() {
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         TIME.MORNING = sharedPref.getString("MORNING", "");

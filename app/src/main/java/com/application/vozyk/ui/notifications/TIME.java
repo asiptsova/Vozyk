@@ -9,14 +9,12 @@ public class TIME {
 
     public static class AlarmBundle {
         String time;
-        int notificationID;
 
         AlarmBundle() {
         }
 
-        AlarmBundle(String time, int notificationID) {
+        AlarmBundle(String time) {
             this.time = time;
-            this.notificationID = notificationID;
         }
 
         public String getTime() {
@@ -26,15 +24,6 @@ public class TIME {
         public void setTime(String time) {
             this.time = time;
         }
-
-        public int getNotificationID() {
-            return notificationID;
-        }
-
-        public void setNotificationID(int notificationID) {
-            this.notificationID = notificationID;
-        }
-
 
     }
 

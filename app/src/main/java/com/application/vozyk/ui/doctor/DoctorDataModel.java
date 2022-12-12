@@ -9,13 +9,12 @@ public class DoctorDataModel {
     int notificationId;
     String key;
 
-    public DoctorDataModel(String name, String reason, int date, int month, int year, int notificationId) {
+    public DoctorDataModel(String name, String reason, int date, int month, int year) {
         this.name = name;
         this.reason = reason;
         this.date = date;
         this.month = month;
         this.year = year;
-        this.notificationId = notificationId;
     }
 
     public DoctorDataModel() {
@@ -59,13 +58,5 @@ public class DoctorDataModel {
 
     public void setYear(int year) {
         this.year = year;
-    }
-
-    public int getNotificationId() {
-        return notificationId;
-    }
-
-    public void setNotificationId(int notificationId) {
-        this.notificationId = notificationId;
     }
 }

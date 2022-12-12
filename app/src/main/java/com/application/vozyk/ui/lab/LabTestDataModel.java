@@ -9,26 +9,17 @@ public class LabTestDataModel {
     int notificationId;
     String key;
 
-    public LabTestDataModel(int day, int month, int year, String testName, String doctorName, int notificationId) {
+    public LabTestDataModel(int day, int month, int year, String testName, String doctorName) {
         this.day = day;
         this.month = month;
         this.year = year;
         this.testName = testName;
         this.doctorName = doctorName;
-        this.notificationId = notificationId;
+
     }
 
     public LabTestDataModel() {
     }
-
-    public int getNotificationId() {
-        return notificationId;
-    }
-
-    public void setNotificationId(int notificationId) {
-        this.notificationId = notificationId;
-    }
-
     public int getDay() {
         return day;
     }

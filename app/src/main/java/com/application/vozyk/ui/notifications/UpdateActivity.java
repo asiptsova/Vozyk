@@ -75,10 +75,6 @@ public class UpdateActivity extends AppCompatActivity {
 
         updateBtn.setOnClickListener(view -> {
 
-            if (oldRecord != null) {
-                AlarmManagerHandler.cancelAlarm(getApplicationContext(), oldRecord);
-            }
-
             if (InputValidationHandler.inputValidation(getData().getName(), getData().getReminder())) {
                 myRef.child(KEY).setValue(getData());
                 startActivity(
@@ -171,13 +167,13 @@ public class UpdateActivity extends AppCompatActivity {
         ArrayList<TIME.AlarmBundle> time = new ArrayList<>();
         for (Integer i : arr) {
             if (i == R.id.up_morning) {
-                time.add(new TIME.AlarmBundle(TIME.MORNING, AlarmManagerHandler.setUniqueNotificationId()));
+                time.add(new TIME.AlarmBundle(TIME.MORNING));
             } else if (i == R.id.up_lunch) {
-                time.add(new TIME.AlarmBundle(TIME.AFTERNOON, AlarmManagerHandler.setUniqueNotificationId()));
+                time.add(new TIME.AlarmBundle(TIME.AFTERNOON));
             } else if (i == R.id.up_night) {
-                time.add(new TIME.AlarmBundle(TIME.NIGHT, AlarmManagerHandler.setUniqueNotificationId()));
+                time.add(new TIME.AlarmBundle(TIME.NIGHT));
             } else if (i == R.id.up_custom_time) {
-                time.add(new TIME.AlarmBundle(custom_time_value, AlarmManagerHandler.setUniqueNotificationId()));
+                time.add(new TIME.AlarmBundle(custom_time_value));
             }
 
         }

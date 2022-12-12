@@ -76,12 +76,6 @@
             android:name=".ui.notifications.TimeChangeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.notifications.AlarmManagerHandler"
-            android:exported="true" />
-        <activity
-            android:name=".ui.notifications.RingActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.habits.NewHabitActivity"
             android:exported="true" />
         <activity
@@ -153,8 +147,6 @@
         <activity
             android:name=".ui.relax.BreathingExerciseActivity"
             android:exported="true" />
-        <receiver android:name=".ui.notifications.MyBroadcastReceiver" android:enabled="true" />
-        <receiver android:name=".ui.notifications.CommonBroadCastReceiver"  android:enabled="true"/>
     </application>
 
 </manifest>

@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import com.application.vozyk.R;
-import com.application.vozyk.ui.notifications.AlarmManagerHandler;
 import com.application.vozyk.ui.notifications.InputValidationHandler;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,8 +55,8 @@ public class DoctorAddActivity extends AppCompatActivity {
             reason = doctor_reason.getEditText().getText().toString();
 
             if (inputValidation(name, reason)) {
-                DoctorDataModel obj = new DoctorDataModel(name, reason, arr[0], arr[1], arr[2], AlarmManagerHandler.setUniqueNotificationId());
-                mDatabase.child(obj.getName() + AlarmManagerHandler.setUniqueNotificationId()).setValue(obj);
+                DoctorDataModel obj = new DoctorDataModel(name, reason, arr[0], arr[1], arr[2]);
+                mDatabase.child(obj.getName()).setValue(obj);
                 Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DoctorAddActivity.this, DoctorActivity.class));
             } else {

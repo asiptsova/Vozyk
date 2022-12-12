@@ -2,7 +2,7 @@ package com.application.vozyk;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.application.vozyk.ui.notifications.CommonAlarmRefreshService;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startService(new Intent(this, CommonAlarmRefreshService.class));
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BottomNavigationView navView = findViewById(R.id.nav_view);

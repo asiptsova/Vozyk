@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import com.application.vozyk.R;
-import com.application.vozyk.ui.notifications.AlarmManagerHandler;
 import com.application.vozyk.ui.notifications.InputValidationHandler;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,8 +63,8 @@ public class labAddActivity extends AppCompatActivity {
 
             if (inputValidation(testName, docName)) {
 
-                LabTestDataModel obj = new LabTestDataModel(arr[0], arr[1], arr[2], testName, docName, AlarmManagerHandler.setUniqueNotificationId());
-                mDatabase.child(obj.getTestName() + AlarmManagerHandler.setUniqueNotificationId()).setValue(obj);
+                LabTestDataModel obj = new LabTestDataModel(arr[0], arr[1], arr[2], testName, docName);
+                mDatabase.child(obj.getTestName()).setValue(obj);
                 Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(labAddActivity.this, labActivity.class));
             } else {

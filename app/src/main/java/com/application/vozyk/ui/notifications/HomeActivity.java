@@ -92,13 +92,13 @@ public class HomeActivity extends AppCompatActivity {
             ArrayList<TIME.AlarmBundle> time = new ArrayList<>();
             for (Integer i : arr) {
                 if (i == R.id.morning) {
-                    time.add(new TIME.AlarmBundle(TIME.MORNING, AlarmManagerHandler.setUniqueNotificationId()));
+                    time.add(new TIME.AlarmBundle(TIME.MORNING));
                 } else if (i == R.id.lunch) {
-                    time.add(new TIME.AlarmBundle(TIME.AFTERNOON, AlarmManagerHandler.setUniqueNotificationId()));
+                    time.add(new TIME.AlarmBundle(TIME.AFTERNOON));
                 } else if (i == R.id.night) {
-                    time.add(new TIME.AlarmBundle(TIME.NIGHT, AlarmManagerHandler.setUniqueNotificationId()));
+                    time.add(new TIME.AlarmBundle(TIME.NIGHT));
                 } else if (i == R.id.custom_time) {
-                    time.add(new TIME.AlarmBundle(custom_time_value, AlarmManagerHandler.setUniqueNotificationId()));
+                    time.add(new TIME.AlarmBundle(custom_time_value));
                 }
             }
 
@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity {
                         before_food,
                         time
                 );
-                myRef.child("MedicineRecord").child(PersonID).child(mrh.getName() + AlarmManagerHandler.setUniqueNotificationId()).setValue(mrh);
+                myRef.child("MedicineRecord").child(PersonID).child(mrh.getName()).setValue(mrh);
                 Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(HomeActivity.this, MainActivity.class));
             } else {
