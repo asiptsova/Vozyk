@@ -10077,36 +10077,36 @@ public class Mood extends Fragment  {
         }
         if (which == 1) {
             if (very_bad == null || very_bad.equals("")) {
-                return "#ffff4444";
+                return "#f55656";
             } else {
                 return very_bad;
             }
         } else if (which == 2) {
             if (bad == null || bad.equals("")) {
-                return "#FFA500";
+                return "#ffcb6b";
             } else {
                 return bad;
             }
         } else if (which == 3) {
             if (ok == null || ok.equals("")) {
-                return "#800080";
+                return "#e06dfc";
             } else {
                 return ok;
             }
         } else if (which == 4) {
             if (good == null || good.equals("")) {
-                return "#008b8b";
+                return "#69e9f5";
             } else {
                 return good;
             }
         } else if (which == 5) {
             if (very_good == null || very_good.equals("")) {
-                return "#32CD32";
+                return "#83d964";
             } else {
                 return very_good;
             }
         }
-        return "#32CD32";
+        return "#83d964";
     }
 
     private int return_color_of_days(long milli) {
