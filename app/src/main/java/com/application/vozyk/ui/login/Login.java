@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
         for (String provider : AuthUI.SUPPORTED_PROVIDERS) {
             Log.v(this.getClass().getName(), provider);
         }
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         if(getIntent().getStringExtra("language")!=null) {
             temp = getIntent().getStringExtra("language");
             if (temp.equals("English")) {

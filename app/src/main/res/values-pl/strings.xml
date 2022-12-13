@@ -203,5 +203,9 @@
     <string name="Breathe">Breathe</string>
     <string name="Other">Breathe</string>
     <string name="Meditate">Meditate</string>
+    <string name="choose_language">Choose language</string>
+    <string name="change_password">Change password</string>
+    <string name="change_email">Change email</string>
+    <string name="delete_account">Delete account</string>
 
 </resources>

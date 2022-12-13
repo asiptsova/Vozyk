@@ -203,5 +203,9 @@
     <string name="Breathe">Дыханне</string>
     <string name="Other">Іншае</string>
     <string name="Meditate">Медытацыя</string>
+    <string name="choose_language">Змяеніць мову</string>
+    <string name="change_password">Змяніць пароль</string>
+    <string name="change_email">Змяніць емэйл</string>
+    <string name="delete_account">Выдаліць акаўнт</string>
 
 </resources>
