@@ -27,7 +27,6 @@ public class Other extends Fragment {
         View root = inflater.inflate(R.layout.fragment_other, container, false);
         final Button habit_link=root.findViewById(R.id.habit_link);
         final Button account=root.findViewById(R.id.account);
-        final Button settings=root.findViewById(R.id.settings);
         final Button about=root.findViewById(R.id.about);
         final Button logout=root.findViewById(R.id.logout);
         final Button quiz=root.findViewById(R.id.test);
@@ -36,7 +35,7 @@ public class Other extends Fragment {
 
         habit_link.setOnClickListener(v -> startActivity(new Intent(getContext(), Habits.class)));
 
-        logout.setOnClickListener(v -> {
+     /*   logout.setOnClickListener(v -> {
             final AlertDialog.Builder b = new AlertDialog.Builder(getContext());
             b.setMessage("Are you sure you want to sign out?");
             b.setCancelable(true);
@@ -51,7 +50,7 @@ public class Other extends Fragment {
             AlertDialog a = b.create();
             a.show();
         });
-
+*/
         account.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Account.class);
             startActivity(intent);

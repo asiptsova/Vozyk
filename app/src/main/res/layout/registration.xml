@@ -8,34 +8,17 @@
     android:background="@color/Hex"
     tools:context=".ui.login.Registration">
 
-
-    <Button
-        android:id="@+id/by"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginBottom="628dp"
-        android:backgroundTint="@color/fui_transparent"
-        android:enabled="true"
-        android:text="By"
+    <Spinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="294dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="678dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/eng"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginBottom="680dp"
-        android:backgroundTint="@color/fui_transparent"
-        android:enabled="true"
-        android:text="eng"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"

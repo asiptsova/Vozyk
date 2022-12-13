@@ -51,11 +51,11 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="50dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -65,18 +65,32 @@
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:background="#BCFFFFFF"
-                    android:text="@string/name"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <TextView
-                    android:id="@+id/firstname_textview"
-                    android:layout_width="700dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:background="#BCFFFFFF"
+                    android:hint="@string/name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             </LinearLayout>
         </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/settings"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/settings"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

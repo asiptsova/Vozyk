@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,8 +40,6 @@ class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitView> {
             habitList.get(position).incrementProgress();
             notifyItemChanged(position);
         });
-
-        holder.downButton.setOnClickListener(v -> Toast.makeText(mContext, habitList.get(position).getHabitName(), Toast.LENGTH_SHORT).show());
         holder.progress.setMax(habitList.get(position).getMaxProgress());
         holder.progress.setProgress(habitList.get(position).getProgress(), true);
     }

@@ -1,11 +1,13 @@
 package com.application.vozyk.ui.account;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +17,10 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -25,9 +31,10 @@ import java.io.IOException;
 
 public class Account extends AppCompatActivity {
 
-    private TextView first_name_txt;
+    private TextView name;
     private FirebaseUser user;
     private ImageView profilePic;
+    private ImageButton settings;
     Uri imageUri;
 
     public FirebaseFirestore myDatabase;
@@ -37,12 +44,27 @@ public class Account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        first_name_txt = findViewById(R.id.firstname_textview);
-        first_name_txt.getBackground().setAlpha(75);
+        name = findViewById(R.id.nameLabel);
+        settings =findViewById(R.id.settings);
         profilePic = findViewById(R.id.imagetoupload);
-
         myDatabase = FirebaseFirestore.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseDatabase.getInstance().getReference("Users")
+                .orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            String temp = String.valueOf( ds.child("name").getValue());
+                            name.setText(temp);
+                            System.out.println(temp);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
         this.updateLabels();
         if (user.getPhotoUrl() != null) {
@@ -55,7 +77,7 @@ public class Account extends AppCompatActivity {
             gallery.setType("image/*");
             gallery.setAction(Intent.ACTION_GET_CONTENT);
 
-            startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
+            startActivityForResult(Intent.createChooser(gallery, "Select  "), PICK_IMAGE);
         });
     }
 
@@ -67,7 +89,7 @@ public class Account extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot documentSnapshot = task.getResult();
                     String name = documentSnapshot.getString("Name");
-                    first_name_txt.setText(name);
+                    this.name.setText(name);
 
                 }
             });

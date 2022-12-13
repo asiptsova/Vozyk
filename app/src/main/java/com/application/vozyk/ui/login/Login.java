@@ -7,9 +7,13 @@ import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -28,6 +32,7 @@ import java.util.Objects;
 public class Login extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseAuth.AuthStateListener firebaseAuthListener;
+    String temp="Language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,23 +42,52 @@ public class Login extends AppCompatActivity {
             Log.v(this.getClass().getName(), provider);
         }
         setContentView(R.layout.login);
-
+        if(getIntent().getStringExtra("language")!=null) {
+            temp = getIntent().getStringExtra("language");
+            if (temp.equals("English")) {
+                Locale locale = new Locale("en");
+                changeLocale(locale);
+            }
+            if (temp.equals("Belorussian")) {
+                Locale locale = new Locale("be");
+                changeLocale(locale);
+            }
+            if (temp.equals("Polish")) {
+                Locale locale = new Locale("pl");
+                changeLocale(locale);
+            }
+        }
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);
         final Button mLoginBtn = findViewById(R.id.loginBtn);
         final TextView  mCreateBtn = findViewById(R.id.createText);
         final TextView  forgotTextLink = findViewById(R.id.forgotPassword);
         final ImageView ShowHidePWD=findViewById(R.id.show_hide_pwd);
-        Button by_btn =findViewById(R.id.byLogin);
-        by_btn.setOnClickListener(v -> {
-            Locale locale = new Locale("be");
-            changeLocale(locale);
+        final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
+        ArrayAdapter<CharSequence> adapterLanguage = ArrayAdapter.createFromResource(this,
+                R.array.language, R.layout.spinner_item);
+        spinnerLanguage.setAdapter(adapterLanguage);
+        adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLanguage .setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                 temp = parent.getItemAtPosition(pos).toString();
+                if(temp.equals("English")) {
+                    Locale locale = new Locale("en");
+                    changeLocale(locale);
+                }
+                else if (temp.equals("Belorussian")) {
+                    Locale locale = new Locale("be");
+                    changeLocale(locale);
+                }
+                else{
+                    Locale locale = new Locale("pl");
+                    changeLocale(locale);
+                }
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
         });
-        Button en_btn =findViewById(R.id.engLogin);
-        en_btn.setOnClickListener(v -> {
-            Locale locale = new Locale("en");
-            changeLocale(locale);
-        });
+
         ShowHidePWD.setOnClickListener(view -> {
             if(mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
                 mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -94,7 +128,12 @@ public class Login extends AppCompatActivity {
             });
         });
 
-        mCreateBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Registration.class)));
+        mCreateBtn.setOnClickListener(v ->
+                {
+                    Intent intent=new Intent(getApplicationContext(), Registration.class);
+                    intent.putExtra("language",temp);
+                    startActivity(intent);
+                });
         forgotTextLink.setOnClickListener(v -> {
             final EditText resetMail = new EditText(v.getContext());
             final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());

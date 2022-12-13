@@ -9,12 +9,14 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
@@ -26,7 +28,7 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
-
+    String temp="Language";
     private DatabaseReference getUsersRef(String ref) {
         return FirebaseDatabase.getInstance().getReference("Users")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(ref);
@@ -44,16 +46,32 @@ public class Registration extends AppCompatActivity {
         final TextView mLoginBtn = findViewById(R.id.createText);
         final CircularProgressIndicator indicator =findViewById(R.id.progress_barCircle);
         final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
-        Button by_btn =findViewById(R.id.by);
-        by_btn.setOnClickListener(v -> {
-            Locale locale = new Locale("be");
-            changeLocale(locale);
+        final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
+        ArrayAdapter<CharSequence> adapterLanguage = ArrayAdapter.createFromResource(this,
+                R.array.language, R.layout.spinner_item);
+        spinnerLanguage.setAdapter(adapterLanguage);
+        adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLanguage .setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                temp = parent.getItemAtPosition(pos).toString();
+                if (temp.equals("English")) {
+                    Locale locale = new Locale("en");
+                    changeLocale(locale);
+                }
+                if (temp.equals("Belorussian")) {
+                    Locale locale = new Locale("be");
+                    changeLocale(locale);
+                }
+                if (temp.equals("Polish")) {
+                    Locale locale = new Locale("pl");
+                    changeLocale(locale);
+                }
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+                temp="Language";
+            }
         });
-        Button en_btn =findViewById(R.id.eng);
-        en_btn.setOnClickListener(v -> {
-            Locale locale = new Locale("en");
-            changeLocale(locale);
-        });
+
 
         ShowHidePWD.setOnClickListener(view -> {
             if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
@@ -116,11 +134,19 @@ public class Registration extends AppCompatActivity {
                                     Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
                     getUsersRef("name").setValue(fullName);
                     getUsersRef("email").setValue(email);
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("language",temp);
+                    startActivity(intent);
                 }
             });
         });
-        mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Login.class)));
+        mLoginBtn.setOnClickListener(v ->
+        {
+            Intent intent=new Intent(getApplicationContext(), Login.class);
+            intent.putExtra("language",temp);
+            System.out.println(temp);
+            startActivity(intent);
+        });
     }
     private boolean upperCase(String str) {
         char ch;

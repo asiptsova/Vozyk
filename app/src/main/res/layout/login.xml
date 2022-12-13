@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7E8D1">
 
+
+    <Spinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="294dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="678dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in_to_vo_yk"
+        android:textColor="#234E70"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
-
-    <Button
-        android:id="@+id/byLogin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginBottom="628dp"
-        android:backgroundTint="@color/fui_transparent"
-        android:enabled="true"
-        android:text="By"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/engLogin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="start"
-        android:layout_marginBottom="680dp"
-        android:backgroundTint="@color/fui_transparent"
-        android:enabled="true"
-        android:text="eng"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_bias="0.164" />
 
     <EditText
         android:id="@+id/Email"
@@ -92,7 +77,7 @@
         android:layout_width="138dp"
         android:layout_height="142dp"
         android:layout_below="@id/Email"
-        android:layout_marginBottom="508dp"
+        android:layout_marginBottom="496dp"
         android:contentDescription="TODO"
         android:src="@drawable/vozyk_log"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,8 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/create_new_account"
-        android:textSize="18sp"
         android:textColor="#234E70"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,8 +134,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/forgot_password"
-        android:textSize="15sp"
         android:textColor="#234E70"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createText" />
