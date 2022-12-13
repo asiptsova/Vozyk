@@ -2,15 +2,17 @@ package com.application.vozyk.ui.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.TestLooperManager;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
+import com.application.vozyk.ui.notes.NotesListActivity;
+
 import java.util.Locale;
 
 public class ChangeLanguage extends AppCompatActivity {
@@ -22,7 +24,6 @@ public class ChangeLanguage extends AppCompatActivity {
         final RadioGroup languageGroup = findViewById(R.id.languageGroup);
         languageGroup.setOnCheckedChangeListener((group, checkedId) -> {
             position = languageGroup.indexOfChild(findViewById(checkedId));
-            System.out.println(position);
             if (position == 0)
             {
                 Locale locale = new Locale("en");
@@ -38,6 +39,8 @@ public class ChangeLanguage extends AppCompatActivity {
                 Locale locale = new Locale("pl");
                 changeLocale(locale);
             }
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         });
 
     }
