@@ -29,22 +29,6 @@ public class Other extends Fragment {
 
         habit_link.setOnClickListener(v -> startActivity(new Intent(getContext(), Habits.class)));
 
-     /*   logout.setOnClickListener(v -> {
-            final AlertDialog.Builder b = new AlertDialog.Builder(getContext());
-            b.setMessage("Are you sure you want to sign out?");
-            b.setCancelable(true);
-            b.setNegativeButton("Yes", (dialog, which) -> {
-                dialog.cancel();
-                AuthUI.getInstance()
-               .signOut(getContext())
-                        .addOnCompleteListener(task -> startActivity(new Intent(getContext(), Login.class)));
-            });
-            b.setPositiveButton("No", (dialog, which) -> {
-            });
-            AlertDialog a = b.create();
-            a.show();
-        });
-*/
         account.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Account.class);
             startActivity(intent);

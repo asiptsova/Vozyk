@@ -121,13 +121,57 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_privacy_policy"
+        android:id="@+id/cl_change_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@+id/cl_change_password">
+
+        <ImageView
+            android:id="@+id/iv_change_email"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="40dp"
+            android:padding="5dp"
+            android:src="@drawable/settings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:id="@+id/tv_change_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change email"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_change_email"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="30dp"
+            android:background="#CCD1D1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_change_email"
+            android:layout_marginRight="30dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/cl_change_email">
 
         <ImageView
             android:id="@+id/iv_privacy_policy"
@@ -167,11 +211,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_sign_out"
+        android:id="@+id/cl_delete_account"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@+id/cl_privacy_policy">
+        app:layout_constraintTop_toBottomOf="@+id/cl_logout">
 
         <ImageView
             android:id="@+id/iv_sign_out"
