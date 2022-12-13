@@ -31,7 +31,7 @@
             android:foregroundGravity="center"
             android:layout_marginTop="300dp"
             android:clickable="false"
-            app:srcCompat="@drawable/ic_lab_svgrepo_com"
+            app:srcCompat="@drawable/labs"
             android:contentDescription="TODO" />
 
         <TextView

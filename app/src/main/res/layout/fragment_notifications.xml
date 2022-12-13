@@ -31,7 +31,7 @@
             android:foregroundGravity="center"
             android:layout_marginTop="300dp"
             android:clickable="false"
-            app:srcCompat="@drawable/ic_medicine_svgrepo_com__1_"
+            app:srcCompat="@drawable/pills"
             android:contentDescription="TODO" />
         <TextView
             android:id="@+id/emptyText"

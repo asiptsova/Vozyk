@@ -9,7 +9,8 @@
     <item
         android:id="@+id/navigation_relax"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/relax" />
+        android:title="@string/relax"
+        />
 
     <item
         android:id="@+id/navigation_notifications"

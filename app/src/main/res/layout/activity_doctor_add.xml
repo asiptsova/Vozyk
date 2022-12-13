@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.doctor.DoctorAddActivity">
+    tools:context=".ui.doctor.DoctorAddActivity"
+    android:background="@color/Hex">
 
     <TextView
         android:id="@+id/textView"
@@ -16,11 +17,13 @@
         android:paddingTop="60dp"
         android:paddingBottom="10dp"
         android:text="Add Appointment"
-        android:textColor="@color/white"
+        android:textColor="#234E70"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/Hex"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/doctor_reason"
@@ -70,7 +73,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_date_view"
         app:layout_constraintEnd_toStartOf="@+id/lab_date_view"
         app:layout_constraintTop_toTopOf="@+id/lab_date_view"
-        app:srcCompat="@drawable/ic_calendar_svgrepo_com"
+        app:srcCompat="@drawable/calendar"
         android:contentDescription="TODO" />
 
     <TextView
@@ -79,10 +82,10 @@
         android:layout_height="46dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="92dp"
-        android:fontFamily="@font/acme"
         android:text="Select Date"
         android:onClick="showDatePickerDialog"
-        android:textColor="@color/teal_700"
+        android:textColor="#234E70"
+        android:textStyle="bold"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doctor_reason" />
@@ -95,18 +98,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/doctor_name"
         app:layout_constraintEnd_toStartOf="@+id/doctor_name"
         app:layout_constraintTop_toTopOf="@+id/doctor_name"
-        app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_"
+        app:srcCompat="@drawable/doctor"
         android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="86dp"
-        android:layout_height="39dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/doctor_reason"
         app:layout_constraintEnd_toStartOf="@+id/doctor_reason"
         app:layout_constraintTop_toTopOf="@+id/doctor_reason"
-        app:srcCompat="@drawable/ic_prescription_svgrepo_com"
+        app:srcCompat="@drawable/notepad"
         android:contentDescription="TODO" />
 
     <Button
@@ -117,6 +120,7 @@
         android:text="ADD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 

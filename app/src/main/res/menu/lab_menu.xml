@@ -4,12 +4,12 @@
     >
 
     <item android:id="@+id/nav_lab_medicine"
-        android:icon="@drawable/ic_medicine_svgrepo_com__1_"
+        android:icon="@drawable/pills"
         app:showAsAction="ifRoom"
         android:title="@string/medicine" />
 
     <item android:id="@+id/nav_lab_doc"
-        android:icon="@drawable/ic_doctor_svgrepo_com"
+        android:icon="@drawable/doctor"
         app:showAsAction="ifRoom"
         android:title="@string/lab_doc" />
 </menu>

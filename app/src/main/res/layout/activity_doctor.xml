@@ -36,7 +36,7 @@
                     android:foregroundGravity="center"
                     android:layout_marginTop="300dp"
                     android:clickable="false"
-                    app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_"
+                    app:srcCompat="@drawable/doctor"
                     android:contentDescription="TODO" />
 
                 <TextView

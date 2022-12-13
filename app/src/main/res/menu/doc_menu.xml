@@ -6,13 +6,13 @@
 
     <item android:id="@+id/nav_medicine"
         android:title="@string/medicine"
-        android:icon="@drawable/ic_medicine_svgrepo_com__1_"
+        android:icon="@drawable/pills"
         app:showAsAction="ifRoom"
         />
 
     <item android:id="@+id/nav_lab"
         android:title="@string/labs"
-        android:icon="@drawable/ic_lab_svgrepo_com"
+        android:icon="@drawable/labs"
         app:showAsAction="ifRoom"
         />
 
