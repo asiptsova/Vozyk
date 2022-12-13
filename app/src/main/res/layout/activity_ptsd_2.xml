@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/Hex">
 
     <LinearLayout
         android:id="@+id/activity_gad7"
@@ -13,7 +14,8 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:orientation="vertical"
-        tools:context=".ui.ptsd.ptsdActivity">
+        tools:context=".ui.ptsd.ptsdActivity"
+        android:background="@color/Hex">
 
         <TextView
             android:id="@+id/generalP"
@@ -23,7 +25,7 @@
             android:layout_marginTop="20dp"
             android:text="in_the_past_have_you"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -38,7 +40,7 @@
             android:layout_marginTop="60dp"
             android:text="tried_hard_not_to_think_about_the_event_s_or_went_out_of_your_way_to_avoid_situations_that_reminded_you_of_the_event_s"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -55,7 +57,7 @@
             android:backgroundTint="#C0B2E7"
             android:text="yes"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -72,7 +74,7 @@
             android:backgroundTint="#C0B2E7"
             android:text="no"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"

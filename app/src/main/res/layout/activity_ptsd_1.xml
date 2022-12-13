@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/Hex">
 
     <LinearLayout
         android:id="@+id/activity_gad7"
@@ -13,7 +14,8 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:orientation="vertical"
-        tools:context=".ui.ptsd.ptsd">
+        tools:context=".ui.ptsd.ptsd"
+        android:background="@color/Hex">
 
         <TextView
             android:id="@+id/question"
@@ -22,7 +24,7 @@
             android:layout_marginTop="20dp"
             android:text="sometimes_things_happen_to_people_that_are_unusually_or_especially_frightening_horrible_or_traumatic_for_example"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -34,8 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:textAllCaps="false"
-        android:textColor="#3F51B5"
+        android:textAllCaps="false" android:textColor="#234E70"
         android:textColorHighlight="#3F51B5"
         android:textColorHint="#3F51B5"
         android:textColorLink="#3F51B5"
@@ -50,7 +51,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -64,7 +65,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -78,7 +79,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -92,36 +93,35 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
             android:textSize="20sp"
             android:text="seeing_someone_be_killed_or_seriously_injured"
             />
+
         <TextView
             android:id="@+id/exampleSix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
+            android:text="having_a_loved_one_die_through_homicide_and_suicide"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="20sp"
-            android:text="having_a_loved_one_die_through_homicide_and_suicide"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/general"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="10dp"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -139,7 +139,7 @@
             android:backgroundTint="#C0B2E7"
             android:text="yes"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -156,7 +156,7 @@
             android:backgroundTint="#C0B2E7"
             android:text="no"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"

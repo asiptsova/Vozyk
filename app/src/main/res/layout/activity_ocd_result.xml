@@ -10,8 +10,8 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    android:background="#F2ECE0"
-    tools:context=".ui.adhd.adhdResultActivity">
+    tools:context=".ui.adhd.adhdResultActivity"
+    android:background="@color/Hex">
 
     <ImageView
         android:id="@+id/Logo"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAllCaps="false"
-        android:textColor="#3F51B5"
+        android:textColor="#234E70"
         android:textColorHighlight="#3F51B5"
         android:textColorHint="#3F51B5"
         android:textColorLink="#3F51B5"

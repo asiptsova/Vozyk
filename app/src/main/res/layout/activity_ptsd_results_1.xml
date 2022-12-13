@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ptsd.ptsdResultActivity">
+    tools:context=".ui.ptsd.ptsdResultActivity"
+    android:background="@color/Hex"
+    >
 
 </androidx.constraintlayout.widget.ConstraintLayout>

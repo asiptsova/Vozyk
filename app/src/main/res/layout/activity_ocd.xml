@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/Hex">
 
     <LinearLayout
         android:id="@+id/activity_phq9"
@@ -15,7 +16,8 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:orientation="vertical"
-        tools:context=".ui.adhd.adhdActivity">
+        tools:context=".ui.adhd.adhdActivity"
+        android:background="@color/Hex">
 
         <TextView
             android:text="ocdOvr"
@@ -26,7 +28,7 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -44,7 +46,7 @@
             android:textSize="22sp"
             android:autoSizeTextType="uniform"
             android:textAllCaps="false"
-            android:textColor="#3F51B5"
+            android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
@@ -61,7 +63,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -80,7 +82,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -99,7 +101,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -118,7 +120,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
@@ -137,7 +139,7 @@
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
             android:textAllCaps="false"
-            android:textColor="#664564"
+            android:textColor="@color/white"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
