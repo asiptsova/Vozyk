@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.application.vozyk.R;
+import com.application.vozyk.ui.settings.Settings;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,7 +35,6 @@ public class Account extends AppCompatActivity {
     private TextView name;
     private FirebaseUser user;
     private ImageView profilePic;
-    private ImageButton settings;
     Uri imageUri;
 
     public FirebaseFirestore myDatabase;
@@ -45,7 +45,7 @@ public class Account extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
         name = findViewById(R.id.nameLabel);
-        settings =findViewById(R.id.settings);
+        ImageButton settings = findViewById(R.id.settings);
         profilePic = findViewById(R.id.imagetoupload);
         myDatabase = FirebaseFirestore.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -65,6 +65,11 @@ public class Account extends AppCompatActivity {
 
                     }
                 });
+
+        settings.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+        });
 
         this.updateLabels();
         if (user.getPhotoUrl() != null) {

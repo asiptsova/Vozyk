@@ -121,6 +121,9 @@
             android:name=".ui.doctor.DoctorAddActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.settings.Settings"
+            android:exported="true" />
+        <activity
             android:name=".ui.lab.labActivity"
             android:exported="true" />
         <activity

@@ -1,25 +1,20 @@
 package com.application.vozyk.ui.other;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.application.vozyk.ui.about.About_us;
 import com.application.vozyk.ui.account.Account;
-import com.application.vozyk.ui.login.Login;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.habits.Habits;
 import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
 import com.application.vozyk.ui.ToDoList.ToDoListActivity;
-import com.firebase.ui.auth.AuthUI;
 
 public class Other extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -28,7 +23,6 @@ public class Other extends Fragment {
         final Button habit_link=root.findViewById(R.id.habit_link);
         final Button account=root.findViewById(R.id.account);
         final Button about=root.findViewById(R.id.about);
-        final Button logout=root.findViewById(R.id.logout);
         final Button quiz=root.findViewById(R.id.test);
         final Button toDo=root.findViewById(R.id.toDo);
         final Button notes=root.findViewById(R.id.notes);
