@@ -87,7 +87,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="bottom"
                     app:fabAlignmentMode="end"
-                    android:backgroundTint="@color/teal_700"
+                    android:backgroundTint="@color/Hex"
                     app:hideOnScroll="true"
                     app:menu="@menu/doc_menu"
                     />
