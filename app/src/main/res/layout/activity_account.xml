@@ -100,7 +100,7 @@
         android:layout_below="@id/Email"
         android:layout_marginBottom="496dp"
         android:contentDescription="TODO"
-        android:src="@drawable/settings_vozyk" />
+        android:src="@drawable/vozyk_1" />
 
 
 </LinearLayout>
