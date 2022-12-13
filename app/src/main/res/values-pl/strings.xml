@@ -176,4 +176,8 @@
     <string name="mood">Настрой</string>
     <string name="relax">Адпачыць</string>
     <string name="other">Іншае</string>
+    <string name="english">English</string>
+    <string name="belorussian">Belorussian</string>
+    <string name="polish">Polish</string>
+    <string name="change_language">Change Language:</string>
 </resources>

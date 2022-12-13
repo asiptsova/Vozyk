@@ -176,5 +176,9 @@
     <string name="mood">Mood</string>
     <string name="relax">Relax</string>
     <string name="other">Other</string>
+    <string name="english">English</string>
+    <string name="belorussian">Belorussian</string>
+    <string name="polish">Polish</string>
+    <string name="change_language">Change Language:</string>
 
 </resources>

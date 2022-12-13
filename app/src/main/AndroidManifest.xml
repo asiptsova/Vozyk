@@ -26,6 +26,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vožyk">
         <activity
+            android:name=".ChangeLanguage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.settings.ChangeEmail"
             android:exported="false">
             <meta-data
@@ -41,6 +48,13 @@
         </activity>
         <activity
             android:name=".ui.settings.DeleteAccount"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.settings.ChangeLanguage"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

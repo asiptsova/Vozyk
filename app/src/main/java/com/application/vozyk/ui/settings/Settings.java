@@ -50,5 +50,9 @@ public class Settings extends AppCompatActivity {
             Intent intent = new Intent(this, ChangeEmail.class);
             startActivity(intent);
         });
+        editLanguage.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ChangeLanguage.class);
+            startActivity(intent);
+        });
     }
         }
