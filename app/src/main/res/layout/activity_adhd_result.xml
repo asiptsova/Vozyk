@@ -10,7 +10,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    android:background="#F2ECE0"
+    android:background="@color/Hex"
     tools:context=".ui.adhd.adhdResultActivity">
 
     <ImageView

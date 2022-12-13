@@ -57,7 +57,7 @@
                 android:id="@+id/instruction"
                 android:layout_width="150dp"
                 android:layout_height="28dp"
-                android:background="#A7BEAE"
+                android:background="@color/Sage"
                 android:text="@string/press_to_edit_delete"
                 android:textColor="@color/black"
                 android:textSize="16sp"

@@ -74,15 +74,16 @@
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomappbar.BottomAppBar
+
             android:id="@+id/bottomAppBar"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="bottom"
             app:fabAlignmentMode="end"
-            android:backgroundTint="@color/teal_700"
             app:hideOnScroll="true"
             app:menu="@menu/nav_menu"
+            android:backgroundTint="@color/Hex"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

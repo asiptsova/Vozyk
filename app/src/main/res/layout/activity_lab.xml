@@ -91,7 +91,7 @@
             android:id="@+id/lab_add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFA000"
+            android:backgroundTint="@color/RobbinsEggBlue"
             app:srcCompat="@drawable/ic_baseline_add_24"
             app:layout_anchor="@id/lab_bottomAppBar"
             android:contentDescription="TODO" />

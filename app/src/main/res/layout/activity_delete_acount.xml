@@ -57,6 +57,7 @@
         android:layout_marginEnd="16dp"
         android:text="Submit Here"
         android:textSize="13sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

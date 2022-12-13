@@ -5,15 +5,18 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/Hex"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="@color/Hex"
         android:foreground="?attr/selectableItemBackground"
-        android:minHeight="60dp">
+        android:minHeight="60dp"
+        >
 
         <TextView
             android:id="@+id/tv_title"

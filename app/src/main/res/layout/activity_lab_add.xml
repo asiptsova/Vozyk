@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.lab.labAddActivity">
+    tools:context=".ui.lab.labAddActivity"
+    android:background="@color/Hex">
 
     <TextView
         android:id="@+id/textView"
@@ -20,7 +21,9 @@
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/Hex"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lab_doctor"
@@ -73,7 +76,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_date_view"
         app:layout_constraintEnd_toStartOf="@+id/lab_date_view"
         app:layout_constraintTop_toTopOf="@+id/lab_date_view"
-        app:srcCompat="@drawable/ic_calendar_svgrepo_com"
+        app:srcCompat="@drawable/calendar"
         android:contentDescription="TODO" />
 
     <TextView
@@ -82,10 +85,10 @@
         android:layout_height="46dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="92dp"
-        android:fontFamily="@font/acme"
         android:text="Select Date"
         android:onClick="showDatePickerDialog"
-        android:textColor="@color/teal_700"
+        android:textColor="#234E70"
+        android:textStyle="bold"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lab_doctor" />
@@ -98,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_name"
         app:layout_constraintEnd_toStartOf="@+id/lab_name"
         app:layout_constraintTop_toTopOf="@+id/lab_name"
-        app:srcCompat="@drawable/ic_lab_svgrepo_com"
+        app:srcCompat="@drawable/labs"
         android:contentDescription="TODO" />
 
     <ImageView
@@ -109,7 +112,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/lab_doctor"
         app:layout_constraintEnd_toStartOf="@+id/lab_doctor"
         app:layout_constraintTop_toTopOf="@+id/lab_doctor"
-        app:srcCompat="@drawable/ic_doctor_svgrepo_com__1_"
+        app:srcCompat="@drawable/doctor"
         android:contentDescription="TODO" />
 
     <Button
@@ -118,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
         android:text="ADD"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
