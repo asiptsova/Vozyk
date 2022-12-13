@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/Hex"
     tools:context=".ui.relax.Breathe">
 
 
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="252dp"
         android:paddingTop="30dp"
-        android:background="#cff7d3 "
+        android:background="@color/Hex"
         android:orientation="vertical">
 
 
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/breathing_exercise"
             android:textAlignment="center"
-            android:textColor="#1A237E"
+            android:textColor="#234E70"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -35,7 +36,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-70dp"
         android:layout_marginBottom="40dp"
-        android:background="#cff7d3 ">
+        android:background="@color/Hex">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -230,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:backgroundTint="#B85042"
+                    android:backgroundTint="@color/Raspberry"
                     android:text="@string/start"
                     android:textColor="@color/white"
                     android:textColorHint="#664564"

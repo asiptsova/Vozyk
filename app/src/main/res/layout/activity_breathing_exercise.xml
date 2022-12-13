@@ -3,14 +3,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/Hex">
 
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="252dp"
         android:paddingTop="30dp"
-        android:background="#cff7d3 "
+        android:background="@color/Hex"
         android:orientation="vertical">
         <TextView
             android:id="@+id/breathNumber"
@@ -36,11 +37,11 @@
     <LinearLayout
         android:id="@+id/breath_layout2"
         android:layout_width="380dp"
+        android:background="@color/Hex"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-100dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/breathing_background">
+        android:layout_marginBottom="40dp">
 
         <TextView
             android:id="@+id/timer"
