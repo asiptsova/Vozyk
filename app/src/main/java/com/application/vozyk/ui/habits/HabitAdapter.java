@@ -54,14 +54,12 @@ class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitView> {
         private final TextView habitName;
         private final ProgressBar progress;
         private final ImageButton upButton;
-        private final ImageButton downButton;
 
         public HabitView(@NonNull View itemView) {
             super(itemView);
             habitName = itemView.findViewById(R.id.habitname);
             progress = itemView.findViewById(R.id.progressBar);
             upButton = itemView.findViewById(R.id.habityes);
-            downButton = itemView.findViewById(R.id.habitno);
         }
     }
 }

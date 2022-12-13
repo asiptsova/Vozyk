@@ -39,7 +39,6 @@ public class ToDoListActivity extends AppCompatActivity {
     private Button completedButton;
     private Button incompleteButton;
     private MyListAdapter mylistadapter;
-
     private State currentState;
     private FirebaseFirestore db;
     private String uid;
@@ -176,7 +175,6 @@ public class ToDoListActivity extends AppCompatActivity {
                             Toast.makeText(ToDoListActivity.this, "Successfully Added Task", Toast.LENGTH_SHORT).show();
                             Task newTask = new Task(taskName.getText().toString(), startDate.getText().toString(), finishDate.getText().toString());
                             incompletedList.add(newTask);
-                            //add to database
                             addTaskToDatabase(taskName.getText().toString(), startDate.getText().toString(), finishDate.getText().toString(), newTask.getTaskId(), false);
                             mylistadapter.setData(incompletedList);
                         }
