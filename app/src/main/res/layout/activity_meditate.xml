@@ -96,7 +96,7 @@
         android:layout_width="374dp"
         android:layout_height="332dp"
         android:layout_marginStart="24dp"
-        android:src="@drawable/vozyk_meditate_2"
+        android:src="@drawable/vozyk_meditate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

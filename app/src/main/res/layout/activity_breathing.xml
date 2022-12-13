@@ -24,8 +24,7 @@
             android:text="@string/breathing_exercise"
             android:textAlignment="center"
             android:textColor="#234E70"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
