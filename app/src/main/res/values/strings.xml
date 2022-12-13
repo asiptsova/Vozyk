@@ -114,7 +114,6 @@
     <string name="info">Info</string>
     <string name="task">Task:</string>
     <string name="finishing_date">Finishing Date:</string>
-    <string name="account">account</string>
     <string name="notes">notes</string>
     <string name="to_do">To-Do</string>
     <string name="tests">tests</string>
@@ -180,5 +179,27 @@
     <string name="belorussian">Belorussian</string>
     <string name="polish">Polish</string>
     <string name="change_language">Change Language:</string>
+    <string name="delete_list">Delete List</string>
+    <string name="Sunday">S</string>
+    <string name="Monday">M</string>
+    <string name="Tuesday">T</string>
+    <string name="Wednesday">W</string>
+    <string name="Thursday">T</string>
+    <string name="Friday">F</string>
+    <string name="Saturday">S</string>
+    <string name="January">January</string>
+    <string name="February">February</string>
+    <string name="March">March</string>
+    <string name="April">April</string>
+    <string name="May">May</string>
+    <string name="June">June</string>
+    <string name="July">July</string>
+    <string name="August">August</string>
+    <string name="September">September</string>
+    <string name="October">October</string>
+    <string name="November">November</string>
+    <string name="December">December</string>
+    <string name="Breathe">Breathe</string>
+    <string name="Other">Breathe</string>
 
 </resources>

@@ -16,7 +16,6 @@
         android:layout_height="139dp"
         android:layout_gravity="center_horizontal"
         android:clickable="false"
-        android:contentDescription="TODO"
         android:src="@drawable/vozyk_log" />
 
     <TextView
@@ -63,8 +62,7 @@
                     android:layout_width="400dp"
                     android:gravity="center_horizontal"
                     android:layout_height="wrap_content"
-                    android:background="#BCFFFFFF"
-                    android:hint="@string/name"
+                    android:background="@color/Hex"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             </LinearLayout>

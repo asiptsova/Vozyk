@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Vožyk</string>
     <string name="title_home">Дом</string>
     <string name="title_dashboard">Панэль</string>
     <string name="title_notifications">Спавяшчэнні</string>
@@ -39,7 +40,7 @@
     <string name="confirm_delete">Пацвердзіце выдаленне</string>
     <string name="confirm_delete_text">Вы ўпэўнены, што хочаце выдаліць гэту нататку?</string>
     <string name="delete">Выдаліць</string>
-    <string name="empty_list_text">Press the button on the bottom right to add a new note!</string>
+    <string name="empty_list_text">Націсніце гузік унізе справа, каб дадаць новую нататку!</string>
     <string name="exception">Выключэнне: </string>
     <string name="font_colour">Колер шрыфта</string>
     <string name="new_note">Новая нататка</string>
@@ -90,7 +91,7 @@
     <string name="confirm_password_required">Патрабуецца пацвердзіць пароль</string>
     <string name="same_pass_conf">Пароль і пароль для пацверджання павінны быць аднолькавымі</string>
     <string name="verification_email_sent">Электронны ліст для праверкі быў адпраўлены</string>
-    <string name="how_was_your_mood_today">Які настрой у цябе быў сёння</string>
+    <string name="how_was_your_mood_today">Які настрой у цябе сёння ?</string>
     <string name="month_year">Месяц год</string>
     <string name="average_mood">Сярэдні настрой</string>
     <string name="mood_chart">Дыяграма настрою</string>
@@ -106,7 +107,7 @@
     <string name="update_times">Абнавіць</string>
     <string name="update_medicine">Абнавіць лек</string>
     <string name="profile">Профіль</string>
-    <string name="touch_profile_picture_to_change">націсніце фота профілю, каб змяніць</string>
+    <string name="touch_profile_picture_to_change">націсніце, каб змяніць</string>
     <string name="press_to_edit_delete">Націсніце для рэдагавання/выдалення</string>
     <string name="lab_test_name">Назва аналіза</string>
     <string name="time_12_12_2022">Час : 12/12/2022</string>
@@ -114,7 +115,6 @@
     <string name="info">Інфа</string>
     <string name="task">Задача:</string>
     <string name="finishing_date">Дата заканчэння:</string>
-    <string name="account">Профіль</string>
     <string name="notes">Нататкі</string>
     <string name="to_do">Да зрабення</string>
     <string name="tests">Тэсты</string>
@@ -147,11 +147,11 @@
     <string name="anxiety">Неспакой</string>
     <string name="depression">Дэпрэсія</string>
     <string name="ptsd">Посттраўматычны стрэс</string>
-    <string name="ocd">Окд</string>
+    <string name="ocd">АКР</string>
     <string name="bipolar">Біпалярнае расстройства</string>
     <string name="adhd">СДУГ</string>
     <string name="new_habit">Новая звычака</string>
-    <string name="habit_name">Назва звычки:</string>
+    <string name="habit_name">Назва звычкі:</string>
     <string name="end_date">Дата заканчэння:</string>
     <string name="frequency">Частата:</string>
     <string name="add_new_habit">Дадаць новую звычку</string>
@@ -180,4 +180,28 @@
     <string name="belorussian">Беларуская</string>
     <string name="polish">Польская</string>
     <string name="change_language">Змяніць мову:</string>
+    <string name="delete_list">Выдаліць усе</string>
+    <string name="Sunday">П</string>
+    <string name="Monday">А</string>
+    <string name="Tuesday">С</string>
+    <string name="Wednesday">Ч</string>
+    <string name="Thursday">П</string>
+    <string name="Friday">С</string>
+    <string name="Saturday">Н</string>
+    <string name="January">Студзень</string>
+    <string name="February">Люты</string>
+    <string name="March">Сакавік</string>
+    <string name="April">Красавік</string>
+    <string name="May">Травень</string>
+    <string name="June">Чэрвень</string>
+    <string name="July">Ліпень</string>
+    <string name="August">Жнівень</string>
+    <string name="September">Верасень</string>
+    <string name="October">Кастрычнік</string>
+    <string name="November">Лістапад</string>
+    <string name="December">Снежань</string>
+    <string name="Breathe">Дыханне</string>
+    <string name="Other">Іншае</string>
+
+
 </resources>

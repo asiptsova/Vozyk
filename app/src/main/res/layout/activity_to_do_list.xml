@@ -86,7 +86,7 @@
     <Button
         android:id="@+id/delete_list_btn"
         android:layout_width="match_parent"
-        android:text="Delete List"
+        android:text="@string/delete_list"
         android:layout_height="40sp"
         android:layout_gravity="center"
         android:textSize="18sp"

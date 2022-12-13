@@ -90,9 +90,6 @@ public class NotificationsPills extends AppCompatActivity {
         ));
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
-                case R.id.nav_settings:
-                    startActivity(new Intent(getApplicationContext(), TimeChangeActivity.class));
-                    break;
                 case R.id.nav_doctor:
                     startActivity(new Intent(getApplicationContext(), DoctorActivity.class));
                     break;

@@ -23,7 +23,6 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.ColorUtils;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import com.application.vozyk.R;
@@ -170,90 +169,90 @@ public class Mood extends Fragment  {
             TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
             month_and_year_in_calender_for_good_habits.setText(month.concat(" ").concat(String.valueOf(year)));
             if (calender.getFirstDayOfWeek() == Calendar.SUNDAY) {
-                first_day_in_the_week_calender.setText("S");
-                second_day_in_the_week_calender.setText("M");
-                third_day_in_the_week_calender.setText("T");
-                fourth_day_in_the_week_calender.setText("W");
-                fifth_day_in_the_week_calender.setText("T");
-                sixth_day_in_the_week_calender.setText("F");
-                seventh_day_in_the_week_calender.setText("S");
+                first_day_in_the_week_calender.setText(R.string.Sunday);
+                second_day_in_the_week_calender.setText(R.string.Monday);
+                third_day_in_the_week_calender.setText(R.string.Tuesday);
+                fourth_day_in_the_week_calender.setText(R.string.Wednesday);
+                fifth_day_in_the_week_calender.setText(R.string.Thursday);
+                sixth_day_in_the_week_calender.setText(R.string.Friday);
+                seventh_day_in_the_week_calender.setText(R.string.Saturday);
             } else if (calender.getFirstDayOfWeek() == Calendar.MONDAY) {
-                first_day_in_the_week_calender.setText("M");
-                second_day_in_the_week_calender.setText("T");
-                third_day_in_the_week_calender.setText("W");
-                fourth_day_in_the_week_calender.setText("T");
-                fifth_day_in_the_week_calender.setText("F");
-                sixth_day_in_the_week_calender.setText("S");
-                seventh_day_in_the_week_calender.setText("S");
+                first_day_in_the_week_calender.setText(R.string.Monday);
+                second_day_in_the_week_calender.setText(R.string.Tuesday);
+                third_day_in_the_week_calender.setText(R.string.Wednesday);
+                fourth_day_in_the_week_calender.setText(R.string.Thursday);
+                fifth_day_in_the_week_calender.setText(R.string.Friday);
+                sixth_day_in_the_week_calender.setText(R.string.Saturday);
+                seventh_day_in_the_week_calender.setText(R.string.Sunday);
             } else if (calender.getFirstDayOfWeek() == Calendar.TUESDAY) {
-                first_day_in_the_week_calender.setText("T");
-                second_day_in_the_week_calender.setText("W");
-                third_day_in_the_week_calender.setText("T");
-                fourth_day_in_the_week_calender.setText("F");
-                fifth_day_in_the_week_calender.setText("S");
-                sixth_day_in_the_week_calender.setText("S");
-                seventh_day_in_the_week_calender.setText("M");
+                first_day_in_the_week_calender.setText(R.string.Tuesday);
+                second_day_in_the_week_calender.setText(R.string.Wednesday);
+                third_day_in_the_week_calender.setText(R.string.Thursday);
+                fourth_day_in_the_week_calender.setText(R.string.Friday);
+                fifth_day_in_the_week_calender.setText(R.string.Saturday);
+                sixth_day_in_the_week_calender.setText(R.string.Sunday);
+                seventh_day_in_the_week_calender.setText(R.string.Monday);
             } else if (calender.getFirstDayOfWeek() == Calendar.WEDNESDAY) {
-                first_day_in_the_week_calender.setText("W");
-                second_day_in_the_week_calender.setText("T");
-                third_day_in_the_week_calender.setText("F");
-                fourth_day_in_the_week_calender.setText("S");
-                fifth_day_in_the_week_calender.setText("S");
-                sixth_day_in_the_week_calender.setText("M");
-                seventh_day_in_the_week_calender.setText("T");
+                first_day_in_the_week_calender.setText(R.string.Wednesday);
+                second_day_in_the_week_calender.setText(R.string.Thursday);
+                third_day_in_the_week_calender.setText(R.string.Friday);
+                fourth_day_in_the_week_calender.setText(R.string.Saturday);
+                fifth_day_in_the_week_calender.setText(R.string.Sunday);
+                sixth_day_in_the_week_calender.setText(R.string.Monday);
+                seventh_day_in_the_week_calender.setText(R.string.Tuesday);
             } else if (calender.getFirstDayOfWeek() == Calendar.THURSDAY) {
-                first_day_in_the_week_calender.setText("T");
-                second_day_in_the_week_calender.setText("F");
-                third_day_in_the_week_calender.setText("S");
-                fourth_day_in_the_week_calender.setText("S");
-                fifth_day_in_the_week_calender.setText("M");
-                sixth_day_in_the_week_calender.setText("T");
-                seventh_day_in_the_week_calender.setText("W");
+                first_day_in_the_week_calender.setText(R.string.Thursday);
+                second_day_in_the_week_calender.setText(R.string.Friday);
+                third_day_in_the_week_calender.setText(R.string.Saturday);
+                fourth_day_in_the_week_calender.setText(R.string.Sunday);
+                fifth_day_in_the_week_calender.setText(R.string.Monday);
+                sixth_day_in_the_week_calender.setText(R.string.Tuesday);
+                seventh_day_in_the_week_calender.setText(R.string.Wednesday);
             } else if (calender.getFirstDayOfWeek() == Calendar.FRIDAY) {
-                first_day_in_the_week_calender.setText("F");
-                second_day_in_the_week_calender.setText("S");
-                third_day_in_the_week_calender.setText("S");
-                fourth_day_in_the_week_calender.setText("M");
-                fifth_day_in_the_week_calender.setText("T");
-                sixth_day_in_the_week_calender.setText("W");
-                seventh_day_in_the_week_calender.setText("T");
+                first_day_in_the_week_calender.setText(R.string.Friday);
+                second_day_in_the_week_calender.setText(R.string.Saturday);
+                third_day_in_the_week_calender.setText(R.string.Sunday);
+                fourth_day_in_the_week_calender.setText(R.string.Monday);
+                fifth_day_in_the_week_calender.setText(R.string.Tuesday);
+                sixth_day_in_the_week_calender.setText(R.string.Wednesday);
+                seventh_day_in_the_week_calender.setText(R.string.Thursday);
             } else {
-                first_day_in_the_week_calender.setText("S");
-                second_day_in_the_week_calender.setText("S");
-                third_day_in_the_week_calender.setText("M");
-                fourth_day_in_the_week_calender.setText("T");
-                fifth_day_in_the_week_calender.setText("W");
-                sixth_day_in_the_week_calender.setText("T");
-                seventh_day_in_the_week_calender.setText("F");
+                first_day_in_the_week_calender.setText(R.string.Saturday);
+                second_day_in_the_week_calender.setText(R.string.Sunday);
+                third_day_in_the_week_calender.setText(R.string.Monday);
+                fourth_day_in_the_week_calender.setText(R.string.Tuesday);
+                fifth_day_in_the_week_calender.setText(R.string.Wednesday);
+                sixth_day_in_the_week_calender.setText(R.string.Thursday);
+                seventh_day_in_the_week_calender.setText(R.string.Friday);
             }
         }
     }
 
     private String return_month(int month) {
         if (month == 0) {
-            return "January";
+            return this.getResources().getString(R.string.January);
         } else if (month == 1) {
-            return "February";
+            return this.getResources().getString(R.string.February);
         } else if (month == 2) {
-            return "March";
+            return this.getResources().getString(R.string.March);
         } else if (month == 3) {
-            return "April";
+            return this.getResources().getString(R.string.April);
         } else if (month == 4) {
-            return "May";
+            return this.getResources().getString(R.string.May);
         } else if (month == 5) {
-            return "June";
+            return this.getResources().getString(R.string.June);
         } else if (month == 6) {
-            return "July";
+            return this.getResources().getString(R.string.July);
         } else if (month == 7) {
-            return "August";
+            return this.getResources().getString(R.string.August);
         } else if (month == 8) {
-            return "September";
+            return this.getResources().getString(R.string.September);
         } else if (month == 9) {
-            return "October";
+            return this.getResources().getString(R.string.October);
         } else if (month == 10) {
-            return "November";
+            return this.getResources().getString(R.string.November);
         } else {
-            return "December";
+            return this.getResources().getString(R.string.December);
         }
     }
 
@@ -10128,7 +10127,7 @@ public class Mood extends Fragment  {
             Drawable drawable_for_buttons_three = ContextCompat.getDrawable(getContext(), R.drawable.ripple_button_fav_any_circle).mutate();
             drawable_for_buttons_three = DrawableCompat.wrap(drawable_for_buttons_three);
             DrawableCompat.setTint(drawable_for_buttons_three, color);
-            layout_inside_scroll_in_the_bad_habits.setBackgroundColor(ColorUtils.blendARGB(color , R.color.Hex, 10.0F));
+            layout_inside_scroll_in_the_bad_habits.setBackgroundColor(getResources().getColor(R.color.Hex));
             text_asking_did_you_relapse_in_share.setTextColor(color);
 
             String very_bad_color = return_the_color_of_mood(1);
@@ -11262,19 +11261,19 @@ public class Mood extends Fragment  {
     private String return_first_day_of_week() {
         Calendar calendar = Calendar.getInstance();
         if (calendar.getFirstDayOfWeek() == Calendar.MONDAY) {
-            return "monday";
+            return this.getResources().getString(R.string.Monday) ;
         } else if (calendar.getFirstDayOfWeek() == Calendar.TUESDAY) {
-            return "tuesday";
+            return this.getResources().getString(R.string.Tuesday) ;
         } else if (calendar.getFirstDayOfWeek() == Calendar.WEDNESDAY) {
-            return "wednesday";
+            return this.getResources().getString(R.string.Wednesday) ;
         } else if (calendar.getFirstDayOfWeek() == Calendar.THURSDAY) {
-            return "thursday";
+            return this.getResources().getString(R.string.Thursday) ;
         } else if (calendar.getFirstDayOfWeek() == Calendar.FRIDAY) {
-            return "friday";
+            return this.getResources().getString(R.string.Friday) ;
         } else if (calendar.getFirstDayOfWeek() == Calendar.SATURDAY) {
-            return "saturday";
+            return this.getResources().getString(R.string.Saturday) ;
         } else {
-            return "sunday";
+            return this.getResources().getString(R.string.Sunday) ;
         }
     }
 
@@ -11470,11 +11469,11 @@ public class Mood extends Fragment  {
             set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             BarData data = new BarData(set);
             data.setValueFormatter(valueFormatter);
-            data.setBarWidth(0.9f); // set custom bar width
+            data.setBarWidth(0.9f);
             chart_in_mood_about_the_average_for_each_month.setData(data);
-            chart_in_mood_about_the_average_for_each_month.invalidate(); // refresh
+            chart_in_mood_about_the_average_for_each_month.invalidate();
             chart_in_mood_about_the_average_for_each_month.setScaleEnabled(false);
-            chart_in_mood_about_the_average_for_each_month.getLegend().setEnabled(false);   // Hide the legend
+            chart_in_mood_about_the_average_for_each_month.getLegend().setEnabled(false);
             chart_in_mood_about_the_average_for_each_month.setExtraOffsets(0, 0, 0, 0);
             Description description = new Description();
             description.setText("");

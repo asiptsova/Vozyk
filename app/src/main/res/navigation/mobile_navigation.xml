@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/navigation_relax"
         android:name="com.application.vozyk.ui.relax.Relax"
-        android:label="Breathe"
+        android:label="@string/Breathe"
         tools:layout="@layout/activity_relax" />
 
     <fragment
@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/navigation_other"
         android:name="com.application.vozyk.ui.other.Other"
-        android:label="Other"
+        android:label="@string/Other"
         tools:layout="@layout/fragment_other" />
 </navigation>

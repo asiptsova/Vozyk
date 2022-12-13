@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Vožyk</string>
     <string name="title_home">Дом</string>
     <string name="title_dashboard">Панэль</string>
     <string name="title_notifications">Спавяшчэнні</string>
@@ -114,7 +115,6 @@
     <string name="info">Інфа</string>
     <string name="task">Задача:</string>
     <string name="finishing_date">Дата заканчэння:</string>
-    <string name="account">Профіль</string>
     <string name="notes">Нататкі</string>
     <string name="to_do">Да зрабення</string>
     <string name="tests">Тэсты</string>
@@ -180,4 +180,27 @@
     <string name="belorussian">Belorussian</string>
     <string name="polish">Polish</string>
     <string name="change_language">Change Language:</string>
+    <string name="delete_list">Delete List</string>
+    <string name="Sunday">S</string>
+    <string name="Monday">M</string>
+    <string name="Tuesday">T</string>
+    <string name="Wednesday">W</string>
+    <string name="Thursday">T</string>
+    <string name="Friday">F</string>
+    <string name="Saturday">S</string>
+    <string name="January">January</string>
+    <string name="February">February</string>
+    <string name="March">March</string>
+    <string name="April">April</string>
+    <string name="May">May</string>
+    <string name="June">June</string>
+    <string name="July">July</string>
+    <string name="August">August</string>
+    <string name="September">September</string>
+    <string name="October">October</string>
+    <string name="November">November</string>
+    <string name="December">December</string>
+    <string name="Breathe">Breathe</string>
+    <string name="Other">Breathe</string>
+
 </resources>
