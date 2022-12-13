@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.notifications;
+package com.application.vozyk.ui.meds;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,7 +78,7 @@ public class UpdateActivity extends AppCompatActivity {
             if (InputValidationHandler.inputValidation(getData().getName(), getData().getReminder())) {
                 myRef.child(KEY).setValue(getData());
                 startActivity(
-                        new Intent(UpdateActivity.this, NotificationsPills.class)
+                        new Intent(UpdateActivity.this, MedsPills.class)
                                 .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
                 );
             } else {
@@ -117,7 +117,7 @@ public class UpdateActivity extends AppCompatActivity {
 
 
         cancelBtn.setOnClickListener(view -> startActivity(
-                new Intent(UpdateActivity.this, NotificationsPills.class)
+                new Intent(UpdateActivity.this, MedsPills.class)
                         .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
         ));
 

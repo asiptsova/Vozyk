@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.notifications;
+package com.application.vozyk.ui.meds;
 
 import android.content.Context;
 import android.content.Intent;

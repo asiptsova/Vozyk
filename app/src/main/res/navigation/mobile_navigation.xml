@@ -20,9 +20,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.application.vozyk.ui.notifications.NotificationFragment"
+        android:name="com.application.vozyk.ui.meds.MedsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/activity_notification_fragment" />
+        tools:layout="@layout/activity_meds" />
     <fragment
         android:id="@+id/navigation_other"
         android:name="com.application.vozyk.ui.other.Other"

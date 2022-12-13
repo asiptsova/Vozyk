@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.vozyk.R;
 import com.application.vozyk.ui.lab.labActivity;
-import com.application.vozyk.ui.notifications.NotificationsPills;
+import com.application.vozyk.ui.meds.MedsPills;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -99,7 +99,7 @@ public class DoctorActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.nav_medicine:
                     try {
-                        startActivity(new Intent(DoctorActivity.this, NotificationsPills.class));
+                        startActivity(new Intent(DoctorActivity.this, MedsPills.class));
                     }
                     catch (Exception ignored){}
                     break;

@@ -1,8 +1,7 @@
-package com.application.vozyk.ui.notifications;
+package com.application.vozyk.ui.meds;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;

@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.notifications;
+package com.application.vozyk.ui.meds;
 
 import android.app.AlertDialog;
 import android.content.Context;

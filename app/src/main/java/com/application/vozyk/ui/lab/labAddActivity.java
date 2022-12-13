@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import com.application.vozyk.R;
-import com.application.vozyk.ui.notifications.InputValidationHandler;
+import com.application.vozyk.ui.meds.InputValidationHandler;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.notifications;
+package com.application.vozyk.ui.meds;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,14 +24,14 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class NotificationsPills extends AppCompatActivity {
+public class MedsPills extends AppCompatActivity {
     private ArrayList<MedicineRecordHandler> arrayList;
     private CustomAdapterNew c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_notifications);
+        setContentView(R.layout.fragment_meds);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -85,7 +85,7 @@ public class NotificationsPills extends AppCompatActivity {
 
         listview.setAdapter(c);
 
-        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(NotificationsPills.this, HomeActivity.class).putExtra("Id", user.getUid())
+        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(MedsPills.this, HomeActivity.class).putExtra("Id", user.getUid())
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
         ));
         bottomAppBar.setOnMenuItemClickListener(item -> {

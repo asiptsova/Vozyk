@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.vozyk.R;
 import com.application.vozyk.ui.doctor.DoctorActivity;
-import com.application.vozyk.ui.notifications.NotificationsPills;
+import com.application.vozyk.ui.meds.MedsPills;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -93,7 +93,7 @@ public class labActivity extends AppCompatActivity {
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_lab_medicine:
-                    startActivity(new Intent(labActivity.this, NotificationsPills.class));
+                    startActivity(new Intent(labActivity.this, MedsPills.class));
                     break;
                 case R.id.nav_lab_doc:
                     startActivity(new Intent(labActivity.this, DoctorActivity.class));

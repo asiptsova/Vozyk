@@ -26,13 +26,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vožyk">
         <activity
-            android:name=".ChangeLanguage"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.settings.ChangeEmail"
             android:exported="false">
             <meta-data
@@ -75,7 +68,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.notifications.NotificationsPills"
+            android:name=".ui.meds.MedsPills"
             android:exported="false" />
         <activity
             android:name=".ui.login.Registration"
@@ -101,19 +94,13 @@
             android:name=".ui.login.Login"
             android:exported="true" />
         <activity
-            android:name=".ui.notifications.HomeActivity"
+            android:name=".ui.meds.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.notifications.UpdateActivity"
+            android:name=".ui.meds.UpdateActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.notifications.TimeChangeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.habits.NewHabitActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.habits.Habits"
+            android:name=".ui.meds.TimeChangeActivity"
             android:exported="true" />
         <activity
             android:name=".ui.quiz.QuizActivity"

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7E8D1"
-    tools:context=".ui.other.Other">
+    android:background="@color/Hex"
+    tools:context=".ui.meds.MedsFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/account"
-        android:layout_width="193dp"
-        android:layout_height="172dp"
+        android:id="@+id/pills"
+        android:layout_width="194dp"
+        android:layout_height="170dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="118dp"
         android:layout_marginEnd="198dp"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageView
-            android:id="@+id/iv_edit_account"
+            android:id="@+id/iv_edit_pills"
             android:layout_width="199dp"
             android:layout_height="117dp"
             android:layout_marginStart="5dp"
@@ -41,14 +41,14 @@
             app:layout_constraintVertical_bias="0.034" />
 
         <TextView
-            android:id="@+id/tv_edit_account"
+            android:id="@+id/tv_edit_pills"
             android:layout_width="122dp"
             android:layout_height="35dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
-            android:text="@string/profile"
+            android:text="@string/pills"
             android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +61,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/notes"
+        android:id="@+id/visits"
         android:layout_width="205dp"
         android:layout_height="176dp"
         android:layout_marginStart="199dp"
@@ -72,7 +72,7 @@
         app:layout_constraintVertical_bias="0.219">
 
         <ImageView
-            android:id="@+id/iv_edit_notes"
+            android:id="@+id/iv_edit_visits"
             android:layout_width="199dp"
             android:layout_height="117dp"
             android:layout_marginStart="5dp"
@@ -88,14 +88,14 @@
             app:layout_constraintVertical_bias="0.034" />
 
         <TextView
-            android:id="@+id/tv_edit_notes"
+            android:id="@+id/tv_edit_visits"
             android:layout_width="122dp"
             android:layout_height="35dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
-            android:text="@string/notes"
+            android:text="@string/visits"
             android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -109,95 +109,43 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toDo"
-        android:layout_width="204dp"
-        android:layout_height="166dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="303dp"
-        android:layout_marginEnd="198dp"
-        android:layout_marginBottom="252dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_edit_toDo"
-            android:layout_width="199dp"
-            android:layout_height="117dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="55dp"
-            android:padding="5dp"
-            android:src="@drawable/settings__"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tv_edit_toDo"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="127dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="14dp"
-            android:text="@string/to_do"
-            android:textColor="#234E70"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/test"
-        android:layout_width="204dp"
-        android:layout_height="166dp"
-        android:layout_marginStart="212dp"
+        android:id="@+id/labs"
+        android:layout_width="205dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="106dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545">
+        app:layout_constraintVertical_bias="0.56">
 
         <ImageView
-            android:id="@+id/iv_edit_test"
+            android:id="@+id/iv_edit_labs"
             android:layout_width="199dp"
             android:layout_height="117dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
             android:padding="5dp"
             android:src="@drawable/settings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.034" />
 
         <TextView
-            android:id="@+id/tv_edit_tesst"
-            android:layout_width="127dp"
-            android:layout_height="42dp"
+            android:id="@+id/tv_edit_labs"
+            android:layout_width="122dp"
+            android:layout_height="35dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
-            android:text="@string/tests"
+            android:text="@string/labs"
             android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -208,22 +156,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/about"
-        android:layout_width="395dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="555dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="138dp"
-        android:backgroundTint="#D9B48F"
-        android:text="@string/about_us"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
