@@ -57,7 +57,7 @@
         android:layout_height="40sp"
         android:layout_gravity="center"
         android:background="@drawable/plussign"
-        android:backgroundTint="@color/RobbinsEggBlue"
+        android:backgroundTint="@color/Hex"
         android:textSize="18sp"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="15dp"
