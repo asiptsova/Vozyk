@@ -33,8 +33,8 @@ public class Relax extends Fragment {
 
         private void setupViewpager(ViewPager viewPager) {
             ViewpagerAdapter adapter = new ViewpagerAdapter(getChildFragmentManager());
-            adapter.addFragment(new Breathe(), "Breathe");
-            adapter.addFragment(new Meditate(), "Meditate");
+            adapter.addFragment(new Breathe(),  this.getResources().getString(R.string.Breathe));
+            adapter.addFragment(new Meditate(),  this.getResources().getString(R.string.Meditate));
             viewPager.setAdapter(adapter);
         }
 

@@ -139,8 +139,8 @@
     <string name="update">Абнавіць</string>
     <string name="cancel">Скасаваць</string>
     <string name="to_do_list">Спіс да зрабення</string>
-    <string name="my_completed_tasks">Выкананыя задачы</string>
-    <string name="my_pending_tasks">Мае незавершаныя задачы</string>
+    <string name="my_completed_tasks">Выкананыя</string>
+    <string name="my_pending_tasks">Незавершаныя</string>
     <string name="dismiss">Адхіліць</string>
     <string name="i_have_taken_my_medicine">Я прыняў свае лекі</string>
     <string name="self_assessment_quiz">Анкеты</string>
@@ -202,6 +202,6 @@
     <string name="December">Снежань</string>
     <string name="Breathe">Дыханне</string>
     <string name="Other">Іншае</string>
-
+    <string name="Meditate">Медытацыя</string>
 
 </resources>
