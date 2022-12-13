@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.doctor.DoctorActivity;
 import com.application.vozyk.ui.meds.MedsPills;
@@ -97,6 +98,9 @@ public class labActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_lab_doc:
                     startActivity(new Intent(labActivity.this, DoctorActivity.class));
+                    break;
+                case R.id.nav_home:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     break;
                 default:
                     return false;

@@ -15,5 +15,10 @@
         android:icon="@drawable/labs"
         app:showAsAction="ifRoom"
         />
+    <item android:id="@+id/nav_home"
+        android:title="@string/title_home"
+        android:icon="@drawable/back"
+        app:showAsAction="ifRoom"
+        />
 
 </menu>

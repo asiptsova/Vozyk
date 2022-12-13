@@ -12,4 +12,10 @@
         android:icon="@drawable/doctor"
         app:showAsAction="ifRoom"
         android:title="@string/lab_doc" />
+    
+    <item android:id="@+id/nav_home"
+        android:title="@string/title_home"
+        android:icon="@drawable/back"
+        app:showAsAction="ifRoom"
+        />
 </menu>
