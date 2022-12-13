@@ -10724,7 +10724,7 @@ public class Mood extends Fragment  {
             }
             ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) location_above_bmi_weight.getLayoutParams();
             params.horizontalBias = position_in_map;
-            location_above_bmi_weight.setLayoutParams(params); // request the view to use the new modified params
+            location_above_bmi_weight.setLayoutParams(params);
             if ((int) average == average) {
                 text_showing_average_mood_number.setText(String.valueOf((int) average));
             } else {
@@ -11233,11 +11233,11 @@ public class Mood extends Fragment  {
             set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             BarData data = new BarData(set);
             data.setValueFormatter(valueFormatter);
-            data.setBarWidth(0.9f); // set custom bar width
+            data.setBarWidth(0.9f);
             chart_in_good_habits_about_how_many_times_for_each_days_of_week.setData(data);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.invalidate(); // refresh
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.invalidate();
             chart_in_good_habits_about_how_many_times_for_each_days_of_week.setScaleEnabled(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getLegend().setEnabled(false);   // Hide the legend
+            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getLegend().setEnabled(false);
             chart_in_good_habits_about_how_many_times_for_each_days_of_week.setExtraOffsets(0, 0, 0, 0);
             Description description = new Description();
             description.setText("");
@@ -11309,37 +11309,37 @@ public class Mood extends Fragment  {
                 if (calendar.get(Calendar.MONTH) == Calendar.JANUARY) {
                     january = january + 1;
                     jan_avg = jan_avg + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FEBRUARY) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.FEBRUARY) {
                     february = february + 1;
                     feb_average = feb_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MARCH) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.MARCH) {
                     march = march + 1;
                     march_average = march_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.APRIL) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.APRIL) {
                     april = april + 1;
                     april_average = april_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MAY) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.MAY) {
                     may = may + 1;
                     may_average = may_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.JUNE) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.JUNE) {
                     june = june + 1;
                     june_average = june_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.JULY) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.JULY) {
                     july = july + 1;
                     july_average = july_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.AUGUST) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.AUGUST) {
                     august = august + 1;
                     august_average = august_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SEPTEMBER) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.SEPTEMBER) {
                     september = september + 1;
                     september_average = september_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.OCTOBER) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
                     october = october + 1;
                     october_average = october_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.NOVEMBER) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.NOVEMBER) {
                     november = november + 1;
                     november_average = november_average + map.getValue();
-                } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.DECEMBER) {
+                } else if (calendar.get(Calendar.MONTH) == Calendar.DECEMBER) {
                     december = december + 1;
                     december_average = december_average + map.getValue();
                 }
