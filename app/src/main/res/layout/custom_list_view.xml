@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Hex">
 
     <TextView
         android:id="@+id/name_view"
@@ -67,7 +67,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="15dp"
-
         android:background="@drawable/ic_baseline_delete_24"
         tools:layout_editor_absoluteX="254dp"
         tools:layout_editor_absoluteY="56dp"

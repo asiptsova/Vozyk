@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@color/Hex"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -10,7 +12,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:text="@string/add_a_new_task"
-        android:textColor="#2196F3"
+        android:textColor="#234E70"
         android:textSize="25sp"
         android:textStyle="bold" />
 

@@ -6,14 +6,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
-    tools:context=".ui.ToDoList.ToDoListActivity">
+    tools:context=".ui.ToDoList.ToDoListActivity"
+    android:background="@color/Hex">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="252dp"
         android:paddingTop="20dp"
-        android:background="#65A0CFE2"
+        android:background="@color/Hex"
         android:orientation="vertical">
 
         <ImageView
@@ -27,18 +28,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_extra_bold"
             android:textStyle="bold"
             android:text="@string/to_do_list"
             android:textAlignment="center"
-            android:textColor="#1A237E"
+            android:textColor="#234E70"
             android:textSize="30sp" />
         <Button
             android:id="@+id/addButton"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="30dp"
             android:layout_height="50dp"
-            android:backgroundTint="#972196F3"
+            android:backgroundTint="@color/Bluebell"
             android:text="+"
             android:textSize="25sp"/>
 
@@ -52,11 +52,12 @@
 
             <Button
                 android:id="@+id/viewCompletedButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#9219D5F0"
+                android:backgroundTint="@color/RobbinsEggBlue"
                 android:text="@string/my_completed_tasks"
-                style="?android:attr/buttonBarButtonStyle">
+                android:textColor="@color/white">
 
             </Button>
 
@@ -64,8 +65,9 @@
                 android:id="@+id/viewIncompletedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#5BCEDF"
+                android:backgroundTint="@color/RobbinsEggBlue"
                 android:text="@string/my_pending_tasks"
+                android:textColor="@color/white"
                 style="?android:attr/buttonBarButtonStyle">
 
             </Button>
@@ -82,13 +84,14 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/todolistbackground"/>
+        android:background="@color/Hex"/>
     <Button
         android:id="@+id/delete_list_btn"
         android:layout_width="match_parent"
         android:text="@string/delete_list"
         android:layout_height="40sp"
         android:layout_gravity="center"
+        android:backgroundTint="@color/Sage"
         android:textSize="18sp"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="15dp"

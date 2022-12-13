@@ -554,7 +554,7 @@
                   style="?android:attr/borderlessButtonStyle"
                   android:layout_width="48dp"
                   android:layout_height="42dp"
-                  android:textColor="@color/black"
+                  android:textColor="@color/Hex"
                   android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
@@ -828,7 +828,7 @@
                   android:layout_height="42dp"
                   android:layout_marginStart="4dp"
                   android:background="@drawable/round_button"
-                  android:textColor="@color/black"
+                  android:textColor="@color/Hex"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
 
@@ -869,6 +869,7 @@
                   android:id="@+id/calender_under_number_state_1"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:backgroundTint="@color/Hex"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toTopOf="parent" />

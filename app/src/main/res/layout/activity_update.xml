@@ -1,7 +1,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Hex"
+    >
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/up_name"
@@ -51,13 +53,17 @@
             android:id="@+id/up_radio_button_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/before_food" />
+            android:text="@string/before_food"
+            android:textColor="#234E70"
+            />
 
         <RadioButton
             android:id="@+id/up_radio_button_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/after_food" />
+            android:text="@string/after_food"
+            android:textColor="#234E70"
+            />
 
     </RadioGroup>
 
@@ -76,7 +82,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="150dp"
-            android:text="@string/morning" />
+            android:text="@string/morning"
+            android:textColor="#234E70"
+            />
 
         <Button
             android:id="@+id/up_lunch"
@@ -84,7 +92,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="150dp"
-            android:text="@string/afternoon" />
+            android:text="@string/afternoon"
+            android:textColor="#234E70"
+            />
 
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -104,7 +114,9 @@
             android:width="150dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/night" />
+            android:text="@string/night"
+            android:textColor="#234E70"
+            />
 
 
         <Button
@@ -113,7 +125,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:width="150dp"
-            android:text="@string/custom" />
+            android:text="@string/custom"
+            android:textColor="#234E70"
+            />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -125,6 +139,7 @@
         android:layout_marginTop="48dp"
         android:text="@string/update"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/up_toggleButton" />
 
     <Button
@@ -133,7 +148,8 @@
         android:layout_height="50dp"
         android:layout_marginEnd="80dp"
         android:text="@string/cancel"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="@color/Raspberry"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/up_updatebtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/up_updatebtn"
@@ -146,7 +162,7 @@
         android:paddingTop="60dp"
         android:paddingBottom="10dp"
         android:text="@string/update_medicine"
-        android:textColor="@color/white"
+        android:textColor="#234E70"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
