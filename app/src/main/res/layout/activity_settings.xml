@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/Hex">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,9 +17,9 @@
             android:layout_height="49dp"
             android:gravity="center"
             android:text="Settings"
-            android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="#234E70"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,11 +41,11 @@
 
         <ImageView
             android:id="@+id/iv_edit_language"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/stttings__"
             android:layout_marginStart="40dp"
             android:padding="5dp"
-            android:src="@drawable/settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choose language"
-            android:textColor="@color/black"
+            android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_edit_language"
@@ -86,11 +86,12 @@
 
         <ImageView
             android:id="@+id/iv_change_password"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+
             android:layout_marginStart="40dp"
             android:padding="5dp"
-            android:src="@drawable/settings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/stttings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -101,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Change password"
-            android:textColor="@color/black"
+            android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_change_password"
@@ -175,11 +176,11 @@
 
         <ImageView
             android:id="@+id/iv_privacy_policy"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/stttings__"
             android:layout_marginStart="40dp"
             android:padding="5dp"
-            android:src="@drawable/settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -190,7 +191,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/logout"
-            android:textColor="@color/black"
+            android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_privacy_policy"
@@ -219,11 +220,12 @@
 
         <ImageView
             android:id="@+id/iv_sign_out"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/stttings__"
             android:layout_marginStart="40dp"
             android:padding="5dp"
-            android:src="@drawable/settings"
+            android:textColor="#234E70"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -234,7 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="delete account"
-            android:textColor="@color/black"
+            android:textColor="#234E70"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_sign_out"

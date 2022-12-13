@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
+    android:background="@color/Hex"
     tools:context=".ui.habits.Habits">
 
     <LinearLayout
@@ -14,12 +15,13 @@
         android:paddingTop="30dp"
         android:background="#efd8f5"
         android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/Hex"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="20dp"
             android:clickable="false"
             app:srcCompat="@drawable/voz"
@@ -28,12 +30,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_extra_bold"
             android:text="@string/habit_tracker"
             android:textAlignment="center"
-            android:textColor="#1A237E"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textColor="#234E70"
+            android:textStyle="bold"
+            android:textSize="30sp" />
 
 
     </LinearLayout>
@@ -56,7 +57,7 @@
         android:layout_height="40sp"
         android:layout_gravity="center"
         android:background="@drawable/plussign"
-        android:backgroundTint="#e25098"
+        android:backgroundTint="@color/RobbinsEggBlue"
         android:textSize="18sp"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="15dp"

@@ -87,7 +87,6 @@
         android:backgroundTint="#A7BEAE"
         android:text="@string/habits"
         android:textAlignment="center"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
