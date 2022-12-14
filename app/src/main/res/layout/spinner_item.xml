@@ -6,6 +6,7 @@
     android:layout_height="48dp"
     android:gravity="center"
     android:textSize="14sp"
+    android:textColor="#234E70"
     android:textIsSelectable="false"
     android:text="Name"
     android:background="@color/Hex"

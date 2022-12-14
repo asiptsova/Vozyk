@@ -94,12 +94,12 @@
                 android:background="@drawable/settings_"
                 android:scaleType="centerCrop" />
 
-            <Button
+            <TextView
                 android:layout_width="110dp"
-                android:layout_height="42dp"
-                android:textColor="#234E70"
-                android:text="@string/settings"
+                android:layout_height="20dp"
                 android:gravity="center"
+                android:text="@string/settings"
+                android:textColor="#234E70"
                 app:layout_constraintTop_toBottomOf="@+id/settings" />
         </LinearLayout>
     </LinearLayout>
