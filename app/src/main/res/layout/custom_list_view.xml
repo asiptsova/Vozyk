@@ -13,6 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:textColor="#234E70"
+        android:textStyle="bold"
         android:text="@string/medicine_name"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="28dp"
@@ -28,6 +30,7 @@
         android:layout_marginTop="99dp"
         android:layout_marginBottom="5dp"
         android:text="@string/time_1500"
+        android:textColor="#234E70"
         tools:layout_editor_absoluteX="120dp"
         tools:layout_editor_absoluteY="63dp" />
 
@@ -40,6 +43,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
         android:text="@string/before_food"
+        android:textColor="#234E70"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="63dp" />
 
@@ -81,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/time_view"
         android:layout_alignParentStart="true"
+        android:textColor="#234E70"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="17dp"
         android:text="No Notes" />

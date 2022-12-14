@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:hint="@string/task_name"
+        android:textColor="#234E70"
         android:inputType="text"
         android:importantForAutofill="no" />
 
@@ -33,6 +34,7 @@
         android:textSize="18sp"
         android:layout_margin="5dp"
         android:layout_marginStart="5dp"
+        android:textColor="#234E70"
         android:hint="@string/starting_date"
         />
 
@@ -43,6 +45,7 @@
         android:textSize="18sp"
         android:layout_margin="5dp"
         android:layout_marginStart="5dp"
+        android:textColor="#234E70"
         android:hint="@string/estimated_finishing_date"
         />
     

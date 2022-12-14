@@ -163,6 +163,7 @@
         android:paddingBottom="10dp"
         android:text="@string/update_medicine"
         android:textColor="#234E70"
+        android:textStyle="bold"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

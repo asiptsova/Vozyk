@@ -144,6 +144,7 @@
         android:layout_marginBottom="180dp"
         android:backgroundTint="@color/Bluebell"
         android:enabled="true"
+        android:textColor="#234E70"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

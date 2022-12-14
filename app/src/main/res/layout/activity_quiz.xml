@@ -61,9 +61,9 @@
 
                 <Button
                     android:id="@+id/button_adhd"
-                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#234E70"
                     android:text="@string/adhd"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
@@ -77,7 +77,7 @@
 
                 <Button
                     android:id="@+id/button_anxiety"
-                    android:textColor="@color/white"
+                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/anxiety"
@@ -93,7 +93,7 @@
 
                 <Button
                     android:id="@+id/button_bipolar"
-                    android:textColor="@color/white"
+                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -109,7 +109,7 @@
 
                 <Button
                     android:id="@+id/button_depression"
-                    android:textColor="@color/white"
+                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -125,7 +125,7 @@
 
                 <Button
                     android:id="@+id/button_ocd"
-                    android:textColor="@color/white"
+                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -141,7 +141,7 @@
 
                 <Button
                     android:id="@+id/button_ptsd"
-                    android:textColor="@color/white"
+                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"

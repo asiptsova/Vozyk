@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cff7d3"
+    android:background="@color/Hex"
     tools:context=".ui.lab.labActivity">
 
     <RelativeLayout
@@ -44,7 +44,7 @@
             android:fontFamily="@font/roboto_bold"
             android:text="No Lab Tests"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="#234E70"
             android:textSize="30sp" />
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_marginTop="85dp"
             android:fontFamily="@font/roboto_bold"
             android:text="Your Lab Tests"
-            android:textColor="@color/teal_700"
+            android:textColor="#234E70"
             android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/lab_listview"
             app:layout_constraintStart_toStartOf="@+id/lab_listview"

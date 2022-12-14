@@ -57,11 +57,11 @@
             android:backgroundTint="#C0B2E7"
             android:text="yes"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="30sp"
+            android:textSize="20sp"
             />
 
         <Button
@@ -74,11 +74,11 @@
             android:backgroundTint="#C0B2E7"
             android:text="no"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="30sp"
+            android:textSize="20sp"
             />
 
     </LinearLayout>

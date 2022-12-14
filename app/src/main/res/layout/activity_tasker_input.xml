@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="#234E70"
         android:hint="@string/note_title"
         android:importantForAutofill="no"
         android:inputType="textCapWords" />
@@ -23,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="#234E70"
         android:hint="@string/note"
         android:importantForAutofill="no"
         android:inputType="textCapSentences|textMultiLine"
@@ -50,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:textColor="#234E70"
             android:text="@string/append_text" />
     </LinearLayout>
 
@@ -58,6 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:textColor="@color/white"
+        android:textColor="#234E70"
         android:text="@string/done" />
 </LinearLayout>

@@ -16,6 +16,7 @@
         android:fontFamily="@font/roboto_bold"
         android:text="@string/doctor_name"
         android:textSize="30sp"
+        android:textColor="#234E70"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="18dp" />
 
@@ -30,6 +31,7 @@
         android:layout_marginBottom="5dp"
         android:text="@string/time_12_12_2022"
         tools:layout_editor_absoluteX="120dp"
+        android:textColor="#234E70"
         tools:layout_editor_absoluteY="63dp" />
 
     <TextView
@@ -40,6 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
+        android:textColor="#234E70"
         android:text="@string/reason"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="63dp" />
