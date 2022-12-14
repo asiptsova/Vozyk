@@ -12,7 +12,7 @@
         android:id="@+id/account"
         android:layout_width="193dp"
         android:layout_height="172dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="118dp"
         android:layout_marginEnd="198dp"
         android:layout_marginBottom="437dp"
@@ -26,8 +26,8 @@
 
         <ImageView
             android:id="@+id/iv_edit_account"
-            android:layout_width="199dp"
-            android:layout_height="117dp"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
@@ -42,10 +42,9 @@
 
         <Button
             android:id="@+id/tv_edit_account"
-            android:gravity="center"
-            android:layout_width="135dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="42dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="22dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
@@ -54,9 +53,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -74,8 +74,8 @@
 
         <ImageView
             android:id="@+id/iv_edit_notes"
-            android:layout_width="199dp"
-            android:layout_height="117dp"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
@@ -90,21 +90,21 @@
 
         <Button
             android:id="@+id/tv_edit_notes"
-            android:gravity="center"
-            android:layout_width="135dp"
-            android:layout_height="45dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
+            android:gravity="center"
             android:text="@string/notes"
             android:textColor="#234E70"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -126,8 +126,8 @@
 
         <ImageView
             android:id="@+id/iv_edit_toDo"
-            android:layout_width="199dp"
-            android:layout_height="117dp"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="1dp"
@@ -143,10 +143,9 @@
 
         <Button
             android:id="@+id/tv_edit_toDo"
-            android:gravity="center"
-            android:layout_width="135dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="42dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="22dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
@@ -155,9 +154,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -177,8 +177,8 @@
 
         <ImageView
             android:id="@+id/iv_edit_test"
-            android:layout_width="199dp"
-            android:layout_height="117dp"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="1dp"
@@ -194,21 +194,22 @@
 
         <Button
             android:id="@+id/tv_edit_tesst"
-            android:gravity="center"
-            android:layout_width="135dp"
-            android:layout_height="45dp"
+            android:layout_width="145dp"
+            android:layout_height="50dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="43dp"
             android:layout_marginBottom="14dp"
+            android:gravity="center"
             android:text="@string/tests"
             android:textColor="#234E70"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
