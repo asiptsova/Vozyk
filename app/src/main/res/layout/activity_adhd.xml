@@ -84,7 +84,6 @@
             android:textColorLink="#664564"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceA" />
-        <!--        android:background="@drawable/rounded_button"-->
 
         <Button
             android:id="@+id/choiceC"
@@ -102,7 +101,6 @@
             android:textColorLink="#664564"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceB" />
-        <!--        android:background="@drawable/rounded_button"-->
 
         <Button
             android:id="@+id/choiceE"
@@ -120,7 +118,6 @@
             android:textColorLink="#664564"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceC" />
-        <!--        android:background="@drawable/rounded_button"-->
 
         <Button
             android:id="@+id/choiceD"
@@ -138,7 +135,6 @@
             android:textColorLink="#664564"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/choiceD" />
-        <!--        android:background="@drawable/rounded_button"-->
 
     </LinearLayout>
 </ScrollView>

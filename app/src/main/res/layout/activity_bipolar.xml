@@ -27,6 +27,7 @@
             android:layout_marginTop="20dp"
             android:text="bipOvr"
             android:textAllCaps="false"
+
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
