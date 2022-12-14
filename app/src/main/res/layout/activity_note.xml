@@ -5,15 +5,15 @@
     android:id="@+id/layout_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Hex"
     android:focusableInTouchMode="true"
-    tools:context="ui.notes.NoteActivity"
-    android:background="@color/Hex">
+    tools:context="ui.notes.NoteActivity">
 
     <ScrollView
-        android:background="@color/Hex"
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/Hex"
         android:fillViewport="true"
         tools:context="com.rafapps.simplenotes.NoteActivity"
         tools:showIn="@layout/activity_note">
@@ -24,23 +24,23 @@
             android:orientation="vertical">
 
             <EditText
-                android:backgroundTint="@color/Hex"
                 android:id="@+id/et_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/Hex"
                 android:ems="10"
                 android:hint="@string/title"
                 android:imeOptions="flagNoExtractUi"
+                android:importantForAutofill="no"
                 android:inputType="textCapWords"
                 android:maxLength="36"
-                android:paddingEnd="8dp"
                 android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 android:textColor="#234E70"
                 android:textCursorDrawable="@null"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:importantForAutofill="no" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/et_note"
@@ -48,20 +48,20 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:autoLink="web|email"
+                android:backgroundTint="@color/Hex"
                 android:ems="10"
                 android:gravity="top"
                 android:hint="@string/note"
                 android:imeOptions="flagNoExtractUi"
+                android:importantForAutofill="no"
                 android:inputType="textCapSentences|textMultiLine"
                 android:linksClickable="true"
-                android:paddingEnd="8dp"
                 android:paddingStart="8dp"
-                android:backgroundTint="@color/Hex"
+                android:paddingEnd="8dp"
                 android:textColor="#234E70"
                 android:textCursorDrawable="@null"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                android:importantForAutofill="no" />
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
         </LinearLayout>
 

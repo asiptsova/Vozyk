@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="center_vertical"
-    android:orientation="vertical"
     android:background="@color/Hex"
+    android:orientation="vertical"
     tools:context=".ui.account.Account">
-
-
 
 
     <ImageView
@@ -42,42 +39,43 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#234E70"
-            android:text="@string/touch_profile_picture_to_change"
-            android:layout_gravity="center_horizontal"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="10dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/nameLabel"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_width="400dp"
-                    android:gravity="center_horizontal"
-                    android:layout_height="wrap_content"
-                    android:background="@color/Hex"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            </LinearLayout>
-        </LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/touch_profile_picture_to_change"
+        android:textColor="#234E70" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:background="@color/Hex"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -115,7 +113,6 @@
         android:layout_marginBottom="496dp"
         android:contentDescription=""
         android:src="@drawable/vozyk_1" />
-
 
 
 </LinearLayout>

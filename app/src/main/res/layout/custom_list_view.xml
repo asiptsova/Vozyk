@@ -13,10 +13,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:textColor="#234E70"
-        android:textStyle="bold"
         android:text="@string/medicine_name"
+        android:textColor="#234E70"
         android:textSize="30sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="18dp" />
 
@@ -57,12 +57,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="65dp"
-        android:visibility="visible"
         android:background="@drawable/ic_baseline_edit_24"
         android:backgroundTint="@color/Bluebell"
+        android:contentDescription="TODO"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="312dp"
-        tools:layout_editor_absoluteY="56dp"
-        android:contentDescription="TODO" />
+        tools:layout_editor_absoluteY="56dp" />
 
     <ImageView
         android:id="@+id/delete_btn"
@@ -74,9 +74,9 @@
         android:layout_marginEnd="15dp"
         android:background="@drawable/ic_baseline_delete_24"
         android:backgroundTint="@color/Bluebell"
+        android:contentDescription="TODO"
         tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="56dp"
-        android:contentDescription="TODO" />
+        tools:layout_editor_absoluteY="56dp" />
 
 
     <TextView
@@ -85,8 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/time_view"
         android:layout_alignParentStart="true"
-        android:textColor="#234E70"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="17dp"
-        android:text="No Notes" />
+        android:text="No Notes"
+        android:textColor="#234E70" />
 </RelativeLayout>

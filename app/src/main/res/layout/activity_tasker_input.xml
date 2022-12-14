@@ -5,29 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="32dp"
-    android:orientation="vertical"
     android:background="@color/Hex"
-    >
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:textColor="#234E70"
         android:hint="@string/note_title"
         android:importantForAutofill="no"
-        android:inputType="textCapWords" />
+        android:inputType="textCapWords"
+        android:textColor="#234E70" />
 
     <EditText
         android:id="@+id/et_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:textColor="#234E70"
         android:hint="@string/note"
         android:importantForAutofill="no"
         android:inputType="textCapSentences|textMultiLine"
+        android:textColor="#234E70"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -52,8 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:textColor="#234E70"
-            android:text="@string/append_text" />
+            android:text="@string/append_text"
+            android:textColor="#234E70" />
     </LinearLayout>
 
     <Button
@@ -61,6 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:textColor="#234E70"
-        android:text="@string/done" />
+        android:text="@string/done"
+        android:textColor="#234E70" />
 </LinearLayout>

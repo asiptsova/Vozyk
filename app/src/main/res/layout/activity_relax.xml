@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Hex"
     android:orientation="vertical"
-    tools:context=".ui.relax.Relax"
-    android:background="@color/Hex">
+    tools:context=".ui.relax.Relax">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/Hex"
+        app:tabBackground="@color/Hex"
         app:tabGravity="fill"
         app:tabIndicatorColor="#fff"
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
-        app:tabTextAppearance="@style/TabLayoutText"
-        app:tabBackground="@color/Hex"
-        />
+        app:tabTextAppearance="@style/TabLayoutText" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Hex"/>
+        android:background="@color/Hex" />
 
 </LinearLayout>

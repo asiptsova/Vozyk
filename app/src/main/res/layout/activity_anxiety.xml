@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/Hex"
-    >
+    android:background="@color/Hex">
 
     <LinearLayout
         android:id="@+id/activity_gad7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        tools:context=".ui.anxiety.anxietyActivity"
         android:orientation="vertical"
-        >
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".ui.anxiety.anxietyActivity">
 
         <TextView
             android:id="@+id/general"
@@ -35,26 +32,24 @@
             android:textSize="30sp" />
 
         <TextView
-            android:gravity="center"
-            android:orientation="vertical"
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
             android:text="feeling_nervous_anxious_or_on_edge"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="50dp"
             android:textSize="25sp"
-            app:layout_constraintTop_toBottomOf = "@+id/general"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/general" />
 
         <Button
             android:id="@+id/choice1"
-            android:gravity="center"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -62,6 +57,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:gravity="center"
             android:orientation="vertical"
             android:text="not_at_all_sure"
             android:textAllCaps="false"
@@ -91,7 +87,6 @@
             app:layout_constraintTop_toBottomOf="@+id/choice1" />
 
         <Button
-            android:text="over_half_the_days"
             android:id="@+id/choice3"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -100,17 +95,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="over_half_the_days"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choice2"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/choice2" />
 
         <Button
-            android:text="nearly_every_day"
             android:id="@+id/choice4"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -119,14 +113,14 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="nearly_every_day"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choice3"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/choice3" />
 
     </LinearLayout>
 </ScrollView>

@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Hex"
-    >
+    android:background="@color/Hex">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name"
@@ -12,8 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:textColor="#234E70"
         android:hint="@string/medicine_name"
+        android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView">
@@ -30,8 +29,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:textColor="#234E70"
         android:hint="@string/note_optional"
+        android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2">
@@ -57,14 +56,14 @@
             android:id="@+id/radio_button_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="#234E70"
-            android:text="@string/before_food" />
+            android:text="@string/before_food"
+            android:textColor="#234E70" />
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="#234E70"
-            android:text="@string/after_food" />
+            android:text="@string/after_food"
+            android:textColor="#234E70" />
 
     </RadioGroup>
 
@@ -84,18 +83,18 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#234E70"
             android:width="150dp"
-            android:text="@string/morning" />
+            android:text="@string/morning"
+            android:textColor="#234E70" />
 
         <Button
             android:id="@+id/lunch"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#234E70"
             android:width="150dp"
-            android:text="@string/afternoon" />
+            android:text="@string/afternoon"
+            android:textColor="#234E70" />
 
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -118,9 +117,9 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#234E70"
             android:width="150dp"
-            android:text="@string/night" />
+            android:text="@string/night"
+            android:textColor="#234E70" />
 
 
         <Button
@@ -128,9 +127,9 @@
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#234E70"
             android:width="150dp"
-            android:text="@string/custom" />
+            android:text="@string/custom"
+            android:textColor="#234E70" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -154,8 +153,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="203dp"
-        android:text="@string/cancel"
         android:backgroundTint="@color/Raspberry"
+        android:text="@string/cancel"
         android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,8 +171,8 @@
         android:paddingBottom="10dp"
         android:text="@string/add_medicine"
         android:textColor="#234E70"
-        android:textStyle="bold"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -187,11 +186,11 @@
         android:layout_marginStart="26dp"
         android:layout_marginEnd="23dp"
         android:layout_marginBottom="59dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -200,11 +199,11 @@
         android:layout_marginStart="26dp"
         android:layout_marginEnd="19dp"
         android:layout_marginBottom="23dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toStartOf="@+id/note"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

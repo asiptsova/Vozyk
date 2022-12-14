@@ -9,13 +9,13 @@
         android:id="@+id/activity_gad7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
+        android:background="@color/Hex"
         android:orientation="vertical"
-        tools:context=".ui.ptsd.ptsd"
-        android:background="@color/Hex">
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".ui.ptsd.ptsd">
 
         <TextView
             android:id="@+id/question"
@@ -28,21 +28,21 @@
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="25sp"
-            />
+            android:textSize="25sp" />
+
         <TextView
-        android:id="@+id/exampleOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:textAllCaps="false" android:textColor="#234E70"
-        android:textColorHighlight="#3F51B5"
-        android:textColorHint="#3F51B5"
-        android:textColorLink="#3F51B5"
-        android:textSize="20sp"
-        android:text="a_serious_accident_or_fires"
-        />
+            android:id="@+id/exampleOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:text="a_serious_accident_or_fires"
+            android:textAllCaps="false"
+            android:textColor="#234E70"
+            android:textColorHighlight="#3F51B5"
+            android:textColorHint="#3F51B5"
+            android:textColorLink="#3F51B5"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/exampleTwo"
@@ -50,56 +50,55 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
+            android:text="a_physical_or_sexual_assault"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="20sp"
-            android:text="a_physical_or_sexual_assault"
-            />
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/exampleThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
+            android:text="an_earthquake_or_flood"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="20sp"
-            android:text="an_earthquake_or_flood"
-            />
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/exampleFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
+            android:text="a_war"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="20sp"
-            android:text="a_war"
-            />
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/exampleFive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
+            android:text="seeing_someone_be_killed_or_seriously_injured"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="20sp"
-            android:text="seeing_someone_be_killed_or_seriously_injured"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/exampleSix"
@@ -120,14 +119,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:text="have_you_ever_experienced_this_kind_of_event"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="25sp"
-            android:text="have_you_ever_experienced_this_kind_of_event"
-            />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/yes"
@@ -143,8 +141,7 @@
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/no"
@@ -160,8 +157,7 @@
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
     </LinearLayout>
 </ScrollView>

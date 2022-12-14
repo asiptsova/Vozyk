@@ -18,9 +18,9 @@
             android:layout_height="49dp"
             android:gravity="center"
             android:text="@string/settings"
+            android:textColor="#234E70"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#234E70"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,13 +44,13 @@
             android:id="@+id/iv_edit_language"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/settings__"
             android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
             android:padding="5dp"
+            android:src="@drawable/settings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_edit_language"
@@ -61,18 +61,17 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_edit_language"
-            app:layout_constraintTop_toTopOf="parent"
-         />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:background="#CCD1D1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_edit_language"
-            android:layout_marginRight="30dp" />
+            app:layout_constraintStart_toStartOf="@+id/tv_edit_language" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -88,15 +87,15 @@
         <ImageView
             android:id="@+id/iv_change_password"
 
-            android:layout_marginStart="40dp"
-            android:padding="5dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:padding="5dp"
             android:src="@drawable/settings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_change_password"
@@ -107,18 +106,17 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_change_password"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:background="#CCD1D1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_change_password"
-            android:layout_marginRight="30dp" />
+            app:layout_constraintStart_toStartOf="@+id/tv_change_password" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -134,13 +132,13 @@
             android:id="@+id/iv_change_email"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/settings__"
             android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
             android:padding="5dp"
+            android:src="@drawable/settings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_change_email"
@@ -151,18 +149,17 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_change_email"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:background="#CCD1D1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_change_email"
-            android:layout_marginRight="30dp" />
+            app:layout_constraintStart_toStartOf="@+id/tv_change_email" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -179,13 +176,13 @@
             android:id="@+id/iv_privacy_policy"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/settings__"
             android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
             android:padding="5dp"
+            android:src="@drawable/settings__"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/logOut"
@@ -196,17 +193,16 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_privacy_policy"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:background="#CCD1D1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="30dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

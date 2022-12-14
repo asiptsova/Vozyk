@@ -8,98 +8,95 @@
     android:background="@color/Hex"
     tools:context=".ui.doctor.DoctorActivity">
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/doctor_listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp"
+            android:background="@color/Hex"
+            android:paddingTop="10dp"
+            android:paddingBottom="40dp">
 
-                <ListView
-                    android:id="@+id/doctor_listview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="130dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="40dp"
-                    android:background="@color/white"
-                    >
+        </ListView>
 
-                </ListView>
-
-
-
-                <ImageView
-                    android:id="@+id/doctor_empty"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="false"
-                    android:foregroundGravity="center"
-                    android:layout_marginTop="300dp"
-                    android:clickable="false"
-                    app:srcCompat="@drawable/doctor"
-                    android:contentDescription="TODO" />
-
-                <TextView
-                    android:id="@+id/doctor_emptyText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="false"
-                    android:layout_marginTop="600dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="No Appointments"
-                    android:textAlignment="center"
-                    android:textColor="#234E70"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/doctor_textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="85dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Your Appointments"
-                    android:textColor="#234E70"
-                    android:textSize="35sp"
-                    app:layout_constraintBottom_toTopOf="@+id/doctor_listview"
-                    app:layout_constraintStart_toStartOf="@+id/doctor_listview" />
-        </RelativeLayout>
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        <ImageView
+            android:id="@+id/doctor_empty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="250dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="300dp"
+            android:clickable="false"
+            android:contentDescription="TODO"
+            android:foregroundGravity="center"
+            app:srcCompat="@drawable/doctor" />
 
-                <androidx.core.widget.NestedScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:paddingBottom="100dp">
+        <TextView
+            android:id="@+id/doctor_emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="600dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="No Appointments"
+            android:textAlignment="center"
+            android:textColor="#234E70"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/doctor_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Your Appointments"
+            android:textColor="#234E70"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@+id/doctor_listview"
+            app:layout_constraintStart_toStartOf="@+id/doctor_listview" />
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp">
 
 
-                </androidx.core.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
 
-                <com.google.android.material.bottomappbar.BottomAppBar
-                    android:id="@+id/doctor_bottomAppBar"
-                    style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    app:fabAlignmentMode="end"
-                    android:backgroundTint="@color/Hex"
-                    app:hideOnScroll="true"
-                    app:menu="@menu/doc_menu"
-                    />
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/doctor_bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/Hex"
+            app:fabAlignmentMode="end"
+            app:hideOnScroll="true"
+            app:menu="@menu/doc_menu" />
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/doctor_add_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/RobbinsEggBlue"
-                    app:srcCompat="@drawable/ic_baseline_add_24"
-                    app:layout_anchor="@id/doctor_bottomAppBar"
-                    android:contentDescription="TODO" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/doctor_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/RobbinsEggBlue"
+            android:contentDescription="TODO"
+            app:layout_anchor="@id/doctor_bottomAppBar"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>

@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center_vertical"
+    android:background="@color/Hex"
     android:orientation="vertical"
-    tools:context=".ui.ToDoList.ToDoListActivity"
-    android:background="@color/Hex">
+    tools:context=".ui.ToDoList.ToDoListActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="252dp"
-        android:paddingTop="20dp"
         android:background="@color/Hex"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:clickable="false"
-            app:srcCompat="@drawable/voz"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/voz" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="@string/to_do_list"
             android:textAlignment="center"
             android:textColor="#234E70"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/addButton"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="30dp"
             android:layout_height="50dp"
-            android:textColor="#234E70"
+            android:layout_marginHorizontal="30dp"
             android:backgroundTint="@color/Bluebell"
             android:text="+"
-            android:textSize="25sp"/>
+            android:textColor="#234E70"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginHorizontal="10dp"
-            android:gravity="center_horizontal"
             android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Button
@@ -57,18 +58,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/RobbinsEggBlue"
-                android:textColor="#234E70"
-                android:text="@string/my_completed_tasks">
-            </Button>
+                android:text="@string/my_completed_tasks"
+                android:textColor="#234E70"></Button>
 
             <Button
                 android:id="@+id/viewIncompletedButton"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/RobbinsEggBlue"
                 android:text="@string/my_pending_tasks"
-                android:textColor="#234E70"
-                style="?android:attr/buttonBarButtonStyle">
+                android:textColor="#234E70">
 
             </Button>
         </LinearLayout>
@@ -80,23 +80,24 @@
         android:id="@+id/myList"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="-15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginBottom="40dp"
-        android:background="@color/Hex"/>
+        android:background="@color/Hex" />
+
     <Button
         android:id="@+id/delete_list_btn"
         android:layout_width="match_parent"
-        android:text="@string/delete_list"
         android:layout_height="40sp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/Sage"
-        android:textColor="#234E70"
-        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="-40dp"
         android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/Sage"
+        android:text="@string/delete_list"
+        android:textColor="#234E70"
+        android:textSize="18sp" />
 
 </LinearLayout>
