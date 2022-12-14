@@ -522,7 +522,7 @@
                   style="?android:attr/borderlessButtonStyle"
                   android:layout_width="48dp"
                   android:layout_height="42dp"
-                  android:textColor="@color/black"
+                  android:textColor="@color/Hex"
                   android:background="@drawable/round_button"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
@@ -534,7 +534,7 @@
                   android:layout_width="48dp"
                   android:layout_height="42dp"
                   android:background="@drawable/round_button"
-                  android:textColor="@color/black"
+                  android:textColor="@color/Hex"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
                   app:layout_constraintTop_toTopOf="parent" />
@@ -544,7 +544,7 @@
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:layout_width="48dp"
-                  android:textColor="@color/black"
+                  android:textColor="@color/Hex"
                   android:layout_height="42dp"
                   app:layout_constraintStart_toStartOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
@@ -680,7 +680,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_21"
+                  android:id="@+id/calender_day_21"
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
@@ -691,7 +691,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_22"
+                  android:id="@+id/calender_day_22"
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
@@ -701,7 +701,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_23"
+                  android:id="@+id/calender_day_23"
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
@@ -713,7 +713,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_24"
+                  android:id="@+id/calender_day_24"
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
@@ -724,7 +724,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_25"
+                  android:id="@+id/calender_day_25"
                   style="?android:attr/borderlessButtonStyle"
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
@@ -735,7 +735,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_26"
+                  android:id="@+id/calender_day_26"
                   style="?android:attr/borderlessButtonStyle"
                   android:layout_width="48dp"
                   android:layout_height="42dp"
@@ -746,7 +746,7 @@
                   app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
 
               <Button
-                  android:id="@+id/calender_button_showing_shadow_27"
+                  android:id="@+id/calender_day_27"
                   style="?android:attr/borderlessButtonStyle"
                   android:layout_width="48dp"
                   android:layout_height="42dp"
@@ -775,7 +775,7 @@
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
                   app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_30"
@@ -786,7 +786,7 @@
                   android:textColor="@color/black"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_31"
@@ -797,7 +797,7 @@
                   android:textColor="@color/black"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_32"
@@ -808,7 +808,7 @@
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_33"
@@ -819,7 +819,7 @@
                   android:textColor="@color/black"
                   android:layout_marginStart="4dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_34"
@@ -830,7 +830,7 @@
                   android:background="@drawable/round_button"
                   android:textColor="@color/Hex"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_35"
@@ -841,7 +841,7 @@
                   android:background="@drawable/round_button"
                   android:textColor="@color/black"
                   app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
+                  app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
 
               <Button
                   android:id="@+id/calender_button_showing_shadow_36"
@@ -1001,6 +1001,7 @@
                   android:id="@+id/calender_under_number_state_16"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
@@ -1010,6 +1011,7 @@
                   android:id="@+id/calender_under_number_state_17"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
@@ -1019,6 +1021,7 @@
                   android:id="@+id/calender_under_number_state_18"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
@@ -1028,6 +1031,7 @@
                   android:id="@+id/calender_under_number_state_19"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
@@ -1036,6 +1040,7 @@
               <View
                   android:id="@+id/calender_under_number_state_20"
                   android:layout_width="48dp"
+                  android:background="@color/Hex"
                   android:layout_height="6dp"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
@@ -1046,6 +1051,7 @@
                   android:id="@+id/calender_under_number_state_21"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
@@ -1054,19 +1060,21 @@
               <View
                   android:id="@+id/calender_under_number_state_22"
                   android:layout_width="48dp"
+                  android:background="@color/Hex"
                   android:layout_height="6dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_23"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_24"
@@ -1075,7 +1083,7 @@
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_25"
@@ -1084,7 +1092,7 @@
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_26"
@@ -1093,7 +1101,7 @@
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_27"
@@ -1102,7 +1110,7 @@
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_28"
@@ -1111,7 +1119,7 @@
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_21" />
+                  app:layout_constraintTop_toBottomOf="@id/calender_day_21" />
 
               <View
                   android:id="@+id/calender_under_number_state_29"
@@ -1187,320 +1195,13 @@
                   android:id="@+id/calender_under_number_state_37"
                   android:layout_width="48dp"
                   android:layout_height="6dp"
+                  android:background="@color/Hex"
                   android:layout_marginStart="4dp"
                   android:layout_marginTop="33dp"
                   app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
                   app:layout_constraintTop_toBottomOf="@id/calender_button_showing_shadow_35" />
 
-              <View
-                  android:background="@color/Hex"
-                  android:id="@+id/middle_calender_1"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toTopOf="parent" />
 
-              <View
-                  android:id="@+id/middle_calender_2"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <View
-                  android:background="@color/Hex"
-                  android:id="@+id/middle_calender_3"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <View
-                  android:id="@+id/middle_calender_4"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <View
-                  android:id="@+id/middle_calender_5"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <View
-                  android:id="@+id/middle_calender_6"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <View
-                  android:id="@+id/middle_calender_7"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_8"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_9"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_10"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_11"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_12"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
-
-              <View
-                  android:id="@+id/middle_calender_13"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_14"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_15"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_16"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_17"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_18"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
-
-              <View
-                  android:id="@+id/middle_calender_19"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_20"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_21"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_22"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_23"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_24"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
-
-              <View
-                  android:id="@+id/middle_calender_25"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_26"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_27"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_3"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_28"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_4"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_29"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_5"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_30"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_7"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_6"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_22" />
-
-              <View
-                  android:id="@+id/middle_calender_31"
-                  android:layout_width="0dp"
-                  android:layout_height="6dp"
-                  android:layout_marginTop="33dp"
-                  android:background="@color/Hex"
-                  app:layout_constraintEnd_toStartOf="@+id/calender_under_number_state_2"
-                  app:layout_constraintStart_toEndOf="@+id/calender_under_number_state_1"
-                  app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

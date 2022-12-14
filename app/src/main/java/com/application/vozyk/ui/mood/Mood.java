@@ -47,43 +47,43 @@ import java.util.List;
 import java.util.Map;
 
 public class Mood extends Fragment  {
-    private Button calender_button_showing_shadow_1;
-    private Button calender_button_showing_shadow_2;
-    private Button calender_button_showing_shadow_3;
-    private Button calender_button_showing_shadow_4;
-    private Button calender_button_showing_shadow_5;
-    private Button calender_button_showing_shadow_6;
-    private Button calender_button_showing_shadow_7;
-    private Button calender_button_showing_shadow_8;
-    private Button calender_button_showing_shadow_9;
-    private Button calender_button_showing_shadow_10;
-    private Button calender_button_showing_shadow_11;
-    private Button calender_button_showing_shadow_12;
-    private Button calender_button_showing_shadow_13;
-    private Button calender_button_showing_shadow_14;
-    private Button calender_button_showing_shadow_15;
-    private Button calender_button_showing_shadow_16;
-    private Button calender_button_showing_shadow_17;
-    private Button calender_button_showing_shadow_18;
-    private Button calender_button_showing_shadow_19;
-    private Button calender_button_showing_shadow_20;
-    private Button calender_button_showing_shadow_21;
-    private Button calender_button_showing_shadow_22;
-    private Button calender_button_showing_shadow_23;
-    private Button calender_button_showing_shadow_24;
-    private Button calender_button_showing_shadow_25;
-    private Button calender_button_showing_shadow_26;
-    private Button calender_button_showing_shadow_27;
-    private Button calender_button_showing_shadow_28;
-    private Button calender_button_showing_shadow_29;
-    private Button calender_button_showing_shadow_30;
-    private Button calender_button_showing_shadow_31;
-    private Button calender_button_showing_shadow_32;
-    private Button calender_button_showing_shadow_33;
-    private Button calender_button_showing_shadow_34;
-    private Button calender_button_showing_shadow_35;
-    private Button calender_button_showing_shadow_36;
-    private Button calender_button_showing_shadow_37;
+    private Button calender_button_showing_shadow_1,
+            calender_button_showing_shadow_2,
+            calender_button_showing_shadow_3,
+            calender_button_showing_shadow_4,
+            calender_button_showing_shadow_5,
+            calender_button_showing_shadow_6,
+            calender_button_showing_shadow_7,
+            calender_button_showing_shadow_8,
+            calender_button_showing_shadow_9,
+            calender_button_showing_shadow_10,
+            calender_button_showing_shadow_11,
+            calender_button_showing_shadow_12,
+            calender_button_showing_shadow_13,
+            calender_button_showing_shadow_14,
+            calender_button_showing_shadow_15,
+            calender_button_showing_shadow_16,
+            calender_button_showing_shadow_17,
+            calender_button_showing_shadow_18,
+            calender_button_showing_shadow_19,
+            calender_button_showing_shadow_20,
+            calender_button_showing_shadow_21,
+            calender_button_showing_shadow_22,
+            calender_button_showing_shadow_23,
+            calender_button_showing_shadow_24,
+            calender_button_showing_shadow_25,
+            calender_button_showing_shadow_26,
+            calender_button_showing_shadow_27,
+            calender_button_showing_shadow_28,
+            calender_button_showing_shadow_29,
+            calender_button_showing_shadow_30,
+            calender_button_showing_shadow_31,
+            calender_button_showing_shadow_32,
+            calender_button_showing_shadow_33,
+            calender_button_showing_shadow_34,
+            calender_button_showing_shadow_35,
+            calender_button_showing_shadow_36,
+            calender_button_showing_shadow_37;
     private String color_the_today;
     private String[] colors;
     private HashMap<Long, Integer> history_of_mood;
@@ -130,8 +130,6 @@ public class Mood extends Fragment  {
         color_the_under();
         yes_and_no_button_listen_under_the_calender();
         divide_it_into_weeks();
-        clear_the_middle();
-        make_the_middle_come_again();
         hide_or_un_hide_the_button(0);
         color_the_button_under_the_calender();
         color_the_under();
@@ -6959,13 +6957,13 @@ public class Mood extends Fragment  {
             calender_button_showing_shadow_18 = getView().findViewById(R.id.calender_button_showing_shadow_18);
             calender_button_showing_shadow_19 = getView().findViewById(R.id.calender_button_showing_shadow_19);
             calender_button_showing_shadow_20 = getView().findViewById(R.id.calender_button_showing_shadow_20);
-            calender_button_showing_shadow_21 = getView().findViewById(R.id.calender_button_showing_shadow_21);
-            calender_button_showing_shadow_22 = getView().findViewById(R.id.calender_button_showing_shadow_22);
-            calender_button_showing_shadow_23 = getView().findViewById(R.id.calender_button_showing_shadow_23);
-            calender_button_showing_shadow_24 = getView().findViewById(R.id.calender_button_showing_shadow_24);
-            calender_button_showing_shadow_25 = getView().findViewById(R.id.calender_button_showing_shadow_25);
-            calender_button_showing_shadow_26 = getView().findViewById(R.id.calender_button_showing_shadow_26);
-            calender_button_showing_shadow_27 = getView().findViewById(R.id.calender_button_showing_shadow_27);
+            calender_button_showing_shadow_21 = getView().findViewById(R.id.calender_day_21);
+            calender_button_showing_shadow_22 = getView().findViewById(R.id.calender_day_22);
+            calender_button_showing_shadow_23 = getView().findViewById(R.id.calender_day_23);
+            calender_button_showing_shadow_24 = getView().findViewById(R.id.calender_day_24);
+            calender_button_showing_shadow_25 = getView().findViewById(R.id.calender_day_25);
+            calender_button_showing_shadow_26 = getView().findViewById(R.id.calender_day_26);
+            calender_button_showing_shadow_27 = getView().findViewById(R.id.calender_day_27);
             calender_button_showing_shadow_28 = getView().findViewById(R.id.calender_button_showing_shadow_28);
             calender_button_showing_shadow_29 = getView().findViewById(R.id.calender_button_showing_shadow_29);
             calender_button_showing_shadow_30 = getView().findViewById(R.id.calender_button_showing_shadow_30);
@@ -7010,8 +7008,6 @@ public class Mood extends Fragment  {
                 color_the_button_under_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
             });
@@ -7039,8 +7035,6 @@ public class Mood extends Fragment  {
                 color_the_button_under_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
             });
@@ -8610,8 +8604,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -8637,11 +8629,8 @@ public class Mood extends Fragment  {
                     save_the_input_for_good_habit_input(2, calendar.getTimeInMillis());
                 }
                 color_the_calender();
-                //set_up_day_of_week_bar_chart();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -8669,8 +8658,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -8696,11 +8683,8 @@ public class Mood extends Fragment  {
                     save_the_input_for_good_habit_input(4, calendar.getTimeInMillis());
                 }
                 color_the_calender();
-                //set_up_day_of_week_bar_chart();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -8725,11 +8709,8 @@ public class Mood extends Fragment  {
                     save_the_input_for_good_habit_input(5, calendar.getTimeInMillis());
                 }
                 color_the_calender();
-                //set_up_day_of_week_bar_chart();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -8783,171 +8764,6 @@ public class Mood extends Fragment  {
         }
     }
 
-    private void clear_the_middle() {
-        if (getView() != null) {
-            getView().findViewById(R.id.middle_calender_1).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_2).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_3).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_4).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_5).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_6).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_7).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_8).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_9).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_10).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_11).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_12).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_13).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_14).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_15).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_16).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_17).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_18).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_19).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_20).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_21).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_22).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_23).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_24).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_25).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_26).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_27).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_28).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_29).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_30).setVisibility(View.INVISIBLE);
-            getView().findViewById(R.id.middle_calender_31).setVisibility(View.INVISIBLE);
-
-        }
-    }
-
-    private void make_the_middle_come_again() {
-        if (getView() != null) {
-            View middle_calender_1 = getView().findViewById(R.id.middle_calender_1);
-            View middle_calender_2 = getView().findViewById(R.id.middle_calender_2);
-            View middle_calender_3 = getView().findViewById(R.id.middle_calender_3);
-            View middle_calender_4 = getView().findViewById(R.id.middle_calender_4);
-            View middle_calender_5 = getView().findViewById(R.id.middle_calender_5);
-            View middle_calender_6 = getView().findViewById(R.id.middle_calender_6);
-            View middle_calender_7 = getView().findViewById(R.id.middle_calender_7);
-            View middle_calender_8 = getView().findViewById(R.id.middle_calender_8);
-            View middle_calender_9 = getView().findViewById(R.id.middle_calender_9);
-            View middle_calender_10 = getView().findViewById(R.id.middle_calender_10);
-            View middle_calender_11 = getView().findViewById(R.id.middle_calender_11);
-            View middle_calender_12 = getView().findViewById(R.id.middle_calender_12);
-            View middle_calender_13 = getView().findViewById(R.id.middle_calender_13);
-            View middle_calender_14 = getView().findViewById(R.id.middle_calender_14);
-            View middle_calender_15 = getView().findViewById(R.id.middle_calender_15);
-            View middle_calender_16 = getView().findViewById(R.id.middle_calender_16);
-            View middle_calender_17 = getView().findViewById(R.id.middle_calender_17);
-            View middle_calender_18 = getView().findViewById(R.id.middle_calender_18);
-            View middle_calender_19 = getView().findViewById(R.id.middle_calender_19);
-            View middle_calender_20 = getView().findViewById(R.id.middle_calender_20);
-            View middle_calender_21 = getView().findViewById(R.id.middle_calender_21);
-            View middle_calender_22 = getView().findViewById(R.id.middle_calender_22);
-            View middle_calender_23 = getView().findViewById(R.id.middle_calender_23);
-            View middle_calender_24 = getView().findViewById(R.id.middle_calender_24);
-            View middle_calender_25 = getView().findViewById(R.id.middle_calender_25);
-            View middle_calender_26 = getView().findViewById(R.id.middle_calender_26);
-            View middle_calender_27 = getView().findViewById(R.id.middle_calender_27);
-            View middle_calender_28 = getView().findViewById(R.id.middle_calender_28);
-            View middle_calender_29 = getView().findViewById(R.id.middle_calender_29);
-            View middle_calender_30 = getView().findViewById(R.id.middle_calender_30);
-            View middle_calender_31 = getView().findViewById(R.id.middle_calender_31);
-            if ((modes_for_four_drawable[0] == 1 || modes_for_four_drawable[0] == 2) && (modes_for_four_drawable[1] == 3 || modes_for_four_drawable[1] == 2)) {
-                middle_calender_1.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[1] == 1 || modes_for_four_drawable[1] == 2) && (modes_for_four_drawable[2] == 3 || modes_for_four_drawable[2] == 2)) {
-                middle_calender_2.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[2] == 1 || modes_for_four_drawable[2] == 2) && (modes_for_four_drawable[3] == 3 || modes_for_four_drawable[3] == 2)) {
-                middle_calender_3.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[3] == 1 || modes_for_four_drawable[3] == 2) && (modes_for_four_drawable[4] == 3 || modes_for_four_drawable[4] == 2)) {
-                middle_calender_4.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[4] == 1 || modes_for_four_drawable[4] == 2) && (modes_for_four_drawable[5] == 3 || modes_for_four_drawable[5] == 2)) {
-                middle_calender_5.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[5] == 1 || modes_for_four_drawable[5] == 2) && (modes_for_four_drawable[6] == 3 || modes_for_four_drawable[6] == 2)) {
-                middle_calender_6.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[7] == 1 || modes_for_four_drawable[7] == 2) && (modes_for_four_drawable[8] == 3 || modes_for_four_drawable[8] == 2)) {
-                middle_calender_7.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[8] == 1 || modes_for_four_drawable[8] == 2) && (modes_for_four_drawable[9] == 3 || modes_for_four_drawable[9] == 2)) {
-                middle_calender_8.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[9] == 1 || modes_for_four_drawable[9] == 2) && (modes_for_four_drawable[10] == 3 || modes_for_four_drawable[10] == 2)) {
-                middle_calender_9.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[10] == 1 || modes_for_four_drawable[10] == 2) && (modes_for_four_drawable[11] == 3 || modes_for_four_drawable[11] == 2)) {
-                middle_calender_10.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[11] == 1 || modes_for_four_drawable[11] == 2) && (modes_for_four_drawable[12] == 3 || modes_for_four_drawable[12] == 2)) {
-                middle_calender_11.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[12] == 1 || modes_for_four_drawable[12] == 2) && (modes_for_four_drawable[13] == 3 || modes_for_four_drawable[13] == 2)) {
-                middle_calender_12.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[14] == 1 || modes_for_four_drawable[14] == 2) && (modes_for_four_drawable[15] == 3 || modes_for_four_drawable[15] == 2)) {
-                middle_calender_13.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[15] == 1 || modes_for_four_drawable[15] == 2) && (modes_for_four_drawable[16] == 3 || modes_for_four_drawable[16] == 2)) {
-                middle_calender_14.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[16] == 1 || modes_for_four_drawable[16] == 2) && (modes_for_four_drawable[17] == 3 || modes_for_four_drawable[17] == 2)) {
-                middle_calender_15.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[17] == 1 || modes_for_four_drawable[17] == 2) && (modes_for_four_drawable[18] == 3 || modes_for_four_drawable[18] == 2)) {
-                middle_calender_16.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[18] == 1 || modes_for_four_drawable[18] == 2) && (modes_for_four_drawable[19] == 3 || modes_for_four_drawable[19] == 2)) {
-                middle_calender_17.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[19] == 1 || modes_for_four_drawable[19] == 2) && (modes_for_four_drawable[20] == 3 || modes_for_four_drawable[20] == 2)) {
-                middle_calender_18.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[21] == 1 || modes_for_four_drawable[21] == 2) && (modes_for_four_drawable[22] == 3 || modes_for_four_drawable[22] == 2)) {
-                middle_calender_19.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[22] == 1 || modes_for_four_drawable[22] == 2) && (modes_for_four_drawable[23] == 3 || modes_for_four_drawable[23] == 2)) {
-                middle_calender_20.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[23] == 1 || modes_for_four_drawable[23] == 2) && (modes_for_four_drawable[24] == 3 || modes_for_four_drawable[24] == 2)) {
-                middle_calender_21.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[24] == 1 || modes_for_four_drawable[24] == 2) && (modes_for_four_drawable[25] == 3 || modes_for_four_drawable[25] == 2)) {
-                middle_calender_22.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[25] == 1 || modes_for_four_drawable[25] == 2) && (modes_for_four_drawable[26] == 3 || modes_for_four_drawable[26] == 2)) {
-                middle_calender_23.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[26] == 1 || modes_for_four_drawable[26] == 2) && (modes_for_four_drawable[27] == 3 || modes_for_four_drawable[27] == 2)) {
-                middle_calender_24.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[28] == 1 || modes_for_four_drawable[28] == 2) && (modes_for_four_drawable[29] == 3 || modes_for_four_drawable[29] == 2)) {
-                middle_calender_25.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[29] == 1 || modes_for_four_drawable[29] == 2) && (modes_for_four_drawable[30] == 3 || modes_for_four_drawable[30] == 2)) {
-                middle_calender_26.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[30] == 1 || modes_for_four_drawable[30] == 2) && (modes_for_four_drawable[31] == 3 || modes_for_four_drawable[31] == 2)) {
-                middle_calender_27.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[31] == 1 || modes_for_four_drawable[31] == 2) && (modes_for_four_drawable[32] == 3 || modes_for_four_drawable[32] == 2)) {
-                middle_calender_28.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[32] == 1 || modes_for_four_drawable[32] == 2) && (modes_for_four_drawable[33] == 3 || modes_for_four_drawable[33] == 2)) {
-                middle_calender_29.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[33] == 1 || modes_for_four_drawable[33] == 2) && (modes_for_four_drawable[34] == 3 || modes_for_four_drawable[34] == 2)) {
-                middle_calender_30.setVisibility(View.VISIBLE);
-            }
-            if ((modes_for_four_drawable[35] == 1 || modes_for_four_drawable[35] == 2) && (modes_for_four_drawable[36] == 3 || modes_for_four_drawable[36] == 2)) {
-                middle_calender_31.setVisibility(View.VISIBLE);
-            }
-        }
-    }
 
     private void color_the_4_drawables() {
         if (getContext() != null && getView() != null) {
@@ -10243,130 +10059,6 @@ public class Mood extends Fragment  {
         } else {
             month_start_day = 6;
         }
-        View middle_calender_1 = getView().findViewById(R.id.middle_calender_1);
-        View middle_calender_2 = getView().findViewById(R.id.middle_calender_2);
-        View middle_calender_3 = getView().findViewById(R.id.middle_calender_3);
-        View middle_calender_4 = getView().findViewById(R.id.middle_calender_4);
-        View middle_calender_5 = getView().findViewById(R.id.middle_calender_5);
-        View middle_calender_6 = getView().findViewById(R.id.middle_calender_6);
-        View middle_calender_7 = getView().findViewById(R.id.middle_calender_7);
-        View middle_calender_8 = getView().findViewById(R.id.middle_calender_8);
-        View middle_calender_9 = getView().findViewById(R.id.middle_calender_9);
-        View middle_calender_10 = getView().findViewById(R.id.middle_calender_10);
-        View middle_calender_11 = getView().findViewById(R.id.middle_calender_11);
-        View middle_calender_12 = getView().findViewById(R.id.middle_calender_12);
-        View middle_calender_13 = getView().findViewById(R.id.middle_calender_13);
-        View middle_calender_14 = getView().findViewById(R.id.middle_calender_14);
-        View middle_calender_15 = getView().findViewById(R.id.middle_calender_15);
-        View middle_calender_16 = getView().findViewById(R.id.middle_calender_16);
-        View middle_calender_17 = getView().findViewById(R.id.middle_calender_17);
-        View middle_calender_18 = getView().findViewById(R.id.middle_calender_18);
-        View middle_calender_19 = getView().findViewById(R.id.middle_calender_19);
-        View middle_calender_20 = getView().findViewById(R.id.middle_calender_20);
-        View middle_calender_21 = getView().findViewById(R.id.middle_calender_21);
-        View middle_calender_22 = getView().findViewById(R.id.middle_calender_22);
-        View middle_calender_23 = getView().findViewById(R.id.middle_calender_23);
-        View middle_calender_24 = getView().findViewById(R.id.middle_calender_24);
-        View middle_calender_25 = getView().findViewById(R.id.middle_calender_25);
-        View middle_calender_26 = getView().findViewById(R.id.middle_calender_26);
-        View middle_calender_27 = getView().findViewById(R.id.middle_calender_27);
-        View middle_calender_28 = getView().findViewById(R.id.middle_calender_28);
-        View middle_calender_29 = getView().findViewById(R.id.middle_calender_29);
-        View middle_calender_30 = getView().findViewById(R.id.middle_calender_30);
-        View middle_calender_31 = getView().findViewById(R.id.middle_calender_31);
-        if (middle_calender_1.getVisibility() == View.VISIBLE) {
-            middle_calender_1.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[1 - month_start_day]), Color.parseColor(colors[2 - month_start_day])));
-        }
-        if (middle_calender_2.getVisibility() == View.VISIBLE) {
-            middle_calender_2.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[2 - month_start_day]), Color.parseColor(colors[3 - month_start_day])));
-        }
-        if (middle_calender_3.getVisibility() == View.VISIBLE) {
-            middle_calender_3.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[3 - month_start_day]), Color.parseColor(colors[4 - month_start_day])));
-        }
-        if (middle_calender_4.getVisibility() == View.VISIBLE) {
-            middle_calender_4.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[4 - month_start_day]), Color.parseColor(colors[5 - month_start_day])));
-        }
-        if (middle_calender_5.getVisibility() == View.VISIBLE) {
-            middle_calender_5.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[5 - month_start_day]), Color.parseColor(colors[6 - month_start_day])));
-        }
-        if (middle_calender_6.getVisibility() == View.VISIBLE) {
-            middle_calender_6.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[6 - month_start_day]), Color.parseColor(colors[7 - month_start_day])));
-        }
-        if (middle_calender_7.getVisibility() == View.VISIBLE) {
-            middle_calender_7.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[8 - month_start_day]), Color.parseColor(colors[9 - month_start_day])));
-        }
-        if (middle_calender_8.getVisibility() == View.VISIBLE) {
-            middle_calender_8.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[9 - month_start_day]), Color.parseColor(colors[10 - month_start_day])));
-        }
-        if (middle_calender_9.getVisibility() == View.VISIBLE) {
-            middle_calender_9.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[10 - month_start_day]), Color.parseColor(colors[11 - month_start_day])));
-        }
-        if (middle_calender_10.getVisibility() == View.VISIBLE) {
-            middle_calender_10.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[11 - month_start_day]), Color.parseColor(colors[12 - month_start_day])));
-        }
-        if (middle_calender_11.getVisibility() == View.VISIBLE) {
-            middle_calender_11.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[12 - month_start_day]), Color.parseColor(colors[13 - month_start_day])));
-        }
-        if (middle_calender_12.getVisibility() == View.VISIBLE) {
-            middle_calender_12.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[13 - month_start_day]), Color.parseColor(colors[14 - month_start_day])));
-        }
-        if (middle_calender_13.getVisibility() == View.VISIBLE) {
-            middle_calender_13.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[15 - month_start_day]), Color.parseColor(colors[16 - month_start_day])));
-        }
-        if (middle_calender_14.getVisibility() == View.VISIBLE) {
-            middle_calender_14.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[16 - month_start_day]), Color.parseColor(colors[17 - month_start_day])));
-        }
-        if (middle_calender_15.getVisibility() == View.VISIBLE) {
-            middle_calender_15.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[17 - month_start_day]), Color.parseColor(colors[18 - month_start_day])));
-        }
-        if (middle_calender_16.getVisibility() == View.VISIBLE) {
-            middle_calender_16.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[18 - month_start_day]), Color.parseColor(colors[19 - month_start_day])));
-        }
-        if (middle_calender_17.getVisibility() == View.VISIBLE) {
-            middle_calender_17.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[19 - month_start_day]), Color.parseColor(colors[20 - month_start_day])));
-        }
-        if (middle_calender_18.getVisibility() == View.VISIBLE) {
-            middle_calender_18.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[20 - month_start_day]), Color.parseColor(colors[21 - month_start_day])));
-        }
-        if (middle_calender_19.getVisibility() == View.VISIBLE) {
-            middle_calender_19.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[22 - month_start_day]), Color.parseColor(colors[23 - month_start_day])));
-        }
-        if (middle_calender_20.getVisibility() == View.VISIBLE) {
-            middle_calender_20.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[23 - month_start_day]), Color.parseColor(colors[24 - month_start_day])));
-        }
-        if (middle_calender_21.getVisibility() == View.VISIBLE) {
-            middle_calender_21.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[24 - month_start_day]), Color.parseColor(colors[25 - month_start_day])));
-        }
-        if (middle_calender_22.getVisibility() == View.VISIBLE) {
-            middle_calender_22.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[25 - month_start_day]), Color.parseColor(colors[26 - month_start_day])));
-        }
-        if (middle_calender_23.getVisibility() == View.VISIBLE) {
-            middle_calender_23.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[26 - month_start_day]), Color.parseColor(colors[27 - month_start_day])));
-        }
-        if (middle_calender_24.getVisibility() == View.VISIBLE) {
-            middle_calender_24.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[27 - month_start_day]), Color.parseColor(colors[28 - month_start_day])));
-        }
-        if (middle_calender_25.getVisibility() == View.VISIBLE) {
-            middle_calender_25.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[29 - month_start_day]), Color.parseColor(colors[30 - month_start_day])));
-        }
-        if (middle_calender_26.getVisibility() == View.VISIBLE) {
-            middle_calender_26.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[30 - month_start_day]), Color.parseColor(colors[31 - month_start_day])));
-        }
-        if (middle_calender_27.getVisibility() == View.VISIBLE) {
-            middle_calender_27.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[31 - month_start_day]), Color.parseColor(colors[32 - month_start_day])));
-        }
-        if (middle_calender_28.getVisibility() == View.VISIBLE) {
-            middle_calender_28.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[32 - month_start_day]), Color.parseColor(colors[33 - month_start_day])));
-        }
-        if (middle_calender_29.getVisibility() == View.VISIBLE) {
-            middle_calender_29.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[33 - month_start_day]), Color.parseColor(colors[34 - month_start_day])));
-        }
-        if (middle_calender_30.getVisibility() == View.VISIBLE) {
-            middle_calender_30.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[34 - month_start_day]), Color.parseColor(colors[35 - month_start_day])));
-        }
-        if (middle_calender_31.getVisibility() == View.VISIBLE) {
-            middle_calender_31.setBackground(return_drawable_for_middle_mood(Color.parseColor(colors[36 - month_start_day]), Color.parseColor(colors[37 - month_start_day])));
-        }
     }
 
     private Drawable return_drawable_for_middle_mood(int first_color, int second_color) {
@@ -10485,8 +10177,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -10505,8 +10195,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -10525,8 +10213,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -10545,8 +10231,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
@@ -10565,8 +10249,6 @@ public class Mood extends Fragment  {
                 color_the_calender();
                 clear_all_the_under();
                 divide_it_into_weeks();
-                clear_the_middle();
-                make_the_middle_come_again();
                 color_the_under();
                 color_the_middle();
                 make_everything_average_mood();
