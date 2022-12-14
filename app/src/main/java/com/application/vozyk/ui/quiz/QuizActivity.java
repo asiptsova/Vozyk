@@ -32,7 +32,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_quiz);
-
+        getSupportActionBar().hide();
         linearLayout = findViewById(R.id.quiz_layout);
         linearLayout.getBackground().setAlpha(80);
 

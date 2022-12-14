@@ -52,7 +52,6 @@ public class NoteActivity extends AppCompatActivity {
         String action = intent.getAction();
         String type = intent.getType();
 
-        // If activity started from a share intent
         if (Intent.ACTION_SEND.equals(action) && type != null) {
             if ("text/plain".equals(type)) {
                 String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
@@ -60,7 +59,7 @@ public class NoteActivity extends AppCompatActivity {
                 note = sharedText;
                 title = "";
             }
-        } else { // If activity started from the notes list
+        } else {
             title = intent.getStringExtra(EXTRA_NOTE_TITLE);
             if (title == null || TextUtils.isEmpty(title)) {
                 title = "";

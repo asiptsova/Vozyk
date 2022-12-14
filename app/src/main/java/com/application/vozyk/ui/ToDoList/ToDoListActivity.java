@@ -52,7 +52,7 @@ public class ToDoListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_to_do_list);
-
+        getSupportActionBar().hide();
         this.currentState = State.INCOMPLETE_TASKS;
         this.addButton = findViewById(R.id.addButton);
         this.completedButton = findViewById(R.id.viewCompletedButton);
