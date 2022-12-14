@@ -21,6 +21,7 @@ public class ptsdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ptsd_2);
+        getSupportActionBar().hide();
 
         mQuesView =findViewById(R.id.quesP);
         Button yesB =findViewById(R.id.yesP);

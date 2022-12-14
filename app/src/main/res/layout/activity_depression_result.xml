@@ -14,20 +14,20 @@
 
     <ImageView
         android:id="@+id/Logo"
+        android:layout_width="321dp"
+        android:layout_height="416dp"
+        android:layout_gravity="start"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="10dp"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:src="@drawable/voz"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        android:src="@drawable/voz" />
 
     <TextView
         android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="your_result_is"
+        android:text="@string/result"
         android:textAllCaps="false"
         android:textColor="#234E70"
         android:textColorHighlight="#3F51B5"
@@ -45,7 +45,7 @@
         android:id="@+id/redo"
         android:background="@drawable/rounded_button"
         android:backgroundTint="#C0B2E7"
-        android:text="try_again"
+        android:text="@string/retry"
         android:textAllCaps="false"
         android:textColor="#664564"
         android:textColorHighlight="#664564"
@@ -54,6 +54,17 @@
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/result"
         />
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="55dp"
+        android:padding="5dp"
+        android:src="@drawable/back" />
+
 
 
 </LinearLayout>

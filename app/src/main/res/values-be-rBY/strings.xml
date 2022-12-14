@@ -200,5 +200,7 @@
     <string name="change_password">Змяніць пароль</string>
     <string name="change_email">Змяніць емэйл</string>
     <string name="delete_account">Выдаліць акаўнт</string>
+    <string name="retry">Retry</string>
+    <string name="result">Result</string>
 
 </resources>

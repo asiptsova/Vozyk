@@ -7,9 +7,6 @@ import android.os.Bundle;
 
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.lab.labActivity;
-
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +20,6 @@ public class BreathingExerciseActivity extends AppCompatActivity {
     TextView instructionText;
     TextView timerText;
     TextView breathText;
-    ImageView back;
     private CountDownTimer timer1, timer2, timer3;
     int counter;
     int breathsCounter = 0;
@@ -42,7 +38,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
         instructionText = findViewById(R.id.instruction);
         timerText = findViewById(R.id.timer);
         breathText = findViewById(R.id.breathNumber);
-        back = findViewById(R.id.back);
+        ImageView  back = findViewById(R.id.back);
         back.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
         counter=timers[instructionCounter];
         instructionText.setText(instructionList[instructionCounter]);

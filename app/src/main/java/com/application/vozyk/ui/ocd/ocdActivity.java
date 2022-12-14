@@ -26,6 +26,7 @@ public class ocdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ocd);
+        getSupportActionBar().hide();
 
         mQuesView =  findViewById(R.id.questions);
         mChoiceA =  findViewById(R.id.choiceA);

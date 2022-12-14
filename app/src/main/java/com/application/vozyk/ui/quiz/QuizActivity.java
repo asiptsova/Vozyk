@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.adhd.adhdActivity;
 import com.application.vozyk.ui.anxiety.anxietyActivity;
@@ -38,7 +40,8 @@ public class QuizActivity extends AppCompatActivity {
 
         adhd = findViewById(R.id.button_adhd);
         adhd.getBackground().setAlpha(180);
-
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
         anxiety = findViewById(R.id.button_anxiety);
         anxiety.getBackground().setAlpha(180);
 

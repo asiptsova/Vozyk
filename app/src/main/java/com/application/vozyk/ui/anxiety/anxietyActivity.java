@@ -23,6 +23,7 @@ public class anxietyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_anxiety);
+        getSupportActionBar().hide();
 
         mQuesView = findViewById(R.id.question);
         mChoice1 = findViewById(R.id.choice1);
