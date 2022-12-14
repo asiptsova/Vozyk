@@ -33,24 +33,25 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/vozyk_2_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.034" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_account"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
             android:text="@string/profile"
             android:textColor="#234E70"
-            android:textStyle="normal"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -80,24 +81,25 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/vozyk_2_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.034" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_notes"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
             android:text="@string/notes"
             android:textColor="#234E70"
-            android:textStyle="normal"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -131,7 +133,7 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/vozyk_2_3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -139,17 +141,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_toDo"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
             android:text="@string/to_do"
             android:textColor="#234E70"
-            android:textStyle="normal"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -181,7 +184,7 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/vozyk_3_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -189,17 +192,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_tesst"
-            android:layout_width="127dp"
-            android:layout_height="42dp"
+            android:gravity="center"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
             android:text="@string/tests"
             android:textColor="#234E70"
-            android:textStyle="normal"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -209,21 +213,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
+    <Button
         android:id="@+id/about"
-        android:layout_width="395dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="555dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="138dp"
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="#D9B48F"
+        android:gravity="center"
         android:text="@string/about_us"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.839" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

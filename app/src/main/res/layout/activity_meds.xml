@@ -30,20 +30,21 @@
             android:layout_height="117dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
-            android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
+            android:foregroundGravity="center"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/pills"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034" />
+            app:layout_constraintVertical_bias="0.25" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_pills"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
@@ -53,9 +54,10 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.562" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -79,18 +81,21 @@
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
+            android:foregroundGravity="center"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/doctor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034" />
+            app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_visits"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
@@ -117,9 +122,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56">
+        app:layout_constraintVertical_bias="0.601">
 
         <ImageView
             android:id="@+id/iv_edit_labs"
@@ -129,25 +135,28 @@
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="55dp"
+            android:foregroundGravity="center"
             android:padding="5dp"
-            android:src="@drawable/settings__"
+            android:src="@drawable/labs"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034" />
+            app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_edit_labs"
-            android:layout_width="122dp"
-            android:layout_height="35dp"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
+            android:gravity="center"
             android:text="@string/labs"
             android:textColor="#234E70"
-            android:textStyle="normal"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
