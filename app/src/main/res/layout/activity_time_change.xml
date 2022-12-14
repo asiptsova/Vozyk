@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Hex"
-    >
+    android:background="@color/Hex">
 
     <TextView
         android:id="@+id/textView8"
@@ -28,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:text="@string/afternoon"
+        android:textColor="#234E70"
         app:layout_constraintBottom_toTopOf="@+id/afternoon_edit_time"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="#234E70"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -64,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/morning"
-        app:layout_constraintEnd_toEndOf="parent"
         android:textColor="#234E70"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -76,8 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="00:00"
-        app:layout_constraintEnd_toEndOf="parent"
         android:textColor="#234E70"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -87,8 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:textColor="#234E70"
         android:text="00:00"
+        android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

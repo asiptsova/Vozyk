@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/Hex"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Hex">
 
     <TextView
         android:id="@+id/lab_name_view"
@@ -15,8 +15,8 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/lab_test_name"
-        android:textSize="30sp"
         android:textColor="#234E70"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="18dp" />
 
@@ -58,9 +58,9 @@
         android:layout_marginEnd="15dp"
         android:background="@drawable/ic_baseline_delete_24"
         android:backgroundTint="@color/Bluebell"
+        android:contentDescription="TODO"
         tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="56dp"
-        android:contentDescription="TODO" />
+        tools:layout_editor_absoluteY="56dp" />
 
 
 </RelativeLayout>

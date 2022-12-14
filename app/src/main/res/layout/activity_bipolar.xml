@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:background="@color/Hex"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/Hex">
+
     <LinearLayout
         android:id="@+id/activity_phq9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
         android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
         tools:context=".ui.bipolar.bipolarActivity">
 
         <TextView
-            android:text="bipOvr"
             android:id="@+id/general"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="0dp"
             android:layout_marginTop="20dp"
-            android:layout_gravity="center"
+            android:text="bipOvr"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="25sp"
-        />
+            android:textSize="25sp" />
 
         <TextView
-            android:text="bipQ1"
             android:id="@+id/questions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:textSize="22sp"
             android:autoSizeTextType="uniform"
+            android:text="bipQ1"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-         />
+            android:textSize="22sp" />
 
         <Button
-            android:text="bipA1"
             android:id="@+id/choiceA"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -61,17 +58,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA1"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/questions"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/questions" />
 
         <Button
-            android:text="bipA2"
             android:id="@+id/choiceB"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -80,17 +76,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA2"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choiceA"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/choiceA" />
 
         <Button
-            android:text="bipA3"
             android:id="@+id/choiceC"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -99,17 +94,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA3"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choiceB"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/choiceB" />
 
         <Button
-            android:text="bipA4"
             android:id="@+id/choiceD"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -118,17 +112,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA4"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choiceC"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/choiceC" />
 
         <Button
-            android:text="bipA5"
             android:id="@+id/choiceE"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -137,17 +130,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA5"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choiceD"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/choiceD" />
 
         <Button
-            android:text="bipA6"
             android:id="@+id/choiceF"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -156,14 +148,14 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
+            android:text="bipA6"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/choiceE"
-        />
+            app:layout_constraintTop_toBottomOf="@+id/choiceE" />
 
     </LinearLayout>
 </ScrollView>

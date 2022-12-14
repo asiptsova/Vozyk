@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.anxiety.anxietyResultActivity"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
+    android:background="@color/Hex"
     android:orientation="vertical"
-    android:background="@color/Hex">
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".ui.anxiety.anxietyResultActivity">
 
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="10dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:src="@drawable/voz"
-        android:contentDescription="TODO" />
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/voz" />
 
     <TextView
         android:id="@+id/result"

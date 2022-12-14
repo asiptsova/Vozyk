@@ -93,13 +93,13 @@
 
         <Button
             android:id="@+id/tv_edit_visits"
-            android:gravity="center"
             android:layout_width="135dp"
             android:layout_height="45dp"
             android:layout_marginStart="42dp"
             android:layout_marginTop="127dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="14dp"
+            android:gravity="center"
             android:text="@string/visits"
             android:textColor="#234E70"
             android:textStyle="normal"

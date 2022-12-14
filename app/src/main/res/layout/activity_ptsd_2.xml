@@ -9,13 +9,13 @@
         android:id="@+id/activity_gad7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
+        android:background="@color/Hex"
         android:orientation="vertical"
-        tools:context=".ui.ptsd.ptsdActivity"
-        android:background="@color/Hex">
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:context=".ui.ptsd.ptsdActivity">
 
         <TextView
             android:id="@+id/generalP"
@@ -29,8 +29,7 @@
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="40sp"
-            />
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/quesP"
@@ -44,8 +43,7 @@
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#3F51B5"
             android:textColorLink="#3F51B5"
-            android:textSize="30sp"
-            />
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/yesP"
@@ -61,8 +59,7 @@
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/noP"
@@ -78,8 +75,7 @@
             android:textColorHighlight="#664564"
             android:textColorHint="#664564"
             android:textColorLink="#664564"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
     </LinearLayout>
 </ScrollView>

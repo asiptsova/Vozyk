@@ -5,17 +5,17 @@
     android:id="@+id/layout_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Hex"
     android:focusableInTouchMode="true"
-    tools:context="ui.notes.NotesListActivity"
-    android:background="@color/Hex">
+    tools:context="ui.notes.NotesListActivity">
 
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:text="@string/empty_list_text"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -39,11 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:backgroundTint="@color/RobbinsEggBlue"
+        android:contentDescription="TODO"
         android:onClick="newNote"
         android:scaleType="center"
-        android:backgroundTint="@color/RobbinsEggBlue"
         android:src="@drawable/ic_note"
-        app:fabSize="normal"
-        android:contentDescription="TODO" />
+        app:fabSize="normal" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

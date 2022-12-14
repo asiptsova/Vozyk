@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Hex"
     android:orientation="vertical"
-    tools:context=".ui.quiz.QuizActivity"
-    android:background="@color/Hex">
+    tools:context=".ui.quiz.QuizActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="252dp"
-        android:paddingTop="30dp"
         android:background="@color/Hex"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="30dp">
 
         <ImageView
             android:id="@+id/imageView"
@@ -21,17 +21,17 @@
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:clickable="false"
-            app:srcCompat="@drawable/voz"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/voz" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="@string/self_assessment_quiz"
             android:textAlignment="center"
             android:textColor="#234E70"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,8 +41,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-40dp"
         android:layout_marginBottom="40dp"
-        android:orientation="vertical"
-        android:background="@color/Hex">
+        android:background="@color/Hex"
+        android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -54,106 +54,106 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <Button
                     android:id="@+id/button_adhd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#234E70"
-                    android:text="@string/adhd"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="adhd_test"
+                    android:text="@string/adhd"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="adhd_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button_anxiety"
-                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/anxiety"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="anxiety_test"
+                    android:text="@string/anxiety"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="anxiety_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button_bipolar"
-                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="bipolar_test"
                     android:text="@string/bipolar"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="bipolar_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button_depression"
-                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="depression_test"
                     android:text="@string/depression"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="depression_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button_ocd"
-                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="ocd_test"
                     android:text="@string/ocd"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="ocd_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/button_ptsd"
-                    android:textColor="#234E70"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/quiz_button"
+                    android:onClick="ptsd_test"
                     android:text="@string/ptsd"
+                    android:textColor="#234E70"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:background="@drawable/quiz_button"
-                    android:onClick="ptsd_test"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
 
 

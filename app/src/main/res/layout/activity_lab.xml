@@ -17,10 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="130dp"
+            android:background="@color/Hex"
             android:paddingTop="10dp"
-            android:paddingBottom="40dp"
-            android:background="@color/white">
-        </ListView>
+            android:paddingBottom="40dp"></ListView>
 
         <ImageView
             android:id="@+id/lab_empty"
@@ -28,11 +27,11 @@
             android:layout_height="250dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="false"
-            android:foregroundGravity="center"
             android:layout_marginTop="300dp"
             android:clickable="false"
-            app:srcCompat="@drawable/labs"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            android:foregroundGravity="center"
+            app:srcCompat="@drawable/labs" />
 
         <TextView
             android:id="@+id/lab_emptyText"
@@ -60,9 +59,9 @@
             android:textColor="#234E70"
             android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/lab_listview"
-            app:layout_constraintStart_toStartOf="@+id/lab_listview"
-            />
+            app:layout_constraintStart_toStartOf="@+id/lab_listview" />
     </RelativeLayout>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -81,20 +80,19 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="bottom"
-            app:fabAlignmentMode="end"
             android:backgroundTint="@color/Hex"
+            app:fabAlignmentMode="end"
             app:hideOnScroll="true"
-            app:menu="@menu/lab_menu"
-            />
+            app:menu="@menu/lab_menu" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/lab_add_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/RobbinsEggBlue"
-            app:srcCompat="@drawable/ic_baseline_add_24"
+            android:contentDescription="TODO"
             app:layout_anchor="@id/lab_bottomAppBar"
-            android:contentDescription="TODO" />
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
