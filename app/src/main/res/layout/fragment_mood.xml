@@ -213,7 +213,7 @@
           app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
 
       <View
-          android:id="@+id/very_good_mood_shade_in_habits_in_the_top_today"
+          android:id="@+id/very_good_mood_check"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:background="@drawable/round_check_24"
@@ -224,7 +224,7 @@
           app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
 
       <View
-          android:id="@+id/very_bad_mood_check_mark_in_mood_in_the_top_today"
+          android:id="@+id/very_bad_mood_check"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:background="@drawable/round_check_24"
@@ -235,7 +235,7 @@
           app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
 
       <View
-          android:id="@+id/bad_mood_check_mark_in_mood_in_the_top_today"
+          android:id="@+id/bad_mood_check"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:background="@drawable/round_check_24"
@@ -246,7 +246,7 @@
           app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
 
       <View
-          android:id="@+id/ok_mood_check_mark_in_mood_in_the_top_today"
+          android:id="@+id/ok_mood_check"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:background="@drawable/round_check_24"
@@ -257,7 +257,7 @@
           app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
 
       <View
-          android:id="@+id/good_mood_check_mark_in_mood_in_the_top_today"
+          android:id="@+id/good_mood_check"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:background="@drawable/round_check_24"

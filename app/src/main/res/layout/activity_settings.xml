@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Hex">
@@ -215,21 +216,24 @@
         android:id="@+id/cl_delete_account"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_logout">
 
         <ImageView
             android:id="@+id/iv_sign_out"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/settings__"
             android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
             android:padding="5dp"
+            android:src="@drawable/settings__"
             android:textColor="#234E70"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_delete_account"
@@ -240,8 +244,7 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_sign_out"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:layout_width="0dp"
