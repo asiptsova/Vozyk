@@ -221,5 +221,36 @@
     <string name="bipolar_disorder">Bipolar disorder</string>
     <string name="not_at_all">Not at all</string>
     <string name="obsessive_compulsive_disorder">Obsessive compulsive disorder</string>
-
+    <string name="adhd1">1. How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?</string>
+    <string name="adhd2">2. How often do you have difficulty getting things in order when you have to do a task that requires organization?</string>
+    <string name="adhd3">3. How often do you have problems remembering appointments or obligations?</string>
+    <string name="adhd4">4. When you have a task that requires a lot of thought, how often do you avoid or delay getting started?</string>
+    <string name="adhd5">5. How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?</string>
+    <string name="adhd6">6. How often do you feel overly active and compelled to do things, like you were driven by a motor?</string>
+    <string name="never">Never</string>
+    <string name="rarely">Rarely</string>
+    <string name="sometimes">Sometimes</string>
+    <string name="often">Often</string>
+    <string name="very_often">Very Often</string>
+    <string name="anxiexty1">1. Feeling nervous, anxious, or on edge</string>
+    <string name="anxiexty2">2. Not being able to stop or control worrying</string>
+    <string name="anxiexty3">3. Worrying too much about different things</string>
+    <string name="anxiexty4">4. Trouble relaxing</string>
+    <string name="anxiexty5">5. Being so restless that it\'s hard to sit still</string>
+    <string name="anxiexty6">6. Becoming easily annoyed or Irritable</string>
+    <string name="anxiexty7">7. Feeling afraid as if something awful might happen</string>
+    <string name="depression1">1. Little interest or pleasure in doing things</string>
+    <string name="depression2">2. Feeling down, depressed, or hopeless</string>
+    <string name="depression3">3. Trouble falling or staying asleep, or sleeping too much</string>
+    <string name="depression4">4. Feeling tired or having little energy</string>
+    <string name="depression5">5. Poor appetite or overeating</string>
+    <string name="depression6">6. Feeling bad about yourself – or that you are a failure or have let yourself or your family down</string>
+    <string name="depression7">7. Trouble concentrating on things, such as reading the newspaper or watching television</string>
+    <string name="depression8">8. Moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual</string>
+    <string name="depression9">9. Thoughts that you would be better off dead or of hurting yourself in some way</string>
+    <string name="ptsd1">Had nightmares about the event(s) or thought about the event(s) when you did not want to?</string>
+    <string name="ptsd2">Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?</string>
+    <string name="ptsd3">Been constantly on guard, watchful, or easily startled?</string>
+    <string name="ptsd4">Felt numb or detached from people, activities, or your surroundings?</string>
+    <string name="ptsd5">Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?</string>
 </resources>

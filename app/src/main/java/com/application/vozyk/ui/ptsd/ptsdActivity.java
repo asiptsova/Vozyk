@@ -12,16 +12,23 @@ import com.application.vozyk.R;
 
 public class ptsdActivity extends AppCompatActivity {
 
-    private final ptsdQuestionModel mQues = new ptsdQuestionModel();
     private TextView mQuesView;
     private int mQuesNum=0;
     private int mScore=0;
+    public  String[] mQues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ptsd_2);
         getSupportActionBar().hide();
+        mQues=new String[]{
+                getResources().getString(R.string.ptsd1),
+                getResources().getString(R.string.ptsd2),
+                getResources().getString(R.string.ptsd3),
+                getResources().getString(R.string.ptsd4),
+                getResources().getString(R.string.ptsd5)
+        };
 
         mQuesView =findViewById(R.id.quesP);
         Button yesB =findViewById(R.id.yesP);
@@ -31,7 +38,7 @@ public class ptsdActivity extends AppCompatActivity {
 
         yesB.setOnClickListener(v -> {
             mScore = mScore + 1;
-            if (mQuesNum == mQues.getLength()) {
+            if (mQuesNum == getLength()) {
                 updateResult();
             } else {
                 updateQuestion();
@@ -39,7 +46,7 @@ public class ptsdActivity extends AppCompatActivity {
         });
 
         noB.setOnClickListener(v -> {
-            if (mQuesNum == mQues.getLength()){
+            if (mQuesNum == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -50,7 +57,7 @@ public class ptsdActivity extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-        mQuesView.setText(mQues.getQuestion(mQuesNum));
+        mQuesView.setText(getQuestion(mQuesNum));
         mQuesNum++;
     }
 
@@ -61,5 +68,14 @@ public class ptsdActivity extends AppCompatActivity {
         i.putExtras(b);
         ptsdActivity.this.finish();
         startActivity(i);
+    }
+
+
+    public String getQuestion(int i) {
+        return mQues[i];
+    }
+
+    public int getLength(){
+        return mQues.length;
     }
 }

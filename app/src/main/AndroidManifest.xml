@@ -163,6 +163,8 @@
         <activity
             android:name=".ui.relax.BreathingExerciseActivity"
             android:exported="true" />
+
+
     </application>
 
 </manifest>

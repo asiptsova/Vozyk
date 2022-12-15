@@ -10,7 +10,6 @@ import com.application.vozyk.R;
 
 public class adhdActivity extends AppCompatActivity {
 
-    private final adhdQuestionModel mQues = new adhdQuestionModel();
     private TextView mQuesView;
     private Button mChoiceA;
     private Button mChoiceB;
@@ -19,6 +18,9 @@ public class adhdActivity extends AppCompatActivity {
     private Button mChoiceE;
     private int mPoint = 0;
     private int mQuesNumber = 0;
+    public  String[] mQues;
+
+    private  String[][] mChoices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,23 @@ public class adhdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adhd);
         getSupportActionBar().hide();
 
+        mQues =new String[] {
+                getResources().getString(R.string.adhd1),
+                getResources().getString(R.string.adhd2),
+                getResources().getString(R.string.adhd3),
+                getResources().getString(R.string.adhd4),
+                getResources().getString(R.string.adhd5),
+                getResources().getString(R.string.adhd6),
+        };
+
+        mChoices= new String[][]{
+                {getResources().getString(R.string.never),getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often),getResources().getString(R.string.very_often)},
+                {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
+                {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes), getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
+                {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes), getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
+                {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often),getResources().getString(R.string.very_often)},
+                {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
+        };
 
         mQuesView = findViewById(R.id.questions);
         mChoiceA = findViewById(R.id.choiceA);
@@ -37,7 +56,7 @@ public class adhdActivity extends AppCompatActivity {
         updateQuestion();
 
         mChoiceA.setOnClickListener(view -> {
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -46,7 +65,7 @@ public class adhdActivity extends AppCompatActivity {
 
         mChoiceB.setOnClickListener(view -> {
             mPoint = mPoint + 1;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -55,7 +74,7 @@ public class adhdActivity extends AppCompatActivity {
 
         mChoiceC.setOnClickListener(view -> {
             mPoint = mPoint + 2;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -64,7 +83,7 @@ public class adhdActivity extends AppCompatActivity {
 
         mChoiceD.setOnClickListener(view -> {
             mPoint = mPoint + 3;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -73,7 +92,7 @@ public class adhdActivity extends AppCompatActivity {
 
         mChoiceE.setOnClickListener(view -> {
             mPoint = mPoint + 4;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -83,12 +102,12 @@ public class adhdActivity extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-        mQuesView.setText(mQues.getQuestion(mQuesNumber));
-        mChoiceA.setText(mQues.getChoiceA(mQuesNumber));
-        mChoiceB.setText(mQues.getChoiceB(mQuesNumber));
-        mChoiceC.setText(mQues.getChoiceC(mQuesNumber));
-        mChoiceD.setText(mQues.getChoiceD(mQuesNumber));
-        mChoiceE.setText(mQues.getChoiceE(mQuesNumber));
+        mQuesView.setText(getQuestion(mQuesNumber));
+        mChoiceA.setText(getChoiceA(mQuesNumber));
+        mChoiceB.setText(getChoiceB(mQuesNumber));
+        mChoiceC.setText(getChoiceC(mQuesNumber));
+        mChoiceD.setText(getChoiceD(mQuesNumber));
+        mChoiceE.setText(getChoiceE(mQuesNumber));
 
         mQuesNumber++;
     }
@@ -100,5 +119,33 @@ public class adhdActivity extends AppCompatActivity {
         i.putExtras(b);
         com.application.vozyk.ui.adhd.adhdActivity.this.finish();
         startActivity(i);
+    }
+    public String getQuestion(int i){
+        return mQues[i];
+    }
+
+
+    public String getChoiceA(int i){
+        return mChoices[i][0];
+    }
+
+    public String getChoiceB(int i){
+        return mChoices[i][1];
+    }
+
+    public String getChoiceC(int i){
+        return mChoices[i][2];
+    }
+
+    public String getChoiceD(int i){
+        return mChoices[i][3];
+    }
+
+    public String getChoiceE(int i){
+        return mChoices[i][4];
+    }
+
+    public int getLength(){
+        return mQues.length;
     }
 }
