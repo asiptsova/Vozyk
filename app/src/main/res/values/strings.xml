@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Vožyk</string>
     <string name="title_home">Mood</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_activity_registration">Registration</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -24,11 +22,6 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
-    <string-array name="freq">
-        <item>Daily</item>
-        <item>Weekly</item>
-        <item>Monthly</item>
-    </string-array>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="accent_colour">Accent Colour</string>
     <string name="launcher_title">Simple Notes</string>
@@ -139,7 +132,6 @@
     <string name="my_completed_tasks">My Completed Tasks</string>
     <string name="my_pending_tasks">My Pending Tasks</string>
     <string name="dismiss">DISMISS</string>
-    <string name="i_have_taken_my_medicine">I have taken my Medicine</string>
     <string name="self_assessment_quiz">Self-Assessment Quiz</string>
     <string name="anxiety">Anxiety</string>
     <string name="depression">Depression</string>
@@ -180,18 +172,6 @@
     <string name="Thursday">T</string>
     <string name="Friday">F</string>
     <string name="Saturday">S</string>
-    <string name="January">January</string>
-    <string name="February">February</string>
-    <string name="March">March</string>
-    <string name="April">April</string>
-    <string name="May">May</string>
-    <string name="June">June</string>
-    <string name="July">July</string>
-    <string name="August">August</string>
-    <string name="September">September</string>
-    <string name="October">October</string>
-    <string name="November">November</string>
-    <string name="December">December</string>
     <string name="Breathe">Breathe</string>
     <string name="Other">Other</string>
     <string name="Meditate">Meditate</string>

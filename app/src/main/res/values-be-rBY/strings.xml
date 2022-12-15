@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">Vožyk</string>
     <string name="title_home">Дом</string>
-    <string name="title_dashboard">Панэль</string>
-    <string name="title_notifications">Медычнае</string>
     <string name="title_activity_registration">Рэгістрацыя</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Пароль</string>
@@ -24,11 +22,6 @@
     <string name="sync_title">Перыядычная сінхранізацыя электроннай пошты</string>
     <string name="attachment_title">Спампоўваць ўваходныя ўкладанні</string>
     <string name="attachment_summary_on">Аўтаматычная загрузка ўкладанняў для ўваходных лістоў</string>
-    <string-array name="freq">
-        <item>Штодзённа</item>
-        <item>Штотыдзень</item>
-        <item>Штомесяц</item>
-    </string-array>
     <string name="attachment_summary_off">Спампоўваць ўкладанні ўручную</string>
     <string name="accent_colour">Акцэнтны колер</string>
     <string name="launcher_title">Простыя нататкі</string>
@@ -139,7 +132,6 @@
     <string name="my_completed_tasks">Выкананыя</string>
     <string name="my_pending_tasks">Незавершаныя</string>
     <string name="dismiss">Адхіліць</string>
-    <string name="i_have_taken_my_medicine">Я прыняў свае лекі</string>
     <string name="self_assessment_quiz">Анкеты</string>
     <string name="anxiety">Трывожнасць</string>
     <string name="depression">Дэпрэсія</string>
@@ -180,18 +172,6 @@
     <string name="Thursday">П</string>
     <string name="Friday">С</string>
     <string name="Saturday">Н</string>
-    <string name="January">Студзень</string>
-    <string name="February">Люты</string>
-    <string name="March">Сакавік</string>
-    <string name="April">Красавік</string>
-    <string name="May">Травень</string>
-    <string name="June">Чэрвень</string>
-    <string name="July">Ліпень</string>
-    <string name="August">Жнівень</string>
-    <string name="September">Верасень</string>
-    <string name="October">Кастрычнік</string>
-    <string name="November">Лістапад</string>
-    <string name="December">Снежань</string>
     <string name="Breathe">Дыханне</string>
     <string name="Other">Іншае</string>
     <string name="Meditate">Медытацыя</string>

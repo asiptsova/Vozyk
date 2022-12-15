@@ -228,29 +228,29 @@ public class Mood extends Fragment  {
 
     private String return_month(int month) {
         if (month == 0) {
-            return this.getResources().getString(R.string.January);
+            return "January";
         } else if (month == 1) {
-            return this.getResources().getString(R.string.February);
+            return "February";
         } else if (month == 2) {
-            return this.getResources().getString(R.string.March);
+            return "March";
         } else if (month == 3) {
-            return this.getResources().getString(R.string.April);
+            return "April";
         } else if (month == 4) {
-            return this.getResources().getString(R.string.May);
+            return "May";
         } else if (month == 5) {
-            return this.getResources().getString(R.string.June);
+            return "June";
         } else if (month == 6) {
-            return this.getResources().getString(R.string.July);
+            return "July";
         } else if (month == 7) {
-            return this.getResources().getString(R.string.August);
+            return "August";
         } else if (month == 8) {
-            return this.getResources().getString(R.string.September);
+            return "September";
         } else if (month == 9) {
-            return this.getResources().getString(R.string.October);
+            return "October";
         } else if (month == 10) {
-            return this.getResources().getString(R.string.November);
+            return "November";
         } else {
-            return this.getResources().getString(R.string.December);
+            return "December";
         }
     }
 
