@@ -336,4 +336,5 @@
     <string name="no_lab_tests">Няма аналізаў</string>
     <string name="added">Дададзена</string>
     <string name="connection">Правер інтэрнэт злучэнне</string>
+    <string name="no_notes">Няма апісання</string>
 </resources>

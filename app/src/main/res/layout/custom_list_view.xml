@@ -87,6 +87,6 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="17dp"
-        android:text="No Notes"
+        android:text="@string/no_notes"
         android:textColor="#234E70" />
 </RelativeLayout>
