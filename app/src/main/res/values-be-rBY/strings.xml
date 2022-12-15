@@ -326,14 +326,14 @@
     <string name="current_password">Актуальны пароль</string>
     <string name="new_password">Новы пароль</string>
     <string name="repeat_password">Паўтары пароль</string>
-    <string name="add_appointment">Add Appointment</string>
-    <string name="doctor_s_name">Doctor\'s Name</string>
-    <string name="select_date">Select Date</string>
-    <string name="add">ADD</string>
-    <string name="your_appointments">Your Appointments</string>
-    <string name="no_appointments">No Appointments</string>
-    <string name="your_lab_tests">Your Lab Tests</string>
-    <string name="no_lab_tests">No Lab Tests</string>
-    <string name="added">Added</string>
-    <string name="connection">Check you internet connection</string>
+    <string name="add_appointment">Дадаць візіт</string>
+    <string name="doctor_s_name">Назва лекара</string>
+    <string name="select_date">Выбяры дату</string>
+    <string name="add">Дадаць</string>
+    <string name="your_appointments">Твае візіты</string>
+    <string name="no_appointments">Няма візітаў</string>
+    <string name="your_lab_tests">Твае аналізы</string>
+    <string name="no_lab_tests">Няма аналізаў</string>
+    <string name="added">Дададзена</string>
+    <string name="connection">Правер інтэрнэт злучэнне</string>
 </resources>
