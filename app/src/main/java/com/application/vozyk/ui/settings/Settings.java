@@ -25,15 +25,15 @@ public class Settings extends AppCompatActivity {
 
         logout.setOnClickListener(v -> {
             final AlertDialog.Builder b = new AlertDialog.Builder(this);
-            b.setMessage("Are you sure you want to sign out?");
+            b.setMessage(getResources().getString(R.string.exit));
             b.setCancelable(true);
-            b.setNegativeButton("Yes", (dialog, which) -> {
+            b.setNegativeButton(getResources().getString(R.string.yes), (dialog, which) -> {
                 dialog.cancel();
                 AuthUI.getInstance()
                         .signOut(this)
                         .addOnCompleteListener(task -> startActivity(new Intent(this, Login.class)));
             });
-            b.setPositiveButton("No", (dialog, which) -> {
+            b.setPositiveButton(getResources().getString(R.string.no), (dialog, which) -> {
             });
             AlertDialog a = b.create();
             a.show();

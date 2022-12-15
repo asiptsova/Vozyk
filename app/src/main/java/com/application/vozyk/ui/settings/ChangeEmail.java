@@ -40,11 +40,11 @@ public class ChangeEmail extends AppCompatActivity {
                         .addOnCompleteListener(task -> FirebaseAuth.getInstance().getCurrentUser().updateEmail(new_email.getText().toString().trim())
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
-                                        Toast.makeText(ChangeEmail.this, "Update ", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(ChangeEmail.this, getResources().getString(R.string.update), Toast.LENGTH_SHORT).show();
                                         getEmailRef("email").setValue(new_email.getText().toString().trim());
                                         startActivity(new Intent(ChangeEmail.this, Settings.class));
                                     } else {
-                                        Toast.makeText(ChangeEmail.this, "Error", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(ChangeEmail.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
                                     }
                                 }));
             }

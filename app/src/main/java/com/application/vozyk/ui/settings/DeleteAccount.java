@@ -33,7 +33,7 @@ public class DeleteAccount extends AppCompatActivity {
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
                                         startActivity(new Intent(DeleteAccount.this, Login.class));
-                                        Toast.makeText(DeleteAccount.this, "Deleted User Successfully,", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(DeleteAccount.this,getResources().getString(R.string.delete_user_successfully), Toast.LENGTH_LONG).show();
                                     }
                                 }));
             }            });

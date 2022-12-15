@@ -118,7 +118,7 @@
     <string name="to_do">To-Do</string>
     <string name="tests">Tests</string>
     <string name="about_us">About us</string>
-    <string name="logout">logout</string>
+    <string name="logout">Logout</string>
     <string name="no_medicines">No Medicines</string>
     <string name="your_medicines">Your Medicines</string>
     <string name="reason">Reason</string>
@@ -319,5 +319,7 @@
     <string name="range">Please enter in range</string>
     <string name="positive_number">Please enter a positive number</string>
     <string name="pause">Pause</string>
+    <string name="exit">Are you sure you want to sign out?</string>
+    <string name="delete_user_successfully">Deleted User Successfully,</string>
 
 </resources>
