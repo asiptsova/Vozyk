@@ -165,7 +165,7 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private void getSettings(SharedPreferences preferences) {
-        colourPrimary = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_PRIMARY, ContextCompat.getColor(NoteActivity.this, R.color.colorPrimary));
+        colourPrimary = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_PRIMARY, ContextCompat.getColor(NoteActivity.this, R.color.Hex));
         colourFont = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_FONT, Color.BLACK);
         colourBackground = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_BACKGROUND, Color.WHITE);
         colourNavbar = preferences.getBoolean(HelperUtils.PREFERENCE_COLOUR_NAVBAR, false);
@@ -174,57 +174,44 @@ public class NoteActivity extends AppCompatActivity {
     private void applySettings() {
         HelperUtils.applyColours(NoteActivity.this, colourPrimary, colourNavbar);
 
-        // Set text field underline colour
         noteText.setBackgroundTintList(ColorStateList.valueOf(colourPrimary));
         titleText.setBackgroundTintList(ColorStateList.valueOf(colourPrimary));
 
-        // Set actionbar and background colour
         findViewById(R.id.scroll_view).setBackgroundColor(colourBackground);
         if (getSupportActionBar() != null)
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(colourPrimary));
 
-        // Set font colours
         titleText.setTextColor(colourFont);
         noteText.setTextColor(colourFont);
 
-        // Set hint colours
         titleText.setHintTextColor(ColorUtils.setAlphaComponent(colourFont, 120));
         noteText.setHintTextColor(ColorUtils.setAlphaComponent(colourFont, 120));
     }
 
     private void saveFile() {
-        // Get current title and note
         String newTitle = titleText.getText().toString().trim().replace("/", " ");
         String newNote = noteText.getText().toString().trim();
 
-        // Check if title and note are empty
-        if (TextUtils.isEmpty(newTitle) && TextUtils.isEmpty(newNote)) {
+        if (TextUtils.isEmpty(newTitle) && TextUtils.isEmpty(newNote))
             return;
-        }
 
-        // Check if title and note are unchanged
-        if (newTitle.equals(title) && newNote.equals(note)) {
+        if (newTitle.equals(title) && newNote.equals(note))
             return;
-        }
 
-        // Get file name to be saved if the title has changed or if it is empty
+
         if (!title.equals(newTitle) || TextUtils.isEmpty(newTitle)) {
             newTitle = newFileName(newTitle);
             titleText.setText(newTitle);
         }
 
-        // Save the file with the new file name and content
         HelperUtils.writeFile(NoteActivity.this, newTitle, newNote);
 
-        // If the title is not empty and the file name has changed then delete the old file
-        if (!TextUtils.isEmpty(title) && !newTitle.equals(title)) {
+        if (!TextUtils.isEmpty(title) && !newTitle.equals(title))
             deleteFile(title + HelperUtils.TEXT_FILE_EXTENSION);
-        }
 
-        // Set the title to be the new saved title for when the mood button is pressed
+
         title = newTitle;
 
-        // Send Tasker event
         TaskerPluginRunnerCondition.Companion.requestQuery(
                 this,
                 TaskerEventNoteUpdateActivity.class,
@@ -233,11 +220,9 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private String newFileName(String name) {
-        // If it is empty, give it a default title of "Note"
-        if (TextUtils.isEmpty(name)) {
+        if (TextUtils.isEmpty(name))
             name = getString(R.string.note);
-        }
-        // If the name already exists, append a number to it
+
         if (HelperUtils.fileExists(NoteActivity.this, name)) {
             int i = 1;
             while (true) {

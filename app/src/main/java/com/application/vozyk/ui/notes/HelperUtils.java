@@ -44,18 +44,13 @@ public class HelperUtils {
     }
 
     public static void applyColours(Activity activity, int colourPrimary, boolean colourNavbar) {
-        //Get the activity window
         Window window = activity.getWindow();
-
-        // Draw over the navigation bar
         if (colourNavbar)
             window.setNavigationBarColor(colourPrimary);
 
-        // Colour the status bar
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(HelperUtils.darkenColor(colourPrimary, 0.2));
 
-        // Set task description, colour and icon for the app switcher (TaskDescription constructor deprecated in API 28)
         activity.setTaskDescription(new ActivityManager.TaskDescription(activity.getString(R.string.app_name),
                 BitmapFactory.decodeResource(activity.getResources(), R.drawable.ic_note), colourPrimary));
     }

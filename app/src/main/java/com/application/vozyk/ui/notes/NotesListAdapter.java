@@ -15,6 +15,7 @@ import com.application.vozyk.R;
 import java.io.File;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder> {
@@ -85,7 +86,7 @@ class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder>
     }
 
     private void sortAlphabetical(List<File> files) {
-        files.sort((f1, f2) -> (f1.getName().compareTo(f2.getName())));
+        files.sort(Comparator.comparing(File::getName));
     }
 
     private void sortDate(List<File> files) {

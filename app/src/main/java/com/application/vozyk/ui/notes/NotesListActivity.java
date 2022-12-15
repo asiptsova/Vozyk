@@ -102,12 +102,10 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
     public void onResume() {
         super.onResume();
 
-        // Hide keyboard
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
 
-        // Close search
         SearchView searchView = findViewById(R.id.btn_search);
         if (searchView != null) {
             if (!searchView.isIconified()) {
@@ -115,11 +113,8 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
             }
         }
 
-        // Update the list
         notesListAdapter.updateList(HelperUtils.getFiles(NotesListActivity.this), sortAlphabetical);
-
         showEmptyListMessage();
-
         findViewById(R.id.layout_coordinator).clearFocus();
     }
 
@@ -194,7 +189,7 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
     }
 
     private void getSettings(SharedPreferences preferences) {
-        colourPrimary = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_PRIMARY, ContextCompat.getColor(NotesListActivity.this, R.color.colorPrimary));
+        colourPrimary = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_PRIMARY, ContextCompat.getColor(NotesListActivity.this, R.color.Hex));
         colourFont = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_FONT, Color.BLACK);
         colourBackground = preferences.getInt(HelperUtils.PREFERENCE_COLOUR_BACKGROUND, Color.WHITE);
         colourNavbar = preferences.getBoolean(HelperUtils.PREFERENCE_COLOUR_NAVBAR, false);
