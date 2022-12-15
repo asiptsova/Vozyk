@@ -24,6 +24,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="119dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="-70dp"
+        android:layout_below="@id/Email"
+        android:layout_gravity="center"
+        android:contentDescription="TODO"
+        android:src="@drawable/vozyk_2_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toRightOf="@+id/password"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

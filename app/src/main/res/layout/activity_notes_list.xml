@@ -46,4 +46,12 @@
         android:src="@drawable/ic_note"
         app:fabSize="normal" />
 
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginBottom="496dp"
+        android:contentDescription=""
+        android:src="@drawable/vozyk_3" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
