@@ -10,7 +10,6 @@ import com.application.vozyk.R;
 
 public class bipolarActivity extends AppCompatActivity {
 
-    private final bipolarQuestionModel mQues = new bipolarQuestionModel();
     private TextView mQuesView;
     private Button mChoiceA;
     private Button mChoiceB;
@@ -20,12 +19,45 @@ public class bipolarActivity extends AppCompatActivity {
     private Button mChoiceF;
     private int mPoint = 0;
     private int mQuesNumber = 0;
+    public String[] mQues;
+    private String[][] mChoices;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bipolar);
         getSupportActionBar().hide();
+
+        mQues =new String[] {
+                getResources().getString(R.string.bip1),
+                getResources().getString(R.string.bip2),
+                getResources().getString(R.string.bip3),
+                getResources().getString(R.string.bip4),
+                getResources().getString(R.string.bip5),
+                getResources().getString(R.string.bip6),
+                getResources().getString(R.string.bip7),
+                getResources().getString(R.string.bip8),
+                getResources().getString(R.string.bip9),
+                getResources().getString(R.string.bip10),
+                getResources().getString(R.string.bip11),
+                getResources().getString(R.string.bip12)
+        };
+        mChoices = new String[][] {
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+        };
+
 
         mQuesView = findViewById(R.id.questions);
         mChoiceA =  findViewById(R.id.choiceA);
@@ -38,7 +70,7 @@ public class bipolarActivity extends AppCompatActivity {
         updateQuestion();
 
         mChoiceA.setOnClickListener(view -> {
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -47,7 +79,7 @@ public class bipolarActivity extends AppCompatActivity {
 
         mChoiceB.setOnClickListener(view -> {
             mPoint = mPoint + 1;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -56,7 +88,7 @@ public class bipolarActivity extends AppCompatActivity {
 
         mChoiceC.setOnClickListener(view -> {
             mPoint = mPoint + 2;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -65,7 +97,7 @@ public class bipolarActivity extends AppCompatActivity {
 
         mChoiceD.setOnClickListener(view -> {
             mPoint = mPoint + 3;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -74,7 +106,7 @@ public class bipolarActivity extends AppCompatActivity {
 
         mChoiceE.setOnClickListener(view -> {
             mPoint = mPoint + 4;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber ==getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -83,7 +115,7 @@ public class bipolarActivity extends AppCompatActivity {
 
         mChoiceF.setOnClickListener(view -> {
             mPoint = mPoint + 5;
-            if (mQuesNumber == mQues.getLength()){
+            if (mQuesNumber == getLength()){
                 updateResult();
             } else {
                 updateQuestion();
@@ -93,13 +125,13 @@ public class bipolarActivity extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-        mQuesView.setText(mQues.getQuestion(mQuesNumber));
-        mChoiceA.setText(mQues.getChoiceA(mQuesNumber));
-        mChoiceB.setText(mQues.getChoiceB(mQuesNumber));
-        mChoiceC.setText(mQues.getChoiceC(mQuesNumber));
-        mChoiceD.setText(mQues.getChoiceD(mQuesNumber));
-        mChoiceE.setText(mQues.getChoiceE(mQuesNumber));
-        mChoiceF.setText(mQues.getChoiceF(mQuesNumber));
+        mQuesView.setText(getQuestion(mQuesNumber));
+        mChoiceA.setText(getChoiceA(mQuesNumber));
+        mChoiceB.setText(getChoiceB(mQuesNumber));
+        mChoiceC.setText(getChoiceC(mQuesNumber));
+        mChoiceD.setText(getChoiceD(mQuesNumber));
+        mChoiceE.setText(getChoiceE(mQuesNumber));
+        mChoiceF.setText(getChoiceF(mQuesNumber));
 
         mQuesNumber++;
     }
@@ -111,5 +143,37 @@ public class bipolarActivity extends AppCompatActivity {
         i.putExtras(b);
         bipolarActivity.this.finish();
         startActivity(i);
+    }
+
+    public String getQuestion(int i){
+        return mQues[i];
+    }
+
+    public String getChoiceA(int i){
+        return mChoices[i][0];
+    }
+
+    public String getChoiceB(int i){
+        return mChoices[i][1];
+    }
+
+    public String getChoiceC(int i){
+        return mChoices[i][2];
+    }
+
+    public String getChoiceD(int i){
+        return mChoices[i][3];
+    }
+
+    public String getChoiceE(int i){
+        return mChoices[i][4];
+    }
+
+    public String getChoiceF(int i){
+        return mChoices[i][5];
+    }
+
+    public int getLength(){
+        return mQues.length;
     }
 }
