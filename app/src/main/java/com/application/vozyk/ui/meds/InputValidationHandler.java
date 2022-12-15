@@ -19,7 +19,7 @@ public class InputValidationHandler {
                 .Builder(context);
 
         builder.setMessage("Required fields are empty or too large or have special characters");
-        builder.setTitle("MediClock Alert !");
+        builder.setTitle("Vožyk");
 
         builder
                 .setPositiveButton(

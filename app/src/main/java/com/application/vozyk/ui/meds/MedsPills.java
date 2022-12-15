@@ -81,7 +81,7 @@ public class MedsPills extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(), "Check you internet connection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),getResources().getString(R.string.connection), Toast.LENGTH_SHORT).show();
             }
         });
 

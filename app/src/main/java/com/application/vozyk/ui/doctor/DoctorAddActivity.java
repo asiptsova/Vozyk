@@ -57,7 +57,7 @@ public class DoctorAddActivity extends AppCompatActivity {
             if (inputValidation(name, reason)) {
                 DoctorDataModel obj = new DoctorDataModel(name, reason, arr[0], arr[1], arr[2]);
                 mDatabase.child(obj.getName()).setValue(obj);
-                Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.added), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DoctorAddActivity.this, DoctorActivity.class));
             } else {
                 InputValidationHandler.showDialog(DoctorAddActivity.this);

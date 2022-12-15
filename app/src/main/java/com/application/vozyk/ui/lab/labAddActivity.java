@@ -27,14 +27,12 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class labAddActivity extends AppCompatActivity {
-    private static final String[] TESTNAME = new String[]{
-            "amniocentesis", "blood analysis", "blood count", "blood typing", "bone marrow aspiration", "cephalin-cholesterol flocculation", "enzyme analysis", "epinephrine tolerance test", "glucose tolerance test", "hematocrit", "immunologic blood test", "inulin clearance", "serological test", "thymol turbidity", "gastric fluid analysis", "kidney function test", "liver function test", "lumbar puncture", "malabsorption test", "Pap smear", "phenolsulfonphthalein test", "pregnancy test", "prenatal testing", "protein-bound iodine test", "syphilis test", "thoracentesis", "thyroid function test", "toxicology test", "urinalysis", "angiocardiography", "angiography", "cerebral angiography", "brain scanning", "echoencephalography", "magnetoencephalography", "pneumoencephalography", "cholecystography", "echocardiography", "endoscopic retrograde cholangiopancreatoscopy", "lung ventilation/perfusion scan", "magnetic resonance imaging", "cardiac magnetic resonance imaging", "functional magnetic resonance imaging", "magnetic resonance spectroscopy", "mammography", "myelography", "prenatal testing", "tomography", "computed tomography", "positron emission tomography", "single photon emission computed tomography", "ultrasound", "urography"
-    };
+
+
     private static TextView lab_date_view;
     private static final int[] arr = new int[3];
     private DatabaseReference mDatabase;
     private TextInputLayout lab_doctor;
-    private AutoCompleteTextView lab_name_edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +47,7 @@ public class labAddActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("LabTestRecord").child(Objects.requireNonNull(user.getUid()));
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, TESTNAME);
         AutoCompleteTextView textView = findViewById(R.id.lab_name_edit);
-        textView.setAdapter(adapter);
-
-
         lab_add_btn.setOnClickListener(view -> {
             String testName = textView.getText().toString();
             String docName = lab_doctor.getEditText().getText().toString();
@@ -65,7 +56,7 @@ public class labAddActivity extends AppCompatActivity {
 
                 LabTestDataModel obj = new LabTestDataModel(arr[0], arr[1], arr[2], testName, docName);
                 mDatabase.child(obj.getTestName()).setValue(obj);
-                Toast.makeText(getApplicationContext(), "Added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.added), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(labAddActivity.this, labActivity.class));
             } else {
                 InputValidationHandler.showDialog(labAddActivity.this);

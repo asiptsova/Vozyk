@@ -41,7 +41,7 @@
             android:layout_alignParentBottom="false"
             android:layout_marginTop="600dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="No Lab Tests"
+            android:text="@string/no_lab_tests"
             android:textAlignment="center"
             android:textColor="#234E70"
             android:textSize="30sp" />
@@ -55,7 +55,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="85dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Your Lab Tests"
+            android:text="@string/your_lab_tests"
             android:textColor="#234E70"
             android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/lab_listview"

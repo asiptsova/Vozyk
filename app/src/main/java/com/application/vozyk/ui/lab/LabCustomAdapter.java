@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.application.vozyk.R;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -25,7 +23,6 @@ public class LabCustomAdapter extends ArrayAdapter<LabTestDataModel> {
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference myRef = database.getReference();
-    GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
     final FirebaseUser user;
     private final ArrayList<LabTestDataModel> arrayList;
 

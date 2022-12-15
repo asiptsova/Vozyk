@@ -43,7 +43,7 @@
             android:layout_alignParentBottom="false"
             android:layout_marginTop="600dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="No Appointments"
+            android:text="@string/no_appointments"
             android:textAlignment="center"
             android:textColor="#234E70"
             android:textSize="30sp" />
@@ -57,7 +57,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="85dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="Your Appointments"
+            android:text="@string/your_appointments"
             android:textColor="#234E70"
             android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/doctor_listview"
