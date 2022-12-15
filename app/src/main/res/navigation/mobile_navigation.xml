@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.application.vozyk.ui.meds.MedsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/meds"
         tools:layout="@layout/activity_meds" />
     <fragment
         android:id="@+id/navigation_other"
