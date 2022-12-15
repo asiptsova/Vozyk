@@ -49,16 +49,17 @@ public class Meditate extends Fragment {
         mButtonSet.setOnClickListener(v -> {
             String input = mEditTextInput.getText().toString();
             if (input.length() == 0) {
-                Toast.makeText(getContext(), "Field can't be empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.empty_field), Toast.LENGTH_SHORT).show();
                 return;
             }
+
             if(Long.parseLong(input)<5||Long.parseLong(input)>30){
-                Toast.makeText(getContext(), "Please enter in range", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.range), Toast.LENGTH_SHORT).show();
                 return;
             }
             long millisInput = Long.parseLong(input) * 60000;
             if (millisInput == 0) {
-                Toast.makeText(getContext(), "Please enter a positive number", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.positive_number), Toast.LENGTH_SHORT).show();
                 return;
             }
             setTime(millisInput);
@@ -139,11 +140,11 @@ public class Meditate extends Fragment {
             mEditTextInput.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
             mButtonReset.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText("Pause");
+            mButtonStartPause.setText(getResources().getString(R.string.pause));
         } else {
             mEditTextInput.setVisibility(View.VISIBLE);
             mButtonSet.setVisibility(View.VISIBLE);
-            mButtonStartPause.setText("Start");
+            mButtonStartPause.setText(getResources().getString(R.string.start));
             if (mTimeLeftInMillis < 1000) {
                 mButtonStartPause.setVisibility(View.INVISIBLE);
             } else {

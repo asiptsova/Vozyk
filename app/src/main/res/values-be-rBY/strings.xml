@@ -315,4 +315,8 @@
     <string name="out_of">з</string>
     <string name="good_job">Малайчына!</string>
     <string name="meds">Лекі</string>
+    <string name="empty_field">Поле не можа быць пустым</string>
+    <string name="range">Калі ласка, увядзі дыяпазон</string>
+    <string name="positive_number">Калі ласка, увядзі станоўчы лік</string>
+    <string name="pause">Паўза</string>
 </resources>
