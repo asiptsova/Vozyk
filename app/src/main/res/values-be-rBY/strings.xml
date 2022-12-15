@@ -321,4 +321,9 @@
     <string name="pause">Паўза</string>
     <string name="exit">Ты ўпэўнены, што хочаш выйсці?</string>
     <string name="delete_user_successfully">Карыстальнік паспяхова выдалены,</string>
+    <string name="new_email">Новы Email</string>
+    <string name="save">Захаваць</string>
+    <string name="current_password">Актуальны пароль</string>
+    <string name="new_password">Новы пароль</string>
+    <string name="repeat_password">Паўтары пароль</string>
 </resources>

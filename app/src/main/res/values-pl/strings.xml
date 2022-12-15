@@ -321,4 +321,9 @@
     <string name="pause">Pause</string>
     <string name="exit">Are you sure you want to sign out?</string>
     <string name="delete_user_successfully">Deleted User Successfully,</string>
+    <string name="new_email">New Email</string>
+    <string name="save">Save</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New Password</string>
+    <string name="repeat_password">Repeat Password</string>
 </resources>
