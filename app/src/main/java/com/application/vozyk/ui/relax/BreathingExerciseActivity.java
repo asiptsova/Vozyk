@@ -15,7 +15,7 @@ import android.os.CountDownTimer;
 public class BreathingExerciseActivity extends AppCompatActivity {
 
     private final int[] timers = new int[4];
-    private final String[] instructionList = new String[]{"Inhale...", "Hold...", "Exhale..."};
+    private  String[] instructionList;
     private int instructionCounter = 0;
     TextView instructionText;
     TextView timerText;
@@ -28,7 +28,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_exercise);
-
+        instructionList = new String[]{getResources().getString(R.string.inhale),getResources().getString(R.string.hold),getResources().getString(R.string.exhale)};
         LinearLayout linearLayout = findViewById(R.id.breath_layout2);
         linearLayout.getBackground().setAlpha(50);
         timers[0] = getIntent().getIntExtra("inhale", 5);
@@ -42,7 +42,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
         back.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
         counter=timers[instructionCounter];
         instructionText.setText(instructionList[instructionCounter]);
-        breathText.setText("Breath "+(breathsCounter+1)+" out of "+timers[3]);
+        breathText.setText(getResources().getString(R.string.breath)+(breathsCounter+1)+getResources().getString(R.string.out_of)+timers[3]);
 
         timer1 = new CountDownTimer(timers[instructionCounter]* 1000L, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -80,13 +80,13 @@ public class BreathingExerciseActivity extends AppCompatActivity {
                                 breathsCounter++;
 
                                 if (breathsCounter < timers[3]) {
-                                    breathText.setText("Breath "+(breathsCounter+1)+" out of "+timers[3]);
+                                    breathText.setText(getResources().getString(R.string.breath)+(breathsCounter+1)+getResources().getString(R.string.out_of)+timers[3]);
                                     instructionText.setText(instructionList[instructionCounter]);
                                     timer1.cancel();
                                     timer1.start();
                                 } else if (breathsCounter == timers[3]) {
                                     timerText.setText("");
-                                    instructionText.setText("Good job ~");
+                                    instructionText.setText(getResources().getString(R.string.good_job));
                                 }
                             }
                         };

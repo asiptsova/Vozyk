@@ -307,4 +307,11 @@
     <string name="dep3">The level of your depression is Moderate</string>
     <string name="dep4">The level of your depression is Moderately severe</string>
     <string name="dep5">The level of your depression is Severe"</string>
+    <string name="not_sent">"onFailure: Email not sent "</string>
+    <string name="inhale">Inhale…</string>
+    <string name="hold">Hold…</string>
+    <string name="exhale">Exhale…</string>
+    <string name="breath">Breath</string>
+    <string name="out_of">out of</string>
+    <string name="good_job">Good job</string>
 </resources>

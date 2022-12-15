@@ -97,30 +97,30 @@ public class Registration extends AppCompatActivity {
             final String fullName = mFullName.getText().toString();
             String Confirm = etConfirm.getText().toString();
             if (TextUtils.isEmpty(email)) {
-                mEmail.setError(String.valueOf(R.string.email_is_required));
+                mEmail.setError(getResources().getString(R.string.email_is_required));
                 return;
             }
             if (!isValid(email)) {
-                mEmail.setError(String.valueOf(R.string.email_is_not_real));
+                mEmail.setError(getResources().getString(R.string.email_is_not_real));
                 return;
             }
             if (TextUtils.isEmpty(password)) {
-                mPassword.setError(String.valueOf(R.string.password_is_required));
+                mPassword.setError(getResources().getString(R.string.password_is_required));
                 return;
             }
             if (password.length() >= 8 && upperCase(password) && lowerCase(password)
                     && numberCase(password) && specialCase(password)) {
-                System.out.println(R.string.password_accepted);
+                System.out.println(getResources().getString(R.string.password_accepted));
             } else {
-                mPassword.setError(String.valueOf(R.string.password_contain));
+                mPassword.setError(getResources().getString(R.string.password_contain));
                 return;
             }
             if (TextUtils.isEmpty(Confirm)) {
-                etConfirm.setError(String.valueOf(R.string.confirm_password_required));
+                etConfirm.setError(getResources().getString(R.string.confirm_password_required));
                 return;
             }
             if (!mPassword.getText().toString().equals(etConfirm.getText().toString())) {
-                etConfirm.setError(String.valueOf(R.string.same_pass_conf));
+                etConfirm.setError(getResources().getString(R.string.same_pass_conf));
                 return;
             }
             indicator.show();
@@ -129,13 +129,12 @@ public class Registration extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()
                             .addOnSuccessListener(aVoid ->
-                                    Toast.makeText(this, String.valueOf(R.string.verification_email_sent),
+                                    Toast.makeText(this, getResources().getString(R.string.verification_email_sent),
                                             Toast.LENGTH_SHORT).show()).addOnFailureListener(e ->
-                                    Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
+                                    Log.d("TAG", getResources().getString(R.string.not_sent) + e.getMessage()));
                     getUsersRef("name").setValue(fullName);
                     getUsersRef("email").setValue(email);
                     Intent intent=new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("language",temp);
                     startActivity(intent);
                 }
             });
@@ -143,8 +142,6 @@ public class Registration extends AppCompatActivity {
         mLoginBtn.setOnClickListener(v ->
         {
             Intent intent=new Intent(getApplicationContext(), Login.class);
-            intent.putExtra("language",temp);
-            System.out.println(temp);
             startActivity(intent);
         });
     }

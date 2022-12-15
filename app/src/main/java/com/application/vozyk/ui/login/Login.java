@@ -16,16 +16,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.firebase.auth.FirebaseAuth;
-
 import java.util.Locale;
 import java.util.Objects;
 
@@ -105,24 +101,24 @@ public class Login extends AppCompatActivity {
             String email = mEmail.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
             if (TextUtils.isEmpty(email)) {
-                mEmail.setError(String.valueOf(R.string.email_is_required));
+                mEmail.setError(getResources().getString(R.string.email_is_required));
                 return;
             }
             if (TextUtils.isEmpty(password)) {
-                mPassword.setError(String.valueOf(R.string.password_is_required));
+                mPassword.setError(getResources().getString(R.string.password_is_required));
                 return;
             }
             if (password.length() < 6) {
-                mPassword.setError(String.valueOf(R.string.password_contain_characters));
+                mPassword.setError(getResources().getString(R.string.password_contain_characters));
                 return;
             }
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this, String.valueOf(R.string.logged_in_successfully),
+                    Toast.makeText(Login.this,getResources().getString(R.string.logged_in_successfully),
                             Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 } else
-                    Toast.makeText(Login.this, (R.string.error)
+                    Toast.makeText(Login.this, (getResources().getString(R.string.error))
                                     + Objects.requireNonNull(task.getException()).getMessage(),
                             Toast.LENGTH_SHORT).show();
             });
@@ -131,27 +127,26 @@ public class Login extends AppCompatActivity {
         mCreateBtn.setOnClickListener(v ->
                 {
                     Intent intent=new Intent(getApplicationContext(), Registration.class);
-                    intent.putExtra("language",temp);
                     startActivity(intent);
                 });
         forgotTextLink.setOnClickListener(v -> {
             final EditText resetMail = new EditText(v.getContext());
             final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-            passwordResetDialog.setTitle(String.valueOf(R.string.reset_password));
-            passwordResetDialog.setMessage(String.valueOf(R.string.reset_link));
+            passwordResetDialog.setTitle(getResources().getString(R.string.reset_password));
+            passwordResetDialog.setMessage(getResources().getString(R.string.reset_link));
             passwordResetDialog.setView(resetMail);
 
-            passwordResetDialog.setPositiveButton(String.valueOf(R.string.yes), (dialog, which) -> {
+            passwordResetDialog.setPositiveButton(getResources().getString(R.string.yes), (dialog, which) -> {
                 String mail = resetMail.getText().toString();
                 FirebaseAuth.getInstance().sendPasswordResetEmail(mail).addOnSuccessListener(aVoid ->
-                        Toast.makeText(this, String.valueOf(R.string.link_sent),
+                        Toast.makeText(this, getResources().getString(R.string.link_sent),
                                 Toast.LENGTH_SHORT).show()).addOnFailureListener(e ->
-                        Toast.makeText(this, (R.string.error_link) + e.getMessage(),
+                        Toast.makeText(this, (getResources().getString(R.string.error_link)) + e.getMessage(),
                                 Toast.LENGTH_SHORT).show());
 
             });
 
-            passwordResetDialog.setNegativeButton(String.valueOf(R.string.no), (dialog, which) -> {
+            passwordResetDialog.setNegativeButton(getResources().getString(R.string.no), (dialog, which) -> {
             });
             passwordResetDialog.create().show();
         });
@@ -163,7 +158,6 @@ public class Login extends AppCompatActivity {
         FirebaseAuth.getInstance().addAuthStateListener(firebaseAuthListener);
     }
 
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {}
     private void goMainScreen() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

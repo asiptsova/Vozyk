@@ -19,19 +19,18 @@
     <string name="sync_header">Сінхранізацыя</string>
 
     <string name="signature_title">Подпіс</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="reply_title">Aдказ па змаўчанні</string>
 
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
+    <string name="sync_title">Перыядычная сінхранізацыя электроннай пошты</string>
+    <string name="attachment_title">Спампоўваць ўваходныя ўкладанні</string>
+    <string name="attachment_summary_on">Аўтаматычная загрузка ўкладанняў для ўваходных лістоў</string>
     <string-array name="freq">
         <item>Штодзённа</item>
         <item>Штотыдзень</item>
         <item>Штомесяц</item>
     </string-array>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="accent_colour">Accent Colour</string>
+    <string name="attachment_summary_off">Спампоўваць ўкладанні ўручную</string>
+    <string name="accent_colour">Акцэнтны колер</string>
     <string name="launcher_title">Простыя нататкі</string>
     <string name="apply_changes">Прымяніць змены</string>
     <string name="background_colour">Колер фону</string>
@@ -62,35 +61,35 @@
     <string name="note_title_description">Назва нататкі</string>
     <string name="note_content">Змест нататкі</string>
     <string name="note_content_description">Змест нататкі</string>
-    <string name="append">Далучаць</string>
-    <string name="append_text">Append text instead of overwriting</string>
+    <string name="append">Далучыць</string>
+    <string name="append_text">Дадаваць тэкст замест перазапісу</string>
     <string name="note_not_found">Нататка не знойдзена</string>
     <string name="email">Email</string>
     <string name="log_in_to_vo_yk">Увайсці ў Vožyk</string>
     <string name="password">Пароль</string>
-    <string name="login">Лагін</string>
+    <string name="login">Увайсці</string>
     <string name="create_new_account">Стварыць новы акаўнт</string>
     <string name="forgot_password">Забыўся пароль?</string>
     <string name="create_a_new_account">Стварыць новы акаўнт</string>
     <string name="username">Імя карыстальніка</string>
     <string name="confirm_password">Пацвердзіць пароль</string>
     <string name="register">Зарэгістравацца</string>
-    <string name="already_registered_login_here">Ужо зарэгістраваныя? Залагуйцеся</string>
+    <string name="already_registered_login_here">Ужо зарэгістраваны? Залагуйся</string>
     <string name="email_is_required">Электронная пошта абавязковая!</string>
     <string name="email_is_not_real">Электронная пошта не сапраўдная!</string>
     <string name="password_is_required">Пароль абавязковы!</string>
     <string name="password_accepted">Пароль прыняты</string>
-    <string name="reset_link">Enter Your Email To Received Reset Link.</string>
-    <string name="reset_password">Reset Password?</string>
-    <string name="error">Error!</string>
-    <string name="logged_in_successfully">Logged in Successfully</string>
-    <string name="password_contain_characters">Password Must be >= 6 Characters</string>
-    <string name="link_sent">Reset Link Sent To Your Email.</string>
-    <string name="error_link">Error ! Reset Link is Not Sent</string>
-    <string name="password_contain">Password contains 8 characters,upper and lower letters,number and special character</string>
-    <string name="confirm_password_required">Confirm Password is Required.</string>
-    <string name="same_pass_conf">Password and Confirm Password must be the same</string>
-    <string name="verification_email_sent">Verification Email Has been Sent</string>
+    <string name="reset_link">Каб атрымаць спасылку для скіду, увядзі свой адрас электроннай пошты.</string>
+    <string name="reset_password">Скінуць пароль?</string>
+    <string name="error">Памылка!</string>
+    <string name="logged_in_successfully">Уваход паспяховы!</string>
+    <string name="password_contain_characters">Пароль павінен складацца мінімум з 6 сімвалаў</string>
+    <string name="link_sent">Спасылка, дасланая на тваю пошту.</string>
+    <string name="error_link">Памылка! Спасылка для скіду не дасланая</string>
+    <string name="password_contain">Пароль мусіць змяшчаць 8 сімвалаў, вялікія і малыя літары, лічбу і спецыяльны сімвал</string>
+    <string name="confirm_password_required">Патрабуецца пацвердзіць пароль.</string>
+    <string name="same_pass_conf">Паролі мусяць супадаць</string>
+    <string name="verification_email_sent">Электронны ліст для праверкі быў дасланы</string>
     <string name="how_was_your_mood_today">Які настрой у цябе сёння ?</string>
     <string name="month_year">Месяц год</string>
     <string name="average_mood">Сярэдні настрой</string>
@@ -308,5 +307,11 @@
     <string name="dep3">Ступень тваёй дэпрэсіі - умераная</string>
     <string name="dep4">Ступень тваёй дэпрэсіі - умерана цяжкая</string>
     <string name="dep5">Узровень тваёй дэпрэсіі -  цяжкі</string>
-
+    <string name="not_sent">Ліст не дасланы</string>
+    <string name="inhale">Удыхні…</string>
+    <string name="hold">Затрымай дыханне…</string>
+    <string name="exhale">Выдыхні…</string>
+    <string name="breath">Дыхай</string>
+    <string name="out_of">з</string>
+    <string name="good_job">Малайчына!</string>
 </resources>
