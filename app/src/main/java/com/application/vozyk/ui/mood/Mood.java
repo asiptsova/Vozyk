@@ -133,7 +133,6 @@ public class Mood extends Fragment  {
         hide_or_un_hide_the_button(0);
         color_the_button_under_the_calender();
         color_the_under();
-        color_the_middle();
         set_up_buttons_once();
         button_listen_at_the_top();
         make_everything_average_mood();
@@ -7009,7 +7008,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
             });
             button_shadow_for_the_front_for_good_habits.setOnClickListener(v -> {
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
@@ -7036,7 +7034,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
             });
         }
     }
@@ -8605,7 +8602,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -8632,7 +8628,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -8659,7 +8654,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -8686,7 +8680,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -8712,7 +8705,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -10042,35 +10034,7 @@ public class Mood extends Fragment  {
         list_of_all_under[36] = getView().findViewById(R.id.calender_under_number_state_37);
     }
 
-    private void color_the_middle() {
-        int month_start_day;
-        if (calender_button_showing_shadow_1.getVisibility() == View.VISIBLE) {
-            month_start_day = 0;
-        } else if (calender_button_showing_shadow_2.getVisibility() == View.VISIBLE) {
-            month_start_day = 1;
-        } else if (calender_button_showing_shadow_3.getVisibility() == View.VISIBLE) {
-            month_start_day = 2;
-        } else if (calender_button_showing_shadow_4.getVisibility() == View.VISIBLE) {
-            month_start_day = 3;
-        } else if (calender_button_showing_shadow_5.getVisibility() == View.VISIBLE) {
-            month_start_day = 4;
-        } else if (calender_button_showing_shadow_6.getVisibility() == View.VISIBLE) {
-            month_start_day = 5;
-        } else {
-            month_start_day = 6;
-        }
-    }
 
-    private Drawable return_drawable_for_middle_mood(int first_color, int second_color) {
-        Drawable middle_part;
-        LayerDrawable layerDrawable = (LayerDrawable) ContextCompat.getDrawable(getContext(), R.drawable.middle_part_for_mood);
-        Drawable drawable1 = layerDrawable.getDrawable(0);
-        Drawable drawable2 = layerDrawable.getDrawable(1);
-        drawable1.setTint(first_color);
-        drawable2.setTint(second_color);
-        middle_part = ContextCompat.getDrawable(getContext(), R.drawable.middle_part_for_mood);
-        return middle_part;
-    }
 
     private void make_the_buttons_in_the_top_mood(int result) {
         if (getView() != null) {
@@ -10178,7 +10142,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -10196,7 +10159,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -10214,7 +10176,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -10232,7 +10193,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
@@ -10250,7 +10210,6 @@ public class Mood extends Fragment  {
                 clear_all_the_under();
                 divide_it_into_weeks();
                 color_the_under();
-                color_the_middle();
                 make_everything_average_mood();
                 draw_the_mood_line_chart();
                 draw_the_right_bar_chart_mood();
