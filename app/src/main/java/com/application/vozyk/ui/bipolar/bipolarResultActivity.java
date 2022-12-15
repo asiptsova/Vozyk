@@ -26,15 +26,15 @@ public class bipolarResultActivity extends AppCompatActivity {
         int points = b.getInt("points");
 
         if (points >= 0 && points <= 15){
-            mResult.setText("Your symptoms are not suggestive of bipolar disorder");
+            mResult.setText(getResources().getString(R.string.symptoms_bip_no));
         }
 
         if (points >= 16 && points <= 24){
-            mResult.setText("Your symptoms are suggestive of major depression or bipolar disorder");
+            mResult.setText(getResources().getString(R.string.symptoms_bip_maybe));
         }
 
         if (points >= 25){
-            mResult.setText("Your symptoms are suggestive of bipolar disorder");
+            mResult.setText(getResources().getString(R.string.symptoms_bip_yes));
         }
 
         mRetry.setOnClickListener(v -> {

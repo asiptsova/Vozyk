@@ -28,19 +28,19 @@ public class depressionResultActivity extends AppCompatActivity {
         int points = b.getInt("points");
 
         if (points >= 0 && points <= 4){
-            mResult.setText("The level of your depression is None to Minimal");
+            mResult.setText(getResources().getString(R.string.dep1));
         }
         if (points >= 5 && points <= 9){
-            mResult.setText("The level of your depression is Mild");
+            mResult.setText(getResources().getString(R.string.dep2));
         }
         if (points >= 10 && points <= 14){
-            mResult.setText("The level of your depression is Moderate");
+            mResult.setText(getResources().getString(R.string.dep3));
         }
         if (points >= 15 && points <= 19){
-            mResult.setText("The level of your depression is Moderately severe");
+            mResult.setText(getResources().getString(R.string.dep4));
         }
         if (points >= 20 && points <= 27){
-            mResult.setText("The level of your depression is Severe");
+            mResult.setText(getResources().getString(R.string.dep5));
         }
 
         mRetry.setOnClickListener(v -> {

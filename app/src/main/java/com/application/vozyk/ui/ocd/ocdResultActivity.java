@@ -25,10 +25,10 @@ public class ocdResultActivity extends AppCompatActivity  {
         int points = b.getInt("points");
 
         if (points >= 0 && points < 21){
-            mResult.setText("Your symptoms are not suggestive of OCD");
+            mResult.setText(getResources().getString(R.string.symptoms_ocd_no));
         }
         if (points >= 21){
-            mResult.setText("Your symptoms are suggestive of OCD");
+            mResult.setText(getResources().getString(R.string.symptoms_ocd_yes));
         }
 
         mRetry.setOnClickListener(v -> {

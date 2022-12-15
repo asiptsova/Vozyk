@@ -29,10 +29,10 @@ public class adhdResultActivity extends AppCompatActivity {
         int points = b.getInt("points");
 
         if (points >= 0 && points < 4){
-            mResult.setText("Your symptoms are not suggestive of ADHD");
+            mResult.setText(getResources().getString(R.string.symptoms_ADHD_no));
         }
         if (points >= 4){
-            mResult.setText("Your symptoms are suggestive of ADHD");
+            mResult.setText(getResources().getString(R.string.symptoms_ADHD_no));
         }
 
         mRetry.setOnClickListener(v -> {

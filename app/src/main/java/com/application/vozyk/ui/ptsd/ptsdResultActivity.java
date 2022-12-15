@@ -28,9 +28,9 @@ public class ptsdResultActivity extends AppCompatActivity {
         int score = b.getInt("score");
 
         if (score >= 3){
-            mResults.setText("You are likely to be experiencing ptsd");
+            mResults.setText(getResources().getString(R.string.symptoms_ptsd_yes));
         } else {
-            mResults.setText("You are not likely to be experiencing ptsd");
+            mResults.setText(getResources().getString(R.string.symptoms_ptsd_no));
         }
 
         mRetry.setOnClickListener(v -> {

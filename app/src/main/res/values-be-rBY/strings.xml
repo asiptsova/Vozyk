@@ -3,7 +3,7 @@
     <string name="app_name">Vožyk</string>
     <string name="title_home">Дом</string>
     <string name="title_dashboard">Панэль</string>
-    <string name="title_notifications">Спавяшчэнні</string>
+    <string name="title_notifications">Медычнае</string>
     <string name="title_activity_registration">Рэгістрацыя</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Пароль</string>
@@ -18,7 +18,7 @@
     <string name="messages_header">Паведамленні</string>
     <string name="sync_header">Сінхранізацыя</string>
 
-    <string name="signature_title">Ваш подпіс</string>
+    <string name="signature_title">Подпіс</string>
     <string name="reply_title">Default reply action</string>
 
     <string name="sync_title">Sync email periodically</string>
@@ -37,10 +37,10 @@
     <string name="background_colour">Колер фону</string>
     <string name="colour_indicator">Колер індыкатару</string>
     <string name="colour_navigation_bar">Колер навігацыі</string>
-    <string name="confirm_delete">Пацвердзіце выдаленне</string>
-    <string name="confirm_delete_text">Вы ўпэўнены, што хочаце выдаліць гэту нататку?</string>
+    <string name="confirm_delete">Пацвердзі выдаленне</string>
+    <string name="confirm_delete_text">Ты ўпэўнены, што хочаш выдаліць гэту нататку?</string>
     <string name="delete">Выдаліць</string>
-    <string name="empty_list_text">Націсніце гузік унізе справа, каб дадаць новую нататку!</string>
+    <string name="empty_list_text">Націсні гузік унізе справа, каб дадаць новую нататку!</string>
     <string name="exception">Выключэнне: </string>
     <string name="font_colour">Колер шрыфта</string>
     <string name="new_note">Новая нататка</string>
@@ -70,7 +70,7 @@
     <string name="password">Пароль</string>
     <string name="login">Лагін</string>
     <string name="create_new_account">Стварыць новы акаўнт</string>
-    <string name="forgot_password">Забыліся пароль?</string>
+    <string name="forgot_password">Забыўся пароль?</string>
     <string name="create_a_new_account">Стварыць новы акаўнт</string>
     <string name="username">Імя карыстальніка</string>
     <string name="confirm_password">Пацвердзіць пароль</string>
@@ -96,7 +96,7 @@
     <string name="average_mood">Сярэдні настрой</string>
     <string name="mood_chart">Дыяграма настрою</string>
     <string name="weekly_mood_average">Тыднёвы сярэдні настрой</string>
-    <string name="not_enough_data_to_draw_this_chart_come_back_later">Недастаткова даных для стварэння гэтай дыяграмы.\nВярніцеся пазней!!</string>
+    <string name="not_enough_data_to_draw_this_chart_come_back_later">Недастаткова даных для стварэння гэтай дыяграмы.\nВярніся пазней!!</string>
     <string name="_0">0</string>
     <string name="how_was_your_mood">Які твой настрой</string>
     <string name="starting_date">Дата пачатку</string>
@@ -107,8 +107,8 @@
     <string name="update_times">Абнавіць</string>
     <string name="update_medicine">Абнавіць лек</string>
     <string name="profile">Профіль</string>
-    <string name="touch_profile_picture_to_change">націсніце, каб змяніць</string>
-    <string name="press_to_edit_delete">Націсніце для рэдагавання/выдалення</string>
+    <string name="touch_profile_picture_to_change">Націсні, каб змяніць</string>
+    <string name="press_to_edit_delete">Націсні для рэдагавання/выдалення</string>
     <string name="lab_test_name">Назва аналіза</string>
     <string name="time_12_12_2022">Час : 12/12/2022</string>
     <string name="doctor_name">Імя лекара</string>
@@ -121,7 +121,7 @@
     <string name="about_us">Пра нас</string>
     <string name="logout">Выйсці</string>
     <string name="no_medicines">Няма лекаў</string>
-    <string name="your_medicines">Вашыя лекі</string>
+    <string name="your_medicines">Твае лекі</string>
     <string name="reason">Прычына</string>
     <string name="add_a_new_task">Дадаць новую задачу</string>
     <string name="task_name">Назва задачы</string>
@@ -142,7 +142,7 @@
     <string name="dismiss">Адхіліць</string>
     <string name="i_have_taken_my_medicine">Я прыняў свае лекі</string>
     <string name="self_assessment_quiz">Анкеты</string>
-    <string name="anxiety">Неспакой</string>
+    <string name="anxiety">Трывожнасць</string>
     <string name="depression">Дэпрэсія</string>
     <string name="ptsd">Посттраўматычны стрэс</string>
     <string name="ocd">АКР</string>
@@ -291,5 +291,22 @@
     <string name="somewhat">Збольшага</string>
     <string name="quite_a_lot">Даволі шмат</string>
     <string name="very_much">Вельмі</string>
+    <string name="symptoms_ADHD_no">Нізкая верагоднасць СДУГ</string>
+    <string name="symptoms_ADHD_yes">Твае сімптомы могуць сведчаць аб СДУГ</string>
+    <string name="level_anxiety_none_mild">Узровень тваёй трывожнасці - ад ніякага да лёгкага</string>
+    <string name="level_anxiety_none_moderate">Узровень тваёй трывожнасці ўмераны</string>
+    <string name="level_anxiety_none_severe">Узровень тваёй трывожнасці сур\'ёзны</string>
+    <string name="symptoms_bip_no">Твае сімптомы не сведчаць аб біпалярным растройстве</string>
+    <string name="symptoms_bip_yes">Твае сімптомы могуць сведчаць аб біпалярным растройстве</string>
+    <string name="symptoms_bip_maybe">Твае сімптомы сведчаць аб мажлівай дэпрэсіі ці біпалярным растройстве</string>
+    <string name="symptoms_ocd_no">Твае сімптомы не сведчаць аб АКР</string>
+    <string name="symptoms_ocd_yes">Твае сімптомы могуць сведчаць аб АКР</string>
+    <string name="symptoms_ptsd_no">Наўрад ці ты перажываеш посттраўматычны стрэс</string>
+    <string name="symptoms_ptsd_yes">Мажліва, што ты перажываеш посттраўматычны стрэс</string>
+    <string name="dep1">У цябе няма або нязначныя сімптомы дэпрэсіі</string>
+    <string name="dep2">Ступень тваёй дэпрэсіі - лёгкая</string>
+    <string name="dep3">Ступень тваёй дэпрэсіі - умераная</string>
+    <string name="dep4">Ступень тваёй дэпрэсіі - умерана цяжкая</string>
+    <string name="dep5">Узровень тваёй дэпрэсіі -  цяжкі</string>
 
 </resources>

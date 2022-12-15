@@ -290,4 +290,21 @@
     <string name="somewhat">Somewhat</string>
     <string name="quite_a_lot">Quite a lot</string>
     <string name="very_much">Very much</string>
+    <string name="symptoms_ADHD_no">Your symptoms are not suggestive of ADHD</string>
+    <string name="symptoms_ADHD_yes">Your symptoms are suggestive of ADHD</string>
+    <string name="level_anxiety_none_mild">The level of your anxiety is none to mild</string>
+    <string name="level_anxiety_none_moderate">The level of your anxiety is moderate</string>
+    <string name="level_anxiety_none_severe">The level of your anxiety is severe</string>
+    <string name="symptoms_bip_no">Your symptoms are not suggestive of bipolar disorder</string>
+    <string name="symptoms_bip_yes">Your symptoms are suggestive of bipolar disorder</string>
+    <string name="symptoms_bip_maybe">Your symptoms are suggestive of major depression or bipolar disorder</string>
+    <string name="symptoms_ocd_no">Your symptoms are not suggestive of OCD</string>
+    <string name="symptoms_ocd_yes">Your symptoms are suggestive of OCD</string>
+    <string name="symptoms_ptsd_no">You are not likely to be experiencing ptsd</string>
+    <string name="symptoms_ptsd_yes">You are likely to be experiencing ptsd"</string>
+    <string name="dep1">The level of your depression is None to Minimal</string>
+    <string name="dep2">The level of your depression is Mild</string>
+    <string name="dep3">The level of your depression is Moderate</string>
+    <string name="dep4">The level of your depression is Moderately severe</string>
+    <string name="dep5">The level of your depression is Severe"</string>
 </resources>

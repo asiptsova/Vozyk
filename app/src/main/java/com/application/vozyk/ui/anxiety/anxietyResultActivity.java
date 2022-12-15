@@ -25,13 +25,13 @@ public class anxietyResultActivity extends AppCompatActivity {
         int points = b.getInt("points");
 
         if (points >= 0 && points <= 9){
-            mResult.setText("The level of your anxiety is none to mild");
+            mResult.setText(getResources().getString(R.string.level_anxiety_none_mild));
         }
         if (points >= 10 && points <= 14){
-            mResult.setText("The level of your anxiety is moderate");
+            mResult.setText(getResources().getString(R.string.level_anxiety_none_moderate));
         }
         if (points >= 15 && points <= 21){
-            mResult.setText("The level of your anxiety is severe");
+            mResult.setText(getResources().getString(R.string.level_anxiety_none_severe));
         }
 
         mRetry.setOnClickListener(v -> {
