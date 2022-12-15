@@ -9,12 +9,12 @@
 
     <EditText
         android:id="@+id/current_email"
-        android:layout_width="332dp"
-        android:layout_height="62dp"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="189dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="488dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="500dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
@@ -24,13 +24,15 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/new_email"
-        android:layout_width="338dp"
-        android:layout_height="62dp"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="265dp"
         android:layout_marginEnd="57dp"
@@ -44,13 +46,15 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="338dp"
-        android:layout_height="55dp"
+        android:layout_width="307dp"
+        android:layout_height="59dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="339dp"
         android:layout_marginEnd="57dp"
@@ -67,23 +71,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/Save"
-        android:layout_width="148dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="414dp"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="267dp"
+        android:layout_width="159dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="258dp"
         android:text="@string/save"
         android:textColor="#234E70"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
