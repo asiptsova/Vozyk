@@ -201,5 +201,25 @@
     <string name="delete_account">Delete account</string>
     <string name="retry">Retry</string>
     <string name="result">Result</string>
+    <string name="in_the_past_have_you">In the past have you</string>
+    <string name="tried_hard_not_to_think_about_the_events_or_went_out_of_your_way_to_avoid_situations_that_reminded_you_of_the_events">Tried hard not to think about the events or went out of your way to avoid situations that reminded you of the events</string>
+    <string name="have_you_ever_experienced_this_kind_of_event">Have you ever experienced this kind of event?</string>
+    <string name="sometimes_things_happen_to_people_that_are_unusually_or_especially_frightening_horrible_or_traumatic_for_example">Sometimes things happen to people that are unusually or especially frightening horrible or traumatic for example:</string>
+    <string name="a_serious_accident_or_fires">A serious accident or fires</string>
+    <string name="a_physical_or_sexual_assault">A physical or sexual assault</string>
+    <string name="an_earthquake_or_flood">An earthquake or flood</string>
+    <string name="a_war">A war</string>
+    <string name="seeing_someone_be_killed_or_seriously_injured">Seeing someone be killed or seriously injured</string>
+    <string name="having_a_loved_one_die_through_homicide_and_suicide">Having a loved one die through homicide and suicide</string>
+    <string name="attention_deficit_hyperactivity_disorder">Attention deficit hyperactivity disorder</string>
+    <string name="over_the_last_2_weeks_how_often_have_you_been_bothered_by_the_following_problems">Over the last 2 weeks how often have you been bothered by the following problems:</string>
+    <string name="feeling_nervous_anxious_or_on_edge">Feeling nervous anxious or on edge</string>
+    <string name="not_at_all_sure">Not at all sure</string>
+    <string name="several_days">Several days</string>
+    <string name="over_half_the_days">Over half the days</string>
+    <string name="nearly_every_day">Nearly every day</string>
+    <string name="bipolar_disorder">Bipolar disorder</string>
+    <string name="not_at_all">Not at all</string>
+    <string name="obsessive_compulsive_disorder">Obsessive compulsive disorder</string>
 
 </resources>
