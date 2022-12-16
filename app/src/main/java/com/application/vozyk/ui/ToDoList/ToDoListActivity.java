@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.settings.ToDoList;
+package com.application.vozyk.ui.ToDoList;
 
 import android.app.DatePickerDialog;
 import android.content.Context;

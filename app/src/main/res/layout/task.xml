@@ -5,7 +5,7 @@
     android:layout_height="50dp"
     android:background="@color/Hex"
     android:orientation="vertical"
-    tools:context=".ui.settings.ToDoList.ToDoListActivity">
+    tools:context=".ui.ToDoList.ToDoListActivity">
 
     <TextView
         android:id="@+id/taskItem"

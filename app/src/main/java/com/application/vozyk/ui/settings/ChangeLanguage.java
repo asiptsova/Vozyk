@@ -17,6 +17,7 @@ import java.util.Locale;
 
 public class ChangeLanguage extends AppCompatActivity {
     int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +26,13 @@ public class ChangeLanguage extends AppCompatActivity {
         final RadioGroup languageGroup = findViewById(R.id.languageGroup);
         languageGroup.setOnCheckedChangeListener((group, checkedId) -> {
             position = languageGroup.indexOfChild(findViewById(checkedId));
-            if (position == 0)
-            {
+            if (position == 0) {
                 Locale locale = new Locale("en");
                 changeLocale(locale);
-            }
-            else if (position == 1)
-            {
+            } else if (position == 1) {
                 Locale locale = new Locale("be");
                 changeLocale(locale);
-            }
-            else
-            {
+            } else {
                 Locale locale = new Locale("pl");
                 changeLocale(locale);
             }
@@ -45,8 +41,8 @@ public class ChangeLanguage extends AppCompatActivity {
         });
 
     }
-    private void changeLocale(Locale locale)
-    {
+
+    private void changeLocale(Locale locale) {
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);

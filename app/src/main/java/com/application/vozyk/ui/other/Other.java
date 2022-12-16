@@ -13,7 +13,7 @@ import com.application.vozyk.ui.account.Account;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
-import com.application.vozyk.ui.settings.ToDoList.ToDoListActivity;
+import com.application.vozyk.ui.ToDoList.ToDoListActivity;
 
 public class Other extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,

@@ -20,6 +20,7 @@ public class Breathe extends Fragment {
     private Spinner hold;
     private Spinner exhale;
     private Spinner breaths;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -50,6 +51,7 @@ public class Breathe extends Fragment {
         startButton.setOnClickListener(v -> openBreathingExerciseActivity());
         return root;
     }
+
     public void openBreathingExerciseActivity() {
         Intent intent = new Intent(getContext(), BreathingExerciseActivity.class);
         intent.putExtra("inhale", Integer.parseInt(inhale.getSelectedItem().toString()));

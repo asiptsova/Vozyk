@@ -1,6 +1,7 @@
 package com.application.vozyk.ui.settings;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -33,10 +34,11 @@ public class DeleteAccount extends AppCompatActivity {
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
                                         startActivity(new Intent(DeleteAccount.this, Login.class));
-                                        Toast.makeText(DeleteAccount.this,getResources().getString(R.string.delete_user_successfully), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(DeleteAccount.this, getResources().getString(R.string.delete_user_successfully), Toast.LENGTH_LONG).show();
                                     }
                                 }));
-            }            });
+            }
+        });
 
     }
 

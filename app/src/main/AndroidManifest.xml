@@ -155,7 +155,7 @@
             android:name=".ui.ptsd.ptsdResultActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.settings.ToDoList.ToDoListActivity"
+            android:name=".ui.ToDoList.ToDoListActivity"
             android:exported="true" />
         <activity
             android:name=".ui.notes.NoteActivity"

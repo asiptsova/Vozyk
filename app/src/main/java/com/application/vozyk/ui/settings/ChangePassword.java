@@ -38,10 +38,10 @@ public class ChangePassword extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(ChangePassword.this,getResources().getString(R.string.update), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ChangePassword.this, getResources().getString(R.string.update), Toast.LENGTH_SHORT).show();
                                                 startActivity(new Intent(ChangePassword.this, Settings.class));
                                             } else {
-                                                Toast.makeText(ChangePassword.this,getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ChangePassword.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });

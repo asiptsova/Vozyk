@@ -55,4 +55,4 @@ public class Settings extends AppCompatActivity {
             startActivity(intent);
         });
     }
-        }
+}
