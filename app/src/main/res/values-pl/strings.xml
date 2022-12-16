@@ -290,8 +290,8 @@
     <string name="inhale">Wdychać…</string>
     <string name="hold">Utrzymać…</string>
     <string name="exhale">Wydychać…</string>
-    <string name="breath">Oddech</string>
-    <string name="out_of">z</string>
+    <string name="breath">Oddech </string>
+    <string name="out_of">  z  </string>
     <string name="good_job">Dobra robota</string>
     <string name="meds">Leki</string>
     <string name="empty_field">Pole nie może być puste</string>

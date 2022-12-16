@@ -291,8 +291,8 @@
     <string name="inhale">Удыхні…</string>
     <string name="hold">Затрымай дыханне…</string>
     <string name="exhale">Выдыхні…</string>
-    <string name="breath">Дыхай</string>
-    <string name="out_of">з</string>
+    <string name="breath">Дыхай </string>
+    <string name="out_of">  з  </string>
     <string name="good_job">Малайчына!</string>
     <string name="meds">Лекі</string>
     <string name="empty_field">Поле не можа быць пустым</string>

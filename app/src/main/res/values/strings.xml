@@ -291,8 +291,8 @@
     <string name="inhale">Inhale…</string>
     <string name="hold">Hold…</string>
     <string name="exhale">Exhale…</string>
-    <string name="breath">Breath</string>
-    <string name="out_of">out of</string>
+    <string name="breath"> Breath </string>
+    <string name="out_of">  out of  </string>
     <string name="good_job">Good job</string>
     <string name="meds">Meds</string>
     <string name="empty_field">Field can\'t be empty</string>
