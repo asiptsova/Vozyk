@@ -16,19 +16,22 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Locale;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseAuth.AuthStateListener firebaseAuthListener;
-    String temp="Language";
+    String temp = "Language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class Login extends AppCompatActivity {
             Log.v(this.getClass().getName(), provider);
         }
         setContentView(R.layout.activity_login);
-        if(getIntent().getStringExtra("language")!=null) {
+        if (getIntent().getStringExtra("language") != null) {
             temp = getIntent().getStringExtra("language");
             if (temp.equals("English")) {
                 Locale locale = new Locale("en");
@@ -56,36 +59,35 @@ public class Login extends AppCompatActivity {
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);
         final Button mLoginBtn = findViewById(R.id.loginBtn);
-        final TextView  mCreateBtn = findViewById(R.id.createText);
-        final TextView  forgotTextLink = findViewById(R.id.forgotPassword);
-        final ImageView ShowHidePWD=findViewById(R.id.show_hide_pwd);
+        final TextView mCreateBtn = findViewById(R.id.createText);
+        final TextView forgotTextLink = findViewById(R.id.forgotPassword);
+        final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
         final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
         ArrayAdapter<CharSequence> adapterLanguage = ArrayAdapter.createFromResource(this,
                 R.array.language, R.layout.spinner_item);
         spinnerLanguage.setAdapter(adapterLanguage);
         adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerLanguage .setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                 temp = parent.getItemAtPosition(pos).toString();
-                if(temp.equals("English")) {
+                temp = parent.getItemAtPosition(pos).toString();
+                if (temp.equals("English")) {
                     Locale locale = new Locale("en");
                     changeLocale(locale);
-                }
-                else if (temp.equals("Belorussian")) {
+                } else if (temp.equals("Belorussian")) {
                     Locale locale = new Locale("be");
                     changeLocale(locale);
-                }
-                else{
+                } else {
                     Locale locale = new Locale("pl");
                     changeLocale(locale);
                 }
             }
+
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
 
         ShowHidePWD.setOnClickListener(view -> {
-            if(mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
+            if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance()))
                 mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
             else
                 mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -114,7 +116,7 @@ public class Login extends AppCompatActivity {
             }
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this,getResources().getString(R.string.logged_in_successfully),
+                    Toast.makeText(Login.this, getResources().getString(R.string.logged_in_successfully),
                             Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 } else
@@ -125,10 +127,10 @@ public class Login extends AppCompatActivity {
         });
 
         mCreateBtn.setOnClickListener(v ->
-                {
-                    Intent intent=new Intent(getApplicationContext(), Registration.class);
-                    startActivity(intent);
-                });
+        {
+            Intent intent = new Intent(getApplicationContext(), Registration.class);
+            startActivity(intent);
+        });
         forgotTextLink.setOnClickListener(v -> {
             final EditText resetMail = new EditText(v.getContext());
             final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
@@ -163,6 +165,7 @@ public class Login extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -171,9 +174,9 @@ public class Login extends AppCompatActivity {
         }
 
     }
+
     @SuppressWarnings("deprecation")
-    private void changeLocale(Locale locale)
-    {
+    private void changeLocale(Locale locale) {
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);

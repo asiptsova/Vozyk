@@ -1,6 +1,7 @@
 package com.application.vozyk.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
@@ -28,7 +30,8 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
-    String temp="Language";
+    String temp = "Language";
+
     private DatabaseReference getUsersRef(String ref) {
         return FirebaseDatabase.getInstance().getReference("Users")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(ref);
@@ -37,22 +40,21 @@ public class Registration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-              setContentView(R.layout.activity_registration);
-        getSupportActionBar().hide();
+        setContentView(R.layout.activity_registration);
         final EditText mFullName = findViewById(R.id.fullName);
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);
         final EditText etConfirm = findViewById(R.id.etConfirmPassword);
         final Button mRegisterBtn = findViewById(R.id.register);
         final TextView mLoginBtn = findViewById(R.id.createText);
-        final CircularProgressIndicator indicator =findViewById(R.id.progress_barCircle);
+        final CircularProgressIndicator indicator = findViewById(R.id.progress_barCircle);
         final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
         final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
         ArrayAdapter<CharSequence> adapterLanguage = ArrayAdapter.createFromResource(this,
                 R.array.language, R.layout.spinner_item);
         spinnerLanguage.setAdapter(adapterLanguage);
         adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerLanguage .setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 temp = parent.getItemAtPosition(pos).toString();
                 if (temp.equals("English")) {
@@ -68,8 +70,9 @@ public class Registration extends AppCompatActivity {
                     changeLocale(locale);
                 }
             }
+
             public void onNothingSelected(AdapterView<?> parent) {
-                temp="Language";
+                temp = "Language";
             }
         });
 
@@ -135,17 +138,18 @@ public class Registration extends AppCompatActivity {
                                     Log.d("TAG", getResources().getString(R.string.not_sent) + e.getMessage()));
                     getUsersRef("name").setValue(fullName);
                     getUsersRef("email").setValue(email);
-                    Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
             });
         });
         mLoginBtn.setOnClickListener(v ->
         {
-            Intent intent=new Intent(getApplicationContext(), Login.class);
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
         });
     }
+
     private boolean upperCase(String str) {
         char ch;
         for (int i = 0; i < str.length(); i++) {
@@ -190,16 +194,17 @@ public class Registration extends AppCompatActivity {
         }
         return false;
     }
+
     public boolean isValid(String email) {
-        String emailRegex =  "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
+        String emailRegex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
         Pattern pat = Pattern.compile(emailRegex);
         if (email == null)
             return false;
         return pat.matcher(email).matches();
     }
+
     @SuppressWarnings("deprecation")
-    private void changeLocale(Locale locale)
-    {
+    private void changeLocale(Locale locale) {
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);

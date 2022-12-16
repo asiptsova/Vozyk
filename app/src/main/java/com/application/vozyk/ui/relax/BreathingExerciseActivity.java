@@ -43,7 +43,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
         back.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
         counter=timers[instructionCounter];
         instructionText.setText(instructionList[instructionCounter]);
-        breathText.setText(getResources().getString(R.string.breath)+(breathsCounter+1)+getResources().getString(R.string.out_of)+timers[3]);
+        breathText.setText(getResources().getString(R.string.breath)+"  "+(breathsCounter+1)+"  "+getResources().getString(R.string.out_of)+"  "+timers[3]);
 
         timer1 = new CountDownTimer(timers[instructionCounter]* 1000L, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -81,7 +81,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
                                 breathsCounter++;
 
                                 if (breathsCounter < timers[3]) {
-                                    breathText.setText(getResources().getString(R.string.breath)+(breathsCounter+1)+getResources().getString(R.string.out_of)+timers[3]);
+                                    breathText.setText(getResources().getString(R.string.breath)+"  "+(breathsCounter+1)+"  "+getResources().getString(R.string.out_of)+"  "+timers[3]+" ");
                                     instructionText.setText(instructionList[instructionCounter]);
                                     timer1.cancel();
                                     timer1.start();

@@ -29,7 +29,6 @@
         android:layout_width="119dp"
         android:layout_height="107dp"
         android:layout_marginTop="-70dp"
-        android:layout_below="@id/Email"
         android:layout_gravity="center"
         android:contentDescription="TODO"
         android:src="@drawable/vozyk_2_1"
@@ -52,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:background="@color/Hex"
             android:gravity="center_horizontal"
             android:textSize="24sp" />
 
@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="65dp"
+            android:background="@color/Hex"
             android:fontFamily="@font/arima_madurai_extra_bold"
             android:gravity="center_horizontal"
             android:textSize="40sp"
@@ -82,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:background="@color/Hex"
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:textSize="40sp" />
