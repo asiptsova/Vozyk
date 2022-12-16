@@ -38,6 +38,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
               setContentView(R.layout.activity_registration);
+        getSupportActionBar().hide();
         final EditText mFullName = findViewById(R.id.fullName);
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);

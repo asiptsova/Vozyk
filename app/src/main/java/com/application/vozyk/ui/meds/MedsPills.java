@@ -36,7 +36,7 @@ public class MedsPills extends AppCompatActivity {
         setContentView(R.layout.fragment_meds);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-
+        getSupportActionBar().hide();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("MedicineRecord").child(Objects.requireNonNull(user.getUid())); //Takes the relative path of the user to get the instance of only that user not others.
         ListView listview = findViewById(R.id.listview);
         BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);

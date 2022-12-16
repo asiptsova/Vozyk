@@ -40,7 +40,7 @@ public class labAddActivity extends AppCompatActivity {
         lab_date_view = findViewById(R.id.lab_date_view);
         lab_doctor = findViewById(R.id.lab_doctor);
         Button lab_add_btn = findViewById(R.id.lab_add_btn);
-
+        getSupportActionBar().hide();
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();

@@ -21,6 +21,7 @@ public class ChangeLanguage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_language);
+        getSupportActionBar().hide();
         final RadioGroup languageGroup = findViewById(R.id.languageGroup);
         languageGroup.setOnCheckedChangeListener((group, checkedId) -> {
             position = languageGroup.indexOfChild(findViewById(checkedId));

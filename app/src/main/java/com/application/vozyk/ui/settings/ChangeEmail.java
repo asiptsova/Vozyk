@@ -31,6 +31,7 @@ public class ChangeEmail extends AppCompatActivity {
         final EditText email = findViewById(R.id.current_email);
         final EditText new_email = findViewById(R.id.new_email);
         final EditText password = findViewById(R.id.password);
+        getSupportActionBar().hide();
         Button save = findViewById(R.id.Save);
         save.setOnClickListener(v -> {
             if (FirebaseAuth.getInstance().getCurrentUser() != null) {

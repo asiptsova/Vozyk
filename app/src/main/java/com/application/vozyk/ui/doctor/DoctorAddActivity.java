@@ -43,7 +43,7 @@ public class DoctorAddActivity extends AppCompatActivity {
         doctor_name = findViewById(R.id.doctor_name);
         doctor_reason = findViewById(R.id.doctor_reason);
         Button doctor_add_btn = findViewById(R.id.doctor_add_btn);
-
+        getSupportActionBar().hide();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 

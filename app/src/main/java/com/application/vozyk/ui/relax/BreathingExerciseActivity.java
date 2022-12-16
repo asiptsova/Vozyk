@@ -28,6 +28,7 @@ public class BreathingExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_exercise);
+        getSupportActionBar().hide();
         instructionList = new String[]{getResources().getString(R.string.inhale),getResources().getString(R.string.hold),getResources().getString(R.string.exhale)};
         LinearLayout linearLayout = findViewById(R.id.breath_layout2);
         linearLayout.getBackground().setAlpha(50);

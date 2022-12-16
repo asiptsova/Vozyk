@@ -19,7 +19,6 @@ public class MedsFragment extends Fragment {
             final View pills=root.findViewById(R.id.pills);
             final View visits=root.findViewById(R.id.visits);
             final View labs=root.findViewById(R.id.labs);
-
             pills.setOnClickListener(v -> startActivity(new Intent(getContext(), MedsPills.class)));
             visits.setOnClickListener(v -> startActivity(new Intent(getContext(), DoctorActivity.class)));
             labs.setOnClickListener(v -> startActivity(new Intent(getContext(), labActivity.class)));
