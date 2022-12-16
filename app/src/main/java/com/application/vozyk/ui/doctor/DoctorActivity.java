@@ -94,7 +94,7 @@ public class DoctorActivity extends AppCompatActivity {
 
         listview.setAdapter(c);
 
-        findViewById(R.id.doctor_add_btn).setOnClickListener(view -> startActivity(new Intent(DoctorActivity.this, DoctorAddActivity.class)));
+        findViewById(R.id.add).setOnClickListener(view -> startActivity(new Intent(DoctorActivity.this, DoctorAddActivity.class)));
 
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {

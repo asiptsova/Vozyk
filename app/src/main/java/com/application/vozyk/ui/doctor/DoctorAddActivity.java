@@ -41,8 +41,8 @@ public class DoctorAddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_add);
         date_view = findViewById(R.id.lab_date_view);
         doctor_name = findViewById(R.id.doctor_name);
-        doctor_reason = findViewById(R.id.doctor_reason);
-        Button doctor_add_btn = findViewById(R.id.doctor_add_btn);
+        doctor_reason = findViewById(R.id.reasonTexr);
+        Button doctor_add_btn = findViewById(R.id.add);
         getSupportActionBar().hide();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();

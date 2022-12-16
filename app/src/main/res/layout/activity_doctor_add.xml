@@ -8,7 +8,7 @@
     tools:context=".ui.doctor.DoctorAddActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/appointmentText"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="@color/OrangeAeroSpace"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/doctor_reason"
+        android:id="@+id/reasonTexr"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         android:hint="@string/doctor_s_name"
         android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/appointmentText">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -89,10 +89,10 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doctor_reason" />
+        app:layout_constraintTop_toBottomOf="@+id/reasonTexr" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/doctorView"
         android:layout_width="88dp"
         android:layout_height="57dp"
         android:layout_marginEnd="48dp"
@@ -103,18 +103,18 @@
         app:srcCompat="@drawable/doctor" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/reasonView"
         android:layout_width="86dp"
         android:layout_height="45dp"
         android:layout_marginEnd="48dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/doctor_reason"
-        app:layout_constraintEnd_toStartOf="@+id/doctor_reason"
-        app:layout_constraintTop_toTopOf="@+id/doctor_reason"
+        app:layout_constraintBottom_toBottomOf="@+id/reasonTexr"
+        app:layout_constraintEnd_toStartOf="@+id/reasonTexr"
+        app:layout_constraintTop_toTopOf="@+id/reasonTexr"
         app:srcCompat="@drawable/notepad" />
 
     <Button
-        android:id="@+id/doctor_add_btn"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"

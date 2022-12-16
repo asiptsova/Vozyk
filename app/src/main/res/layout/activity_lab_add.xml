@@ -8,7 +8,7 @@
     tools:context=".ui.lab.labAddActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/appointmentText"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="@color/YellowAeroSpace"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="32dp"
         android:hint="Test Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/appointmentText">
 
         <AutoCompleteTextView
             android:id="@+id/lab_name_edit"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lab_doctor" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/doctorView"
         android:layout_width="88dp"
         android:layout_height="57dp"
         android:layout_marginEnd="48dp"
@@ -104,7 +104,7 @@
         app:srcCompat="@drawable/labs" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/reasonView"
         android:layout_width="86dp"
         android:layout_height="39dp"
         android:layout_marginEnd="48dp"
