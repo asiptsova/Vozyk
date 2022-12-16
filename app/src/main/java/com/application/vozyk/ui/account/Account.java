@@ -2,6 +2,7 @@ package com.application.vozyk.ui.account;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -39,6 +40,7 @@ public class Account extends AppCompatActivity {
 
     public FirebaseFirestore myDatabase;
     private static final int PICK_IMAGE = 1;
+    String nameStatic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +52,21 @@ public class Account extends AppCompatActivity {
         profilePic = findViewById(R.id.imagetoupload);
         myDatabase = FirebaseFirestore.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseDatabase.getInstance().getReference("Users")
-                .orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail())
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot ds : snapshot.getChildren()) {
-                            String temp = String.valueOf( ds.child("name").getValue());
-                            name.setText(temp);
-                            System.out.println(temp);
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+        FirebaseDatabase.getInstance().getReference("Users").orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    nameStatic = String.valueOf(ds.child("name").getValue());
+                    name.setText(nameStatic);
+                }
+            }
 
-                    }
-                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+        name.setText(nameStatic);
         settings.setOnClickListener(v -> {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
@@ -74,9 +74,7 @@ public class Account extends AppCompatActivity {
 
         this.updateLabels();
         if (user.getPhotoUrl() != null) {
-            Glide.with(this)
-                    .load(user.getPhotoUrl())
-                    .into(profilePic);
+            Glide.with(this).load(user.getPhotoUrl()).into(profilePic);
         }
         profilePic.setOnClickListener(v -> {
             Intent gallery = new Intent();
@@ -126,31 +124,24 @@ public class Account extends AppCompatActivity {
         b.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final StorageReference reference = FirebaseStorage.getInstance().getReference()
-                .child("profileImages")
-                .child(uid + ".jpeg");
+        final StorageReference reference = FirebaseStorage.getInstance().getReference().child("profileImages").child(uid + ".jpeg");
 
-        reference.putBytes(byteArrayOutputStream.toByteArray())
-                .addOnSuccessListener(taskSnapshot -> {
-                    getDownloadUrl(reference);
-                    Toast.makeText(Account.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> Toast.makeText(Account.this, "Upload Failed", Toast.LENGTH_SHORT).show());
+        reference.putBytes(byteArrayOutputStream.toByteArray()).addOnSuccessListener(taskSnapshot -> {
+            getDownloadUrl(reference);
+            Toast.makeText(Account.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> Toast.makeText(Account.this, "Upload Failed", Toast.LENGTH_SHORT).show());
     }
+
     private void getDownloadUrl(StorageReference reference) {
-        reference.getDownloadUrl()
-                .addOnSuccessListener(this::setUserProfileUrl);
+        reference.getDownloadUrl().addOnSuccessListener(this::setUserProfileUrl);
     }
+
     private void setUserProfileUrl(final Uri uri) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
-                .setPhotoUri(uri)
-                .build();
+        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder().setPhotoUri(uri).build();
 
         assert user != null;
-        user.updateProfile(request)
-                .addOnSuccessListener(aVoid -> Toast.makeText(Account.this, "Updated successfully", Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e -> Toast.makeText(Account.this, "Profile image failed...", Toast.LENGTH_SHORT).show());
+        user.updateProfile(request).addOnSuccessListener(aVoid -> Toast.makeText(Account.this, "Updated successfully", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(Account.this, "Profile image failed...", Toast.LENGTH_SHORT).show());
     }
 }

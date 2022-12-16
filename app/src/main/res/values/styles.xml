@@ -21,7 +21,7 @@
     </style>
 
     <style name="SwitchTheme" parent="Theme.AppCompat.Light">
-        <item name="android:colorControlActivated">#607D8B</item>
+        <item name="android:colorControlActivated">@android:color/white</item>
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
@@ -51,10 +51,6 @@
         <item name="colorAccent">@color/Hex</item>
         <item name="android:textColorPrimary">@color/Hex</item>
         <item name="android:background">@android:color/transparent</item>
-    </style>
-
-    <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
     <style name="TaskerInputTheme" parent="Theme.AppCompat.NoActionBar">
