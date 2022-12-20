@@ -18,9 +18,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ChangeEmail extends AppCompatActivity {
 
 
-    private DatabaseReference getEmailRef(String ref) {
+    private DatabaseReference getEmailRef() {
         return FirebaseDatabase.getInstance().getReference("Users")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(ref);
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("email");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ChangeEmail extends AppCompatActivity {
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
                                         Toast.makeText(ChangeEmail.this, getResources().getString(R.string.update), Toast.LENGTH_SHORT).show();
-                                        getEmailRef("email").setValue(new_email.getText().toString().trim());
+                                        getEmailRef().setValue(new_email.getText().toString().trim());
                                         startActivity(new Intent(ChangeEmail.this, Settings.class));
                                     } else {
                                         Toast.makeText(ChangeEmail.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
@@ -52,7 +52,5 @@ public class ChangeEmail extends AppCompatActivity {
         });
 
     }
-
-
 }
 

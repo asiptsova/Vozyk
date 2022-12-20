@@ -6,7 +6,6 @@ public class DoctorDataModel {
     int date;
     int month;
     int year;
-    int notificationId;
     String key;
 
     public DoctorDataModel(String name, String reason, int date, int month, int year) {

@@ -2,6 +2,7 @@ package com.application.vozyk.ui.meds;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TimeChange extends AppCompatActivity {
@@ -9,34 +10,28 @@ public class TimeChange extends AppCompatActivity {
 
     public static String timeTextView(int hour, int minute) {
         String result;
-        if (hour < 10) {
+        if (hour < 10)
             result = "0" + hour;
-        } else {
+        else
             result = Integer.toString(hour);
-        }
         result += ":";
-        if (minute < 10) {
+        if (minute < 10)
             result += "0" + minute;
-        } else {
+        else
             result += Integer.toString(minute);
-        }
-
         return result;
     }
 
     public static String timeToString(int hour, int minute) {
         String result;
-        if (hour < 10) {
+        if (hour < 10)
             result = "0" + hour;
-        } else {
+        else
             result = Integer.toString(hour);
-        }
-        if (minute < 10) {
+        if (minute < 10)
             result += "0" + minute;
-        } else {
+        else
             result += Integer.toString(minute);
-        }
-
         return result;
     }
 
@@ -57,15 +52,13 @@ public class TimeChange extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        if (flag == 0) {
+        if (flag == 0)
             editor.putString("MORNING", time);
-        } else if (flag == 1) {
+        else if (flag == 1)
             editor.putString("AFTERNOON", time);
-        } else if (flag == 2) {
+        else if (flag == 2)
             editor.putString("NIGHT", time);
-        }
         editor.apply();
         getTime();
     }
-
 }

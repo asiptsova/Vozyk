@@ -28,53 +28,45 @@ import java.util.Objects;
 
 public class DoctorAdd extends AppCompatActivity {
     private static final int[] arr = new int[3];
-    public static TextView date_view;
-    private String name;
-    private String reason;
-    private TextInputLayout doctor_name;
-    private TextInputLayout doctor_reason;
-    private DatabaseReference mDatabase;
+    public static TextView date;
+    private String name, reason;
+    private TextInputLayout docName, docReason;
+    private DatabaseReference database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_add);
-        date_view = findViewById(R.id.tv_lab_date);
-        doctor_name = findViewById(R.id.doctor_name);
-        doctor_reason = findViewById(R.id.reason);
-        Button doctor_add_btn = findViewById(R.id.add);
         getSupportActionBar().hide();
+        date = findViewById(R.id.tv_lab_date);
+        docName = findViewById(R.id.doctor_name);
+        docReason = findViewById(R.id.reason);
+        Button add = findViewById(R.id.add);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("AppointmentRecord").child(Objects.requireNonNull(user.getUid()));
+        database = FirebaseDatabase.getInstance().getReference().child("AppointmentRecord").child(Objects.requireNonNull(user.getUid()));
 
 
-        doctor_add_btn.setOnClickListener(view -> {
-            name = doctor_name.getEditText().getText().toString();
-            reason = doctor_reason.getEditText().getText().toString();
+        add.setOnClickListener(view -> {
+            name = docName.getEditText().getText().toString();
+            reason = docReason.getEditText().getText().toString();
 
             if (inputValidation(name, reason)) {
                 DoctorDataModel obj = new DoctorDataModel(name, reason, arr[0], arr[1], arr[2]);
-                mDatabase.child(obj.getName()).setValue(obj);
+                database.child(obj.getName()).setValue(obj);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.added), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DoctorAdd.this, Doctor.class));
-            } else {
+            } else
                 InputValidationHandler.showDialog(DoctorAdd.this);
-            }
         });
-
-
     }
 
     public boolean inputValidation(String name, String reason) {
-        if (name.contains(".") || name.contains("[") || name.contains("]") || name.contains("$") || name.contains("#")) {
+        if (name.contains(".") || name.contains("[") || name.contains("]") || name.contains("$") || name.contains("#"))
             return false;
-        }
-        if (reason.contains(".") || reason.contains("[") || reason.contains("]") || reason.contains("$") || reason.contains("#")) {
+        if (reason.contains(".") || reason.contains("[") || reason.contains("]") || reason.contains("$") || reason.contains("#"))
             return false;
-        }
-
         return !name.isEmpty() && !reason.isEmpty() && arr[0] != 0 && name.length() < 15 && reason.length() < 40;
     }
 
@@ -101,11 +93,10 @@ public class DoctorAdd extends AppCompatActivity {
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             String result = day + "/" + (month + 1) + "/" + year;
-            date_view.setText(result);
+            date.setText(result);
             arr[0] = day;
             arr[1] = month + 1;
             arr[2] = year;
         }
-
     }
 }

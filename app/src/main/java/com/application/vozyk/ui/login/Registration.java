@@ -146,10 +146,7 @@ public class Registration extends AppCompatActivity {
             });
         });
         mLoginBtn.setOnClickListener(v ->
-        {
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
-        });
+                startActivity(new Intent(getApplicationContext(), Login.class)));
     }
 
     private boolean upperCase(String str) {

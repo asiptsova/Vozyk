@@ -126,11 +126,7 @@ public class Login extends AppCompatActivity {
             });
         });
 
-        mCreateBtn.setOnClickListener(v ->
-        {
-            Intent intent = new Intent(getApplicationContext(), Registration.class);
-            startActivity(intent);
-        });
+        mCreateBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Registration.class)));
         forgotTextLink.setOnClickListener(v -> {
             final EditText resetMail = new EditText(v.getContext());
             final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
@@ -147,7 +143,6 @@ public class Login extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show());
 
             });
-
             passwordResetDialog.setNegativeButton(getResources().getString(R.string.no), (dialog, which) -> {
             });
             passwordResetDialog.create().show();
@@ -169,10 +164,8 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (firebaseAuthListener != null) {
+        if (firebaseAuthListener != null)
             FirebaseAuth.getInstance().removeAuthStateListener(firebaseAuthListener);
-        }
-
     }
 
     @SuppressWarnings("deprecation")

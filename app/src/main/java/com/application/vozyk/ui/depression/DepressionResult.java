@@ -20,32 +20,24 @@ public class DepressionResult extends AppCompatActivity {
         setContentView(R.layout.activity_depression_result);
         getSupportActionBar().hide();
 
-        TextView mResult =  findViewById(R.id.results);
-        Button mRetry = findViewById(R.id.redo);
+        TextView result = findViewById(R.id.results);
+        Button retry = findViewById(R.id.redo);
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(v -> startActivity(new Intent(this, QuizActivity.class)));
         Bundle b = getIntent().getExtras();
         int points = b.getInt("points");
 
-        if (points >= 0 && points <= 4){
-            mResult.setText(getResources().getString(R.string.dep1));
-        }
-        if (points >= 5 && points <= 9){
-            mResult.setText(getResources().getString(R.string.dep2));
-        }
-        if (points >= 10 && points <= 14){
-            mResult.setText(getResources().getString(R.string.dep3));
-        }
-        if (points >= 15 && points <= 19){
-            mResult.setText(getResources().getString(R.string.dep4));
-        }
-        if (points >= 20 && points <= 27){
-            mResult.setText(getResources().getString(R.string.dep5));
-        }
+        if (points >= 0 && points <= 4)
+            result.setText(getResources().getString(R.string.dep1));
+        else if (points >= 5 && points <= 9)
+            result.setText(getResources().getString(R.string.dep2));
+        else if (points >= 10 && points <= 14)
+            result.setText(getResources().getString(R.string.dep3));
+        else if (points >= 15 && points <= 19)
+            result.setText(getResources().getString(R.string.dep4));
+        else if (points >= 20 && points <= 27)
+            result.setText(getResources().getString(R.string.dep5));
 
-        mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), Depression.class);
-            startActivity(i);
-        });
+        retry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Depression.class)));
     }
 }

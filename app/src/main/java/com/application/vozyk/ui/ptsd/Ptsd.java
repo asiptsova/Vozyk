@@ -11,7 +11,6 @@ import com.application.vozyk.R;
 
 public class Ptsd extends AppCompatActivity {
 
-
     private int score;
 
     @Override
@@ -19,16 +18,15 @@ public class Ptsd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ptsd_1);
 
-        Button yes_b =  findViewById(R.id.yes);
-        Button no_b = findViewById(R.id.no);
+        Button yes =  findViewById(R.id.yes);
+        Button no = findViewById(R.id.no);
         score = 0;
 
-        yes_b.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), PtsdActivity.class);
-            startActivity(i);
+        yes.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), PtsdActivity.class));
         });
 
-        no_b.setOnClickListener(v -> {
+        no.setOnClickListener(v -> {
             Intent i = new Intent(getApplicationContext(), PtsdResult.class);
             Bundle b = new Bundle();
             b.putInt("score",score);

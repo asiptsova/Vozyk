@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class MedsRecordHandler {
     public String key;
-    String name;
-    String notes;
+    String name, dose;
     Boolean beforeFood;
     ArrayList<Time.AlarmBundle> reminder;
 
-    public MedsRecordHandler(String name, String notes, Boolean beforeFood, ArrayList<Time.AlarmBundle> reminder) {
+    public MedsRecordHandler(String name, String dose, Boolean beforeFood, ArrayList<Time.AlarmBundle> reminder) {
         this.name = name;
-        this.notes = notes;
+        this.dose = dose;
         this.beforeFood = beforeFood;
         this.reminder = reminder;
 
@@ -28,12 +27,12 @@ public class MedsRecordHandler {
         this.name = name;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getDose() {
+        return dose;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDose(String dose) {
+        this.dose = dose;
     }
 
     public Boolean getBeforeFood() {

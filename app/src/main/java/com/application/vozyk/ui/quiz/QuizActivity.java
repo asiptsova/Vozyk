@@ -22,12 +22,7 @@ import com.application.vozyk.ui.ptsd.PtsdActivity;
 
 public class QuizActivity extends AppCompatActivity {
 
-    Button adhd;
-    Button anxiety;
-    Button depression;
-    Button ocd;
-    Button ptsd;
-    Button bipolar;
+    Button adhd,anxiety,depression,ocd,ptsd,bipolar;
     LinearLayout linearLayout;
 
     @Override
@@ -59,33 +54,27 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void adhd_test(View view){
-        Intent i_adhd = new Intent(this, Adhd.class);
-        startActivity(i_adhd);
+        startActivity(new Intent(this, Adhd.class));
     }
 
     public void anxiety_test(View view){
-        Intent i_anxiety = new Intent(this, Anxiety.class);
-        startActivity(i_anxiety);
+        startActivity( new Intent(this, Anxiety.class));
     }
 
     public void bipolar_test(View view){
-        Intent i_bipolar = new Intent(this, Bipolar.class);
-        startActivity(i_bipolar);
+        startActivity( new Intent(this, Bipolar.class));
     }
 
     public void depression_test(View view){
-        Intent i_dep = new Intent(this, Depression.class);
-        startActivity(i_dep);
+        startActivity(new Intent(this, Depression.class));
     }
 
     public void ocd_test(View view){
-        Intent i_ocd = new Intent(this, Ocd.class);
-        startActivity(i_ocd);
+        startActivity(new Intent(this, Ocd.class));
     }
 
     public void ptsd_test(View view){
-        Intent i_ptsd = new Intent(this, PtsdActivity.class);
-        startActivity(i_ptsd);
+        startActivity(new Intent(this, PtsdActivity.class));
     }
 
 }

@@ -29,7 +29,7 @@ import java.util.Objects;
 public class Doctor extends AppCompatActivity {
 
     private ArrayList<DoctorDataModel> arrayList;
-    private DocCustomAdapter c;
+    private DoctorAdapter c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class Doctor extends AppCompatActivity {
         BottomAppBar bottomAppBar = findViewById(R.id.doctor_bottomAppBar);
 
         arrayList = new ArrayList<>();
-        c = new DocCustomAdapter(getApplicationContext(), arrayList);
+        c = new DoctorAdapter(getApplicationContext(), arrayList);
 
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override

@@ -12,17 +12,16 @@ import com.application.vozyk.R;
 
 public class PtsdActivity extends AppCompatActivity {
 
-    private TextView mQuesView;
-    private int mQuesNum=0;
-    private int mScore=0;
-    public  String[] mQues;
+    private TextView question;
+    private int number =0,score =0;
+    public  String[] ques;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ptsd_2);
         getSupportActionBar().hide();
-        mQues=new String[]{
+        ques =new String[]{
                 getResources().getString(R.string.ptsd1),
                 getResources().getString(R.string.ptsd2),
                 getResources().getString(R.string.ptsd3),
@@ -30,41 +29,39 @@ public class PtsdActivity extends AppCompatActivity {
                 getResources().getString(R.string.ptsd5)
         };
 
-        mQuesView =findViewById(R.id.quesP);
-        Button yesB =findViewById(R.id.yesP);
-        Button noB = findViewById(R.id.noP);
+        question =findViewById(R.id.quesP);
+        Button yes =findViewById(R.id.yesP);
+        Button no = findViewById(R.id.noP);
 
         updateQuestion();
 
-        yesB.setOnClickListener(v -> {
-            mScore = mScore + 1;
-            if (mQuesNum == getLength()) {
+        yes.setOnClickListener(v -> {
+            score = score + 1;
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
-        noB.setOnClickListener(v -> {
-            if (mQuesNum == getLength()){
+        no.setOnClickListener(v -> {
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
 
     }
 
     private void updateQuestion(){
-        mQuesView.setText(getQuestion(mQuesNum));
-        mQuesNum++;
+        question.setText(getQuestion(number));
+        number++;
     }
 
     private void updateResult(){
         Intent i = new Intent(getApplicationContext(), PtsdResult.class);
         Bundle b = new Bundle();
-        b.putInt("score",mScore);
+        b.putInt("score", score);
         i.putExtras(b);
         PtsdActivity.this.finish();
         startActivity(i);
@@ -72,10 +69,10 @@ public class PtsdActivity extends AppCompatActivity {
 
 
     public String getQuestion(int i) {
-        return mQues[i];
+        return ques[i];
     }
 
     public int getLength(){
-        return mQues.length;
+        return ques.length;
     }
 }

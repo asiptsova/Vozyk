@@ -41,7 +41,4 @@ public class DeleteAccount extends AppCompatActivity {
         });
 
     }
-
-    private void deleteUser(String email, String password) {
-    }
 }

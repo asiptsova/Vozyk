@@ -66,7 +66,5 @@ public class Relax extends Fragment {
             public CharSequence getPageTitle(int position) {
                 return fragmentTitleList.get(position);
             }
-
         }
-
     }

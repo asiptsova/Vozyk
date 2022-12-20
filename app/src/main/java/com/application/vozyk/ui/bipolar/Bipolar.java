@@ -4,23 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.application.vozyk.R;
 
 
 public class Bipolar extends AppCompatActivity {
 
-    private TextView mQuesView;
-    private Button mChoiceA;
-    private Button mChoiceB;
-    private Button mChoiceC;
-    private Button mChoiceD;
-    private Button mChoiceE;
-    private Button mChoiceF;
-    private int mPoint = 0;
-    private int mQuesNumber = 0;
-    public String[] mQues;
-    private String[][] mChoices;
+    private TextView quesView;
+    private Button choiceA, choiceB, choiceC, choiceD, choiceE, choiceF;
+    private int point = 0, number = 0;
+    public String[] ques;
+    private String[][] choices;
 
 
     @Override
@@ -29,7 +25,7 @@ public class Bipolar extends AppCompatActivity {
         setContentView(R.layout.activity_bipolar);
         getSupportActionBar().hide();
 
-        mQues =new String[] {
+        ques = new String[]{
                 getResources().getString(R.string.bip1),
                 getResources().getString(R.string.bip2),
                 getResources().getString(R.string.bip3),
@@ -43,137 +39,130 @@ public class Bipolar extends AppCompatActivity {
                 getResources().getString(R.string.bip11),
                 getResources().getString(R.string.bip12)
         };
-        mChoices = new String[][] {
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
-                {getResources().getString(R.string.not_at_all),getResources().getString(R.string.a_little),getResources().getString(R.string.somewhat),getResources().getString(R.string.moderately),getResources().getString(R.string.quite_a_lot),getResources().getString(R.string.very_much)},
+        choices = new String[][]{
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
+                {getResources().getString(R.string.not_at_all), getResources().getString(R.string.a_little), getResources().getString(R.string.somewhat), getResources().getString(R.string.moderately), getResources().getString(R.string.quite_a_lot), getResources().getString(R.string.very_much)},
         };
 
 
-        mQuesView = findViewById(R.id.questions);
-        mChoiceA =  findViewById(R.id.choiceA);
-        mChoiceB =  findViewById(R.id.choiceB);
-        mChoiceC = findViewById(R.id.choiceC);
-        mChoiceD =  findViewById(R.id.choiceD);
-        mChoiceE =  findViewById(R.id.choiceE);
-        mChoiceF =findViewById(R.id.choiceF);
+        quesView = findViewById(R.id.questions);
+        choiceA = findViewById(R.id.choiceA);
+        choiceB = findViewById(R.id.choiceB);
+        choiceC = findViewById(R.id.choiceC);
+        choiceD = findViewById(R.id.choiceD);
+        choiceE = findViewById(R.id.choiceE);
+        choiceF = findViewById(R.id.choiceF);
 
         updateQuestion();
 
-        mChoiceA.setOnClickListener(view -> {
-            if (mQuesNumber == getLength()){
+        choiceA.setOnClickListener(view -> {
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceB.setOnClickListener(view -> {
-            mPoint = mPoint + 1;
-            if (mQuesNumber == getLength()){
+        choiceB.setOnClickListener(view -> {
+            point = point + 1;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceC.setOnClickListener(view -> {
-            mPoint = mPoint + 2;
-            if (mQuesNumber == getLength()){
+        choiceC.setOnClickListener(view -> {
+            point = point + 2;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceD.setOnClickListener(view -> {
-            mPoint = mPoint + 3;
-            if (mQuesNumber == getLength()){
+        choiceD.setOnClickListener(view -> {
+            point = point + 3;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceE.setOnClickListener(view -> {
-            mPoint = mPoint + 4;
-            if (mQuesNumber ==getLength()){
+        choiceE.setOnClickListener(view -> {
+            point = point + 4;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceF.setOnClickListener(view -> {
-            mPoint = mPoint + 5;
-            if (mQuesNumber == getLength()){
+        choiceF.setOnClickListener(view -> {
+            point = point + 5;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
-
     }
 
-    private void updateQuestion(){
-        mQuesView.setText(getQuestion(mQuesNumber));
-        mChoiceA.setText(getChoiceA(mQuesNumber));
-        mChoiceB.setText(getChoiceB(mQuesNumber));
-        mChoiceC.setText(getChoiceC(mQuesNumber));
-        mChoiceD.setText(getChoiceD(mQuesNumber));
-        mChoiceE.setText(getChoiceE(mQuesNumber));
-        mChoiceF.setText(getChoiceF(mQuesNumber));
+    private void updateQuestion() {
+        quesView.setText(getQuestion(number));
+        choiceA.setText(getChoiceA(number));
+        choiceB.setText(getChoiceB(number));
+        choiceC.setText(getChoiceC(number));
+        choiceD.setText(getChoiceD(number));
+        choiceE.setText(getChoiceE(number));
+        choiceF.setText(getChoiceF(number));
 
-        mQuesNumber++;
+        number++;
     }
 
-    private void updateResult(){
+    private void updateResult() {
         Intent i = new Intent(getApplicationContext(), bipolarResult.class);
         Bundle b = new Bundle();
-        b.putInt("points",mPoint);
+        b.putInt("points", point);
         i.putExtras(b);
         Bipolar.this.finish();
         startActivity(i);
     }
 
-    public String getQuestion(int i){
-        return mQues[i];
+    public String getQuestion(int i) {
+        return ques[i];
     }
 
-    public String getChoiceA(int i){
-        return mChoices[i][0];
+    public String getChoiceA(int i) {
+        return choices[i][0];
     }
 
-    public String getChoiceB(int i){
-        return mChoices[i][1];
+    public String getChoiceB(int i) {
+        return choices[i][1];
     }
 
-    public String getChoiceC(int i){
-        return mChoices[i][2];
+    public String getChoiceC(int i) {
+        return choices[i][2];
     }
 
-    public String getChoiceD(int i){
-        return mChoices[i][3];
+    public String getChoiceD(int i) {
+        return choices[i][3];
     }
 
-    public String getChoiceE(int i){
-        return mChoices[i][4];
+    public String getChoiceE(int i) {
+        return choices[i][4];
     }
 
-    public String getChoiceF(int i){
-        return mChoices[i][5];
+    public String getChoiceF(int i) {
+        return choices[i][5];
     }
 
-    public int getLength(){
-        return mQues.length;
+    public int getLength() {
+        return ques.length;
     }
 }

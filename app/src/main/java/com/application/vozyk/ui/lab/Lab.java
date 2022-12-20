@@ -21,12 +21,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Lab extends AppCompatActivity {
     private ArrayList<LabTestDataModel> arrayList;
-    private LabCustomAdapter c;
+    private LabCustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,7 @@ public class Lab extends AppCompatActivity {
         BottomAppBar bottomAppBar = findViewById(R.id.lab_bottomAppBar);
 
         arrayList = new ArrayList<>();
-
-        c = new LabCustomAdapter(getApplicationContext(), arrayList);
+        adapter = new LabCustomAdapter(getApplicationContext(), arrayList);
 
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
@@ -52,13 +52,13 @@ public class Lab extends AppCompatActivity {
                 assert labTestDataModel != null;
                 labTestDataModel.key = snapshot.getKey();
                 arrayList.add(labTestDataModel);
-                c.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
                 emptyImage();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                c.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -69,12 +69,10 @@ public class Lab extends AppCompatActivity {
                 labTestDataModel.key = snapshot.getKey();
 
                 for (int i = 0; i < arrayList.size(); i++) {
-                    if (labTestDataModel.key.equals(arrayList.get(i).key)) {
+                    if (labTestDataModel.key.equals(arrayList.get(i).key))
                         arrayList.remove(i);
-                    }
                 }
-
-                c.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
                 emptyImage();
             }
 
@@ -89,7 +87,7 @@ public class Lab extends AppCompatActivity {
             }
         });
 
-        listview.setAdapter(c);
+        listview.setAdapter(adapter);
 
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
@@ -112,7 +110,7 @@ public class Lab extends AppCompatActivity {
     }
 
     public void emptyImage() {
-        if (c.isEmpty()) {
+        if (adapter.isEmpty()) {
             findViewById(R.id.iv_lab_empty).setVisibility(View.VISIBLE);
             findViewById(R.id.tv_no_labs).setVisibility(View.VISIBLE);
         } else {

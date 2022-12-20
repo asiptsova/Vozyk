@@ -25,14 +25,13 @@ public class CustomAdapterNew extends ArrayAdapter<MedsRecordHandler> {
 
     private final ArrayList<MedsRecordHandler> arrayList;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference myRef = database.getReference();
+    final DatabaseReference databaseReference = database.getReference();
     final FirebaseUser user;
 
 
     public CustomAdapterNew(@NonNull Context context, @NonNull ArrayList<MedsRecordHandler> arrayList) {
         super(context, 0, arrayList);
         this.arrayList = arrayList;
-
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
     }
@@ -40,51 +39,45 @@ public class CustomAdapterNew extends ArrayAdapter<MedsRecordHandler> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View currentItemView = convertView;
-        if (currentItemView == null) {
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_list_view, parent, false);
-        }
-        TextView name_view = currentItemView.findViewById(R.id.tv_meds_name);
+        View itemView = convertView;
+        if (itemView == null)
+            itemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_list_view, parent, false);
+        TextView name_view = itemView.findViewById(R.id.tv_meds_name);
         name_view.setText(arrayList.get(position).getName());
 
-        TextView food_view = currentItemView.findViewById(R.id.tv_meds_food);
-        if (arrayList.get(position).getBeforeFood()) {
+        TextView food_view = itemView.findViewById(R.id.tv_meds_food);
+        if (arrayList.get(position).getBeforeFood())
             food_view.setText("Before Food");
-        } else {
+        else
             food_view.setText("After Food");
-        }
-        TextView time_view = currentItemView.findViewById(R.id.tv_meds_time);
+        TextView time = itemView.findViewById(R.id.tv_meds_time);
         StringBuilder output_time = new StringBuilder();
         for (Time.AlarmBundle i : arrayList.get(position).getReminder()) {
             String j = i.getTime();
-            if (j.contains(Time.MORNING)) {
+            if (j.contains(Time.MORNING))
                 output_time.append("Morning ");
-            } else if (j.contains(Time.AFTERNOON)) {
+             else if (j.contains(Time.AFTERNOON))
                 output_time.append("Afternoon ");
-
-            } else if (j.contains(Time.NIGHT)) {
+             else if (j.contains(Time.NIGHT))
                 output_time.append("Night ");
-            } else {
+            else
                 output_time.append(j.substring(0, 2)).append(":").append(j.substring(2, 4));
-            }
         }
-        time_view.setText(output_time.toString());
+        time.setText(output_time.toString());
+        TextView doseView = itemView.findViewById(R.id.note_view);
 
-        TextView note_view = currentItemView.findViewById(R.id.note_view);
+        if (arrayList.get(position).getDose().isEmpty())
+            doseView.setText("No Dose");
+        else
+            doseView.setText(arrayList.get(position).getDose());
 
-        if (arrayList.get(position).getNotes().isEmpty()) {
-            note_view.setText("No Notes");
-        } else {
-            note_view.setText(arrayList.get(position).getNotes());
-        }
-
-        currentItemView.findViewById(R.id.delete_btn).setOnClickListener(view -> {
+        itemView.findViewById(R.id.delete_btn).setOnClickListener(view -> {
             MedsRecordHandler mrd = arrayList.get(position);
-            myRef.child("MedicineRecord").child(user.getUid()).child(mrd.key).removeValue();
+            databaseReference.child("MedicineRecord").child(user.getUid()).child(mrd.key).removeValue();
             Toast.makeText(getContext(), "Deleted", Toast.LENGTH_SHORT).show();
         });
 
-        currentItemView.findViewById(R.id.update_btn).setOnClickListener(view -> {
+        itemView.findViewById(R.id.update_btn).setOnClickListener(view -> {
 
             Intent i = new Intent(getContext(), UpdateMeds.class);
             MedsRecordHandler mrd = arrayList.get(position);
@@ -94,6 +87,6 @@ public class CustomAdapterNew extends ArrayAdapter<MedsRecordHandler> {
             getContext().startActivity(i);
         });
 
-        return currentItemView;
+        return itemView;
     }
 }

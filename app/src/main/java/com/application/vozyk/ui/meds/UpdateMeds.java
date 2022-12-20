@@ -126,7 +126,7 @@ public class UpdateMeds extends AppCompatActivity {
 
     public void prefillData(MedsRecordHandler mrd) {
         String nameValue = mrd.getName();
-        String noteValue = mrd.getNotes();
+        String noteValue = mrd.getDose();
         Boolean beforeFood = mrd.getBeforeFood();
 
         if (beforeFood) {

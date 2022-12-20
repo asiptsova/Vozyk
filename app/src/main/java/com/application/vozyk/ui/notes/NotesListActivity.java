@@ -87,13 +87,11 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
 
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE)
                     fab.show();
-                }
                 super.onScrollStateChanged(recyclerView, newState);
             }
         });
-
         setItemTouchHelper(recyclerView);
         applySettings();
     }
@@ -108,11 +106,9 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
 
         SearchView searchView = findViewById(R.id.btn_search);
         if (searchView != null) {
-            if (!searchView.isIconified()) {
+            if (!searchView.isIconified())
                 searchView.onActionViewCollapsed();
-            }
         }
-
         notesListAdapter.updateList(HelperUtils.getFiles(NotesListActivity.this), sortAlphabetical);
         showEmptyListMessage();
         findViewById(R.id.layout_coordinator).clearFocus();
@@ -160,21 +156,18 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
                 ((Animatable) drawable).start();
         }
 
-        if (id == R.id.btn_search) {
+        if (id == R.id.btn_search)
             return (true);
-        }
-
         return (super.onOptionsItemSelected(item));
     }
 
     @Override
     public void onBackPressed() {
         SearchView searchView = findViewById(R.id.btn_search);
-        if (!searchView.isIconified()) {
+        if (!searchView.isIconified())
             searchView.onActionViewCollapsed();
-        } else {
+         else
             super.onBackPressed();
-        }
     }
 
     @Override
@@ -202,17 +195,16 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
         emptyText.setTextColor(colourFont);
         fab.setBackgroundTintList(ColorStateList.valueOf(colourPrimary));
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
+        if (actionBar != null)
             actionBar.setBackgroundDrawable(new ColorDrawable(colourPrimary));
-        }
+
     }
 
     private void showEmptyListMessage() {
-        if (notesListAdapter.getItemCount() == 0) {
+        if (notesListAdapter.getItemCount() == 0)
             emptyText.setVisibility(View.VISIBLE);
-        } else if (emptyText.getVisibility() == View.VISIBLE) {
+         else if (emptyText.getVisibility() == View.VISIBLE)
             emptyText.setVisibility(View.GONE);
-        }
     }
 
     private void setItemTouchHelper(RecyclerView recyclerView) {
@@ -270,7 +262,6 @@ public class NotesListActivity extends AppCompatActivity implements SearchView.O
         new ItemTouchHelper(simpleItemTouchCallback).attachToRecyclerView(recyclerView);
 
     }
-
     public void newNote(View view) {
         startActivity(NoteActivity.getStartIntent(NotesListActivity.this, ""));
     }

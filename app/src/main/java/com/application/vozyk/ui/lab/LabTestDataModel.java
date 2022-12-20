@@ -1,12 +1,8 @@
 package com.application.vozyk.ui.lab;
 
 public class LabTestDataModel {
-    int day;
-    int month;
-    int year;
-    String testName;
-    String doctorName;
-    String key;
+    int day,month,year;
+    String testName,doctorName,key;
 
     public LabTestDataModel(int day, int month, int year, String testName, String doctorName) {
         this.day = day;

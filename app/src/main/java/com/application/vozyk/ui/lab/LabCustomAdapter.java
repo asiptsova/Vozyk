@@ -17,19 +17,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class LabCustomAdapter extends ArrayAdapter<LabTestDataModel> {
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference myRef = database.getReference();
+    final DatabaseReference df = database.getReference();
     final FirebaseUser user;
     private final ArrayList<LabTestDataModel> arrayList;
 
     public LabCustomAdapter(@NonNull Context context, ArrayList<LabTestDataModel> arrayList) {
         super(context, 0, arrayList);
         this.arrayList = arrayList;
-
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
     }
@@ -38,33 +38,28 @@ public class LabCustomAdapter extends ArrayAdapter<LabTestDataModel> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View currentItemView = convertView;
-        if (currentItemView == null) {
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.lab_custom_list_view, parent, false);
+        View itemView = convertView;
+        if (itemView == null) {
+            itemView = LayoutInflater.from(getContext()).inflate(R.layout.lab_custom_list_view, parent, false);
         }
 
-        TextView lab_name_view = currentItemView.findViewById(R.id.tv_lab_name);
-        TextView lab_doctor = currentItemView.findViewById(R.id.tv_lab_doctor);
-        TextView lab_date_view = currentItemView.findViewById(R.id.view_lab_time);
-        ImageView lab_delete_btn = currentItemView.findViewById(R.id.bt_lab_delete);
-
+        TextView labName = itemView.findViewById(R.id.tv_lab_name);
+        TextView labDoctor = itemView.findViewById(R.id.tv_lab_doctor);
+        TextView lab_date = itemView.findViewById(R.id.view_lab_time);
+        ImageView delete = itemView.findViewById(R.id.bt_lab_delete);
         LabTestDataModel labTestDataModel = arrayList.get(position);
 
-        lab_name_view.setText(labTestDataModel.getTestName());
-        lab_doctor.setText(labTestDataModel.getDoctorName());
+        labName.setText(labTestDataModel.getTestName());
+        labDoctor.setText(labTestDataModel.getDoctorName());
 
         String result = labTestDataModel.getDay() + "/" + (labTestDataModel.getMonth()) + "/" + labTestDataModel.getYear();
-        lab_date_view.setText(result);
+        lab_date.setText(result);
 
-
-        lab_delete_btn.setOnClickListener(view -> {
-
+        delete.setOnClickListener(view -> {
             LabTestDataModel obj = arrayList.get(position);
-            myRef.child("LabTestRecord").child(user.getUid()).child(obj.key).removeValue();
+            df.child("LabTestRecord").child(user.getUid()).child(obj.key).removeValue();
             Toast.makeText(getContext(), "Deleted", Toast.LENGTH_SHORT).show();
         });
-
-
-        return currentItemView;
+        return itemView;
     }
 }

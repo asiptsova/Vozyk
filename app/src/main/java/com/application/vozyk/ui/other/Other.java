@@ -26,31 +26,12 @@ public class Other extends Fragment {
         final View notes=root.findViewById(R.id.notes);
 
 
-        account.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), Account.class);
-            startActivity(intent);
-        });
-        about.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), AboutUs.class);
-            startActivity(intent);
-        });
-
-        about.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), AboutUs.class);
-            startActivity(intent);
-        });
-        quiz.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), QuizActivity.class);
-            startActivity(intent);
-        });
-        toDo.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), ToDoListActivity.class);
-            startActivity(intent);
-        });
-        notes.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), NotesListActivity.class);
-            startActivity(intent);
-        });
+        account.setOnClickListener(v -> startActivity(new Intent(getContext(), Account.class)));
+        about.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUs.class)));
+        about.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUs.class)));
+        quiz.setOnClickListener(v -> startActivity(new Intent(getContext(), QuizActivity.class)));
+        toDo.setOnClickListener(v -> startActivity(new Intent(getContext(), ToDoListActivity.class)));
+        notes.setOnClickListener(v -> startActivity(new Intent(getContext(), NotesListActivity.class)));
 
         return root;
     }

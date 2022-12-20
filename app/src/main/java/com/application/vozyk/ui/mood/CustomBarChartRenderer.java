@@ -45,31 +45,22 @@ public class CustomBarChartRenderer extends BarChartRenderer {
 
         if (mChart.isDrawBarShadowEnabled()) {
             mShadowPaint.setColor(dataSet.getBarShadowColor());
-
             BarData barData = mChart.getBarData();
-
             float barWidth = barData.getBarWidth();
             float barWidthHalf = barWidth / 2.0f;
             float x;
-
             int i = 0;
             double count = Math.min(Math.ceil((int) (double) ((float) dataSet.getEntryCount() * phaseX)), dataSet.getEntryCount());
             while (i < count) {
-
                 BarEntry e = dataSet.getEntryForIndex(i);
-
                 x = e.getX();
-
                 mBarShadowRectBuffer.left = x - barWidthHalf;
                 mBarShadowRectBuffer.right = x + barWidthHalf;
-
                 trans.rectValueToPixel(mBarShadowRectBuffer);
-
                 if (!mViewPortHandler.isInBoundsLeft(mBarShadowRectBuffer.right)) {
                     i++;
                     continue;
                 }
-
                 if (!mViewPortHandler.isInBoundsRight(mBarShadowRectBuffer.left))
                     break;
 
@@ -80,38 +71,26 @@ public class CustomBarChartRenderer extends BarChartRenderer {
                 i++;
             }
         }
-
         BarBuffer buffer = mBarBuffers[index];
         buffer.setPhases(phaseX, phaseY);
         buffer.setDataSet(index);
         buffer.setInverted(mChart.isInverted(dataSet.getAxisDependency()));
         buffer.setBarWidth(mChart.getBarData().getBarWidth());
-
         buffer.feed(dataSet);
-
         trans.pointValuesToPixel(buffer.buffer);
-
         boolean isSingleColor = dataSet.getColors().size() == 1;
-
-        if (isSingleColor) {
+        if (isSingleColor)
             mRenderPaint.setColor(dataSet.getColor());
-        }
-
         int j = 0;
         while (j < buffer.size()) {
-
             if (!mViewPortHandler.isInBoundsLeft(buffer.buffer[j + 2])) {
                 j += 4;
                 continue;
             }
-
             if (!mViewPortHandler.isInBoundsRight(buffer.buffer[j]))
                 break;
-
-            if (!isSingleColor) {
+            if (!isSingleColor)
                 mRenderPaint.setColor(dataSet.getColor(j / 4));
-            }
-
             if (dataSet.getGradientColor() != null) {
                 GradientColor gradientColor = dataSet.getGradientColor();
                 mRenderPaint.setShader(new LinearGradient(
@@ -177,14 +156,12 @@ public class CustomBarChartRenderer extends BarChartRenderer {
             path.rLineTo(0, ry);
         }
         path.rLineTo(0, heightMinusCorners);
-
         if (bl)
             path.rQuadTo(0, ry, rx, ry);
         else {
             path.rLineTo(0, ry);
             path.rLineTo(rx, 0);
         }
-
         path.rLineTo(widthMinusCorners, 0);
         if (false)
             path.rQuadTo(rx, 0, rx, -ry);
@@ -192,10 +169,7 @@ public class CustomBarChartRenderer extends BarChartRenderer {
             path.rLineTo(rx, 0);
             path.rLineTo(0, -ry);
         }
-
         path.rLineTo(0, -heightMinusCorners);
-
         path.close();
-
         return path;
     }}

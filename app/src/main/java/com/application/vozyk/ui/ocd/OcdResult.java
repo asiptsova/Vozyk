@@ -17,23 +17,17 @@ public class OcdResult extends AppCompatActivity  {
         setContentView(R.layout.activity_ocd_result);
         getSupportActionBar().hide();
 
-        TextView mResult = findViewById(R.id.results);
-        Button mRetry = findViewById(R.id.redo);
+        TextView result = findViewById(R.id.results);
+        Button retry = findViewById(R.id.redo);
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(v -> startActivity(new Intent(this, QuizActivity.class)));
         Bundle b = getIntent().getExtras();
         int points = b.getInt("points");
 
-        if (points >= 0 && points < 21){
-            mResult.setText(getResources().getString(R.string.symptoms_ocd_no));
-        }
-        if (points >= 21){
-            mResult.setText(getResources().getString(R.string.symptoms_ocd_yes));
-        }
-
-        mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), Ocd.class);
-            startActivity(i);
-        });
+        if (points >= 0 && points < 21)
+            result.setText(getResources().getString(R.string.symptoms_ocd_no));
+       else if (points >= 21)
+            result.setText(getResources().getString(R.string.symptoms_ocd_yes));
+        retry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Ocd.class)));
     }
 }

@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.notes.NotesListActivity;
 
 import java.util.Locale;
 

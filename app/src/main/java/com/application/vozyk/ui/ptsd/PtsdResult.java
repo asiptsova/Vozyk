@@ -20,22 +20,17 @@ public class PtsdResult extends AppCompatActivity {
         setContentView(R.layout.activity_ptsd_results_2);
         getSupportActionBar().hide();
 
-        TextView mResults = findViewById(R.id.resultP);
-        Button mRetry = findViewById(R.id.retryP);
+        TextView results = findViewById(R.id.resultP);
+        Button retry = findViewById(R.id.retryP);
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(v -> startActivity(new Intent(this, QuizActivity.class)));
-        Bundle b = getIntent().getExtras();
-        int score = b.getInt("score");
+        int score = getIntent().getExtras().getInt("score");
 
-        if (score >= 3){
-            mResults.setText(getResources().getString(R.string.symptoms_ptsd_yes));
-        } else {
-            mResults.setText(getResources().getString(R.string.symptoms_ptsd_no));
-        }
+        if (score >= 3)
+            results.setText(getResources().getString(R.string.symptoms_ptsd_yes));
+         else
+            results.setText(getResources().getString(R.string.symptoms_ptsd_no));
 
-        mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), Ptsd.class);
-            startActivity(i);
-        });
+        retry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Ptsd.class)));
     }
 }

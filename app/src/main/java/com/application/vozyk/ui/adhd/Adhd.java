@@ -10,17 +10,11 @@ import com.application.vozyk.R;
 
 public class Adhd extends AppCompatActivity {
 
-    private TextView mQuesView;
-    private Button mChoiceA;
-    private Button mChoiceB;
-    private Button mChoiceC;
-    private Button mChoiceD;
-    private Button mChoiceE;
-    private int mPoint = 0;
-    private int mQuesNumber = 0;
-    public  String[] mQues;
-
-    private  String[][] mChoices;
+    private TextView quesView;
+    private Button choiceA, choiceB, choiceC, choiceD, choiceE;
+    private int point = 0, number = 0;
+    public  String[] ques;
+    private  String[][] choices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +22,7 @@ public class Adhd extends AppCompatActivity {
         setContentView(R.layout.activity_adhd);
         getSupportActionBar().hide();
 
-        mQues =new String[] {
+        ques =new String[] {
                 getResources().getString(R.string.adhd1),
                 getResources().getString(R.string.adhd2),
                 getResources().getString(R.string.adhd3),
@@ -37,7 +31,7 @@ public class Adhd extends AppCompatActivity {
                 getResources().getString(R.string.adhd6),
         };
 
-        mChoices= new String[][]{
+        choices = new String[][]{
                 {getResources().getString(R.string.never),getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often),getResources().getString(R.string.very_often)},
                 {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
                 {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes), getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
@@ -46,106 +40,101 @@ public class Adhd extends AppCompatActivity {
                 {getResources().getString(R.string.never), getResources().getString(R.string.rarely), getResources().getString(R.string.sometimes),getResources().getString(R.string.often), getResources().getString(R.string.very_often)},
         };
 
-        mQuesView = findViewById(R.id.questions);
-        mChoiceA = findViewById(R.id.choiceA);
-        mChoiceB = findViewById(R.id.choiceB);
-        mChoiceC = findViewById(R.id.choiceC);
-        mChoiceD = findViewById(R.id.choiceD);
-        mChoiceE = findViewById(R.id.choiceE);
+        quesView = findViewById(R.id.questions);
+        choiceA = findViewById(R.id.choiceA);
+        choiceB = findViewById(R.id.choiceB);
+        choiceC = findViewById(R.id.choiceC);
+        choiceD = findViewById(R.id.choiceD);
+        choiceE = findViewById(R.id.choiceE);
 
         updateQuestion();
 
-        mChoiceA.setOnClickListener(view -> {
-            if (mQuesNumber == getLength()){
+        choiceA.setOnClickListener(view -> {
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
-        mChoiceB.setOnClickListener(view -> {
-            mPoint = mPoint + 1;
-            if (mQuesNumber == getLength()){
+        choiceB.setOnClickListener(view -> {
+            point = point + 1;
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
-        mChoiceC.setOnClickListener(view -> {
-            mPoint = mPoint + 2;
-            if (mQuesNumber == getLength()){
+        choiceC.setOnClickListener(view -> {
+            point = point + 2;
+            if (number == getLength())
                 updateResult();
-            } else {
+            else
                 updateQuestion();
-            }
         });
 
-        mChoiceD.setOnClickListener(view -> {
-            mPoint = mPoint + 3;
-            if (mQuesNumber == getLength()){
+        choiceD.setOnClickListener(view -> {
+            point = point + 3;
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
-        mChoiceE.setOnClickListener(view -> {
-            mPoint = mPoint + 4;
-            if (mQuesNumber == getLength()){
+        choiceE.setOnClickListener(view -> {
+            point = point + 4;
+            if (number == getLength())
                 updateResult();
-            } else {
+             else
                 updateQuestion();
-            }
         });
 
     }
 
     private void updateQuestion(){
-        mQuesView.setText(getQuestion(mQuesNumber));
-        mChoiceA.setText(getChoiceA(mQuesNumber));
-        mChoiceB.setText(getChoiceB(mQuesNumber));
-        mChoiceC.setText(getChoiceC(mQuesNumber));
-        mChoiceD.setText(getChoiceD(mQuesNumber));
-        mChoiceE.setText(getChoiceE(mQuesNumber));
+        quesView.setText(getQuestion(number));
+        choiceA.setText(getChoiceA(number));
+        choiceB.setText(getChoiceB(number));
+        choiceC.setText(getChoiceC(number));
+        choiceD.setText(getChoiceD(number));
+        choiceE.setText(getChoiceE(number));
 
-        mQuesNumber++;
+        number++;
     }
 
     private void updateResult(){
         Intent i = new Intent(getApplicationContext(), AdhdResult.class);
         Bundle b = new Bundle();
-        b.putInt("points",mPoint);
+        b.putInt("points", point);
         i.putExtras(b);
         Adhd.this.finish();
         startActivity(i);
     }
     public String getQuestion(int i){
-        return mQues[i];
+        return ques[i];
     }
 
 
     public String getChoiceA(int i){
-        return mChoices[i][0];
+        return choices[i][0];
     }
 
     public String getChoiceB(int i){
-        return mChoices[i][1];
+        return choices[i][1];
     }
 
     public String getChoiceC(int i){
-        return mChoices[i][2];
+        return choices[i][2];
     }
 
     public String getChoiceD(int i){
-        return mChoices[i][3];
+        return choices[i][3];
     }
 
     public String getChoiceE(int i){
-        return mChoices[i][4];
+        return choices[i][4];
     }
 
     public int getLength(){
-        return mQues.length;
+        return ques.length;
     }
 }

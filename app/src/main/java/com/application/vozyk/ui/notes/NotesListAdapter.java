@@ -76,11 +76,10 @@ class NotesListAdapter extends RecyclerView.Adapter<NotesListAdapter.ViewHolder>
     }
 
     void sortList(boolean sortAlphabetical) {
-        if (sortAlphabetical) {
+        if (sortAlphabetical)
             sortAlphabetical(filesList);
-        } else {
+         else
             sortDate(filesList);
-        }
         DiffUtil.calculateDiff(new NotesDiffCallback(fullList, filesList)).dispatchUpdatesTo(this);
         fullList = new ArrayList<>(filesList);
     }

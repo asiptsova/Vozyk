@@ -24,139 +24,141 @@ import com.application.vozyk.R;
 import java.util.Locale;
 
 public class Meditate extends Fragment {
-    MediaPlayer mySong;
-    private EditText mEditTextInput;
-    private TextView mTextViewCountDown;
-    private Button mButtonSet;
-    private Button mButtonStartPause;
-    private Button mButtonReset;
-    private CountDownTimer mCountDownTimer;
-    private boolean mTimerRunning;
-    private long mStartTimeInMillis;
-    private long mTimeLeftInMillis;
-    private long mEndTime;
+    MediaPlayer meditateSound;
+    private EditText timeMeditate;
+    private TextView countDown;
+    private Button set, startPause, reset;
+    private CountDownTimer countDownTimer;
+    private boolean timerRunning;
+    private long startTimeInMillis, timeLeftInMillis, endTime;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.activity_meditate, container, false);
-        mEditTextInput = root.findViewById(R.id.edit_text_input);
-        mTextViewCountDown = root.findViewById(R.id.tv_countdown);
-        mButtonSet = root.findViewById(R.id.button_set);
-        mButtonStartPause = root.findViewById(R.id.button_start_pause);
-        mButtonReset = root.findViewById(R.id.button_reset);
-        mySong =MediaPlayer.create(getContext(), R.raw.meditationmusic);
-        mButtonSet.setOnClickListener(v -> {
-            String input = mEditTextInput.getText().toString();
+        timeMeditate = root.findViewById(R.id.edit_text_input);
+        countDown = root.findViewById(R.id.tv_countdown);
+        set = root.findViewById(R.id.button_set);
+        startPause = root.findViewById(R.id.button_start_pause);
+        reset = root.findViewById(R.id.button_reset);
+        meditateSound = MediaPlayer.create(getContext(), R.raw.meditationmusic);
+        set.setOnClickListener(v -> {
+            String input = timeMeditate.getText().toString();
             if (input.length() == 0) {
                 Toast.makeText(getContext(), getResources().getString(R.string.empty_field), Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            if(Long.parseLong(input)<5||Long.parseLong(input)>30){
+            if (Long.parseLong(input) < 5 || Long.parseLong(input) > 30) {
                 Toast.makeText(getContext(), getResources().getString(R.string.range), Toast.LENGTH_SHORT).show();
                 return;
             }
-            long millisInput = Long.parseLong(input) * 60000;
-            if (millisInput == 0) {
+            long millis = Long.parseLong(input) * 60000;
+            if (millis == 0) {
                 Toast.makeText(getContext(), getResources().getString(R.string.positive_number), Toast.LENGTH_SHORT).show();
                 return;
             }
-            setTime(millisInput);
-            mEditTextInput.setText("");
+            setTime(millis);
+            timeMeditate.setText("");
         });
-        mButtonStartPause.setOnClickListener(v -> {
-            if (mTimerRunning) {
-                mySong.pause();
+        startPause.setOnClickListener(v -> {
+            if (timerRunning) {
+                meditateSound.pause();
                 pauseTimer();
             } else {
-                mySong.start();
+                meditateSound.start();
                 startTimer();
             }
         });
-        mButtonReset.setOnClickListener(v -> resetTimer());
+        reset.setOnClickListener(v -> resetTimer());
         return root;
     }
 
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         try {
-            mySong.pause();
+            meditateSound.pause();
             pauseTimer();
+        } catch (Exception ignored) {
         }
-        catch(Exception ignored) {}
     }
+
     private void setTime(long milliseconds) {
-        mStartTimeInMillis = milliseconds;
+        startTimeInMillis = milliseconds;
         resetTimer();
         closeKeyboard();
     }
+
     private void startTimer() {
-        mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+        endTime = System.currentTimeMillis() + timeLeftInMillis;
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
+                timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
             }
+
             @Override
             public void onFinish() {
-                mTimerRunning = false;
+                timerRunning = false;
                 updateWatchInterface();
             }
         }.start();
-        mTimerRunning = true;
+        timerRunning = true;
         updateWatchInterface();
     }
+
     private void pauseTimer() {
         try {
-            mCountDownTimer.cancel();
-            mTimerRunning = false;
+            countDownTimer.cancel();
+            timerRunning = false;
             updateWatchInterface();
+        } catch (Exception ignored) {
         }
-        catch(Exception ignored) {}
     }
+
     private void resetTimer() {
-        mTimeLeftInMillis = mStartTimeInMillis;
+        timeLeftInMillis = startTimeInMillis;
         updateCountDownText();
         updateWatchInterface();
     }
+
     private void updateCountDownText() {
-        int hours = (int) (mTimeLeftInMillis / 1000) / 3600;
-        int minutes = (int) ((mTimeLeftInMillis / 1000) % 3600) / 60;
-        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+        int hours = (int) (timeLeftInMillis / 1000) / 3600;
+        int minutes = (int) ((timeLeftInMillis / 1000) % 3600) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
         String timeLeftFormatted;
-        if (hours > 0) {
+        if (hours > 0)
             timeLeftFormatted = String.format(Locale.getDefault(),
                     "%d:%02d:%02d", hours, minutes, seconds);
-        } else {
+        else
             timeLeftFormatted = String.format(Locale.getDefault(),
                     "%02d:%02d", minutes, seconds);
-        }
-        mTextViewCountDown.setText(timeLeftFormatted);
+        countDown.setText(timeLeftFormatted);
     }
+
     private void updateWatchInterface() {
-        if (mTimerRunning) {
-            mEditTextInput.setVisibility(View.INVISIBLE);
-            mButtonSet.setVisibility(View.INVISIBLE);
-            mButtonReset.setVisibility(View.INVISIBLE);
-            mButtonStartPause.setText(getResources().getString(R.string.pause));
+        if (timerRunning) {
+            timeMeditate.setVisibility(View.INVISIBLE);
+            set.setVisibility(View.INVISIBLE);
+            reset.setVisibility(View.INVISIBLE);
+            startPause.setText(getResources().getString(R.string.pause));
         } else {
-            mEditTextInput.setVisibility(View.VISIBLE);
-            mButtonSet.setVisibility(View.VISIBLE);
-            mButtonStartPause.setText(getResources().getString(R.string.start));
-            if (mTimeLeftInMillis < 1000) {
-                mButtonStartPause.setVisibility(View.INVISIBLE);
-            } else {
-                mButtonStartPause.setVisibility(View.VISIBLE);
-            }
-            if (mTimeLeftInMillis < mStartTimeInMillis) {
-                mButtonReset.setVisibility(View.VISIBLE);
-            } else {
-                mButtonReset.setVisibility(View.INVISIBLE);
-            }
+            timeMeditate.setVisibility(View.VISIBLE);
+            set.setVisibility(View.VISIBLE);
+            startPause.setText(getResources().getString(R.string.start));
+            if (timeLeftInMillis < 1000)
+                startPause.setVisibility(View.INVISIBLE);
+            else
+                startPause.setVisibility(View.VISIBLE);
+            if (timeLeftInMillis < startTimeInMillis)
+                reset.setVisibility(View.VISIBLE);
+            else
+                reset.setVisibility(View.INVISIBLE);
         }
     }
+
     public void closeKeyboard() {
         View view = getActivity().getCurrentFocus();
         if (view != null) {
@@ -164,40 +166,40 @@ public class Meditate extends Fragment {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
     @Override
     public void onStop() {
         super.onStop();
         SharedPreferences prefs = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putLong("startTimeInMillis", mStartTimeInMillis);
-        editor.putLong("millisLeft", mTimeLeftInMillis);
-        editor.putBoolean("timerRunning", mTimerRunning);
-        editor.putLong("endTime", mEndTime);
+        editor.putLong("startTimeInMillis", startTimeInMillis);
+        editor.putLong("millisLeft", timeLeftInMillis);
+        editor.putBoolean("timerRunning", timerRunning);
+        editor.putLong("endTime", endTime);
         editor.apply();
-        if (mCountDownTimer != null) {
-            mCountDownTimer.cancel();
-        }
+        if (countDownTimer != null)
+            countDownTimer.cancel();
     }
+
     @Override
     public void onStart() {
         super.onStart();
         SharedPreferences prefs = getActivity().getSharedPreferences("prefs", MODE_PRIVATE);
-        mStartTimeInMillis = prefs.getLong("startTimeInMillis", 600000);
-        mTimeLeftInMillis = prefs.getLong("millisLeft", mStartTimeInMillis);
-        mTimerRunning = prefs.getBoolean("timerRunning", false);
+        startTimeInMillis = prefs.getLong("startTimeInMillis", 600000);
+        timeLeftInMillis = prefs.getLong("millisLeft", startTimeInMillis);
+        timerRunning = prefs.getBoolean("timerRunning", false);
         updateCountDownText();
         updateWatchInterface();
-        if (mTimerRunning) {
-            mEndTime = prefs.getLong("endTime", 0);
-            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
-            if (mTimeLeftInMillis < 0) {
-                mTimeLeftInMillis = 0;
-                mTimerRunning = false;
+        if (timerRunning) {
+            endTime = prefs.getLong("endTime", 0);
+            timeLeftInMillis = endTime - System.currentTimeMillis();
+            if (timeLeftInMillis < 0) {
+                timeLeftInMillis = 0;
+                timerRunning = false;
                 updateCountDownText();
                 updateWatchInterface();
-            } else {
+            } else
                 startTimer();
-            }
         }
     }
 }

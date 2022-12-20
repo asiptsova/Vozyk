@@ -23,7 +23,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,13 +33,11 @@ import java.io.IOException;
 public class Account extends AppCompatActivity {
 
     private TextView name;
-    private FirebaseUser user;
     private ImageView profilePic;
     Uri imageUri;
 
     public FirebaseFirestore myDatabase;
     private static final int PICK_IMAGE = 1;
-    String nameStatic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +48,12 @@ public class Account extends AppCompatActivity {
         ImageButton settings = findViewById(R.id.settings);
         profilePic = findViewById(R.id.imagetoupload);
         myDatabase = FirebaseFirestore.getInstance();
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseDatabase.getInstance().getReference("Users").orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {
-                    nameStatic = String.valueOf(ds.child("name").getValue());
+                  String nameStatic = String.valueOf(ds.child("name").getValue());
                     name.setText(nameStatic);
                 }
             }
@@ -66,13 +63,8 @@ public class Account extends AppCompatActivity {
 
             }
         });
-        name.setText(nameStatic);
-        settings.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Settings.class);
-            startActivity(intent);
-        });
+        settings.setOnClickListener(v -> startActivity( new Intent(this, Settings.class)));
 
-        this.updateLabels();
         if (user.getPhotoUrl() != null) {
             Glide.with(this).load(user.getPhotoUrl()).into(profilePic);
         }
@@ -85,20 +77,6 @@ public class Account extends AppCompatActivity {
         });
     }
 
-
-    public void updateLabels() {
-        if (user != null) {
-            String uid = user.getUid();
-            myDatabase.collection("users").document(uid).get().addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    String name = documentSnapshot.getString("Name");
-                    this.name.setText(name);
-
-                }
-            });
-        }
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

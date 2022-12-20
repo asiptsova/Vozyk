@@ -38,21 +38,9 @@ public class Settings extends AppCompatActivity {
             AlertDialog a = b.create();
             a.show();
         });
-        deleteAccount.setOnClickListener(v -> {
-            Intent intent = new Intent(this, DeleteAccount.class);
-            startActivity(intent);
-        });
-        changePassword.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ChangePassword.class);
-            startActivity(intent);
-        });
-        changeEmail.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ChangeEmail.class);
-            startActivity(intent);
-        });
-        editLanguage.setOnClickListener(v -> {
-            Intent intent = new Intent(this, ChangeLanguage.class);
-            startActivity(intent);
-        });
+        deleteAccount.setOnClickListener(v -> startActivity(new Intent(this, DeleteAccount.class)));
+        changePassword.setOnClickListener(v -> startActivity(new Intent(this, ChangePassword.class)));
+        changeEmail.setOnClickListener(v -> startActivity(new Intent(this, ChangeEmail.class)));
+        editLanguage.setOnClickListener(v -> startActivity(new Intent(this, ChangeLanguage.class)));
     }
 }

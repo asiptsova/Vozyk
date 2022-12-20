@@ -19,23 +19,17 @@ public class AdhdResult extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        TextView mResult = findViewById(R.id.results);
-        Button mRetry =findViewById(R.id.redo);
+        TextView result = findViewById(R.id.results);
+        Button retry =findViewById(R.id.redo);
         ImageView  back = findViewById(R.id.back);
         back.setOnClickListener(v -> startActivity(new Intent(this, QuizActivity.class)));
         Bundle b = getIntent().getExtras();
         int points = b.getInt("points");
 
-        if (points >= 0 && points < 4){
-            mResult.setText(getResources().getString(R.string.symptoms_ADHD_no));
-        }
-        if (points >= 4){
-            mResult.setText(getResources().getString(R.string.symptoms_ADHD_no));
-        }
-
-        mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), Adhd.class);
-            startActivity(i);
-        });
+        if (points >= 0 && points < 4)
+            result.setText(getResources().getString(R.string.symptoms_ADHD_no));
+        else if (points >= 4)
+            result.setText(getResources().getString(R.string.symptoms_ADHD_no));
+        retry.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Adhd.class)));
     }
 }

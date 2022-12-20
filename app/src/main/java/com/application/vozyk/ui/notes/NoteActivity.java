@@ -90,9 +90,8 @@ public class NoteActivity extends AppCompatActivity {
 
     @Override
     public void onPause() {
-        if (!isChangingConfigurations()) {
+        if (!isChangingConfigurations())
             saveFile();
-        }
         if (dialog != null && dialog.isShowing())
             dialog.dismiss();
         dialog = null;

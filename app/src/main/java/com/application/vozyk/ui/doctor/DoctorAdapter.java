@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class DocCustomAdapter extends ArrayAdapter<DoctorDataModel> {
+public class DoctorAdapter extends ArrayAdapter<DoctorDataModel> {
 
     private final FirebaseUser user;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -28,7 +28,7 @@ public class DocCustomAdapter extends ArrayAdapter<DoctorDataModel> {
     private final ArrayList<DoctorDataModel> arrayList;
 
 
-    public DocCustomAdapter(@NonNull Context context, ArrayList<DoctorDataModel> arrayList) {
+    public DoctorAdapter(@NonNull Context context, ArrayList<DoctorDataModel> arrayList) {
         super(context, 0, arrayList);
         this.arrayList = arrayList;
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -39,30 +39,30 @@ public class DocCustomAdapter extends ArrayAdapter<DoctorDataModel> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View currentItemView = convertView;
-        if (currentItemView == null) {
-            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.doctor_custom_list_view, parent, false);
+        View itemView = convertView;
+        if (itemView == null) {
+            itemView = LayoutInflater.from(getContext()).inflate(R.layout.doctor_custom_list_view, parent, false);
         }
-        TextView doc_name = currentItemView.findViewById(R.id.tv_doc_name);
-        TextView doc_reason = currentItemView.findViewById(R.id.tv_doc_reason);
-        TextView doc_time = currentItemView.findViewById(R.id.tv_doc_time);
-        ImageView delete_btn = currentItemView.findViewById(R.id.doc_delete_btn);
+        TextView docName = itemView.findViewById(R.id.tv_doc_name);
+        TextView docReason = itemView.findViewById(R.id.tv_doc_reason);
+        TextView docTime = itemView.findViewById(R.id.tv_doc_time);
+        ImageView deleteBtn = itemView.findViewById(R.id.doc_delete_btn);
 
         DoctorDataModel doctorDataModel = arrayList.get(position);
 
-        doc_name.setText(doctorDataModel.getName());
-        doc_reason.setText(doctorDataModel.getReason());
+        docName.setText(doctorDataModel.getName());
+        docReason.setText(doctorDataModel.getReason());
         String result = doctorDataModel.getDate() + "/" + (doctorDataModel.getMonth()) + "/" + doctorDataModel.getYear();
-        doc_time.setText(result);
+        docTime.setText(result);
 
 
-        delete_btn.setOnClickListener(view -> {
+        deleteBtn.setOnClickListener(view -> {
             DoctorDataModel ddm = arrayList.get(position);
             myRef.child("AppointmentRecord").child(user.getUid()).child(ddm.key).removeValue();
             Toast.makeText(getContext(), "Deleted", Toast.LENGTH_SHORT).show();
         });
 
 
-        return currentItemView;
+        return itemView;
     }
 }

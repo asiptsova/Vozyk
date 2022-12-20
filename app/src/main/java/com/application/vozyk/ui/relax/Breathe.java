@@ -16,10 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.application.vozyk.R;
 
 public class Breathe extends Fragment {
-    private Spinner inhale;
-    private Spinner hold;
-    private Spinner exhale;
-    private Spinner breaths;
+    private Spinner inhale,hold,exhale,breath;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,10 +39,10 @@ public class Breathe extends Fragment {
         ArrayAdapter<String> exhaleAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, exhaleList);
         exhale.setAdapter(exhaleAdapter);
 
-        breaths = root.findViewById(R.id.breaths);
+        breath = root.findViewById(R.id.breaths);
         String[] breathsList = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10"};
         ArrayAdapter<String> breathsAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, breathsList);
-        breaths.setAdapter(breathsAdapter);
+        breath.setAdapter(breathsAdapter);
 
         Button startButton = root.findViewById(R.id.startButton);
         startButton.setOnClickListener(v -> openBreathingExerciseActivity());
@@ -57,7 +54,7 @@ public class Breathe extends Fragment {
         intent.putExtra("inhale", Integer.parseInt(inhale.getSelectedItem().toString()));
         intent.putExtra("hold", Integer.parseInt(hold.getSelectedItem().toString()));
         intent.putExtra("exhale", Integer.parseInt(exhale.getSelectedItem().toString()));
-        intent.putExtra("breaths", Integer.parseInt(breaths.getSelectedItem().toString()));
+        intent.putExtra("breaths", Integer.parseInt(breath.getSelectedItem().toString()));
         startActivity(intent);
     }
 }

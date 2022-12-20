@@ -321,4 +321,9 @@
     <string name="_00_00">00:00</string>
     <string name="_1">1</string>
     <string name="submit_here">Ok</string>
+    <string name="slash">/</string>
+    <string name="mark_completed">Mark As Completed</string>
+    <string name="cancel_task">Cancel Task</string>
+    <string name="task_name_error">Please specify task name</string>
+    <string name="added_task">Successfully Added Task</string>
 </resources>

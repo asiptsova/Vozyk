@@ -2,41 +2,34 @@ package com.application.vozyk.ui.ToDoList;
 
 
 public class Task {
-    private String name;
-    private String start_date;
-    private String end_date;
+    private String name,startDate,endDate;
     private static int taskIdCounter;
     private boolean completed;
     private String taskId;
 
-    public Task(String name, String start_date, String end_date) {
+    public Task(String name, String startDate, String endDate) {
         this.name = name;
-        if (start_date != null) {
-            this.start_date = start_date;
-        }
-        if (end_date != null) {
-            this.end_date = end_date;
-        }
-
+        if (startDate != null)
+            this.startDate = startDate;
+        if (endDate != null)
+            this.endDate = endDate;
         completed = false;
         taskIdCounter ++;
         taskId = Integer.toString(taskIdCounter);
     }
 
-    public Task() {
-
-    }
+    public Task() {}
 
     public String getTaskName() {
         return this.name;
     }
 
-    public String getEnd_date() {
-        return this.end_date;
+    public String getEndDate() {
+        return this.endDate;
     }
 
-    public String getStart_date() {
-        return this.start_date;
+    public String getStartDate() {
+        return this.startDate;
     }
 
     public boolean getCompleted() {
@@ -51,12 +44,12 @@ public class Task {
         this.name = name;
     }
 
-    public void setStart_date(String date) {
-        this.start_date = date;
+    public void setStartDate(String date) {
+        this.startDate = date;
     }
 
-    public void setEnd_date(String date) {
-        this.end_date = date;
+    public void setEndDate(String date) {
+        this.endDate = date;
     }
 
     public void setCompleted() {
