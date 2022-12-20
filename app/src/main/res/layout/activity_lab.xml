@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Hex"
-    tools:context=".ui.lab.labActivity">
+    tools:context=".ui.lab.Lab">
 
     <RelativeLayout
         android:layout_width="match_parent"

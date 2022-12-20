@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.lab.labActivity;
-import com.application.vozyk.ui.doctor.DoctorActivity;
+import com.application.vozyk.ui.lab.Lab;
+import com.application.vozyk.ui.doctor.Doctor;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +27,7 @@ import java.util.Objects;
 
 
 public class MedsPills extends AppCompatActivity {
-    private ArrayList<MedicineRecordHandler> arrayList;
+    private ArrayList<MedsRecordHandler> arrayList;
     private CustomAdapterNew c;
 
     @Override
@@ -47,9 +47,9 @@ public class MedsPills extends AppCompatActivity {
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                MedicineRecordHandler medicineRecordHandler = snapshot.getValue(MedicineRecordHandler.class);
-                medicineRecordHandler.key = snapshot.getKey();
-                arrayList.add(medicineRecordHandler);
+                MedsRecordHandler medsRecordHandler = snapshot.getValue(MedsRecordHandler.class);
+                medsRecordHandler.key = snapshot.getKey();
+                arrayList.add(medsRecordHandler);
                 emptyImage();
                 c.notifyDataSetChanged();
             }
@@ -62,11 +62,11 @@ public class MedsPills extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                MedicineRecordHandler medicineRecordHandler = snapshot.getValue(MedicineRecordHandler.class);
-                medicineRecordHandler.key = snapshot.getKey();
+                MedsRecordHandler medsRecordHandler = snapshot.getValue(MedsRecordHandler.class);
+                medsRecordHandler.key = snapshot.getKey();
 
                 for (int i = 0; i < arrayList.size(); i++) {
-                    if (medicineRecordHandler.key.equals(arrayList.get(i).key)) {
+                    if (medsRecordHandler.key.equals(arrayList.get(i).key)) {
                         arrayList.remove(i);
                     }
                 }
@@ -87,16 +87,16 @@ public class MedsPills extends AppCompatActivity {
 
         listview.setAdapter(c);
 
-        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(MedsPills.this, HomeActivity.class).putExtra("Id", user.getUid())
+        findViewById(R.id.add_btn).setOnClickListener(view -> startActivity(new Intent(MedsPills.this, MedsAdd.class).putExtra("Id", user.getUid())
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
         ));
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
                 case R.id.nav_doctor:
-                    startActivity(new Intent(getApplicationContext(), DoctorActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Doctor.class));
                     break;
                 case R.id.nav_lab:
-                    startActivity(new Intent(getApplicationContext(), labActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Lab.class));
                     break;
                 case R.id.nav_home:
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));

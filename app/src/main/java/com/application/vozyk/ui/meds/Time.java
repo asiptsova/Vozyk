@@ -1,7 +1,7 @@
 package com.application.vozyk.ui.meds;
 
 
-public class TIME {
+public class Time {
     public static String MORNING = "0800";
     public static String AFTERNOON = "1400";
     public static String NIGHT = "2000";

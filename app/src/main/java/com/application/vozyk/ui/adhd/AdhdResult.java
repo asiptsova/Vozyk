@@ -3,16 +3,14 @@ package com.application.vozyk.ui.adhd;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.quiz.QuizActivity;
 
-public class adhdResultActivity extends AppCompatActivity {
+public class AdhdResult extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +34,7 @@ public class adhdResultActivity extends AppCompatActivity {
         }
 
         mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), adhdActivity.class);
+            Intent i = new Intent(getApplicationContext(), Adhd.class);
             startActivity(i);
         });
     }

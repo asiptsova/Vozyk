@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Simplify_the_time {
+public class TimeMood {
     public static String getting_the_time(String current_time){
         String[] split_for_current_time = current_time.split("_");
         return "Date: ".concat(return_month(split_for_current_time[2])).concat(" ").concat(split_for_current_time[1]).concat(",").concat(" ").concat(return_year(split_for_current_time[3])).concat(return_time(split_for_current_time[0]));

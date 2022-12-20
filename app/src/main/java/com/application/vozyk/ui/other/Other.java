@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.application.vozyk.ui.about.About_us;
+import com.application.vozyk.ui.about.AboutUs;
 import com.application.vozyk.ui.account.Account;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.notes.NotesListActivity;
@@ -31,12 +31,12 @@ public class Other extends Fragment {
             startActivity(intent);
         });
         about.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), About_us.class);
+            Intent intent = new Intent(getContext(), AboutUs.class);
             startActivity(intent);
         });
 
         about.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), About_us.class);
+            Intent intent = new Intent(getContext(), AboutUs.class);
             startActivity(intent);
         });
         quiz.setOnClickListener(v -> {

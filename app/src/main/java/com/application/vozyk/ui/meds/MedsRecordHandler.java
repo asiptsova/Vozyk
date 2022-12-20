@@ -2,14 +2,14 @@ package com.application.vozyk.ui.meds;
 
 import java.util.ArrayList;
 
-public class MedicineRecordHandler {
+public class MedsRecordHandler {
     public String key;
     String name;
     String notes;
     Boolean beforeFood;
-    ArrayList<TIME.AlarmBundle> reminder;
+    ArrayList<Time.AlarmBundle> reminder;
 
-    public MedicineRecordHandler(String name, String notes, Boolean beforeFood, ArrayList<TIME.AlarmBundle> reminder) {
+    public MedsRecordHandler(String name, String notes, Boolean beforeFood, ArrayList<Time.AlarmBundle> reminder) {
         this.name = name;
         this.notes = notes;
         this.beforeFood = beforeFood;
@@ -17,7 +17,7 @@ public class MedicineRecordHandler {
 
     }
 
-    public MedicineRecordHandler() {
+    public MedsRecordHandler() {
     }
 
     public String getName() {
@@ -44,11 +44,11 @@ public class MedicineRecordHandler {
         this.beforeFood = beforeFood;
     }
 
-    public ArrayList<TIME.AlarmBundle> getReminder() {
+    public ArrayList<Time.AlarmBundle> getReminder() {
         return reminder;
     }
 
-    public void setReminder(ArrayList<TIME.AlarmBundle> reminder) {
+    public void setReminder(ArrayList<Time.AlarmBundle> reminder) {
         this.reminder = reminder;
     }
 

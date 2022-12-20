@@ -10,7 +10,7 @@ import android.content.Intent;
 import com.application.vozyk.R;
 
 
-public class ptsdActivity extends AppCompatActivity {
+public class PtsdActivity extends AppCompatActivity {
 
     private TextView mQuesView;
     private int mQuesNum=0;
@@ -62,11 +62,11 @@ public class ptsdActivity extends AppCompatActivity {
     }
 
     private void updateResult(){
-        Intent i = new Intent(getApplicationContext(), ptsdResultActivity.class);
+        Intent i = new Intent(getApplicationContext(), PtsdResult.class);
         Bundle b = new Bundle();
         b.putInt("score",mScore);
         i.putExtras(b);
-        ptsdActivity.this.finish();
+        PtsdActivity.this.finish();
         startActivity(i);
     }
 

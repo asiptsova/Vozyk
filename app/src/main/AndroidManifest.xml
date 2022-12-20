@@ -46,7 +46,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.about.About_us"
+            android:name=".ui.about.AboutUs"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -89,70 +89,70 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.meds.HomeActivity"
+            android:name=".ui.meds.MedsAdd"
             android:exported="true" />
         <activity
-            android:name=".ui.meds.UpdateActivity"
+            android:name=".ui.meds.UpdateMeds"
             android:exported="true" />
         <activity
-            android:name=".ui.meds.TimeChangeActivity"
+            android:name=".ui.meds.TimeChange"
             android:exported="true" />
         <activity
             android:name=".ui.quiz.QuizActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.adhd.adhdActivity"
+            android:name=".ui.adhd.Adhd"
             android:exported="true" />
         <activity
-            android:name=".ui.adhd.adhdResultActivity"
+            android:name=".ui.adhd.AdhdResult"
             android:exported="true" />
         <activity
-            android:name=".ui.anxiety.anxietyResultActivity"
+            android:name=".ui.anxiety.AnxietyResult"
             android:exported="true" />
         <activity
-            android:name=".ui.anxiety.anxietyActivity"
+            android:name=".ui.anxiety.Anxiety"
             android:exported="true" />
         <activity
-            android:name=".ui.bipolar.bipolarActivity"
+            android:name=".ui.bipolar.Bipolar"
             android:exported="true" />
         <activity
-            android:name=".ui.bipolar.bipolarResultActivity"
+            android:name=".ui.bipolar.bipolarResult"
             android:exported="true" />
         <activity
-            android:name=".ui.depression.depressionActivity"
+            android:name=".ui.depression.Depression"
             android:exported="true" />
         <activity
-            android:name=".ui.depression.depressionResultActivity"
+            android:name=".ui.depression.DepressionResult"
             android:exported="true" />
         <activity
-            android:name=".ui.ocd.ocdActivity"
+            android:name=".ui.ocd.Ocd"
             android:exported="true" />
         <activity
-            android:name=".ui.ocd.ocdResultActivity"
+            android:name=".ui.ocd.OcdResult"
             android:exported="true" />
         <activity
-            android:name=".ui.doctor.DoctorActivity"
+            android:name=".ui.doctor.Doctor"
             android:exported="true" />
         <activity
-            android:name=".ui.doctor.DoctorAddActivity"
+            android:name=".ui.doctor.DoctorAdd"
             android:exported="true" />
         <activity
             android:name=".ui.settings.Settings"
             android:exported="true" />
         <activity
-            android:name=".ui.lab.labActivity"
+            android:name=".ui.lab.Lab"
             android:exported="true" />
         <activity
-            android:name=".ui.lab.labAddActivity"
+            android:name=".ui.lab.LabAdd"
             android:exported="true" />
         <activity
-            android:name=".ui.ptsd.ptsdActivity"
+            android:name=".ui.ptsd.PtsdActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.ptsd.ptsd"
+            android:name=".ui.ptsd.Ptsd"
             android:exported="true" />
         <activity
-            android:name=".ui.ptsd.ptsdResultActivity"
+            android:name=".ui.ptsd.PtsdResult"
             android:exported="true" />
         <activity
             android:name=".ui.ToDoList.ToDoListActivity"
@@ -164,7 +164,7 @@
             android:name=".ui.notes.NotesListActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.relax.BreathingExerciseActivity"
+            android:name=".ui.relax.BreathingExercise"
             android:exported="true" />
 
 

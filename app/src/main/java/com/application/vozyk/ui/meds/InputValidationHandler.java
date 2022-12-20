@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class InputValidationHandler {
 
-    public static boolean inputValidation(String medicineName, ArrayList<TIME.AlarmBundle> time) {
+    public static boolean inputValidation(String medicineName, ArrayList<Time.AlarmBundle> time) {
         return !medicineName.isEmpty() && !time.isEmpty() && medicineName.length() <= 15;
     }
 

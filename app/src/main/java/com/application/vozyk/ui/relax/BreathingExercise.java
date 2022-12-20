@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.os.CountDownTimer;
 
-public class BreathingExerciseActivity extends AppCompatActivity {
+public class BreathingExercise extends AppCompatActivity {
 
     private final int[] timers = new int[4];
     private  String[] instructionList;

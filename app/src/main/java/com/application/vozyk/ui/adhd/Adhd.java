@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.application.vozyk.R;
 
 
-public class adhdActivity extends AppCompatActivity {
+public class Adhd extends AppCompatActivity {
 
     private TextView mQuesView;
     private Button mChoiceA;
@@ -113,11 +113,11 @@ public class adhdActivity extends AppCompatActivity {
     }
 
     private void updateResult(){
-        Intent i = new Intent(getApplicationContext(), adhdResultActivity.class);
+        Intent i = new Intent(getApplicationContext(), AdhdResult.class);
         Bundle b = new Bundle();
         b.putInt("points",mPoint);
         i.putExtras(b);
-        com.application.vozyk.ui.adhd.adhdActivity.this.finish();
+        Adhd.this.finish();
         startActivity(i);
     }
     public String getQuestion(int i){

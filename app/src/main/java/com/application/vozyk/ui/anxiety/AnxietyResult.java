@@ -9,7 +9,7 @@ import android.content.Intent;
 import com.application.vozyk.R;
 import com.application.vozyk.ui.quiz.QuizActivity;
 
-public class anxietyResultActivity extends AppCompatActivity {
+public class AnxietyResult extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class anxietyResultActivity extends AppCompatActivity {
         }
 
         mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), anxietyActivity.class);
+            Intent i = new Intent(getApplicationContext(), Anxiety.class);
             startActivity(i);
         });
     }

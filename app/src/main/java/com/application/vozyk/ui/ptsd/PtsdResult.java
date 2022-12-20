@@ -12,7 +12,7 @@ import com.application.vozyk.R;
 import com.application.vozyk.ui.quiz.QuizActivity;
 
 
-public class ptsdResultActivity extends AppCompatActivity {
+public class PtsdResult extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class ptsdResultActivity extends AppCompatActivity {
         }
 
         mRetry.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), ptsd.class);
+            Intent i = new Intent(getApplicationContext(), Ptsd.class);
             startActivity(i);
         });
     }

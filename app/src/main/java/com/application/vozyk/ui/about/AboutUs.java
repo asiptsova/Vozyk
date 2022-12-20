@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.application.vozyk.R;
 
-public class About_us extends AppCompatActivity {
+public class AboutUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

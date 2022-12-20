@@ -9,7 +9,7 @@ import android.content.Intent;
 import com.application.vozyk.R;
 
 
-public class ptsd extends AppCompatActivity {
+public class Ptsd extends AppCompatActivity {
 
 
     private int score;
@@ -24,16 +24,16 @@ public class ptsd extends AppCompatActivity {
         score = 0;
 
         yes_b.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), ptsdActivity.class);
+            Intent i = new Intent(getApplicationContext(), PtsdActivity.class);
             startActivity(i);
         });
 
         no_b.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), ptsdResultActivity.class);
+            Intent i = new Intent(getApplicationContext(), PtsdResult.class);
             Bundle b = new Bundle();
             b.putInt("score",score);
             i.putExtras(b);
-            ptsd.this.finish();
+            Ptsd.this.finish();
             startActivity(i);
         });
 

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.application.vozyk.R;
 
 
-public class bipolarActivity extends AppCompatActivity {
+public class Bipolar extends AppCompatActivity {
 
     private TextView mQuesView;
     private Button mChoiceA;
@@ -137,11 +137,11 @@ public class bipolarActivity extends AppCompatActivity {
     }
 
     private void updateResult(){
-        Intent i = new Intent(getApplicationContext(), bipolarResultActivity.class);
+        Intent i = new Intent(getApplicationContext(), bipolarResult.class);
         Bundle b = new Bundle();
         b.putInt("points",mPoint);
         i.putExtras(b);
-        bipolarActivity.this.finish();
+        Bipolar.this.finish();
         startActivity(i);
     }
 

@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.lab.labActivity;
-import com.application.vozyk.ui.doctor.DoctorActivity;
+import com.application.vozyk.ui.lab.Lab;
+import com.application.vozyk.ui.doctor.Doctor;
 
 public class MedsFragment extends Fragment {
 
@@ -20,8 +20,8 @@ public class MedsFragment extends Fragment {
             final View visits=root.findViewById(R.id.visits);
             final View labs=root.findViewById(R.id.labs);
             pills.setOnClickListener(v -> startActivity(new Intent(getContext(), MedsPills.class)));
-            visits.setOnClickListener(v -> startActivity(new Intent(getContext(), DoctorActivity.class)));
-            labs.setOnClickListener(v -> startActivity(new Intent(getContext(), labActivity.class)));
+            visits.setOnClickListener(v -> startActivity(new Intent(getContext(), Doctor.class)));
+            labs.setOnClickListener(v -> startActivity(new Intent(getContext(), Lab.class)));
             return root;
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Hex"
-    tools:context=".ui.doctor.DoctorAddActivity">
+    tools:context=".ui.doctor.DoctorAdd">
 
     <TextView
         android:id="@+id/tv_add_lab"

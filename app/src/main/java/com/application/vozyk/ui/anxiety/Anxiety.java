@@ -8,7 +8,7 @@ import android.content.Intent;
 import com.application.vozyk.R;
 
 
-public class anxietyActivity extends AppCompatActivity {
+public class Anxiety extends AppCompatActivity {
 
     private TextView mQuesView;
     private Button mChoice1;
@@ -105,11 +105,11 @@ public class anxietyActivity extends AppCompatActivity {
     }
 
     private void updateResult(){
-        Intent i = new Intent(getApplicationContext(), anxietyResultActivity.class);
+        Intent i = new Intent(getApplicationContext(), AnxietyResult.class);
         Bundle b = new Bundle();
         b.putInt("points",mPoint);
         i.putExtras(b);
-        anxietyActivity.this.finish();
+        Anxiety.this.finish();
         startActivity(i);
     }
     public String getQuestion(int i){

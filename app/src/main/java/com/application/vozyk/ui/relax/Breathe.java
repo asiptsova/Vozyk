@@ -53,7 +53,7 @@ public class Breathe extends Fragment {
     }
 
     public void openBreathingExerciseActivity() {
-        Intent intent = new Intent(getContext(), BreathingExerciseActivity.class);
+        Intent intent = new Intent(getContext(), BreathingExercise.class);
         intent.putExtra("inhale", Integer.parseInt(inhale.getSelectedItem().toString()));
         intent.putExtra("hold", Integer.parseInt(hold.getSelectedItem().toString()));
         intent.putExtra("exhale", Integer.parseInt(exhale.getSelectedItem().toString()));

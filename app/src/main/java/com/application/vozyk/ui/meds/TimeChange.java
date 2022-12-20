@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TimeChangeActivity extends AppCompatActivity {
+public class TimeChange extends AppCompatActivity {
 
 
     public static String timeTextView(int hour, int minute) {
@@ -48,9 +48,9 @@ public class TimeChangeActivity extends AppCompatActivity {
 
     public void getTime() {
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        TIME.MORNING = sharedPref.getString("MORNING", "");
-        TIME.AFTERNOON = sharedPref.getString("AFTERNOON", "");
-        TIME.NIGHT = sharedPref.getString("NIGHT", "");
+        Time.MORNING = sharedPref.getString("MORNING", "");
+        Time.AFTERNOON = sharedPref.getString("AFTERNOON", "");
+        Time.NIGHT = sharedPref.getString("NIGHT", "");
     }
 
     public void setTime(String time, int flag) {

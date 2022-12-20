@@ -1,11 +1,10 @@
-package com.application.vozyk.ui.lab;
+package com.application.vozyk.ui.doctor;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -22,57 +21,61 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+
 import java.util.Calendar;
 import java.util.Objects;
 
-public class labAddActivity extends AppCompatActivity {
-
-
-    private static TextView lab_date_view;
+public class DoctorAdd extends AppCompatActivity {
     private static final int[] arr = new int[3];
+    public static TextView date_view;
+    private String name;
+    private String reason;
+    private TextInputLayout doctor_name;
+    private TextInputLayout doctor_reason;
     private DatabaseReference mDatabase;
-    private TextInputLayout lab_doctor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lab_add);
-        lab_date_view = findViewById(R.id.tv_lab_date);
-        lab_doctor = findViewById(R.id.tv_lab_doctor);
-        Button lab_add_btn = findViewById(R.id.lab_add_btn);
+        setContentView(R.layout.activity_doctor_add);
+        date_view = findViewById(R.id.tv_lab_date);
+        doctor_name = findViewById(R.id.doctor_name);
+        doctor_reason = findViewById(R.id.reason);
+        Button doctor_add_btn = findViewById(R.id.add);
         getSupportActionBar().hide();
-
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("LabTestRecord").child(Objects.requireNonNull(user.getUid()));
-        AutoCompleteTextView textView = findViewById(R.id.lab_name_edit);
-        lab_add_btn.setOnClickListener(view -> {
-            String testName = textView.getText().toString();
-            String docName = lab_doctor.getEditText().getText().toString();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("AppointmentRecord").child(Objects.requireNonNull(user.getUid()));
 
-            if (inputValidation(testName, docName)) {
 
-                LabTestDataModel obj = new LabTestDataModel(arr[0], arr[1], arr[2], testName, docName);
-                mDatabase.child(obj.getTestName()).setValue(obj);
+        doctor_add_btn.setOnClickListener(view -> {
+            name = doctor_name.getEditText().getText().toString();
+            reason = doctor_reason.getEditText().getText().toString();
+
+            if (inputValidation(name, reason)) {
+                DoctorDataModel obj = new DoctorDataModel(name, reason, arr[0], arr[1], arr[2]);
+                mDatabase.child(obj.getName()).setValue(obj);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.added), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(labAddActivity.this, labActivity.class));
+                startActivity(new Intent(DoctorAdd.this, Doctor.class));
             } else {
-                InputValidationHandler.showDialog(labAddActivity.this);
+                InputValidationHandler.showDialog(DoctorAdd.this);
             }
-
         });
+
+
     }
 
-    public boolean inputValidation(String testName, String docName) {
-        if (testName.contains(".") || testName.contains("[") || testName.contains("]") || testName.contains("$") || testName.contains("#")) {
+    public boolean inputValidation(String name, String reason) {
+        if (name.contains(".") || name.contains("[") || name.contains("]") || name.contains("$") || name.contains("#")) {
             return false;
         }
-        if (docName.contains(".") || docName.contains("[") || docName.contains("]") || docName.contains("$") || docName.contains("#")) {
+        if (reason.contains(".") || reason.contains("[") || reason.contains("]") || reason.contains("$") || reason.contains("#")) {
             return false;
         }
 
-        return !testName.isEmpty() && !docName.isEmpty() && arr[0] != 0 && testName.length() < 25 && docName.length() < 40;
+        return !name.isEmpty() && !reason.isEmpty() && arr[0] != 0 && name.length() < 15 && reason.length() < 40;
     }
 
     public void showDatePickerDialog(View v) {
@@ -97,14 +100,12 @@ public class labAddActivity extends AppCompatActivity {
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
-
             String result = day + "/" + (month + 1) + "/" + year;
-            lab_date_view.setText(result);
+            date_view.setText(result);
             arr[0] = day;
             arr[1] = month + 1;
             arr[2] = year;
         }
 
     }
-
 }

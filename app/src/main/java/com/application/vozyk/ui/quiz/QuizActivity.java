@@ -12,12 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.adhd.adhdActivity;
-import com.application.vozyk.ui.anxiety.anxietyActivity;
-import com.application.vozyk.ui.bipolar.bipolarActivity;
-import com.application.vozyk.ui.depression.depressionActivity;
-import com.application.vozyk.ui.ocd.ocdActivity;
-import com.application.vozyk.ui.ptsd.ptsdActivity;
+import com.application.vozyk.ui.adhd.Adhd;
+import com.application.vozyk.ui.anxiety.Anxiety;
+import com.application.vozyk.ui.bipolar.Bipolar;
+import com.application.vozyk.ui.depression.Depression;
+import com.application.vozyk.ui.ocd.Ocd;
+import com.application.vozyk.ui.ptsd.PtsdActivity;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -59,32 +59,32 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void adhd_test(View view){
-        Intent i_adhd = new Intent(this, adhdActivity.class);
+        Intent i_adhd = new Intent(this, Adhd.class);
         startActivity(i_adhd);
     }
 
     public void anxiety_test(View view){
-        Intent i_anxiety = new Intent(this, anxietyActivity.class);
+        Intent i_anxiety = new Intent(this, Anxiety.class);
         startActivity(i_anxiety);
     }
 
     public void bipolar_test(View view){
-        Intent i_bipolar = new Intent(this, bipolarActivity.class);
+        Intent i_bipolar = new Intent(this, Bipolar.class);
         startActivity(i_bipolar);
     }
 
     public void depression_test(View view){
-        Intent i_dep = new Intent(this, depressionActivity.class);
+        Intent i_dep = new Intent(this, Depression.class);
         startActivity(i_dep);
     }
 
     public void ocd_test(View view){
-        Intent i_ocd = new Intent(this, ocdActivity.class);
+        Intent i_ocd = new Intent(this, Ocd.class);
         startActivity(i_ocd);
     }
 
     public void ptsd_test(View view){
-        Intent i_ptsd = new Intent(this, ptsdActivity.class);
+        Intent i_ptsd = new Intent(this, PtsdActivity.class);
         startActivity(i_ptsd);
     }
 

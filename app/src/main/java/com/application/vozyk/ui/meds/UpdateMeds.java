@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class UpdateActivity extends AppCompatActivity {
-    MedicineRecordHandler oldRecord;
+public class UpdateMeds extends AppCompatActivity {
+    MedsRecordHandler oldRecord;
     private TextInputLayout name;
     private TextInputLayout note;
     private RadioGroup radioGroup;
@@ -51,7 +51,7 @@ public class UpdateActivity extends AppCompatActivity {
         myRef.child(KEY).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                MedicineRecordHandler mrd = snapshot.getValue(MedicineRecordHandler.class);
+                MedsRecordHandler mrd = snapshot.getValue(MedsRecordHandler.class);
                 assert mrd != null;
                 prefillData(mrd);
                 oldRecord = mrd;
@@ -78,11 +78,11 @@ public class UpdateActivity extends AppCompatActivity {
             if (InputValidationHandler.inputValidation(getData().getName(), getData().getReminder())) {
                 myRef.child(KEY).setValue(getData());
                 startActivity(
-                        new Intent(UpdateActivity.this, MedsPills.class)
+                        new Intent(UpdateMeds.this, MedsPills.class)
                                 .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
                 );
             } else {
-                InputValidationHandler.showDialog(UpdateActivity.this);
+                InputValidationHandler.showDialog(UpdateMeds.this);
             }
 
 
@@ -110,21 +110,21 @@ public class UpdateActivity extends AppCompatActivity {
             picker.show(getSupportFragmentManager(), "tag");
 
             picker.addOnPositiveButtonClickListener(view1 -> {
-                up_custom_time.setText(TimeChangeActivity.timeTextView(picker.getHour(), picker.getMinute()));
-                custom_time_value = TimeChangeActivity.timeToString(picker.getHour(), picker.getMinute());
+                up_custom_time.setText(TimeChange.timeTextView(picker.getHour(), picker.getMinute()));
+                custom_time_value = TimeChange.timeToString(picker.getHour(), picker.getMinute());
             });
         });
 
 
         cancelBtn.setOnClickListener(view -> startActivity(
-                new Intent(UpdateActivity.this, MedsPills.class)
+                new Intent(UpdateMeds.this, MedsPills.class)
                         .putExtra("UserName", user.getDisplayName()).putExtra("Id", user.getUid())
         ));
 
 
     }
 
-    public void prefillData(MedicineRecordHandler mrd) {
+    public void prefillData(MedsRecordHandler mrd) {
         String nameValue = mrd.getName();
         String noteValue = mrd.getNotes();
         Boolean beforeFood = mrd.getBeforeFood();
@@ -138,13 +138,13 @@ public class UpdateActivity extends AppCompatActivity {
         name.getEditText().setText(nameValue);
         note.getEditText().setText(noteValue);
 
-        for (TIME.AlarmBundle i : mrd.getReminder()) {
-            if (i.time.equals(TIME.MORNING)) {
+        for (Time.AlarmBundle i : mrd.getReminder()) {
+            if (i.time.equals(Time.MORNING)) {
                 materialButtonToggleGroup.check(R.id.up_morning);
 
-            } else if (i.time.equals(TIME.AFTERNOON)) {
+            } else if (i.time.equals(Time.AFTERNOON)) {
                 materialButtonToggleGroup.check(R.id.up_lunch);
-            } else if (i.time.equals(TIME.NIGHT)) {
+            } else if (i.time.equals(Time.NIGHT)) {
                 materialButtonToggleGroup1.check(R.id.up_night);
             } else {
                 Button button = findViewById(R.id.up_custom_time);
@@ -155,7 +155,7 @@ public class UpdateActivity extends AppCompatActivity {
 
     }
 
-    public MedicineRecordHandler getData() {
+    public MedsRecordHandler getData() {
 
         String nameValue = name.getEditText().getText().toString();
         String noteValue = note.getEditText().getText().toString();
@@ -164,21 +164,21 @@ public class UpdateActivity extends AppCompatActivity {
         List<Integer> arr = materialButtonToggleGroup.getCheckedButtonIds();
         arr.addAll(materialButtonToggleGroup1.getCheckedButtonIds());
 
-        ArrayList<TIME.AlarmBundle> time = new ArrayList<>();
+        ArrayList<Time.AlarmBundle> time = new ArrayList<>();
         for (Integer i : arr) {
             if (i == R.id.up_morning) {
-                time.add(new TIME.AlarmBundle(TIME.MORNING));
+                time.add(new Time.AlarmBundle(Time.MORNING));
             } else if (i == R.id.up_lunch) {
-                time.add(new TIME.AlarmBundle(TIME.AFTERNOON));
+                time.add(new Time.AlarmBundle(Time.AFTERNOON));
             } else if (i == R.id.up_night) {
-                time.add(new TIME.AlarmBundle(TIME.NIGHT));
+                time.add(new Time.AlarmBundle(Time.NIGHT));
             } else if (i == R.id.up_custom_time) {
-                time.add(new TIME.AlarmBundle(custom_time_value));
+                time.add(new Time.AlarmBundle(custom_time_value));
             }
 
         }
 
-        return new MedicineRecordHandler(
+        return new MedsRecordHandler(
                 nameValue,
                 noteValue,
                 beforeFoodValue,

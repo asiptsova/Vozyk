@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.application.vozyk.R;
 
 
-public class ocdActivity extends AppCompatActivity {
+public class Ocd extends AppCompatActivity {
 
     private TextView mQuesView;
     private Button mChoiceA;
@@ -142,11 +142,11 @@ public class ocdActivity extends AppCompatActivity {
     }
 
     private void updateResult(){
-        Intent i = new Intent(getApplicationContext(), ocdResultActivity.class);
+        Intent i = new Intent(getApplicationContext(), OcdResult.class);
         Bundle b = new Bundle();
         b.putInt("points",mPoint);
         i.putExtras(b);
-        ocdActivity.this.finish();
+        Ocd.this.finish();
         startActivity(i);
     }
     public String getQuestion(int i){

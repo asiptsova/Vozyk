@@ -21,15 +21,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 
-public class CustomAdapterNew extends ArrayAdapter<MedicineRecordHandler> {
+public class CustomAdapterNew extends ArrayAdapter<MedsRecordHandler> {
 
-    private final ArrayList<MedicineRecordHandler> arrayList;
+    private final ArrayList<MedsRecordHandler> arrayList;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference myRef = database.getReference();
     final FirebaseUser user;
 
 
-    public CustomAdapterNew(@NonNull Context context, @NonNull ArrayList<MedicineRecordHandler> arrayList) {
+    public CustomAdapterNew(@NonNull Context context, @NonNull ArrayList<MedsRecordHandler> arrayList) {
         super(context, 0, arrayList);
         this.arrayList = arrayList;
 
@@ -55,14 +55,14 @@ public class CustomAdapterNew extends ArrayAdapter<MedicineRecordHandler> {
         }
         TextView time_view = currentItemView.findViewById(R.id.tv_meds_time);
         StringBuilder output_time = new StringBuilder();
-        for (TIME.AlarmBundle i : arrayList.get(position).getReminder()) {
+        for (Time.AlarmBundle i : arrayList.get(position).getReminder()) {
             String j = i.getTime();
-            if (j.contains(TIME.MORNING)) {
+            if (j.contains(Time.MORNING)) {
                 output_time.append("Morning ");
-            } else if (j.contains(TIME.AFTERNOON)) {
+            } else if (j.contains(Time.AFTERNOON)) {
                 output_time.append("Afternoon ");
 
-            } else if (j.contains(TIME.NIGHT)) {
+            } else if (j.contains(Time.NIGHT)) {
                 output_time.append("Night ");
             } else {
                 output_time.append(j.substring(0, 2)).append(":").append(j.substring(2, 4));
@@ -79,15 +79,15 @@ public class CustomAdapterNew extends ArrayAdapter<MedicineRecordHandler> {
         }
 
         currentItemView.findViewById(R.id.delete_btn).setOnClickListener(view -> {
-            MedicineRecordHandler mrd = arrayList.get(position);
+            MedsRecordHandler mrd = arrayList.get(position);
             myRef.child("MedicineRecord").child(user.getUid()).child(mrd.key).removeValue();
             Toast.makeText(getContext(), "Deleted", Toast.LENGTH_SHORT).show();
         });
 
         currentItemView.findViewById(R.id.update_btn).setOnClickListener(view -> {
 
-            Intent i = new Intent(getContext(), UpdateActivity.class);
-            MedicineRecordHandler mrd = arrayList.get(position);
+            Intent i = new Intent(getContext(), UpdateMeds.class);
+            MedsRecordHandler mrd = arrayList.get(position);
 
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("key", mrd.key);

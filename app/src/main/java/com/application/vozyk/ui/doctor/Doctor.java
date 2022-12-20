@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.lab;
+package com.application.vozyk.ui.doctor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.vozyk.MainActivity;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.doctor.DoctorActivity;
+import com.application.vozyk.ui.lab.Lab;
 import com.application.vozyk.ui.meds.MedsPills;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,39 +21,42 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class labActivity extends AppCompatActivity {
-    private ArrayList<LabTestDataModel> arrayList;
-    private LabCustomAdapter c;
+public class Doctor extends AppCompatActivity {
+
+    private ArrayList<DoctorDataModel> arrayList;
+    private DocCustomAdapter c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lab);
+        setContentView(R.layout.activity_doctor);
         getSupportActionBar().hide();
-
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("LabTestRecord").child(Objects.requireNonNull(user.getUid()));
-        ListView listview = findViewById(R.id.lv_lab);
-        BottomAppBar bottomAppBar = findViewById(R.id.lab_bottomAppBar);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("AppointmentRecord").child(Objects.requireNonNull(user.getUid())); //Takes the relative path of the user to get the instance of only that user not others.
+        ListView listview = findViewById(R.id.lv_doctor);
+        BottomAppBar bottomAppBar = findViewById(R.id.doctor_bottomAppBar);
 
         arrayList = new ArrayList<>();
-
-        c = new LabCustomAdapter(getApplicationContext(), arrayList);
+        c = new DocCustomAdapter(getApplicationContext(), arrayList);
 
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                LabTestDataModel labTestDataModel = snapshot.getValue(LabTestDataModel.class);
-                assert labTestDataModel != null;
-                labTestDataModel.key = snapshot.getKey();
-                arrayList.add(labTestDataModel);
+                DoctorDataModel doctorDataModel = snapshot.getValue(DoctorDataModel.class);
+                assert doctorDataModel != null;
+                doctorDataModel.key = snapshot.getKey();
+
+                arrayList.add(doctorDataModel);
                 c.notifyDataSetChanged();
                 emptyImage();
+
             }
 
             @Override
@@ -63,13 +66,13 @@ public class labActivity extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                LabTestDataModel labTestDataModel = snapshot.getValue(LabTestDataModel.class);
-                assert labTestDataModel != null;
-                labTestDataModel.key = snapshot.getKey();
+                DoctorDataModel doctorDataModel = snapshot.getValue(DoctorDataModel.class);
+                assert doctorDataModel != null;
+                doctorDataModel.key = snapshot.getKey();
 
                 for (int i = 0; i < arrayList.size(); i++) {
-                    if (labTestDataModel.key.equals(arrayList.get(i).key)) {
+                    assert doctorDataModel.key != null;
+                    if (doctorDataModel.key.equals(arrayList.get(i).key)) {
                         arrayList.remove(i);
                     }
                 }
@@ -91,13 +94,18 @@ public class labActivity extends AppCompatActivity {
 
         listview.setAdapter(c);
 
+        findViewById(R.id.add).setOnClickListener(view -> startActivity(new Intent(Doctor.this, DoctorAdd.class)));
+
         bottomAppBar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
-                case R.id.nav_lab_medicine:
-                    startActivity(new Intent(labActivity.this, MedsPills.class));
+                case R.id.nav_medicine:
+                    try {
+                        startActivity(new Intent(Doctor.this, MedsPills.class));
+                    }
+                    catch (Exception ignored){}
                     break;
-                case R.id.nav_lab_doc:
-                    startActivity(new Intent(labActivity.this, DoctorActivity.class));
+                case R.id.nav_lab:
+                     startActivity(new Intent(Doctor.this, Lab.class));
                     break;
                 case R.id.nav_home:
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -107,17 +115,19 @@ public class labActivity extends AppCompatActivity {
             }
             return true;
         });
-        findViewById(R.id.lab_add_btn).setOnClickListener(view -> startActivity(new Intent(labActivity.this, labAddActivity.class)));
+
 
     }
 
     public void emptyImage() {
         if (c.isEmpty()) {
-            findViewById(R.id.iv_lab_empty).setVisibility(View.VISIBLE);
-            findViewById(R.id.tv_no_labs).setVisibility(View.VISIBLE);
+            findViewById(R.id.iv_doctor_empty).setVisibility(View.VISIBLE);
+            findViewById(R.id.tv_no_visits).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.iv_lab_empty).setVisibility(View.INVISIBLE);
-            findViewById(R.id.tv_no_labs).setVisibility(View.INVISIBLE);
+            findViewById(R.id.iv_doctor_empty).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tv_no_visits).setVisibility(View.INVISIBLE);
         }
     }
+
+
 }

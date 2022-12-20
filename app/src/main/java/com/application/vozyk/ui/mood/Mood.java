@@ -8027,8 +8027,8 @@ public class Mood extends Fragment  {
                 for (int i = 1; i <= returnLastDayOfMonth(); i++) {
                     calendar.set(year, month, i);
                     long time_in_milli = calendar.getTimeInMillis();
-                    if (Simplify_the_time.return_time_in_midnight(time_in_milli) >= Simplify_the_time.return_time_in_midnight(start_date)) {
-                        if (Simplify_the_time.return_time_in_midnight(time_in_milli) <= Simplify_the_time.return_time_in_midnight(System.currentTimeMillis())) {
+                    if (TimeMood.return_time_in_midnight(time_in_milli) >= TimeMood.return_time_in_midnight(start_date)) {
+                        if (TimeMood.return_time_in_midnight(time_in_milli) <= TimeMood.return_time_in_midnight(System.currentTimeMillis())) {
                             if (return_color_of_days(time_in_milli) == 0) {
                                 colors[i] = no_mood_color;
                             } else if (return_color_of_days(time_in_milli) == 1) {
@@ -8226,7 +8226,7 @@ public class Mood extends Fragment  {
             String month_from_text = String.valueOf(returnMonthStringToInt(splitter_temp_from_text[0]));
             String year_from_text = String.valueOf(splitter_temp_from_text[1]);
             String[] splitter_for_colored_value = color_the_today.split("_");
-            if (calendar_new.getTimeInMillis() < Simplify_the_time.return_time_in_midnight(start_date)) {
+            if (calendar_new.getTimeInMillis() < TimeMood.return_time_in_midnight(start_date)) {
                 hide_or_un_hide_the_button(0);
             } else {
                 if (calender_year > real_year) {
@@ -9468,7 +9468,7 @@ public class Mood extends Fragment  {
             calendar.set(Calendar.DAY_OF_MONTH, 1);
 
             if (!check_past_now_or_future().equals("future")) {
-                if (Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis()) < Simplify_the_time.return_time_in_midnight(start_date))
+                if (TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date))
                     month_info = "empty".concat("split");
                  else {
                     if (return_the_last_day_of_last_month().equals("continue")) {
@@ -9486,7 +9486,7 @@ public class Mood extends Fragment  {
                 if (check_past_now_or_future().equals("current")) {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (real_calender.get(Calendar.DAY_OF_MONTH) < i || Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis()) < Simplify_the_time.return_time_in_midnight(start_date)) {
+                        if (real_calender.get(Calendar.DAY_OF_MONTH) < i || TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date)) {
                             month_info = month_info.concat("empty").concat("split");
                         } else {
                             String substring = month_info.substring(month_info.length() - 7, month_info.length() - 5);
@@ -9508,7 +9508,7 @@ public class Mood extends Fragment  {
                 } else {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis()) < Simplify_the_time.return_time_in_midnight(start_date)) {
+                        if (TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date)) {
                             month_info = month_info.concat("empty").concat("split");
                         } else {
                             String substring = month_info.substring(month_info.length() - 7, month_info.length() - 5);
@@ -9540,7 +9540,7 @@ public class Mood extends Fragment  {
     }
 
     private boolean return_state_of_day(long milli) {
-        milli = Simplify_the_time.return_time_in_midnight(milli);
+        milli = TimeMood.return_time_in_midnight(milli);
         return history_of_mood.containsKey(milli);
     }
 
@@ -9575,7 +9575,7 @@ public class Mood extends Fragment  {
         calendar.set(Calendar.MONTH, month);
         int day = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         calendar.set(Calendar.DAY_OF_MONTH, day);
-        if (Simplify_the_time.return_time_in_midnight(start_date) <= Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis())) {
+        if (TimeMood.return_time_in_midnight(start_date) <= TimeMood.return_time_in_midnight(calendar.getTimeInMillis())) {
             if (return_state_of_day(calendar.getTimeInMillis())) {
                 return "continue";
             } else {
@@ -9601,7 +9601,7 @@ public class Mood extends Fragment  {
 
     private void save_the_input_for_good_habit_input(int mood, long milli) {
         if (getActivity() != null) {
-            milli = Simplify_the_time.return_time_in_midnight(milli);
+            milli = TimeMood.return_time_in_midnight(milli);
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
             if (mood == 0) {
                 history_of_mood.remove(milli);
@@ -9759,7 +9759,7 @@ public class Mood extends Fragment  {
     }
 
     private int return_color_of_days(long milli) {
-        return history_of_mood.getOrDefault( Simplify_the_time.return_time_in_midnight(milli), 0);
+        return history_of_mood.getOrDefault( TimeMood.return_time_in_midnight(milli), 0);
     }
 
     private void color_the_stuff() {
@@ -10244,8 +10244,8 @@ public class Mood extends Fragment  {
         for (int i = 1; i <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
             new_calender.set(year_for_mood_chart, month_for_mood_chart, i);
             long time_in_milli = new_calender.getTimeInMillis();
-            if (Simplify_the_time.return_time_in_midnight(time_in_milli) >= Simplify_the_time.return_time_in_midnight(start_date)) {
-                if (Simplify_the_time.return_time_in_midnight(time_in_milli) <= Simplify_the_time.return_time_in_midnight(System.currentTimeMillis())) {
+            if (TimeMood.return_time_in_midnight(time_in_milli) >= TimeMood.return_time_in_midnight(start_date)) {
+                if (TimeMood.return_time_in_midnight(time_in_milli) <= TimeMood.return_time_in_midnight(System.currentTimeMillis())) {
                     if (return_color_of_days(time_in_milli) == 1) {
                         return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("1").concat("big_split");
                     } else if (return_color_of_days(time_in_milli) == 2) {
@@ -10802,14 +10802,14 @@ public class Mood extends Fragment  {
             long first_time = sharedPreferences.getLong("first_date", -1);
             if (first_time == -1) {
                 SharedPreferences.Editor myEdit = sharedPreferences.edit();
-                myEdit.putLong("first_date", Simplify_the_time.return_time_in_midnight(System.currentTimeMillis()));
+                myEdit.putLong("first_date", TimeMood.return_time_in_midnight(System.currentTimeMillis()));
                 myEdit.apply();
-                return Simplify_the_time.return_time_in_midnight(System.currentTimeMillis());
+                return TimeMood.return_time_in_midnight(System.currentTimeMillis());
             } else {
                 return first_time;
             }
         } else {
-            return Simplify_the_time.return_time_in_midnight(System.currentTimeMillis());
+            return TimeMood.return_time_in_midnight(System.currentTimeMillis());
         }
     }
 
@@ -10825,7 +10825,7 @@ public class Mood extends Fragment  {
             calendar.set(Calendar.DAY_OF_MONTH, day_global);
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
-            myEdit.putLong("first_date", Simplify_the_time.return_time_in_midnight(calendar.getTimeInMillis()));
+            myEdit.putLong("first_date", TimeMood.return_time_in_midnight(calendar.getTimeInMillis()));
             myEdit.apply();
             call_me_at_start();
         }

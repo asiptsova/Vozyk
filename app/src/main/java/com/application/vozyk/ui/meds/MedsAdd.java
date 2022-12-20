@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class MedsAdd extends AppCompatActivity {
 
     private TextInputLayout name;
     private TextInputLayout note;
@@ -76,35 +76,35 @@ public class HomeActivity extends AppCompatActivity {
             picker.show(getSupportFragmentManager(), "tag");
 
             picker.addOnPositiveButtonClickListener(view1 -> {
-                custom_time.setText(TimeChangeActivity.timeTextView(picker.getHour(), picker.getMinute()));
-                custom_time_value = TimeChangeActivity.timeToString(picker.getHour(), picker.getMinute());
+                custom_time.setText(TimeChange.timeTextView(picker.getHour(), picker.getMinute()));
+                custom_time_value = TimeChange.timeToString(picker.getHour(), picker.getMinute());
             });
         });
 
 
-        show.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, Mood.class)));
+        show.setOnClickListener(view -> startActivity(new Intent(MedsAdd.this, Mood.class)));
         submitBtn.setOnClickListener(view -> {
 
             before_food = R.id.radio_button_1 == radioGroup.getCheckedRadioButtonId();
             List<Integer> arr = materialButtonToggleGroup.getCheckedButtonIds();
             arr.addAll(materialButtonToggleGroup1.getCheckedButtonIds());
 
-            ArrayList<TIME.AlarmBundle> time = new ArrayList<>();
+            ArrayList<Time.AlarmBundle> time = new ArrayList<>();
             for (Integer i : arr) {
                 if (i == R.id.morning) {
-                    time.add(new TIME.AlarmBundle(TIME.MORNING));
+                    time.add(new Time.AlarmBundle(Time.MORNING));
                 } else if (i == R.id.lunch) {
-                    time.add(new TIME.AlarmBundle(TIME.AFTERNOON));
+                    time.add(new Time.AlarmBundle(Time.AFTERNOON));
                 } else if (i == R.id.night) {
-                    time.add(new TIME.AlarmBundle(TIME.NIGHT));
+                    time.add(new Time.AlarmBundle(Time.NIGHT));
                 } else if (i == R.id.custom_time) {
-                    time.add(new TIME.AlarmBundle(custom_time_value));
+                    time.add(new Time.AlarmBundle(custom_time_value));
                 }
             }
 
             if (InputValidationHandler.inputValidation(name.getEditText().getText().toString(), time)) {
 
-                MedicineRecordHandler mrh = new MedicineRecordHandler(
+                MedsRecordHandler mrh = new MedsRecordHandler(
                         name.getEditText().getText().toString(),
                         note.getEditText().getText().toString(),
                         before_food,
@@ -112,9 +112,9 @@ public class HomeActivity extends AppCompatActivity {
                 );
                 myRef.child("MedicineRecord").child(PersonID).child(mrh.getName()).setValue(mrh);
                 Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                startActivity(new Intent(MedsAdd.this, MainActivity.class));
             } else {
-                InputValidationHandler.showDialog(HomeActivity.this);
+                InputValidationHandler.showDialog(MedsAdd.this);
             }
         });
 
