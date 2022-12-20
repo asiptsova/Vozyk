@@ -43,10 +43,10 @@ public class LabCustomAdapter extends ArrayAdapter<LabTestDataModel> {
             currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.lab_custom_list_view, parent, false);
         }
 
-        TextView lab_name_view = currentItemView.findViewById(R.id.lab_name_view);
-        TextView lab_doctor = currentItemView.findViewById(R.id.lab_doctor);
-        TextView lab_date_view = currentItemView.findViewById(R.id.lab_time_view);
-        ImageView lab_delete_btn = currentItemView.findViewById(R.id.lab_delete_btn);
+        TextView lab_name_view = currentItemView.findViewById(R.id.tv_lab_name);
+        TextView lab_doctor = currentItemView.findViewById(R.id.tv_lab_doctor);
+        TextView lab_date_view = currentItemView.findViewById(R.id.view_lab_time);
+        ImageView lab_delete_btn = currentItemView.findViewById(R.id.bt_lab_delete);
 
         LabTestDataModel labTestDataModel = arrayList.get(position);
 

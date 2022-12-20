@@ -40,7 +40,7 @@ public class DoctorActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("AppointmentRecord").child(Objects.requireNonNull(user.getUid())); //Takes the relative path of the user to get the instance of only that user not others.
-        ListView listview = findViewById(R.id.doctor_listview);
+        ListView listview = findViewById(R.id.lv_doctor);
         BottomAppBar bottomAppBar = findViewById(R.id.doctor_bottomAppBar);
 
         arrayList = new ArrayList<>();
@@ -121,11 +121,11 @@ public class DoctorActivity extends AppCompatActivity {
 
     public void emptyImage() {
         if (c.isEmpty()) {
-            findViewById(R.id.doctor_empty).setVisibility(View.VISIBLE);
-            findViewById(R.id.doctor_emptyText).setVisibility(View.VISIBLE);
+            findViewById(R.id.iv_doctor_empty).setVisibility(View.VISIBLE);
+            findViewById(R.id.tv_no_visits).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.doctor_empty).setVisibility(View.INVISIBLE);
-            findViewById(R.id.doctor_emptyText).setVisibility(View.INVISIBLE);
+            findViewById(R.id.iv_doctor_empty).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tv_no_visits).setVisibility(View.INVISIBLE);
         }
     }
 

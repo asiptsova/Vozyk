@@ -8,7 +8,7 @@
     tools:context=".ui.lab.labAddActivity">
 
     <TextView
-        android:id="@+id/appointmentText"
+        android:id="@+id/tv_add_lab"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="@color/YellowAeroSpace"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lab_doctor"
+        android:id="@+id/tv_lab_doctor"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="32dp"
         android:hint="Test Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentText">
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_lab">
 
         <AutoCompleteTextView
             android:id="@+id/lab_name_edit"
@@ -73,13 +73,13 @@
         android:layout_height="59dp"
         android:layout_marginEnd="68dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/lab_date_view"
-        app:layout_constraintEnd_toStartOf="@+id/lab_date_view"
-        app:layout_constraintTop_toTopOf="@+id/lab_date_view"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lab_date"
+        app:layout_constraintEnd_toStartOf="@+id/tv_lab_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_lab_date"
         app:srcCompat="@drawable/calendar" />
 
     <TextView
-        android:id="@+id/lab_date_view"
+        android:id="@+id/tv_lab_date"
         android:layout_width="157dp"
         android:layout_height="46dp"
         android:layout_marginTop="60dp"
@@ -90,7 +90,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_doctor" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_lab_doctor" />
 
     <ImageView
         android:id="@+id/doctorView"
@@ -109,9 +109,9 @@
         android:layout_height="39dp"
         android:layout_marginEnd="48dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/lab_doctor"
-        app:layout_constraintEnd_toStartOf="@+id/lab_doctor"
-        app:layout_constraintTop_toTopOf="@+id/lab_doctor"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lab_doctor"
+        app:layout_constraintEnd_toStartOf="@+id/tv_lab_doctor"
+        app:layout_constraintTop_toTopOf="@+id/tv_lab_doctor"
         app:srcCompat="@drawable/doctor" />
 
     <Button

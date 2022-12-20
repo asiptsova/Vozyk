@@ -8,7 +8,7 @@
     tools:context=".ui.doctor.DoctorAddActivity">
 
     <TextView
-        android:id="@+id/appointmentText"
+        android:id="@+id/tv_add_lab"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="@color/OrangeAeroSpace"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/reasonTexr"
+        android:id="@+id/reason"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="224dp"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         android:hint="@string/doctor_s_name"
         android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentText">
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_lab">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -72,13 +72,13 @@
         android:layout_height="59dp"
         android:layout_marginEnd="68dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/lab_date_view"
-        app:layout_constraintEnd_toStartOf="@+id/lab_date_view"
-        app:layout_constraintTop_toTopOf="@+id/lab_date_view"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lab_date"
+        app:layout_constraintEnd_toStartOf="@+id/tv_lab_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_lab_date"
         app:srcCompat="@drawable/calendar" />
 
     <TextView
-        android:id="@+id/lab_date_view"
+        android:id="@+id/tv_lab_date"
         android:layout_width="157dp"
         android:layout_height="46dp"
         android:layout_marginTop="60dp"
@@ -89,7 +89,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reasonTexr" />
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
 
     <ImageView
         android:id="@+id/doctorView"
@@ -108,9 +108,9 @@
         android:layout_height="45dp"
         android:layout_marginEnd="48dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/reasonTexr"
-        app:layout_constraintEnd_toStartOf="@+id/reasonTexr"
-        app:layout_constraintTop_toTopOf="@+id/reasonTexr"
+        app:layout_constraintBottom_toBottomOf="@+id/reason"
+        app:layout_constraintEnd_toStartOf="@+id/reason"
+        app:layout_constraintTop_toTopOf="@+id/reason"
         app:srcCompat="@drawable/notepad" />
 
     <Button

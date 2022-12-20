@@ -37,8 +37,8 @@ public class labAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_add);
-        lab_date_view = findViewById(R.id.lab_date_view);
-        lab_doctor = findViewById(R.id.lab_doctor);
+        lab_date_view = findViewById(R.id.tv_lab_date);
+        lab_doctor = findViewById(R.id.tv_lab_doctor);
         Button lab_add_btn = findViewById(R.id.lab_add_btn);
         getSupportActionBar().hide();
 

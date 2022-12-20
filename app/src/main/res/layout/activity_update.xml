@@ -5,7 +5,7 @@
     android:background="@color/Hex">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/up_name"
+        android:id="@+id/meds_edit_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/up_note"
+        android:id="@+id/meds_edit_dose"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:hint="@string/dose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/up_name">
+        app:layout_constraintTop_toBottomOf="@+id/meds_edit_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         android:layout_marginEnd="216dp"
         android:checkedButton="@+id/up_radio_button_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/up_note">
+        app:layout_constraintTop_toBottomOf="@+id/meds_edit_dose">
 
         <RadioButton
             android:id="@+id/up_radio_button_1"
@@ -125,7 +125,7 @@
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <Button
-        android:id="@+id/up_updatebtn"
+        android:id="@+id/up_update_btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
@@ -143,9 +143,9 @@
         android:backgroundTint="@color/Raspberry"
         android:text="@string/cancel"
         android:textColor="#234E70"
-        app:layout_constraintBottom_toBottomOf="@+id/up_updatebtn"
+        app:layout_constraintBottom_toBottomOf="@+id/up_update_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/up_updatebtn"
+        app:layout_constraintTop_toTopOf="@+id/up_update_btn"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView

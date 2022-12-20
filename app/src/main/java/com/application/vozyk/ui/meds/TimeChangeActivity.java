@@ -2,22 +2,9 @@ package com.application.vozyk.ui.meds;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.application.vozyk.R;
-import com.google.android.material.timepicker.MaterialTimePicker;
-import com.google.android.material.timepicker.TimeFormat;
-
-
 public class TimeChangeActivity extends AppCompatActivity {
-    String time = "0000";
-    private TextView morning_edit_time;
-    private TextView lunch_edit_time;
-    private TextView night_edit_time;
 
 
     public static String timeTextView(int hour, int minute) {
@@ -56,92 +43,8 @@ public class TimeChangeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time_change);
-        morning_edit_time = findViewById(R.id.morning_edit_time);
-        lunch_edit_time = findViewById(R.id.afternoon_edit_time);
-        night_edit_time = findViewById(R.id.night_edit_time);
-
-        morning_edit_time.setText(TIMEClassToTextView(TIME.MORNING));
-        lunch_edit_time.setText(TIMEClassToTextView(TIME.AFTERNOON));
-        night_edit_time.setText(TIMEClassToTextView(TIME.NIGHT));
-
-
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade);
-
-        morning_edit_time.startAnimation(animation);
-        lunch_edit_time.startAnimation(animation);
-        night_edit_time.startAnimation(animation);
-
-
-        morning_edit_time.setOnClickListener(view -> {
-
-            MaterialTimePicker picker =
-                    new MaterialTimePicker.Builder()
-                            .setTimeFormat(TimeFormat.CLOCK_24H)
-                            .setHour(TIMEClassToHour(TIME.MORNING))
-                            .setMinute(TIMEClassToMinutes(TIME.MORNING))
-                            .build();
-
-            picker.show(getSupportFragmentManager(), "tag");
-
-            picker.addOnPositiveButtonClickListener(view13 -> {
-                morning_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                setTime(time_to_string, 0);
-            });
-
-        });
-        lunch_edit_time.setOnClickListener(view -> {
-
-            MaterialTimePicker picker =
-                    new MaterialTimePicker.Builder()
-                            .setTimeFormat(TimeFormat.CLOCK_24H)
-                            .setHour(TIMEClassToHour(TIME.AFTERNOON))
-                            .setMinute(TIMEClassToMinutes(TIME.AFTERNOON))
-                            .build();
-
-            picker.show(getSupportFragmentManager(), "tag");
-
-            picker.addOnPositiveButtonClickListener(view12 -> {
-                lunch_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                setTime(time_to_string, 1);
-            });
-
-        });
-        night_edit_time.setOnClickListener(view -> {
-
-            MaterialTimePicker picker =
-                    new MaterialTimePicker.Builder()
-                            .setTimeFormat(TimeFormat.CLOCK_24H)
-                            .setHour(TIMEClassToHour(TIME.NIGHT))
-                            .setMinute(TIMEClassToMinutes(TIME.NIGHT))
-                            .build();
-
-            picker.show(getSupportFragmentManager(), "tag");
-
-            picker.addOnPositiveButtonClickListener(view1 -> {
-                night_edit_time.setText(timeTextView(picker.getHour(), picker.getMinute()));
-                String time_to_string = timeToString(picker.getHour(), picker.getMinute());
-                setTime(time_to_string, 2);
-            });
-
-        });
     }
 
-    public String TIMEClassToTextView(String time) {
-        return time.substring(0, 2) + ":" + time.substring(2, 4);
-    }
-
-
-    public int TIMEClassToHour(String time) {
-        return Integer.parseInt(time.substring(0, 2));
-
-    }
-
-    public int TIMEClassToMinutes(String time) {
-        return Integer.parseInt(time.substring(2, 4));
-    }
 
     public void getTime() {
         SharedPreferences sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);

@@ -111,11 +111,11 @@ public class MedsPills extends AppCompatActivity {
 
     public void emptyImage() {
         if (c.isEmpty()) {
-            findViewById(R.id.empty).setVisibility(View.VISIBLE);
-            findViewById(R.id.emptyText).setVisibility(View.VISIBLE);
+            findViewById(R.id.iv_no_meds).setVisibility(View.VISIBLE);
+            findViewById(R.id.tv_no_meds).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.empty).setVisibility(View.INVISIBLE);
-            findViewById(R.id.emptyText).setVisibility(View.INVISIBLE);
+            findViewById(R.id.iv_no_meds).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tv_no_meds).setVisibility(View.INVISIBLE);
 
         }
     }

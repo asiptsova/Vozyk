@@ -63,12 +63,12 @@ public class UpdateActivity extends AppCompatActivity {
             }
         });
 
-        name = findViewById(R.id.up_name);
-        note = findViewById(R.id.up_note);
+        name = findViewById(R.id.meds_edit_name);
+        note = findViewById(R.id.meds_edit_dose);
         radioGroup = findViewById(R.id.up_radioGroup);
         materialButtonToggleGroup = findViewById(R.id.up_toggleButton);
         materialButtonToggleGroup1 = findViewById(R.id.up_toggleButton1);
-        Button updateBtn = findViewById(R.id.up_updatebtn);
+        Button updateBtn = findViewById(R.id.up_update_btn);
         Button cancelBtn = findViewById(R.id.up_cancel);
         up_custom_time = findViewById(R.id.up_custom_time);
 

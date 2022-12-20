@@ -43,9 +43,9 @@ public class DocCustomAdapter extends ArrayAdapter<DoctorDataModel> {
         if (currentItemView == null) {
             currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.doctor_custom_list_view, parent, false);
         }
-        TextView doc_name = currentItemView.findViewById(R.id.doc_name_view);
-        TextView doc_reason = currentItemView.findViewById(R.id.doc_reason);
-        TextView doc_time = currentItemView.findViewById(R.id.doc_time_view);
+        TextView doc_name = currentItemView.findViewById(R.id.tv_doc_name);
+        TextView doc_reason = currentItemView.findViewById(R.id.tv_doc_reason);
+        TextView doc_time = currentItemView.findViewById(R.id.tv_doc_time);
         ImageView delete_btn = currentItemView.findViewById(R.id.doc_delete_btn);
 
         DoctorDataModel doctorDataModel = arrayList.get(position);

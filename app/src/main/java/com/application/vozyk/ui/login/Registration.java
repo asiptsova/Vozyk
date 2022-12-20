@@ -48,7 +48,7 @@ public class Registration extends AppCompatActivity {
         final EditText mPassword = findViewById(R.id.password);
         final EditText etConfirm = findViewById(R.id.etConfirmPassword);
         final Button mRegisterBtn = findViewById(R.id.register);
-        final TextView mLoginBtn = findViewById(R.id.createText);
+        final TextView mLoginBtn = findViewById(R.id.tv_already_register);
         final CircularProgressIndicator indicator = findViewById(R.id.progress_barCircle);
         final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
         final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
@@ -226,9 +226,9 @@ public class Registration extends AppCompatActivity {
         etConfirm.setHint(R.string.confirm_password);
         final Button mRegisterBtn = findViewById(R.id.register);
         mRegisterBtn.setHint(R.string.register);
-        final TextView alreadyRegister = findViewById(R.id.createText);
+        final TextView alreadyRegister = findViewById(R.id.tv_already_register);
         alreadyRegister.setText(R.string.already_registered_login_here);
-        final TextView createRegister = findViewById(R.id.appointmentText);
+        final TextView createRegister = findViewById(R.id.tv_add_lab);
         createRegister.setText(R.string.create_a_new_account);
 
     }

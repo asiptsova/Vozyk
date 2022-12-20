@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/Hex">
@@ -15,8 +14,7 @@
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        tools:context=".ui.adhd.adhdActivity">
+        android:paddingBottom="16dp">
 
         <TextView
             android:id="@+id/general"
@@ -41,7 +39,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="30dp"
             android:autoSizeTextType="uniform"
-            android:text="1"
+            android:text="@string/_1"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#3F51B5"
@@ -58,7 +56,6 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
-            android:text="ocdA1"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
@@ -76,7 +73,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
-            android:text="ocdA2"
+            android:text=""
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
@@ -94,7 +91,6 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
-            android:text="ocdA3"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
@@ -112,7 +108,6 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
-            android:text="ocdA4"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"
@@ -130,7 +125,6 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/rounded_button"
             android:backgroundTint="#C0B2E7"
-            android:text="ocdA5"
             android:textAllCaps="false"
             android:textColor="#234E70"
             android:textColorHighlight="#664564"

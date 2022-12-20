@@ -18,7 +18,7 @@ public class InputValidationHandler {
                 = new AlertDialog
                 .Builder(context);
 
-        builder.setMessage("Required fields are empty or too large or have special characters");
+        builder.setMessage("Required fields are iv_no_meds or too large or have special characters");
         builder.setTitle("Vožyk");
 
         builder

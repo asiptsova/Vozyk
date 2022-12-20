@@ -19,7 +19,7 @@
         android:src="@drawable/vozyk_log" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"

@@ -43,12 +43,12 @@
         app:layout_constraintVertical_bias="0.286" />
 
     <TextView
-        android:id="@+id/text_view_countdown"
+        android:id="@+id/tv_countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="30dp"
-        android:text="00:00"
+        android:text="@string/_00_00"
         android:textColor="@color/Bluebell"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,12 +105,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/edit_text_input"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/breathe_and_let_go"

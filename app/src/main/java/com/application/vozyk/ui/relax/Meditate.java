@@ -41,7 +41,7 @@ public class Meditate extends Fragment {
 
         View root = inflater.inflate(R.layout.activity_meditate, container, false);
         mEditTextInput = root.findViewById(R.id.edit_text_input);
-        mTextViewCountDown = root.findViewById(R.id.text_view_countdown);
+        mTextViewCountDown = root.findViewById(R.id.tv_countdown);
         mButtonSet = root.findViewById(R.id.button_set);
         mButtonStartPause = root.findViewById(R.id.button_start_pause);
         mButtonReset = root.findViewById(R.id.button_reset);

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/Hex">
 
     <LinearLayout
-        android:id="@+id/activity_gad7"
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Hex"
@@ -14,8 +13,7 @@
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        tools:context=".ui.ptsd.ptsdActivity">
+        android:paddingBottom="16dp">
 
         <TextView
             android:id="@+id/generalP"

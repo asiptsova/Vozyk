@@ -13,9 +13,9 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/medicine_name"
         android:textColor="#234E70"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView">
+        app:layout_constraintStart_toEndOf="@+id/iv_logo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:hint="@string/note_optional"
+        android:hint="@string/dose"
         android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +135,7 @@
 
 
     <Button
-        android:id="@+id/submitbtn"
+        android:id="@+id/submit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -158,11 +158,11 @@
         android:textColor="#234E70"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/submitbtn"
+        app:layout_constraintStart_toEndOf="@+id/submit_btn"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton1" />
 
     <TextView
-        android:id="@+id/appointmentText"
+        android:id="@+id/tv_add_lab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="74dp"
@@ -173,14 +173,14 @@
         android:textColor="#234E70"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/iv_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_logo"
         android:layout_width="55dp"
         android:layout_height="44dp"
         android:layout_marginStart="26dp"
@@ -190,7 +190,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentText" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_lab" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -203,7 +203,7 @@
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toStartOf="@+id/note"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

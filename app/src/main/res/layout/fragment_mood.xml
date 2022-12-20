@@ -7,53 +7,22 @@
     android:backgroundTintMode="@color/Hex"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/scroll_view_to_take_screen_show_in_good_habtis"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Hex"
-        android:fillViewport="false"
-        android:visibility="invisible">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layou_to_show_screen_shot_in_good_habits"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/Hex"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <View
-                android:id="@+id/view_all_gray_inside_screen_shot_inside_good_habits"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#dfdfe5"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
 
     <ScrollView
-        android:id="@+id/scroll_view_in_bad_habits_view_home"
+        android:id="@+id/sv_mood"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#E7E8D1"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_inside_scroll_in_the_bad_habits"
+            android:id="@+id/cl_mood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#E7E8D1">
 
             <TextView
-                android:id="@+id/did_you_do_the_habit_in_the_good_view"
+                android:id="@+id/tv_how_was_your_mood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -66,150 +35,150 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/very_bad_mood_button_in_habits_in_the_top_today"
+                android:id="@+id/b_very_bad_mood"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood" />
 
             <Button
-                android:id="@+id/bad_mood_button_in_habits_in_the_top_today"
+                android:id="@+id/b_bad_mood"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_bad_mood" />
 
             <Button
-                android:id="@+id/ok_mood_button_in_habits_in_the_top_today"
+                android:id="@+id/b_ok_mood"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_ok_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_ok_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_ok_mood" />
 
             <Button
-                android:id="@+id/good_mood_button_in_habits_in_the_top_today"
+                android:id="@+id/b_good_mood"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_good_mood" />
 
             <Button
-                android:id="@+id/very_good_mood_button_in_habits_in_the_top_today"
+                android:id="@+id/b_very_good_mood"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_good_mood" />
 
             <View
-                android:id="@+id/very_bad_mood_in_habits_in_the_top_today"
+                android:id="@+id/view_very_bad_mood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/round_sentiment_very_dissatisfied_24"
-                app:layout_constraintEnd_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
+                app:layout_constraintEnd_toStartOf="@+id/view_bad_mood"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/did_you_do_the_habit_in_the_good_view" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_how_was_your_mood" />
 
             <View
-                android:id="@+id/bad_mood_in_habits_in_the_top_today"
+                android:id="@+id/view_bad_mood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_mood_bad_24"
-                app:layout_constraintEnd_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
+                app:layout_constraintEnd_toStartOf="@+id/view_ok_mood"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintStart_toEndOf="@+id/view_very_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood" />
 
             <View
-                android:id="@+id/ok_mood_in_habits_in_the_top_today"
+                android:id="@+id/view_ok_mood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_face_24"
-                app:layout_constraintEnd_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
+                app:layout_constraintEnd_toStartOf="@+id/view_good_mood"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintStart_toEndOf="@+id/view_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_bad_mood" />
 
             <View
-                android:id="@+id/good_mood_in_habits_in_the_top_today"
+                android:id="@+id/view_good_mood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_mood_24"
-                app:layout_constraintEnd_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
+                app:layout_constraintEnd_toStartOf="@+id/view_very_good_mood"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+                app:layout_constraintStart_toEndOf="@+id/view_ok_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_ok_mood" />
 
             <View
-                android:id="@+id/very_good_mood_in_habits_in_the_top_today"
+                android:id="@+id/view_very_good_mood"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/round_sentiment_very_satisfied_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintStart_toEndOf="@+id/view_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_good_mood" />
 
             <View
-                android:id="@+id/very_bad_mood_shade_in_habits_in_the_top_today"
+                android:id="@+id/view_background1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shade_for_mood_in_mood"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood" />
 
             <View
-                android:id="@+id/bad_mood_shade_in_habits_in_the_top_today"
+                android:id="@+id/view_background2"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shade_for_mood_in_mood"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_bad_mood" />
 
             <View
-                android:id="@+id/ok_mood_shade_in_habits_in_the_top_today"
+                android:id="@+id/view_background3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shade_for_mood_in_mood"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_ok_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_ok_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_ok_mood" />
 
             <View
-                android:id="@+id/good_mood_shade_in_habits_in_the_top_today"
+                android:id="@+id/view_background4"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shade_for_mood_in_mood"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_good_mood" />
 
             <View
                 android:id="@+id/very_good_mood_check"
@@ -217,10 +186,10 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_good_mood" />
 
             <View
                 android:id="@+id/very_bad_mood_check"
@@ -228,10 +197,10 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood" />
 
             <View
                 android:id="@+id/bad_mood_check"
@@ -239,10 +208,10 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_bad_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_bad_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_bad_mood" />
 
             <View
                 android:id="@+id/ok_mood_check"
@@ -250,10 +219,10 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_ok_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_ok_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_ok_mood" />
 
             <View
                 android:id="@+id/good_mood_check"
@@ -261,25 +230,25 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_good_mood" />
 
             <View
-                android:id="@+id/very_good_mood_check_mark_in_mood_in_the_top_today"
+                android:id="@+id/mood_check"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_check_24"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits_in_the_top_today"
-                app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits_in_the_top_today" />
+                app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood"
+                app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood"
+                app:layout_constraintStart_toStartOf="@+id/view_very_good_mood"
+                app:layout_constraintTop_toTopOf="@+id/view_very_good_mood" />
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_to_show_calender"
+                android:id="@+id/cv_calendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -289,10 +258,10 @@
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/very_bad_mood_in_habits_in_the_top_today">
+                app:layout_constraintTop_toBottomOf="@+id/view_very_bad_mood">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_containting_the_calender"
+                    android:id="@+id/lc_calendar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Hex"
@@ -300,7 +269,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/calender_in_stats"
+                        android:id="@+id/lc_calendar2"
                         android:layout_width="383dp"
                         android:layout_height="325dp"
                         android:layout_marginTop="8dp"
@@ -311,20 +280,20 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/month_and_year_in_calender_for_good_habits"
+                            android:id="@+id/tv_month_year"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/month_year"
                             android:textColor="#234E70"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits"
+                            app:layout_constraintBottom_toBottomOf="@+id/bt_calendar_back"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_back_for_good_habits" />
+                            app:layout_constraintTop_toTopOf="@+id/bt_calendar_back" />
 
                         <Button
-                            android:id="@+id/button_shadow_for_the_back_for_good_habits"
+                            android:id="@+id/bt_calendar_back"
                             style="?android:attr/borderlessButtonStyle"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
@@ -332,7 +301,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
-                            android:id="@+id/button_shadow_for_the_front_for_good_habits"
+                            android:id="@+id/bt_calendar_next"
                             style="?android:attr/borderlessButtonStyle"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
@@ -340,39 +309,39 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <View
-                            android:id="@+id/forward_button_over_for_good_habits"
+                            android:id="@+id/view_calendar_next"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/round_arrow_forward_ios_24"
-                            app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_front_for_good_habits"
-                            app:layout_constraintLeft_toLeftOf="@+id/button_shadow_for_the_front_for_good_habits"
-                            app:layout_constraintRight_toRightOf="@+id/button_shadow_for_the_front_for_good_habits"
-                            app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_front_for_good_habits" />
+                            app:layout_constraintBottom_toBottomOf="@+id/bt_calendar_next"
+                            app:layout_constraintLeft_toLeftOf="@+id/bt_calendar_next"
+                            app:layout_constraintRight_toRightOf="@+id/bt_calendar_next"
+                            app:layout_constraintTop_toTopOf="@+id/bt_calendar_next" />
 
                         <View
-                            android:id="@+id/backward_button_over_for_good_habits"
+                            android:id="@+id/view_calendar_back"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/round_arrow_back_ios_24"
-                            app:layout_constraintBottom_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits"
-                            app:layout_constraintLeft_toLeftOf="@+id/button_shadow_for_the_back_for_good_habits"
-                            app:layout_constraintRight_toRightOf="@+id/button_shadow_for_the_back_for_good_habits"
-                            app:layout_constraintTop_toTopOf="@+id/button_shadow_for_the_back_for_good_habits" />
+                            app:layout_constraintBottom_toBottomOf="@+id/bt_calendar_back"
+                            app:layout_constraintLeft_toLeftOf="@+id/bt_calendar_back"
+                            app:layout_constraintRight_toRightOf="@+id/bt_calendar_back"
+                            app:layout_constraintTop_toTopOf="@+id/bt_calendar_back" />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/child_of_calender_showing_days"
+                            android:id="@+id/cl_days_week"
 
                             android:layout_width="380dp"
                             android:layout_height="50dp"
                             android:background="#E7E8D1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/button_shadow_for_the_back_for_good_habits">
+                            app:layout_constraintTop_toBottomOf="@+id/bt_calendar_back">
 
                             <TextView
-                                android:id="@+id/first_day_in_the_week_calender"
+                                android:id="@+id/tv_1"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:background="#E7E8D1"
@@ -382,71 +351,69 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/second_day_in_the_week_calender"
+                                android:id="@+id/tv_2"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/first_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_1"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/third_day_in_the_week_calender"
+                                android:id="@+id/tv_3"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/second_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_2"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/fourth_day_in_the_week_calender"
+                                android:id="@+id/tv_4"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/third_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_3"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/fifth_day_in_the_week_calender"
+                                android:id="@+id/tv_5"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/fourth_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_4"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/sixth_day_in_the_week_calender"
-
+                                android:id="@+id/tv_6"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/fifth_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_5"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/seventh_day_in_the_week_calender"
-
+                                android:id="@+id/tv_7"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="#E7E8D1"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/sixth_day_in_the_week_calender"
+                                app:layout_constraintStart_toEndOf="@+id/tv_6"
                                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -454,17 +421,17 @@
 
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/child_showing_days_number_for_calender"
+                            android:id="@+id/cl_days_in_calendar"
                             android:layout_width="370dp"
                             android:layout_height="280dp"
                             android:background="@color/Hex"
                             android:textColor="@color/black"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/child_of_calender_showing_days">
+                            app:layout_constraintTop_toBottomOf="@+id/cl_days_week">
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_1"
+                                android:id="@+id/bt_1"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
@@ -474,235 +441,235 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_2"
+                                android:id="@+id/bt_2"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
+                                app:layout_constraintStart_toEndOf="@+id/bt_1"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_3"
+                                android:id="@+id/bt_3"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
+                                app:layout_constraintStart_toEndOf="@+id/bt_2"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_4"
+                                android:id="@+id/bt_4"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
+                                app:layout_constraintStart_toEndOf="@+id/bt_3"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_5"
+                                android:id="@+id/bt_5"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
+                                app:layout_constraintStart_toEndOf="@+id/bt_4"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_6"
+                                android:id="@+id/bt_6"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/Hex"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
+                                app:layout_constraintStart_toEndOf="@+id/bt_5"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_7"
+                                android:id="@+id/bt_7"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/Hex"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
+                                app:layout_constraintStart_toEndOf="@+id/bt_6"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_8"
+                                android:id="@+id/bt_8"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/Hex"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_9"
+                                android:id="@+id/bt_9"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/Hex"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_1"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_1"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_10"
+                                android:id="@+id/bt_10"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_2"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_11"
+                                android:id="@+id/bt_11"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_3"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_12"
+                                android:id="@+id/bt_12"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_4"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_13"
+                                android:id="@+id/bt_13"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_5"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_14"
+                                android:id="@+id/bt_14"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_1" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_6"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_1" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_15"
+                                android:id="@+id/bt_15"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_16"
+                                android:id="@+id/bt_16"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_8"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_17"
+                                android:id="@+id/bt_17"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_2"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_18"
+                                android:id="@+id/bt_18"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_3"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_19"
+                                android:id="@+id/bt_19"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_4"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_20"
+                                android:id="@+id/bt_20"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_5"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_day_21"
+                                android:id="@+id/bt_21"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_8" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_6"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_8" />
 
                             <Button
-                                android:id="@+id/calender_day_22"
+                                android:id="@+id/bt_22"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_day_23"
+                                android:id="@+id/bt_23"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
@@ -710,142 +677,142 @@
                                 android:alpha="100"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_8"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_day_24"
+                                android:id="@+id/bt_24"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_2"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_day_25"
+                                android:id="@+id/bt_25"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_3"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_day_26"
+                                android:id="@+id/bt_26"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_4"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_day_27"
+                                android:id="@+id/bt_27"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_5"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_28"
+                                android:id="@+id/bt_28"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_15" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_6"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_15" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_29"
+                                android:id="@+id/bt_29"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_30"
+                                android:id="@+id/bt_30"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_8"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_31"
+                                android:id="@+id/bt_31"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_2"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_2"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_32"
+                                android:id="@+id/bt_32"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_3"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_3"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_33"
+                                android:id="@+id/bt_33"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_4"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_4"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_34"
+                                android:id="@+id/bt_34"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/Hex"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_5"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_5"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_35"
+                                android:id="@+id/bt_35"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_6"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_day_22" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_6"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_22" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_36"
+                                android:id="@+id/bt_36"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
@@ -853,18 +820,49 @@
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
+                                app:layout_constraintTop_toBottomOf="@+id/bt_29" />
 
                             <Button
-                                android:id="@+id/calender_button_showing_shadow_37"
+                                android:id="@+id/bt_37"
                                 style="?android:attr/borderlessButtonStyle"
                                 android:layout_width="48dp"
                                 android:layout_height="42dp"
                                 android:layout_marginStart="4dp"
                                 android:background="@drawable/round_button"
                                 android:textColor="@color/black"
-                                app:layout_constraintStart_toEndOf="@+id/calender_button_showing_shadow_8"
-                                app:layout_constraintTop_toBottomOf="@+id/calender_button_showing_shadow_29" />
+                                app:layout_constraintStart_toEndOf="@+id/bt_8"
+                                app:layout_constraintTop_toBottomOf="@+id/bt_29" />
+
+                            <ScrollView
+                                android:id="@+id/sv_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/Hex"
+                                android:fillViewport="false"
+                                android:visibility="invisible">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/cl_calendar2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/Hex"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <View
+                                        android:id="@+id/view_calendar"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:background="#dfdfe5"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </ScrollView>
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -872,7 +870,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/text_asking_did_you_relapse_in_share"
+                        android:id="@+id/tv_edit_mood"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="335dp"
@@ -882,111 +880,111 @@
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/calender_in_stats" />
+                        app:layout_constraintTop_toTopOf="@+id/lc_calendar2" />
 
                     <Button
-                        android:id="@+id/very_bad_mood_button_in_habits"
+                        android:id="@+id/bt_very_bad_mood_edit"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood_edit" />
 
                     <Button
-                        android:id="@+id/bad_mood_button_in_habits"
+                        android:id="@+id/bt_bad_mood_edit"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_bad_mood_edit" />
 
                     <Button
-                        android:id="@+id/ok_mood_button_in_habits"
+                        android:id="@+id/bt_ok_mood_edit"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_ok_mood_edit" />
 
                     <Button
-                        android:id="@+id/good_mood_button_in_habits"
+                        android:id="@+id/bt_good_mood_edit"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_good_mood_edit" />
 
                     <Button
-                        android:id="@+id/very_good_mood_button_in_habits"
+                        android:id="@+id/bt_very_good_mood_edit"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_good_mood_edit" />
 
                     <View
-                        android:id="@+id/very_bad_mood_in_habits"
+                        android:id="@+id/view_very_bad_mood_edit"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/round_sentiment_very_dissatisfied_24"
                         android:visibility="gone"
-                        app:layout_constraintEnd_toStartOf="@+id/bad_mood_in_habits"
+                        app:layout_constraintEnd_toStartOf="@+id/view_bad_mood_edit"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_asking_did_you_relapse_in_share" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_edit_mood" />
 
                     <View
-                        android:id="@+id/bad_mood_in_habits"
+                        android:id="@+id/view_bad_mood_edit"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_mood_bad_24"
                         android:visibility="gone"
-                        app:layout_constraintEnd_toStartOf="@+id/ok_mood_in_habits"
+                        app:layout_constraintEnd_toStartOf="@+id/view_ok_mood_edit"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+                        app:layout_constraintStart_toEndOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/ok_mood_in_habits"
+                        android:id="@+id/view_ok_mood_edit"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_face_24"
                         android:visibility="gone"
-                        app:layout_constraintEnd_toStartOf="@+id/good_mood_in_habits"
+                        app:layout_constraintEnd_toStartOf="@+id/view_good_mood_edit"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+                        app:layout_constraintStart_toEndOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/good_mood_in_habits"
+                        android:id="@+id/view_good_mood_edit"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_mood_24"
                         android:visibility="gone"
-                        app:layout_constraintEnd_toStartOf="@+id/very_good_mood_in_habits"
+                        app:layout_constraintEnd_toStartOf="@+id/view_very_good_mood_edit"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+                        app:layout_constraintStart_toEndOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_ok_mood_edit" />
 
                     <View
-                        android:id="@+id/very_good_mood_in_habits"
+                        android:id="@+id/view_very_good_mood_edit"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="10dp"
@@ -994,118 +992,118 @@
                         android:visibility="gone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+                        app:layout_constraintStart_toEndOf="@+id/view_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_good_mood_edit" />
 
                     <View
-                        android:id="@+id/very_bad_mood_shade_in_habits"
+                        android:id="@+id/view_very_bad_mood_edit_background"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shade_for_mood_in_mood"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/bad_mood_shade_in_habits"
+                        android:id="@+id/view_bad_mood_edit_background"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shade_for_mood_in_mood"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/ok_mood_shade_in_habits"
+                        android:id="@+id/view_ok_mood_edit_background"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shade_for_mood_in_mood"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_ok_mood_edit" />
 
                     <View
-                        android:id="@+id/good_mood_shade_in_habits"
+                        android:id="@+id/view_good_mood_edit_background"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shade_for_mood_in_mood"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_good_mood_edit" />
 
                     <View
-                        android:id="@+id/very_good_mood_shade_in_habits"
+                        android:id="@+id/view_very_good_mood_edit_background"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/shade_for_mood_in_mood"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_good_mood_edit" />
 
                     <View
-                        android:id="@+id/very_bad_mood_check_mark_in_mood"
+                        android:id="@+id/view_very_bad_mood_edit_check"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_check_24"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/bad_mood_check_mark_in_mood"
+                        android:id="@+id/view_bad_mood_edit_check"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_check_24"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/bad_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/bad_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_bad_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_bad_mood_edit" />
 
                     <View
-                        android:id="@+id/ok_mood_check_mark_in_mood"
+                        android:id="@+id/view_ok_mood_edit_check"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_check_24"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/ok_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/ok_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_ok_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_ok_mood_edit" />
 
                     <View
-                        android:id="@+id/good_mood_check_mark_in_mood"
+                        android:id="@+id/view_good_mood_edit_check"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_check_24"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_good_mood_edit" />
 
                     <View
-                        android:id="@+id/very_good_mood_check_mark_in_mood"
+                        android:id="@+id/view_very_good_mood_edit_check"
                         android:layout_width="33dp"
                         android:layout_height="34dp"
                         android:background="@drawable/round_check_24"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintEnd_toEndOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintStart_toStartOf="@+id/very_good_mood_in_habits"
-                        app:layout_constraintTop_toTopOf="@+id/very_good_mood_in_habits" />
+                        app:layout_constraintBottom_toBottomOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintEnd_toEndOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintStart_toStartOf="@+id/view_very_good_mood_edit"
+                        app:layout_constraintTop_toTopOf="@+id/view_very_good_mood_edit" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1114,7 +1112,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_to_show_current_average_and_best_streak"
+                android:id="@+id/cv_average_chart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -1124,10 +1122,10 @@
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_to_show_calender">
+                app:layout_constraintTop_toBottomOf="@+id/cv_calendar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_inside_card_to_show_the_best_and_current_and_average_streak"
+                    android:id="@+id/cl_average_chart"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#E7E8D1"
@@ -1135,7 +1133,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/title_for_the_card_saying_this_is_the_average_mood_bar"
+                        android:id="@+id/tv_average_mood"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -1148,64 +1146,64 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/text_showing_average_mood_number"
+                        android:id="@+id/tv_average_mark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12.5dp"
                         android:text="@string/_0"
                         android:textSize="25sp"
-                        app:layout_constraintEnd_toEndOf="@+id/location_above_bmi_weight"
-                        app:layout_constraintStart_toStartOf="@+id/location_above_bmi_weight"
-                        app:layout_constraintTop_toBottomOf="@+id/title_for_the_card_saying_this_is_the_average_mood_bar" />
+                        app:layout_constraintEnd_toEndOf="@+id/location_average_chart"
+                        app:layout_constraintStart_toStartOf="@+id/location_average_chart"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average_mood" />
 
                     <View
-                        android:id="@+id/very_bad_mood_in_habits_in_the_average_mood"
+                        android:id="@+id/view_mood1"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_marginTop="8dp"
                         android:background="@drawable/round_sentiment_very_dissatisfied_24"
-                        app:layout_constraintEnd_toEndOf="@+id/first_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
-                        app:layout_constraintTop_toBottomOf="@+id/progress_bar_number_one_mood" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain1"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain1"
+                        app:layout_constraintTop_toBottomOf="@+id/pb_1" />
 
                     <View
-                        android:id="@+id/bad_mood_in_habits_in_the_average_mood"
+                        android:id="@+id/view_mood2"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:background="@drawable/round_mood_bad_24"
-                        app:layout_constraintEnd_toEndOf="@+id/second_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/second_part_of_invisible_chain"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain2"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain2"
+                        app:layout_constraintTop_toTopOf="@+id/view_mood1" />
 
                     <View
-                        android:id="@+id/ok_mood_in_habits_in_the_average_mood"
+                        android:id="@+id/view_mood3"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:background="@drawable/round_face_24"
-                        app:layout_constraintEnd_toEndOf="@+id/third_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/third_part_of_invisible_chain"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain3"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain3"
+                        app:layout_constraintTop_toTopOf="@+id/view_mood1" />
 
                     <View
-                        android:id="@+id/good_mood_in_habits_in_the_average_mood"
+                        android:id="@+id/view_mood4"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:background="@drawable/round_mood_24"
-                        app:layout_constraintEnd_toEndOf="@+id/four_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/four_part_of_invisible_chain"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain4"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain4"
+                        app:layout_constraintTop_toTopOf="@+id/view_mood1" />
 
                     <View
-                        android:id="@+id/very_good_mood_in_habits_in_the_average_mood"
+                        android:id="@+id/view_mood5"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:background="@drawable/round_sentiment_very_satisfied_24"
-                        app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/five_part_of_invisible_chain"
-                        app:layout_constraintTop_toTopOf="@+id/very_bad_mood_in_habits_in_the_average_mood" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain5"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain5"
+                        app:layout_constraintTop_toTopOf="@+id/view_mood1" />
 
                     <View
-                        android:id="@+id/invisible_box_at_start_of_average_mood"
+                        android:id="@+id/view_average_mood_box"
                         android:layout_width="0.1dp"
                         android:layout_height="0.1dp"
                         android:layout_marginStart="35dp"
@@ -1215,7 +1213,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/invisible_box_at_end_of_average_mood"
+                        android:id="@+id/view_average_mood_box2"
                         android:layout_width="0.1dp"
                         android:layout_height="0.1dp"
                         android:layout_marginEnd="35dp"
@@ -1225,178 +1223,178 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/first_part_of_invisible_chain"
+                        android:id="@+id/view_invisible_chain1"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toStartOf="@+id/second_part_of_invisible_chain"
+                        app:layout_constraintEnd_toStartOf="@+id/view_invisible_chain2"
                         app:layout_constraintHorizontal_chainStyle="spread_inside"
-                        app:layout_constraintStart_toStartOf="@+id/invisible_box_at_start_of_average_mood"
+                        app:layout_constraintStart_toStartOf="@+id/view_average_mood_box"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/second_part_of_invisible_chain"
+                        android:id="@+id/view_invisible_chain2"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toStartOf="@+id/third_part_of_invisible_chain"
-                        app:layout_constraintStart_toEndOf="@+id/first_part_of_invisible_chain"
+                        app:layout_constraintEnd_toStartOf="@+id/view_invisible_chain3"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain1"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/third_part_of_invisible_chain"
+                        android:id="@+id/view_invisible_chain3"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toStartOf="@+id/four_part_of_invisible_chain"
+                        app:layout_constraintEnd_toStartOf="@+id/view_invisible_chain4"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/second_part_of_invisible_chain"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain2"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/four_part_of_invisible_chain"
+                        android:id="@+id/view_invisible_chain4"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toStartOf="@+id/five_part_of_invisible_chain"
+                        app:layout_constraintEnd_toStartOf="@+id/view_invisible_chain5"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/third_part_of_invisible_chain"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain3"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/five_part_of_invisible_chain"
+                        android:id="@+id/view_invisible_chain5"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/invisible_box_at_end_of_average_mood"
+                        app:layout_constraintEnd_toEndOf="@+id/view_average_mood_box2"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/four_part_of_invisible_chain"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain4"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/first_part_invisible_half_middle"
+                        android:id="@+id/view_invisible_chain6"
                         android:layout_width="1px"
                         android:layout_height="1px"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/second_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain2"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain1"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/second_part_invisble_half_middle"
+                        android:id="@+id/view_invisible_chain7"
                         android:layout_width="1px"
                         android:layout_height="1px"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/third_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/second_part_of_invisible_chain"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain3"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain2"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/third_part_invisble_half_middle"
+                        android:id="@+id/view_invisible_chain8"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/four_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/third_part_of_invisible_chain"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain4"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain3"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/four_part_invisble_half_middle"
+                        android:id="@+id/view_invisible_chain9"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
-                        app:layout_constraintStart_toStartOf="@+id/four_part_of_invisible_chain"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain5"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain4"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/location_above_bmi_weight"
+                        android:id="@+id/location_average_chart"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/location_drawable_green"
-                        app:layout_constraintBottom_toTopOf="@+id/progress_bar_number_one_mood"
-                        app:layout_constraintEnd_toEndOf="@+id/last_item_after_the_half_invicible_for_location"
-                        app:layout_constraintStart_toStartOf="@+id/first_item_before_the_half_invicible_for_location" />
+                        app:layout_constraintBottom_toTopOf="@+id/pb_1"
+                        app:layout_constraintEnd_toEndOf="@+id/view_2"
+                        app:layout_constraintStart_toStartOf="@+id/view_1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar_number_one_mood"
+                        android:id="@+id/pb_1"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
                         android:layout_height="6dp"
                         android:layout_marginTop="45dp"
                         android:progress="100"
                         android:progressDrawable="@drawable/first_part_mood_location_mood_tracker"
-                        app:layout_constraintEnd_toEndOf="@+id/first_part_invisible_half_middle"
-                        app:layout_constraintStart_toStartOf="@+id/first_part_of_invisible_chain"
-                        app:layout_constraintTop_toBottomOf="@+id/text_showing_average_mood_number" />
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain6"
+                        app:layout_constraintStart_toStartOf="@+id/view_invisible_chain1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average_mark" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar_number_two_mood"
+                        android:id="@+id/pb_2"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
                         android:layout_height="6dp"
                         android:progress="100"
                         android:progressDrawable="@drawable/second_part_mood_location_mood_tracker"
-                        app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
-                        app:layout_constraintEnd_toEndOf="@+id/second_part_invisble_half_middle"
-                        app:layout_constraintStart_toEndOf="@+id/first_part_invisible_half_middle"
-                        app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_1"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain7"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain6"
+                        app:layout_constraintTop_toTopOf="@+id/pb_1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar_number_three_mood"
+                        android:id="@+id/pb_3"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
                         android:layout_height="6dp"
                         android:progress="100"
                         android:progressDrawable="@drawable/third_part_mood_location_mood_tracker"
-                        app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
-                        app:layout_constraintEnd_toEndOf="@+id/third_part_invisble_half_middle"
-                        app:layout_constraintStart_toEndOf="@+id/second_part_invisble_half_middle"
-                        app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_1"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain8"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain7"
+                        app:layout_constraintTop_toTopOf="@+id/pb_1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar_number_four_mood"
+                        android:id="@+id/pb_4"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
                         android:layout_height="6dp"
                         android:progress="100"
                         android:progressDrawable="@drawable/four_part_mood_location_mood_tracker"
-                        app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
-                        app:layout_constraintEnd_toEndOf="@+id/four_part_invisble_half_middle"
-                        app:layout_constraintStart_toEndOf="@+id/third_part_invisble_half_middle"
-                        app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_1"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain9"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain8"
+                        app:layout_constraintTop_toTopOf="@+id/pb_1" />
 
                     <ProgressBar
-                        android:id="@+id/progress_bar_number_five_mood"
+                        android:id="@+id/pb_5"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"
                         android:layout_height="6dp"
                         android:progressDrawable="@drawable/five_part_mood_location_mood_tracker"
-                        app:layout_constraintBottom_toBottomOf="@+id/progress_bar_number_one_mood"
-                        app:layout_constraintEnd_toEndOf="@+id/five_part_of_invisible_chain"
-                        app:layout_constraintStart_toEndOf="@+id/four_part_invisble_half_middle"
-                        app:layout_constraintTop_toTopOf="@+id/progress_bar_number_one_mood" />
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_1"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain5"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain9"
+                        app:layout_constraintTop_toTopOf="@+id/pb_1" />
 
                     <View
-                        android:id="@+id/first_item_before_the_half_invicible_for_location"
+                        android:id="@+id/view_1"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:layout_marginEnd="20dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintEnd_toEndOf="@+id/first_part_of_invisible_chain"
+                        app:layout_constraintEnd_toEndOf="@+id/view_invisible_chain1"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/last_item_after_the_half_invicible_for_location"
+                        android:id="@+id/view_2"
                         android:layout_width="1px"
                         android:layout_height="0.1dp"
                         android:layout_marginStart="20dp"
                         android:background="@android:color/transparent"
-                        app:layout_constraintStart_toEndOf="@+id/five_part_of_invisible_chain"
+                        app:layout_constraintStart_toEndOf="@+id/view_invisible_chain5"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar"
+                        android:id="@+id/tv_not_enough_data_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -1417,7 +1415,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_to_show_line_graph_for_mood_tracker"
+                android:id="@+id/cv_mood_chart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -1427,10 +1425,10 @@
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_to_show_pie_chart_for_yes_or_no_over_the_days">
+                app:layout_constraintTop_toBottomOf="@+id/cv_pie_chart">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_inside_graph_to_show_mood_in_mood_tracker"
+                    android:id="@+id/cl_mood_chart"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Hex"
@@ -1439,7 +1437,7 @@
 
 
                     <TextView
-                        android:id="@+id/title_of_the_card_saying_this_is_the_graph_card"
+                        android:id="@+id/tv_mood_chart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -1453,7 +1451,7 @@
 
 
                     <TextView
-                        android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart"
+                        android:id="@+id/tv_not_enough_data_line_chart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -1469,62 +1467,62 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
-                        android:id="@+id/button_to_show_back_above_mood_tracker_graph"
+                        android:id="@+id/bt_line_chart_back"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="20dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/title_of_the_card_saying_this_is_the_graph_card" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_mood_chart" />
 
                     <Button
-                        android:id="@+id/button_to_show_forward_above_mood_tracker_graph"
+                        android:id="@+id/bt_line_chart_forward"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="30dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/title_of_the_card_saying_this_is_the_graph_card" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_mood_chart" />
 
                     <View
-                        android:id="@+id/view_to_show_back_above_mood_tracker_graph"
+                        android:id="@+id/view_line_chart_back"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/round_arrow_forward_ios_24"
-                        app:layout_constraintBottom_toBottomOf="@+id/button_to_show_forward_above_mood_tracker_graph"
-                        app:layout_constraintLeft_toLeftOf="@+id/button_to_show_forward_above_mood_tracker_graph"
-                        app:layout_constraintRight_toRightOf="@+id/button_to_show_forward_above_mood_tracker_graph"
-                        app:layout_constraintTop_toTopOf="@+id/button_to_show_forward_above_mood_tracker_graph" />
+                        app:layout_constraintBottom_toBottomOf="@+id/bt_line_chart_forward"
+                        app:layout_constraintLeft_toLeftOf="@+id/bt_line_chart_forward"
+                        app:layout_constraintRight_toRightOf="@+id/bt_line_chart_forward"
+                        app:layout_constraintTop_toTopOf="@+id/bt_line_chart_forward" />
 
                     <View
-                        android:id="@+id/view_button_over_for_good_habits"
+                        android:id="@+id/view_line_chart_forward"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/round_arrow_back_ios_24"
-                        app:layout_constraintBottom_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph"
-                        app:layout_constraintLeft_toLeftOf="@+id/button_to_show_back_above_mood_tracker_graph"
-                        app:layout_constraintRight_toRightOf="@+id/button_to_show_back_above_mood_tracker_graph"
-                        app:layout_constraintTop_toTopOf="@+id/button_to_show_back_above_mood_tracker_graph" />
+                        app:layout_constraintBottom_toBottomOf="@+id/bt_line_chart_back"
+                        app:layout_constraintLeft_toLeftOf="@+id/bt_line_chart_back"
+                        app:layout_constraintRight_toRightOf="@+id/bt_line_chart_back"
+                        app:layout_constraintTop_toTopOf="@+id/bt_line_chart_back" />
 
                     <TextView
-                        android:id="@+id/text_saying_month_year_in_the_chart_mood_tracker"
+                        android:id="@+id/tv_month_year_chart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/month_year"
                         android:textColor="#234E70"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph"
+                        app:layout_constraintBottom_toBottomOf="@+id/bt_line_chart_back"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/button_to_show_back_above_mood_tracker_graph" />
+                        app:layout_constraintTop_toTopOf="@+id/bt_line_chart_back" />
 
                     <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/cahrt_showing_mood_in_mood_tracker"
+                        android:id="@+id/line_chart"
                         android:layout_width="0dp"
                         android:layout_height="200dp"
                         android:layout_marginStart="10dp"
@@ -1532,7 +1530,7 @@
                         android:layout_marginEnd="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/button_to_show_back_above_mood_tracker_graph" />
+                        app:layout_constraintTop_toBottomOf="@+id/bt_line_chart_back" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -1540,7 +1538,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_to_show_daily_input_by_week_of_days"
+                android:id="@+id/cv_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -1550,11 +1548,11 @@
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_to_show_line_graph_for_mood_tracker">
+                app:layout_constraintTop_toBottomOf="@+id/cv_mood_chart">
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_inside_card_to_show_days_of_week_habits"
+                    android:id="@+id/cl_chart"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/Hex"
@@ -1562,7 +1560,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/text_title_of_weekly_daily_habit_in_card"
+                        android:id="@+id/tv_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -1577,7 +1575,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
+                        android:id="@+id/bar_chart2"
                         android:layout_width="0dp"
                         android:layout_height="200dp"
                         android:layout_marginStart="10dp"
@@ -1585,10 +1583,10 @@
                         android:layout_marginEnd="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_title_of_weekly_daily_habit_in_card" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average" />
 
                     <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/cahrt_in_mood_about_the_average_for_each_month"
+                        android:id="@+id/bar_chart"
                         android:layout_width="0dp"
                         android:layout_height="200dp"
                         android:layout_marginStart="10dp"
@@ -1597,10 +1595,10 @@
                         android:visibility="invisible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/text_title_of_weekly_daily_habit_in_card" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_average" />
 
                     <TextView
-                        android:id="@+id/text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse"
+                        android:id="@+id/tv_not_enough_data"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -1610,10 +1608,10 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:visibility="invisible"
-                        app:layout_constraintBottom_toBottomOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
-                        app:layout_constraintEnd_toEndOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
-                        app:layout_constraintStart_toStartOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week"
-                        app:layout_constraintTop_toTopOf="@+id/cahrt_in_good_habits_about_how_many_times_for_each_days_of_week" />
+                        app:layout_constraintBottom_toBottomOf="@+id/bar_chart2"
+                        app:layout_constraintEnd_toEndOf="@+id/bar_chart2"
+                        app:layout_constraintStart_toStartOf="@+id/bar_chart2"
+                        app:layout_constraintTop_toTopOf="@+id/bar_chart2" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -1621,7 +1619,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_to_show_pie_chart_for_yes_or_no_over_the_days"
+                android:id="@+id/cv_pie_chart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -1631,7 +1629,7 @@
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_to_show_current_average_and_best_streak">
+                app:layout_constraintTop_toBottomOf="@+id/cv_average_chart">
 
             </androidx.cardview.widget.CardView>
 

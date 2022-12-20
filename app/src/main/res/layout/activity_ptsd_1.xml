@@ -6,7 +6,7 @@
     android:background="@color/Hex">
 
     <LinearLayout
-        android:id="@+id/activity_gad7"
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Hex"

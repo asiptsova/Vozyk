@@ -55,8 +55,8 @@ public class ToDoListActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         this.currentState = State.INCOMPLETE_TASKS;
         this.addButton = findViewById(R.id.addButton);
-        this.completedButton = findViewById(R.id.viewCompletedButton);
-        this.incompleteButton = findViewById(R.id.viewIncompletedButton);
+        this.completedButton = findViewById(R.id.bt_completed);
+        this.incompleteButton = findViewById(R.id.bt_in_completed);
         Button deleteListButton = findViewById(R.id.delete_list_btn);
 
         this.db = FirebaseFirestore.getInstance();
@@ -80,9 +80,9 @@ public class ToDoListActivity extends AppCompatActivity {
 
         myListView.setOnItemClickListener((parent, view, position, id) -> {
             final View infoTaskDialogView = getLayoutInflater().inflate(R.layout.info_task_dialog, null);
-            final TextView taskLabel = infoTaskDialogView.findViewById(R.id.taskLabel);
-            final TextView startDateLabel = infoTaskDialogView.findViewById(R.id.startDateLabel);
-            final TextView endDateLabel = infoTaskDialogView.findViewById(R.id.endDateLabel);
+            final TextView taskLabel = infoTaskDialogView.findViewById(R.id.tv_task_name);
+            final TextView startDateLabel = infoTaskDialogView.findViewById(R.id.tv_start_date);
+            final TextView endDateLabel = infoTaskDialogView.findViewById(R.id.tv_end_date);
 
             if (currentState == State.INCOMPLETE_TASKS) {
                 final Task task = incompletedList.get(position);

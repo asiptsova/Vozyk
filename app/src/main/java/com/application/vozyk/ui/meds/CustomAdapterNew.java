@@ -44,16 +44,16 @@ public class CustomAdapterNew extends ArrayAdapter<MedicineRecordHandler> {
         if (currentItemView == null) {
             currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_list_view, parent, false);
         }
-        TextView name_view = currentItemView.findViewById(R.id.name_view);
+        TextView name_view = currentItemView.findViewById(R.id.tv_meds_name);
         name_view.setText(arrayList.get(position).getName());
 
-        TextView food_view = currentItemView.findViewById(R.id.food_view);
+        TextView food_view = currentItemView.findViewById(R.id.tv_meds_food);
         if (arrayList.get(position).getBeforeFood()) {
             food_view.setText("Before Food");
         } else {
             food_view.setText("After Food");
         }
-        TextView time_view = currentItemView.findViewById(R.id.time_view);
+        TextView time_view = currentItemView.findViewById(R.id.tv_meds_time);
         StringBuilder output_time = new StringBuilder();
         for (TIME.AlarmBundle i : arrayList.get(position).getReminder()) {
             String j = i.getTime();

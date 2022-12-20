@@ -38,7 +38,7 @@ public class labActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("LabTestRecord").child(Objects.requireNonNull(user.getUid()));
-        ListView listview = findViewById(R.id.lab_listview);
+        ListView listview = findViewById(R.id.lv_lab);
         BottomAppBar bottomAppBar = findViewById(R.id.lab_bottomAppBar);
 
         arrayList = new ArrayList<>();
@@ -113,11 +113,11 @@ public class labActivity extends AppCompatActivity {
 
     public void emptyImage() {
         if (c.isEmpty()) {
-            findViewById(R.id.lab_empty).setVisibility(View.VISIBLE);
-            findViewById(R.id.lab_emptyText).setVisibility(View.VISIBLE);
+            findViewById(R.id.iv_lab_empty).setVisibility(View.VISIBLE);
+            findViewById(R.id.tv_no_labs).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.lab_empty).setVisibility(View.INVISIBLE);
-            findViewById(R.id.lab_emptyText).setVisibility(View.INVISIBLE);
+            findViewById(R.id.iv_lab_empty).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tv_no_labs).setVisibility(View.INVISIBLE);
         }
     }
 }

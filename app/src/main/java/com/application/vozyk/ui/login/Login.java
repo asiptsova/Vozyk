@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
         final EditText mEmail = findViewById(R.id.Email);
         final EditText mPassword = findViewById(R.id.password);
         final Button mLoginBtn = findViewById(R.id.loginBtn);
-        final TextView mCreateBtn = findViewById(R.id.createText);
+        final TextView mCreateBtn = findViewById(R.id.tv_already_register);
         final TextView forgotTextLink = findViewById(R.id.forgotPassword);
         final ImageView ShowHidePWD = findViewById(R.id.show_hide_pwd);
         final Spinner spinnerLanguage = findViewById(R.id.spinnerLanguage);
@@ -192,9 +192,9 @@ public class Login extends AppCompatActivity {
         mPassword.setHint(R.string.password);
         final Button mRegisterBtn = findViewById(R.id.loginBtn);
         mRegisterBtn.setText(R.string.login);
-        final TextView newAccount = findViewById(R.id.createText);
+        final TextView newAccount = findViewById(R.id.tv_already_register);
         newAccount.setText(R.string.create_a_new_account);
-        final TextView login = findViewById(R.id.appointmentText);
+        final TextView login = findViewById(R.id.tv_add_lab);
         login.setText(R.string.log_in_to_vo_yk);
         final TextView forgotPassword = findViewById(R.id.forgotPassword);
         forgotPassword.setText(R.string.forgot_password);

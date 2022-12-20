@@ -148,16 +148,16 @@ public class Mood extends Fragment  {
     private void setTheFirstDayOfTheWeekNumber() {
         if (getView() != null) {
             Calendar calender = Calendar.getInstance();
-            TextView first_day_in_the_week_calender = getView().findViewById(R.id.first_day_in_the_week_calender);
-            TextView second_day_in_the_week_calender = getView().findViewById(R.id.second_day_in_the_week_calender);
-            TextView third_day_in_the_week_calender = getView().findViewById(R.id.third_day_in_the_week_calender);
-            TextView fourth_day_in_the_week_calender = getView().findViewById(R.id.fourth_day_in_the_week_calender);
-            TextView fifth_day_in_the_week_calender = getView().findViewById(R.id.fifth_day_in_the_week_calender);
-            TextView sixth_day_in_the_week_calender = getView().findViewById(R.id.sixth_day_in_the_week_calender);
-            TextView seventh_day_in_the_week_calender = getView().findViewById(R.id.seventh_day_in_the_week_calender);
+            TextView first_day_in_the_week_calender = getView().findViewById(R.id.tv_1);
+            TextView second_day_in_the_week_calender = getView().findViewById(R.id.tv_2);
+            TextView third_day_in_the_week_calender = getView().findViewById(R.id.tv_3);
+            TextView fourth_day_in_the_week_calender = getView().findViewById(R.id.tv_4);
+            TextView fifth_day_in_the_week_calender = getView().findViewById(R.id.tv_5);
+            TextView sixth_day_in_the_week_calender = getView().findViewById(R.id.tv_6);
+            TextView seventh_day_in_the_week_calender = getView().findViewById(R.id.tv_7);
             int year = calender.get(Calendar.YEAR);
             String month = returnMonth(calender.get(Calendar.MONTH));
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             month_and_year_in_calender_for_good_habits.setText(month.concat(" ").concat(String.valueOf(year)));
             if (calender.getFirstDayOfWeek() == Calendar.SUNDAY) {
                 first_day_in_the_week_calender.setText(R.string.Sunday);
@@ -249,7 +249,7 @@ public class Mood extends Fragment  {
 
     private int returnFirstDayOfMonth() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             Calendar calender_for_first_day_of_month_only = Calendar.getInstance();
             calender_for_first_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
@@ -263,7 +263,7 @@ public class Mood extends Fragment  {
 
     private int returnLastDayOfMonth() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             Calendar calender_for_last_day_of_month_only = Calendar.getInstance();
             String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             calender_for_last_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
@@ -305,7 +305,7 @@ public class Mood extends Fragment  {
     }
     private void setTheDaysOnTheRealText() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             Calendar calender_for_first_day_of_month_only = Calendar.getInstance();
             calender_for_first_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
@@ -6930,51 +6930,51 @@ public class Mood extends Fragment  {
 
     private void define_the_buttons() {
         if (getView() != null) {
-            calender_button_showing_shadow_1 = getView().findViewById(R.id.calender_button_showing_shadow_1);
-            calender_button_showing_shadow_2 = getView().findViewById(R.id.calender_button_showing_shadow_2);
-            calender_button_showing_shadow_3 = getView().findViewById(R.id.calender_button_showing_shadow_3);
-            calender_button_showing_shadow_4 = getView().findViewById(R.id.calender_button_showing_shadow_4);
-            calender_button_showing_shadow_5 = getView().findViewById(R.id.calender_button_showing_shadow_5);
-            calender_button_showing_shadow_6 = getView().findViewById(R.id.calender_button_showing_shadow_6);
-            calender_button_showing_shadow_7 = getView().findViewById(R.id.calender_button_showing_shadow_7);
-            calender_button_showing_shadow_8 = getView().findViewById(R.id.calender_button_showing_shadow_8);
-            calender_button_showing_shadow_9 = getView().findViewById(R.id.calender_button_showing_shadow_9);
-            calender_button_showing_shadow_10 = getView().findViewById(R.id.calender_button_showing_shadow_10);
-            calender_button_showing_shadow_11 = getView().findViewById(R.id.calender_button_showing_shadow_11);
-            calender_button_showing_shadow_12 = getView().findViewById(R.id.calender_button_showing_shadow_12);
-            calender_button_showing_shadow_13 = getView().findViewById(R.id.calender_button_showing_shadow_13);
-            calender_button_showing_shadow_14 = getView().findViewById(R.id.calender_button_showing_shadow_14);
-            calender_button_showing_shadow_15 = getView().findViewById(R.id.calender_button_showing_shadow_15);
-            calender_button_showing_shadow_16 = getView().findViewById(R.id.calender_button_showing_shadow_16);
-            calender_button_showing_shadow_17 = getView().findViewById(R.id.calender_button_showing_shadow_17);
-            calender_button_showing_shadow_18 = getView().findViewById(R.id.calender_button_showing_shadow_18);
-            calender_button_showing_shadow_19 = getView().findViewById(R.id.calender_button_showing_shadow_19);
-            calender_button_showing_shadow_20 = getView().findViewById(R.id.calender_button_showing_shadow_20);
-            calender_button_showing_shadow_21 = getView().findViewById(R.id.calender_day_21);
-            calender_button_showing_shadow_22 = getView().findViewById(R.id.calender_day_22);
-            calender_button_showing_shadow_23 = getView().findViewById(R.id.calender_day_23);
-            calender_button_showing_shadow_24 = getView().findViewById(R.id.calender_day_24);
-            calender_button_showing_shadow_25 = getView().findViewById(R.id.calender_day_25);
-            calender_button_showing_shadow_26 = getView().findViewById(R.id.calender_day_26);
-            calender_button_showing_shadow_27 = getView().findViewById(R.id.calender_day_27);
-            calender_button_showing_shadow_28 = getView().findViewById(R.id.calender_button_showing_shadow_28);
-            calender_button_showing_shadow_29 = getView().findViewById(R.id.calender_button_showing_shadow_29);
-            calender_button_showing_shadow_30 = getView().findViewById(R.id.calender_button_showing_shadow_30);
-            calender_button_showing_shadow_31 = getView().findViewById(R.id.calender_button_showing_shadow_31);
-            calender_button_showing_shadow_32 = getView().findViewById(R.id.calender_button_showing_shadow_32);
-            calender_button_showing_shadow_33 = getView().findViewById(R.id.calender_button_showing_shadow_33);
-            calender_button_showing_shadow_34 = getView().findViewById(R.id.calender_button_showing_shadow_34);
-            calender_button_showing_shadow_35 = getView().findViewById(R.id.calender_button_showing_shadow_35);
-            calender_button_showing_shadow_36 = getView().findViewById(R.id.calender_button_showing_shadow_36);
-            calender_button_showing_shadow_37 = getView().findViewById(R.id.calender_button_showing_shadow_37);
+            calender_button_showing_shadow_1 = getView().findViewById(R.id.bt_1);
+            calender_button_showing_shadow_2 = getView().findViewById(R.id.bt_2);
+            calender_button_showing_shadow_3 = getView().findViewById(R.id.bt_3);
+            calender_button_showing_shadow_4 = getView().findViewById(R.id.bt_4);
+            calender_button_showing_shadow_5 = getView().findViewById(R.id.bt_5);
+            calender_button_showing_shadow_6 = getView().findViewById(R.id.bt_6);
+            calender_button_showing_shadow_7 = getView().findViewById(R.id.bt_7);
+            calender_button_showing_shadow_8 = getView().findViewById(R.id.bt_8);
+            calender_button_showing_shadow_9 = getView().findViewById(R.id.bt_9);
+            calender_button_showing_shadow_10 = getView().findViewById(R.id.bt_10);
+            calender_button_showing_shadow_11 = getView().findViewById(R.id.bt_11);
+            calender_button_showing_shadow_12 = getView().findViewById(R.id.bt_12);
+            calender_button_showing_shadow_13 = getView().findViewById(R.id.bt_13);
+            calender_button_showing_shadow_14 = getView().findViewById(R.id.bt_14);
+            calender_button_showing_shadow_15 = getView().findViewById(R.id.bt_15);
+            calender_button_showing_shadow_16 = getView().findViewById(R.id.bt_16);
+            calender_button_showing_shadow_17 = getView().findViewById(R.id.bt_17);
+            calender_button_showing_shadow_18 = getView().findViewById(R.id.bt_18);
+            calender_button_showing_shadow_19 = getView().findViewById(R.id.bt_19);
+            calender_button_showing_shadow_20 = getView().findViewById(R.id.bt_20);
+            calender_button_showing_shadow_21 = getView().findViewById(R.id.bt_21);
+            calender_button_showing_shadow_22 = getView().findViewById(R.id.bt_22);
+            calender_button_showing_shadow_23 = getView().findViewById(R.id.bt_23);
+            calender_button_showing_shadow_24 = getView().findViewById(R.id.bt_24);
+            calender_button_showing_shadow_25 = getView().findViewById(R.id.bt_25);
+            calender_button_showing_shadow_26 = getView().findViewById(R.id.bt_26);
+            calender_button_showing_shadow_27 = getView().findViewById(R.id.bt_27);
+            calender_button_showing_shadow_28 = getView().findViewById(R.id.bt_28);
+            calender_button_showing_shadow_29 = getView().findViewById(R.id.bt_29);
+            calender_button_showing_shadow_30 = getView().findViewById(R.id.bt_30);
+            calender_button_showing_shadow_31 = getView().findViewById(R.id.bt_31);
+            calender_button_showing_shadow_32 = getView().findViewById(R.id.bt_32);
+            calender_button_showing_shadow_33 = getView().findViewById(R.id.bt_33);
+            calender_button_showing_shadow_34 = getView().findViewById(R.id.bt_34);
+            calender_button_showing_shadow_35 = getView().findViewById(R.id.bt_35);
+            calender_button_showing_shadow_36 = getView().findViewById(R.id.bt_36);
+            calender_button_showing_shadow_37 = getView().findViewById(R.id.bt_37);
         }
     }
 
     private void back_and_front_button_listen() {
         if (getView() != null) {
-            Button button_shadow_for_the_back_for_good_habits = getView().findViewById(R.id.button_shadow_for_the_back_for_good_habits);
-            Button button_shadow_for_the_front_for_good_habits = getView().findViewById(R.id.button_shadow_for_the_front_for_good_habits);
-            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            Button button_shadow_for_the_back_for_good_habits = getView().findViewById(R.id.bt_calendar_back);
+            Button button_shadow_for_the_front_for_good_habits = getView().findViewById(R.id.bt_calendar_next);
+            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             button_shadow_for_the_back_for_good_habits.setOnClickListener(v -> {
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 String month_name;
@@ -7274,7 +7274,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(1);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_1.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7287,7 +7287,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(2);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_2.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7300,7 +7300,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(3);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_3.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7313,7 +7313,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(4);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_4.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7326,7 +7326,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(5);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_5.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7339,7 +7339,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(6);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_6.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7352,7 +7352,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(7);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_7.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7365,7 +7365,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(8);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_8.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7378,7 +7378,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(9);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_9.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7391,7 +7391,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(10);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_10.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7404,7 +7404,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(11);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_11.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7417,7 +7417,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(12);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_12.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7430,7 +7430,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(13);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_13.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7443,7 +7443,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(14);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_14.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7456,7 +7456,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(15);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_15.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7469,7 +7469,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(16);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_16.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7482,7 +7482,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(17);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_17.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7495,7 +7495,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(18);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_18.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7508,7 +7508,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(19);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_19.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7521,7 +7521,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(20);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_20.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7534,7 +7534,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(21);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_21.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7547,7 +7547,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(22);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_22.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7560,7 +7560,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(23);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_23.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7573,7 +7573,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(24);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_24.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7586,7 +7586,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(25);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_25.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7599,7 +7599,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(26);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_26.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7612,7 +7612,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(27);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_27.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7625,7 +7625,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(28);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_28.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7638,7 +7638,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(29);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_29.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7651,7 +7651,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(30);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_30.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7664,7 +7664,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(31);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_31.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7677,7 +7677,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(32);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_32.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7690,7 +7690,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(33);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_33.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7703,7 +7703,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(34);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_34.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7716,7 +7716,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(35);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_35.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7729,7 +7729,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(36);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_36.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7742,7 +7742,7 @@ public class Mood extends Fragment  {
             color_only_today();
             color_the_selected(37);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
                 String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
                 color_the_today = calender_button_showing_shadow_37.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
@@ -7921,7 +7921,7 @@ public class Mood extends Fragment  {
 
     private void color_today() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] text_to_split = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             int year_from_text = Integer.parseInt(text_to_split[1]);
             int month_from_text = returnMonthStringToInt(text_to_split[0]);
@@ -8011,7 +8011,7 @@ public class Mood extends Fragment  {
 
     private void color_the_calender() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String very_bad_color = return_the_color_of_mood(1);
             String bad_color = return_the_color_of_mood(2);
             String ok_color = return_the_color_of_mood(3);
@@ -8210,7 +8210,7 @@ public class Mood extends Fragment  {
 
     private void check_if_date_is_future() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] split_for_day_month_year = color_the_today.split("_");
             String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             int calender_day = Integer.parseInt(split_for_day_month_year[0]);
@@ -8264,27 +8264,27 @@ public class Mood extends Fragment  {
 
     private void hide_or_un_hide_the_button(int which) {
         if (getView() != null && getContext() != null) {
-            Button very_bad_mood_button_in_habits = getView().findViewById(R.id.very_bad_mood_button_in_habits);
-            Button bad_mood_button_in_habits = getView().findViewById(R.id.bad_mood_button_in_habits);
-            Button ok_mood_button_in_habits = getView().findViewById(R.id.ok_mood_button_in_habits);
-            Button good_mood_button_in_habits = getView().findViewById(R.id.good_mood_button_in_habits);
-            Button very_good_mood_button_in_habits = getView().findViewById(R.id.very_good_mood_button_in_habits);
-            View very_bad_mood_in_habits = getView().findViewById(R.id.very_bad_mood_in_habits);
-            View bad_mood_in_habits = getView().findViewById(R.id.bad_mood_in_habits);
-            View ok_mood_in_habits = getView().findViewById(R.id.ok_mood_in_habits);
-            View good_mood_in_habits = getView().findViewById(R.id.good_mood_in_habits);
-            View very_good_mood_in_habits = getView().findViewById(R.id.very_good_mood_in_habits);
-            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.very_bad_mood_shade_in_habits);
-            View bad_mood_shade_in_habits = getView().findViewById(R.id.bad_mood_shade_in_habits);
-            View ok_mood_shade_in_habits = getView().findViewById(R.id.ok_mood_shade_in_habits);
-            View good_mood_shade_in_habits = getView().findViewById(R.id.good_mood_shade_in_habits);
-            View very_good_mood_shade_in_habits = getView().findViewById(R.id.very_good_mood_shade_in_habits);
-            View very_bad_mood_check_mark_in_mood = getView().findViewById(R.id.very_bad_mood_check_mark_in_mood);
-            View bad_mood_check_mark_in_mood = getView().findViewById(R.id.bad_mood_check_mark_in_mood);
-            View ok_mood_check_mark_in_mood = getView().findViewById(R.id.ok_mood_check_mark_in_mood);
-            View good_mood_check_mark_in_mood = getView().findViewById(R.id.good_mood_check_mark_in_mood);
-            View very_good_mood_check_mark_in_mood = getView().findViewById(R.id.very_good_mood_check_mark_in_mood);
-            TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.text_asking_did_you_relapse_in_share);
+            Button very_bad_mood_button_in_habits = getView().findViewById(R.id.bt_very_bad_mood_edit);
+            Button bad_mood_button_in_habits = getView().findViewById(R.id.bt_bad_mood_edit);
+            Button ok_mood_button_in_habits = getView().findViewById(R.id.bt_ok_mood_edit);
+            Button good_mood_button_in_habits = getView().findViewById(R.id.bt_good_mood_edit);
+            Button very_good_mood_button_in_habits = getView().findViewById(R.id.bt_very_good_mood_edit);
+            View very_bad_mood_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit);
+            View bad_mood_in_habits = getView().findViewById(R.id.view_bad_mood_edit);
+            View ok_mood_in_habits = getView().findViewById(R.id.view_ok_mood_edit);
+            View good_mood_in_habits = getView().findViewById(R.id.view_good_mood_edit);
+            View very_good_mood_in_habits = getView().findViewById(R.id.view_very_good_mood_edit);
+            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
+            View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
+            View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
+            View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            View very_bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_bad_mood_edit_check);
+            View bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_bad_mood_edit_check);
+            View ok_mood_check_mark_in_mood = getView().findViewById(R.id.view_ok_mood_edit_check);
+            View good_mood_check_mark_in_mood = getView().findViewById(R.id.view_good_mood_edit_check);
+            View very_good_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_good_mood_edit_check);
+            TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.tv_edit_mood);
             if (which == 0) {
                 very_bad_mood_button_in_habits.setVisibility(View.GONE);
                 bad_mood_button_in_habits.setVisibility(View.GONE);
@@ -8307,7 +8307,7 @@ public class Mood extends Fragment  {
                 ok_mood_check_mark_in_mood.setVisibility(View.GONE);
                 good_mood_check_mark_in_mood.setVisibility(View.GONE);
                 very_good_mood_check_mark_in_mood.setVisibility(View.GONE);
-                ConstraintLayout constraintLayout = getView().findViewById(R.id.layout_containting_the_calender);
+                ConstraintLayout constraintLayout = getView().findViewById(R.id.lc_calendar);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(constraintLayout);
                 constraintSet.applyTo(constraintLayout);
@@ -8324,7 +8324,7 @@ public class Mood extends Fragment  {
                 good_mood_in_habits.setVisibility(View.VISIBLE);
                 very_good_mood_in_habits.setVisibility(View.VISIBLE);
                 text_asking_did_you_relapse_in_share.setVisibility(View.VISIBLE);
-                ConstraintLayout constraintLayout = getView().findViewById(R.id.layout_containting_the_calender);
+                ConstraintLayout constraintLayout = getView().findViewById(R.id.lc_calendar);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(constraintLayout);
                 constraintSet.connect(text_asking_did_you_relapse_in_share.getId(), ConstraintSet.TOP, constraintLayout.getId(), ConstraintSet.TOP, (int) convertDpToPixel(return_the_length_of_stat() + 28, getContext()));
@@ -8353,7 +8353,7 @@ public class Mood extends Fragment  {
 
     private void color_only_today() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] split_the_month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             String[] split_the_color = color_the_today.split("_");
             int old_day = Integer.parseInt(split_the_color[0]);
@@ -8485,7 +8485,7 @@ public class Mood extends Fragment  {
 
     private String check_past_now_or_future() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] split_month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             int calender_month = returnMonthStringToInt(split_month_and_year[0]);
             int calender_year = Integer.parseInt(split_month_and_year[1]);
@@ -8514,7 +8514,7 @@ public class Mood extends Fragment  {
 
     private void color_the_button_under_the_calender() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String very_bad_color = return_the_color_of_mood(1);
             String bad_color = return_the_color_of_mood(2);
             String ok_color = return_the_color_of_mood(3);
@@ -8525,12 +8525,12 @@ public class Mood extends Fragment  {
             String month = String.valueOf(returnMonthStringToInt(splitter_temp[0]));
             String year = String.valueOf(splitter_temp[1]);
             String[] splitter = color_the_today.split("_");
-            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.very_bad_mood_shade_in_habits);
-            View bad_mood_shade_in_habits = getView().findViewById(R.id.bad_mood_shade_in_habits);
-            View ok_mood_shade_in_habits = getView().findViewById(R.id.ok_mood_shade_in_habits);
-            View good_mood_shade_in_habits = getView().findViewById(R.id.good_mood_shade_in_habits);
-            View very_good_mood_shade_in_habits = getView().findViewById(R.id.very_good_mood_shade_in_habits);
-            View very_good_mood_in_habits = getView().findViewById(R.id.very_good_mood_in_habits);
+            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
+            View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
+            View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
+            View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            View very_good_mood_in_habits = getView().findViewById(R.id.view_very_good_mood_edit);
             if (month.equals(splitter[1]) && year.equals(splitter[2])) {
                 if (colors[Integer.parseInt(splitter[0])].equals(very_bad_color)) {
                     if (very_bad_mood_shade_in_habits.getVisibility() != View.VISIBLE && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
@@ -8561,17 +8561,17 @@ public class Mood extends Fragment  {
 
     private void yes_and_no_button_listen_under_the_calender() {
         if (getView() != null) {
-            final Button very_bad_mood_button_in_habits = getView().findViewById(R.id.very_bad_mood_button_in_habits);
-            final Button bad_mood_button_in_habits = getView().findViewById(R.id.bad_mood_button_in_habits);
-            final Button ok_mood_button_in_habits = getView().findViewById(R.id.ok_mood_button_in_habits);
-            final Button good_mood_button_in_habits = getView().findViewById(R.id.good_mood_button_in_habits);
-            final Button very_good_mood_button_in_habits = getView().findViewById(R.id.very_good_mood_button_in_habits);
-            final View very_bad_mood_shade_in_habits = getView().findViewById(R.id.very_bad_mood_shade_in_habits);
-            final View bad_mood_shade_in_habits = getView().findViewById(R.id.bad_mood_shade_in_habits);
-            final View ok_mood_shade_in_habits = getView().findViewById(R.id.ok_mood_shade_in_habits);
-            final View good_mood_shade_in_habits = getView().findViewById(R.id.good_mood_shade_in_habits);
-            final View very_good_mood_shade_in_habits = getView().findViewById(R.id.very_good_mood_shade_in_habits);
-            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            final Button very_bad_mood_button_in_habits = getView().findViewById(R.id.bt_very_bad_mood_edit);
+            final Button bad_mood_button_in_habits = getView().findViewById(R.id.bt_bad_mood_edit);
+            final Button ok_mood_button_in_habits = getView().findViewById(R.id.bt_ok_mood_edit);
+            final Button good_mood_button_in_habits = getView().findViewById(R.id.bt_good_mood_edit);
+            final Button very_good_mood_button_in_habits = getView().findViewById(R.id.bt_very_good_mood_edit);
+            final View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            final View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
+            final View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
+            final View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
+            final View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             very_bad_mood_button_in_habits.setOnClickListener(view -> {
                 String[] split_for_day_month_year = color_the_today.split("_");
                 String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
@@ -9459,7 +9459,7 @@ public class Mood extends Fragment  {
     private String returnTheStateOfTheDays() {
         if (getView() != null) {
             String month_info = "";
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
             String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
             Calendar calendar = Calendar.getInstance();
             Calendar real_calender = Calendar.getInstance();
@@ -9561,7 +9561,7 @@ public class Mood extends Fragment  {
 
     private String return_the_last_day_of_last_month() {
         Calendar calendar = Calendar.getInstance();
-        TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.month_and_year_in_calender_for_good_habits);
+        TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
         String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
         int month = returnMonthStringToInt(splitter[0]);
         int year = Integer.parseInt(splitter[1]);
@@ -9625,16 +9625,16 @@ public class Mood extends Fragment  {
 
     private void select_the_mood_in_calender(int which) {
         if (getView() != null) {
-            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.very_bad_mood_shade_in_habits);
-            View bad_mood_shade_in_habits = getView().findViewById(R.id.bad_mood_shade_in_habits);
-            View ok_mood_shade_in_habits = getView().findViewById(R.id.ok_mood_shade_in_habits);
-            View good_mood_shade_in_habits = getView().findViewById(R.id.good_mood_shade_in_habits);
-            View very_good_mood_shade_in_habits = getView().findViewById(R.id.very_good_mood_shade_in_habits);
-            View very_bad_mood_check_mark_in_mood = getView().findViewById(R.id.very_bad_mood_check_mark_in_mood);
-            View bad_mood_check_mark_in_mood = getView().findViewById(R.id.bad_mood_check_mark_in_mood);
-            View ok_mood_check_mark_in_mood = getView().findViewById(R.id.ok_mood_check_mark_in_mood);
-            View good_mood_check_mark_in_mood = getView().findViewById(R.id.good_mood_check_mark_in_mood);
-            View very_good_mood_check_mark_in_mood = getView().findViewById(R.id.very_good_mood_check_mark_in_mood);
+            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
+            View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
+            View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
+            View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            View very_bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_bad_mood_edit_check);
+            View bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_bad_mood_edit_check);
+            View ok_mood_check_mark_in_mood = getView().findViewById(R.id.view_ok_mood_edit_check);
+            View good_mood_check_mark_in_mood = getView().findViewById(R.id.view_good_mood_edit_check);
+            View very_good_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_good_mood_edit_check);
             if (which == 0) {
                 very_bad_mood_shade_in_habits.setVisibility(View.INVISIBLE);
                 bad_mood_shade_in_habits.setVisibility(View.INVISIBLE);
@@ -9764,13 +9764,13 @@ public class Mood extends Fragment  {
 
     private void color_the_stuff() {
         if (getView() != null) {
-            ConstraintLayout layout_inside_scroll_in_the_bad_habits = getView().findViewById(R.id.layout_inside_scroll_in_the_bad_habits);
-            TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.text_asking_did_you_relapse_in_share);
-            ProgressBar progress_bar_number_one_mood = getView().findViewById(R.id.progress_bar_number_one_mood);
-            ProgressBar progress_bar_number_two_mood = getView().findViewById(R.id.progress_bar_number_two_mood);
-            ProgressBar progress_bar_number_three_mood = getView().findViewById(R.id.progress_bar_number_three_mood);
-            ProgressBar progress_bar_number_four_mood = getView().findViewById(R.id.progress_bar_number_four_mood);
-            ProgressBar progress_bar_number_five_mood = getView().findViewById(R.id.progress_bar_number_five_mood);
+            ConstraintLayout layout_inside_scroll_in_the_bad_habits = getView().findViewById(R.id.cl_mood);
+            TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.tv_edit_mood);
+            ProgressBar progress_bar_number_one_mood = getView().findViewById(R.id.pb_1);
+            ProgressBar progress_bar_number_two_mood = getView().findViewById(R.id.pb_2);
+            ProgressBar progress_bar_number_three_mood = getView().findViewById(R.id.pb_3);
+            ProgressBar progress_bar_number_four_mood = getView().findViewById(R.id.pb_4);
+            ProgressBar progress_bar_number_five_mood = getView().findViewById(R.id.pb_5);
             Drawable drawable_for_buttons_two = ContextCompat.getDrawable(getContext(), R.drawable.ripple_button_fav_any_circle).mutate();
             drawable_for_buttons_two = DrawableCompat.wrap(drawable_for_buttons_two);
             DrawableCompat.setTint(drawable_for_buttons_two, color);
@@ -9836,16 +9836,16 @@ public class Mood extends Fragment  {
 
     private void make_the_buttons_in_the_top_mood(int result) {
         if (getView() != null) {
-            View very_bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.very_bad_mood_shade_in_habits_in_the_top_today);
-            View bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.bad_mood_shade_in_habits_in_the_top_today);
-            View ok_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.ok_mood_shade_in_habits_in_the_top_today);
-            View good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.good_mood_shade_in_habits_in_the_top_today);
+            View very_bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background1);
+            View bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background2);
+            View ok_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background3);
+            View good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background4);
             View very_good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.very_good_mood_check);
             View very_bad_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.very_bad_mood_check);
             View bad_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.bad_mood_check);
             View ok_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.ok_mood_check);
             View good_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.good_mood_check);
-            View very_good_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.very_good_mood_check_mark_in_mood_in_the_top_today);
+            View very_good_mood_check_mark_in_mood_in_the_top_today = getView().findViewById(R.id.mood_check);
             if (result == 0) {
                 very_bad_mood_shade_in_habits_in_the_top_today.setVisibility(View.INVISIBLE);
                 bad_mood_shade_in_habits_in_the_top_today.setVisibility(View.INVISIBLE);
@@ -9918,15 +9918,15 @@ public class Mood extends Fragment  {
 
     private void button_listen_at_the_top() {
         if (getView() != null) {
-            Button very_bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.very_bad_mood_button_in_habits_in_the_top_today);
-            Button bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.bad_mood_button_in_habits_in_the_top_today);
-            Button ok_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.ok_mood_button_in_habits_in_the_top_today);
-            Button good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.good_mood_button_in_habits_in_the_top_today);
-            Button very_good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.very_good_mood_button_in_habits_in_the_top_today);
-            final View very_bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.very_bad_mood_shade_in_habits_in_the_top_today);
-            final View bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.bad_mood_shade_in_habits_in_the_top_today);
-            final View ok_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.ok_mood_shade_in_habits_in_the_top_today);
-            final View good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.good_mood_shade_in_habits_in_the_top_today);
+            Button very_bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_very_bad_mood);
+            Button bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_bad_mood);
+            Button ok_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_ok_mood);
+            Button good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_good_mood);
+            Button very_good_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_very_good_mood);
+            final View very_bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background1);
+            final View bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background2);
+            final View ok_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background3);
+            final View good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background4);
             final View very_good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.very_good_mood_check);
             very_bad_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (very_bad_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
@@ -10012,8 +10012,8 @@ public class Mood extends Fragment  {
 
     private void makeEverythingAverageMood() {
         if (getView() != null) {
-            TextView text_showing_average_mood_number = getView().findViewById(R.id.text_showing_average_mood_number);
-            View location_above_bmi_weight = getView().findViewById(R.id.location_above_bmi_weight);
+            TextView text_showing_average_mood_number = getView().findViewById(R.id.tv_average_mark);
+            View location_above_bmi_weight = getView().findViewById(R.id.location_average_chart);
             if (history_of_mood.isEmpty()) {
                 makeEverythingGoForAverageMood(0);
                 return;
@@ -10061,19 +10061,19 @@ public class Mood extends Fragment  {
     }
 
     private void makeEverythingGoForAverageMood(int which) {
-        TextView text_showing_average_mood_number = getView().findViewById(R.id.text_showing_average_mood_number);
-        View very_bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.very_bad_mood_in_habits_in_the_average_mood);
-        View bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.bad_mood_in_habits_in_the_average_mood);
-        View ok_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.ok_mood_in_habits_in_the_average_mood);
-        View good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.good_mood_in_habits_in_the_average_mood);
-        View very_good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.very_good_mood_in_habits_in_the_average_mood);
-        View location_above_bmi_weight = getView().findViewById(R.id.location_above_bmi_weight);
-        ProgressBar progress_bar_number_one_mood = getView().findViewById(R.id.progress_bar_number_one_mood);
-        ProgressBar progress_bar_number_two_mood = getView().findViewById(R.id.progress_bar_number_two_mood);
-        ProgressBar progress_bar_number_three_mood = getView().findViewById(R.id.progress_bar_number_three_mood);
-        ProgressBar progress_bar_number_four_mood = getView().findViewById(R.id.progress_bar_number_four_mood);
-        ProgressBar progress_bar_number_five_mood = getView().findViewById(R.id.progress_bar_number_five_mood);
-        TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar);
+        TextView text_showing_average_mood_number = getView().findViewById(R.id.tv_average_mark);
+        View very_bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood1);
+        View bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood2);
+        View ok_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood3);
+        View good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood4);
+        View very_good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood5);
+        View location_above_bmi_weight = getView().findViewById(R.id.location_average_chart);
+        ProgressBar progress_bar_number_one_mood = getView().findViewById(R.id.pb_1);
+        ProgressBar progress_bar_number_two_mood = getView().findViewById(R.id.pb_2);
+        ProgressBar progress_bar_number_three_mood = getView().findViewById(R.id.pb_3);
+        ProgressBar progress_bar_number_four_mood = getView().findViewById(R.id.pb_4);
+        ProgressBar progress_bar_number_five_mood = getView().findViewById(R.id.pb_5);
+        TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar = getView().findViewById(R.id.tv_not_enough_data_average);
         if (which == 0) {
             text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_average_bar.setVisibility(View.VISIBLE);
             text_showing_average_mood_number.setVisibility(View.INVISIBLE);
@@ -10107,9 +10107,9 @@ public class Mood extends Fragment  {
 
     private void drawTheMoodLineChart() {
         if (getView() != null) {
-            TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.text_saying_month_year_in_the_chart_mood_tracker);
-            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_forward_above_mood_tracker_graph);
-            View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_to_show_back_above_mood_tracker_graph);
+            TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.tv_month_year_chart);
+            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
+            View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_line_chart_back);
 
             Calendar calendar = Calendar.getInstance();
             int real_month = calendar.get(Calendar.MONTH);
@@ -10130,8 +10130,8 @@ public class Mood extends Fragment  {
 
 
             int color_card = color;
-            line_chart_for_streak = getView().findViewById(R.id.cahrt_showing_mood_in_mood_tracker);
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart);
+            line_chart_for_streak = getView().findViewById(R.id.line_chart);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.tv_not_enough_data_line_chart);
             line_chart_for_streak.invalidate();
             line_chart_for_streak.clear();
             ArrayList<Entry> y_values = new ArrayList<>();
@@ -10211,8 +10211,8 @@ public class Mood extends Fragment  {
 
     private void backAndFrontButtonListenForTheGraphMood() {
         if (getView() != null) {
-            Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_back_above_mood_tracker_graph);
-            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_forward_above_mood_tracker_graph);
+            Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_back);
+            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
             button_to_show_back_above_mood_tracker_graph.setOnClickListener(view -> {
                 if ((month_for_mood_chart) == 0) {
                     month_for_mood_chart = 11;
@@ -10304,23 +10304,23 @@ public class Mood extends Fragment  {
     }
 
     private void setAllTheFacesInTheMood() {
-        View veryBadMoodInHabitsInTheTopToday = getView().findViewById(R.id.very_bad_mood_in_habits_in_the_top_today);
-        View badMoodInHabitsInTheTopToday = getView().findViewById(R.id.bad_mood_in_habits_in_the_top_today);
-        View okMoodInHabitsInTheTopToday = getView().findViewById(R.id.ok_mood_in_habits_in_the_top_today);
-        View goodMoodInHabitsInTheTopToday = getView().findViewById(R.id.good_mood_in_habits_in_the_top_today);
-        View veryGoodMoodInHabitsInTheTopToday = getView().findViewById(R.id.very_good_mood_in_habits_in_the_top_today);
+        View veryBadMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_very_bad_mood);
+        View badMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_bad_mood);
+        View okMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_ok_mood);
+        View goodMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_good_mood);
+        View veryGoodMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_very_good_mood);
 
-        View very_bad_mood_in_habits = getView().findViewById(R.id.very_bad_mood_in_habits);
-        View bad_mood_in_habits = getView().findViewById(R.id.bad_mood_in_habits);
-        View ok_mood_in_habits = getView().findViewById(R.id.ok_mood_in_habits);
-        View good_mood_in_habits = getView().findViewById(R.id.good_mood_in_habits);
-        View very_good_mood_in_habits = getView().findViewById(R.id.very_good_mood_in_habits);
+        View very_bad_mood_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit);
+        View bad_mood_in_habits = getView().findViewById(R.id.view_bad_mood_edit);
+        View ok_mood_in_habits = getView().findViewById(R.id.view_ok_mood_edit);
+        View good_mood_in_habits = getView().findViewById(R.id.view_good_mood_edit);
+        View very_good_mood_in_habits = getView().findViewById(R.id.view_very_good_mood_edit);
 
-        View very_bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.very_bad_mood_in_habits_in_the_average_mood);
-        View bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.bad_mood_in_habits_in_the_average_mood);
-        View ok_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.ok_mood_in_habits_in_the_average_mood);
-        View good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.good_mood_in_habits_in_the_average_mood);
-        View very_good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.very_good_mood_in_habits_in_the_average_mood);
+        View very_bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood1);
+        View bad_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood2);
+        View ok_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood3);
+        View good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood4);
+        View very_good_mood_in_habits_in_the_average_mood = getView().findViewById(R.id.view_mood5);
 
         veryBadMoodInHabitsInTheTopToday.setBackground(returnMoodLogoVeryBad());
         very_bad_mood_in_habits.setBackground(returnMoodLogoVeryBad());
@@ -10402,9 +10402,9 @@ public class Mood extends Fragment  {
 
     private void drawTheBarForAverageMood() {
         if (getView() != null) {
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.cahrt_in_good_habits_about_how_many_times_for_each_days_of_week);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
+            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
+            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
 
             float max_days = 0;
             String days_of_week = returnTheDaysOfTheGoodHabit();
@@ -10687,9 +10687,9 @@ public class Mood extends Fragment  {
                     max_days = Float.parseFloat(s);
                 }
             }
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.cahrt_in_good_habits_about_how_many_times_for_each_days_of_week);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
+            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
+            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
             if (max_days == 0) {
                 text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.VISIBLE);
                 chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
@@ -10789,7 +10789,7 @@ public class Mood extends Fragment  {
 
 
     private void drawTheRightBarChartMood() {
-        BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
+        BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
         if (chart_in_mood_about_the_average_for_each_month.getVisibility() == View.VISIBLE) {
             drawBarForAverageMoodOverTheYear();
         } else {
@@ -10832,19 +10832,19 @@ public class Mood extends Fragment  {
     }
     private void fadeTheViews() {
         if (getView() != null && getContext() != null) {
-            TextView title_of_the_card_saying_this_is_the_graph_card = getView().findViewById(R.id.title_of_the_card_saying_this_is_the_graph_card);
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart);
-            Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_back_above_mood_tracker_graph);
-            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.button_to_show_forward_above_mood_tracker_graph);
-            View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_to_show_back_above_mood_tracker_graph);
-            View view_button_over_for_good_habits = getView().findViewById(R.id.view_button_over_for_good_habits);
-            TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.text_saying_month_year_in_the_chart_mood_tracker);
-            LineChart chart_showing_mood_in_mood_tracker = getView().findViewById(R.id.cahrt_showing_mood_in_mood_tracker);
+            TextView title_of_the_card_saying_this_is_the_graph_card = getView().findViewById(R.id.tv_mood_chart);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.tv_not_enough_data_line_chart);
+            Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_back);
+            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
+            View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_line_chart_back);
+            View view_button_over_for_good_habits = getView().findViewById(R.id.view_line_chart_forward);
+            TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.tv_month_year_chart);
+            LineChart chart_showing_mood_in_mood_tracker = getView().findViewById(R.id.line_chart);
 
-            TextView text_title_of_weekly_daily_habit_in_card = getView().findViewById(R.id.text_title_of_weekly_daily_habit_in_card);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.cahrt_in_good_habits_about_how_many_times_for_each_days_of_week);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.cahrt_in_mood_about_the_average_for_each_month);
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse);
+            TextView text_title_of_weekly_daily_habit_in_card = getView().findViewById(R.id.tv_average);
+            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
+            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
+            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
 
             title_of_the_card_saying_this_is_the_graph_card.setAlpha(1f);
             text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setAlpha(1f);

@@ -36,12 +36,12 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_add_meds);
         getSupportActionBar().hide();
 
         name = findViewById(R.id.name);
         note = findViewById(R.id.note);
-        Button submitBtn = findViewById(R.id.submitbtn);
+        Button submitBtn = findViewById(R.id.submit_btn);
         materialButtonToggleGroup = findViewById(R.id.toggleButton);
         materialButtonToggleGroup1 = findViewById(R.id.toggleButton1);
         radioGroup = findViewById(R.id.radioGroup);
