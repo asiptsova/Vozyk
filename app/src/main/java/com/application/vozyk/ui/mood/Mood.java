@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Mood extends Fragment  {
-    private Button day1,day2,day3,day4,day5,day6,day7,day8,day9,day10, 
+    private Button day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,
             day11,day12,day13,day14,day15,day16,day17,day18,day19, day20,
             day21,day22,day23,day24,day25,day26,day27,day28,day29,day30,
             day31,day32, day33, day34, day35, day36,day37;
@@ -108,7 +108,7 @@ public class Mood extends Fragment  {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden) 
+        if (!hidden)
             callMeAtStart();
     }
 
@@ -186,29 +186,29 @@ public class Mood extends Fragment  {
     }
 
     private String returnMonth(int month) {
-        if (month == 0) 
+        if (month == 0)
             return "January";
-        else if (month == 1) 
+        else if (month == 1)
             return "February";
-         else if (month == 2) 
+        else if (month == 2)
             return "March";
-        else if (month == 3) 
+        else if (month == 3)
             return "April";
-         else if (month == 4) 
+        else if (month == 4)
             return "May";
-         else if (month == 5) 
+        else if (month == 5)
             return "June";
-        else if (month == 6) 
+        else if (month == 6)
             return "July";
-         else if (month == 7) 
+        else if (month == 7)
             return "August";
-         else if (month == 8) 
+        else if (month == 8)
             return "September";
-         else if (month == 9) 
+        else if (month == 9)
             return "October";
-         else if (month == 10) 
+        else if (month == 10)
             return "November";
-         else 
+        else
             return "December";
     }
 
@@ -221,7 +221,7 @@ public class Mood extends Fragment  {
             firstDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
             firstDayOfMonthOnly.set(Calendar.DAY_OF_MONTH, firstDayOfMonthOnly.getActualMinimum(Calendar.DAY_OF_MONTH));
             return firstDayOfMonthOnly.get(Calendar.DAY_OF_WEEK);
-        } else 
+        } else
             return 0;
     }
 
@@ -234,7 +234,7 @@ public class Mood extends Fragment  {
             lastDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
             lastDayOfMonthOnly.set(Calendar.DAY_OF_MONTH, 1);
             return lastDayOfMonthOnly.getActualMaximum(Calendar.DAY_OF_MONTH);
-        } else 
+        } else
             return 1;
     }
 
@@ -275,17 +275,17 @@ public class Mood extends Fragment  {
             calenderForFirstDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
             if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.SUNDAY)
                 dayIsSunday();
-             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.MONDAY)
+            else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.MONDAY)
                 dayIsMonday();
-             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.TUESDAY)
+            else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.TUESDAY)
                 dayIsTuesday();
-             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.WEDNESDAY)
+            else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.WEDNESDAY)
                 dayIsWednesday();
             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.THURSDAY)
                 dayIsThursday();
-             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.FRIDAY)
+            else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.FRIDAY)
                 dayIsFriday();
-             else
+            else
                 dayIsSaturday();
         }
     }
@@ -716,189 +716,189 @@ public class Mood extends Fragment  {
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
             day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
             day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
@@ -1162,67 +1162,67 @@ public class Mood extends Fragment  {
             day = day + 1;
             if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day18.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day19.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day20.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day21.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day22.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day23.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day24.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day25.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day26.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day27.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day28.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day29.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day30.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day31.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day32.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day33.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day34.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day35.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day36.setText(String.valueOf(day));
-        day = day + 1;
-        if (day <= returnLastDayOfMonth())
-            day37.setText(String.valueOf(day));
-    } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
+        } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
             day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth())
@@ -1333,385 +1333,385 @@ public class Mood extends Fragment  {
                 day5.setText(String.valueOf(day));
             }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
             day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
             day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
         } else {
             day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
         }
     }
@@ -1721,94 +1721,94 @@ public class Mood extends Fragment  {
         if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
             day1.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day2.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) 
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth())
@@ -1938,147 +1938,112 @@ public class Mood extends Fragment  {
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
             day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day4.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day5.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
             day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day5.setText(String.valueOf(day));
-            }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
                 day6.setText(String.valueOf(day));
@@ -6986,35 +6951,35 @@ public class Mood extends Fragment  {
     }
 
     private void removeButtons() {
-        if (day1.getText().toString().equals("")) 
+        if (day1.getText().toString().equals(""))
             day1.setVisibility(View.INVISIBLE);
-        if (day2.getText().toString().equals("")) 
+        if (day2.getText().toString().equals(""))
             day2.setVisibility(View.INVISIBLE);
         if (day3.getText().toString().equals(""))
             day3.setVisibility(View.INVISIBLE);
-        if (day4.getText().toString().equals("")) 
+        if (day4.getText().toString().equals(""))
             day4.setVisibility(View.INVISIBLE);
-        if (day5.getText().toString().equals("")) 
+        if (day5.getText().toString().equals(""))
             day5.setVisibility(View.INVISIBLE);
         if (day6.getText().toString().equals(""))
             day6.setVisibility(View.INVISIBLE);
-        if (day29.getText().toString().equals("")) 
+        if (day29.getText().toString().equals(""))
             day29.setVisibility(View.INVISIBLE);
-        if (day30.getText().toString().equals("")) 
+        if (day30.getText().toString().equals(""))
             day30.setVisibility(View.INVISIBLE);
-        if (day31.getText().toString().equals("")) 
+        if (day31.getText().toString().equals(""))
             day31.setVisibility(View.INVISIBLE);
-        if (day32.getText().toString().equals("")) 
+        if (day32.getText().toString().equals(""))
             day32.setVisibility(View.INVISIBLE);
-        if (day33.getText().toString().equals("")) 
+        if (day33.getText().toString().equals(""))
             day33.setVisibility(View.INVISIBLE);
-        if (day34.getText().toString().equals("")) 
+        if (day34.getText().toString().equals(""))
             day34.setVisibility(View.INVISIBLE);
-        if (day35.getText().toString().equals("")) 
+        if (day35.getText().toString().equals(""))
             day35.setVisibility(View.INVISIBLE);
-        if (day36.getText().toString().equals("")) 
+        if (day36.getText().toString().equals(""))
             day36.setVisibility(View.INVISIBLE);
-        if (day37.getText().toString().equals("")) 
+        if (day37.getText().toString().equals(""))
             day37.setVisibility(View.INVISIBLE);
     }
 
@@ -7060,84 +7025,84 @@ public class Mood extends Fragment  {
     }
 
     private int returnDay(int day) {
-        if (day1.getText().toString().equals(String.valueOf(day))) 
+        if (day1.getText().toString().equals(String.valueOf(day)))
             return 1;
-        else if (day2.getText().toString().equals(String.valueOf(day))) 
+        else if (day2.getText().toString().equals(String.valueOf(day)))
             return 2;
-         else if (day3.getText().toString().equals(String.valueOf(day))) 
+        else if (day3.getText().toString().equals(String.valueOf(day)))
             return 3;
-         else if (day4.getText().toString().equals(String.valueOf(day))) 
+        else if (day4.getText().toString().equals(String.valueOf(day)))
             return 4;
-         else if (day5.getText().toString().equals(String.valueOf(day))) 
+        else if (day5.getText().toString().equals(String.valueOf(day)))
             return 5;
-         else if (day6.getText().toString().equals(String.valueOf(day))) 
+        else if (day6.getText().toString().equals(String.valueOf(day)))
             return 6;
-         else if (day7.getText().toString().equals(String.valueOf(day))) 
+        else if (day7.getText().toString().equals(String.valueOf(day)))
             return 7;
-         else if (day8.getText().toString().equals(String.valueOf(day))) 
+        else if (day8.getText().toString().equals(String.valueOf(day)))
             return 8;
-         else if (day9.getText().toString().equals(String.valueOf(day))) 
+        else if (day9.getText().toString().equals(String.valueOf(day)))
             return 9;
-         else if (day10.getText().toString().equals(String.valueOf(day))) 
+        else if (day10.getText().toString().equals(String.valueOf(day)))
             return 10;
-         else if (day11.getText().toString().equals(String.valueOf(day))) 
+        else if (day11.getText().toString().equals(String.valueOf(day)))
             return 11;
-         else if (day12.getText().toString().equals(String.valueOf(day))) 
+        else if (day12.getText().toString().equals(String.valueOf(day)))
             return 12;
-         else if (day13.getText().toString().equals(String.valueOf(day))) 
+        else if (day13.getText().toString().equals(String.valueOf(day)))
             return 13;
-         else if (day14.getText().toString().equals(String.valueOf(day))) 
+        else if (day14.getText().toString().equals(String.valueOf(day)))
             return 14;
-        else if (day15.getText().toString().equals(String.valueOf(day))) 
+        else if (day15.getText().toString().equals(String.valueOf(day)))
             return 15;
-         else if (day16.getText().toString().equals(String.valueOf(day))) 
+        else if (day16.getText().toString().equals(String.valueOf(day)))
             return 16;
-         else if (day17.getText().toString().equals(String.valueOf(day))) 
+        else if (day17.getText().toString().equals(String.valueOf(day)))
             return 17;
-         else if (day18.getText().toString().equals(String.valueOf(day))) 
+        else if (day18.getText().toString().equals(String.valueOf(day)))
             return 18;
-         else if (day19.getText().toString().equals(String.valueOf(day))) 
+        else if (day19.getText().toString().equals(String.valueOf(day)))
             return 19;
-         else if (day20.getText().toString().equals(String.valueOf(day))) 
+        else if (day20.getText().toString().equals(String.valueOf(day)))
             return 20;
-         else if (day21.getText().toString().equals(String.valueOf(day))) 
+        else if (day21.getText().toString().equals(String.valueOf(day)))
             return 21;
-         else if (day22.getText().toString().equals(String.valueOf(day))) 
+        else if (day22.getText().toString().equals(String.valueOf(day)))
             return 22;
-         else if (day23.getText().toString().equals(String.valueOf(day))) 
+        else if (day23.getText().toString().equals(String.valueOf(day)))
             return 23;
-         else if (day24.getText().toString().equals(String.valueOf(day))) 
+        else if (day24.getText().toString().equals(String.valueOf(day)))
             return 24;
-         else if (day25.getText().toString().equals(String.valueOf(day))) 
+        else if (day25.getText().toString().equals(String.valueOf(day)))
             return 25;
-         else if (day26.getText().toString().equals(String.valueOf(day))) 
+        else if (day26.getText().toString().equals(String.valueOf(day)))
             return 26;
-         else if (day27.getText().toString().equals(String.valueOf(day))) 
+        else if (day27.getText().toString().equals(String.valueOf(day)))
             return 27;
-         else if (day28.getText().toString().equals(String.valueOf(day))) 
+        else if (day28.getText().toString().equals(String.valueOf(day)))
             return 28;
-         else if (day29.getText().toString().equals(String.valueOf(day))) 
+        else if (day29.getText().toString().equals(String.valueOf(day)))
             return 29;
-         else if (day30.getText().toString().equals(String.valueOf(day))) 
+        else if (day30.getText().toString().equals(String.valueOf(day)))
             return 30;
-         else if (day31.getText().toString().equals(String.valueOf(day))) 
+        else if (day31.getText().toString().equals(String.valueOf(day)))
             return 31;
-         else if (day32.getText().toString().equals(String.valueOf(day))) 
+        else if (day32.getText().toString().equals(String.valueOf(day)))
             return 32;
-         else if (day33.getText().toString().equals(String.valueOf(day))) 
+        else if (day33.getText().toString().equals(String.valueOf(day)))
             return 33;
-         else if (day34.getText().toString().equals(String.valueOf(day))) 
+        else if (day34.getText().toString().equals(String.valueOf(day)))
             return 34;
         else if (day35.getText().toString().equals(String.valueOf(day)))
             return 35;
-         else if (day36.getText().toString().equals(String.valueOf(day))) 
+        else if (day36.getText().toString().equals(String.valueOf(day)))
             return 36;
-         else 
+        else
             return 37;
     }
 
     private void colorToday() {
-         monthYear=getView().findViewById(R.id.tv_month_year);
+        monthYear=getView().findViewById(R.id.tv_month_year);
         if (getView() != null) {
             String[] text_to_split = monthYear.getText().toString().split(" ");
             int yearText = Integer.parseInt(text_to_split[1]);
@@ -7147,81 +7112,81 @@ public class Mood extends Fragment  {
             int month = Integer.parseInt(savedSplit[1]);
             int day = Integer.parseInt(savedSplit[0]);
             if ((yearText == year) && (monthText == month)) {
-                if (!day1.getText().toString().equals("") && Integer.parseInt(day1.getText().toString()) == day) 
+                if (!day1.getText().toString().equals("") && Integer.parseInt(day1.getText().toString()) == day)
                     selectedColor(1);
-                 else if (!day2.getText().toString().equals("") && Integer.parseInt(day2.getText().toString()) == day) 
+                else if (!day2.getText().toString().equals("") && Integer.parseInt(day2.getText().toString()) == day)
                     selectedColor(2);
-                 else if (!day3.getText().toString().equals("") && Integer.parseInt(day3.getText().toString()) == day) 
+                else if (!day3.getText().toString().equals("") && Integer.parseInt(day3.getText().toString()) == day)
                     selectedColor(3);
-                 else if (!day4.getText().toString().equals("") && Integer.parseInt(day4.getText().toString()) == day) 
+                else if (!day4.getText().toString().equals("") && Integer.parseInt(day4.getText().toString()) == day)
                     selectedColor(4);
-                 else if (!day5.getText().toString().equals("") && Integer.parseInt(day5.getText().toString()) == day) 
+                else if (!day5.getText().toString().equals("") && Integer.parseInt(day5.getText().toString()) == day)
                     selectedColor(5);
-                 else if (!day6.getText().toString().equals("") && Integer.parseInt(day6.getText().toString()) == day) 
+                else if (!day6.getText().toString().equals("") && Integer.parseInt(day6.getText().toString()) == day)
                     selectedColor(6);
-                 else if (!day7.getText().toString().equals("") && Integer.parseInt(day7.getText().toString()) == day) 
+                else if (!day7.getText().toString().equals("") && Integer.parseInt(day7.getText().toString()) == day)
                     selectedColor(7);
-                 else if (!day8.getText().toString().equals("") && Integer.parseInt(day8.getText().toString()) == day) 
+                else if (!day8.getText().toString().equals("") && Integer.parseInt(day8.getText().toString()) == day)
                     selectedColor(8);
-                 else if (!day9.getText().toString().equals("") && Integer.parseInt(day9.getText().toString()) == day) 
+                else if (!day9.getText().toString().equals("") && Integer.parseInt(day9.getText().toString()) == day)
                     selectedColor(9);
-                 else if (!day10.getText().toString().equals("") && Integer.parseInt(day10.getText().toString()) == day) 
+                else if (!day10.getText().toString().equals("") && Integer.parseInt(day10.getText().toString()) == day)
                     selectedColor(10);
-                 else if (!day11.getText().toString().equals("") && Integer.parseInt(day11.getText().toString()) == day) 
+                else if (!day11.getText().toString().equals("") && Integer.parseInt(day11.getText().toString()) == day)
                     selectedColor(11);
-                 else if (!day12.getText().toString().equals("") && Integer.parseInt(day12.getText().toString()) == day) 
+                else if (!day12.getText().toString().equals("") && Integer.parseInt(day12.getText().toString()) == day)
                     selectedColor(12);
-                 else if (!day13.getText().toString().equals("") && Integer.parseInt(day13.getText().toString()) == day) 
+                else if (!day13.getText().toString().equals("") && Integer.parseInt(day13.getText().toString()) == day)
                     selectedColor(13);
-                 else if (!day14.getText().toString().equals("") && Integer.parseInt(day14.getText().toString()) == day) 
+                else if (!day14.getText().toString().equals("") && Integer.parseInt(day14.getText().toString()) == day)
                     selectedColor(14);
-                 else if (!day15.getText().toString().equals("") && Integer.parseInt(day15.getText().toString()) == day) 
+                else if (!day15.getText().toString().equals("") && Integer.parseInt(day15.getText().toString()) == day)
                     selectedColor(15);
-                 else if (!day16.getText().toString().equals("") && Integer.parseInt(day16.getText().toString()) == day) 
+                else if (!day16.getText().toString().equals("") && Integer.parseInt(day16.getText().toString()) == day)
                     selectedColor(16);
-                 else if (!day17.getText().toString().equals("") && Integer.parseInt(day17.getText().toString()) == day) 
+                else if (!day17.getText().toString().equals("") && Integer.parseInt(day17.getText().toString()) == day)
                     selectedColor(17);
-                 else if (!day18.getText().toString().equals("") && Integer.parseInt(day18.getText().toString()) == day) 
+                else if (!day18.getText().toString().equals("") && Integer.parseInt(day18.getText().toString()) == day)
                     selectedColor(18);
-                 else if (!day19.getText().toString().equals("") && Integer.parseInt(day19.getText().toString()) == day) 
+                else if (!day19.getText().toString().equals("") && Integer.parseInt(day19.getText().toString()) == day)
                     selectedColor(19);
-                 else if (!day20.getText().toString().equals("") && Integer.parseInt(day20.getText().toString()) == day) 
+                else if (!day20.getText().toString().equals("") && Integer.parseInt(day20.getText().toString()) == day)
                     selectedColor(20);
-                 else if (!day21.getText().toString().equals("") && Integer.parseInt(day21.getText().toString()) == day) 
+                else if (!day21.getText().toString().equals("") && Integer.parseInt(day21.getText().toString()) == day)
                     selectedColor(21);
-                 else if (!day22.getText().toString().equals("") && Integer.parseInt(day22.getText().toString()) == day) 
+                else if (!day22.getText().toString().equals("") && Integer.parseInt(day22.getText().toString()) == day)
                     selectedColor(22);
-                 else if (!day23.getText().toString().equals("") && Integer.parseInt(day23.getText().toString()) == day) 
+                else if (!day23.getText().toString().equals("") && Integer.parseInt(day23.getText().toString()) == day)
                     selectedColor(23);
-                 else if (!day24.getText().toString().equals("") && Integer.parseInt(day24.getText().toString()) == day) 
+                else if (!day24.getText().toString().equals("") && Integer.parseInt(day24.getText().toString()) == day)
                     selectedColor(24);
-                 else if (!day25.getText().toString().equals("") && Integer.parseInt(day25.getText().toString()) == day) 
+                else if (!day25.getText().toString().equals("") && Integer.parseInt(day25.getText().toString()) == day)
                     selectedColor(25);
-                 else if (!day26.getText().toString().equals("") && Integer.parseInt(day26.getText().toString()) == day) 
+                else if (!day26.getText().toString().equals("") && Integer.parseInt(day26.getText().toString()) == day)
                     selectedColor(26);
-                 else if (!day27.getText().toString().equals("") && Integer.parseInt(day27.getText().toString()) == day) 
+                else if (!day27.getText().toString().equals("") && Integer.parseInt(day27.getText().toString()) == day)
                     selectedColor(27);
-                 else if (!day28.getText().toString().equals("") && Integer.parseInt(day28.getText().toString()) == day) 
+                else if (!day28.getText().toString().equals("") && Integer.parseInt(day28.getText().toString()) == day)
                     selectedColor(28);
-                 else if (!day29.getText().toString().equals("") && Integer.parseInt(day29.getText().toString()) == day) 
+                else if (!day29.getText().toString().equals("") && Integer.parseInt(day29.getText().toString()) == day)
                     selectedColor(29);
-                 else if (!day30.getText().toString().equals("") && Integer.parseInt(day30.getText().toString()) == day) 
+                else if (!day30.getText().toString().equals("") && Integer.parseInt(day30.getText().toString()) == day)
                     selectedColor(30);
-                 else if (!day31.getText().toString().equals("") && Integer.parseInt(day31.getText().toString()) == day) 
+                else if (!day31.getText().toString().equals("") && Integer.parseInt(day31.getText().toString()) == day)
                     selectedColor(31);
-                 else if (!day32.getText().toString().equals("") && Integer.parseInt(day32.getText().toString()) == day) 
+                else if (!day32.getText().toString().equals("") && Integer.parseInt(day32.getText().toString()) == day)
                     selectedColor(32);
-                 else if (!day33.getText().toString().equals("") && Integer.parseInt(day33.getText().toString()) == day) 
+                else if (!day33.getText().toString().equals("") && Integer.parseInt(day33.getText().toString()) == day)
                     selectedColor(33);
-                 else if (!day34.getText().toString().equals("") && Integer.parseInt(day34.getText().toString()) == day) 
+                else if (!day34.getText().toString().equals("") && Integer.parseInt(day34.getText().toString()) == day)
                     selectedColor(34);
-                 else if (!day35.getText().toString().equals("") && Integer.parseInt(day35.getText().toString()) == day) 
+                else if (!day35.getText().toString().equals("") && Integer.parseInt(day35.getText().toString()) == day)
                     selectedColor(35);
-                 else if (!day36.getText().toString().equals("") && Integer.parseInt(day36.getText().toString()) == day) 
+                else if (!day36.getText().toString().equals("") && Integer.parseInt(day36.getText().toString()) == day)
                     selectedColor(36);
-                 else if (!day37.getText().toString().equals("") && Integer.parseInt(day37.getText().toString()) == day) 
+                else if (!day37.getText().toString().equals("") && Integer.parseInt(day37.getText().toString()) == day)
                     selectedColor(37);
-                
+
             }
         }
     }
@@ -7246,138 +7211,138 @@ public class Mood extends Fragment  {
                     long timeInMillis = calendar.getTimeInMillis();
                     if (TimeMood.returnTimeInMidnight(timeInMillis) >= TimeMood.returnTimeInMidnight(startDate)) {
                         if (TimeMood.returnTimeInMidnight(timeInMillis) <= TimeMood.returnTimeInMidnight(System.currentTimeMillis())) {
-                            if (returnColorOfDays(timeInMillis) == 0) 
+                            if (returnColorOfDays(timeInMillis) == 0)
                                 colors[i] = noMoodColor;
-                             else if (returnColorOfDays(timeInMillis) == 1) 
+                            else if (returnColorOfDays(timeInMillis) == 1)
                                 colors[i] = veryBadColor;
-                             else if (returnColorOfDays(timeInMillis) == 2) 
+                            else if (returnColorOfDays(timeInMillis) == 2)
                                 colors[i] = badColor;
-                             else if (returnColorOfDays(timeInMillis) == 3) 
+                            else if (returnColorOfDays(timeInMillis) == 3)
                                 colors[i] = okColor;
-                             else if (returnColorOfDays(timeInMillis) == 4) 
+                            else if (returnColorOfDays(timeInMillis) == 4)
                                 colors[i] = goodColor;
-                             else if (returnColorOfDays(timeInMillis) == 5) 
+                            else if (returnColorOfDays(timeInMillis) == 5)
                                 colors[i] = veryGoodColor;
-                        } else 
+                        } else
                             colors[i] = noMoodColor;
-                    } else 
+                    } else
                         colors[i] = noMoodColor;
                 }
             } else {
-                for (int i = 1; i <= returnLastDayOfMonth(); i++) 
+                for (int i = 1; i <= returnLastDayOfMonth(); i++)
                     colors[i] = noMoodColor;
             }
             for (int i = 1; i <= returnLastDayOfMonth(); i++) {
                 if (returnDay(i) == 1) {
-                    if (day1.getCurrentTextColor() != Color.WHITE) 
+                    if (day1.getCurrentTextColor() != Color.WHITE)
                         day1.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 2) {
-                    if (day2.getCurrentTextColor() != Color.WHITE) 
+                    if (day2.getCurrentTextColor() != Color.WHITE)
                         day2.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 3) {
-                    if (day3.getCurrentTextColor() != Color.WHITE) 
+                    if (day3.getCurrentTextColor() != Color.WHITE)
                         day3.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 4) {
-                    if (day4.getCurrentTextColor() != Color.WHITE) 
+                    if (day4.getCurrentTextColor() != Color.WHITE)
                         day4.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 5) {
-                    if (day5.getCurrentTextColor() != Color.WHITE) 
+                    if (day5.getCurrentTextColor() != Color.WHITE)
                         day5.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 6) {
-                    if (day6.getCurrentTextColor() != Color.WHITE) 
+                    if (day6.getCurrentTextColor() != Color.WHITE)
                         day6.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 7) {
-                    if (day7.getCurrentTextColor() != Color.WHITE) 
+                    if (day7.getCurrentTextColor() != Color.WHITE)
                         day7.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 8) {
-                    if (day8.getCurrentTextColor() != Color.WHITE) 
+                    if (day8.getCurrentTextColor() != Color.WHITE)
                         day8.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 9) {
-                    if (day9.getCurrentTextColor() != Color.WHITE) 
+                    if (day9.getCurrentTextColor() != Color.WHITE)
                         day9.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 10) {
-                    if (day10.getCurrentTextColor() != Color.WHITE) 
+                    if (day10.getCurrentTextColor() != Color.WHITE)
                         day10.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 11) {
-                    if (day11.getCurrentTextColor() != Color.WHITE) 
+                    if (day11.getCurrentTextColor() != Color.WHITE)
                         day11.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 12) {
-                    if (day12.getCurrentTextColor() != Color.WHITE) 
+                    if (day12.getCurrentTextColor() != Color.WHITE)
                         day12.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 13) {
-                    if (day13.getCurrentTextColor() != Color.WHITE) 
+                    if (day13.getCurrentTextColor() != Color.WHITE)
                         day13.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 14) {
-                    if (day14.getCurrentTextColor() != Color.WHITE) 
+                    if (day14.getCurrentTextColor() != Color.WHITE)
                         day14.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 15) {
-                    if (day15.getCurrentTextColor() != Color.WHITE) 
+                    if (day15.getCurrentTextColor() != Color.WHITE)
                         day15.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 16) {
-                    if (day16.getCurrentTextColor() != Color.WHITE) 
+                    if (day16.getCurrentTextColor() != Color.WHITE)
                         day16.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 17) {
-                    if (day17.getCurrentTextColor() != Color.WHITE) 
+                    if (day17.getCurrentTextColor() != Color.WHITE)
                         day17.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 18) {
-                    if (day18.getCurrentTextColor() != Color.WHITE) 
+                    if (day18.getCurrentTextColor() != Color.WHITE)
                         day18.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 19) {
-                    if (day19.getCurrentTextColor() != Color.WHITE) 
+                    if (day19.getCurrentTextColor() != Color.WHITE)
                         day19.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 20) {
-                    if (day20.getCurrentTextColor() != Color.WHITE) 
+                    if (day20.getCurrentTextColor() != Color.WHITE)
                         day20.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 21) {
-                    if (day21.getCurrentTextColor() != Color.WHITE) 
+                    if (day21.getCurrentTextColor() != Color.WHITE)
                         day21.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 22) {
-                    if (day22.getCurrentTextColor() != Color.WHITE) 
+                    if (day22.getCurrentTextColor() != Color.WHITE)
                         day22.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 23) {
-                    if (day23.getCurrentTextColor() != Color.WHITE) 
+                    if (day23.getCurrentTextColor() != Color.WHITE)
                         day23.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 24) {
-                    if (day24.getCurrentTextColor() != Color.WHITE) 
+                    if (day24.getCurrentTextColor() != Color.WHITE)
                         day24.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 25) {
-                    if (day25.getCurrentTextColor() != Color.WHITE) 
+                    if (day25.getCurrentTextColor() != Color.WHITE)
                         day25.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 26) {
-                    if (day26.getCurrentTextColor() != Color.WHITE) 
+                    if (day26.getCurrentTextColor() != Color.WHITE)
                         day26.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 27) {
-                    if (day27.getCurrentTextColor() != Color.WHITE) 
+                    if (day27.getCurrentTextColor() != Color.WHITE)
                         day27.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 28) {
-                    if (day28.getCurrentTextColor() != Color.WHITE) 
+                    if (day28.getCurrentTextColor() != Color.WHITE)
                         day28.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 29) {
-                    if (day29.getCurrentTextColor() != Color.WHITE) 
+                    if (day29.getCurrentTextColor() != Color.WHITE)
                         day29.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 30) {
-                    if (day30.getCurrentTextColor() != Color.WHITE) 
+                    if (day30.getCurrentTextColor() != Color.WHITE)
                         day30.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 31) {
-                    if (day31.getCurrentTextColor() != Color.WHITE) 
+                    if (day31.getCurrentTextColor() != Color.WHITE)
                         day31.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 32) {
-                    if (day32.getCurrentTextColor() != Color.WHITE) 
+                    if (day32.getCurrentTextColor() != Color.WHITE)
                         day32.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 33) {
-                    if (day33.getCurrentTextColor() != Color.WHITE) 
+                    if (day33.getCurrentTextColor() != Color.WHITE)
                         day33.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 34) {
-                    if (day34.getCurrentTextColor() != Color.WHITE) 
+                    if (day34.getCurrentTextColor() != Color.WHITE)
                         day34.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 35) {
-                    if (day35.getCurrentTextColor() != Color.WHITE) 
+                    if (day35.getCurrentTextColor() != Color.WHITE)
                         day35.setTextColor(Color.parseColor(colors[i]));
                 } else if (returnDay(i) == 36) {
-                    if (day36.getCurrentTextColor() != Color.WHITE) 
+                    if (day36.getCurrentTextColor() != Color.WHITE)
                         day36.setTextColor(Color.parseColor(colors[i]));
                 } else {
-                    if (day37.getCurrentTextColor() != Color.WHITE) 
+                    if (day37.getCurrentTextColor() != Color.WHITE)
                         day37.setTextColor(Color.parseColor(colors[i]));
                 }
             }
@@ -7402,33 +7367,33 @@ public class Mood extends Fragment  {
             String monthText = String.valueOf(returnMonthStringToInt(splitterTmp[0]));
             String yearText = String.valueOf(splitterTmp[1]);
             String[] splitterValue = colorToday.split("_");
-            if (calendarNew.getTimeInMillis() < TimeMood.returnTimeInMidnight(startDate)) 
+            if (calendarNew.getTimeInMillis() < TimeMood.returnTimeInMidnight(startDate))
                 hideOrUnHideTheButton(0);
-             else {
-                if (year > yearNow) 
+            else {
+                if (year > yearNow)
                     hideOrUnHideTheButton(0);
                 else if (year == yearNow) {
-                    if (month > monthNow) 
+                    if (month > monthNow)
                         hideOrUnHideTheButton(0);
-                     else if (month == monthNow) {
-                        if (day >= dayNow) 
+                    else if (month == monthNow) {
+                        if (day >= dayNow)
                             hideOrUnHideTheButton(0);
-                         else {
-                            if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                        else {
+                            if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2]))
                                 hideOrUnHideTheButton(1);
-                             else 
+                            else
                                 hideOrUnHideTheButton(0);
                         }
                     } else {
-                        if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                        if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2]))
                             hideOrUnHideTheButton(1);
-                         else 
+                        else
                             hideOrUnHideTheButton(0);
                     }
                 } else {
-                    if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                    if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2]))
                         hideOrUnHideTheButton(1);
-                     else 
+                    else
                         hideOrUnHideTheButton(0);
                 }
             }
@@ -7512,14 +7477,14 @@ public class Mood extends Fragment  {
 
     private int returnTheLengthOfStat() {
         if (day36.getText().toString().equals("")) {
-            if (day29.getText().toString().equals("")) 
+            if (day29.getText().toString().equals(""))
                 return 240;
-             else 
+            else
                 return 280;
-        } else 
+        } else
             return 320;
     }
-    
+
 
     private void colorOnlyToday() {
         if (getView() != null) {
@@ -7535,77 +7500,77 @@ public class Mood extends Fragment  {
                 if (colors[oldDay] != null) {
                     if (day1.getText().toString().equals(String.valueOf(oldDay)))
                         day1.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day2.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day2.getText().toString().equals(String.valueOf(oldDay)))
                         day2.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day3.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day3.getText().toString().equals(String.valueOf(oldDay)))
                         day3.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day4.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day4.getText().toString().equals(String.valueOf(oldDay)))
                         day4.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day5.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day5.getText().toString().equals(String.valueOf(oldDay)))
                         day5.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day6.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day6.getText().toString().equals(String.valueOf(oldDay)))
                         day6.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day7.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day7.getText().toString().equals(String.valueOf(oldDay)))
                         day7.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day8.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day8.getText().toString().equals(String.valueOf(oldDay)))
                         day8.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day9.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day9.getText().toString().equals(String.valueOf(oldDay)))
                         day9.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day10.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day10.getText().toString().equals(String.valueOf(oldDay)))
                         day10.setTextColor(Color.parseColor(colors[oldDay]));
                     else if (day11.getText().toString().equals(String.valueOf(oldDay)))
                         day11.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day12.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day12.getText().toString().equals(String.valueOf(oldDay)))
                         day12.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day13.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day13.getText().toString().equals(String.valueOf(oldDay)))
                         day13.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day14.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day14.getText().toString().equals(String.valueOf(oldDay)))
                         day14.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day15.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day15.getText().toString().equals(String.valueOf(oldDay)))
                         day15.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day16.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day16.getText().toString().equals(String.valueOf(oldDay)))
                         day16.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day17.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day17.getText().toString().equals(String.valueOf(oldDay)))
                         day17.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day18.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day18.getText().toString().equals(String.valueOf(oldDay)))
                         day18.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day19.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day19.getText().toString().equals(String.valueOf(oldDay)))
                         day19.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day20.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day20.getText().toString().equals(String.valueOf(oldDay)))
                         day20.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day21.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day21.getText().toString().equals(String.valueOf(oldDay)))
                         day21.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day22.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day22.getText().toString().equals(String.valueOf(oldDay)))
                         day22.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day23.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day23.getText().toString().equals(String.valueOf(oldDay)))
                         day23.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day24.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day24.getText().toString().equals(String.valueOf(oldDay)))
                         day24.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day25.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day25.getText().toString().equals(String.valueOf(oldDay)))
                         day25.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day26.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day26.getText().toString().equals(String.valueOf(oldDay)))
                         day26.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day27.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day27.getText().toString().equals(String.valueOf(oldDay)))
                         day27.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day28.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day28.getText().toString().equals(String.valueOf(oldDay)))
                         day28.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day29.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day29.getText().toString().equals(String.valueOf(oldDay)))
                         day29.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day30.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day30.getText().toString().equals(String.valueOf(oldDay)))
                         day30.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day31.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day31.getText().toString().equals(String.valueOf(oldDay)))
                         day31.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day32.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day32.getText().toString().equals(String.valueOf(oldDay)))
                         day32.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day33.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day33.getText().toString().equals(String.valueOf(oldDay)))
                         day33.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day34.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day34.getText().toString().equals(String.valueOf(oldDay)))
                         day34.setTextColor(Color.parseColor(colors[oldDay]));
-                     else if (day35.getText().toString().equals(String.valueOf(oldDay)))
+                    else if (day35.getText().toString().equals(String.valueOf(oldDay)))
                         day35.setTextColor(Color.parseColor(colors[oldDay]));
                     else if (day36.getText().toString().equals(String.valueOf(oldDay)))
                         day36.setTextColor(Color.parseColor(colors[oldDay]));
-                     else
+                    else
                         day37.setTextColor(Color.parseColor(colors[oldDay]));
 
                 }
@@ -7662,18 +7627,18 @@ public class Mood extends Fragment  {
             Calendar calendar = Calendar.getInstance();
             int yearNow = calendar.get(Calendar.YEAR);
             int monthNow = calendar.get(Calendar.MONTH);
-            if (calendarYear > yearNow) 
+            if (calendarYear > yearNow)
                 return "future";
-             else if (calendarYear == yearNow) {
-                if (calendarMonth > monthNow) 
+            else if (calendarYear == yearNow) {
+                if (calendarMonth > monthNow)
                     return "future";
-                 else if (calendarMonth == monthNow) 
+                else if (calendarMonth == monthNow)
                     return "current";
-                else 
+                else
                     return "past";
-            } else 
+            } else
                 return "past";
-        } else 
+        } else
             return "future";
     }
 
@@ -7681,7 +7646,7 @@ public class Mood extends Fragment  {
 
     private void colorButtonUnderTheCalendar() {
         if (getView() != null) {
-           monthYear = getView().findViewById(R.id.tv_month_year);
+            monthYear = getView().findViewById(R.id.tv_month_year);
             String veryBadColor = returnTheColorOfMood(1);
             String badColor = returnTheColorOfMood(2);
             String okColor = returnTheColorOfMood(3);
@@ -7858,17 +7823,17 @@ public class Mood extends Fragment  {
         int month_start_day;
         if (day1.getVisibility() == View.VISIBLE)
             month_start_day = 7;
-         else if (day2.getVisibility() == View.VISIBLE) 
+        else if (day2.getVisibility() == View.VISIBLE)
             month_start_day = 6;
-         else if (day3.getVisibility() == View.VISIBLE) 
+        else if (day3.getVisibility() == View.VISIBLE)
             month_start_day = 5;
-         else if (day4.getVisibility() == View.VISIBLE) 
+        else if (day4.getVisibility() == View.VISIBLE)
             month_start_day = 4;
-         else if (day5.getVisibility() == View.VISIBLE) 
+        else if (day5.getVisibility() == View.VISIBLE)
             month_start_day = 3;
-         else if (day6.getVisibility() == View.VISIBLE) 
+        else if (day6.getVisibility() == View.VISIBLE)
             month_start_day = 2;
-         else 
+        else
             month_start_day = 1;
         String[] splitter_read = returnTheStateOfTheDays().split("split");
         String firstLineString = "";
@@ -7877,22 +7842,22 @@ public class Mood extends Fragment  {
         String fourLineString = "";
         String fiveLineString = "";
         String sixLineString = "";
-        for (int i = 0; i < month_start_day; i++) 
+        for (int i = 0; i < month_start_day; i++)
             firstLineString = firstLineString.concat(splitter_read[i]).concat("split");
-        for (int i = month_start_day; i < month_start_day + 7; i++) 
+        for (int i = month_start_day; i < month_start_day + 7; i++)
             secondLineString = secondLineString.concat(splitter_read[i]).concat("split");
-        for (int i = month_start_day + 7; i < month_start_day + 14; i++) 
+        for (int i = month_start_day + 7; i < month_start_day + 14; i++)
             threeLineString = threeLineString.concat(splitter_read[i]).concat("split");
-        for (int i = month_start_day + 14; i < month_start_day + 21; i++) 
+        for (int i = month_start_day + 14; i < month_start_day + 21; i++)
             fourLineString = fourLineString.concat(splitter_read[i]).concat("split");
         int how_many_are_empty = returnLastDayOfMonth() + (7 - month_start_day);
         if (how_many_are_empty <= 35) {
-            for (int i = month_start_day + 21; i < splitter_read.length; i++) 
+            for (int i = month_start_day + 21; i < splitter_read.length; i++)
                 fiveLineString = fiveLineString.concat(splitter_read[i]).concat("split");
         } else {
-            for (int i = month_start_day + 21; i < month_start_day + 28; i++) 
+            for (int i = month_start_day + 21; i < month_start_day + 28; i++)
                 fiveLineString = fiveLineString.concat(splitter_read[i]).concat("split");
-            for (int i = month_start_day + 28; i < splitter_read.length; i++) 
+            for (int i = month_start_day + 28; i < splitter_read.length; i++)
                 sixLineString = sixLineString.concat(splitter_read[i]).concat("split");
         }
         setTheFirstLine(firstLineString);
@@ -7907,7 +7872,7 @@ public class Mood extends Fragment  {
         if (getView() != null) {
             String[] dateSplit = date.split("split");
             int empty_length = 7 - dateSplit.length;
-            for (int i = 0; i < empty_length; i++) 
+            for (int i = 0; i < empty_length; i++)
                 date = "empty".concat("split").concat(date);
             String[] splitter_second = date.split("split");
             switch (splitter_second[0]) {
@@ -8428,7 +8393,7 @@ public class Mood extends Fragment  {
                         modesDrawable[28] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[28] = 0;
             if (dateSplit.length > 1) {
                 switch (dateSplit[1]) {
@@ -8448,7 +8413,7 @@ public class Mood extends Fragment  {
                         modesDrawable[29] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[29] = 0;
             if (dateSplit.length > 2) {
                 switch (dateSplit[2]) {
@@ -8468,7 +8433,7 @@ public class Mood extends Fragment  {
                         modesDrawable[30] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[30] = 0;
             if (dateSplit.length > 3) {
                 switch (dateSplit[3]) {
@@ -8488,7 +8453,7 @@ public class Mood extends Fragment  {
                         modesDrawable[31] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[31] = 0;
             if (dateSplit.length > 4) {
                 switch (dateSplit[4]) {
@@ -8508,7 +8473,7 @@ public class Mood extends Fragment  {
                         modesDrawable[32] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[32] = 0;
             if (dateSplit.length > 5) {
                 switch (dateSplit[5]) {
@@ -8528,9 +8493,9 @@ public class Mood extends Fragment  {
                         modesDrawable[33] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[33] = 0;
-            
+
             if (dateSplit.length > 6) {
                 switch (dateSplit[6]) {
                     case "empty":
@@ -8549,7 +8514,7 @@ public class Mood extends Fragment  {
                         modesDrawable[34] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[34] = 0;
         }
     }
@@ -8575,7 +8540,7 @@ public class Mood extends Fragment  {
                         modesDrawable[35] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[35] = 0;
             if (date_split.length > 1) {
                 switch (date_split[1]) {
@@ -8595,7 +8560,7 @@ public class Mood extends Fragment  {
                         modesDrawable[36] = 4;
                         break;
                 }
-            } else 
+            } else
                 modesDrawable[36] = 0;
         }
     }
@@ -8614,35 +8579,35 @@ public class Mood extends Fragment  {
             if (!checkPastNowFuture().equals("future")) {
                 if (TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate))
                     monthInfo = "empty".concat("split");
-                 else {
+                else {
                     if (returnTheLastDayOfLastMonth().equals("continue")) {
                         if (returnStateOfDay(calendar.getTimeInMillis()))
                             monthInfo = "middle".concat("split");
-                         else
+                        else
                             monthInfo = "end".concat("split");
                     } else {
                         if (returnStateOfDay(calendar.getTimeInMillis()))
                             monthInfo = "start".concat("split");
-                         else
+                        else
                             monthInfo = "beg_last".concat("split");
                     }
                 }
                 if (checkPastNowFuture().equals("current")) {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (calendarNow.get(Calendar.DAY_OF_MONTH) < i || TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate)) 
+                        if (calendarNow.get(Calendar.DAY_OF_MONTH) < i || TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate))
                             monthInfo = monthInfo.concat("empty").concat("split");
-                         else {
+                        else {
                             String substring = monthInfo.substring(monthInfo.length() - 7, monthInfo.length() - 5);
                             if (substring.equals("rt") || substring.equals("le")) {
-                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                if (returnStateOfDay(calendar.getTimeInMillis()))
                                     monthInfo = monthInfo.concat("middle").concat("split");
-                                 else 
+                                else
                                     monthInfo = monthInfo.concat("end").concat("split");
                             } else {
-                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                if (returnStateOfDay(calendar.getTimeInMillis()))
                                     monthInfo = monthInfo.concat("start").concat("split");
-                                 else 
+                                else
                                     monthInfo = monthInfo.concat("beg_last").concat("split");
                             }
                         }
@@ -8650,31 +8615,31 @@ public class Mood extends Fragment  {
                 } else {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate)) 
+                        if (TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate))
                             monthInfo = monthInfo.concat("empty").concat("split");
                         else {
                             String substring = monthInfo.substring(monthInfo.length() - 7, monthInfo.length() - 5);
                             if (substring.equals("rt") || substring.equals("le")) {
-                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                if (returnStateOfDay(calendar.getTimeInMillis()))
                                     monthInfo = monthInfo.concat("middle").concat("split");
-                                else 
+                                else
                                     monthInfo = monthInfo.concat("end").concat("split");
-                                
+
                             } else {
-                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                if (returnStateOfDay(calendar.getTimeInMillis()))
                                     monthInfo = monthInfo.concat("start").concat("split");
-                                else 
+                                else
                                     monthInfo = monthInfo.concat("beg_last").concat("split");
                             }
                         }
                     }
                 }
             } else {
-                for (int i = 1; i <= 31; i++) 
+                for (int i = 1; i <= 31; i++)
                     monthInfo = monthInfo.concat("empty").concat("split");
             }
             return monthInfo;
-        } else 
+        } else
             return "";
     }
 
@@ -8706,18 +8671,18 @@ public class Mood extends Fragment  {
         if (month == 0) {
             month = 11;
             year--;
-        } else 
+        } else
             month--;
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
         int day = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         calendar.set(Calendar.DAY_OF_MONTH, day);
         if (TimeMood.returnTimeInMidnight(startDate) <= TimeMood.returnTimeInMidnight(calendar.getTimeInMillis())) {
-            if (returnStateOfDay(calendar.getTimeInMillis())) 
+            if (returnStateOfDay(calendar.getTimeInMillis()))
                 return "continue";
-            else 
+            else
                 return "start";
-        } else 
+        } else
             return "start";
     }
 
@@ -8725,9 +8690,9 @@ public class Mood extends Fragment  {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
             String shared = sharedPreferences.getString("mood_color", "");
-            if (shared == null || shared.equals("")) 
+            if (shared == null || shared.equals(""))
                 color = Color.parseColor("#000075");
-             else 
+            else
                 color = Color.parseColor(shared);
         }
     }
@@ -8736,17 +8701,17 @@ public class Mood extends Fragment  {
         if (getActivity() != null) {
             milli = TimeMood.returnTimeInMidnight(milli);
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
-            if (mood == 0) 
+            if (mood == 0)
                 historyMood.remove(milli);
             else {
                 if (historyMood.containsKey(milli)) {
                     historyMood.remove(milli);
                     historyMood.put(milli, mood);
-                } else 
+                } else
                     historyMood.put(milli, mood);
             }
             String saveMe = "";
-            for (Map.Entry<Long, Integer> map : historyMood.entrySet()) 
+            for (Map.Entry<Long, Integer> map : historyMood.entrySet())
                 saveMe = saveMe.concat(String.valueOf(map.getValue())).concat("small_split").concat(String.valueOf(map.getKey())).concat("max_divide");
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
             myEdit.putString("mood_stats", saveMe);
@@ -8851,7 +8816,7 @@ public class Mood extends Fragment  {
         if (which == 0) {
             if (notSelected == null || notSelected.equals(""))
                 return "#000000";
-             else
+            else
                 return notSelected;
         }
         if (which == 1) {
@@ -8862,17 +8827,17 @@ public class Mood extends Fragment  {
         } else if (which == 2) {
             if (bad == null || bad.equals(""))
                 return "#ffcb6b";
-             else
+            else
                 return bad;
         } else if (which == 3) {
             if (ok == null || ok.equals(""))
                 return "#e06dfc";
-             else
+            else
                 return ok;
         } else if (which == 4) {
             if (good == null || good.equals(""))
                 return "#69e9f5";
-             else
+            else
                 return good;
         } else if (which == 5) {
             if (veryGood == null || veryGood.equals(""))
@@ -9177,7 +9142,7 @@ public class Mood extends Fragment  {
             locationAverageChart.setLayoutParams(params);
             if ((int) average == average)
                 average_mark.setText(String.valueOf((int) average));
-             else
+            else
                 average_mark.setText(String.format("%.1f", average));
         }
     }
@@ -9369,13 +9334,13 @@ public class Mood extends Fragment  {
                 if (TimeMood.returnTimeInMidnight(timeInMillis) <= TimeMood.returnTimeInMidnight(System.currentTimeMillis())) {
                     if (returnColorOfDays(timeInMillis) == 1)
                         returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("1").concat("big_split");
-                     else if (returnColorOfDays(timeInMillis) == 2)
+                    else if (returnColorOfDays(timeInMillis) == 2)
                         returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("2").concat("big_split");
-                     else if (returnColorOfDays(timeInMillis) == 3)
+                    else if (returnColorOfDays(timeInMillis) == 3)
                         returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("3").concat("big_split");
-                     else if (returnColorOfDays(timeInMillis) == 4)
+                    else if (returnColorOfDays(timeInMillis) == 4)
                         returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("4").concat("big_split");
-                     else if (returnColorOfDays(timeInMillis) == 5)
+                    else if (returnColorOfDays(timeInMillis) == 5)
                         returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("5").concat("big_split");
                 }
             }
@@ -9620,10 +9585,10 @@ public class Mood extends Fragment  {
                 public String getFormattedValue(float value) {
                     if (value == 0 || (value / maxDaysFinal < 0.1))
                         return "";
-                     else {
+                    else {
                         if ((int) value == value)
                             return "" + (int) value;
-                         else
+                        else
                             return String.format("%.1f", value);
                     }
                 }
@@ -9639,13 +9604,13 @@ public class Mood extends Fragment  {
                 float averageValue = Float.parseFloat(split_days_of_week[i % 7]);
                 if (averageValue <= 1.5)
                     colorsForBars[counter] = Color.parseColor(veryBadColor);
-                 else if (averageValue <= 2.5)
+                else if (averageValue <= 2.5)
                     colorsForBars[counter] = Color.parseColor(badColor);
-                 else if (averageValue <= 3.5)
+                else if (averageValue <= 3.5)
                     colorsForBars[counter] = Color.parseColor(okColor);
-                 else if (averageValue <= 4.5)
+                else if (averageValue <= 4.5)
                     colorsForBars[counter] = Color.parseColor(goodColor);
-                 else
+                else
                     colorsForBars[counter] = Color.parseColor(veryGoodColor);
                 counter++;
             }
@@ -9685,17 +9650,17 @@ public class Mood extends Fragment  {
         Calendar calendar = Calendar.getInstance();
         if (calendar.getFirstDayOfWeek() == Calendar.MONDAY)
             return this.getResources().getString(R.string.Monday) ;
-         else if (calendar.getFirstDayOfWeek() == Calendar.TUESDAY)
+        else if (calendar.getFirstDayOfWeek() == Calendar.TUESDAY)
             return this.getResources().getString(R.string.Tuesday) ;
-         else if (calendar.getFirstDayOfWeek() == Calendar.WEDNESDAY)
+        else if (calendar.getFirstDayOfWeek() == Calendar.WEDNESDAY)
             return this.getResources().getString(R.string.Wednesday) ;
-         else if (calendar.getFirstDayOfWeek() == Calendar.THURSDAY)
+        else if (calendar.getFirstDayOfWeek() == Calendar.THURSDAY)
             return this.getResources().getString(R.string.Thursday) ;
-         else if (calendar.getFirstDayOfWeek() == Calendar.FRIDAY)
+        else if (calendar.getFirstDayOfWeek() == Calendar.FRIDAY)
             return this.getResources().getString(R.string.Friday) ;
-         else if (calendar.getFirstDayOfWeek() == Calendar.SATURDAY)
+        else if (calendar.getFirstDayOfWeek() == Calendar.SATURDAY)
             return this.getResources().getString(R.string.Saturday) ;
-         else
+        else
             return this.getResources().getString(R.string.Sunday) ;
     }
 
@@ -9819,10 +9784,10 @@ public class Mood extends Fragment  {
                 public String getFormattedValue(float value) {
                     if (value == 0 || (value / max_days_final < 0.1))
                         return "";
-                     else {
+                    else {
                         if ((int) value == value)
                             return "" + (int) value;
-                         else
+                        else
                             return String.format("%.1f", value);
                     }
                 }
@@ -9837,9 +9802,9 @@ public class Mood extends Fragment  {
                 float average_value = Float.parseFloat(split_days_of_week[i]);
                 if (average_value <= 1.5)
                     colorsForBars[i] = Color.parseColor(veryBadColor);
-                 else if (average_value <= 2.5)
+                else if (average_value <= 2.5)
                     colorsForBars[i] = Color.parseColor(badColor);
-                 else if (average_value <= 3.5)
+                else if (average_value <= 3.5)
                     colorsForBars[i] = Color.parseColor(okColor);
                 else if (average_value <= 4.5)
                     colorsForBars[i] = Color.parseColor(goodColor);
@@ -9882,12 +9847,12 @@ public class Mood extends Fragment  {
 
     private void drawTheRightBarChartMood() {
         BarChart barChart = getView().findViewById(R.id.bar_chart);
-        if (barChart.getVisibility() == View.VISIBLE) 
+        if (barChart.getVisibility() == View.VISIBLE)
             drawBarForAverageMoodOverTheYear();
-        else 
+        else
             averageMood();
     }
-    
+
     private long returnStartDate() {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
@@ -9897,9 +9862,9 @@ public class Mood extends Fragment  {
                 myEdit.putLong("first_date", TimeMood.returnTimeInMidnight(System.currentTimeMillis()));
                 myEdit.apply();
                 return TimeMood.returnTimeInMidnight(System.currentTimeMillis());
-            } else 
+            } else
                 return firstTime;
-        } else 
+        } else
             return TimeMood.returnTimeInMidnight(System.currentTimeMillis());
     }
 
