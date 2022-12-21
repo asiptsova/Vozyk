@@ -716,251 +716,190 @@ public class Mood extends Fragment  {
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
             day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
             day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
                 day36.setText(String.valueOf(day));
@@ -1394,511 +1333,386 @@ public class Mood extends Fragment  {
                 day5.setText(String.valueOf(day));
             }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
             day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
             day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day37.setText(String.valueOf(day));
-            }
         } else {
             day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day37.setText(String.valueOf(day));
-            }
         }
     }
 
@@ -1907,291 +1721,220 @@ public class Mood extends Fragment  {
         if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
             day1.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day2.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day3.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day4.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day5.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth()) 
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
             day2.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day3.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day4.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day5.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day6.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day7.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day8.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day9.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day10.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day11.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day12.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day13.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day14.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day15.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day16.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day17.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day18.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day19.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day20.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day21.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day22.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day23.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day24.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day25.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day26.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day27.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day28.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day29.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day30.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day31.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day32.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day33.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day34.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day35.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day36.setText(String.valueOf(day));
-            }
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
+            if (day <= returnLastDayOfMonth())
                 day37.setText(String.valueOf(day));
-            }
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
             day3.setText(String.valueOf(day));
             day = day + 1;
