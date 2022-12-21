@@ -46,52 +46,20 @@ import java.util.List;
 import java.util.Map;
 
 public class Mood extends Fragment  {
-    private Button calender_button_showing_shadow_1,
-            calender_button_showing_shadow_2,
-            calender_button_showing_shadow_3,
-            calender_button_showing_shadow_4,
-            calender_button_showing_shadow_5,
-            calender_button_showing_shadow_6,
-            calender_button_showing_shadow_7,
-            calender_button_showing_shadow_8,
-            calender_button_showing_shadow_9,
-            calender_button_showing_shadow_10,
-            calender_button_showing_shadow_11,
-            calender_button_showing_shadow_12,
-            calender_button_showing_shadow_13,
-            calender_button_showing_shadow_14,
-            calender_button_showing_shadow_15,
-            calender_button_showing_shadow_16,
-            calender_button_showing_shadow_17,
-            calender_button_showing_shadow_18,
-            calender_button_showing_shadow_19,
-            calender_button_showing_shadow_20,
-            calender_button_showing_shadow_21,
-            calender_button_showing_shadow_22,
-            calender_button_showing_shadow_23,
-            calender_button_showing_shadow_24,
-            calender_button_showing_shadow_25,
-            calender_button_showing_shadow_26,
-            calender_button_showing_shadow_27,
-            calender_button_showing_shadow_28,
-            calender_button_showing_shadow_29,
-            calender_button_showing_shadow_30,
-            calender_button_showing_shadow_31,
-            calender_button_showing_shadow_32,
-            calender_button_showing_shadow_33,
-            calender_button_showing_shadow_34,
-            calender_button_showing_shadow_35,
-            calender_button_showing_shadow_36,
-            calender_button_showing_shadow_37;
-    private String color_the_today;
+    private Button day1,day2,day3,day4,day5,day6,day7,day8,day9,day10, 
+            day11,day12,day13,day14,day15,day16,day17,day18,day19, day20,
+            day21,day22,day23,day24,day25,day26,day27,day28,day29,day30,
+            day31,day32, day33, day34, day35, day36,day37;
+    TextView monthYear;
+    private String colorToday;
     private String[] colors;
-    private HashMap<Long, Integer> history_of_mood;
-    private Long start_date;
+    private HashMap<Long, Integer> historyMood;
+    private Long startDate;
     private int color;
-    private final int[] modes_for_four_drawable = new int[37];
-    private int month_for_mood_chart = -1;
-    private int year_for_mood_chart = -1;
-    private LineChart line_chart_for_streak;
+    private final int[] modesDrawable = new int[37];
+    private int monthForMoodChart = -1;
+    private int yearForMoodChart = -1;
+    private LineChart lineChartForStreak;
 
 
     public Mood() {}
@@ -106,173 +74,168 @@ public class Mood extends Fragment  {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        call_me_at_start();
+        callMeAtStart();
     }
 
-    private void call_me_at_start() {
-        add_to_list();
-        get_the_color();
-        color_the_stuff();
-        define_start_date();
-        define_the_buttons();
-        setTheFirstDayOfTheWeekNumber();
-        setTheDaysOnTheRealText();
-        back_and_front_button_listen();
-        color_the_today_value();
-        calender_button_listeners();
-        remove_the_hiding_buttons();
-        color_today();
-        color_the_calender();
-        yes_and_no_button_listen_under_the_calender();
-        divide_it_into_weeks();
-        hide_or_un_hide_the_button(0);
-        color_the_button_under_the_calender();
-        set_up_buttons_once();
-        button_listen_at_the_top();
+    private void callMeAtStart() {
+        addToList();
+        getColor();
+        colorStuff();
+        StartDate();
+        Buttons();
+        setFirstDayOfTheWeek();
+        setDaysText();
+        backAndForwardButton();
+        colorTodayValue();
+        calenderButton();
+        removeButtons();
+        colorToday();
+        calendarColor();
+        yesAndNoButtons();
+        divideItIntoWeeks();
+        hideOrUnHideTheButton(0);
+        colorButtonUnderTheCalendar();
+        setUpButtonsOnce();
+        buttonListenAtTheTop();
         makeEverythingAverageMood();
-        drawTheMoodLineChart();
-        backAndFrontButtonListenForTheGraphMood();
-        setAllTheFacesInTheMood();
-        drawTheBarForAverageMood();
+        lineChart();
+        buttonTheGraphMood();
+        setMood();
+        averageMood();
         fadeTheViews();
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden) {
-            call_me_at_start();
-        }
+        if (!hidden) 
+            callMeAtStart();
     }
 
-    private void setTheFirstDayOfTheWeekNumber() {
+    private void setFirstDayOfTheWeek() {
         if (getView() != null) {
             Calendar calender = Calendar.getInstance();
-            TextView first_day_in_the_week_calender = getView().findViewById(R.id.tv_1);
-            TextView second_day_in_the_week_calender = getView().findViewById(R.id.tv_2);
-            TextView third_day_in_the_week_calender = getView().findViewById(R.id.tv_3);
-            TextView fourth_day_in_the_week_calender = getView().findViewById(R.id.tv_4);
-            TextView fifth_day_in_the_week_calender = getView().findViewById(R.id.tv_5);
-            TextView sixth_day_in_the_week_calender = getView().findViewById(R.id.tv_6);
-            TextView seventh_day_in_the_week_calender = getView().findViewById(R.id.tv_7);
-            int year = calender.get(Calendar.YEAR);
+            TextView firstDayInTheWeek = getView().findViewById(R.id.tv_1);
+            TextView secondDayInTheWeek = getView().findViewById(R.id.tv_2);
+            TextView thirdDayInTheWeek = getView().findViewById(R.id.tv_3);
+            TextView fourthDayInTheWeek = getView().findViewById(R.id.tv_4);
+            TextView fifthDayInTheWeek = getView().findViewById(R.id.tv_5);
+            TextView sixthDayInTheWeek = getView().findViewById(R.id.tv_6);
+            TextView seventhDayInTheWeek = getView().findViewById(R.id.tv_7);
             String month = returnMonth(calender.get(Calendar.MONTH));
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            month_and_year_in_calender_for_good_habits.setText(month.concat(" ").concat(String.valueOf(year)));
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            monthYear.setText(month.concat(" ").concat(String.valueOf(calender.get(Calendar.YEAR))));
             if (calender.getFirstDayOfWeek() == Calendar.SUNDAY) {
-                first_day_in_the_week_calender.setText(R.string.Sunday);
-                second_day_in_the_week_calender.setText(R.string.Monday);
-                third_day_in_the_week_calender.setText(R.string.Tuesday);
-                fourth_day_in_the_week_calender.setText(R.string.Wednesday);
-                fifth_day_in_the_week_calender.setText(R.string.Thursday);
-                sixth_day_in_the_week_calender.setText(R.string.Friday);
-                seventh_day_in_the_week_calender.setText(R.string.Saturday);
+                firstDayInTheWeek.setText(R.string.Sunday);
+                secondDayInTheWeek.setText(R.string.Monday);
+                thirdDayInTheWeek.setText(R.string.Tuesday);
+                fourthDayInTheWeek.setText(R.string.Wednesday);
+                fifthDayInTheWeek.setText(R.string.Thursday);
+                sixthDayInTheWeek.setText(R.string.Friday);
+                seventhDayInTheWeek.setText(R.string.Saturday);
             } else if (calender.getFirstDayOfWeek() == Calendar.MONDAY) {
-                first_day_in_the_week_calender.setText(R.string.Monday);
-                second_day_in_the_week_calender.setText(R.string.Tuesday);
-                third_day_in_the_week_calender.setText(R.string.Wednesday);
-                fourth_day_in_the_week_calender.setText(R.string.Thursday);
-                fifth_day_in_the_week_calender.setText(R.string.Friday);
-                sixth_day_in_the_week_calender.setText(R.string.Saturday);
-                seventh_day_in_the_week_calender.setText(R.string.Sunday);
+                firstDayInTheWeek.setText(R.string.Monday);
+                secondDayInTheWeek.setText(R.string.Tuesday);
+                thirdDayInTheWeek.setText(R.string.Wednesday);
+                fourthDayInTheWeek.setText(R.string.Thursday);
+                fifthDayInTheWeek.setText(R.string.Friday);
+                sixthDayInTheWeek.setText(R.string.Saturday);
+                seventhDayInTheWeek.setText(R.string.Sunday);
             } else if (calender.getFirstDayOfWeek() == Calendar.TUESDAY) {
-                first_day_in_the_week_calender.setText(R.string.Tuesday);
-                second_day_in_the_week_calender.setText(R.string.Wednesday);
-                third_day_in_the_week_calender.setText(R.string.Thursday);
-                fourth_day_in_the_week_calender.setText(R.string.Friday);
-                fifth_day_in_the_week_calender.setText(R.string.Saturday);
-                sixth_day_in_the_week_calender.setText(R.string.Sunday);
-                seventh_day_in_the_week_calender.setText(R.string.Monday);
+                firstDayInTheWeek.setText(R.string.Tuesday);
+                secondDayInTheWeek.setText(R.string.Wednesday);
+                thirdDayInTheWeek.setText(R.string.Thursday);
+                fourthDayInTheWeek.setText(R.string.Friday);
+                fifthDayInTheWeek.setText(R.string.Saturday);
+                sixthDayInTheWeek.setText(R.string.Sunday);
+                seventhDayInTheWeek.setText(R.string.Monday);
             } else if (calender.getFirstDayOfWeek() == Calendar.WEDNESDAY) {
-                first_day_in_the_week_calender.setText(R.string.Wednesday);
-                second_day_in_the_week_calender.setText(R.string.Thursday);
-                third_day_in_the_week_calender.setText(R.string.Friday);
-                fourth_day_in_the_week_calender.setText(R.string.Saturday);
-                fifth_day_in_the_week_calender.setText(R.string.Sunday);
-                sixth_day_in_the_week_calender.setText(R.string.Monday);
-                seventh_day_in_the_week_calender.setText(R.string.Tuesday);
+                firstDayInTheWeek.setText(R.string.Wednesday);
+                secondDayInTheWeek.setText(R.string.Thursday);
+                thirdDayInTheWeek.setText(R.string.Friday);
+                fourthDayInTheWeek.setText(R.string.Saturday);
+                fifthDayInTheWeek.setText(R.string.Sunday);
+                sixthDayInTheWeek.setText(R.string.Monday);
+                seventhDayInTheWeek.setText(R.string.Tuesday);
             } else if (calender.getFirstDayOfWeek() == Calendar.THURSDAY) {
-                first_day_in_the_week_calender.setText(R.string.Thursday);
-                second_day_in_the_week_calender.setText(R.string.Friday);
-                third_day_in_the_week_calender.setText(R.string.Saturday);
-                fourth_day_in_the_week_calender.setText(R.string.Sunday);
-                fifth_day_in_the_week_calender.setText(R.string.Monday);
-                sixth_day_in_the_week_calender.setText(R.string.Tuesday);
-                seventh_day_in_the_week_calender.setText(R.string.Wednesday);
+                firstDayInTheWeek.setText(R.string.Thursday);
+                secondDayInTheWeek.setText(R.string.Friday);
+                thirdDayInTheWeek.setText(R.string.Saturday);
+                fourthDayInTheWeek.setText(R.string.Sunday);
+                fifthDayInTheWeek.setText(R.string.Monday);
+                sixthDayInTheWeek.setText(R.string.Tuesday);
+                seventhDayInTheWeek.setText(R.string.Wednesday);
             } else if (calender.getFirstDayOfWeek() == Calendar.FRIDAY) {
-                first_day_in_the_week_calender.setText(R.string.Friday);
-                second_day_in_the_week_calender.setText(R.string.Saturday);
-                third_day_in_the_week_calender.setText(R.string.Sunday);
-                fourth_day_in_the_week_calender.setText(R.string.Monday);
-                fifth_day_in_the_week_calender.setText(R.string.Tuesday);
-                sixth_day_in_the_week_calender.setText(R.string.Wednesday);
-                seventh_day_in_the_week_calender.setText(R.string.Thursday);
+                firstDayInTheWeek.setText(R.string.Friday);
+                secondDayInTheWeek.setText(R.string.Saturday);
+                thirdDayInTheWeek.setText(R.string.Sunday);
+                fourthDayInTheWeek.setText(R.string.Monday);
+                fifthDayInTheWeek.setText(R.string.Tuesday);
+                sixthDayInTheWeek.setText(R.string.Wednesday);
+                seventhDayInTheWeek.setText(R.string.Thursday);
             } else {
-                first_day_in_the_week_calender.setText(R.string.Saturday);
-                second_day_in_the_week_calender.setText(R.string.Sunday);
-                third_day_in_the_week_calender.setText(R.string.Monday);
-                fourth_day_in_the_week_calender.setText(R.string.Tuesday);
-                fifth_day_in_the_week_calender.setText(R.string.Wednesday);
-                sixth_day_in_the_week_calender.setText(R.string.Thursday);
-                seventh_day_in_the_week_calender.setText(R.string.Friday);
+                firstDayInTheWeek.setText(R.string.Saturday);
+                secondDayInTheWeek.setText(R.string.Sunday);
+                thirdDayInTheWeek.setText(R.string.Monday);
+                fourthDayInTheWeek.setText(R.string.Tuesday);
+                fifthDayInTheWeek.setText(R.string.Wednesday);
+                sixthDayInTheWeek.setText(R.string.Thursday);
+                seventhDayInTheWeek.setText(R.string.Friday);
             }
         }
     }
 
     private String returnMonth(int month) {
-        if (month == 0) {
+        if (month == 0) 
             return "January";
-        } else if (month == 1) {
+        else if (month == 1) 
             return "February";
-        } else if (month == 2) {
+         else if (month == 2) 
             return "March";
-        } else if (month == 3) {
+        else if (month == 3) 
             return "April";
-        } else if (month == 4) {
+         else if (month == 4) 
             return "May";
-        } else if (month == 5) {
+         else if (month == 5) 
             return "June";
-        } else if (month == 6) {
+        else if (month == 6) 
             return "July";
-        } else if (month == 7) {
+         else if (month == 7) 
             return "August";
-        } else if (month == 8) {
+         else if (month == 8) 
             return "September";
-        } else if (month == 9) {
+         else if (month == 9) 
             return "October";
-        } else if (month == 10) {
+         else if (month == 10) 
             return "November";
-        } else {
+         else 
             return "December";
-        }
     }
 
     private int returnFirstDayOfMonth() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            Calendar calender_for_first_day_of_month_only = Calendar.getInstance();
-            calender_for_first_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
-            calender_for_first_day_of_month_only.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
-            calender_for_first_day_of_month_only.set(Calendar.DAY_OF_MONTH, calender_for_first_day_of_month_only.getActualMinimum(Calendar.DAY_OF_MONTH));
-            return calender_for_first_day_of_month_only.get(Calendar.DAY_OF_WEEK);
-        } else {
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] splitter = monthYear.getText().toString().split(" ");
+            Calendar firstDayOfMonthOnly = Calendar.getInstance();
+            firstDayOfMonthOnly.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
+            firstDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
+            firstDayOfMonthOnly.set(Calendar.DAY_OF_MONTH, firstDayOfMonthOnly.getActualMinimum(Calendar.DAY_OF_MONTH));
+            return firstDayOfMonthOnly.get(Calendar.DAY_OF_WEEK);
+        } else 
             return 0;
-        }
     }
 
     private int returnLastDayOfMonth() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            Calendar calender_for_last_day_of_month_only = Calendar.getInstance();
-            String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            calender_for_last_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
-            calender_for_last_day_of_month_only.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
-            calender_for_last_day_of_month_only.set(Calendar.DAY_OF_MONTH, 1);
-            return calender_for_last_day_of_month_only.getActualMaximum(Calendar.DAY_OF_MONTH);
-        } else {
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            Calendar lastDayOfMonthOnly = Calendar.getInstance();
+            String[] splitter = monthYear.getText().toString().split(" ");
+            lastDayOfMonthOnly.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
+            lastDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
+            lastDayOfMonthOnly.set(Calendar.DAY_OF_MONTH, 1);
+            return lastDayOfMonthOnly.getActualMaximum(Calendar.DAY_OF_MONTH);
+        } else 
             return 1;
-        }
     }
 
     private int returnMonthStringToInt(String month) {
@@ -303,8031 +266,7498 @@ public class Mood extends Fragment  {
                 return 11;
         }
     }
-    private void setTheDaysOnTheRealText() {
+    private void setDaysText() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            Calendar calender_for_first_day_of_month_only = Calendar.getInstance();
-            calender_for_first_day_of_month_only.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
-            calender_for_first_day_of_month_only.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
-            if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.SUNDAY) {
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] splitter = monthYear.getText().toString().split(" ");
+            Calendar calenderForFirstDayOfMonthOnly = Calendar.getInstance();
+            calenderForFirstDayOfMonthOnly.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
+            calenderForFirstDayOfMonthOnly.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
+            if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.SUNDAY)
                 dayIsSunday();
-            } else if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.MONDAY) {
-                day_is_monday();
-            } else if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.TUESDAY) {
-                day_is_tuesday();
-            } else if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.WEDNESDAY) {
-                day_is_wednesday();
-            } else if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.THURSDAY) {
-                day_is_thursday();
-            } else if (calender_for_first_day_of_month_only.getFirstDayOfWeek() == Calendar.FRIDAY) {
-                day_is_friday();
-            } else {
-                day_is_saturday();
-            }
+             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.MONDAY)
+                dayIsMonday();
+             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.TUESDAY)
+                dayIsTuesday();
+             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.WEDNESDAY)
+                dayIsWednesday();
+            else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.THURSDAY)
+                dayIsThursday();
+             else if (calenderForFirstDayOfMonthOnly.getFirstDayOfWeek() == Calendar.FRIDAY)
+                dayIsFriday();
+             else
+                dayIsSaturday();
         }
     }
     private void dayIsSunday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day2.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         }
     }
 
-    private void day_is_monday() {
+    private void dayIsMonday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day2.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day3.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
-        } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
-            day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            day2.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day3.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day18.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day19.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day20.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day21.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day22.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day23.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day24.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day25.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day26.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day27.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day28.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day29.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day30.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day31.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day32.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day33.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day34.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day35.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day36.setText(String.valueOf(day));
+        day = day + 1;
+        if (day <= returnLastDayOfMonth())
+            day37.setText(String.valueOf(day));
+    } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
+            day3.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day4.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
+            day = day + 1;
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         }
     }
 
-    private void day_is_tuesday() {
+    private void dayIsTuesday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
+                day2.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         }
     }
 
-    private void day_is_wednesday() {
+    private void dayIsWednesday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
+                day2.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         }
     }
 
-    private void day_is_thursday() {
+    private void dayIsThursday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
+                day2.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         }
     }
 
-    private void day_is_friday() {
+    private void dayIsFriday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.FRIDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
+                day2.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         }
     }
 
-    private void day_is_saturday() {
+    private void dayIsSaturday() {
         int day = 1;
         if (returnFirstDayOfMonth() == Calendar.SATURDAY) {
-            calender_button_showing_shadow_1.setText(String.valueOf(day));
+            day1.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_2.setText(String.valueOf(day));
+                day2.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.SUNDAY) {
-            calender_button_showing_shadow_2.setText(String.valueOf(day));
+            day2.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_3.setText(String.valueOf(day));
+                day3.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.MONDAY) {
-            calender_button_showing_shadow_3.setText(String.valueOf(day));
+            day3.setText(String.valueOf(day));
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_4.setText(String.valueOf(day));
+                day4.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
+                day5.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
+                day6.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
+                day7.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
+                day8.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
+                day9.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
+                day10.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
+                day11.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
+                day12.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
+                day13.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
+                day14.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
+                day15.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
+                day16.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
+                day17.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
+                day18.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
+                day19.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
+                day20.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
+                day21.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
+                day22.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
+                day23.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
+                day24.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
+                day25.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
+                day26.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
+                day27.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
+                day28.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
+                day29.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
+                day30.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
+                day31.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
+                day32.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
+                day33.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
+                day34.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
+                day35.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
+                day36.setText(String.valueOf(day));
             }
             day = day + 1;
             if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
+                day37.setText(String.valueOf(day));
             }
         } else if (returnFirstDayOfMonth() == Calendar.TUESDAY) {
-            calender_button_showing_shadow_4.setText(String.valueOf(day));
+            day4.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_5.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.WEDNESDAY) {
-            calender_button_showing_shadow_5.setText(String.valueOf(day));
+            day5.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_6.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else if (returnFirstDayOfMonth() == Calendar.THURSDAY) {
-            calender_button_showing_shadow_6.setText(String.valueOf(day));
+            day6.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_7.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         } else {
-            calender_button_showing_shadow_7.setText(String.valueOf(day));
+            day7.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_8.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day8.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_9.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day9.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_10.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day10.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_11.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day11.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_12.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day12.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_13.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day13.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_14.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day14.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_15.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day15.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_16.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day16.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_17.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day17.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_18.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day18.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_19.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day19.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_20.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day20.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_21.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day21.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_22.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day22.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_23.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day23.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_24.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day24.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_25.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day25.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_26.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day26.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_27.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day27.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_28.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day28.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_29.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day29.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_30.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day30.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_31.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day31.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_32.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day32.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_33.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day33.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_34.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day34.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_35.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day35.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_36.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day36.setText(String.valueOf(day));
             day = day + 1;
-            if (day <= returnLastDayOfMonth()) {
-                calender_button_showing_shadow_37.setText(String.valueOf(day));
-            }
+            if (day <= returnLastDayOfMonth())
+                day37.setText(String.valueOf(day));
         }
     }
 
-    private void define_the_buttons() {
+    private void Buttons() {
         if (getView() != null) {
-            calender_button_showing_shadow_1 = getView().findViewById(R.id.bt_1);
-            calender_button_showing_shadow_2 = getView().findViewById(R.id.bt_2);
-            calender_button_showing_shadow_3 = getView().findViewById(R.id.bt_3);
-            calender_button_showing_shadow_4 = getView().findViewById(R.id.bt_4);
-            calender_button_showing_shadow_5 = getView().findViewById(R.id.bt_5);
-            calender_button_showing_shadow_6 = getView().findViewById(R.id.bt_6);
-            calender_button_showing_shadow_7 = getView().findViewById(R.id.bt_7);
-            calender_button_showing_shadow_8 = getView().findViewById(R.id.bt_8);
-            calender_button_showing_shadow_9 = getView().findViewById(R.id.bt_9);
-            calender_button_showing_shadow_10 = getView().findViewById(R.id.bt_10);
-            calender_button_showing_shadow_11 = getView().findViewById(R.id.bt_11);
-            calender_button_showing_shadow_12 = getView().findViewById(R.id.bt_12);
-            calender_button_showing_shadow_13 = getView().findViewById(R.id.bt_13);
-            calender_button_showing_shadow_14 = getView().findViewById(R.id.bt_14);
-            calender_button_showing_shadow_15 = getView().findViewById(R.id.bt_15);
-            calender_button_showing_shadow_16 = getView().findViewById(R.id.bt_16);
-            calender_button_showing_shadow_17 = getView().findViewById(R.id.bt_17);
-            calender_button_showing_shadow_18 = getView().findViewById(R.id.bt_18);
-            calender_button_showing_shadow_19 = getView().findViewById(R.id.bt_19);
-            calender_button_showing_shadow_20 = getView().findViewById(R.id.bt_20);
-            calender_button_showing_shadow_21 = getView().findViewById(R.id.bt_21);
-            calender_button_showing_shadow_22 = getView().findViewById(R.id.bt_22);
-            calender_button_showing_shadow_23 = getView().findViewById(R.id.bt_23);
-            calender_button_showing_shadow_24 = getView().findViewById(R.id.bt_24);
-            calender_button_showing_shadow_25 = getView().findViewById(R.id.bt_25);
-            calender_button_showing_shadow_26 = getView().findViewById(R.id.bt_26);
-            calender_button_showing_shadow_27 = getView().findViewById(R.id.bt_27);
-            calender_button_showing_shadow_28 = getView().findViewById(R.id.bt_28);
-            calender_button_showing_shadow_29 = getView().findViewById(R.id.bt_29);
-            calender_button_showing_shadow_30 = getView().findViewById(R.id.bt_30);
-            calender_button_showing_shadow_31 = getView().findViewById(R.id.bt_31);
-            calender_button_showing_shadow_32 = getView().findViewById(R.id.bt_32);
-            calender_button_showing_shadow_33 = getView().findViewById(R.id.bt_33);
-            calender_button_showing_shadow_34 = getView().findViewById(R.id.bt_34);
-            calender_button_showing_shadow_35 = getView().findViewById(R.id.bt_35);
-            calender_button_showing_shadow_36 = getView().findViewById(R.id.bt_36);
-            calender_button_showing_shadow_37 = getView().findViewById(R.id.bt_37);
+            day1 = getView().findViewById(R.id.bt_1);
+            day2 = getView().findViewById(R.id.bt_2);
+            day3 = getView().findViewById(R.id.bt_3);
+            day4 = getView().findViewById(R.id.bt_4);
+            day5 = getView().findViewById(R.id.bt_5);
+            day6 = getView().findViewById(R.id.bt_6);
+            day7 = getView().findViewById(R.id.bt_7);
+            day8 = getView().findViewById(R.id.bt_8);
+            day9 = getView().findViewById(R.id.bt_9);
+            day10 = getView().findViewById(R.id.bt_10);
+            day11 = getView().findViewById(R.id.bt_11);
+            day12 = getView().findViewById(R.id.bt_12);
+            day13 = getView().findViewById(R.id.bt_13);
+            day14 = getView().findViewById(R.id.bt_14);
+            day15 = getView().findViewById(R.id.bt_15);
+            day16 = getView().findViewById(R.id.bt_16);
+            day17 = getView().findViewById(R.id.bt_17);
+            day18 = getView().findViewById(R.id.bt_18);
+            day19 = getView().findViewById(R.id.bt_19);
+            day20 = getView().findViewById(R.id.bt_20);
+            day21 = getView().findViewById(R.id.bt_21);
+            day22 = getView().findViewById(R.id.bt_22);
+            day23 = getView().findViewById(R.id.bt_23);
+            day24 = getView().findViewById(R.id.bt_24);
+            day25 = getView().findViewById(R.id.bt_25);
+            day26 = getView().findViewById(R.id.bt_26);
+            day27 = getView().findViewById(R.id.bt_27);
+            day28 = getView().findViewById(R.id.bt_28);
+            day29 = getView().findViewById(R.id.bt_29);
+            day30 = getView().findViewById(R.id.bt_30);
+            day31 = getView().findViewById(R.id.bt_31);
+            day32 = getView().findViewById(R.id.bt_32);
+            day33 = getView().findViewById(R.id.bt_33);
+            day34 = getView().findViewById(R.id.bt_34);
+            day35 = getView().findViewById(R.id.bt_35);
+            day36 = getView().findViewById(R.id.bt_36);
+            day37 = getView().findViewById(R.id.bt_37);
         }
     }
 
-    private void back_and_front_button_listen() {
+    private void backAndForwardButton() {
         if (getView() != null) {
-            Button button_shadow_for_the_back_for_good_habits = getView().findViewById(R.id.bt_calendar_back);
-            Button button_shadow_for_the_front_for_good_habits = getView().findViewById(R.id.bt_calendar_next);
-            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            button_shadow_for_the_back_for_good_habits.setOnClickListener(v -> {
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+            Button buttonShadowForTheBack = getView().findViewById(R.id.bt_calendar_back);
+            Button buttonShadowForTheFront = getView().findViewById(R.id.bt_calendar_next);
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            buttonShadowForTheBack.setOnClickListener(v -> {
+                String[] splitter = monthYear.getText().toString().split(" ");
                 String month_name;
                 if (returnMonthStringToInt(splitter[0]) == 0) {
                     month_name = returnMonth(11);
                     String year = String.valueOf(Integer.parseInt(splitter[1]) - 1);
-                    month_and_year_in_calender_for_good_habits.setText(month_name.concat(" ").concat(year));
-
+                    monthYear.setText(month_name.concat(" ").concat(year));
                 } else {
                     month_name = returnMonth(returnMonthStringToInt(splitter[0]) - 1);
-                    month_and_year_in_calender_for_good_habits.setText(month_name.concat(" ").concat(splitter[1]));
-
+                    monthYear.setText(month_name.concat(" ").concat(splitter[1]));
                 }
-                clear_the_calender();
-                setTheDaysOnTheRealText();
-                clear_the_color_from_the_keyboard();
-                set_all_buttons_to_visible();
-                remove_the_hiding_buttons();
-                color_today();
-                check_if_date_is_future();
-                hide_or_un_hide_the_button(0);
-                color_the_calender();
-                check_if_date_is_future();
-                color_the_button_under_the_calender();
-                divide_it_into_weeks();
+                clearTheCalender();
+                setDaysText();
+                clearTheColorFromTheKeyboard();
+                setAllButtonsToVisible();
+                removeButtons();
+                colorToday();
+                dateFutureCheck();
+                hideOrUnHideTheButton(0);
+                calendarColor();
+                dateFutureCheck();
+                colorButtonUnderTheCalendar();
+                divideItIntoWeeks();
             });
-            button_shadow_for_the_front_for_good_habits.setOnClickListener(v -> {
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                String month_name;
+            buttonShadowForTheFront.setOnClickListener(v -> {
+                String[] splitter = monthYear.getText().toString().split(" ");
+                String monthName;
                 if (returnMonthStringToInt((splitter[0])) == 11) {
-                    month_name = returnMonth(0);
-                    String year = String.valueOf(Integer.parseInt(splitter[1]) + 1);
-                    month_and_year_in_calender_for_good_habits.setText(month_name.concat(" ").concat(year));
+                    monthName = returnMonth(0);
+                    monthYear.setText(monthName.concat(" ").concat(String.valueOf(Integer.parseInt(splitter[1]) + 1)));
                 } else {
-                    month_name = returnMonth(returnMonthStringToInt(splitter[0]) + 1);
-                    month_and_year_in_calender_for_good_habits.setText(month_name.concat(" ").concat(splitter[1]));
+                    monthName = returnMonth(returnMonthStringToInt(splitter[0]) + 1);
+                    monthYear.setText(monthName.concat(" ").concat(splitter[1]));
                 }
-                clear_the_calender();
-                setTheDaysOnTheRealText();
-                clear_the_color_from_the_keyboard();
-                set_all_buttons_to_visible();
-                remove_the_hiding_buttons();
-                color_today();
-                check_if_date_is_future();
-                hide_or_un_hide_the_button(0);
-                color_the_calender();
-                check_if_date_is_future();
-                color_the_button_under_the_calender();
-                divide_it_into_weeks();
+                clearTheCalender();
+                setDaysText();
+                clearTheColorFromTheKeyboard();
+                setAllButtonsToVisible();
+                removeButtons();
+                colorToday();
+                dateFutureCheck();
+                hideOrUnHideTheButton(0);
+                calendarColor();
+                dateFutureCheck();
+                colorButtonUnderTheCalendar();
+                divideItIntoWeeks();
             });
         }
     }
 
-    private void clear_the_calender() {
-        calender_button_showing_shadow_1.setText("");
-        calender_button_showing_shadow_2.setText("");
-        calender_button_showing_shadow_3.setText("");
-        calender_button_showing_shadow_4.setText("");
-        calender_button_showing_shadow_5.setText("");
-        calender_button_showing_shadow_6.setText("");
-        calender_button_showing_shadow_7.setText("");
-        calender_button_showing_shadow_8.setText("");
-        calender_button_showing_shadow_9.setText("");
-        calender_button_showing_shadow_10.setText("");
-        calender_button_showing_shadow_11.setText("");
-        calender_button_showing_shadow_12.setText("");
-        calender_button_showing_shadow_13.setText("");
-        calender_button_showing_shadow_14.setText("");
-        calender_button_showing_shadow_15.setText("");
-        calender_button_showing_shadow_16.setText("");
-        calender_button_showing_shadow_17.setText("");
-        calender_button_showing_shadow_18.setText("");
-        calender_button_showing_shadow_19.setText("");
-        calender_button_showing_shadow_20.setText("");
-        calender_button_showing_shadow_21.setText("");
-        calender_button_showing_shadow_22.setText("");
-        calender_button_showing_shadow_23.setText("");
-        calender_button_showing_shadow_24.setText("");
-        calender_button_showing_shadow_25.setText("");
-        calender_button_showing_shadow_26.setText("");
-        calender_button_showing_shadow_27.setText("");
-        calender_button_showing_shadow_28.setText("");
-        calender_button_showing_shadow_29.setText("");
-        calender_button_showing_shadow_30.setText("");
-        calender_button_showing_shadow_31.setText("");
-        calender_button_showing_shadow_32.setText("");
-        calender_button_showing_shadow_33.setText("");
-        calender_button_showing_shadow_34.setText("");
-        calender_button_showing_shadow_35.setText("");
-        calender_button_showing_shadow_36.setText("");
-        calender_button_showing_shadow_37.setText("");
+    private void clearTheCalender() {
+        day1.setText("");
+        day2.setText("");
+        day3.setText("");
+        day4.setText("");
+        day5.setText("");
+        day6.setText("");
+        day7.setText("");
+        day8.setText("");
+        day9.setText("");
+        day10.setText("");
+        day11.setText("");
+        day12.setText("");
+        day13.setText("");
+        day14.setText("");
+        day15.setText("");
+        day16.setText("");
+        day17.setText("");
+        day18.setText("");
+        day19.setText("");
+        day20.setText("");
+        day21.setText("");
+        day22.setText("");
+        day23.setText("");
+        day24.setText("");
+        day25.setText("");
+        day26.setText("");
+        day27.setText("");
+        day28.setText("");
+        day29.setText("");
+        day30.setText("");
+        day31.setText("");
+        day32.setText("");
+        day33.setText("");
+        day34.setText("");
+        day35.setText("");
+        day36.setText("");
+        day37.setText("");
     }
 
-    private void color_the_selected(int which) {
+    private void selectedColor(int which) {
         if (which == 1) {
-            calender_button_showing_shadow_1.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_1.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day1.setTextColor(Color.WHITE);
+            day1.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 2) {
-            calender_button_showing_shadow_2.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_2.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day2.setTextColor(Color.WHITE);
+            day2.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 3) {
-            calender_button_showing_shadow_3.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_3.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day3.setTextColor(Color.WHITE);
+            day3.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 4) {
-            calender_button_showing_shadow_4.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_4.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day4.setTextColor(Color.WHITE);
+            day4.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 5) {
-            calender_button_showing_shadow_5.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_5.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day5.setTextColor(Color.WHITE);
+            day5.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 6) {
-            calender_button_showing_shadow_6.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_6.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day6.setTextColor(Color.WHITE);
+            day6.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 7) {
-            calender_button_showing_shadow_7.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_7.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day7.setTextColor(Color.WHITE);
+            day7.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 8) {
-            calender_button_showing_shadow_8.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_8.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day8.setTextColor(Color.WHITE);
+            day8.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 9) {
-            calender_button_showing_shadow_9.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_9.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day9.setTextColor(Color.WHITE);
+            day9.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 10) {
-            calender_button_showing_shadow_10.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_10.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day10.setTextColor(Color.WHITE);
+            day10.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 11) {
-            calender_button_showing_shadow_11.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_11.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day11.setTextColor(Color.WHITE);
+            day11.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 12) {
-            calender_button_showing_shadow_12.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_12.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day12.setTextColor(Color.WHITE);
+            day12.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 13) {
-            calender_button_showing_shadow_13.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_13.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day13.setTextColor(Color.WHITE);
+            day13.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 14) {
-            calender_button_showing_shadow_14.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_14.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day14.setTextColor(Color.WHITE);
+            day14.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 15) {
-            calender_button_showing_shadow_15.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_15.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day15.setTextColor(Color.WHITE);
+            day15.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 16) {
-            calender_button_showing_shadow_16.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_16.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day16.setTextColor(Color.WHITE);
+            day16.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 17) {
-            calender_button_showing_shadow_17.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_17.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day17.setTextColor(Color.WHITE);
+            day17.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 18) {
-            calender_button_showing_shadow_18.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_18.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day18.setTextColor(Color.WHITE);
+            day18.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 19) {
-            calender_button_showing_shadow_19.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_19.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day19.setTextColor(Color.WHITE);
+            day19.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 20) {
-            calender_button_showing_shadow_20.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_20.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day20.setTextColor(Color.WHITE);
+            day20.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 21) {
-            calender_button_showing_shadow_21.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_21.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day21.setTextColor(Color.WHITE);
+            day21.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 22) {
-            calender_button_showing_shadow_22.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_22.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day22.setTextColor(Color.WHITE);
+            day22.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 23) {
-            calender_button_showing_shadow_23.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_23.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day23.setTextColor(Color.WHITE);
+            day23.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 24) {
-            calender_button_showing_shadow_24.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_24.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day24.setTextColor(Color.WHITE);
+            day24.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 25) {
-            calender_button_showing_shadow_25.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_25.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day25.setTextColor(Color.WHITE);
+            day25.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 26) {
-            calender_button_showing_shadow_26.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_26.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day26.setTextColor(Color.WHITE);
+            day26.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 27) {
-            calender_button_showing_shadow_27.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_27.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day27.setTextColor(Color.WHITE);
+            day27.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 28) {
-            calender_button_showing_shadow_28.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_28.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day28.setTextColor(Color.WHITE);
+            day28.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 29) {
-            calender_button_showing_shadow_29.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_29.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day29.setTextColor(Color.WHITE);
+            day29.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 30) {
-            calender_button_showing_shadow_30.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_30.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day30.setTextColor(Color.WHITE);
+            day30.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 31) {
-            calender_button_showing_shadow_31.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_31.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day31.setTextColor(Color.WHITE);
+            day31.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 32) {
-            calender_button_showing_shadow_32.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_32.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day32.setTextColor(Color.WHITE);
+            day32.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 33) {
-            calender_button_showing_shadow_33.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_33.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day33.setTextColor(Color.WHITE);
+            day33.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 34) {
-            calender_button_showing_shadow_34.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_34.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day34.setTextColor(Color.WHITE);
+            day34.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 35) {
-            calender_button_showing_shadow_35.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_35.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day35.setTextColor(Color.WHITE);
+            day35.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else if (which == 36) {
-            calender_button_showing_shadow_36.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_36.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day36.setTextColor(Color.WHITE);
+            day36.setBackgroundResource(R.drawable.round_button_colored_fav);
         } else {
-            calender_button_showing_shadow_37.setTextColor(Color.WHITE);
-            calender_button_showing_shadow_37.setBackgroundResource(R.drawable.round_button_colored_fav);
+            day37.setTextColor(Color.WHITE);
+            day37.setBackgroundResource(R.drawable.round_button_colored_fav);
         }
     }
 
-    private void clear_the_color_from_the_keyboard() {
-        calender_button_showing_shadow_1.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_1.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_2.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_2.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_3.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_3.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_4.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_4.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_5.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_5.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_6.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_6.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_7.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_7.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_8.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_8.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_9.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_9.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_10.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_10.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_11.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_11.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_12.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_12.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_13.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_13.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_14.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_14.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_15.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_15.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_16.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_16.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_17.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_17.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_18.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_18.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_19.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_19.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_20.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_20.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_21.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_21.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_22.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_22.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_23.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_23.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_24.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_24.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_25.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_25.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_26.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_26.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_27.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_27.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_28.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_28.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_29.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_29.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_30.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_30.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_31.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_31.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_32.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_32.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_33.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_33.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_34.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_34.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_35.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_35.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_36.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_36.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_37.setTextColor(Color.BLACK);
-        calender_button_showing_shadow_37.setBackgroundResource(R.drawable.round_button);
+    private void clearTheColorFromTheKeyboard() {
+        day1.setTextColor(Color.BLACK);
+        day1.setBackgroundResource(R.drawable.round_button);
+        day2.setTextColor(Color.BLACK);
+        day2.setBackgroundResource(R.drawable.round_button);
+        day3.setTextColor(Color.BLACK);
+        day3.setBackgroundResource(R.drawable.round_button);
+        day4.setTextColor(Color.BLACK);
+        day4.setBackgroundResource(R.drawable.round_button);
+        day5.setTextColor(Color.BLACK);
+        day5.setBackgroundResource(R.drawable.round_button);
+        day6.setTextColor(Color.BLACK);
+        day6.setBackgroundResource(R.drawable.round_button);
+        day7.setTextColor(Color.BLACK);
+        day7.setBackgroundResource(R.drawable.round_button);
+        day8.setTextColor(Color.BLACK);
+        day8.setBackgroundResource(R.drawable.round_button);
+        day9.setTextColor(Color.BLACK);
+        day9.setBackgroundResource(R.drawable.round_button);
+        day10.setTextColor(Color.BLACK);
+        day10.setBackgroundResource(R.drawable.round_button);
+        day11.setTextColor(Color.BLACK);
+        day11.setBackgroundResource(R.drawable.round_button);
+        day12.setTextColor(Color.BLACK);
+        day12.setBackgroundResource(R.drawable.round_button);
+        day13.setTextColor(Color.BLACK);
+        day13.setBackgroundResource(R.drawable.round_button);
+        day14.setTextColor(Color.BLACK);
+        day14.setBackgroundResource(R.drawable.round_button);
+        day15.setTextColor(Color.BLACK);
+        day15.setBackgroundResource(R.drawable.round_button);
+        day16.setTextColor(Color.BLACK);
+        day16.setBackgroundResource(R.drawable.round_button);
+        day17.setTextColor(Color.BLACK);
+        day17.setBackgroundResource(R.drawable.round_button);
+        day18.setTextColor(Color.BLACK);
+        day18.setBackgroundResource(R.drawable.round_button);
+        day19.setTextColor(Color.BLACK);
+        day19.setBackgroundResource(R.drawable.round_button);
+        day20.setTextColor(Color.BLACK);
+        day20.setBackgroundResource(R.drawable.round_button);
+        day21.setTextColor(Color.BLACK);
+        day21.setBackgroundResource(R.drawable.round_button);
+        day22.setTextColor(Color.BLACK);
+        day22.setBackgroundResource(R.drawable.round_button);
+        day23.setTextColor(Color.BLACK);
+        day23.setBackgroundResource(R.drawable.round_button);
+        day24.setTextColor(Color.BLACK);
+        day24.setBackgroundResource(R.drawable.round_button);
+        day25.setTextColor(Color.BLACK);
+        day25.setBackgroundResource(R.drawable.round_button);
+        day26.setTextColor(Color.BLACK);
+        day26.setBackgroundResource(R.drawable.round_button);
+        day27.setTextColor(Color.BLACK);
+        day27.setBackgroundResource(R.drawable.round_button);
+        day28.setTextColor(Color.BLACK);
+        day28.setBackgroundResource(R.drawable.round_button);
+        day29.setTextColor(Color.BLACK);
+        day29.setBackgroundResource(R.drawable.round_button);
+        day30.setTextColor(Color.BLACK);
+        day30.setBackgroundResource(R.drawable.round_button);
+        day31.setTextColor(Color.BLACK);
+        day31.setBackgroundResource(R.drawable.round_button);
+        day32.setTextColor(Color.BLACK);
+        day32.setBackgroundResource(R.drawable.round_button);
+        day33.setTextColor(Color.BLACK);
+        day33.setBackgroundResource(R.drawable.round_button);
+        day34.setTextColor(Color.BLACK);
+        day34.setBackgroundResource(R.drawable.round_button);
+        day35.setTextColor(Color.BLACK);
+        day35.setBackgroundResource(R.drawable.round_button);
+        day36.setTextColor(Color.BLACK);
+        day36.setBackgroundResource(R.drawable.round_button);
+        day37.setTextColor(Color.BLACK);
+        day37.setBackgroundResource(R.drawable.round_button);
     }
 
-    private void color_the_today_value() {
+    private void colorTodayValue() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        color_the_today = String.valueOf(day).concat("_").concat(String.valueOf(month)).concat("_").concat(String.valueOf(year));
+        colorToday = String.valueOf(day).concat("_").concat(String.valueOf(month)).concat("_").concat(String.valueOf(year));
     }
 
-    private void calender_button_listeners() {
-        calender_button_showing_shadow_1.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(1);
+    private void calenderButton() {
+        monthYear = getView().findViewById(R.id.tv_month_year);
+        day1.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(1);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_1.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day1.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_2.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(2);
+        day2.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(2);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_2.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day2.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_3.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(3);
+        day3.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(3);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+                String[] splitter = monthYear.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_3.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                colorToday = day3.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_4.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(4);
+        day4.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(4);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_4.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day4.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_5.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(5);
+        day5.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(5);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+                String[] splitter = monthYear.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_5.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                colorToday = day5.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_6.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(6);
+        day6.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(6);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+                String[] splitter = monthYear.getText().toString().split(" ");
                 int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_6.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                colorToday = day6.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_7.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(7);
+        day7.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(7);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_7.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day7.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_8.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(8);
+        day8.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(8);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_8.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day8.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_9.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(9);
+        day9.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(9);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_9.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day9.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_10.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(10);
+        day10.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(10);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_10.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day10.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_11.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(11);
+        day11.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(11);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_11.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day11.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0])).concat("_").concat(splitter[1]));
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_12.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(12);
+        day12.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(12);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_12.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day12.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_13.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(13);
+        day13.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(13);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_13.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day13.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_14.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(14);
+        day14.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(14);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_14.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day14.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_15.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(15);
+        day15.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(15);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_15.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day15.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_16.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(16);
+        day16.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(16);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_16.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day16.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_17.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(17);
+        day17.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(17);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_17.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day17.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_18.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(18);
+        day18.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(18);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_18.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day18.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_19.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(19);
+        day19.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(19);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_19.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day19.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_20.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(20);
+        day20.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(20);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_20.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day20.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_21.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(21);
+        day21.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(21);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_21.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day21.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_22.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(22);
+        day22.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(22);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_22.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day22.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_23.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(23);
+        day23.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(23);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_23.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day23.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_24.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(24);
+        day24.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(24);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_24.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day24.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_25.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(25);
+        day25.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(25);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_25.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day25.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_26.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(26);
+        day26.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(26);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_26.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day26.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_27.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(27);
+        day27.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(27);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_27.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day27.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_28.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(28);
+        day28.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(28);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_28.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day28.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_29.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(29);
+        day29.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(29);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_29.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day29.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_30.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(30);
+        day30.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(30);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_30.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day30.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_31.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(31);
+        day31.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(31);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_31.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day31.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_32.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(32);
+        day32.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(32);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_32.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day32.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_33.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(33);
+        day33.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(33);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_33.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day33.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_34.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(34);
+        day34.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(34);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_34.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day34.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_35.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(35);
+        day35.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(35);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_35.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day35.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_36.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(36);
+        day36.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(36);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_36.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day36.getText().toString().concat("_").concat(String.valueOf(monthYear)).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
-        calender_button_showing_shadow_37.setOnClickListener(v -> {
-            clear_the_background_only();
-            color_only_today();
-            color_the_selected(37);
+        day37.setOnClickListener(v -> {
+            clearBackground();
+            colorOnlyToday();
+            selectedColor(37);
             if (getView() != null) {
-                TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-                String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int month = returnMonthStringToInt(splitter[0]);
-                color_the_today = calender_button_showing_shadow_37.getText().toString().concat("_").concat(String.valueOf(month)).concat("_").concat(splitter[1]);
+                String[] splitter = monthYear.getText().toString().split(" ");
+                colorToday = day37.getText().toString().concat("_").concat(String.valueOf(returnMonthStringToInt(splitter[0]))).concat("_").concat(splitter[1]);
             }
-            check_if_date_is_future();
-            color_the_button_under_the_calender();
+            dateFutureCheck();
+            colorButtonUnderTheCalendar();
         });
     }
 
-    private void remove_the_hiding_buttons() {
-        if (calender_button_showing_shadow_1.getText().toString().equals("")) {
-            calender_button_showing_shadow_1.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_2.getText().toString().equals("")) {
-            calender_button_showing_shadow_2.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_3.getText().toString().equals("")) {
-            calender_button_showing_shadow_3.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_4.getText().toString().equals("")) {
-            calender_button_showing_shadow_4.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_5.getText().toString().equals("")) {
-            calender_button_showing_shadow_5.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_6.getText().toString().equals("")) {
-            calender_button_showing_shadow_6.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_29.getText().toString().equals("")) {
-            calender_button_showing_shadow_29.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_30.getText().toString().equals("")) {
-            calender_button_showing_shadow_30.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_31.getText().toString().equals("")) {
-            calender_button_showing_shadow_31.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_32.getText().toString().equals("")) {
-            calender_button_showing_shadow_32.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_33.getText().toString().equals("")) {
-            calender_button_showing_shadow_33.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_34.getText().toString().equals("")) {
-            calender_button_showing_shadow_34.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_35.getText().toString().equals("")) {
-            calender_button_showing_shadow_35.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_36.getText().toString().equals("")) {
-            calender_button_showing_shadow_36.setVisibility(View.INVISIBLE);
-        }
-        if (calender_button_showing_shadow_37.getText().toString().equals("")) {
-            calender_button_showing_shadow_37.setVisibility(View.INVISIBLE);
-        }
+    private void removeButtons() {
+        if (day1.getText().toString().equals("")) 
+            day1.setVisibility(View.INVISIBLE);
+        if (day2.getText().toString().equals("")) 
+            day2.setVisibility(View.INVISIBLE);
+        if (day3.getText().toString().equals(""))
+            day3.setVisibility(View.INVISIBLE);
+        if (day4.getText().toString().equals("")) 
+            day4.setVisibility(View.INVISIBLE);
+        if (day5.getText().toString().equals("")) 
+            day5.setVisibility(View.INVISIBLE);
+        if (day6.getText().toString().equals(""))
+            day6.setVisibility(View.INVISIBLE);
+        if (day29.getText().toString().equals("")) 
+            day29.setVisibility(View.INVISIBLE);
+        if (day30.getText().toString().equals("")) 
+            day30.setVisibility(View.INVISIBLE);
+        if (day31.getText().toString().equals("")) 
+            day31.setVisibility(View.INVISIBLE);
+        if (day32.getText().toString().equals("")) 
+            day32.setVisibility(View.INVISIBLE);
+        if (day33.getText().toString().equals("")) 
+            day33.setVisibility(View.INVISIBLE);
+        if (day34.getText().toString().equals("")) 
+            day34.setVisibility(View.INVISIBLE);
+        if (day35.getText().toString().equals("")) 
+            day35.setVisibility(View.INVISIBLE);
+        if (day36.getText().toString().equals("")) 
+            day36.setVisibility(View.INVISIBLE);
+        if (day37.getText().toString().equals("")) 
+            day37.setVisibility(View.INVISIBLE);
     }
 
-    private void set_all_buttons_to_visible() {
-        calender_button_showing_shadow_1.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_2.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_3.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_4.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_5.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_6.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_7.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_8.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_9.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_10.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_11.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_12.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_13.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_14.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_15.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_16.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_17.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_17.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_18.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_19.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_20.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_21.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_22.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_23.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_24.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_25.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_26.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_27.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_28.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_29.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_30.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_31.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_32.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_33.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_34.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_35.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_36.setVisibility(View.VISIBLE);
-        calender_button_showing_shadow_37.setVisibility(View.VISIBLE);
+    private void setAllButtonsToVisible() {
+        day1.setVisibility(View.VISIBLE);
+        day2.setVisibility(View.VISIBLE);
+        day3.setVisibility(View.VISIBLE);
+        day4.setVisibility(View.VISIBLE);
+        day5.setVisibility(View.VISIBLE);
+        day6.setVisibility(View.VISIBLE);
+        day7.setVisibility(View.VISIBLE);
+        day8.setVisibility(View.VISIBLE);
+        day9.setVisibility(View.VISIBLE);
+        day10.setVisibility(View.VISIBLE);
+        day11.setVisibility(View.VISIBLE);
+        day12.setVisibility(View.VISIBLE);
+        day13.setVisibility(View.VISIBLE);
+        day14.setVisibility(View.VISIBLE);
+        day15.setVisibility(View.VISIBLE);
+        day16.setVisibility(View.VISIBLE);
+        day17.setVisibility(View.VISIBLE);
+        day17.setVisibility(View.VISIBLE);
+        day18.setVisibility(View.VISIBLE);
+        day19.setVisibility(View.VISIBLE);
+        day20.setVisibility(View.VISIBLE);
+        day21.setVisibility(View.VISIBLE);
+        day22.setVisibility(View.VISIBLE);
+        day23.setVisibility(View.VISIBLE);
+        day24.setVisibility(View.VISIBLE);
+        day25.setVisibility(View.VISIBLE);
+        day26.setVisibility(View.VISIBLE);
+        day27.setVisibility(View.VISIBLE);
+        day28.setVisibility(View.VISIBLE);
+        day29.setVisibility(View.VISIBLE);
+        day30.setVisibility(View.VISIBLE);
+        day31.setVisibility(View.VISIBLE);
+        day32.setVisibility(View.VISIBLE);
+        day33.setVisibility(View.VISIBLE);
+        day34.setVisibility(View.VISIBLE);
+        day35.setVisibility(View.VISIBLE);
+        day36.setVisibility(View.VISIBLE);
+        day37.setVisibility(View.VISIBLE);
     }
 
-    private int return_which_day_is_linked_to_calender(int which) {
-        if (calender_button_showing_shadow_1.getText().toString().equals(String.valueOf(which))) {
+    private int returnDay(int day) {
+        if (day1.getText().toString().equals(String.valueOf(day))) 
             return 1;
-        } else if (calender_button_showing_shadow_2.getText().toString().equals(String.valueOf(which))) {
+        else if (day2.getText().toString().equals(String.valueOf(day))) 
             return 2;
-        } else if (calender_button_showing_shadow_3.getText().toString().equals(String.valueOf(which))) {
+         else if (day3.getText().toString().equals(String.valueOf(day))) 
             return 3;
-        } else if (calender_button_showing_shadow_4.getText().toString().equals(String.valueOf(which))) {
+         else if (day4.getText().toString().equals(String.valueOf(day))) 
             return 4;
-        } else if (calender_button_showing_shadow_5.getText().toString().equals(String.valueOf(which))) {
+         else if (day5.getText().toString().equals(String.valueOf(day))) 
             return 5;
-        } else if (calender_button_showing_shadow_6.getText().toString().equals(String.valueOf(which))) {
+         else if (day6.getText().toString().equals(String.valueOf(day))) 
             return 6;
-        } else if (calender_button_showing_shadow_7.getText().toString().equals(String.valueOf(which))) {
+         else if (day7.getText().toString().equals(String.valueOf(day))) 
             return 7;
-        } else if (calender_button_showing_shadow_8.getText().toString().equals(String.valueOf(which))) {
+         else if (day8.getText().toString().equals(String.valueOf(day))) 
             return 8;
-        } else if (calender_button_showing_shadow_9.getText().toString().equals(String.valueOf(which))) {
+         else if (day9.getText().toString().equals(String.valueOf(day))) 
             return 9;
-        } else if (calender_button_showing_shadow_10.getText().toString().equals(String.valueOf(which))) {
+         else if (day10.getText().toString().equals(String.valueOf(day))) 
             return 10;
-        } else if (calender_button_showing_shadow_11.getText().toString().equals(String.valueOf(which))) {
+         else if (day11.getText().toString().equals(String.valueOf(day))) 
             return 11;
-        } else if (calender_button_showing_shadow_12.getText().toString().equals(String.valueOf(which))) {
+         else if (day12.getText().toString().equals(String.valueOf(day))) 
             return 12;
-        } else if (calender_button_showing_shadow_13.getText().toString().equals(String.valueOf(which))) {
+         else if (day13.getText().toString().equals(String.valueOf(day))) 
             return 13;
-        } else if (calender_button_showing_shadow_14.getText().toString().equals(String.valueOf(which))) {
+         else if (day14.getText().toString().equals(String.valueOf(day))) 
             return 14;
-        } else if (calender_button_showing_shadow_15.getText().toString().equals(String.valueOf(which))) {
+        else if (day15.getText().toString().equals(String.valueOf(day))) 
             return 15;
-        } else if (calender_button_showing_shadow_16.getText().toString().equals(String.valueOf(which))) {
+         else if (day16.getText().toString().equals(String.valueOf(day))) 
             return 16;
-        } else if (calender_button_showing_shadow_17.getText().toString().equals(String.valueOf(which))) {
+         else if (day17.getText().toString().equals(String.valueOf(day))) 
             return 17;
-        } else if (calender_button_showing_shadow_18.getText().toString().equals(String.valueOf(which))) {
+         else if (day18.getText().toString().equals(String.valueOf(day))) 
             return 18;
-        } else if (calender_button_showing_shadow_19.getText().toString().equals(String.valueOf(which))) {
+         else if (day19.getText().toString().equals(String.valueOf(day))) 
             return 19;
-        } else if (calender_button_showing_shadow_20.getText().toString().equals(String.valueOf(which))) {
+         else if (day20.getText().toString().equals(String.valueOf(day))) 
             return 20;
-        } else if (calender_button_showing_shadow_21.getText().toString().equals(String.valueOf(which))) {
+         else if (day21.getText().toString().equals(String.valueOf(day))) 
             return 21;
-        } else if (calender_button_showing_shadow_22.getText().toString().equals(String.valueOf(which))) {
+         else if (day22.getText().toString().equals(String.valueOf(day))) 
             return 22;
-        } else if (calender_button_showing_shadow_23.getText().toString().equals(String.valueOf(which))) {
+         else if (day23.getText().toString().equals(String.valueOf(day))) 
             return 23;
-        } else if (calender_button_showing_shadow_24.getText().toString().equals(String.valueOf(which))) {
+         else if (day24.getText().toString().equals(String.valueOf(day))) 
             return 24;
-        } else if (calender_button_showing_shadow_25.getText().toString().equals(String.valueOf(which))) {
+         else if (day25.getText().toString().equals(String.valueOf(day))) 
             return 25;
-        } else if (calender_button_showing_shadow_26.getText().toString().equals(String.valueOf(which))) {
+         else if (day26.getText().toString().equals(String.valueOf(day))) 
             return 26;
-        } else if (calender_button_showing_shadow_27.getText().toString().equals(String.valueOf(which))) {
+         else if (day27.getText().toString().equals(String.valueOf(day))) 
             return 27;
-        } else if (calender_button_showing_shadow_28.getText().toString().equals(String.valueOf(which))) {
+         else if (day28.getText().toString().equals(String.valueOf(day))) 
             return 28;
-        } else if (calender_button_showing_shadow_29.getText().toString().equals(String.valueOf(which))) {
+         else if (day29.getText().toString().equals(String.valueOf(day))) 
             return 29;
-        } else if (calender_button_showing_shadow_30.getText().toString().equals(String.valueOf(which))) {
+         else if (day30.getText().toString().equals(String.valueOf(day))) 
             return 30;
-        } else if (calender_button_showing_shadow_31.getText().toString().equals(String.valueOf(which))) {
+         else if (day31.getText().toString().equals(String.valueOf(day))) 
             return 31;
-        } else if (calender_button_showing_shadow_32.getText().toString().equals(String.valueOf(which))) {
+         else if (day32.getText().toString().equals(String.valueOf(day))) 
             return 32;
-        } else if (calender_button_showing_shadow_33.getText().toString().equals(String.valueOf(which))) {
+         else if (day33.getText().toString().equals(String.valueOf(day))) 
             return 33;
-        } else if (calender_button_showing_shadow_34.getText().toString().equals(String.valueOf(which))) {
+         else if (day34.getText().toString().equals(String.valueOf(day))) 
             return 34;
-        } else if (calender_button_showing_shadow_35.getText().toString().equals(String.valueOf(which))) {
+        else if (day35.getText().toString().equals(String.valueOf(day)))
             return 35;
-        } else if (calender_button_showing_shadow_36.getText().toString().equals(String.valueOf(which))) {
+         else if (day36.getText().toString().equals(String.valueOf(day))) 
             return 36;
-        } else {
+         else 
             return 37;
-        }
     }
 
-    private void color_today() {
+    private void colorToday() {
+         monthYear=getView().findViewById(R.id.tv_month_year);
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] text_to_split = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            int year_from_text = Integer.parseInt(text_to_split[1]);
-            int month_from_text = returnMonthStringToInt(text_to_split[0]);
-            String[] saved_text_split = color_the_today.split("_");
-            int year = Integer.parseInt(saved_text_split[2]);
-            int month = Integer.parseInt(saved_text_split[1]);
-            int day = Integer.parseInt(saved_text_split[0]);
-            if ((year_from_text == year) && (month_from_text == month)) {
-                if (!calender_button_showing_shadow_1.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_1.getText().toString()) == day) {
-                    color_the_selected(1);
-                } else if (!calender_button_showing_shadow_2.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_2.getText().toString()) == day) {
-                    color_the_selected(2);
-                } else if (!calender_button_showing_shadow_3.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_3.getText().toString()) == day) {
-                    color_the_selected(3);
-                } else if (!calender_button_showing_shadow_4.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_4.getText().toString()) == day) {
-                    color_the_selected(4);
-                } else if (!calender_button_showing_shadow_5.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_5.getText().toString()) == day) {
-                    color_the_selected(5);
-                } else if (!calender_button_showing_shadow_6.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_6.getText().toString()) == day) {
-                    color_the_selected(6);
-                } else if (!calender_button_showing_shadow_7.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_7.getText().toString()) == day) {
-                    color_the_selected(7);
-                } else if (!calender_button_showing_shadow_8.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_8.getText().toString()) == day) {
-                    color_the_selected(8);
-                } else if (!calender_button_showing_shadow_9.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_9.getText().toString()) == day) {
-                    color_the_selected(9);
-                } else if (!calender_button_showing_shadow_10.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_10.getText().toString()) == day) {
-                    color_the_selected(10);
-                } else if (!calender_button_showing_shadow_11.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_11.getText().toString()) == day) {
-                    color_the_selected(11);
-                } else if (!calender_button_showing_shadow_12.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_12.getText().toString()) == day) {
-                    color_the_selected(12);
-                } else if (!calender_button_showing_shadow_13.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_13.getText().toString()) == day) {
-                    color_the_selected(13);
-                } else if (!calender_button_showing_shadow_14.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_14.getText().toString()) == day) {
-                    color_the_selected(14);
-                } else if (!calender_button_showing_shadow_15.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_15.getText().toString()) == day) {
-                    color_the_selected(15);
-                } else if (!calender_button_showing_shadow_16.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_16.getText().toString()) == day) {
-                    color_the_selected(16);
-                } else if (!calender_button_showing_shadow_17.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_17.getText().toString()) == day) {
-                    color_the_selected(17);
-                } else if (!calender_button_showing_shadow_18.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_18.getText().toString()) == day) {
-                    color_the_selected(18);
-                } else if (!calender_button_showing_shadow_19.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_19.getText().toString()) == day) {
-                    color_the_selected(19);
-                } else if (!calender_button_showing_shadow_20.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_20.getText().toString()) == day) {
-                    color_the_selected(20);
-                } else if (!calender_button_showing_shadow_21.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_21.getText().toString()) == day) {
-                    color_the_selected(21);
-                } else if (!calender_button_showing_shadow_22.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_22.getText().toString()) == day) {
-                    color_the_selected(22);
-                } else if (!calender_button_showing_shadow_23.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_23.getText().toString()) == day) {
-                    color_the_selected(23);
-                } else if (!calender_button_showing_shadow_24.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_24.getText().toString()) == day) {
-                    color_the_selected(24);
-                } else if (!calender_button_showing_shadow_25.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_25.getText().toString()) == day) {
-                    color_the_selected(25);
-                } else if (!calender_button_showing_shadow_26.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_26.getText().toString()) == day) {
-                    color_the_selected(26);
-                } else if (!calender_button_showing_shadow_27.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_27.getText().toString()) == day) {
-                    color_the_selected(27);
-                } else if (!calender_button_showing_shadow_28.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_28.getText().toString()) == day) {
-                    color_the_selected(28);
-                } else if (!calender_button_showing_shadow_29.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_29.getText().toString()) == day) {
-                    color_the_selected(29);
-                } else if (!calender_button_showing_shadow_30.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_30.getText().toString()) == day) {
-                    color_the_selected(30);
-                } else if (!calender_button_showing_shadow_31.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_31.getText().toString()) == day) {
-                    color_the_selected(31);
-                } else if (!calender_button_showing_shadow_32.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_32.getText().toString()) == day) {
-                    color_the_selected(32);
-                } else if (!calender_button_showing_shadow_33.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_33.getText().toString()) == day) {
-                    color_the_selected(33);
-                } else if (!calender_button_showing_shadow_34.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_34.getText().toString()) == day) {
-                    color_the_selected(34);
-                } else if (!calender_button_showing_shadow_35.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_35.getText().toString()) == day) {
-                    color_the_selected(35);
-                } else if (!calender_button_showing_shadow_36.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_36.getText().toString()) == day) {
-                    color_the_selected(36);
-                } else if (!calender_button_showing_shadow_37.getText().toString().equals("") && Integer.parseInt(calender_button_showing_shadow_37.getText().toString()) == day) {
-                    color_the_selected(37);
-                }
+            String[] text_to_split = monthYear.getText().toString().split(" ");
+            int yearText = Integer.parseInt(text_to_split[1]);
+            int monthText = returnMonthStringToInt(text_to_split[0]);
+            String[] savedSplit = colorToday.split("_");
+            int year = Integer.parseInt(savedSplit[2]);
+            int month = Integer.parseInt(savedSplit[1]);
+            int day = Integer.parseInt(savedSplit[0]);
+            if ((yearText == year) && (monthText == month)) {
+                if (!day1.getText().toString().equals("") && Integer.parseInt(day1.getText().toString()) == day) 
+                    selectedColor(1);
+                 else if (!day2.getText().toString().equals("") && Integer.parseInt(day2.getText().toString()) == day) 
+                    selectedColor(2);
+                 else if (!day3.getText().toString().equals("") && Integer.parseInt(day3.getText().toString()) == day) 
+                    selectedColor(3);
+                 else if (!day4.getText().toString().equals("") && Integer.parseInt(day4.getText().toString()) == day) 
+                    selectedColor(4);
+                 else if (!day5.getText().toString().equals("") && Integer.parseInt(day5.getText().toString()) == day) 
+                    selectedColor(5);
+                 else if (!day6.getText().toString().equals("") && Integer.parseInt(day6.getText().toString()) == day) 
+                    selectedColor(6);
+                 else if (!day7.getText().toString().equals("") && Integer.parseInt(day7.getText().toString()) == day) 
+                    selectedColor(7);
+                 else if (!day8.getText().toString().equals("") && Integer.parseInt(day8.getText().toString()) == day) 
+                    selectedColor(8);
+                 else if (!day9.getText().toString().equals("") && Integer.parseInt(day9.getText().toString()) == day) 
+                    selectedColor(9);
+                 else if (!day10.getText().toString().equals("") && Integer.parseInt(day10.getText().toString()) == day) 
+                    selectedColor(10);
+                 else if (!day11.getText().toString().equals("") && Integer.parseInt(day11.getText().toString()) == day) 
+                    selectedColor(11);
+                 else if (!day12.getText().toString().equals("") && Integer.parseInt(day12.getText().toString()) == day) 
+                    selectedColor(12);
+                 else if (!day13.getText().toString().equals("") && Integer.parseInt(day13.getText().toString()) == day) 
+                    selectedColor(13);
+                 else if (!day14.getText().toString().equals("") && Integer.parseInt(day14.getText().toString()) == day) 
+                    selectedColor(14);
+                 else if (!day15.getText().toString().equals("") && Integer.parseInt(day15.getText().toString()) == day) 
+                    selectedColor(15);
+                 else if (!day16.getText().toString().equals("") && Integer.parseInt(day16.getText().toString()) == day) 
+                    selectedColor(16);
+                 else if (!day17.getText().toString().equals("") && Integer.parseInt(day17.getText().toString()) == day) 
+                    selectedColor(17);
+                 else if (!day18.getText().toString().equals("") && Integer.parseInt(day18.getText().toString()) == day) 
+                    selectedColor(18);
+                 else if (!day19.getText().toString().equals("") && Integer.parseInt(day19.getText().toString()) == day) 
+                    selectedColor(19);
+                 else if (!day20.getText().toString().equals("") && Integer.parseInt(day20.getText().toString()) == day) 
+                    selectedColor(20);
+                 else if (!day21.getText().toString().equals("") && Integer.parseInt(day21.getText().toString()) == day) 
+                    selectedColor(21);
+                 else if (!day22.getText().toString().equals("") && Integer.parseInt(day22.getText().toString()) == day) 
+                    selectedColor(22);
+                 else if (!day23.getText().toString().equals("") && Integer.parseInt(day23.getText().toString()) == day) 
+                    selectedColor(23);
+                 else if (!day24.getText().toString().equals("") && Integer.parseInt(day24.getText().toString()) == day) 
+                    selectedColor(24);
+                 else if (!day25.getText().toString().equals("") && Integer.parseInt(day25.getText().toString()) == day) 
+                    selectedColor(25);
+                 else if (!day26.getText().toString().equals("") && Integer.parseInt(day26.getText().toString()) == day) 
+                    selectedColor(26);
+                 else if (!day27.getText().toString().equals("") && Integer.parseInt(day27.getText().toString()) == day) 
+                    selectedColor(27);
+                 else if (!day28.getText().toString().equals("") && Integer.parseInt(day28.getText().toString()) == day) 
+                    selectedColor(28);
+                 else if (!day29.getText().toString().equals("") && Integer.parseInt(day29.getText().toString()) == day) 
+                    selectedColor(29);
+                 else if (!day30.getText().toString().equals("") && Integer.parseInt(day30.getText().toString()) == day) 
+                    selectedColor(30);
+                 else if (!day31.getText().toString().equals("") && Integer.parseInt(day31.getText().toString()) == day) 
+                    selectedColor(31);
+                 else if (!day32.getText().toString().equals("") && Integer.parseInt(day32.getText().toString()) == day) 
+                    selectedColor(32);
+                 else if (!day33.getText().toString().equals("") && Integer.parseInt(day33.getText().toString()) == day) 
+                    selectedColor(33);
+                 else if (!day34.getText().toString().equals("") && Integer.parseInt(day34.getText().toString()) == day) 
+                    selectedColor(34);
+                 else if (!day35.getText().toString().equals("") && Integer.parseInt(day35.getText().toString()) == day) 
+                    selectedColor(35);
+                 else if (!day36.getText().toString().equals("") && Integer.parseInt(day36.getText().toString()) == day) 
+                    selectedColor(36);
+                 else if (!day37.getText().toString().equals("") && Integer.parseInt(day37.getText().toString()) == day) 
+                    selectedColor(37);
+                
             }
         }
     }
 
-    private void color_the_calender() {
+    private void calendarColor() {
+        monthYear=getView().findViewById(R.id.tv_month_year);
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
-            String no_mood_color = return_the_color_of_mood(0);
+            String veryBadColor = returnTheColorOfMood(1);
+            String badColor = returnTheColorOfMood(2);
+            String okColor = returnTheColorOfMood(3);
+            String goodColor = returnTheColorOfMood(4);
+            String veryGoodColor = returnTheColorOfMood(5);
+            String noMoodColor = returnTheColorOfMood(0);
             colors = new String[returnLastDayOfMonth() + 1];
             Calendar calendar = Calendar.getInstance();
-            String[] split_month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            int year = Integer.parseInt(split_month_and_year[1]);
-            int month = returnMonthStringToInt(split_month_and_year[0]);
-            if (!check_past_now_or_future().equals("future")) {
+            String[] splitMonthAndYear = monthYear.getText().toString().split(" ");
+            int year = Integer.parseInt(splitMonthAndYear[1]);
+            int month = returnMonthStringToInt(splitMonthAndYear[0]);
+            if (!checkPastNowFuture().equals("future")) {
                 for (int i = 1; i <= returnLastDayOfMonth(); i++) {
                     calendar.set(year, month, i);
-                    long time_in_milli = calendar.getTimeInMillis();
-                    if (TimeMood.return_time_in_midnight(time_in_milli) >= TimeMood.return_time_in_midnight(start_date)) {
-                        if (TimeMood.return_time_in_midnight(time_in_milli) <= TimeMood.return_time_in_midnight(System.currentTimeMillis())) {
-                            if (return_color_of_days(time_in_milli) == 0) {
-                                colors[i] = no_mood_color;
-                            } else if (return_color_of_days(time_in_milli) == 1) {
-                                colors[i] = very_bad_color;
-                            } else if (return_color_of_days(time_in_milli) == 2) {
-                                colors[i] = bad_color;
-                            } else if (return_color_of_days(time_in_milli) == 3) {
-                                colors[i] = ok_color;
-                            } else if (return_color_of_days(time_in_milli) == 4) {
-                                colors[i] = good_color;
-                            } else if (return_color_of_days(time_in_milli) == 5) {
-                                colors[i] = very_good_color;
-                            }
-                        } else {
-                            colors[i] = no_mood_color;
-                        }
-                    } else {
-                        colors[i] = no_mood_color;
-                    }
+                    long timeInMillis = calendar.getTimeInMillis();
+                    if (TimeMood.returnTimeInMidnight(timeInMillis) >= TimeMood.returnTimeInMidnight(startDate)) {
+                        if (TimeMood.returnTimeInMidnight(timeInMillis) <= TimeMood.returnTimeInMidnight(System.currentTimeMillis())) {
+                            if (returnColorOfDays(timeInMillis) == 0) 
+                                colors[i] = noMoodColor;
+                             else if (returnColorOfDays(timeInMillis) == 1) 
+                                colors[i] = veryBadColor;
+                             else if (returnColorOfDays(timeInMillis) == 2) 
+                                colors[i] = badColor;
+                             else if (returnColorOfDays(timeInMillis) == 3) 
+                                colors[i] = okColor;
+                             else if (returnColorOfDays(timeInMillis) == 4) 
+                                colors[i] = goodColor;
+                             else if (returnColorOfDays(timeInMillis) == 5) 
+                                colors[i] = veryGoodColor;
+                        } else 
+                            colors[i] = noMoodColor;
+                    } else 
+                        colors[i] = noMoodColor;
                 }
             } else {
-                for (int i = 1; i <= returnLastDayOfMonth(); i++) {
-                    colors[i] = no_mood_color;
-                }
+                for (int i = 1; i <= returnLastDayOfMonth(); i++) 
+                    colors[i] = noMoodColor;
             }
             for (int i = 1; i <= returnLastDayOfMonth(); i++) {
-                if (return_which_day_is_linked_to_calender(i) == 1) {
-                    if (calender_button_showing_shadow_1.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_1.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 2) {
-                    if (calender_button_showing_shadow_2.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_2.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 3) {
-                    if (calender_button_showing_shadow_3.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_3.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 4) {
-                    if (calender_button_showing_shadow_4.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_4.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 5) {
-                    if (calender_button_showing_shadow_5.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_5.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 6) {
-                    if (calender_button_showing_shadow_6.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_6.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 7) {
-                    if (calender_button_showing_shadow_7.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_7.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 8) {
-                    if (calender_button_showing_shadow_8.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_8.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 9) {
-                    if (calender_button_showing_shadow_9.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_9.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 10) {
-                    if (calender_button_showing_shadow_10.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_10.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 11) {
-                    if (calender_button_showing_shadow_11.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_11.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 12) {
-                    if (calender_button_showing_shadow_12.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_12.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 13) {
-                    if (calender_button_showing_shadow_13.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_13.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 14) {
-                    if (calender_button_showing_shadow_14.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_14.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 15) {
-                    if (calender_button_showing_shadow_15.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_15.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 16) {
-                    if (calender_button_showing_shadow_16.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_16.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 17) {
-                    if (calender_button_showing_shadow_17.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_17.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 18) {
-                    if (calender_button_showing_shadow_18.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_18.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 19) {
-                    if (calender_button_showing_shadow_19.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_19.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 20) {
-                    if (calender_button_showing_shadow_20.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_20.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 21) {
-                    if (calender_button_showing_shadow_21.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_21.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 22) {
-                    if (calender_button_showing_shadow_22.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_22.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 23) {
-                    if (calender_button_showing_shadow_23.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_23.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 24) {
-                    if (calender_button_showing_shadow_24.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_24.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 25) {
-                    if (calender_button_showing_shadow_25.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_25.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 26) {
-                    if (calender_button_showing_shadow_26.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_26.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 27) {
-                    if (calender_button_showing_shadow_27.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_27.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 28) {
-                    if (calender_button_showing_shadow_28.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_28.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 29) {
-                    if (calender_button_showing_shadow_29.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_29.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 30) {
-                    if (calender_button_showing_shadow_30.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_30.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 31) {
-                    if (calender_button_showing_shadow_31.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_31.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 32) {
-                    if (calender_button_showing_shadow_32.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_32.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 33) {
-                    if (calender_button_showing_shadow_33.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_33.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 34) {
-                    if (calender_button_showing_shadow_34.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_34.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 35) {
-                    if (calender_button_showing_shadow_35.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_35.setTextColor(Color.parseColor(colors[i]));
-                    }
-                } else if (return_which_day_is_linked_to_calender(i) == 36) {
-                    if (calender_button_showing_shadow_36.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_36.setTextColor(Color.parseColor(colors[i]));
-                    }
+                if (returnDay(i) == 1) {
+                    if (day1.getCurrentTextColor() != Color.WHITE) 
+                        day1.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 2) {
+                    if (day2.getCurrentTextColor() != Color.WHITE) 
+                        day2.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 3) {
+                    if (day3.getCurrentTextColor() != Color.WHITE) 
+                        day3.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 4) {
+                    if (day4.getCurrentTextColor() != Color.WHITE) 
+                        day4.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 5) {
+                    if (day5.getCurrentTextColor() != Color.WHITE) 
+                        day5.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 6) {
+                    if (day6.getCurrentTextColor() != Color.WHITE) 
+                        day6.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 7) {
+                    if (day7.getCurrentTextColor() != Color.WHITE) 
+                        day7.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 8) {
+                    if (day8.getCurrentTextColor() != Color.WHITE) 
+                        day8.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 9) {
+                    if (day9.getCurrentTextColor() != Color.WHITE) 
+                        day9.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 10) {
+                    if (day10.getCurrentTextColor() != Color.WHITE) 
+                        day10.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 11) {
+                    if (day11.getCurrentTextColor() != Color.WHITE) 
+                        day11.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 12) {
+                    if (day12.getCurrentTextColor() != Color.WHITE) 
+                        day12.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 13) {
+                    if (day13.getCurrentTextColor() != Color.WHITE) 
+                        day13.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 14) {
+                    if (day14.getCurrentTextColor() != Color.WHITE) 
+                        day14.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 15) {
+                    if (day15.getCurrentTextColor() != Color.WHITE) 
+                        day15.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 16) {
+                    if (day16.getCurrentTextColor() != Color.WHITE) 
+                        day16.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 17) {
+                    if (day17.getCurrentTextColor() != Color.WHITE) 
+                        day17.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 18) {
+                    if (day18.getCurrentTextColor() != Color.WHITE) 
+                        day18.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 19) {
+                    if (day19.getCurrentTextColor() != Color.WHITE) 
+                        day19.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 20) {
+                    if (day20.getCurrentTextColor() != Color.WHITE) 
+                        day20.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 21) {
+                    if (day21.getCurrentTextColor() != Color.WHITE) 
+                        day21.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 22) {
+                    if (day22.getCurrentTextColor() != Color.WHITE) 
+                        day22.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 23) {
+                    if (day23.getCurrentTextColor() != Color.WHITE) 
+                        day23.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 24) {
+                    if (day24.getCurrentTextColor() != Color.WHITE) 
+                        day24.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 25) {
+                    if (day25.getCurrentTextColor() != Color.WHITE) 
+                        day25.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 26) {
+                    if (day26.getCurrentTextColor() != Color.WHITE) 
+                        day26.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 27) {
+                    if (day27.getCurrentTextColor() != Color.WHITE) 
+                        day27.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 28) {
+                    if (day28.getCurrentTextColor() != Color.WHITE) 
+                        day28.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 29) {
+                    if (day29.getCurrentTextColor() != Color.WHITE) 
+                        day29.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 30) {
+                    if (day30.getCurrentTextColor() != Color.WHITE) 
+                        day30.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 31) {
+                    if (day31.getCurrentTextColor() != Color.WHITE) 
+                        day31.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 32) {
+                    if (day32.getCurrentTextColor() != Color.WHITE) 
+                        day32.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 33) {
+                    if (day33.getCurrentTextColor() != Color.WHITE) 
+                        day33.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 34) {
+                    if (day34.getCurrentTextColor() != Color.WHITE) 
+                        day34.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 35) {
+                    if (day35.getCurrentTextColor() != Color.WHITE) 
+                        day35.setTextColor(Color.parseColor(colors[i]));
+                } else if (returnDay(i) == 36) {
+                    if (day36.getCurrentTextColor() != Color.WHITE) 
+                        day36.setTextColor(Color.parseColor(colors[i]));
                 } else {
-                    if (calender_button_showing_shadow_37.getCurrentTextColor() != Color.WHITE) {
-                        calender_button_showing_shadow_37.setTextColor(Color.parseColor(colors[i]));
-                    }
+                    if (day37.getCurrentTextColor() != Color.WHITE) 
+                        day37.setTextColor(Color.parseColor(colors[i]));
                 }
             }
         }
     }
 
-    private void check_if_date_is_future() {
+    private void dateFutureCheck() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] split_for_day_month_year = color_the_today.split("_");
-            String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-            int calender_month = returnMonthStringToInt(month_and_year[0]);
-            int calender_year = Integer.parseInt(month_and_year[1]);
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] splitMonthYear = colorToday.split("_");
+            String[] monthYear = this.monthYear.getText().toString().split(" ");
+            int day = Integer.parseInt(splitMonthYear[0]);
+            int month = returnMonthStringToInt(monthYear[0]);
+            int year = Integer.parseInt(monthYear[1]);
             Calendar calendar = Calendar.getInstance();
-            int real_year = calendar.get(Calendar.YEAR);
-            int real_month = calendar.get(Calendar.MONTH);
-            int real_day = calendar.get(Calendar.DAY_OF_MONTH);
-            Calendar calendar_new = Calendar.getInstance();
-            calendar_new.set(calender_year, calender_month, calender_day);
-            String[] splitter_temp_from_text = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            String month_from_text = String.valueOf(returnMonthStringToInt(splitter_temp_from_text[0]));
-            String year_from_text = String.valueOf(splitter_temp_from_text[1]);
-            String[] splitter_for_colored_value = color_the_today.split("_");
-            if (calendar_new.getTimeInMillis() < TimeMood.return_time_in_midnight(start_date)) {
-                hide_or_un_hide_the_button(0);
-            } else {
-                if (calender_year > real_year) {
-                    hide_or_un_hide_the_button(0);
-                } else if (calender_year == real_year) {
-                    if (calender_month > real_month) {
-                        hide_or_un_hide_the_button(0);
-                    } else if (calender_month == real_month) {
-                        if (calender_day >= real_day) {
-                            hide_or_un_hide_the_button(0);
-                        } else {
-                            if (month_from_text.equals(splitter_for_colored_value[1]) && year_from_text.equals(splitter_for_colored_value[2])) {
-                                hide_or_un_hide_the_button(1);
-                            } else {
-                                hide_or_un_hide_the_button(0);
-                            }
+            int yearNow = calendar.get(Calendar.YEAR);
+            int monthNow = calendar.get(Calendar.MONTH);
+            int dayNow = calendar.get(Calendar.DAY_OF_MONTH);
+            Calendar calendarNew = Calendar.getInstance();
+            calendarNew.set(year, month, day);
+            String[] splitterTmp = this.monthYear.getText().toString().split(" ");
+            String monthText = String.valueOf(returnMonthStringToInt(splitterTmp[0]));
+            String yearText = String.valueOf(splitterTmp[1]);
+            String[] splitterValue = colorToday.split("_");
+            if (calendarNew.getTimeInMillis() < TimeMood.returnTimeInMidnight(startDate)) 
+                hideOrUnHideTheButton(0);
+             else {
+                if (year > yearNow) 
+                    hideOrUnHideTheButton(0);
+                else if (year == yearNow) {
+                    if (month > monthNow) 
+                        hideOrUnHideTheButton(0);
+                     else if (month == monthNow) {
+                        if (day >= dayNow) 
+                            hideOrUnHideTheButton(0);
+                         else {
+                            if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                                hideOrUnHideTheButton(1);
+                             else 
+                                hideOrUnHideTheButton(0);
                         }
                     } else {
-                        if (month_from_text.equals(splitter_for_colored_value[1]) && year_from_text.equals(splitter_for_colored_value[2])) {
-                            hide_or_un_hide_the_button(1);
-                        } else {
-                            hide_or_un_hide_the_button(0);
-                        }
+                        if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                            hideOrUnHideTheButton(1);
+                         else 
+                            hideOrUnHideTheButton(0);
                     }
                 } else {
-                    if (month_from_text.equals(splitter_for_colored_value[1]) && year_from_text.equals(splitter_for_colored_value[2])) {
-                        hide_or_un_hide_the_button(1);
-                    } else {
-                        hide_or_un_hide_the_button(0);
-                    }
+                    if (monthText.equals(splitterValue[1]) && yearText.equals(splitterValue[2])) 
+                        hideOrUnHideTheButton(1);
+                     else 
+                        hideOrUnHideTheButton(0);
                 }
             }
         }
     }
 
-    private void hide_or_un_hide_the_button(int which) {
+    private void hideOrUnHideTheButton(int which) {
         if (getView() != null && getContext() != null) {
-            Button very_bad_mood_button_in_habits = getView().findViewById(R.id.bt_very_bad_mood_edit);
-            Button bad_mood_button_in_habits = getView().findViewById(R.id.bt_bad_mood_edit);
-            Button ok_mood_button_in_habits = getView().findViewById(R.id.bt_ok_mood_edit);
-            Button good_mood_button_in_habits = getView().findViewById(R.id.bt_good_mood_edit);
-            Button very_good_mood_button_in_habits = getView().findViewById(R.id.bt_very_good_mood_edit);
-            View very_bad_mood_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit);
-            View bad_mood_in_habits = getView().findViewById(R.id.view_bad_mood_edit);
-            View ok_mood_in_habits = getView().findViewById(R.id.view_ok_mood_edit);
-            View good_mood_in_habits = getView().findViewById(R.id.view_good_mood_edit);
-            View very_good_mood_in_habits = getView().findViewById(R.id.view_very_good_mood_edit);
-            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
-            View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
-            View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
-            View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
-            View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
-            View very_bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_bad_mood_edit_check);
-            View bad_mood_check_mark_in_mood = getView().findViewById(R.id.view_bad_mood_edit_check);
-            View ok_mood_check_mark_in_mood = getView().findViewById(R.id.view_ok_mood_edit_check);
-            View good_mood_check_mark_in_mood = getView().findViewById(R.id.view_good_mood_edit_check);
-            View very_good_mood_check_mark_in_mood = getView().findViewById(R.id.view_very_good_mood_edit_check);
-            TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.tv_edit_mood);
+            Button veryBadMoodButton = getView().findViewById(R.id.bt_very_bad_mood_edit);
+            Button badMoodButton = getView().findViewById(R.id.bt_bad_mood_edit);
+            Button okMoodButton = getView().findViewById(R.id.bt_ok_mood_edit);
+            Button goodMoodButton = getView().findViewById(R.id.bt_good_mood_edit);
+            Button veryGoodMoodButton = getView().findViewById(R.id.bt_very_good_mood_edit);
+            View veryBadMoodView = getView().findViewById(R.id.view_very_bad_mood_edit);
+            View badMoodView = getView().findViewById(R.id.view_bad_mood_edit);
+            View okMoodView = getView().findViewById(R.id.view_ok_mood_edit);
+            View goodMoodView = getView().findViewById(R.id.view_good_mood_edit);
+            View veryGoodMoodView = getView().findViewById(R.id.view_very_good_mood_edit);
+            View veryBadMoodBackground = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            View badMoodBackground = getView().findViewById(R.id.view_bad_mood_edit_background);
+            View okMoodBackground = getView().findViewById(R.id.view_ok_mood_edit_background);
+            View goodMoodBackground = getView().findViewById(R.id.view_good_mood_edit_background);
+            View veryGoodMoodBackground = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            View veryBadMoodCheck = getView().findViewById(R.id.view_very_bad_mood_edit_check);
+            View badMoodCheck = getView().findViewById(R.id.view_bad_mood_edit_check);
+            View okMoodCheck = getView().findViewById(R.id.view_ok_mood_edit_check);
+            View goodMoodCheck = getView().findViewById(R.id.view_good_mood_edit_check);
+            View veryGooDMoodCheck = getView().findViewById(R.id.view_very_good_mood_edit_check);
+            TextView editMood = getView().findViewById(R.id.tv_edit_mood);
             if (which == 0) {
-                very_bad_mood_button_in_habits.setVisibility(View.GONE);
-                bad_mood_button_in_habits.setVisibility(View.GONE);
-                ok_mood_button_in_habits.setVisibility(View.GONE);
-                good_mood_button_in_habits.setVisibility(View.GONE);
-                very_good_mood_button_in_habits.setVisibility(View.GONE);
-                text_asking_did_you_relapse_in_share.setVisibility(View.GONE);
-                very_bad_mood_in_habits.setVisibility(View.GONE);
-                bad_mood_in_habits.setVisibility(View.GONE);
-                ok_mood_in_habits.setVisibility(View.GONE);
-                good_mood_in_habits.setVisibility(View.GONE);
-                very_good_mood_in_habits.setVisibility(View.GONE);
-                very_bad_mood_shade_in_habits.setVisibility(View.GONE);
-                bad_mood_shade_in_habits.setVisibility(View.GONE);
-                ok_mood_shade_in_habits.setVisibility(View.GONE);
-                good_mood_shade_in_habits.setVisibility(View.GONE);
-                very_good_mood_shade_in_habits.setVisibility(View.GONE);
-                very_bad_mood_check_mark_in_mood.setVisibility(View.GONE);
-                bad_mood_check_mark_in_mood.setVisibility(View.GONE);
-                ok_mood_check_mark_in_mood.setVisibility(View.GONE);
-                good_mood_check_mark_in_mood.setVisibility(View.GONE);
-                very_good_mood_check_mark_in_mood.setVisibility(View.GONE);
+                veryBadMoodButton.setVisibility(View.GONE);
+                badMoodButton.setVisibility(View.GONE);
+                okMoodButton.setVisibility(View.GONE);
+                goodMoodButton.setVisibility(View.GONE);
+                veryGoodMoodButton.setVisibility(View.GONE);
+                editMood.setVisibility(View.GONE);
+                veryBadMoodView.setVisibility(View.GONE);
+                badMoodView.setVisibility(View.GONE);
+                okMoodView.setVisibility(View.GONE);
+                goodMoodView.setVisibility(View.GONE);
+                veryGoodMoodView.setVisibility(View.GONE);
+                veryBadMoodBackground.setVisibility(View.GONE);
+                badMoodBackground.setVisibility(View.GONE);
+                okMoodBackground.setVisibility(View.GONE);
+                goodMoodBackground.setVisibility(View.GONE);
+                veryGoodMoodBackground.setVisibility(View.GONE);
+                veryBadMoodCheck.setVisibility(View.GONE);
+                badMoodCheck.setVisibility(View.GONE);
+                okMoodCheck.setVisibility(View.GONE);
+                goodMoodCheck.setVisibility(View.GONE);
+                veryGooDMoodCheck.setVisibility(View.GONE);
                 ConstraintLayout constraintLayout = getView().findViewById(R.id.lc_calendar);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(constraintLayout);
                 constraintSet.applyTo(constraintLayout);
             } else {
-                very_bad_mood_button_in_habits.setVisibility(View.VISIBLE);
-                bad_mood_button_in_habits.setVisibility(View.VISIBLE);
-                ok_mood_button_in_habits.setVisibility(View.VISIBLE);
-                good_mood_button_in_habits.setVisibility(View.VISIBLE);
-                very_good_mood_button_in_habits.setVisibility(View.VISIBLE);
-                text_asking_did_you_relapse_in_share.setVisibility(View.VISIBLE);
-                very_bad_mood_in_habits.setVisibility(View.VISIBLE);
-                bad_mood_in_habits.setVisibility(View.VISIBLE);
-                ok_mood_in_habits.setVisibility(View.VISIBLE);
-                good_mood_in_habits.setVisibility(View.VISIBLE);
-                very_good_mood_in_habits.setVisibility(View.VISIBLE);
-                text_asking_did_you_relapse_in_share.setVisibility(View.VISIBLE);
+                veryBadMoodButton.setVisibility(View.VISIBLE);
+                badMoodButton.setVisibility(View.VISIBLE);
+                okMoodButton.setVisibility(View.VISIBLE);
+                goodMoodButton.setVisibility(View.VISIBLE);
+                veryGoodMoodButton.setVisibility(View.VISIBLE);
+                editMood.setVisibility(View.VISIBLE);
+                veryBadMoodView.setVisibility(View.VISIBLE);
+                badMoodView.setVisibility(View.VISIBLE);
+                okMoodView.setVisibility(View.VISIBLE);
+                goodMoodView.setVisibility(View.VISIBLE);
+                veryGoodMoodView.setVisibility(View.VISIBLE);
+                editMood.setVisibility(View.VISIBLE);
                 ConstraintLayout constraintLayout = getView().findViewById(R.id.lc_calendar);
                 ConstraintSet constraintSet = new ConstraintSet();
                 constraintSet.clone(constraintLayout);
-                constraintSet.connect(text_asking_did_you_relapse_in_share.getId(), ConstraintSet.TOP, constraintLayout.getId(), ConstraintSet.TOP, (int) convertDpToPixel(return_the_length_of_stat() + 28, getContext()));
+                constraintSet.connect(editMood.getId(), ConstraintSet.TOP, constraintLayout.getId(), ConstraintSet.TOP, (int) convertDpToPixel(returnTheLengthOfStat() + 28, getContext()));
                 constraintSet.applyTo(constraintLayout);
             }
         }
@@ -8337,1293 +7767,1251 @@ public class Mood extends Fragment  {
         return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
-    private int return_the_length_of_stat() {
-        if (calender_button_showing_shadow_36.getText().toString().equals("")) {
-            if (calender_button_showing_shadow_29.getText().toString().equals("")) {
+    private int returnTheLengthOfStat() {
+        if (day36.getText().toString().equals("")) {
+            if (day29.getText().toString().equals("")) 
                 return 240;
-            } else {
+             else 
                 return 280;
-            }
-        } else {
+        } else 
             return 320;
-        }
     }
+    
 
-
-
-    private void color_only_today() {
+    private void colorOnlyToday() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] split_the_month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            String[] split_the_color = color_the_today.split("_");
-            int old_day = Integer.parseInt(split_the_color[0]);
-            int old_month = Integer.parseInt(split_the_color[1]);
-            int old_year = Integer.parseInt(split_the_color[2]);
-            int new_month = returnMonthStringToInt(split_the_month_and_year[0]);
-            int new_year = Integer.parseInt(split_the_month_and_year[1]);
-            if (old_month == new_month && old_year == new_year) {
-                if (colors[old_day] != null) {
-                    if (calender_button_showing_shadow_1.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_1.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_2.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_2.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_3.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_3.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_4.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_4.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_5.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_5.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_6.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_6.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_7.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_7.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_8.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_8.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_9.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_9.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_10.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_10.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_11.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_11.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_12.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_12.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_13.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_13.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_14.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_14.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_15.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_15.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_16.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_16.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_17.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_17.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_18.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_18.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_19.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_19.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_20.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_20.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_21.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_21.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_22.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_22.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_23.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_23.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_24.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_24.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_25.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_25.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_26.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_26.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_27.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_27.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_28.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_28.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_29.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_29.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_30.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_30.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_31.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_31.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_32.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_32.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_33.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_33.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_34.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_34.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_35.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_35.setTextColor(Color.parseColor(colors[old_day]));
-                    } else if (calender_button_showing_shadow_36.getText().toString().equals(String.valueOf(old_day))) {
-                        calender_button_showing_shadow_36.setTextColor(Color.parseColor(colors[old_day]));
-                    } else {
-                        calender_button_showing_shadow_37.setTextColor(Color.parseColor(colors[old_day]));
-                    }
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] split_the_month_and_year = monthYear.getText().toString().split(" ");
+            String[] split_the_color = colorToday.split("_");
+            int oldDay = Integer.parseInt(split_the_color[0]);
+            int oldMonth = Integer.parseInt(split_the_color[1]);
+            int oldYear = Integer.parseInt(split_the_color[2]);
+            int newMonth = returnMonthStringToInt(split_the_month_and_year[0]);
+            int newYear = Integer.parseInt(split_the_month_and_year[1]);
+            if (oldMonth == newMonth && oldYear == newYear) {
+                if (colors[oldDay] != null) {
+                    if (day1.getText().toString().equals(String.valueOf(oldDay)))
+                        day1.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day2.getText().toString().equals(String.valueOf(oldDay)))
+                        day2.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day3.getText().toString().equals(String.valueOf(oldDay)))
+                        day3.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day4.getText().toString().equals(String.valueOf(oldDay)))
+                        day4.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day5.getText().toString().equals(String.valueOf(oldDay)))
+                        day5.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day6.getText().toString().equals(String.valueOf(oldDay)))
+                        day6.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day7.getText().toString().equals(String.valueOf(oldDay)))
+                        day7.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day8.getText().toString().equals(String.valueOf(oldDay)))
+                        day8.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day9.getText().toString().equals(String.valueOf(oldDay)))
+                        day9.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day10.getText().toString().equals(String.valueOf(oldDay)))
+                        day10.setTextColor(Color.parseColor(colors[oldDay]));
+                    else if (day11.getText().toString().equals(String.valueOf(oldDay)))
+                        day11.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day12.getText().toString().equals(String.valueOf(oldDay)))
+                        day12.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day13.getText().toString().equals(String.valueOf(oldDay)))
+                        day13.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day14.getText().toString().equals(String.valueOf(oldDay)))
+                        day14.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day15.getText().toString().equals(String.valueOf(oldDay)))
+                        day15.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day16.getText().toString().equals(String.valueOf(oldDay)))
+                        day16.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day17.getText().toString().equals(String.valueOf(oldDay)))
+                        day17.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day18.getText().toString().equals(String.valueOf(oldDay)))
+                        day18.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day19.getText().toString().equals(String.valueOf(oldDay)))
+                        day19.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day20.getText().toString().equals(String.valueOf(oldDay)))
+                        day20.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day21.getText().toString().equals(String.valueOf(oldDay)))
+                        day21.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day22.getText().toString().equals(String.valueOf(oldDay)))
+                        day22.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day23.getText().toString().equals(String.valueOf(oldDay)))
+                        day23.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day24.getText().toString().equals(String.valueOf(oldDay)))
+                        day24.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day25.getText().toString().equals(String.valueOf(oldDay)))
+                        day25.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day26.getText().toString().equals(String.valueOf(oldDay)))
+                        day26.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day27.getText().toString().equals(String.valueOf(oldDay)))
+                        day27.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day28.getText().toString().equals(String.valueOf(oldDay)))
+                        day28.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day29.getText().toString().equals(String.valueOf(oldDay)))
+                        day29.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day30.getText().toString().equals(String.valueOf(oldDay)))
+                        day30.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day31.getText().toString().equals(String.valueOf(oldDay)))
+                        day31.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day32.getText().toString().equals(String.valueOf(oldDay)))
+                        day32.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day33.getText().toString().equals(String.valueOf(oldDay)))
+                        day33.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day34.getText().toString().equals(String.valueOf(oldDay)))
+                        day34.setTextColor(Color.parseColor(colors[oldDay]));
+                     else if (day35.getText().toString().equals(String.valueOf(oldDay)))
+                        day35.setTextColor(Color.parseColor(colors[oldDay]));
+                    else if (day36.getText().toString().equals(String.valueOf(oldDay)))
+                        day36.setTextColor(Color.parseColor(colors[oldDay]));
+                     else
+                        day37.setTextColor(Color.parseColor(colors[oldDay]));
+
                 }
             }
         }
     }
 
-    private void clear_the_background_only() {
-        calender_button_showing_shadow_1.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_2.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_3.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_4.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_5.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_6.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_7.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_8.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_9.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_10.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_11.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_12.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_13.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_14.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_15.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_16.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_17.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_18.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_19.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_20.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_21.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_22.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_23.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_24.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_25.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_26.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_27.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_28.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_29.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_30.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_31.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_32.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_33.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_34.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_35.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_36.setBackgroundResource(R.drawable.round_button);
-        calender_button_showing_shadow_37.setBackgroundResource(R.drawable.round_button);
+    private void clearBackground() {
+        day1.setBackgroundResource(R.drawable.round_button);
+        day2.setBackgroundResource(R.drawable.round_button);
+        day3.setBackgroundResource(R.drawable.round_button);
+        day4.setBackgroundResource(R.drawable.round_button);
+        day5.setBackgroundResource(R.drawable.round_button);
+        day6.setBackgroundResource(R.drawable.round_button);
+        day7.setBackgroundResource(R.drawable.round_button);
+        day8.setBackgroundResource(R.drawable.round_button);
+        day9.setBackgroundResource(R.drawable.round_button);
+        day10.setBackgroundResource(R.drawable.round_button);
+        day11.setBackgroundResource(R.drawable.round_button);
+        day12.setBackgroundResource(R.drawable.round_button);
+        day13.setBackgroundResource(R.drawable.round_button);
+        day14.setBackgroundResource(R.drawable.round_button);
+        day15.setBackgroundResource(R.drawable.round_button);
+        day16.setBackgroundResource(R.drawable.round_button);
+        day17.setBackgroundResource(R.drawable.round_button);
+        day18.setBackgroundResource(R.drawable.round_button);
+        day19.setBackgroundResource(R.drawable.round_button);
+        day20.setBackgroundResource(R.drawable.round_button);
+        day21.setBackgroundResource(R.drawable.round_button);
+        day22.setBackgroundResource(R.drawable.round_button);
+        day23.setBackgroundResource(R.drawable.round_button);
+        day24.setBackgroundResource(R.drawable.round_button);
+        day25.setBackgroundResource(R.drawable.round_button);
+        day26.setBackgroundResource(R.drawable.round_button);
+        day27.setBackgroundResource(R.drawable.round_button);
+        day28.setBackgroundResource(R.drawable.round_button);
+        day29.setBackgroundResource(R.drawable.round_button);
+        day30.setBackgroundResource(R.drawable.round_button);
+        day31.setBackgroundResource(R.drawable.round_button);
+        day32.setBackgroundResource(R.drawable.round_button);
+        day33.setBackgroundResource(R.drawable.round_button);
+        day34.setBackgroundResource(R.drawable.round_button);
+        day35.setBackgroundResource(R.drawable.round_button);
+        day36.setBackgroundResource(R.drawable.round_button);
+        day37.setBackgroundResource(R.drawable.round_button);
     }
 
-    private String check_past_now_or_future() {
+    private String checkPastNowFuture() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] split_month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            int calender_month = returnMonthStringToInt(split_month_and_year[0]);
-            int calender_year = Integer.parseInt(split_month_and_year[1]);
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] splitMonthAndYear = monthYear.getText().toString().split(" ");
+            int calendarMonth = returnMonthStringToInt(splitMonthAndYear[0]);
+            int calendarYear = Integer.parseInt(splitMonthAndYear[1]);
             Calendar calendar = Calendar.getInstance();
-            int real_year = calendar.get(Calendar.YEAR);
-            int real_month = calendar.get(Calendar.MONTH);
-            if (calender_year > real_year) {
+            int yearNow = calendar.get(Calendar.YEAR);
+            int monthNow = calendar.get(Calendar.MONTH);
+            if (calendarYear > yearNow) 
                 return "future";
-            } else if (calender_year == real_year) {
-                if (calender_month > real_month) {
+             else if (calendarYear == yearNow) {
+                if (calendarMonth > monthNow) 
                     return "future";
-                } else if (calender_month == real_month) {
+                 else if (calendarMonth == monthNow) 
                     return "current";
-                } else {
+                else 
                     return "past";
-                }
-            } else {
+            } else 
                 return "past";
-            }
-        } else {
+        } else 
             return "future";
-        }
     }
 
 
 
-    private void color_the_button_under_the_calender() {
+    private void colorButtonUnderTheCalendar() {
         if (getView() != null) {
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
-            String no_mood_color = return_the_color_of_mood(0);
-            String[] splitter_temp = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-            String month = String.valueOf(returnMonthStringToInt(splitter_temp[0]));
-            String year = String.valueOf(splitter_temp[1]);
-            String[] splitter = color_the_today.split("_");
-            View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
-            View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
-            View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
-            View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
-            View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
+           monthYear = getView().findViewById(R.id.tv_month_year);
+            String veryBadColor = returnTheColorOfMood(1);
+            String badColor = returnTheColorOfMood(2);
+            String okColor = returnTheColorOfMood(3);
+            String goodColor = returnTheColorOfMood(4);
+            String veryGoodColor = returnTheColorOfMood(5);
+            String noMoodColor = returnTheColorOfMood(0);
+            String[] splitterTemp = monthYear.getText().toString().split(" ");
+            String month = String.valueOf(returnMonthStringToInt(splitterTemp[0]));
+            String year = String.valueOf(splitterTemp[1]);
+            String[] splitter = colorToday.split("_");
+            final View veryBadMoodBackground = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            final View badMoodBackground = getView().findViewById(R.id.view_bad_mood_edit_background);
+            final View okMoodBackground = getView().findViewById(R.id.view_ok_mood_edit_background);
+            final View goodMoodBackground = getView().findViewById(R.id.view_good_mood_edit_background);
+            final View veryGoodMoodBackground = getView().findViewById(R.id.view_very_good_mood_edit_background);
             View very_good_mood_in_habits = getView().findViewById(R.id.view_very_good_mood_edit);
             if (month.equals(splitter[1]) && year.equals(splitter[2])) {
-                if (colors[Integer.parseInt(splitter[0])].equals(very_bad_color)) {
-                    if (very_bad_mood_shade_in_habits.getVisibility() != View.VISIBLE && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                        select_the_mood_in_calender(1);
-                    }
-                } else if (colors[Integer.parseInt(splitter[0])].equals(bad_color) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                    if (bad_mood_shade_in_habits.getVisibility() != View.VISIBLE) {
-                        select_the_mood_in_calender(2);
-                    }
-                } else if (colors[Integer.parseInt(splitter[0])].equals(ok_color) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                    if (ok_mood_shade_in_habits.getVisibility() != View.VISIBLE) {
-                        select_the_mood_in_calender(3);
-                    }
-                } else if (colors[Integer.parseInt(splitter[0])].equals(good_color) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                    if (good_mood_shade_in_habits.getVisibility() != View.VISIBLE) {
-                        select_the_mood_in_calender(4);
-                    }
-                } else if (colors[Integer.parseInt(splitter[0])].equals(very_good_color) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                    if (very_good_mood_shade_in_habits.getVisibility() != View.VISIBLE) {
-                        select_the_mood_in_calender(5);
-                    }
-                } else if (colors[Integer.parseInt(splitter[0])].equals(no_mood_color) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                }
+                if (colors[Integer.parseInt(splitter[0])].equals(veryBadColor)) {
+                    if (veryBadMoodBackground.getVisibility() != View.VISIBLE && very_good_mood_in_habits.getVisibility() == View.VISIBLE)
+                        selectTheMoodInCalendar(1);
+                } else if (colors[Integer.parseInt(splitter[0])].equals(badColor) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
+                    if (badMoodBackground.getVisibility() != View.VISIBLE)
+                        selectTheMoodInCalendar(2);
+                } else if (colors[Integer.parseInt(splitter[0])].equals(okColor) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
+                    if (okMoodBackground.getVisibility() != View.VISIBLE)
+                        selectTheMoodInCalendar(3);
+                } else if (colors[Integer.parseInt(splitter[0])].equals(goodColor) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
+                    if (goodMoodBackground.getVisibility() != View.VISIBLE)
+                        selectTheMoodInCalendar(4);
+                } else if (colors[Integer.parseInt(splitter[0])].equals(veryGoodColor) && very_good_mood_in_habits.getVisibility() == View.VISIBLE) {
+                    if (veryGoodMoodBackground.getVisibility() != View.VISIBLE)
+                        selectTheMoodInCalendar(5);
+                } else if (colors[Integer.parseInt(splitter[0])].equals(noMoodColor) && very_good_mood_in_habits.getVisibility() == View.VISIBLE)
+                    selectTheMoodInCalendar(0);
             }
         }
     }
 
-    private void yes_and_no_button_listen_under_the_calender() {
+    private void yesAndNoButtons() {
         if (getView() != null) {
-            final Button very_bad_mood_button_in_habits = getView().findViewById(R.id.bt_very_bad_mood_edit);
-            final Button bad_mood_button_in_habits = getView().findViewById(R.id.bt_bad_mood_edit);
-            final Button ok_mood_button_in_habits = getView().findViewById(R.id.bt_ok_mood_edit);
-            final Button good_mood_button_in_habits = getView().findViewById(R.id.bt_good_mood_edit);
-            final Button very_good_mood_button_in_habits = getView().findViewById(R.id.bt_very_good_mood_edit);
-            final View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
-            final View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
-            final View ok_mood_shade_in_habits = getView().findViewById(R.id.view_ok_mood_edit_background);
-            final View good_mood_shade_in_habits = getView().findViewById(R.id.view_good_mood_edit_background);
-            final View very_good_mood_shade_in_habits = getView().findViewById(R.id.view_very_good_mood_edit_background);
-            final TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            very_bad_mood_button_in_habits.setOnClickListener(view -> {
-                String[] split_for_day_month_year = color_the_today.split("_");
-                String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-                int calender_month = returnMonthStringToInt(month_and_year[0]);
-                int calender_year = Integer.parseInt(month_and_year[1]);
+            final Button veryBadMoodButton = getView().findViewById(R.id.bt_very_bad_mood_edit);
+            final Button badMoodButton = getView().findViewById(R.id.bt_bad_mood_edit);
+            final Button okMoodButton = getView().findViewById(R.id.bt_ok_mood_edit);
+            final Button goodMoodButton = getView().findViewById(R.id.bt_good_mood_edit);
+            final Button veryGoodMoodButton = getView().findViewById(R.id.bt_very_good_mood_edit);
+            final View veryBadMoodBackground = getView().findViewById(R.id.view_very_bad_mood_edit_background);
+            final View badMoodBackground = getView().findViewById(R.id.view_bad_mood_edit_background);
+            final View okMoodBackground = getView().findViewById(R.id.view_ok_mood_edit_background);
+            final View goodMoodBackground = getView().findViewById(R.id.view_good_mood_edit_background);
+            final View veryGoodMoodBackground = getView().findViewById(R.id.view_very_good_mood_edit_background);
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            veryBadMoodButton.setOnClickListener(view -> {
+                String[] split_for_day_month_year = colorToday.split("_");
+                String[] month_and_year = monthYear.getText().toString().split(" ");
+                int day = Integer.parseInt(split_for_day_month_year[0]);
+                int month = returnMonthStringToInt(month_and_year[0]);
+                int year = Integer.parseInt(month_and_year[1]);
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(calender_year, calender_month, calender_day);
-                if (very_bad_mood_shade_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                    save_the_input_for_good_habit_input(0, calendar.getTimeInMillis());
+                calendar.set(year, month, day);
+                if (veryBadMoodBackground.getVisibility() == View.VISIBLE) {
+                    selectTheMoodInCalendar(0);
+                    saveTheInput(0, calendar.getTimeInMillis());
                 } else {
-                    select_the_mood_in_calender(0);
-                    select_the_mood_in_calender(1);
-                    save_the_input_for_good_habit_input(1, calendar.getTimeInMillis());
+                    selectTheMoodInCalendar(0);
+                    selectTheMoodInCalendar(1);
+                    saveTheInput(1, calendar.getTimeInMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
 
             });
-            bad_mood_button_in_habits.setOnClickListener(view -> {
-                String[] split_for_day_month_year = color_the_today.split("_");
-                String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-                int calender_month = returnMonthStringToInt(month_and_year[0]);
-                int calender_year = Integer.parseInt(month_and_year[1]);
+            badMoodButton.setOnClickListener(view -> {
+                String[] split_for_day_month_year = colorToday.split("_");
+                String[] month_and_year = monthYear.getText().toString().split(" ");
+                int day = Integer.parseInt(split_for_day_month_year[0]);
+                int month = returnMonthStringToInt(month_and_year[0]);
+                int year = Integer.parseInt(month_and_year[1]);
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(calender_year, calender_month, calender_day);
-                if (bad_mood_shade_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                    save_the_input_for_good_habit_input(0, calendar.getTimeInMillis());
+                calendar.set(year, month, day);
+                if (badMoodBackground.getVisibility() == View.VISIBLE) {
+                    selectTheMoodInCalendar(0);
+                    saveTheInput(0, calendar.getTimeInMillis());
                 } else {
-                    select_the_mood_in_calender(0);
-                    select_the_mood_in_calender(2);
-                    save_the_input_for_good_habit_input(2, calendar.getTimeInMillis());
+                    selectTheMoodInCalendar(0);
+                    selectTheMoodInCalendar(2);
+                    saveTheInput(2, calendar.getTimeInMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
 
             });
-            ok_mood_button_in_habits.setOnClickListener(view -> {
-                String[] split_for_day_month_year = color_the_today.split("_");
-                String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-                int calender_month = returnMonthStringToInt(month_and_year[0]);
-                int calender_year = Integer.parseInt(month_and_year[1]);
+            okMoodButton.setOnClickListener(view -> {
+                String[] split_for_day_month_year = colorToday.split("_");
+                String[] month_and_year = monthYear.getText().toString().split(" ");
+                int day = Integer.parseInt(split_for_day_month_year[0]);
+                int month = returnMonthStringToInt(month_and_year[0]);
+                int year = Integer.parseInt(month_and_year[1]);
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(calender_year, calender_month, calender_day);
-                if (ok_mood_shade_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                    save_the_input_for_good_habit_input(0, calendar.getTimeInMillis());
+                calendar.set(year, month, day);
+                if (okMoodBackground.getVisibility() == View.VISIBLE) {
+                    selectTheMoodInCalendar(0);
+                    saveTheInput(0, calendar.getTimeInMillis());
                 } else {
-                    select_the_mood_in_calender(0);
-                    select_the_mood_in_calender(3);
-                    save_the_input_for_good_habit_input(3, calendar.getTimeInMillis());
+                    selectTheMoodInCalendar(0);
+                    selectTheMoodInCalendar(3);
+                    saveTheInput(3, calendar.getTimeInMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
 
             });
-            good_mood_button_in_habits.setOnClickListener(view -> {
-                String[] split_for_day_month_year = color_the_today.split("_");
-                String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-                int calender_month = returnMonthStringToInt(month_and_year[0]);
-                int calender_year = Integer.parseInt(month_and_year[1]);
+            goodMoodButton.setOnClickListener(view -> {
+                String[] split_for_day_month_year = colorToday.split("_");
+                String[] month_and_year = monthYear.getText().toString().split(" ");
+                int day = Integer.parseInt(split_for_day_month_year[0]);
+                int month = returnMonthStringToInt(month_and_year[0]);
+                int year = Integer.parseInt(month_and_year[1]);
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(calender_year, calender_month, calender_day);
-                if (good_mood_shade_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                    save_the_input_for_good_habit_input(0, calendar.getTimeInMillis());
+                calendar.set(year, month, day);
+                if (goodMoodBackground.getVisibility() == View.VISIBLE) {
+                    selectTheMoodInCalendar(0);
+                    saveTheInput(0, calendar.getTimeInMillis());
                 } else {
-                    select_the_mood_in_calender(0);
-                    select_the_mood_in_calender(4);
-                    save_the_input_for_good_habit_input(4, calendar.getTimeInMillis());
+                    selectTheMoodInCalendar(0);
+                    selectTheMoodInCalendar(4);
+                    saveTheInput(4, calendar.getTimeInMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
-            very_good_mood_button_in_habits.setOnClickListener(view -> {
-                String[] split_for_day_month_year = color_the_today.split("_");
-                String[] month_and_year = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
-                int calender_day = Integer.parseInt(split_for_day_month_year[0]);
-                int calender_month = returnMonthStringToInt(month_and_year[0]);
-                int calender_year = Integer.parseInt(month_and_year[1]);
+            veryGoodMoodButton.setOnClickListener(view -> {
+                String[] split_for_day_month_year = colorToday.split("_");
+                String[] month_and_year = monthYear.getText().toString().split(" ");
+                int day = Integer.parseInt(split_for_day_month_year[0]);
+                int month = returnMonthStringToInt(month_and_year[0]);
+                int year = Integer.parseInt(month_and_year[1]);
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(calender_year, calender_month, calender_day);
-                if (very_good_mood_shade_in_habits.getVisibility() == View.VISIBLE) {
-                    select_the_mood_in_calender(0);
-                    save_the_input_for_good_habit_input(0, calendar.getTimeInMillis());
+                calendar.set(year, month, day);
+                if (veryGoodMoodBackground.getVisibility() == View.VISIBLE) {
+                    selectTheMoodInCalendar(0);
+                    saveTheInput(0, calendar.getTimeInMillis());
                 } else {
-                    select_the_mood_in_calender(0);
-                    select_the_mood_in_calender(5);
-                    save_the_input_for_good_habit_input(5, calendar.getTimeInMillis());
+                    selectTheMoodInCalendar(0);
+                    selectTheMoodInCalendar(5);
+                    saveTheInput(5, calendar.getTimeInMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
         }
     }
 
-    private void divide_it_into_weeks() {
+    private void divideItIntoWeeks() {
         int month_start_day;
-        if (calender_button_showing_shadow_1.getVisibility() == View.VISIBLE) {
+        if (day1.getVisibility() == View.VISIBLE)
             month_start_day = 7;
-        } else if (calender_button_showing_shadow_2.getVisibility() == View.VISIBLE) {
+         else if (day2.getVisibility() == View.VISIBLE) 
             month_start_day = 6;
-        } else if (calender_button_showing_shadow_3.getVisibility() == View.VISIBLE) {
+         else if (day3.getVisibility() == View.VISIBLE) 
             month_start_day = 5;
-        } else if (calender_button_showing_shadow_4.getVisibility() == View.VISIBLE) {
+         else if (day4.getVisibility() == View.VISIBLE) 
             month_start_day = 4;
-        } else if (calender_button_showing_shadow_5.getVisibility() == View.VISIBLE) {
+         else if (day5.getVisibility() == View.VISIBLE) 
             month_start_day = 3;
-        } else if (calender_button_showing_shadow_6.getVisibility() == View.VISIBLE) {
+         else if (day6.getVisibility() == View.VISIBLE) 
             month_start_day = 2;
-        } else {
+         else 
             month_start_day = 1;
-        }
         String[] splitter_read = returnTheStateOfTheDays().split("split");
-        String first_line_string = "";
-        String second_line_string = "";
-        String three_line_string = "";
-        String four_line_string = "";
-        String five_line_string = "";
-        String six_line_string = "";
-        for (int i = 0; i < month_start_day; i++) {
-            first_line_string = first_line_string.concat(splitter_read[i]).concat("split");
-        }
-        for (int i = month_start_day; i < month_start_day + 7; i++) {
-            second_line_string = second_line_string.concat(splitter_read[i]).concat("split");
-        }
-        for (int i = month_start_day + 7; i < month_start_day + 14; i++) {
-            three_line_string = three_line_string.concat(splitter_read[i]).concat("split");
-        }
-        for (int i = month_start_day + 14; i < month_start_day + 21; i++) {
-            four_line_string = four_line_string.concat(splitter_read[i]).concat("split");
-        }
+        String firstLineString = "";
+        String secondLineString = "";
+        String threeLineString = "";
+        String fourLineString = "";
+        String fiveLineString = "";
+        String sixLineString = "";
+        for (int i = 0; i < month_start_day; i++) 
+            firstLineString = firstLineString.concat(splitter_read[i]).concat("split");
+        for (int i = month_start_day; i < month_start_day + 7; i++) 
+            secondLineString = secondLineString.concat(splitter_read[i]).concat("split");
+        for (int i = month_start_day + 7; i < month_start_day + 14; i++) 
+            threeLineString = threeLineString.concat(splitter_read[i]).concat("split");
+        for (int i = month_start_day + 14; i < month_start_day + 21; i++) 
+            fourLineString = fourLineString.concat(splitter_read[i]).concat("split");
         int how_many_are_empty = returnLastDayOfMonth() + (7 - month_start_day);
         if (how_many_are_empty <= 35) {
-            for (int i = month_start_day + 21; i < splitter_read.length; i++) {
-                five_line_string = five_line_string.concat(splitter_read[i]).concat("split");
-            }
+            for (int i = month_start_day + 21; i < splitter_read.length; i++) 
+                fiveLineString = fiveLineString.concat(splitter_read[i]).concat("split");
         } else {
-            for (int i = month_start_day + 21; i < month_start_day + 28; i++) {
-                five_line_string = five_line_string.concat(splitter_read[i]).concat("split");
-            }
-            for (int i = month_start_day + 28; i < splitter_read.length; i++) {
-                six_line_string = six_line_string.concat(splitter_read[i]).concat("split");
-            }
+            for (int i = month_start_day + 21; i < month_start_day + 28; i++) 
+                fiveLineString = fiveLineString.concat(splitter_read[i]).concat("split");
+            for (int i = month_start_day + 28; i < splitter_read.length; i++) 
+                sixLineString = sixLineString.concat(splitter_read[i]).concat("split");
         }
-        set_the_first_line(first_line_string);
-        set_the_second_line(second_line_string);
-        set_the_third_line(three_line_string);
-        set_the_fourth_line(four_line_string);
-        set_the_fifth_line(five_line_string);
-        set_the_sixth_line(six_line_string);
+        setTheFirstLine(firstLineString);
+        setTheSecondLine(secondLineString);
+        setTheThirdLine(threeLineString);
+        setTheFourthLine(fourLineString);
+        setTheFifthLine(fiveLineString);
+        setTheSixthLine(sixLineString);
     }
 
-    private void set_the_first_line(String date) {
+    private void setTheFirstLine(String date) {
         if (getView() != null) {
-            String[] date_split = date.split("split");
-            int empty_length = 7 - date_split.length;
-            for (int i = 0; i < empty_length; i++) {
+            String[] dateSplit = date.split("split");
+            int empty_length = 7 - dateSplit.length;
+            for (int i = 0; i < empty_length; i++) 
                 date = "empty".concat("split").concat(date);
-            }
             String[] splitter_second = date.split("split");
             switch (splitter_second[0]) {
                 case "empty":
-                    modes_for_four_drawable[0] = 0;
+                    modesDrawable[0] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[0] = 1;
+                    modesDrawable[0] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[0] = 2;
+                    modesDrawable[0] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[0] = 3;
+                    modesDrawable[0] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[0] = 4;
+                    modesDrawable[0] = 4;
                     break;
             }
             switch (splitter_second[1]) {
                 case "empty":
-                    modes_for_four_drawable[1] = 0;
+                    modesDrawable[1] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[1] = 1;
+                    modesDrawable[1] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[1] = 2;
+                    modesDrawable[1] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[1] = 3;
+                    modesDrawable[1] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[1] = 4;
+                    modesDrawable[1] = 4;
                     break;
             }
             switch (splitter_second[2]) {
                 case "empty":
-                    modes_for_four_drawable[2] = 0;
+                    modesDrawable[2] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[2] = 1;
+                    modesDrawable[2] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[2] = 2;
+                    modesDrawable[2] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[2] = 3;
+                    modesDrawable[2] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[2] = 4;
+                    modesDrawable[2] = 4;
                     break;
             }
             switch (splitter_second[3]) {
                 case "empty":
-                    modes_for_four_drawable[3] = 0;
+                    modesDrawable[3] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[3] = 1;
+                    modesDrawable[3] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[3] = 2;
+                    modesDrawable[3] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[3] = 3;
+                    modesDrawable[3] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[3] = 4;
+                    modesDrawable[3] = 4;
                     break;
             }
             switch (splitter_second[4]) {
                 case "empty":
-                    modes_for_four_drawable[4] = 0;
+                    modesDrawable[4] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[4] = 1;
+                    modesDrawable[4] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[4] = 2;
+                    modesDrawable[4] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[4] = 3;
+                    modesDrawable[4] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[4] = 4;
+                    modesDrawable[4] = 4;
                     break;
             }
             switch (splitter_second[5]) {
                 case "empty":
-                    modes_for_four_drawable[5] = 0;
+                    modesDrawable[5] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[5] = 1;
+                    modesDrawable[5] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[5] = 2;
+                    modesDrawable[5] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[5] = 3;
+                    modesDrawable[5] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[5] = 4;
+                    modesDrawable[5] = 4;
                     break;
             }
             switch (splitter_second[6]) {
                 case "empty":
-                    modes_for_four_drawable[6] = 0;
+                    modesDrawable[6] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[6] = 1;
+                    modesDrawable[6] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[6] = 2;
+                    modesDrawable[6] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[6] = 3;
+                    modesDrawable[6] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[6] = 4;
+                    modesDrawable[6] = 4;
                     break;
             }
         }
     }
 
-    private void set_the_second_line(String date) {
+    private void setTheSecondLine(String date) {
         if (getView() != null) {
-            String[] date_split = date.split("split");
-            switch (date_split[0]) {
+            String[] dateSplit = date.split("split");
+            switch (dateSplit[0]) {
                 case "empty":
-                    modes_for_four_drawable[7] = 0;
+                    modesDrawable[7] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[7] = 1;
+                    modesDrawable[7] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[7] = 2;
+                    modesDrawable[7] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[7] = 3;
+                    modesDrawable[7] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[7] = 4;
+                    modesDrawable[7] = 4;
                     break;
             }
-            switch (date_split[1]) {
+            switch (dateSplit[1]) {
                 case "empty":
-                    modes_for_four_drawable[8] = 0;
+                    modesDrawable[8] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[8] = 1;
+                    modesDrawable[8] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[8] = 2;
+                    modesDrawable[8] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[8] = 3;
+                    modesDrawable[8] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[8] = 4;
+                    modesDrawable[8] = 4;
                     break;
             }
-            switch (date_split[2]) {
+            switch (dateSplit[2]) {
                 case "empty":
-                    modes_for_four_drawable[9] = 0;
+                    modesDrawable[9] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[9] = 1;
+                    modesDrawable[9] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[9] = 2;
+                    modesDrawable[9] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[9] = 3;
+                    modesDrawable[9] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[9] = 4;
+                    modesDrawable[9] = 4;
                     break;
             }
-            switch (date_split[3]) {
+            switch (dateSplit[3]) {
                 case "empty":
-                    modes_for_four_drawable[10] = 0;
+                    modesDrawable[10] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[10] = 1;
+                    modesDrawable[10] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[10] = 2;
+                    modesDrawable[10] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[10] = 3;
+                    modesDrawable[10] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[10] = 4;
+                    modesDrawable[10] = 4;
                     break;
             }
-            switch (date_split[4]) {
+            switch (dateSplit[4]) {
                 case "empty":
-                    modes_for_four_drawable[11] = 0;
+                    modesDrawable[11] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[11] = 1;
+                    modesDrawable[11] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[11] = 2;
+                    modesDrawable[11] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[11] = 3;
+                    modesDrawable[11] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[11] = 4;
+                    modesDrawable[11] = 4;
                     break;
             }
-            switch (date_split[5]) {
+            switch (dateSplit[5]) {
                 case "empty":
-                    modes_for_four_drawable[12] = 0;
+                    modesDrawable[12] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[12] = 1;
+                    modesDrawable[12] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[12] = 2;
+                    modesDrawable[12] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[12] = 3;
+                    modesDrawable[12] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[12] = 4;
+                    modesDrawable[12] = 4;
                     break;
             }
-            switch (date_split[6]) {
+            switch (dateSplit[6]) {
                 case "empty":
-                    modes_for_four_drawable[13] = 0;
+                    modesDrawable[13] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[13] = 1;
+                    modesDrawable[13] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[13] = 2;
+                    modesDrawable[13] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[13] = 3;
+                    modesDrawable[13] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[13] = 4;
+                    modesDrawable[13] = 4;
                     break;
             }
         }
     }
 
-    private void set_the_third_line(String date) {
+    private void setTheThirdLine(String date) {
         if (getView() != null) {
-            String[] date_split = date.split("split");
-            switch (date_split[0]) {
+            String[] dateSplit = date.split("split");
+            switch (dateSplit[0]) {
                 case "empty":
-                    modes_for_four_drawable[14] = 0;
+                    modesDrawable[14] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[14] = 1;
+                    modesDrawable[14] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[14] = 2;
+                    modesDrawable[14] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[14] = 3;
+                    modesDrawable[14] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[14] = 4;
+                    modesDrawable[14] = 4;
                     break;
             }
-            switch (date_split[1]) {
+            switch (dateSplit[1]) {
                 case "empty":
-                    modes_for_four_drawable[15] = 0;
+                    modesDrawable[15] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[15] = 1;
+                    modesDrawable[15] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[15] = 2;
+                    modesDrawable[15] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[15] = 3;
+                    modesDrawable[15] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[15] = 4;
+                    modesDrawable[15] = 4;
                     break;
             }
-            switch (date_split[2]) {
+            switch (dateSplit[2]) {
                 case "empty":
-                    modes_for_four_drawable[16] = 0;
+                    modesDrawable[16] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[16] = 1;
+                    modesDrawable[16] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[16] = 2;
+                    modesDrawable[16] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[16] = 3;
+                    modesDrawable[16] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[16] = 4;
+                    modesDrawable[16] = 4;
                     break;
             }
-            switch (date_split[3]) {
+            switch (dateSplit[3]) {
                 case "empty":
-                    modes_for_four_drawable[17] = 0;
+                    modesDrawable[17] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[17] = 1;
+                    modesDrawable[17] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[17] = 2;
+                    modesDrawable[17] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[17] = 3;
+                    modesDrawable[17] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[17] = 4;
+                    modesDrawable[17] = 4;
                     break;
             }
-            switch (date_split[4]) {
+            switch (dateSplit[4]) {
                 case "empty":
-                    modes_for_four_drawable[18] = 0;
+                    modesDrawable[18] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[18] = 1;
+                    modesDrawable[18] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[18] = 2;
+                    modesDrawable[18] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[18] = 3;
+                    modesDrawable[18] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[18] = 4;
+                    modesDrawable[18] = 4;
                     break;
             }
-            switch (date_split[5]) {
+            switch (dateSplit[5]) {
                 case "empty":
-                    modes_for_four_drawable[19] = 0;
+                    modesDrawable[19] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[19] = 1;
+                    modesDrawable[19] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[19] = 2;
+                    modesDrawable[19] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[19] = 3;
+                    modesDrawable[19] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[19] = 4;
+                    modesDrawable[19] = 4;
                     break;
             }
-            switch (date_split[6]) {
+            switch (dateSplit[6]) {
                 case "empty":
-                    modes_for_four_drawable[20] = 0;
+                    modesDrawable[20] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[20] = 1;
+                    modesDrawable[20] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[20] = 2;
+                    modesDrawable[20] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[20] = 3;
+                    modesDrawable[20] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[20] = 4;
+                    modesDrawable[20] = 4;
                     break;
             }
         }
     }
 
-    private void set_the_fourth_line(String date) {
+    private void setTheFourthLine(String date) {
         if (getView() != null) {
-            String[] date_split = date.split("split");
-            switch (date_split[0]) {
+            String[] dateSplit = date.split("split");
+            switch (dateSplit[0]) {
                 case "empty":
-                    modes_for_four_drawable[21] = 0;
+                    modesDrawable[21] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[21] = 1;
+                    modesDrawable[21] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[21] = 2;
+                    modesDrawable[21] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[21] = 3;
+                    modesDrawable[21] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[21] = 4;
+                    modesDrawable[21] = 4;
                     break;
             }
-            switch (date_split[1]) {
+            switch (dateSplit[1]) {
                 case "empty":
-                    modes_for_four_drawable[22] = 0;
+                    modesDrawable[22] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[22] = 1;
+                    modesDrawable[22] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[22] = 2;
+                    modesDrawable[22] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[22] = 3;
+                    modesDrawable[22] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[22] = 4;
+                    modesDrawable[22] = 4;
                     break;
             }
-            switch (date_split[2]) {
+            switch (dateSplit[2]) {
                 case "empty":
-                    modes_for_four_drawable[23] = 0;
+                    modesDrawable[23] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[23] = 1;
+                    modesDrawable[23] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[23] = 2;
+                    modesDrawable[23] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[23] = 3;
+                    modesDrawable[23] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[23] = 4;
+                    modesDrawable[23] = 4;
                     break;
             }
-            switch (date_split[3]) {
+            switch (dateSplit[3]) {
                 case "empty":
-                    modes_for_four_drawable[24] = 0;
+                    modesDrawable[24] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[24] = 1;
+                    modesDrawable[24] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[24] = 2;
+                    modesDrawable[24] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[24] = 3;
+                    modesDrawable[24] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[24] = 4;
+                    modesDrawable[24] = 4;
                     break;
             }
-            switch (date_split[4]) {
+            switch (dateSplit[4]) {
                 case "empty":
-                    modes_for_four_drawable[25] = 0;
+                    modesDrawable[25] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[25] = 1;
+                    modesDrawable[25] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[25] = 2;
+                    modesDrawable[25] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[25] = 3;
+                    modesDrawable[25] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[25] = 4;
+                    modesDrawable[25] = 4;
                     break;
             }
-            switch (date_split[5]) {
+            switch (dateSplit[5]) {
                 case "empty":
-                    modes_for_four_drawable[26] = 0;
+                    modesDrawable[26] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[26] = 1;
+                    modesDrawable[26] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[26] = 2;
+                    modesDrawable[26] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[26] = 3;
+                    modesDrawable[26] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[26] = 4;
+                    modesDrawable[26] = 4;
                     break;
             }
-            switch (date_split[6]) {
+            switch (dateSplit[6]) {
                 case "empty":
-                    modes_for_four_drawable[27] = 0;
+                    modesDrawable[27] = 0;
                     break;
                 case "start":
-                    modes_for_four_drawable[27] = 1;
+                    modesDrawable[27] = 1;
                     break;
                 case "middle":
-                    modes_for_four_drawable[27] = 2;
+                    modesDrawable[27] = 2;
                     break;
                 case "end":
-                    modes_for_four_drawable[27] = 3;
+                    modesDrawable[27] = 3;
                     break;
                 case "beg_last":
-                    modes_for_four_drawable[27] = 4;
+                    modesDrawable[27] = 4;
                     break;
             }
         }
     }
 
-    private void set_the_fifth_line(String date) {
+    private void setTheFifthLine(String date) {
         if (getView() != null) {
-            String[] date_split = date.split("split");
-            if (date_split.length > 0) {
-                switch (date_split[0]) {
+            String[] dateSplit = date.split("split");
+            if (dateSplit.length > 0) {
+                switch (dateSplit[0]) {
                     case "empty":
-                        modes_for_four_drawable[28] = 0;
+                        modesDrawable[28] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[28] = 1;
+                        modesDrawable[28] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[28] = 2;
+                        modesDrawable[28] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[28] = 3;
+                        modesDrawable[28] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[28] = 4;
+                        modesDrawable[28] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[28] = 0;
-            }
-            if (date_split.length > 1) {
-                switch (date_split[1]) {
+            } else 
+                modesDrawable[28] = 0;
+            if (dateSplit.length > 1) {
+                switch (dateSplit[1]) {
                     case "empty":
-                        modes_for_four_drawable[29] = 0;
+                        modesDrawable[29] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[29] = 1;
+                        modesDrawable[29] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[29] = 2;
+                        modesDrawable[29] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[29] = 3;
+                        modesDrawable[29] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[29] = 4;
+                        modesDrawable[29] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[29] = 0;
-            }
-            if (date_split.length > 2) {
-                switch (date_split[2]) {
+            } else 
+                modesDrawable[29] = 0;
+            if (dateSplit.length > 2) {
+                switch (dateSplit[2]) {
                     case "empty":
-                        modes_for_four_drawable[30] = 0;
+                        modesDrawable[30] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[30] = 1;
+                        modesDrawable[30] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[30] = 2;
+                        modesDrawable[30] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[30] = 3;
+                        modesDrawable[30] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[30] = 4;
+                        modesDrawable[30] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[30] = 0;
-            }
-            if (date_split.length > 3) {
-                switch (date_split[3]) {
+            } else 
+                modesDrawable[30] = 0;
+            if (dateSplit.length > 3) {
+                switch (dateSplit[3]) {
                     case "empty":
-                        modes_for_four_drawable[31] = 0;
+                        modesDrawable[31] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[31] = 1;
+                        modesDrawable[31] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[31] = 2;
+                        modesDrawable[31] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[31] = 3;
+                        modesDrawable[31] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[31] = 4;
+                        modesDrawable[31] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[31] = 0;
-            }
-            if (date_split.length > 4) {
-                switch (date_split[4]) {
+            } else 
+                modesDrawable[31] = 0;
+            if (dateSplit.length > 4) {
+                switch (dateSplit[4]) {
                     case "empty":
-                        modes_for_four_drawable[32] = 0;
+                        modesDrawable[32] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[32] = 1;
+                        modesDrawable[32] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[32] = 2;
+                        modesDrawable[32] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[32] = 3;
+                        modesDrawable[32] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[32] = 4;
+                        modesDrawable[32] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[32] = 0;
-            }
-            if (date_split.length > 5) {
-                switch (date_split[5]) {
+            } else 
+                modesDrawable[32] = 0;
+            if (dateSplit.length > 5) {
+                switch (dateSplit[5]) {
                     case "empty":
-                        modes_for_four_drawable[33] = 0;
+                        modesDrawable[33] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[33] = 1;
+                        modesDrawable[33] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[33] = 2;
+                        modesDrawable[33] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[33] = 3;
+                        modesDrawable[33] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[33] = 4;
+                        modesDrawable[33] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[33] = 0;
-            }
-            if (date_split.length > 6) {
-                switch (date_split[6]) {
+            } else 
+                modesDrawable[33] = 0;
+            
+            if (dateSplit.length > 6) {
+                switch (dateSplit[6]) {
                     case "empty":
-                        modes_for_four_drawable[34] = 0;
+                        modesDrawable[34] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[34] = 1;
+                        modesDrawable[34] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[34] = 2;
+                        modesDrawable[34] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[34] = 3;
+                        modesDrawable[34] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[34] = 4;
+                        modesDrawable[34] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[34] = 0;
-            }
+            } else 
+                modesDrawable[34] = 0;
         }
     }
 
-    private void set_the_sixth_line(String date) {
+    private void setTheSixthLine(String date) {
         if (getView() != null) {
             String[] date_split = date.split("split");
             if (date_split.length > 0) {
                 switch (date_split[0]) {
                     case "empty":
-                        modes_for_four_drawable[35] = 0;
+                        modesDrawable[35] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[35] = 1;
+                        modesDrawable[35] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[35] = 2;
+                        modesDrawable[35] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[35] = 3;
+                        modesDrawable[35] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[35] = 4;
+                        modesDrawable[35] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[35] = 0;
-            }
+            } else 
+                modesDrawable[35] = 0;
             if (date_split.length > 1) {
                 switch (date_split[1]) {
                     case "empty":
-                        modes_for_four_drawable[36] = 0;
+                        modesDrawable[36] = 0;
                         break;
                     case "start":
-                        modes_for_four_drawable[36] = 1;
+                        modesDrawable[36] = 1;
                         break;
                     case "middle":
-                        modes_for_four_drawable[36] = 2;
+                        modesDrawable[36] = 2;
                         break;
                     case "end":
-                        modes_for_four_drawable[36] = 3;
+                        modesDrawable[36] = 3;
                         break;
                     case "beg_last":
-                        modes_for_four_drawable[36] = 4;
+                        modesDrawable[36] = 4;
                         break;
                 }
-            } else {
-                modes_for_four_drawable[36] = 0;
-            }
+            } else 
+                modesDrawable[36] = 0;
         }
     }
 
     private String returnTheStateOfTheDays() {
         if (getView() != null) {
-            String month_info = "";
-            TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-            String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+            String monthInfo = "";
+            monthYear = getView().findViewById(R.id.tv_month_year);
+            String[] splitter = monthYear.getText().toString().split(" ");
             Calendar calendar = Calendar.getInstance();
-            Calendar real_calender = Calendar.getInstance();
+            Calendar calendarNow = Calendar.getInstance();
             calendar.set(Calendar.MONTH, returnMonthStringToInt(splitter[0]));
             calendar.set(Calendar.YEAR, Integer.parseInt(splitter[1]));
             calendar.set(Calendar.DAY_OF_MONTH, 1);
 
-            if (!check_past_now_or_future().equals("future")) {
-                if (TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date))
-                    month_info = "empty".concat("split");
+            if (!checkPastNowFuture().equals("future")) {
+                if (TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate))
+                    monthInfo = "empty".concat("split");
                  else {
-                    if (return_the_last_day_of_last_month().equals("continue")) {
-                        if (return_state_of_day(calendar.getTimeInMillis()))
-                            month_info = "middle".concat("split");
+                    if (returnTheLastDayOfLastMonth().equals("continue")) {
+                        if (returnStateOfDay(calendar.getTimeInMillis()))
+                            monthInfo = "middle".concat("split");
                          else
-                            month_info = "end".concat("split");
+                            monthInfo = "end".concat("split");
                     } else {
-                        if (return_state_of_day(calendar.getTimeInMillis()))
-                            month_info = "start".concat("split");
+                        if (returnStateOfDay(calendar.getTimeInMillis()))
+                            monthInfo = "start".concat("split");
                          else
-                            month_info = "beg_last".concat("split");
+                            monthInfo = "beg_last".concat("split");
                     }
                 }
-                if (check_past_now_or_future().equals("current")) {
+                if (checkPastNowFuture().equals("current")) {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (real_calender.get(Calendar.DAY_OF_MONTH) < i || TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date)) {
-                            month_info = month_info.concat("empty").concat("split");
-                        } else {
-                            String substring = month_info.substring(month_info.length() - 7, month_info.length() - 5);
+                        if (calendarNow.get(Calendar.DAY_OF_MONTH) < i || TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate)) 
+                            monthInfo = monthInfo.concat("empty").concat("split");
+                         else {
+                            String substring = monthInfo.substring(monthInfo.length() - 7, monthInfo.length() - 5);
                             if (substring.equals("rt") || substring.equals("le")) {
-                                if (return_state_of_day(calendar.getTimeInMillis())) {
-                                    month_info = month_info.concat("middle").concat("split");
-                                } else {
-                                    month_info = month_info.concat("end").concat("split");
-                                }
+                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                    monthInfo = monthInfo.concat("middle").concat("split");
+                                 else 
+                                    monthInfo = monthInfo.concat("end").concat("split");
                             } else {
-                                if (return_state_of_day(calendar.getTimeInMillis())) {
-                                    month_info = month_info.concat("start").concat("split");
-                                } else {
-                                    month_info = month_info.concat("beg_last").concat("split");
-                                }
+                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                    monthInfo = monthInfo.concat("start").concat("split");
+                                 else 
+                                    monthInfo = monthInfo.concat("beg_last").concat("split");
                             }
                         }
                     }
                 } else {
                     for (int i = 2; i <= returnLastDayOfMonth(); i++) {
                         calendar.set(Calendar.DAY_OF_MONTH, i);
-                        if (TimeMood.return_time_in_midnight(calendar.getTimeInMillis()) < TimeMood.return_time_in_midnight(start_date)) {
-                            month_info = month_info.concat("empty").concat("split");
-                        } else {
-                            String substring = month_info.substring(month_info.length() - 7, month_info.length() - 5);
+                        if (TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()) < TimeMood.returnTimeInMidnight(startDate)) 
+                            monthInfo = monthInfo.concat("empty").concat("split");
+                        else {
+                            String substring = monthInfo.substring(monthInfo.length() - 7, monthInfo.length() - 5);
                             if (substring.equals("rt") || substring.equals("le")) {
-                                if (return_state_of_day(calendar.getTimeInMillis())) {
-                                    month_info = month_info.concat("middle").concat("split");
-                                } else {
-                                    month_info = month_info.concat("end").concat("split");
-                                }
+                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                    monthInfo = monthInfo.concat("middle").concat("split");
+                                else 
+                                    monthInfo = monthInfo.concat("end").concat("split");
+                                
                             } else {
-                                if (return_state_of_day(calendar.getTimeInMillis())) {
-                                    month_info = month_info.concat("start").concat("split");
-                                } else {
-                                    month_info = month_info.concat("beg_last").concat("split");
-                                }
+                                if (returnStateOfDay(calendar.getTimeInMillis())) 
+                                    monthInfo = monthInfo.concat("start").concat("split");
+                                else 
+                                    monthInfo = monthInfo.concat("beg_last").concat("split");
                             }
                         }
                     }
                 }
             } else {
-                for (int i = 1; i <= 31; i++) {
-                    month_info = month_info.concat("empty").concat("split");
-                }
+                for (int i = 1; i <= 31; i++) 
+                    monthInfo = monthInfo.concat("empty").concat("split");
             }
-            return month_info;
-        } else {
+            return monthInfo;
+        } else 
             return "";
-        }
     }
 
-    private boolean return_state_of_day(long milli) {
-        milli = TimeMood.return_time_in_midnight(milli);
-        return history_of_mood.containsKey(milli);
+    private boolean returnStateOfDay(long milli) {
+        return historyMood.containsKey(TimeMood.returnTimeInMidnight(milli));
     }
 
-    private void add_to_list() {
+    private void addToList() {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
             String shared = sharedPreferences.getString("mood_stats", "");
-            history_of_mood = new HashMap<>();
+            historyMood = new HashMap<>();
             if (shared != null && !shared.equals("")) {
                 String[] split = shared.split("max_divide");
                 for (String s : split) {
                     String[] small_split = s.split("small_split");
-                    history_of_mood.put(Long.parseLong(small_split[1]), Integer.parseInt(small_split[0]));
+                    historyMood.put(Long.parseLong(small_split[1]), Integer.parseInt(small_split[0]));
                 }
             }
         }
     }
 
-    private String return_the_last_day_of_last_month() {
+    private String returnTheLastDayOfLastMonth() {
         Calendar calendar = Calendar.getInstance();
-        TextView month_and_year_in_calender_for_good_habits = getView().findViewById(R.id.tv_month_year);
-        String[] splitter = month_and_year_in_calender_for_good_habits.getText().toString().split(" ");
+        monthYear = getView().findViewById(R.id.tv_month_year);
+        String[] splitter = monthYear.getText().toString().split(" ");
         int month = returnMonthStringToInt(splitter[0]);
         int year = Integer.parseInt(splitter[1]);
         if (month == 0) {
             month = 11;
             year--;
-        } else {
+        } else 
             month--;
-        }
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
         int day = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         calendar.set(Calendar.DAY_OF_MONTH, day);
-        if (TimeMood.return_time_in_midnight(start_date) <= TimeMood.return_time_in_midnight(calendar.getTimeInMillis())) {
-            if (return_state_of_day(calendar.getTimeInMillis())) {
+        if (TimeMood.returnTimeInMidnight(startDate) <= TimeMood.returnTimeInMidnight(calendar.getTimeInMillis())) {
+            if (returnStateOfDay(calendar.getTimeInMillis())) 
                 return "continue";
-            } else {
+            else 
                 return "start";
-            }
-        } else {
+        } else 
             return "start";
-        }
     }
 
-    private void get_the_color() {
+    private void getColor() {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
             String shared = sharedPreferences.getString("mood_color", "");
-            if (shared == null || shared.equals("")) {
+            if (shared == null || shared.equals("")) 
                 color = Color.parseColor("#000075");
-            } else {
+             else 
                 color = Color.parseColor(shared);
-            }
-
         }
     }
 
-    private void save_the_input_for_good_habit_input(int mood, long milli) {
+    private void saveTheInput(int mood, long milli) {
         if (getActivity() != null) {
-            milli = TimeMood.return_time_in_midnight(milli);
+            milli = TimeMood.returnTimeInMidnight(milli);
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
-            if (mood == 0) {
-                history_of_mood.remove(milli);
-            } else {
-                if (history_of_mood.containsKey(milli)) {
-                    history_of_mood.remove(milli);
-                    history_of_mood.put(milli, mood);
-                } else {
-                    history_of_mood.put(milli, mood);
-                }
+            if (mood == 0) 
+                historyMood.remove(milli);
+            else {
+                if (historyMood.containsKey(milli)) {
+                    historyMood.remove(milli);
+                    historyMood.put(milli, mood);
+                } else 
+                    historyMood.put(milli, mood);
             }
-            String save_me = "";
-            for (Map.Entry<Long, Integer> map : history_of_mood.entrySet()) {
-                save_me = save_me.concat(String.valueOf(map.getValue())).concat("small_split").concat(String.valueOf(map.getKey())).concat("max_divide");
-            }
+            String saveMe = "";
+            for (Map.Entry<Long, Integer> map : historyMood.entrySet()) 
+                saveMe = saveMe.concat(String.valueOf(map.getValue())).concat("small_split").concat(String.valueOf(map.getKey())).concat("max_divide");
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
-            myEdit.putString("mood_stats", save_me);
+            myEdit.putString("mood_stats", saveMe);
             myEdit.apply();
         }
     }
 
-    private void select_the_mood_in_calender(int which) {
+    private void selectTheMoodInCalendar(int which) {
         if (getView() != null) {
             View very_bad_mood_shade_in_habits = getView().findViewById(R.id.view_very_bad_mood_edit_background);
             View bad_mood_shade_in_habits = getView().findViewById(R.id.view_bad_mood_edit_background);
@@ -9705,64 +9093,58 @@ public class Mood extends Fragment  {
         }
     }
 
-    private void define_start_date() {
-        start_date = returnStartDate();
+    private void StartDate() {
+        startDate = returnStartDate();
     }
 
-    private String return_the_color_of_mood(int which) {
+    private String returnTheColorOfMood(int which) {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("mood", Context.MODE_PRIVATE);
-        String very_bad = sharedPreferences.getString("very_bad", "");
+        String veryBad = sharedPreferences.getString("very_bad", "");
         String bad = sharedPreferences.getString("bad", "");
         String ok = sharedPreferences.getString("ok", "");
         String good = sharedPreferences.getString("good", "");
-        String very_good = sharedPreferences.getString("very_good", "");
-        String not_selected = sharedPreferences.getString("not_selected", "");
+        String veryGood = sharedPreferences.getString("very_good", "");
+        String notSelected = sharedPreferences.getString("not_selected", "");
         if (which == 0) {
-            if (not_selected == null || not_selected.equals("")) {
+            if (notSelected == null || notSelected.equals(""))
                 return "#000000";
-            } else {
-                return not_selected;
-            }
+             else
+                return notSelected;
         }
         if (which == 1) {
-            if (very_bad == null || very_bad.equals("")) {
+            if (veryBad == null || veryBad.equals(""))
                 return "#f55656";
-            } else {
-                return very_bad;
-            }
+            else
+                return veryBad;
         } else if (which == 2) {
-            if (bad == null || bad.equals("")) {
+            if (bad == null || bad.equals(""))
                 return "#ffcb6b";
-            } else {
+             else
                 return bad;
-            }
         } else if (which == 3) {
-            if (ok == null || ok.equals("")) {
+            if (ok == null || ok.equals(""))
                 return "#e06dfc";
-            } else {
+             else
                 return ok;
-            }
         } else if (which == 4) {
-            if (good == null || good.equals("")) {
+            if (good == null || good.equals(""))
                 return "#69e9f5";
-            } else {
+             else
                 return good;
-            }
         } else if (which == 5) {
-            if (very_good == null || very_good.equals("")) {
+            if (veryGood == null || veryGood.equals(""))
                 return "#83d964";
-            } else {
-                return very_good;
-            }
+            else
+                return veryGood;
         }
         return "#83d964";
     }
 
-    private int return_color_of_days(long milli) {
-        return history_of_mood.getOrDefault( TimeMood.return_time_in_midnight(milli), 0);
+    private int returnColorOfDays(long milli) {
+        return historyMood.getOrDefault( TimeMood.returnTimeInMidnight(milli), 0);
     }
 
-    private void color_the_stuff() {
+    private void colorStuff() {
         if (getView() != null) {
             ConstraintLayout layout_inside_scroll_in_the_bad_habits = getView().findViewById(R.id.cl_mood);
             TextView text_asking_did_you_relapse_in_share = getView().findViewById(R.id.tv_edit_mood);
@@ -9780,11 +9162,11 @@ public class Mood extends Fragment  {
             layout_inside_scroll_in_the_bad_habits.setBackgroundColor(getResources().getColor(R.color.Hex));
             text_asking_did_you_relapse_in_share.setTextColor(color);
 
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
+            String very_bad_color = returnTheColorOfMood(1);
+            String bad_color = returnTheColorOfMood(2);
+            String ok_color = returnTheColorOfMood(3);
+            String good_color = returnTheColorOfMood(4);
+            String very_good_color = returnTheColorOfMood(5);
             {
                 Drawable background = progress_bar_number_one_mood.getProgressDrawable().mutate();
                 background.setTint(Color.parseColor(very_bad_color));
@@ -9834,7 +9216,7 @@ public class Mood extends Fragment  {
     }
 
 
-    private void make_the_buttons_in_the_top_mood(int result) {
+    private void makeTheButtonsInTheTopMood(int result) {
         if (getView() != null) {
             View very_bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background1);
             View bad_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.view_background2);
@@ -9916,7 +9298,7 @@ public class Mood extends Fragment  {
         }
     }
 
-    private void button_listen_at_the_top() {
+    private void buttonListenAtTheTop() {
         if (getView() != null) {
             Button very_bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_very_bad_mood);
             Button bad_mood_button_in_habits_in_the_top_today = getView().findViewById(R.id.b_bad_mood);
@@ -9930,133 +9312,130 @@ public class Mood extends Fragment  {
             final View very_good_mood_shade_in_habits_in_the_top_today = getView().findViewById(R.id.very_good_mood_check);
             very_bad_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (very_bad_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
-                    make_the_buttons_in_the_top_mood(0);
-                    save_the_input_for_good_habit_input(0, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(0);
+                    saveTheInput(0, System.currentTimeMillis());
                 } else {
-                    make_the_buttons_in_the_top_mood(1);
-                    save_the_input_for_good_habit_input(1, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(1);
+                    saveTheInput(1, System.currentTimeMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
             bad_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (bad_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
-                    make_the_buttons_in_the_top_mood(0);
-                    save_the_input_for_good_habit_input(0, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(0);
+                    saveTheInput(0, System.currentTimeMillis());
                 } else {
-                    make_the_buttons_in_the_top_mood(2);
-                    save_the_input_for_good_habit_input(2, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(2);
+                    saveTheInput(2, System.currentTimeMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
             ok_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (ok_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
-                    make_the_buttons_in_the_top_mood(0);
-                    save_the_input_for_good_habit_input(0, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(0);
+                    saveTheInput(0, System.currentTimeMillis());
                 } else {
-                    make_the_buttons_in_the_top_mood(3);
-                    save_the_input_for_good_habit_input(3, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(3);
+                    saveTheInput(3, System.currentTimeMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
             good_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (good_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
-                    make_the_buttons_in_the_top_mood(0);
-                    save_the_input_for_good_habit_input(0, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(0);
+                    saveTheInput(0, System.currentTimeMillis());
                 } else {
-                    make_the_buttons_in_the_top_mood(4);
-                    save_the_input_for_good_habit_input(4, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(4);
+                    saveTheInput(4, System.currentTimeMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
             very_good_mood_button_in_habits_in_the_top_today.setOnClickListener(view -> {
                 if (very_good_mood_shade_in_habits_in_the_top_today.getVisibility() == View.VISIBLE) {
-                    make_the_buttons_in_the_top_mood(0);
-                    save_the_input_for_good_habit_input(0, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(0);
+                    saveTheInput(0, System.currentTimeMillis());
                 } else {
-                    make_the_buttons_in_the_top_mood(5);
-                    save_the_input_for_good_habit_input(5, System.currentTimeMillis());
+                    makeTheButtonsInTheTopMood(5);
+                    saveTheInput(5, System.currentTimeMillis());
                 }
-                color_the_calender();
-                divide_it_into_weeks();
+                calendarColor();
+                divideItIntoWeeks();
                 makeEverythingAverageMood();
-                drawTheMoodLineChart();
+                lineChart();
                 drawTheRightBarChartMood();
-                line_chart_for_streak.fitScreen();
+                lineChartForStreak.fitScreen();
             });
         }
     }
 
-    private void set_up_buttons_once() {
-        make_the_buttons_in_the_top_mood(return_color_of_days(System.currentTimeMillis()));
+    private void setUpButtonsOnce() {
+        makeTheButtonsInTheTopMood(returnColorOfDays(System.currentTimeMillis()));
     }
 
     private void makeEverythingAverageMood() {
         if (getView() != null) {
-            TextView text_showing_average_mood_number = getView().findViewById(R.id.tv_average_mark);
-            View location_above_bmi_weight = getView().findViewById(R.id.location_average_chart);
-            if (history_of_mood.isEmpty()) {
+            TextView average_mark = getView().findViewById(R.id.tv_average_mark);
+            View locationAverageChart = getView().findViewById(R.id.location_average_chart);
+            if (historyMood.isEmpty()) {
                 makeEverythingGoForAverageMood(0);
                 return;
-            } else {
+            } else
                 makeEverythingGoForAverageMood(1);
-            }
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
+
+            String veryBadColor = returnTheColorOfMood(1);
+            String badColor = returnTheColorOfMood(2);
+            String okColor = returnTheColorOfMood(3);
+            String goodColor = returnTheColorOfMood(4);
+            String veryGoodColor = returnTheColorOfMood(5);
             float average = 0;
-            for (Map.Entry<Long, Integer> map : history_of_mood.entrySet()) {
+            for (Map.Entry<Long, Integer> map : historyMood.entrySet())
                 average = average + map.getValue();
-            }
-            average = average / history_of_mood.size();
-            Drawable back_ground_location = location_above_bmi_weight.getBackground();
+            average = average / historyMood.size();
+            Drawable back_ground_location = locationAverageChart.getBackground();
             float position_in_map = (average - 1) / 4;
             if (average <= 1.5) {
-                back_ground_location.setTint(Color.parseColor(very_bad_color));
-                text_showing_average_mood_number.setTextColor(Color.parseColor(very_bad_color));
+                back_ground_location.setTint(Color.parseColor(veryBadColor));
+                average_mark.setTextColor(Color.parseColor(veryBadColor));
             } else if (average <= 2.5) {
-                back_ground_location.setTint(Color.parseColor(bad_color));
-                text_showing_average_mood_number.setTextColor(Color.parseColor(bad_color));
+                back_ground_location.setTint(Color.parseColor(badColor));
+                average_mark.setTextColor(Color.parseColor(badColor));
             } else if (average <= 3.5) {
-                back_ground_location.setTint(Color.parseColor(ok_color));
-                text_showing_average_mood_number.setTextColor(Color.parseColor(ok_color));
+                back_ground_location.setTint(Color.parseColor(okColor));
+                average_mark.setTextColor(Color.parseColor(okColor));
             } else if (average <= 4.5) {
-                back_ground_location.setTint(Color.parseColor(good_color));
-                text_showing_average_mood_number.setTextColor(Color.parseColor(good_color));
+                back_ground_location.setTint(Color.parseColor(goodColor));
+                average_mark.setTextColor(Color.parseColor(goodColor));
             } else {
-                back_ground_location.setTint(Color.parseColor(very_good_color));
-                text_showing_average_mood_number.setTextColor(Color.parseColor(very_good_color));
+                back_ground_location.setTint(Color.parseColor(veryGoodColor));
+                average_mark.setTextColor(Color.parseColor(veryGoodColor));
             }
-            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) location_above_bmi_weight.getLayoutParams();
+            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) locationAverageChart.getLayoutParams();
             params.horizontalBias = position_in_map;
-            location_above_bmi_weight.setLayoutParams(params);
-            if ((int) average == average) {
-                text_showing_average_mood_number.setText(String.valueOf((int) average));
-            } else {
-                text_showing_average_mood_number.setText(String.format("%.1f", average));
-            }
-
+            locationAverageChart.setLayoutParams(params);
+            if ((int) average == average)
+                average_mark.setText(String.valueOf((int) average));
+             else
+                average_mark.setText(String.format("%.1f", average));
         }
     }
 
@@ -10105,7 +9484,7 @@ public class Mood extends Fragment  {
         }
     }
 
-    private void drawTheMoodLineChart() {
+    private void lineChart() {
         if (getView() != null) {
             TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.tv_month_year_chart);
             Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
@@ -10114,35 +9493,35 @@ public class Mood extends Fragment  {
             Calendar calendar = Calendar.getInstance();
             int real_month = calendar.get(Calendar.MONTH);
             int real_year = calendar.get(Calendar.YEAR);
-            if (month_for_mood_chart == -1) {
-                month_for_mood_chart = real_month;
-                year_for_mood_chart = real_year;
+            if (monthForMoodChart == -1) {
+                monthForMoodChart = real_month;
+                yearForMoodChart = real_year;
                 button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
                 view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
-            } else if (month_for_mood_chart == real_month && year_for_mood_chart == real_year) {
+            } else if (monthForMoodChart == real_month && yearForMoodChart == real_year) {
                 button_to_show_forward_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
                 view_to_show_back_above_mood_tracker_graph.setVisibility(View.INVISIBLE);
             } else {
                 button_to_show_forward_above_mood_tracker_graph.setVisibility(View.VISIBLE);
                 view_to_show_back_above_mood_tracker_graph.setVisibility(View.VISIBLE);
             }
-            text_saying_month_year_in_the_chart_mood_tracker.setText(returnMonth(month_for_mood_chart).concat(" ").concat(String.valueOf(year_for_mood_chart)));
+            text_saying_month_year_in_the_chart_mood_tracker.setText(returnMonth(monthForMoodChart).concat(" ").concat(String.valueOf(yearForMoodChart)));
 
 
             int color_card = color;
-            line_chart_for_streak = getView().findViewById(R.id.line_chart);
+            lineChartForStreak = getView().findViewById(R.id.line_chart);
             TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.tv_not_enough_data_line_chart);
-            line_chart_for_streak.invalidate();
-            line_chart_for_streak.clear();
+            lineChartForStreak.invalidate();
+            lineChartForStreak.clear();
             ArrayList<Entry> y_values = new ArrayList<>();
             String string_to_split = returnDataMoodForMoodLineChart();
             if (string_to_split.equals("")) {
                 text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.VISIBLE);
-                line_chart_for_streak.setVisibility(View.INVISIBLE);
+                lineChartForStreak.setVisibility(View.INVISIBLE);
                 return;
             }
             text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setVisibility(View.INVISIBLE);
-            line_chart_for_streak.setVisibility(View.VISIBLE);
+            lineChartForStreak.setVisibility(View.VISIBLE);
             String[] split_data = string_to_split.split("big_split");
             String[] small_split_for_last_value = split_data[split_data.length - 1].split("small_split");
             int last_value = Integer.parseInt(small_split_for_last_value[0]);
@@ -10167,143 +9546,141 @@ public class Mood extends Fragment  {
                         break;
                 }
             }
-            line_chart_for_streak.fitScreen();
-            line_chart_for_streak.setPadding(0, 0, 0, 0);
-            line_chart_for_streak.getXAxis().setDrawGridLines(false);
-            line_chart_for_streak.getAxisLeft().setDrawGridLines(true);
-            line_chart_for_streak.getAxisRight().setDrawGridLines(false);
+            lineChartForStreak.fitScreen();
+            lineChartForStreak.setPadding(0, 0, 0, 0);
+            lineChartForStreak.getXAxis().setDrawGridLines(false);
+            lineChartForStreak.getAxisLeft().setDrawGridLines(true);
+            lineChartForStreak.getAxisRight().setDrawGridLines(false);
 
-            XAxis xAxis = line_chart_for_streak.getXAxis();
+            XAxis xAxis = lineChartForStreak.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis.setLabelCount(y_values.size(), false);
             xAxis.setGranularity(1.0f);
             xAxis.setGranularityEnabled(true);
             xAxis.setAvoidFirstLastClipping(true);
             xAxis.setAxisMaximum(last_value + 0.1f);
-            line_chart_for_streak.getDescription().setText("");
-            line_chart_for_streak.setScaleEnabled(false);
-            line_chart_for_streak.getLegend().setEnabled(false);
+            lineChartForStreak.getDescription().setText("");
+            lineChartForStreak.setScaleEnabled(false);
+            lineChartForStreak.getLegend().setEnabled(false);
 
-            line_chart_for_streak.getAxisRight().setEnabled(false);
-            line_chart_for_streak.getAxisLeft().setAxisMinimum(1);
-            line_chart_for_streak.getAxisLeft().setDrawAxisLine(false);
-            line_chart_for_streak.getAxisLeft().setGranularity(1.0f);
-            line_chart_for_streak.getAxisLeft().setGranularityEnabled(true);
-            line_chart_for_streak.getAxisLeft().setAxisMaximum(5);
+            lineChartForStreak.getAxisRight().setEnabled(false);
+            lineChartForStreak.getAxisLeft().setAxisMinimum(1);
+            lineChartForStreak.getAxisLeft().setDrawAxisLine(false);
+            lineChartForStreak.getAxisLeft().setGranularity(1.0f);
+            lineChartForStreak.getAxisLeft().setGranularityEnabled(true);
+            lineChartForStreak.getAxisLeft().setAxisMaximum(5);
 
             LineDataSet lineDataSet = new LineDataSet(y_values, "data");
             lineDataSet.setColor(color_card);
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();
             dataSets.add(lineDataSet);
             LineData data = new LineData(dataSets);
-            line_chart_for_streak.setData(data);
-            line_chart_for_streak.getData().setHighlightEnabled(false);
+            lineChartForStreak.setData(data);
+            lineChartForStreak.getData().setHighlightEnabled(false);
             lineDataSet.setLineWidth(3f);
             lineDataSet.setCircleRadius(10f);
             lineDataSet.setCircleHoleColor(Color.WHITE);
             lineDataSet.setCircleColor(Color.WHITE);
             lineDataSet.setDrawValues(false);
-            line_chart_for_streak.invalidate();
-            line_chart_for_streak.setVisibleXRangeMaximum(9);
-            line_chart_for_streak.moveViewToX(y_values.size());
+            lineChartForStreak.invalidate();
+            lineChartForStreak.setVisibleXRangeMaximum(9);
+            lineChartForStreak.moveViewToX(y_values.size());
         }
     }
 
-    private void backAndFrontButtonListenForTheGraphMood() {
+    private void buttonTheGraphMood() {
         if (getView() != null) {
             Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_back);
             Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
             button_to_show_back_above_mood_tracker_graph.setOnClickListener(view -> {
-                if ((month_for_mood_chart) == 0) {
-                    month_for_mood_chart = 11;
-                    year_for_mood_chart--;
+                if ((monthForMoodChart) == 0) {
+                    monthForMoodChart = 11;
+                    yearForMoodChart--;
                 } else {
-                    month_for_mood_chart--;
+                    monthForMoodChart--;
                 }
-                drawTheMoodLineChart();
+                lineChart();
             });
             button_to_show_forward_above_mood_tracker_graph.setOnClickListener(view -> {
-                if ((month_for_mood_chart) == 11) {
-                    month_for_mood_chart = 0;
-                    year_for_mood_chart++;
-                } else {
-                    month_for_mood_chart++;
-                }
-                drawTheMoodLineChart();
+                if ((monthForMoodChart) == 11) {
+                    monthForMoodChart = 0;
+                    yearForMoodChart++;
+                } else
+                    monthForMoodChart++;
+                lineChart();
             });
         }
     }
 
     private String returnDataMoodForMoodLineChart() {
-        String return_me = "";
+        String returnMe = "";
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, year_for_mood_chart);
-        calendar.set(Calendar.MONTH, month_for_mood_chart);
+        calendar.set(Calendar.YEAR, yearForMoodChart);
+        calendar.set(Calendar.MONTH, monthForMoodChart);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         Calendar new_calender = Calendar.getInstance();
         for (int i = 1; i <= calendar.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
-            new_calender.set(year_for_mood_chart, month_for_mood_chart, i);
-            long time_in_milli = new_calender.getTimeInMillis();
-            if (TimeMood.return_time_in_midnight(time_in_milli) >= TimeMood.return_time_in_midnight(start_date)) {
-                if (TimeMood.return_time_in_midnight(time_in_milli) <= TimeMood.return_time_in_midnight(System.currentTimeMillis())) {
-                    if (return_color_of_days(time_in_milli) == 1) {
-                        return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("1").concat("big_split");
-                    } else if (return_color_of_days(time_in_milli) == 2) {
-                        return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("2").concat("big_split");
-                    } else if (return_color_of_days(time_in_milli) == 3) {
-                        return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("3").concat("big_split");
-                    } else if (return_color_of_days(time_in_milli) == 4) {
-                        return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("4").concat("big_split");
-                    } else if (return_color_of_days(time_in_milli) == 5) {
-                        return_me = return_me.concat(String.valueOf(i)).concat("small_split").concat("5").concat("big_split");
-                    }
+            new_calender.set(yearForMoodChart, monthForMoodChart, i);
+            long timeInMillis = new_calender.getTimeInMillis();
+            if (TimeMood.returnTimeInMidnight(timeInMillis) >= TimeMood.returnTimeInMidnight(startDate)) {
+                if (TimeMood.returnTimeInMidnight(timeInMillis) <= TimeMood.returnTimeInMidnight(System.currentTimeMillis())) {
+                    if (returnColorOfDays(timeInMillis) == 1)
+                        returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("1").concat("big_split");
+                     else if (returnColorOfDays(timeInMillis) == 2)
+                        returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("2").concat("big_split");
+                     else if (returnColorOfDays(timeInMillis) == 3)
+                        returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("3").concat("big_split");
+                     else if (returnColorOfDays(timeInMillis) == 4)
+                        returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("4").concat("big_split");
+                     else if (returnColorOfDays(timeInMillis) == 5)
+                        returnMe = returnMe.concat(String.valueOf(i)).concat("small_split").concat("5").concat("big_split");
                 }
             }
         }
-        return return_me;
+        return returnMe;
     }
 
     private Drawable returnMoodLogoVeryBad() {
-        String very_bad_color = return_the_color_of_mood(1);
+        String veryBadColor = returnTheColorOfMood(1);
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_sentiment_very_dissatisfied_24).mutate();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(very_bad_color));
+        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(veryBadColor));
         return wrappedDrawable;
     }
 
     private Drawable returnMoodLogoBad() {
-        String bad_color = return_the_color_of_mood(2);
+        String badColor = returnTheColorOfMood(2);
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_mood_bad_24).mutate();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(bad_color));
+        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(badColor));
         return wrappedDrawable;
     }
 
     private Drawable returnMoodLogoOk() {
-        String ok_color = return_the_color_of_mood(3);
+        String okColor = returnTheColorOfMood(3);
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_face_24).mutate();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(ok_color));
+        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(okColor));
         return wrappedDrawable;
     }
 
     private Drawable returnMoodLogoGood() {
-        String good_color = return_the_color_of_mood(4);
+        String goodColor = returnTheColorOfMood(4);
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_mood_24).mutate();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(good_color));
+        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(goodColor));
         return wrappedDrawable;
     }
 
     private Drawable returnMoodLogoVeryGood() {
-        String very_good_color = return_the_color_of_mood(5);
+        String veryGoodColor = returnTheColorOfMood(5);
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.round_sentiment_very_satisfied_24).mutate();
         Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(very_good_color));
+        DrawableCompat.setTint(wrappedDrawable, Color.parseColor(veryGoodColor));
         return wrappedDrawable;
     }
 
-    private void setAllTheFacesInTheMood() {
+    private void setMood() {
         View veryBadMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_very_bad_mood);
         View badMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_bad_mood);
         View okMoodInHabitsInTheTopToday = getView().findViewById(R.id.view_ok_mood);
@@ -10347,88 +9724,79 @@ public class Mood extends Fragment  {
     private String returnTheDaysOfTheGoodHabit() {
         if (getView() != null) {
             int monday = 0, tuesday = 0, wednesday = 0, thursday = 0, friday = 0, saturday = 0, sunday = 0;
-            float monday_average = 0, tuesday_average = 0, wednesday_average = 0, thursday_average = 0, friday_average = 0, saturday_average = 0, sunday_average = 0;
-            for (Map.Entry<Long, Integer> map : history_of_mood.entrySet()) {
+            float mondayAverage = 0, tuesdayAverage = 0, wednesdayAverage = 0, thursdayAverage = 0, fridayAverage = 0, saturdayAverage = 0, sundayAverage = 0;
+            for (Map.Entry<Long, Integer> map : historyMood.entrySet()) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(map.getKey());
                 if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
                     monday = monday + 1;
-                    monday_average = monday_average + map.getValue();
+                    mondayAverage = mondayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
                     tuesday = tuesday + 1;
-                    tuesday_average = tuesday_average + map.getValue();
+                    tuesdayAverage = tuesdayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
                     wednesday = wednesday + 1;
-                    wednesday_average = wednesday_average + map.getValue();
+                    wednesdayAverage = wednesdayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
                     thursday = thursday + 1;
-                    thursday_average = thursday_average + map.getValue();
+                    thursdayAverage = thursdayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
                     friday = friday + 1;
-                    friday_average = friday_average + map.getValue();
+                    fridayAverage = fridayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
                     saturday = saturday + 1;
-                    saturday_average = saturday_average + map.getValue();
+                    saturdayAverage = saturdayAverage + map.getValue();
                 } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
                     sunday = sunday + 1;
-                    sunday_average = sunday_average + map.getValue();
+                    sundayAverage = sundayAverage + map.getValue();
                 }
             }
-            if (monday != 0) {
-                monday_average = monday_average / monday;
-            }
-            if (tuesday != 0) {
-                tuesday_average = tuesday_average / tuesday;
-            }
-            if (wednesday != 0) {
-                wednesday_average = wednesday_average / wednesday;
-            }
-            if (thursday != 0) {
-                thursday_average = thursday_average / thursday;
-            }
-            if (friday != 0) {
-                friday_average = friday_average / friday;
-            }
-            if (saturday != 0) {
-                saturday_average = saturday_average / saturday;
-            }
-            if (sunday != 0) {
-                sunday_average = sunday_average / sunday;
-            }
-            return String.valueOf(monday_average).concat("split").concat(String.valueOf(tuesday_average)).concat("split").concat(String.valueOf(wednesday_average)).concat("split").concat(String.valueOf(thursday_average)).concat("split").concat(String.valueOf(friday_average)).concat("split").concat(String.valueOf(saturday_average)).concat("split").concat(String.valueOf(sunday_average));
+            if (monday != 0)
+                mondayAverage = mondayAverage / monday;
+            if (tuesday != 0)
+                tuesdayAverage = tuesdayAverage / tuesday;
+            if (wednesday != 0)
+                wednesdayAverage = wednesdayAverage / wednesday;
+            if (thursday != 0)
+                thursdayAverage = thursdayAverage / thursday;
+            if (friday != 0)
+                fridayAverage = fridayAverage / friday;
+            if (saturday != 0)
+                saturdayAverage = saturdayAverage / saturday;
+            if (sunday != 0)
+                sundayAverage = sundayAverage / sunday;
+            return String.valueOf(mondayAverage).concat("split").concat(String.valueOf(tuesdayAverage)).concat("split").concat(String.valueOf(wednesdayAverage)).concat("split").concat(String.valueOf(thursdayAverage)).concat("split").concat(String.valueOf(fridayAverage)).concat("split").concat(String.valueOf(saturdayAverage)).concat("split").concat(String.valueOf(sundayAverage));
         }
         return "";
     }
 
-    private void drawTheBarForAverageMood() {
+    private void averageMood() {
         if (getView() != null) {
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
+            TextView not_enough_data = getView().findViewById(R.id.tv_not_enough_data);
+            BarChart averageForMonth = getView().findViewById(R.id.bar_chart);
+            BarChart chartTimes = getView().findViewById(R.id.bar_chart2);
 
             float max_days = 0;
-            String days_of_week = returnTheDaysOfTheGoodHabit();
-            String[] split_days_of_week = days_of_week.split("split");
+            String daysOfWeek = returnTheDaysOfTheGoodHabit();
+            String[] split_days_of_week = daysOfWeek.split("split");
             for (String s : split_days_of_week) {
-                if (max_days < Float.parseFloat(s)) {
+                if (max_days < Float.parseFloat(s))
                     max_days = Float.parseFloat(s);
-                }
             }
             if (max_days == 0) {
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.VISIBLE);
-                chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.INVISIBLE);
+                not_enough_data.setVisibility(View.VISIBLE);
+                averageForMonth.setVisibility(View.INVISIBLE);
+                chartTimes.setVisibility(View.INVISIBLE);
                 return;
-            } else {
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.INVISIBLE);
-            }
-            final float max_days_final = max_days;
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.VISIBLE);
-            chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
+            } else
+                not_enough_data.setVisibility(View.INVISIBLE);
+            final float maxDaysFinal = max_days;
+            chartTimes.setVisibility(View.VISIBLE);
+            averageForMonth.setVisibility(View.INVISIBLE);
 
-            CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chart_in_good_habits_about_how_many_times_for_each_days_of_week, chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAnimator(), chart_in_good_habits_about_how_many_times_for_each_days_of_week.getViewPortHandler());
+            CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chartTimes, chartTimes.getAnimator(), chartTimes.getViewPortHandler());
             barChartRender.setRadius(8);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setRenderer(barChartRender);
+            chartTimes.setRenderer(barChartRender);
             List<BarEntry> entries = new ArrayList<>();
             String[] xAxisLabels;
             int start_value;
@@ -10503,207 +9871,190 @@ public class Mood extends Fragment  {
                 entries.add(new BarEntry(6, Float.parseFloat(split_days_of_week[5])));
                 start_value = 6;
             }
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
+            chartTimes.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
             ValueFormatter valueFormatter = new ValueFormatter() { //value format here, here is the overridden method
                 @Override
                 public String getFormattedValue(float value) {
-                    if (value == 0 || (value / max_days_final < 0.1)) {
+                    if (value == 0 || (value / maxDaysFinal < 0.1))
                         return "";
-                    } else {
-                        if ((int) value == value) {
+                     else {
+                        if ((int) value == value)
                             return "" + (int) value;
-                        } else {
+                         else
                             return String.format("%.1f", value);
-                        }
                     }
                 }
             };
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
-            int[] colors_for_bars = new int[7];
+            String veryBadColor = returnTheColorOfMood(1);
+            String badColor = returnTheColorOfMood(2);
+            String okColor = returnTheColorOfMood(3);
+            String goodColor = returnTheColorOfMood(4);
+            String veryGoodColor = returnTheColorOfMood(5);
+            int[] colorsForBars = new int[7];
             int counter = 0;
             for (int i = start_value; i < start_value + 7; i++) {
-                float average_value = Float.parseFloat(split_days_of_week[i % 7]);
-                if (average_value <= 1.5) {
-                    colors_for_bars[counter] = Color.parseColor(very_bad_color);
-                } else if (average_value <= 2.5) {
-                    colors_for_bars[counter] = Color.parseColor(bad_color);
-                } else if (average_value <= 3.5) {
-                    colors_for_bars[counter] = Color.parseColor(ok_color);
-                } else if (average_value <= 4.5) {
-                    colors_for_bars[counter] = Color.parseColor(good_color);
-                } else {
-                    colors_for_bars[counter] = Color.parseColor(very_good_color);
-                }
+                float averageValue = Float.parseFloat(split_days_of_week[i % 7]);
+                if (averageValue <= 1.5)
+                    colorsForBars[counter] = Color.parseColor(veryBadColor);
+                 else if (averageValue <= 2.5)
+                    colorsForBars[counter] = Color.parseColor(badColor);
+                 else if (averageValue <= 3.5)
+                    colorsForBars[counter] = Color.parseColor(okColor);
+                 else if (averageValue <= 4.5)
+                    colorsForBars[counter] = Color.parseColor(goodColor);
+                 else
+                    colorsForBars[counter] = Color.parseColor(veryGoodColor);
                 counter++;
             }
             BarDataSet set = new BarDataSet(entries, "BarDataSet");
-            set.setColors(colors_for_bars);
+            set.setColors(colorsForBars);
             set.setValueTextColor(Color.WHITE);
             set.setValueTextSize(15);
             set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             BarData data = new BarData(set);
             data.setValueFormatter(valueFormatter);
             data.setBarWidth(0.9f);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setData(data);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.invalidate();
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setScaleEnabled(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getLegend().setEnabled(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setExtraOffsets(0, 0, 0, 0);
+            chartTimes.setData(data);
+            chartTimes.invalidate();
+            chartTimes.setScaleEnabled(false);
+            chartTimes.getLegend().setEnabled(false);
+            chartTimes.setExtraOffsets(0, 0, 0, 0);
             Description description = new Description();
             description.setText("");
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDescription(description);
-            XAxis xAxis = chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis();
+            chartTimes.setDescription(description);
+            XAxis xAxis = chartTimes.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             data.setHighlightEnabled(false);
             data.setBarWidth(0.7f);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setAxisMinimum(0f);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setAxisMinimum(0f);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getXAxis().setDrawGridLines(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawAxisLine(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawAxisLine(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisLeft().setDrawLabels(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.getAxisRight().setDrawLabels(false);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setDrawValueAboveBar(false);
+            chartTimes.getAxisLeft().setAxisMinimum(0f);
+            chartTimes.getAxisRight().setAxisMinimum(0f);
+            chartTimes.getXAxis().setDrawGridLines(false);
+            chartTimes.getAxisLeft().setDrawAxisLine(false);
+            chartTimes.getAxisRight().setDrawAxisLine(false);
+            chartTimes.getAxisLeft().setDrawLabels(false);
+            chartTimes.getAxisRight().setDrawLabels(false);
+            chartTimes.setDrawValueAboveBar(false);
         }
     }
 
 
     private String returnFirstDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
-        if (calendar.getFirstDayOfWeek() == Calendar.MONDAY) {
+        if (calendar.getFirstDayOfWeek() == Calendar.MONDAY)
             return this.getResources().getString(R.string.Monday) ;
-        } else if (calendar.getFirstDayOfWeek() == Calendar.TUESDAY) {
+         else if (calendar.getFirstDayOfWeek() == Calendar.TUESDAY)
             return this.getResources().getString(R.string.Tuesday) ;
-        } else if (calendar.getFirstDayOfWeek() == Calendar.WEDNESDAY) {
+         else if (calendar.getFirstDayOfWeek() == Calendar.WEDNESDAY)
             return this.getResources().getString(R.string.Wednesday) ;
-        } else if (calendar.getFirstDayOfWeek() == Calendar.THURSDAY) {
+         else if (calendar.getFirstDayOfWeek() == Calendar.THURSDAY)
             return this.getResources().getString(R.string.Thursday) ;
-        } else if (calendar.getFirstDayOfWeek() == Calendar.FRIDAY) {
+         else if (calendar.getFirstDayOfWeek() == Calendar.FRIDAY)
             return this.getResources().getString(R.string.Friday) ;
-        } else if (calendar.getFirstDayOfWeek() == Calendar.SATURDAY) {
+         else if (calendar.getFirstDayOfWeek() == Calendar.SATURDAY)
             return this.getResources().getString(R.string.Saturday) ;
-        } else {
+         else
             return this.getResources().getString(R.string.Sunday) ;
-        }
     }
 
     private String returnDataForBarChartYearly() {
         if (getView() != null) {
             int january = 0,february = 0,march = 0,april = 0,may = 0,june = 0, july = 0, august = 0, september = 0,october = 0, november = 0, december = 0;
-            float jan_avg = 0, feb_average = 0, march_average = 0, april_average = 0, may_average = 0, june_average = 0, july_average = 0, august_average = 0, september_average = 0, october_average = 0, november_average = 0, december_average = 0;
-            for (Map.Entry<Long, Integer> map : history_of_mood.entrySet()) {
+            float janAvg = 0, febAverage = 0, marchAverage = 0, aprilAverage = 0, mayAverage = 0, juneAverage = 0, julyAverage = 0, augustAverage = 0, septemberAverage = 0, octoberAverage = 0, novemberAverage = 0, decemberAverage = 0;
+            for (Map.Entry<Long, Integer> map : historyMood.entrySet()) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(map.getKey());
                 if (calendar.get(Calendar.MONTH) == Calendar.JANUARY) {
                     january = january + 1;
-                    jan_avg = jan_avg + map.getValue();
+                    janAvg = janAvg + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.FEBRUARY) {
                     february = february + 1;
-                    feb_average = feb_average + map.getValue();
+                    febAverage = febAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.MARCH) {
                     march = march + 1;
-                    march_average = march_average + map.getValue();
+                    marchAverage = marchAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.APRIL) {
                     april = april + 1;
-                    april_average = april_average + map.getValue();
+                    aprilAverage = aprilAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.MAY) {
                     may = may + 1;
-                    may_average = may_average + map.getValue();
+                    mayAverage = mayAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.JUNE) {
                     june = june + 1;
-                    june_average = june_average + map.getValue();
+                    juneAverage = juneAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.JULY) {
                     july = july + 1;
-                    july_average = july_average + map.getValue();
+                    julyAverage = julyAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.AUGUST) {
                     august = august + 1;
-                    august_average = august_average + map.getValue();
+                    augustAverage = augustAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.SEPTEMBER) {
                     september = september + 1;
-                    september_average = september_average + map.getValue();
+                    septemberAverage = septemberAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.OCTOBER) {
                     october = october + 1;
-                    october_average = october_average + map.getValue();
+                    octoberAverage = octoberAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.NOVEMBER) {
                     november = november + 1;
-                    november_average = november_average + map.getValue();
+                    novemberAverage = novemberAverage + map.getValue();
                 } else if (calendar.get(Calendar.MONTH) == Calendar.DECEMBER) {
                     december = december + 1;
-                    december_average = december_average + map.getValue();
+                    decemberAverage = decemberAverage + map.getValue();
                 }
             }
-            if (january != 0) {
-                jan_avg = jan_avg / january;
-            }
-            if (february != 0) {
-                feb_average = feb_average / february;
-            }
-            if (march != 0) {
-                march_average = march_average / march;
-            }
-            if (april != 0) {
-                april_average = april_average / april;
-            }
-            if (may != 0) {
-                may_average = may_average / may;
-            }
-            if (june != 0) {
-                june_average = june_average / june;
-            }
-            if (july != 0) {
-                july_average = july_average / july;
-            }
-            if (august != 0) {
-                august_average = august_average / august;
-            }
-            if (september != 0) {
-                september_average = september_average / september;
-            }
-            if (october != 0) {
-                october_average = october_average / october;
-            }
-            if (november != 0) {
-                november_average = november_average / november;
-            }
-            if (december != 0) {
-                december_average = december_average / december;
-            }
-            return String.valueOf(jan_avg).concat("split").concat(String.valueOf(feb_average)).concat("split").concat(String.valueOf(march_average)).concat("split").concat(String.valueOf(april_average)).concat("split").concat(String.valueOf(may_average)).concat("split").concat(String.valueOf(june_average)).concat("split").concat(String.valueOf(july_average)).concat("split").concat(String.valueOf(august_average)).concat("split").concat(String.valueOf(september_average)).concat("split").concat(String.valueOf(october_average)).concat("split").concat(String.valueOf(november_average)).concat("split").concat(String.valueOf(december_average));
+            if (january != 0)
+                janAvg = janAvg / january;
+            if (february != 0)
+                febAverage = febAverage / february;
+            if (march != 0)
+                marchAverage = marchAverage / march;
+            if (april != 0)
+                aprilAverage = aprilAverage / april;
+            if (may != 0)
+                mayAverage = mayAverage / may;
+            if (june != 0)
+                juneAverage = juneAverage / june;
+            if (july != 0)
+                julyAverage = julyAverage / july;
+            if (august != 0)
+                augustAverage = augustAverage / august;
+            if (september != 0)
+                septemberAverage = septemberAverage / september;
+            if (october != 0)
+                octoberAverage = octoberAverage / october;
+            if (november != 0)
+                novemberAverage = novemberAverage / november;
+            if (december != 0)
+                decemberAverage = decemberAverage / december;
+            return String.valueOf(janAvg).concat("split").concat(String.valueOf(febAverage)).concat("split").concat(String.valueOf(marchAverage)).concat("split").concat(String.valueOf(aprilAverage)).concat("split").concat(String.valueOf(mayAverage)).concat("split").concat(String.valueOf(juneAverage)).concat("split").concat(String.valueOf(julyAverage)).concat("split").concat(String.valueOf(augustAverage)).concat("split").concat(String.valueOf(septemberAverage)).concat("split").concat(String.valueOf(octoberAverage)).concat("split").concat(String.valueOf(novemberAverage)).concat("split").concat(String.valueOf(decemberAverage));
         }
         return "";
     }
 
     private void drawBarForAverageMoodOverTheYear() {
         if (getView() != null) {
-            float max_days = 0;
-            String days_of_week = returnDataForBarChartYearly();
-            String[] split_days_of_week = days_of_week.split("split");
+            float maxDays = 0;
+            String daysOfWeek = returnDataForBarChartYearly();
+            String[] split_days_of_week = daysOfWeek.split("split");
             for (String s : split_days_of_week) {
-                if (max_days < Float.parseFloat(s)) {
-                    max_days = Float.parseFloat(s);
-                }
+                if (maxDays < Float.parseFloat(s))
+                    maxDays = Float.parseFloat(s);
             }
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
-            if (max_days == 0) {
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.VISIBLE);
-                chart_in_mood_about_the_average_for_each_month.setVisibility(View.INVISIBLE);
-                chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.INVISIBLE);
+            TextView notEnoughData = getView().findViewById(R.id.tv_not_enough_data);
+            BarChart chartMood = getView().findViewById(R.id.bar_chart);
+            BarChart chartTimes = getView().findViewById(R.id.bar_chart2);
+            if (maxDays == 0) {
+                notEnoughData.setVisibility(View.VISIBLE);
+                chartMood.setVisibility(View.INVISIBLE);
+                chartTimes.setVisibility(View.INVISIBLE);
                 return;
-            } else {
-                text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setVisibility(View.INVISIBLE);
-            }
-            final float max_days_final = max_days;
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setVisibility(View.INVISIBLE);
-            chart_in_mood_about_the_average_for_each_month.setVisibility(View.VISIBLE);
-            CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chart_in_mood_about_the_average_for_each_month, chart_in_mood_about_the_average_for_each_month.getAnimator(), chart_in_mood_about_the_average_for_each_month.getViewPortHandler());
+            } else
+                notEnoughData.setVisibility(View.INVISIBLE);
+            final float max_days_final = maxDays;
+            chartTimes.setVisibility(View.INVISIBLE);
+            chartMood.setVisibility(View.VISIBLE);
+            CustomBarChartRenderer barChartRender = new CustomBarChartRenderer(chartMood, chartMood.getAnimator(), chartMood.getViewPortHandler());
             barChartRender.setRadius(8);
-            chart_in_mood_about_the_average_for_each_month.setRenderer(barChartRender);
+            chartMood.setRenderer(barChartRender);
             List<BarEntry> entries = new ArrayList<>();
             String[] xAxisLabels;
             xAxisLabels = new String[]{"J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"};
@@ -10719,146 +10070,142 @@ public class Mood extends Fragment  {
             entries.add(new BarEntry(9, Float.parseFloat(split_days_of_week[9])));
             entries.add(new BarEntry(10, Float.parseFloat(split_days_of_week[10])));
             entries.add(new BarEntry(11, Float.parseFloat(split_days_of_week[11])));
-            chart_in_mood_about_the_average_for_each_month.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
+            chartMood.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
             ValueFormatter valueFormatter = new ValueFormatter() { //value format here, here is the overridden method
                 @Override
                 public String getFormattedValue(float value) {
-                    if (value == 0 || (value / max_days_final < 0.1)) {
+                    if (value == 0 || (value / max_days_final < 0.1))
                         return "";
-                    } else {
-                        if ((int) value == value) {
+                     else {
+                        if ((int) value == value)
                             return "" + (int) value;
-                        } else {
+                         else
                             return String.format("%.1f", value);
-                        }
                     }
                 }
             };
-            String very_bad_color = return_the_color_of_mood(1);
-            String bad_color = return_the_color_of_mood(2);
-            String ok_color = return_the_color_of_mood(3);
-            String good_color = return_the_color_of_mood(4);
-            String very_good_color = return_the_color_of_mood(5);
-            int[] colors_for_bars = new int[12];
+            String veryBadColor = returnTheColorOfMood(1);
+            String badColor = returnTheColorOfMood(2);
+            String okColor = returnTheColorOfMood(3);
+            String goodColor = returnTheColorOfMood(4);
+            String veryGoodColor = returnTheColorOfMood(5);
+            int[] colorsForBars = new int[12];
             for (int i = 0; i < 12; i++) {
                 float average_value = Float.parseFloat(split_days_of_week[i]);
-                if (average_value <= 1.5) {
-                    colors_for_bars[i] = Color.parseColor(very_bad_color);
-                } else if (average_value <= 2.5) {
-                    colors_for_bars[i] = Color.parseColor(bad_color);
-                } else if (average_value <= 3.5) {
-                    colors_for_bars[i] = Color.parseColor(ok_color);
-                } else if (average_value <= 4.5) {
-                    colors_for_bars[i] = Color.parseColor(good_color);
-                } else {
-                    colors_for_bars[i] = Color.parseColor(very_good_color);
-                }
+                if (average_value <= 1.5)
+                    colorsForBars[i] = Color.parseColor(veryBadColor);
+                 else if (average_value <= 2.5)
+                    colorsForBars[i] = Color.parseColor(badColor);
+                 else if (average_value <= 3.5)
+                    colorsForBars[i] = Color.parseColor(okColor);
+                else if (average_value <= 4.5)
+                    colorsForBars[i] = Color.parseColor(goodColor);
+                else
+                    colorsForBars[i] = Color.parseColor(veryGoodColor);
             }
             BarDataSet set = new BarDataSet(entries, "BarDataSet");
-            set.setColors(colors_for_bars);
+            set.setColors(colorsForBars);
             set.setValueTextColor(Color.WHITE);
             set.setValueTextSize(15);
             set.setValueTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             BarData data = new BarData(set);
             data.setValueFormatter(valueFormatter);
             data.setBarWidth(0.9f);
-            chart_in_mood_about_the_average_for_each_month.setData(data);
-            chart_in_mood_about_the_average_for_each_month.invalidate();
-            chart_in_mood_about_the_average_for_each_month.setScaleEnabled(false);
-            chart_in_mood_about_the_average_for_each_month.getLegend().setEnabled(false);
-            chart_in_mood_about_the_average_for_each_month.setExtraOffsets(0, 0, 0, 0);
+            chartMood.setData(data);
+            chartMood.invalidate();
+            chartMood.setScaleEnabled(false);
+            chartMood.getLegend().setEnabled(false);
+            chartMood.setExtraOffsets(0, 0, 0, 0);
             Description description = new Description();
             description.setText("");
-            chart_in_mood_about_the_average_for_each_month.setDescription(description);
-            XAxis xAxis = chart_in_mood_about_the_average_for_each_month.getXAxis();
+            chartMood.setDescription(description);
+            XAxis xAxis = chartMood.getXAxis();
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             data.setHighlightEnabled(false);
             data.setBarWidth(0.7f);
-            chart_in_mood_about_the_average_for_each_month.getAxisLeft().setAxisMinimum(0f);
-            chart_in_mood_about_the_average_for_each_month.getAxisRight().setAxisMinimum(0f);
-            chart_in_mood_about_the_average_for_each_month.getXAxis().setDrawGridLines(false);
-            chart_in_mood_about_the_average_for_each_month.getAxisLeft().setDrawAxisLine(false);
-            chart_in_mood_about_the_average_for_each_month.getAxisRight().setDrawAxisLine(false);
-            chart_in_mood_about_the_average_for_each_month.getAxisLeft().setDrawLabels(false);
-            chart_in_mood_about_the_average_for_each_month.getAxisRight().setDrawLabels(false);
-            chart_in_mood_about_the_average_for_each_month.setDrawValueAboveBar(false);
-            chart_in_mood_about_the_average_for_each_month.setVisibleXRangeMaximum(7);
-            chart_in_mood_about_the_average_for_each_month.moveViewToX(entries.size());
+            chartMood.getAxisLeft().setAxisMinimum(0f);
+            chartMood.getAxisRight().setAxisMinimum(0f);
+            chartMood.getXAxis().setDrawGridLines(false);
+            chartMood.getAxisLeft().setDrawAxisLine(false);
+            chartMood.getAxisRight().setDrawAxisLine(false);
+            chartMood.getAxisLeft().setDrawLabels(false);
+            chartMood.getAxisRight().setDrawLabels(false);
+            chartMood.setDrawValueAboveBar(false);
+            chartMood.setVisibleXRangeMaximum(7);
+            chartMood.moveViewToX(entries.size());
         }
     }
 
 
     private void drawTheRightBarChartMood() {
-        BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
-        if (chart_in_mood_about_the_average_for_each_month.getVisibility() == View.VISIBLE) {
+        BarChart barChart = getView().findViewById(R.id.bar_chart);
+        if (barChart.getVisibility() == View.VISIBLE) 
             drawBarForAverageMoodOverTheYear();
-        } else {
-            drawTheBarForAverageMood();
-        }
+        else 
+            averageMood();
     }
+    
     private long returnStartDate() {
         if (getActivity() != null) {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
-            long first_time = sharedPreferences.getLong("first_date", -1);
-            if (first_time == -1) {
+            long firstTime = sharedPreferences.getLong("first_date", -1);
+            if (firstTime == -1) {
                 SharedPreferences.Editor myEdit = sharedPreferences.edit();
-                myEdit.putLong("first_date", TimeMood.return_time_in_midnight(System.currentTimeMillis()));
+                myEdit.putLong("first_date", TimeMood.returnTimeInMidnight(System.currentTimeMillis()));
                 myEdit.apply();
-                return TimeMood.return_time_in_midnight(System.currentTimeMillis());
-            } else {
-                return first_time;
-            }
-        } else {
-            return TimeMood.return_time_in_midnight(System.currentTimeMillis());
-        }
+                return TimeMood.returnTimeInMidnight(System.currentTimeMillis());
+            } else 
+                return firstTime;
+        } else 
+            return TimeMood.returnTimeInMidnight(System.currentTimeMillis());
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 22) {
-            int year_global = data.getIntExtra("year", 2001);
-            int month_global = data.getIntExtra("month", 1);
-            int day_global = data.getIntExtra("day", 20);
+            int year = data.getIntExtra("year", 2001);
+            int month = data.getIntExtra("month", 1);
+            int day = data.getIntExtra("day", 20);
             Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.YEAR, year_global);
-            calendar.set(Calendar.MONTH, month_global);
-            calendar.set(Calendar.DAY_OF_MONTH, day_global);
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, month);
+            calendar.set(Calendar.DAY_OF_MONTH, day);
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("first_date_of_mood", Context.MODE_PRIVATE);
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
-            myEdit.putLong("first_date", TimeMood.return_time_in_midnight(calendar.getTimeInMillis()));
+            myEdit.putLong("first_date", TimeMood.returnTimeInMidnight(calendar.getTimeInMillis()));
             myEdit.apply();
-            call_me_at_start();
+            callMeAtStart();
         }
     }
     private void fadeTheViews() {
         if (getView() != null && getContext() != null) {
-            TextView title_of_the_card_saying_this_is_the_graph_card = getView().findViewById(R.id.tv_mood_chart);
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart = getView().findViewById(R.id.tv_not_enough_data_line_chart);
-            Button button_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_back);
-            Button button_to_show_forward_above_mood_tracker_graph = getView().findViewById(R.id.bt_line_chart_forward);
-            View view_to_show_back_above_mood_tracker_graph = getView().findViewById(R.id.view_line_chart_back);
-            View view_button_over_for_good_habits = getView().findViewById(R.id.view_line_chart_forward);
-            TextView text_saying_month_year_in_the_chart_mood_tracker = getView().findViewById(R.id.tv_month_year_chart);
-            LineChart chart_showing_mood_in_mood_tracker = getView().findViewById(R.id.line_chart);
+            TextView moodChart = getView().findViewById(R.id.tv_mood_chart);
+            TextView notEnoughData = getView().findViewById(R.id.tv_not_enough_data_line_chart);
+            Button buttonBack = getView().findViewById(R.id.bt_line_chart_back);
+            Button buttonForward = getView().findViewById(R.id.bt_line_chart_forward);
+            View viewBack = getView().findViewById(R.id.view_line_chart_back);
+            View viewForward = getView().findViewById(R.id.view_line_chart_forward);
+            TextView monthYearChart = getView().findViewById(R.id.tv_month_year_chart);
+            LineChart lineChart = getView().findViewById(R.id.line_chart);
 
-            TextView text_title_of_weekly_daily_habit_in_card = getView().findViewById(R.id.tv_average);
-            BarChart chart_in_good_habits_about_how_many_times_for_each_days_of_week = getView().findViewById(R.id.bar_chart2);
-            BarChart chart_in_mood_about_the_average_for_each_month = getView().findViewById(R.id.bar_chart);
-            TextView text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse = getView().findViewById(R.id.tv_not_enough_data);
+            TextView average = getView().findViewById(R.id.tv_average);
+            BarChart barChart2 = getView().findViewById(R.id.bar_chart2);
+            BarChart barChart = getView().findViewById(R.id.bar_chart);
+            TextView noEnoughDataBar = getView().findViewById(R.id.tv_not_enough_data);
 
-            title_of_the_card_saying_this_is_the_graph_card.setAlpha(1f);
-            text_view_saying_that_there_is_not_enough_data_to_draw_this_line_chart.setAlpha(1f);
-            button_to_show_back_above_mood_tracker_graph.setAlpha(1f);
-            button_to_show_forward_above_mood_tracker_graph.setAlpha(1f);
-            view_to_show_back_above_mood_tracker_graph.setAlpha(1f);
-            view_button_over_for_good_habits.setAlpha(1f);
-            text_saying_month_year_in_the_chart_mood_tracker.setAlpha(1f);
-            chart_showing_mood_in_mood_tracker.setAlpha(1f);
+            moodChart.setAlpha(1f);
+            notEnoughData.setAlpha(1f);
+            buttonBack.setAlpha(1f);
+            buttonForward.setAlpha(1f);
+            viewBack.setAlpha(1f);
+            viewForward.setAlpha(1f);
+            monthYearChart.setAlpha(1f);
+            lineChart.setAlpha(1f);
 
-            text_title_of_weekly_daily_habit_in_card.setAlpha(1f);
-            chart_in_good_habits_about_how_many_times_for_each_days_of_week.setAlpha(1f);
-            chart_in_mood_about_the_average_for_each_month.setAlpha(1f);
-            text_view_saying_that_there_is_not_enough_data_to_draw_this_chart_for_daily_relapse.setAlpha(1f);
+            average.setAlpha(1f);
+            barChart2.setAlpha(1f);
+            barChart.setAlpha(1f);
+            noEnoughDataBar.setAlpha(1f);
         }
     }
 }

@@ -128,7 +128,7 @@ public class TimeMood {
             return "0".concat(minute);
     }
 
-    public static long return_time_in_midnight(long millis) {
+    public static long returnTimeInMidnight(long millis) {
         Calendar calendar_old = Calendar.getInstance();
         calendar_old.setTimeInMillis(millis);
         int day = calendar_old.get(Calendar.DAY_OF_MONTH);
