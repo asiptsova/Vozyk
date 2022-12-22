@@ -11,9 +11,8 @@ import androidx.fragment.app.Fragment;
 import com.application.vozyk.ui.about.AboutUs;
 import com.application.vozyk.ui.account.Account;
 import com.application.vozyk.R;
-import com.application.vozyk.ui.notes.NotesListActivity;
 import com.application.vozyk.ui.quiz.QuizActivity;
-import com.application.vozyk.ui.ToDoList.ToDoListActivity;
+import com.application.vozyk.ui.toDoList.ToDoListActivity;
 
 public class Other extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -23,7 +22,6 @@ public class Other extends Fragment {
         final TextView about=root.findViewById(R.id.about);
         final View quiz=root.findViewById(R.id.test);
         final View toDo=root.findViewById(R.id.toDo);
-        final View notes=root.findViewById(R.id.notes);
 
 
         account.setOnClickListener(v -> startActivity(new Intent(getContext(), Account.class)));
@@ -31,7 +29,6 @@ public class Other extends Fragment {
         about.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUs.class)));
         quiz.setOnClickListener(v -> startActivity(new Intent(getContext(), QuizActivity.class)));
         toDo.setOnClickListener(v -> startActivity(new Intent(getContext(), ToDoListActivity.class)));
-        notes.setOnClickListener(v -> startActivity(new Intent(getContext(), NotesListActivity.class)));
 
         return root;
     }

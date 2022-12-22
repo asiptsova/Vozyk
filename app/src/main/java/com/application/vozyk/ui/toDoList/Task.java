@@ -1,4 +1,4 @@
-package com.application.vozyk.ui.ToDoList;
+package com.application.vozyk.ui.toDoList;
 
 
 public class Task {
