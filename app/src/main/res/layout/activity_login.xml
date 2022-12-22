@@ -15,10 +15,10 @@
         android:layout_marginBottom="678dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.967"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
         android:id="@+id/appName"
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <EditText
         android:id="@+id/Email"
@@ -41,7 +41,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="456dp"
+        android:layout_marginBottom="440dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
@@ -78,12 +78,12 @@
         android:layout_width="138dp"
         android:layout_height="142dp"
         android:layout_below="@id/Email"
-        android:layout_marginBottom="496dp"
+        android:layout_marginBottom="472dp"
         android:contentDescription="TODO"
         android:src="@drawable/vozyk_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toRightOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent" />
 
