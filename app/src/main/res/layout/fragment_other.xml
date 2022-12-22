@@ -8,6 +8,21 @@
     tools:context=".ui.other.Other">
 
 
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="187dp"
+        android:layout_height="46dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="#234E70"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/account"
         android:layout_width="193dp"
@@ -65,10 +80,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/notes"
-        android:layout_width="205dp"
-        android:layout_height="176dp"
+        android:layout_width="140dp"
+        android:layout_height="57dp"
         android:layout_marginStart="199dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -76,8 +91,8 @@
 
         <ImageView
             android:id="@+id/iv_edit_notes"
-            android:layout_width="210dp"
-            android:layout_height="130dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="1dp"
@@ -175,9 +190,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545">
+        app:layout_constraintVertical_bias="0.352">
 
         <ImageView
             android:id="@+id/iv_edit_test"

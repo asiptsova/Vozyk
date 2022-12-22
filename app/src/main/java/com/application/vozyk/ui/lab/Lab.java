@@ -105,7 +105,7 @@ public class Lab extends AppCompatActivity {
             }
             return true;
         });
-        findViewById(R.id.lab_add_btn).setOnClickListener(view -> startActivity(new Intent(Lab.this, LabAdd.class)));
+        findViewById(R.id.labAdd).setOnClickListener(view -> startActivity(new Intent(Lab.this, LabAdd.class)));
 
     }
 

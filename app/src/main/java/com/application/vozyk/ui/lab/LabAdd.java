@@ -38,9 +38,9 @@ public class LabAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab_add);
         getSupportActionBar().hide();
-        date = findViewById(R.id.tv_lab_date);
+        date = findViewById(R.id.tv_labDate);
         lab = findViewById(R.id.tv_lab_doctor);
-        Button add = findViewById(R.id.lab_add_btn);
+        Button add = findViewById(R.id.labAdd);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();

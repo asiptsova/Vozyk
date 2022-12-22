@@ -38,7 +38,7 @@ public class DoctorAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_add);
         getSupportActionBar().hide();
-        date = findViewById(R.id.tv_lab_date);
+        date = findViewById(R.id.tv_labDate);
         docName = findViewById(R.id.doctor_name);
         docReason = findViewById(R.id.reason);
         Button add = findViewById(R.id.add);

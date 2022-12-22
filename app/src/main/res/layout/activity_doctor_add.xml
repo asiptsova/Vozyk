@@ -8,7 +8,7 @@
     tools:context=".ui.doctor.DoctorAdd">
 
     <TextView
-        android:id="@+id/tv_add_lab"
+        android:id="@+id/appName"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:background="@color/OrangeAeroSpace"
@@ -55,7 +55,7 @@
         android:hint="@string/doctor_s_name"
         android:textColor="#234E70"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_add_lab">
+        app:layout_constraintTop_toBottomOf="@+id/appName">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -72,13 +72,13 @@
         android:layout_height="59dp"
         android:layout_marginEnd="68dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_lab_date"
-        app:layout_constraintEnd_toStartOf="@+id/tv_lab_date"
-        app:layout_constraintTop_toTopOf="@+id/tv_lab_date"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_labDate"
+        app:layout_constraintEnd_toStartOf="@+id/tv_labDate"
+        app:layout_constraintTop_toTopOf="@+id/tv_labDate"
         app:srcCompat="@drawable/calendar" />
 
     <TextView
-        android:id="@+id/tv_lab_date"
+        android:id="@+id/tv_labDate"
         android:layout_width="157dp"
         android:layout_height="46dp"
         android:layout_marginTop="60dp"

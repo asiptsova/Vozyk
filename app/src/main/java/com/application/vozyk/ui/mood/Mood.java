@@ -8628,7 +8628,7 @@ public class Mood extends Fragment  {
                 start_value = 6;
             }
             chartTimes.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLabels));
-            ValueFormatter valueFormatter = new ValueFormatter() { //value format here, here is the overridden method
+            ValueFormatter valueFormatter = new ValueFormatter() {
                 @Override
                 public String getFormattedValue(float value) {
                     if (value == 0 || (value / maxDaysFinal < 0.1))

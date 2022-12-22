@@ -187,7 +187,7 @@ public class Login extends AppCompatActivity {
         mRegisterBtn.setText(R.string.login);
         final TextView newAccount = findViewById(R.id.tv_already_register);
         newAccount.setText(R.string.create_a_new_account);
-        final TextView login = findViewById(R.id.tv_add_lab);
+        final TextView login = findViewById(R.id.appName);
         login.setText(R.string.log_in_to_vo_yk);
         final TextView forgotPassword = findViewById(R.id.forgotPassword);
         forgotPassword.setText(R.string.forgot_password);

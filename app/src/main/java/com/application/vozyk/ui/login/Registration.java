@@ -225,7 +225,7 @@ public class Registration extends AppCompatActivity {
         mRegisterBtn.setHint(R.string.register);
         final TextView alreadyRegister = findViewById(R.id.tv_already_register);
         alreadyRegister.setText(R.string.already_registered_login_here);
-        final TextView createRegister = findViewById(R.id.tv_add_lab);
+        final TextView createRegister = findViewById(R.id.appName);
         createRegister.setText(R.string.create_a_new_account);
 
     }
