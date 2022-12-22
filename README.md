@@ -9,7 +9,6 @@ It contains the following main features:
    - notes for meds,doctors visit and labs,  
    - self-assessment quiz,
    - to-do tracker.
-   - notepad to record feelings and thoughts
 
 Group members: Yanina Asiptsova, Anastasiya Maksimenka
 
