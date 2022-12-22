@@ -325,4 +325,12 @@
     <string name="cancel_task">Cancel Task</string>
     <string name="task_name_error">Please specify task name</string>
     <string name="added_task">Successfully Added Task</string>
+    <string name="about_us_describe">Nasza aplikacja jest zaprojektowana tak, abyś zawsze mógł kontrolować swój nastrój, w trudnych sytuacjach możesz poćwiczyć oddychanie i medytować, aby było Ci to łatwiej. Można tu też przechowywać lekarstwa, wizyty lekarskie i niezbędne badania, a także listę do zrobienia.
+Jeśli podejrzewasz, że coś jest nie tak, możesz skorzystać z prostego testu (pamiętaj jednak, że w takich momentach należy skonsultować się z lekarzem).
+
+        Dlaczego nazywamy się „Vožyk”?
+
+        W końcu twórcy tej aplikacji pochodzą z Białorusi i ważne jest dla nas, aby przekazać wam również kroplę naszego pięknego języka.
+
+      Dziękujemy za wybranie naszej aplikacji!</string>
 </resources>

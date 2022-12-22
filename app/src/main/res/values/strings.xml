@@ -326,4 +326,13 @@
     <string name="cancel_task">Cancel Task</string>
     <string name="task_name_error">Please specify task name</string>
     <string name="added_task">Successfully Added Task</string>
+    <string name="about_us_describe">Our application is designed so that you can always control your mood, in difficult situations you can practice breathing and meditate to make it easier for you. And you can also store here medicines, doctor\'s appointments and necessary tests, as well as a list of cases.
+If you suspect that something is wrong, you can use a simple test (but remember that in such moments you should consult a doctor).
+
+        Why are we called "Vožyk"?
+
+        After all, the creators of this application are from Belarus, and it is important for us to convey to you also a drop of our beautiful language.
+
+     Thank you for choosing our application!</string>
+
 </resources>

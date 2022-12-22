@@ -23,7 +23,6 @@ public class Other extends Fragment {
         final View quiz=root.findViewById(R.id.test);
         final View toDo=root.findViewById(R.id.toDo);
 
-
         account.setOnClickListener(v -> startActivity(new Intent(getContext(), Account.class)));
         about.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUs.class)));
         about.setOnClickListener(v -> startActivity(new Intent(getContext(), AboutUs.class)));
